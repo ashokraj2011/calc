@@ -1,15 +1,15 @@
 {
   "schema_version": "2.0",
-  "generated_at": "2026-08-09T18:59:39Z",
-  "generated_date": "9 August 2026",
+  "generated_at": "2026-08-09T21:05:23Z",
+  "generated_date": "09 August 2026",
   "builder_version": "2.0",
   "builder_prompt_sha256": "unknown",
   "analysis_depth": "standard",
   "repository": {
     "name": "calc",
-    "root": "/private/var/folders/_j/yp8zv9w91rd44ymrzfpd_kcw0000gn/T/singularity-flow-world-model-q5O45l/repository",
-    "branch": "HEAD",
-    "commit": "8d115da4dc8005b437ccad387db0721b2ab06bd9",
+    "root": "/private/var/folders/_j/yp8zv9w91rd44ymrzfpd_kcw0000gn/T/singularity-flow-world-model-lG68YG/repository",
+    "branch": "unknown",
+    "commit": "dfeda6775cb0c4abe77e42605fcc6bdd1bf78f3c",
     "working_tree_clean": false,
     "repository_kind": "application",
     "languages": [
@@ -22,57 +22,62 @@
     ]
   },
   "purpose": {
-    "summary": "A browser-based multi-mode calculator app with standard, scientific, converter, financial, and graphing features.",
+    "summary": "A React/Vite calculator app with shared theme-driven UI, multiple calculator modes, and a math evaluator.",
     "status": "observed",
     "confidence": "high",
     "evidence_ids": [
-      "e-core-repo",
-      "e-core-entrypoints"
+      "evi-app-shell-01",
+      "evi-theme-01",
+      "evi-evaluator-01"
     ]
   },
   "components": [
     {
-      "id": "calc-shell",
-      "name": "Calculator shell",
-      "kind": "application",
-      "purpose": "Owns calculator state, mode selection, persistence, and the active mode UI.",
+      "id": "calculator-shell",
+      "name": "App shell and calculator state",
+      "kind": "frontend",
+      "purpose": "Owns calculator mode, state, history, keyboard shortcuts, and theme persistence.",
       "paths": [
         "src/App.jsx"
       ],
       "depends_on": [
-        "calc-style-system",
-        "calc-evaluator"
+        "theme-system",
+        "expression-evaluator"
       ],
       "entrypoint_ids": [
-        "entry-app"
+        "app-entry"
       ],
       "confidence": "high",
       "evidence_ids": [
-        "e-core-entrypoints",
-        "e-display-surface",
-        "e-standard-keypad"
+        "evi-app-shell-01"
       ]
     },
     {
-      "id": "calc-style-system",
-      "name": "Shared styling system",
+      "id": "theme-system",
+      "name": "Shared UI theme system",
       "kind": "frontend",
-      "purpose": "Provides the visual language, themes, and button/display styling for the UI.",
+      "purpose": "Provides CSS tokens and component classes for the calculator UI.",
       "paths": [
-        "src/index.css"
+        "src/index.css",
+        "src/components/Header.jsx",
+        "src/components/Display.jsx",
+        "src/components/StandardKeypad.jsx"
       ],
       "depends_on": [],
       "entrypoint_ids": [],
       "confidence": "high",
       "evidence_ids": [
-        "e-style-system"
+        "evi-theme-01",
+        "evi-header-01",
+        "evi-display-01",
+        "evi-keypad-01"
       ]
     },
     {
-      "id": "calc-evaluator",
+      "id": "expression-evaluator",
       "name": "Expression evaluator",
       "kind": "library",
-      "purpose": "Sanitizes and evaluates expressions for calculator mode behavior.",
+      "purpose": "Normalizes and evaluates calculator expressions with formatting and error handling.",
       "paths": [
         "src/utils/evaluator.js"
       ],
@@ -80,113 +85,50 @@
       "entrypoint_ids": [],
       "confidence": "high",
       "evidence_ids": [
-        "e-evaluator"
-      ]
-    },
-    {
-      "id": "calc-display",
-      "name": "Calculator display",
-      "kind": "frontend",
-      "purpose": "Renders the current expression and result, plus display actions.",
-      "paths": [
-        "src/components/Display.jsx"
-      ],
-      "depends_on": [
-        "calc-style-system"
-      ],
-      "entrypoint_ids": [],
-      "confidence": "high",
-      "evidence_ids": [
-        "e-display-surface"
-      ]
-    },
-    {
-      "id": "calc-standard-keypad",
-      "name": "Standard keypad",
-      "kind": "frontend",
-      "purpose": "Renders the standard numeric and operator layout.",
-      "paths": [
-        "src/components/StandardKeypad.jsx"
-      ],
-      "depends_on": [
-        "calc-style-system"
-      ],
-      "entrypoint_ids": [],
-      "confidence": "high",
-      "evidence_ids": [
-        "e-standard-keypad"
-      ]
-    },
-    {
-      "id": "calc-scientific-keypad",
-      "name": "Scientific keypad",
-      "kind": "frontend",
-      "purpose": "Renders the scientific function bar and reuses the standard keypad layout.",
-      "paths": [
-        "src/components/ScientificKeypad.jsx"
-      ],
-      "depends_on": [
-        "calc-style-system",
-        "calc-standard-keypad"
-      ],
-      "entrypoint_ids": [],
-      "confidence": "high",
-      "evidence_ids": [
-        "e-scientific-keypad"
+        "evi-evaluator-01"
       ]
     }
   ],
   "entrypoints": [
     {
-      "id": "entry-app",
-      "name": "App bootstrap",
+      "id": "app-entry",
+      "name": "Vite app entry",
       "kind": "frontend",
-      "location": "index.html:1-14",
-      "invocation": "Loads src/main.jsx and renders App",
-      "component_id": "calc-shell",
+      "location": "src/main.jsx:1-10",
+      "invocation": "npm run dev",
+      "component_id": "calculator-shell",
       "evidence_ids": [
-        "e-core-entrypoints"
+        "evi-app-shell-01"
       ]
     }
   ],
   "standard_commands": [
     {
       "command": "npm run dev",
-      "purpose": "start local Vite dev server",
+      "purpose": "start local development server",
       "source": "package.json:6-10"
     },
     {
       "command": "npm run build",
-      "purpose": "production build",
+      "purpose": "build production bundle",
       "source": "package.json:6-10"
     },
     {
       "command": "npm run lint",
-      "purpose": "ESLint validation",
-      "source": "package.json:6-10"
-    },
-    {
-      "command": "npm run preview",
-      "purpose": "preview production build",
+      "purpose": "run eslint",
       "source": "package.json:6-10"
     }
   ],
   "risks": [
-    "The visual system is spread across CSS and several React components.",
-    "There is no automated test harness.",
-    "Lint currently fails with pre-existing ESLint issues."
+    "Shared styling tokens can cause visual spillover across multiple calculator surfaces.",
+    "The repository currently has lint issues in existing source files.",
+    "No dedicated automated UI tests were found."
   ],
   "unknowns": [
-    "The exact visual target for a classic calculator look is not defined in the repository.",
-    "The repository does not define formal acceptance criteria for UI changes."
+    "The target classic-calculator aesthetic is not pinned to a specific model or screenshot.",
+    "Whether the visual change should affect only the default theme or the entire shell is not explicit."
   ],
   "available_views": [
-    "core",
-    "business",
-    "development",
-    "testing"
-  ],
-  "views_generated": [
     "core",
     "business",
     "development",

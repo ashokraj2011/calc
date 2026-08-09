@@ -1,63 +1,61 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-08-09T18:59:39Z",
-  "repository_commit": "8d115da4dc8005b437ccad387db0721b2ab06bd9",
+  "generated_at": "2026-08-09T21:05:23Z",
+  "repository_commit": "dfeda6775cb0c4abe77e42605fcc6bdd1bf78f3c",
   "entries": [
     {
       "glob": "src/App.jsx",
       "component_ids": [
-        "calc-shell"
+        "calculator-shell"
       ],
       "domains": [
         "calculator-ui"
       ],
       "views": [
         "business",
-        "development",
-        "testing"
+        "development"
       ],
       "symbols": [
         "App",
-        "evaluateExpression"
+        "handleEquals",
+        "handleDigit"
       ],
       "tests": [],
       "anchors": [
         "biz.workflows",
-        "dev.flows",
-        "test.map"
+        "dev.start",
+        "dev.impact"
       ],
-      "notes": "Core state and mode orchestration for the calculator UI."
+      "notes": "Main calculator workflow and theming state live here."
     },
     {
       "glob": "src/index.css",
       "component_ids": [
-        "calc-style-system"
+        "theme-system"
       ],
       "domains": [
         "calculator-ui"
       ],
       "views": [
         "business",
-        "development",
-        "testing"
+        "development"
       ],
       "symbols": [
-        "--bg-primary",
-        ".calc-btn",
-        ".glass-card"
+        ":root",
+        "[data-theme='classic']"
       ],
       "tests": [],
       "anchors": [
         "biz.rules",
-        "dev.impact",
-        "test.map"
+        "dev.hotspots"
       ],
-      "notes": "Shared visual language and theme tokens for the calculator surface."
+      "notes": "Shared theme tokens and visual primitives are centralized here."
     },
     {
-      "glob": "src/components/Display.jsx",
+      "glob": "src/components/{Header,Display,StandardKeypad}.jsx",
       "component_ids": [
-        "calc-display"
+        "theme-system",
+        "calculator-shell"
       ],
       "domains": [
         "calculator-ui"
@@ -68,74 +66,27 @@
         "testing"
       ],
       "symbols": [
-        "Display"
-      ],
-      "tests": [],
-      "anchors": [
-        "biz.capabilities",
-        "dev.modules",
-        "test.map"
-      ],
-      "notes": "Primary display surface for standard and scientific modes."
-    },
-    {
-      "glob": "src/components/StandardKeypad.jsx",
-      "component_ids": [
-        "calc-standard-keypad"
-      ],
-      "domains": [
-        "calculator-ui"
-      ],
-      "views": [
-        "business",
-        "development",
-        "testing"
-      ],
-      "symbols": [
+        "Header",
+        "Display",
         "StandardKeypad"
       ],
       "tests": [],
       "anchors": [
         "biz.capabilities",
-        "dev.modules",
-        "test.map"
+        "dev.start",
+        "test.components"
       ],
-      "notes": "Main keypad surface for the standard calculator experience."
-    },
-    {
-      "glob": "src/components/ScientificKeypad.jsx",
-      "component_ids": [
-        "calc-scientific-keypad"
-      ],
-      "domains": [
-        "calculator-ui"
-      ],
-      "views": [
-        "business",
-        "development",
-        "testing"
-      ],
-      "symbols": [
-        "ScientificKeypad"
-      ],
-      "tests": [],
-      "anchors": [
-        "biz.capabilities",
-        "dev.modules",
-        "test.map"
-      ],
-      "notes": "Scientific keypad with function bar above the shared keypad."
+      "notes": "These components define the user-facing display, header, and keypad surfaces."
     },
     {
       "glob": "src/utils/evaluator.js",
       "component_ids": [
-        "calc-evaluator"
+        "expression-evaluator"
       ],
       "domains": [
         "calculator-ui"
       ],
       "views": [
-        "business",
         "development",
         "testing"
       ],
@@ -145,11 +96,10 @@
       ],
       "tests": [],
       "anchors": [
-        "biz.rules",
-        "dev.modules",
-        "test.map"
+        "dev.hotspots",
+        "test.workflows"
       ],
-      "notes": "The calculator logic core and the business rules for expression handling."
+      "notes": "Calculator evaluation semantics and formatting live here."
     }
   ],
   "fallback": {

@@ -1,9 +1,9 @@
 {
   "schema_version": "2.0",
-  "repository_commit": "8d115da4dc8005b437ccad387db0721b2ab06bd9",
+  "repository_commit": "dfeda6775cb0c4abe77e42605fcc6bdd1bf78f3c",
   "repository_branch": "WRK-890",
   "working_tree_clean": false,
-  "generated_at": "2026-08-09T18:45:04.185Z",
+  "generated_at": "2026-08-09T20:27:01.588Z",
   "generated_date": "9 August 2026",
   "builder_version": "2.0",
   "builder_prompt_sha256": "d607ed17ba7e0ad45acd142b62b57c32272e21dfec50866d4bee5105f2fd9169",
@@ -18,22 +18,24 @@
     "brief": "core/summary.brief.md",
     "model": "core/model.json",
     "anchors": [
-      "core.tldr",
-      "core.purpose",
-      "core.type",
-      "core.components",
-      "core.map",
-      "core.entrypoints",
-      "core.tech",
+      "core.brief",
       "core.commands",
-      "core.risks",
-      "core.unknowns",
+      "core.components",
+      "core.entrypoints",
+      "core.facts",
       "core.freshness",
-      "core.routing"
+      "core.map",
+      "core.purpose",
+      "core.risks",
+      "core.routing",
+      "core.tech",
+      "core.tldr",
+      "core.type",
+      "core.unknowns"
     ],
     "bytes": {
-      "summary": 4617,
-      "brief": 1212
+      "summary": 5905,
+      "brief": 1221
     },
     "recommended_for_all_agents": true
   },
@@ -43,19 +45,25 @@
       "brief_path": "views/business.brief.md",
       "generated": true,
       "bytes": {
-        "full": 6727,
-        "brief": 1180
+        "full": 5771,
+        "brief": 1187
       },
       "anchors": [
-        "biz.tldr",
-        "biz.facts",
+        "biz.actors",
+        "biz.brief",
         "biz.capabilities",
-        "biz.workflows",
-        "biz.rules",
+        "biz.compliance",
+        "biz.entities",
+        "biz.facts",
+        "biz.failure",
         "biz.impact",
-        "biz.start",
         "biz.limits",
-        "biz.unknowns"
+        "biz.questions",
+        "biz.rules",
+        "biz.start",
+        "biz.tldr",
+        "biz.unknowns",
+        "biz.workflows"
       ],
       "load_when": [
         "business capability analysis",
@@ -68,20 +76,29 @@
       "brief_path": "views/development.brief.md",
       "generated": true,
       "bytes": {
-        "full": 6479,
-        "brief": 1170
+        "full": 7181,
+        "brief": 1193
       },
       "anchors": [
-        "dev.tldr",
+        "dev.brief",
+        "dev.commands",
+        "dev.config",
+        "dev.conventions",
+        "dev.debugging",
+        "dev.entrypoints",
+        "dev.errors",
         "dev.facts",
-        "dev.setup",
-        "dev.tree",
-        "dev.modules",
         "dev.flows",
-        "dev.impact",
+        "dev.generated",
         "dev.hotspots",
+        "dev.impact",
+        "dev.limits",
+        "dev.patterns",
+        "dev.setup",
         "dev.start",
-        "dev.limits"
+        "dev.symbols",
+        "dev.tldr",
+        "dev.tree"
       ],
       "load_when": [
         "implementation",
@@ -95,18 +112,28 @@
       "brief_path": "views/testing.brief.md",
       "generated": true,
       "bytes": {
-        "full": 5421,
-        "brief": 1094
+        "full": 5538,
+        "brief": 1104
       },
       "anchors": [
-        "test.tldr",
-        "test.facts",
-        "test.strategy",
-        "test.map",
+        "test.brief",
         "test.commands",
+        "test.components",
+        "test.edges",
+        "test.env",
+        "test.facts",
+        "test.fixtures",
         "test.gaps",
+        "test.limits",
+        "test.map",
+        "test.negative",
+        "test.positive",
+        "test.regression",
+        "test.selection",
         "test.start",
-        "test.limits"
+        "test.strategy",
+        "test.tldr",
+        "test.workflows"
       ],
       "load_when": [
         "test creation",
@@ -169,12 +196,13 @@
     },
     "design": {
       "views": [
-        "development"
+        "architecture"
       ],
       "tier": "full"
     },
     "implementation-spec": {
       "views": [
+        "architecture",
         "development"
       ],
       "tier": "full"
@@ -193,7 +221,8 @@
     },
     "conformance": {
       "views": [
-        "testing"
+        "testing",
+        "security"
       ],
       "tier": "brief"
     }
@@ -213,7 +242,8 @@
     },
     "architect": {
       "views": [
-        "development"
+        "architecture",
+        "security"
       ],
       "tier": "full"
     },
@@ -231,19 +261,19 @@
     },
     "security": {
       "views": [
-        "development"
+        "security"
       ],
-      "tier": "brief"
+      "tier": "full"
     },
     "operations": {
       "views": [
-        "development"
+        "operations"
       ],
-      "tier": "brief"
+      "tier": "full"
     },
     "delivery-manager": {
       "views": [
-        "development"
+        "release"
       ],
       "tier": "brief"
     }
@@ -255,21 +285,35 @@
     {
       "id": "calculator-ui",
       "path": "domains/calculator-ui.md",
-      "summary": "The shared UI and styling domain for the calculator experience.",
+      "summary": "The shared UI and theme system for the calculator app.",
       "relevant_views": [
         "business",
         "development",
         "testing"
       ],
       "keywords": [
-        "calculator",
-        "ui",
         "theme",
         "display",
-        "keypad"
+        "keypad",
+        "header",
+        "calculator UI"
       ],
       "anchors": [
-        "domain.calculator-ui.tldr"
+        "domain.calculator-ui.components",
+        "domain.calculator-ui.evidence",
+        "domain.calculator-ui.facts",
+        "domain.calculator-ui.integrations",
+        "domain.calculator-ui.invariants",
+        "domain.calculator-ui.purpose",
+        "domain.calculator-ui.risks",
+        "domain.calculator-ui.rules",
+        "domain.calculator-ui.state",
+        "domain.calculator-ui.symbols",
+        "domain.calculator-ui.terminology",
+        "domain.calculator-ui.tests",
+        "domain.calculator-ui.tldr",
+        "domain.calculator-ui.unknowns",
+        "domain.calculator-ui.workflows"
       ]
     }
   ],
@@ -279,6 +323,7 @@
       "path": "task-guides/classic-calculator-look.md",
       "task": "Change the look to match classic calculator",
       "required_views": [
+        "business",
         "development",
         "testing"
       ],
@@ -286,11 +331,18 @@
         "calculator-ui"
       ],
       "anchors": [
-        "task.classic-calculator-look.tldr",
-        "task.classic-calculator-look.context",
-        "task.classic-calculator-look.implementation",
-        "task.classic-calculator-look.tests",
+        "task.classic-calculator-look.commands",
+        "task.classic-calculator-look.components",
+        "task.classic-calculator-look.domains",
+        "task.classic-calculator-look.evidence",
+        "task.classic-calculator-look.flow",
+        "task.classic-calculator-look.intent",
+        "task.classic-calculator-look.invariants",
+        "task.classic-calculator-look.paths",
         "task.classic-calculator-look.risks",
+        "task.classic-calculator-look.roles",
+        "task.classic-calculator-look.tests",
+        "task.classic-calculator-look.tldr",
         "task.classic-calculator-look.unknowns"
       ]
     }
@@ -311,7 +363,7 @@
       "agent_type": "architect",
       "load": [
         "core/summary.brief.md",
-        "views/development.md"
+        "views/architecture.md"
       ]
     },
     {
@@ -326,6 +378,13 @@
       "load": [
         "core/summary.brief.md",
         "views/testing.md"
+      ]
+    },
+    {
+      "agent_type": "release",
+      "load": [
+        "core/summary.brief.md",
+        "views/release.md"
       ]
     }
   ],
@@ -344,21 +403,22 @@
       "evidence/evidence.jsonl"
     ]
   },
-  "source_tree_sha256": "sha256:2f067828e6f939d6a2368051d7ab4a453b8b9aeb96c91501301ad253bf803aab",
+  "source_tree_sha256": "sha256:637a9fc78478e48521306e9220a3d96ac77ec021f78f1d0f34359546486fcf33",
   "generation": {
     "parallel": true,
     "strategy": "view",
     "max_workers": 3,
     "discovery_views": [
+      "business"
+    ],
+    "degraded_views": [
       "development",
       "testing"
     ],
-    "degraded_views": [
+    "resumed_views": [
       "business"
     ],
-    "resumed_views": [],
     "pending_views_at_start": [
-      "business",
       "development",
       "testing"
     ]
