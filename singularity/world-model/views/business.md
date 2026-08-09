@@ -1,63 +1,76 @@
-> **Grounding** · calc @ `8d115da4dc8005b437ccad387db0721b2ab06bd9` · view: `business` · tier: `full`
-> **Generated** 9 August 2026 (2026-08-09T18:59:39Z) · depth: `standard` · builder `2.0`
+> **Grounding** · calc @ `dfeda6775cb0c4abe77e42605fcc6bdd1bf78f3c` · view: `business` · tier: `full`
+> **Generated** 09 August 2026 (2026-08-09T21:05:23Z) · depth: `standard` · builder `2.0`
 > **Authoritative for:** file locations, entry points, commands, structural relationships as of the commit above.
 > **Not authoritative for:** current file contents. If this document conflicts with code you have read, trust the code and say so explicitly in your output.
 > **Unknowns are marked.** Do not resolve them by inference. If the repository has changed since the date above, treat locations as hints, not facts.
 
-## TL;DR {#biz.tldr}
 
-This view explains what the repository delivers as a product surface, which user-facing behaviors are visible in code, and where business rules and user-visible risks are encoded. It is most useful for planning a change that affects the calculator experience rather than the implementation details of a single component.
+## TL;DR {#biz.tldr}
+This view covers the calculator product surface as implemented in the React app. The repository exposes a multi-mode calculator experience with standard arithmetic, scientific functions, unit conversion, financial tools, and a grapher; the visible user experience is centered on the app shell, display, header, and keypad components. The current styling system already includes a `classic` theme and persisted theme state, so a “classic calculator” request is primarily a visual/UX grounding task rather than a calculation-engine change. The main business risk is visual spillover into other modes and themes unless the change is scoped carefully.
 
 ## Facts {#biz.facts}
-
 ```yaml
-components: [calculator-shell, display, standard-keypad, scientific-keypad, converter, financial-calculator, grapher]
-entrypoints:
-  - { id: app-shell, path: src/App.jsx, line: 14, invocation: "renders all modes" }
-key_symbols:
-  - { name: App, path: src/App.jsx, line: 14, role: "owns state, mode switching, history, and persistence" }
-commands:
-  - { command: "npm run build", purpose: "validates the application bundle", source: "package.json:6-10" }
-hotspots:
-  - { path: src/App.jsx, reason: "central controller for mode switching and user interaction" }
+capabilities:
+  - { name: standard calculator, path: src/App.jsx:243-267 }
+  - { name: scientific calculator, path: src/App.jsx:269-293 }
+  - { name: converter, path: src/App.jsx:295-295 }
+  - { name: financial calculator, path: src/App.jsx:297-297 }
+  - { name: grapher, path: src/App.jsx:299-299 }
+actors:
+  - { type: end user, evidence: "src/components/Header.jsx:33-145" }
+workflow:
+  - { name: input and evaluate, path: src/App.jsx:55-130 }
+rules:
+  - { name: persisted theme selection, path: src/App.jsx:22-43 }
 ```
 
 ## Capability map {#biz.capabilities}
+The product surface is a calculator app rather than a business workflow platform. Capabilities visible in the code are:
+- Standard arithmetic entry and evaluation
+- Scientific functions and angle-unit handling
+- Unit conversion, financial calculators, and graphing modes
+- History tracking and keyboard shortcuts
+- Theme selection and sound toggles
 
-The repository exposes a browser-based calculator experience with multiple user-facing capabilities. The standard mode supports basic arithmetic, decimal input, memory operations, and expression evaluation. The scientific mode adds trig, logarithms, powers, radicals, factorials, and absolute value functions. The converter mode handles common units such as length, weight, temperature, digital data, and speed. The financial mode provides EMI, compound-interest, and tip-split calculations. The grapher mode lets a user render simple functions with an interactive canvas. These capabilities are surfaced through `src/App.jsx` and the mode-specific modules in `src/components/`.
-
-## Actors and user archetypes visible in the code {#biz.workflows}
-
-The code implies a single end user operating the calculator through buttons, keyboard shortcuts, and browser UI. There is a clear distinction between casual users in standard mode and power users in scientific mode, but the repository does not model separate personas, accounts, roles, or external integrations. The user-facing interactions visible in code are: entering expressions, toggling angle units, copying results, clearing history, changing themes, and using the keyboard as a shortcut layer. These behaviors are implemented in `src/App.jsx:55-153`, `src/components/Display.jsx:17-24`, and `src/components/Header.jsx:84-140`.
+## Actors and user archetypes {#biz.actors}
+The repository shows one primary end-user actor: a person using the app as a desktop or web calculator. The UI exposes a theme selector and mode tabs, implying a user who may switch among calculator experiences and personalize the look. There is no evidence of separate personas, admin roles, or multi-tenant business actors in this front end.
 
 ## Business workflows {#biz.workflows}
+1. User chooses a calculator mode from the header tabs.
+2. User enters an expression through the keypad or keyboard.
+3. App evaluates the expression and stores the result and history state.
+4. User can inspect history, clear state, or switch visual themes.
 
-The main workflow is calculation-driven: a user enters an expression, triggers evaluation with `=`, and sees the result update in the display while the app stores the result in a history list. The history drawer and local persistence create a lightweight workflow for revisiting previous calculations. The current implementation also supports a secondary workflow of theme customization and audio toggling, though those are not core business capabilities. The keyboard shortcuts in `src/App.jsx:155-225` make the calculator more usable for frequent power users.
+## Entities and vocabulary {#biz.entities}
+The implementation uses a small, familiar calculator vocabulary: expression, result, history, theme, sound, angle unit, memory value, and mode. These are not domain entities in a business-data sense; they are UI and calculation state terms.
 
 ## Business rules and policy locations {#biz.rules}
+The most relevant business-facing rules are the UI policy and experience rules rather than server-side policy. The code shows:
+- Persisted theme setting in `src/App.jsx:22-43`
+- A `classic` theme and theme selector contract in `src/components/Header.jsx:24-31` and `src/components/Header.jsx:85-103`
+- Shared styling tokens for the calculator surface in `src/index.css:3-37` and `src/index.css:305-329`
 
-The most important business-like rules are encoded in the evaluator rather than in a separate domain layer. `src/utils/evaluator.js:3-54` handles expression sanitization, percentage semantics, factorial handling, and angle-unit conversions for trig functions. The code also decides how invalid expressions are surfaced: invalid math returns `Error` and the UI shows it in the display. For user-visible state, `src/App.jsx:115-130` and `src/App.jsx:122-128` define the behavior for evaluation and history retention. There is no evidence of financial or legal policy logic beyond the calculator formulas themselves.
+## User-visible failure behavior {#biz.failure}
+The calculator surface handles expression errors by rendering `Error` in the result display, and the evaluator utility returns an explicit error path for malformed expressions. The UI also supports clearing, backspacing, and history clearing; there is no sign of a server-side failure path.
 
-## User-visible failure behavior {#biz.impact}
-
-When a user enters an invalid expression, the app surfaces `Error` rather than crashing. The display component can copy the current result or expression, and the app offers clear and backspace actions. The most visible quality risks are that the UI changes may affect multiple modes at once and that there is no automated regression suite defining what a successful change should look like.
-
-## Compliance or data-sensitivity indicators {#biz.impact}
-
-The application stores user preferences and calculation history in browser `localStorage` (`src/App.jsx:22-53`). This is client-side data only; there is no sign of server-side persistence, API calls, or personal data handling beyond the history and preferences that the user creates locally. The repository does not expose customer records or sensitive data.
+## Compliance or data-sensitivity indicators {#biz.compliance}
+The app stores simple local UI state in `localStorage` for theme, sound, and history. There is no evidence of customer records, billing data, or regulated personal data handling in this repository snapshot.
 
 ## Business-impact map {#biz.impact}
-
-A change to the current calculator look is likely to affect all modes because the shared style variables in `src/index.css` and the common display/keypad components are reused by multiple features. For that reason, a classic-calculator redesign would change the product feel across the standard and scientific surfaces, and possibly the header and shell chrome, even if the underlying calculation behavior stays the same.
+Visual changes can affect the core user experience, especially if they alter the default appearance of the primary calculator surface. The shared CSS token system means a change can influence the standard keypad, display, header, and other modes at once.
 
 ## Unknown business assumptions {#biz.unknowns}
+- The request does not identify a specific vintage calculator model.
+- It is unclear whether the change is for the default theme only or for the whole app shell.
+- The intended business value is assumed to be improved visual affinity with a classic calculator, not a new product capability.
 
-The repository does not define a target visual brand for “classic calculator” beyond the current modern glass aesthetic. It is also unclear whether the requested change should cover only the standard mode or all calculator modes and shell chrome. These questions should be resolved with product or design ownership before implementation.
+## Suggested questions for domain owners {#biz.questions}
+- Is the target “classic” experience a specific physical calculator model or just a general retro feel?
+- Should the change affect only the default theme or all theme options and surfaces?
+- Should the standard mode be the primary target, or should the header and other modes also align visually?
 
 ## Where to start {#biz.start}
-
-Start with the shared visual system in `src/index.css`, then the user-facing surfaces in `src/components/Display.jsx`, `src/components/StandardKeypad.jsx`, `src/components/ScientificKeypad.jsx`, and `src/components/Header.jsx`. If the goal is to change only the look and not functionality, the evaluator and arithmetic rules in `src/utils/evaluator.js` should be treated as stable.
+Start with `src/index.css` for theme tokens and shared UI classes, then inspect `src/components/Header.jsx`, `src/components/Display.jsx`, and `src/components/StandardKeypad.jsx` to confirm which surfaces consume the shared styling layer.
 
 ## Questions this view does not answer {#biz.limits}
-
-This view does not describe the internal architecture of every component, the full test inventory, or low-level styling implementation details. It does not answer whether the current UI should preserve the existing “ApexCalc” branding or adopt a more literal physical-calculator identity.
+This view does not describe implementation details such as symbol names, state transitions, or the full component tree; those are covered by the development and architecture views.

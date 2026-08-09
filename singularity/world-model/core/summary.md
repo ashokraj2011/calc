@@ -1,53 +1,78 @@
-> **Grounding** · calc @ `8d115da4dc8005b437ccad387db0721b2ab06bd9` · view: `core` · tier: `full`
-> **Generated** 9 August 2026 (2026-08-09T18:59:39Z) · depth: `standard` · builder `2.0`
+> **Grounding** · calc @ `dfeda6775cb0c4abe77e42605fcc6bdd1bf78f3c` · view: `core` · tier: `full`
+> **Generated** 09 August 2026 (2026-08-09T21:05:23Z) · depth: `standard` · builder `2.0`
 > **Authoritative for:** file locations, entry points, commands, structural relationships as of the commit above.
 > **Not authoritative for:** current file contents. If this document conflicts with code you have read, trust the code and say so explicitly in your output.
 > **Unknowns are marked.** Do not resolve them by inference. If the repository has changed since the date above, treat locations as hints, not facts.
 
-## TL;DR {#core.tldr}
 
-This repository is a Vite + React calculator app with standard, scientific, converter, financial, and grapher modes. The active implementation surface is `src/App.jsx`, the shared styling system is `src/index.css`, and the arithmetic logic is `src/utils/evaluator.js`. The main boot path is `index.html` → `src/main.jsx` → `src/App.jsx`. The current validation path is `npm run build` and `npm run lint`; build succeeded here, while lint reports existing issues. The main risks are a styling surface spread across multiple files, no automated test harness, and a not-clean working tree.
+## TL;DR {#core.tldr}
+This repository is a React/Vite calculator application with a shared theme system, a multi-mode UI, and a lightweight expression evaluator. The app is centered in `src/App.jsx`, with theme tokens and component styling concentrated in `src/index.css`, and the calculator logic isolated in `src/utils/evaluator.js`. The main validation commands are `npm run build` and `npm run lint`; build succeeded after installing dependencies, while lint currently reports existing unused-import and hook-style issues. The working tree is not clean because the app source files already had local edits at inspection time. For styling changes like “match classic calculator”, start in the shared theme tokens and the header/display/keypad components.
+
+## Facts {#core.facts}
+```yaml
+components:
+  - { id: calculator-shell, name: App shell, kind: frontend, path: src/App.jsx }
+  - { id: theme-system, name: Shared UI theme system, kind: frontend, path: src/index.css }
+  - { id: expression-evaluator, name: Arithmetic evaluator, kind: library, path: src/utils/evaluator.js }
+entrypoints:
+  - { id: app-entry, path: src/main.jsx:1-10, invocation: "npm run dev" }
+commands:
+  - { command: "npm run build", purpose: "build the production bundle", source: "package.json:6-10" }
+  - { command: "npm run lint", purpose: "run eslint", source: "package.json:6-10" }
+risks:
+  - { topic: "visual spillover", reason: "theme tokens are shared across all UI modes" }
+```
 
 ## Repository purpose {#core.purpose}
-
-ApexCalc is a browser-based calculator app for a single user. The visible product surface is the calculator UI itself rather than a server-backed service; the state and mode selection live in `src/App.jsx`, and the UI is composed from components under `src/components/`.
+The repository is a single-page calculator experience that supports standard arithmetic plus scientific, unit conversion, financial, and grapher modes. The implementation is a React front end with Vite tooling and a custom expression evaluator built around `mathjs`.
 
 ## Repository type and languages {#core.type}
-
-This is an application bundle, not a library. The observable implementation uses JavaScript/JSX, CSS, `mathjs`, `lucide-react`, React, and Vite. The package manifest at `package.json` shows a private Vite project with `type: module`.
+This is a front-end application repository with JavaScript/JSX and CSS. The package manifest shows React 19, Vite 8, and `mathjs` as the main runtime dependencies, and the UI uses CSS custom properties for theming.
 
 ## Main applications, packages, or services {#core.components}
-
-The app shell is the calculator UI. Visible modes are standard arithmetic, scientific math, unit conversion, financial helpers, and function graphing. Styling is centralized in `src/index.css`; calculation behavior is in `src/utils/evaluator.js`.
+- `src/App.jsx` — main app shell that manages calculator mode, state, keyboard shortcuts, theme persistence, and history.
+- `src/index.css` — shared theme tokens and shared UI classes for display, keypad, header, and card styling.
+- `src/components/` — feature-specific surfaces for the standard keypad, scientific keypad, display, header, history drawer, and other calculator modes.
+- `src/utils/evaluator.js` — expression parsing and formatting logic used by the main app.
 
 ## High-level component map {#core.map}
-
-`index.html` loads `src/main.jsx`, which mounts `src/App.jsx`. `App` owns state, keyboard handling, history, mode selection, and theme persistence. The display and keypad components provide the calculator surface, and `evaluateExpression`/`formatNumber` power computation and formatting.
+The app bootstraps from `src/main.jsx`, mounts the `App` component, and routes mode-specific UI subcomponents from `App`. The shared visual system is theme-driven via CSS variables in `src/index.css`, while calculation semantics come from the evaluator utility. The history, sound, and keyboard modal features are additional UI state surfaces that sit alongside the main calculator experience.
 
 ## Main entry points {#core.entrypoints}
-
-Primary runtime entry: `index.html:1-14` → `src/main.jsx:1-10` → `src/App.jsx:14-324`. The calculator logic entry points are `src/components/Display.jsx`, `src/components/StandardKeypad.jsx`, `src/components/ScientificKeypad.jsx`, and `src/utils/evaluator.js`.
+- `src/main.jsx:1-10` — Vite/React root that imports the app stylesheet and mounts the React entry point.
+- `src/App.jsx:14-323` — primary calculator UI and state controller.
+- `package.json:6-10` — scripts for development, build, lint, and preview.
 
 ## Primary technologies {#core.tech}
-
-The repo uses React 19, Vite 8, ESLint 10, `mathjs`, `lucide-react`, and CSS variables with a theme-driven stylesheet. There is no server runtime, database, or deployment configuration in the inspected snapshot.
+- React 19 with JSX components
+- Vite 8 for build and development tooling
+- `mathjs` for expression evaluation
+- ESLint + React hooks rules for static validation
+- CSS custom properties for theming
 
 ## Standard build and test commands {#core.commands}
-
-Observed commands from `package.json:6-10` are `npm run dev`, `npm run build`, `npm run lint`, and `npm run preview`. In this environment, `npm run build` succeeded. `npm run lint` currently fails with 20 existing ESLint errors. No dedicated test runner or test script is present.
+Observed commands:
+- `npm run dev` — start the local Vite development server.
+- `npm run build` — produce a production bundle (succeeded after dependencies were installed).
+- `npm run lint` — run ESLint (currently fails with existing lint issues in several source files).
 
 ## Important risks {#core.risks}
-
-The visual design is distributed across `src/index.css`, `src/components/Display.jsx`, `src/components/StandardKeypad.jsx`, `src/components/ScientificKeypad.jsx`, and `src/components/Header.jsx`, so a style change should be planned as a cross-file change. The repo also lacks an automated test harness and has existing lint debt.
+- Visual changes may affect multiple calculator modes because the styling system is shared rather than mode-specific.
+- The current lint state is already failing, so new changes should be checked against existing warnings and errors.
+- Build validation succeeded, but the repository does not currently expose dedicated automated UI or integration tests.
 
 ## Important unknowns {#core.unknowns}
-
-The repository does not include a formal design spec for a “classic calculator” look, and it does not define acceptance criteria for UI changes beyond the current build and lint commands.
+- The intended visual target for “classic calculator” is not pinned to a specific hardware model or screenshot.
+- No test suite was found in the repository tree, so visual regressions are currently inferred from build/lint checks and manual review.
+- The repository has local uncommitted changes in the app source, so the state at inspection time is not identical to an arbitrary future checkout.
 
 ## Commit, generation date, and freshness warning {#core.freshness}
-
-Inspected commit: `8d115da4dc8005b437ccad387db0721b2ab06bd9`. Generated: `2026-08-09T18:59:39Z`. The working tree is not clean, so this model describes the inspected snapshot rather than a fully committed state.
+- Inspected commit: `dfeda6775cb0c4abe77e42605fcc6bdd1bf78f3c`
+- Generated: `2026-08-09T21:05:23Z` (`09 August 2026`)
+- Working tree status: not clean; local edits were present at inspection time.
 
 ## Recommended next view for each common task {#core.routing}
-
-For business or product interpretation, start with `views/business.md`. For implementation or refactoring, use `views/development.md`. For validation or regression planning, start with `views/testing.md`. For the current styling task, begin with `views/development.md` and `task-guides/classic-calculator-look.md`.
+- Styling or visual alignment: `views/business.md` and `views/development.md`
+- Product or business impact analysis: `views/business.md`
+- Implementation or refactoring: `views/development.md`
+- Test planning or quality review: `views/testing.md`
