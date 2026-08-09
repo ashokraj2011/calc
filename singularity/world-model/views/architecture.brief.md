@@ -1,0 +1,7 @@
+> **Grounding** · calc @ `0d8703c49dc3ca79c684d93cc42220c922d7cd15` · view: `architecture` · tier: `brief`
+> **Generated** 09 August 2026 (2026-08-09T22:30:28Z) · depth: `quick` · builder `2.0`
+> **Authoritative for:** file locations, entry points, commands, structural relationships as of the commit above.
+> **Not authoritative for:** current file contents. If this document conflicts with code you have read, trust the code and say so explicitly in your output.
+> **Unknowns are marked.** Do not resolve them by inference. If the repository has changed since the date above, treat locations as hints, not facts.
+
+This view covers the app’s architecture as a single-page React calculator with one root orchestrator and several feature modules. The main boundary is `src/App.jsx`, which owns state, mode switching, keyboard handling, theme/sound/history persistence, and modal/drawer composition. Reusable calculator semantics live in `src/utils/evaluator.js`; mode components such as `FunctionGrapher`, `UnitConverter`, and `FinancialCalculator` render feature-specific UIs on top of that layer. The biggest design risk is that browser-side concerns and app state are concentrated in the root shell, making the UI harder to evolve without increasing coupling. The most important places to inspect for cross-cutting change impact are `src/App.jsx`, `src/utils/evaluator.js`, and the mode components under `src/components/`.

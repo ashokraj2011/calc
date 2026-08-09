@@ -1,90 +1,66 @@
-> **Grounding** · calc @ `dfeda6775cb0c4abe77e42605fcc6bdd1bf78f3c` · view: `development` · tier: `full`
-> **Generated** 09 August 2026 (2026-08-09T21:05:23Z) · depth: `standard` · builder `2.0`
+> **Grounding** · calc @ `0d8703c49dc3ca79c684d93cc42220c922d7cd15` · view: `development` · tier: `full`
+> **Generated** 09 August 2026 (2026-08-09T22:30:28Z) · depth: `quick` · builder `2.0`
 > **Authoritative for:** file locations, entry points, commands, structural relationships as of the commit above.
 > **Not authoritative for:** current file contents. If this document conflicts with code you have read, trust the code and say so explicitly in your output.
 > **Unknowns are marked.** Do not resolve them by inference. If the repository has changed since the date above, treat locations as hints, not facts.
 
-
 ## TL;DR {#dev.tldr}
-This view is the implementation map for developers working on the calculator app. The main entry point is `src/App.jsx`, which owns the calculator workflow and state transitions, while `src/index.css` holds the shared visual tokens that govern the current classic and alternative themes. The standard keypad, display, and header components are the most likely files to touch for styling work. Validation is available via `npm run build` and `npm run lint`; build passed after installing dependencies, while lint still reports existing issues in the repository.
+For implementation work, start with the root `App` state controller and the shared evaluator. The app is structured around a single stateful shell (`src/App.jsx`) plus feature components under `src/components/` and a shared logic module (`src/utils/evaluator.js`). The main implementation flows are keypad input → expression state → evaluation → history update, and mode switching → feature component render. The repository is currently linting red and has no test harness, so local validation depends on `npm run build` and `npm run lint` and manual browser verification.
 
 ## Facts {#dev.facts}
+
 ```yaml
-components:
-  - { id: calculator-shell, name: app shell and state, path: src/App.jsx:14-323 }
-  - { id: theme-system, name: shared theming tokens, path: src/index.css:3-329 }
-  - { id: expression-evaluator, name: evaluator utility, path: src/utils/evaluator.js:1-218 }
 entrypoints:
-  - { id: app-entry, path: src/main.jsx:1-10, invocation: "npm run dev" }
+  - { id: html-entry, path: index.html:1-14, invocation: "browser mount" }
+  - { id: app-shell, path: src/App.jsx:14-324, invocation: "root controller" }
+  - { id: evaluator, path: src/utils/evaluator.js:1-218, invocation: "shared logic" }
+important_symbols:
+  - { name: App, path: src/App.jsx:14-324, role: "state and UI orchestrator" }
+  - { name: evaluateExpression, path: src/utils/evaluator.js:4-54, role: "expression evaluation" }
+  - { name: FunctionGrapher, path: src/components/FunctionGrapher.jsx:14-212, role: "graphing mode" }
 commands:
-  - { command: "npm run build", purpose: "production bundle validation", source: "package.json:6-10" }
-  - { command: "npm run lint", purpose: "static linting", source: "package.json:6-10" }
-hotspots:
-  - { path: src/index.css, reason: "shared styling primitives influence all visual surfaces" }
-  - { path: src/App.jsx, reason: "central coordinator for state and mode switching" }
+  - { command: "npm run dev", purpose: "start local dev server", source: "package.json:6-10" }
+  - { command: "npm run build", purpose: "build for production", source: "package.json:6-10" }
+  - { command: "npm run lint", purpose: "lint current tree", source: "package.json:6-10" }
 ```
 
 ## Developer setup {#dev.setup}
-Install dependencies with `npm install`, then use `npm run dev` for interactive development. The repository is a straightforward Vite React app, so the fastest local loop is editing the relevant component or CSS token file and refreshing the Vite dev server.
+The repository is a standard Vite React project. From the repo root, `npm install` is needed before running the local scripts. The main scripts are `npm run dev`, `npm run build`, and `npm run lint`, all defined in `package.json`. Evidence: `e-build`, `e-lint`.
 
 ## Source tree map {#dev.tree}
-- `src/App.jsx` — main application state, handlers, mode routing, theme persistence, history, and modal state.
-- `src/components/Display.jsx` — display surface and utility buttons.
-- `src/components/Header.jsx` — mode tabs, theme selector, and quick actions.
-- `src/components/StandardKeypad.jsx` — standard calculator keypad structure.
-- `src/components/ScientificKeypad.jsx`, `UnitConverter.jsx`, `FinancialCalculator.jsx`, `FunctionGrapher.jsx` — mode-specific renderers.
-- `src/utils/evaluator.js` — expression normalization, math evaluation, formatting, and unit-conversion utilities.
-- `src/index.css` — shared theme variables, layout classes, and calculator visual primitives.
+- `src/App.jsx` is the top-level controller for calculator state, mode selection, history, persistence, and overlays.
+- `src/components/` contains mode-specific UI modules: `Display`, `StandardKeypad`, `ScientificKeypad`, `UnitConverter`, `FinancialCalculator`, `FunctionGrapher`, `HistoryDrawer`, and `KeyboardShortcutsModal`.
+- `src/utils/` contains reusable logic: `evaluator.js` for expressions and helpers, and `audio.js` for Web Audio feedback. Evidence: `e-app-shell`, `e-evaluator`, `e-graphing`.
 
-## Important modules and symbols {#dev.symbols}
-- `App` in `src/App.jsx:14-323` — orchestrates calculator state, handlers, and mode selection.
-- `Header` in `src/components/Header.jsx:33-145` — controls mode switching and theme selection.
-- `Display` in `src/components/Display.jsx:5-97` — renders the expression/result surface.
-- `StandardKeypad` in `src/components/StandardKeypad.jsx:5-180` — renders the standard keypad grid.
-- `evaluateExpression` in `src/utils/evaluator.js:4-54` — evaluates expressions with mathjs and error handling.
-
-## Entry points and initialization {#dev.entrypoints}
-The app boots from `src/main.jsx:1-10`, which imports the stylesheet and mounts the `App` component. The `App` component initializes `theme` from `localStorage` and synchronizes it back to the document element, which is how the app applies different themes.
+## Important modules and symbols {#dev.modules}
+- `App` owns the keyboard shortcut handling and runtime composition. It routes input from digits/operators to `evaluateExpression` and stores history entries after successful evaluations.
+- `evaluateExpression` normalizes symbols such as `×`, `÷`, `%`, `!`, and angle-aware trig calls before delegating to `mathjs`.
+- `convertUnits`, `calculateEMI`, `calculateCompoundInterest`, and `calculateTip` are the shared helpers behind the converter and financial modes.
+- `FunctionGrapher` uses `math.compile` and a canvas renderer for the graphing mode. Evidence: `e-app-shell`, `e-evaluator`, `e-graphing`.
 
 ## Common implementation flows {#dev.flows}
-- Input flow: keypad or keyboard events call `handleDigit`, `handleOperator`, `handleEquals`, `handleClear`, or `handleBackspace` in `src/App.jsx:55-130`.
-- Evaluation flow: `handleEquals` delegates to `evaluateExpression` and then updates the display plus history.
-- Theme flow: header selection updates the `theme` state, and `useEffect` in `src/App.jsx:39-43` persists and reapplies it to the document.
+1. User interaction enters through `App` handlers and feature components.
+2. The expression string is updated in state and optionally evaluated on `=`.
+3. Successful evaluations flow into `history`, and the resulting value is displayed in the UI.
+4. Mode switching swaps between component trees without reloading the app.
+Evidence: `e-app-shell`, `e-browser-storage`.
 
-## Composition patterns {#dev.patterns}
-The app uses component composition rather than a central router; `App` selects a subcomponent based on `activeMode`. Styling is tokenized via CSS variables in `src/index.css`, and the shared classes are consumed by multiple components rather than hard-coded per component.
+## Error handling and browser APIs {#dev.errors}
+The evaluator returns `'Error'` for empty input, non-finite results, and syntax errors. The app also uses `localStorage` for preferences and history, `navigator.clipboard` for copy-to-clipboard, and `window.AudioContext` for sound feedback. These integrations should be treated as browser-dependent and tested carefully. Evidence: `e-browser-storage`, `e-evaluator`.
 
-## Error-handling conventions {#dev.errors}
-Expression errors are surfaced as `'Error'` in the result display via the evaluator utility. The UI also contains clear and backspace behaviors for user recovery, but there is no dedicated global error boundary or logging infrastructure visible in the repository snapshot.
-
-## Configuration loading {#dev.config}
-The app reads `localStorage` keys `apex_theme`, `apex_sound`, and `apex_history` from `src/App.jsx:22-53`. That is the primary persistence mechanism visible in the code.
-
-## Coding and naming conventions {#dev.conventions}
-The codebase uses descriptive React component names and camelCase handler names. UI state values are kept close to the component that renders them, while shared visual variables are centralized in CSS custom properties.
-
-## Generated-code boundaries {#dev.generated}
-The repository does not show a generated-code boundary in the app source; the visible build output is created by Vite and not part of the source tree to edit.
-
-## Change-impact guide {#dev.impact}
-For a visual class change, the highest-impact files are likely `src/index.css`, `src/components/Header.jsx`, `src/components/Display.jsx`, and `src/components/StandardKeypad.jsx`. For calculator logic changes, the critical file is `src/utils/evaluator.js`.
-
-## Debugging starting points {#dev.debugging}
-- Start by inspecting `src/App.jsx` if the UI state or mode selection behaves unexpectedly.
-- Inspect `src/utils/evaluator.js` for expression parsing or formatting issues.
-- Inspect `src/index.css` for theme-related regressions.
-
-## Validation commands {#dev.commands}
-- `npm run build` — succeeded after installing dependencies.
-- `npm run lint` — currently fails from existing unused-import and hook-style issues.
+## Validation and debugging starting points {#dev.debug}
+- For arithmetic logic, inspect `src/utils/evaluator.js`.
+- For mode behavior, inspect `src/App.jsx` and the relevant component under `src/components/`.
+- For persistence and UI state issues, inspect the `useEffect` blocks in `src/App.jsx` and `src/components/HistoryDrawer.jsx`.
+- For lint issues, `npm run lint` is the first stop; the current report identifies a mix of unused imports and one React rule violation around state updates in `FunctionGrapher`. Evidence: `e-lint`, `e-graphing`.
 
 ## Known implementation hotspots {#dev.hotspots}
-- `src/index.css` — centralized theming surface with broad visual impact.
-- `src/App.jsx` — central state controller and mode router.
-- `src/utils/evaluator.js` — core calculation semantics and formatting.
+- `src/App.jsx` is the single biggest hotspot because it carries the app’s state and cross-cutting behavior.
+- `src/utils/evaluator.js` is the main shared logic surface and thus a common point of regressions.
+- `src/components/FunctionGrapher.jsx` is the most browser-specific and hardest-to-validate module because it renders directly to a canvas. Evidence: `e-app-shell`, `e-evaluator`, `e-graphing`.
 
 ## Where to start {#dev.start}
-For a classic-calculator visual change, open `src/index.css` first, then inspect `src/components/Display.jsx`, `src/components/StandardKeypad.jsx`, and `src/components/Header.jsx` to see how the shared tokens are consumed.
+If you are implementing a new feature, start in `src/App.jsx` to understand how modes are composed, then move into `src/utils/evaluator.js` for shared calculator logic. If the change is mode-specific, follow the corresponding component under `src/components/`. Evidence: `e-app-shell`, `e-evaluator`.
 
 ## Questions this view does not answer {#dev.limits}
-This view does not document the full behavior of every calculator mode or every component; it focuses on implementation entry points, shared conventions, and the files most relevant to likely changes.
+It does not describe deployment, accessibility, or backend contracts because those are not present in the repository snapshot. Evidence: `e-core-purpose`, `e-test-gap`.

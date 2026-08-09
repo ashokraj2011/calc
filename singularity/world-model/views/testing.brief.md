@@ -1,9 +1,7 @@
-> **Grounding** · calc @ `dfeda6775cb0c4abe77e42605fcc6bdd1bf78f3c` · view: `testing` · tier: `brief`
-> **Generated** 09 August 2026 (2026-08-09T21:05:23Z) · depth: `standard` · builder `2.0`
+> **Grounding** · calc @ `0d8703c49dc3ca79c684d93cc42220c922d7cd15` · view: `testing` · tier: `brief`
+> **Generated** 09 August 2026 (2026-08-09T22:30:28Z) · depth: `quick` · builder `2.0`
 > **Authoritative for:** file locations, entry points, commands, structural relationships as of the commit above.
 > **Not authoritative for:** current file contents. If this document conflicts with code you have read, trust the code and say so explicitly in your output.
 > **Unknowns are marked.** Do not resolve them by inference. If the repository has changed since the date above, treat locations as hints, not facts.
 
-
-## Overview {#test.brief}
-This view captures the current test posture for the calculator app. The repository exposes build and lint scripts but no dedicated automated tests for UI, integration, or calculator behaviors. The actionable guidance is to use `npm run build` for compile verification and pair it with manual visual review for any styling change. The most common mistake is assuming that a passing build means the UI is fully validated when no scripted UI tests are present.
+This view is for test planning and validation. The repository currently has no automated test harness; it exposes `npm run build` and `npm run lint`, but no `test` script or test files. The highest-value targets are the shared evaluator in `src/utils/evaluator.js`, the root app state in `src/App.jsx`, and feature components such as `FunctionGrapher`, `UnitConverter`, and `FinancialCalculator` that depend on browser APIs and local state. The most common mistake here is assuming build/lint coverage is enough; without tests, calculator regressions and browser-specific issues will slip through.

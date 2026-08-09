@@ -1,74 +1,63 @@
 {
   "schema_version": "2.0",
-  "repository_commit": "dfeda6775cb0c4abe77e42605fcc6bdd1bf78f3c",
+  "repository_commit": "0d8703c49dc3ca79c684d93cc42220c922d7cd15",
   "repository_branch": "WRK-890",
   "working_tree_clean": false,
-  "generated_at": "2026-08-09T20:27:01.588Z",
+  "generated_at": "2026-08-09T22:24:51.177Z",
   "generated_date": "9 August 2026",
   "builder_version": "2.0",
   "builder_prompt_sha256": "d607ed17ba7e0ad45acd142b62b57c32272e21dfec50866d4bee5105f2fd9169",
-  "analysis_depth": "standard",
-  "views_generated": [
-    "business",
-    "development",
-    "testing"
-  ],
+  "analysis_depth": "quick",
   "core": {
     "summary": "core/summary.md",
     "brief": "core/summary.brief.md",
     "model": "core/model.json",
     "anchors": [
-      "core.brief",
-      "core.commands",
-      "core.components",
-      "core.entrypoints",
-      "core.facts",
-      "core.freshness",
-      "core.map",
-      "core.purpose",
-      "core.risks",
-      "core.routing",
-      "core.tech",
       "core.tldr",
+      "core.facts",
+      "core.purpose",
       "core.type",
-      "core.unknowns"
+      "core.components",
+      "core.map",
+      "core.entrypoints",
+      "core.tech",
+      "core.commands",
+      "core.risks",
+      "core.unknowns",
+      "core.freshness",
+      "core.routing"
     ],
     "bytes": {
-      "summary": 5905,
-      "brief": 1221
+      "summary": 6849,
+      "brief": 1465
     },
     "recommended_for_all_agents": true
   },
   "views": {
-    "business": {
-      "path": "views/business.md",
-      "brief_path": "views/business.brief.md",
+    "architecture": {
+      "path": "views/architecture.md",
+      "brief_path": "views/architecture.brief.md",
       "generated": true,
       "bytes": {
-        "full": 5771,
-        "brief": 1187
+        "full": 5537,
+        "brief": 1432
       },
       "anchors": [
-        "biz.actors",
-        "biz.brief",
-        "biz.capabilities",
-        "biz.compliance",
-        "biz.entities",
-        "biz.facts",
-        "biz.failure",
-        "biz.impact",
-        "biz.limits",
-        "biz.questions",
-        "biz.rules",
-        "biz.start",
-        "biz.tldr",
-        "biz.unknowns",
-        "biz.workflows"
+        "arch.tldr",
+        "arch.facts",
+        "arch.context",
+        "arch.components",
+        "arch.dependencies",
+        "arch.contracts",
+        "arch.runtime",
+        "arch.risks",
+        "arch.start",
+        "arch.limits"
       ],
       "load_when": [
-        "business capability analysis",
-        "product behavior analysis",
-        "business impact assessment"
+        "system design",
+        "dependency analysis",
+        "cross-component change"
       ]
     },
     "development": {
@@ -76,29 +65,21 @@
       "brief_path": "views/development.brief.md",
       "generated": true,
       "bytes": {
-        "full": 7181,
-        "brief": 1193
+        "full": 5977,
+        "brief": 1287
       },
       "anchors": [
-        "dev.brief",
-        "dev.commands",
-        "dev.config",
-        "dev.conventions",
-        "dev.debugging",
-        "dev.entrypoints",
-        "dev.errors",
-        "dev.facts",
-        "dev.flows",
-        "dev.generated",
-        "dev.hotspots",
-        "dev.impact",
-        "dev.limits",
-        "dev.patterns",
-        "dev.setup",
-        "dev.start",
-        "dev.symbols",
         "dev.tldr",
-        "dev.tree"
+        "dev.facts",
+        "dev.setup",
+        "dev.tree",
+        "dev.modules",
+        "dev.flows",
+        "dev.errors",
+        "dev.debug",
+        "dev.hotspots",
+        "dev.start",
+        "dev.limits"
       ],
       "load_when": [
         "implementation",
@@ -107,33 +88,51 @@
         "code review"
       ]
     },
+    "security": {
+      "path": "views/security.md",
+      "brief_path": "views/security.brief.md",
+      "generated": true,
+      "bytes": {
+        "full": 5076,
+        "brief": 1250
+      },
+      "anchors": [
+        "sec.tldr",
+        "sec.facts",
+        "sec.posture",
+        "sec.boundaries",
+        "sec.data",
+        "sec.secrets",
+        "sec.validation",
+        "sec.tests",
+        "sec.risks",
+        "sec.start",
+        "sec.limits"
+      ],
+      "load_when": [
+        "threat analysis",
+        "authentication or authorization change"
+      ]
+    },
     "testing": {
       "path": "views/testing.md",
       "brief_path": "views/testing.brief.md",
       "generated": true,
       "bytes": {
-        "full": 5538,
-        "brief": 1104
+        "full": 4973,
+        "brief": 1214
       },
       "anchors": [
-        "test.brief",
-        "test.commands",
-        "test.components",
-        "test.edges",
-        "test.env",
-        "test.facts",
-        "test.fixtures",
-        "test.gaps",
-        "test.limits",
-        "test.map",
-        "test.negative",
-        "test.positive",
-        "test.regression",
-        "test.selection",
-        "test.start",
-        "test.strategy",
         "test.tldr",
-        "test.workflows"
+        "test.facts",
+        "test.strategy",
+        "test.map",
+        "test.workflow",
+        "test.scenarios",
+        "test.commands",
+        "test.gaps",
+        "test.start",
+        "test.limits"
       ],
       "load_when": [
         "test creation",
@@ -141,20 +140,30 @@
         "quality validation"
       ]
     },
-    "architecture": {
-      "path": "views/architecture.md",
-      "brief_path": "views/architecture.brief.md",
+    "business": {
+      "path": "views/business.md",
+      "brief_path": "views/business.brief.md",
       "generated": false,
+      "bytes": {
+        "full": 0,
+        "brief": 0
+      },
+      "anchors": [],
       "load_when": [
-        "system design",
-        "dependency analysis",
-        "cross-component change"
+        "business capability analysis",
+        "product behavior analysis",
+        "business impact assessment"
       ]
     },
     "release": {
       "path": "views/release.md",
       "brief_path": "views/release.brief.md",
       "generated": false,
+      "bytes": {
+        "full": 0,
+        "brief": 0
+      },
+      "anchors": [],
       "load_when": [
         "build",
         "packaging",
@@ -166,18 +175,14 @@
       "path": "views/operations.md",
       "brief_path": "views/operations.brief.md",
       "generated": false,
+      "bytes": {
+        "full": 0,
+        "brief": 0
+      },
+      "anchors": [],
       "load_when": [
         "runtime diagnosis",
         "monitoring and incident response"
-      ]
-    },
-    "security": {
-      "path": "views/security.md",
-      "brief_path": "views/security.brief.md",
-      "generated": false,
-      "load_when": [
-        "threat analysis",
-        "authentication or authorization change"
       ]
     }
   },
@@ -283,70 +288,27 @@
   },
   "domains": [
     {
-      "id": "calculator-ui",
-      "path": "domains/calculator-ui.md",
-      "summary": "The shared UI and theme system for the calculator app.",
+      "id": "calculator",
+      "path": "domains/calculator.md",
+      "summary": "Calculator capabilities and shared invariants for arithmetic, scientific functions, conversions, finance, and graphing.",
       "relevant_views": [
-        "business",
+        "architecture",
         "development",
+        "security",
         "testing"
       ],
       "keywords": [
-        "theme",
-        "display",
-        "keypad",
-        "header",
-        "calculator UI"
+        "calculator",
+        "expression",
+        "graphing",
+        "history"
       ],
       "anchors": [
-        "domain.calculator-ui.components",
-        "domain.calculator-ui.evidence",
-        "domain.calculator-ui.facts",
-        "domain.calculator-ui.integrations",
-        "domain.calculator-ui.invariants",
-        "domain.calculator-ui.purpose",
-        "domain.calculator-ui.risks",
-        "domain.calculator-ui.rules",
-        "domain.calculator-ui.state",
-        "domain.calculator-ui.symbols",
-        "domain.calculator-ui.terminology",
-        "domain.calculator-ui.tests",
-        "domain.calculator-ui.tldr",
-        "domain.calculator-ui.unknowns",
-        "domain.calculator-ui.workflows"
+        "domain.calculator.tldr"
       ]
     }
   ],
-  "task_guides": [
-    {
-      "id": "classic-calculator-look",
-      "path": "task-guides/classic-calculator-look.md",
-      "task": "Change the look to match classic calculator",
-      "required_views": [
-        "business",
-        "development",
-        "testing"
-      ],
-      "required_domains": [
-        "calculator-ui"
-      ],
-      "anchors": [
-        "task.classic-calculator-look.commands",
-        "task.classic-calculator-look.components",
-        "task.classic-calculator-look.domains",
-        "task.classic-calculator-look.evidence",
-        "task.classic-calculator-look.flow",
-        "task.classic-calculator-look.intent",
-        "task.classic-calculator-look.invariants",
-        "task.classic-calculator-look.paths",
-        "task.classic-calculator-look.risks",
-        "task.classic-calculator-look.roles",
-        "task.classic-calculator-look.tests",
-        "task.classic-calculator-look.tldr",
-        "task.classic-calculator-look.unknowns"
-      ]
-    }
-  ],
+  "task_guides": [],
   "evidence": {
     "path": "evidence/evidence.jsonl",
     "load_only_when_verification_is_needed": true
@@ -403,30 +365,37 @@
       "evidence/evidence.jsonl"
     ]
   },
+  "views_generated": [
+    "architecture",
+    "development",
+    "security",
+    "testing"
+  ],
   "source_tree_sha256": "sha256:637a9fc78478e48521306e9220a3d96ac77ec021f78f1d0f34359546486fcf33",
   "generation": {
     "parallel": true,
     "strategy": "view",
-    "max_workers": 3,
+    "max_workers": 4,
     "discovery_views": [
-      "business"
-    ],
-    "degraded_views": [
+      "architecture",
       "development",
+      "security",
       "testing"
     ],
-    "resumed_views": [
-      "business"
-    ],
+    "degraded_views": [],
+    "resumed_views": [],
     "pending_views_at_start": [
+      "architecture",
       "development",
+      "security",
       "testing"
     ]
   },
-  "generated_for_phase": "implementation",
+  "generated_for_phase": "verification",
   "requested_views": [
-    "business",
+    "architecture",
     "development",
+    "security",
     "testing"
   ]
 }
