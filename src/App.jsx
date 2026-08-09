@@ -20,7 +20,7 @@ export default function App() {
   const [memoryValue, setMemoryValue] = useState(0);
 
   // Customization & UI state
-  const [theme, setTheme] = useState(() => localStorage.getItem('apex_theme') || 'midnight');
+  const [theme, setTheme] = useState(() => localStorage.getItem('apex_theme') || 'classic');
   const [soundEnabled, setSoundEnabled] = useState(() => {
     const saved = localStorage.getItem('apex_sound');
     return saved !== null ? JSON.parse(saved) : true;

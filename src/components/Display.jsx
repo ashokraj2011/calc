@@ -24,7 +24,7 @@ export const Display = ({
   };
 
   return (
-    <div className="w-full bg-[var(--display-bg)] border border-[var(--display-border)] rounded-2xl p-4 sm:p-5 flex flex-col justify-between shadow-inner mb-4 transition-all relative overflow-hidden">
+    <div className="calculator-display w-full bg-[var(--display-bg)] border border-[var(--display-border)] rounded-[20px] p-4 sm:p-5 flex flex-col justify-between mb-4 transition-all relative overflow-hidden">
       {/* Top Status Bar */}
       <div className="flex items-center justify-between text-xs text-[var(--text-muted)] font-mono mb-2">
         <div className="flex items-center gap-2">

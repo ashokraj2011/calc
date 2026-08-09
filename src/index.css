@@ -1,41 +1,77 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
 
 :root {
-  /* Default Theme: Midnight Glass */
-  --bg-primary: #0b0f19;
-  --bg-gradient: radial-gradient(circle at 50% -20%, #1e293b, #0f172a 60%, #080d1a);
-  --card-bg: rgba(15, 23, 42, 0.75);
-  --card-border: rgba(255, 255, 255, 0.1);
-  --glass-blur: blur(20px);
-  --shadow-main: 0 20px 50px rgba(0, 0, 0, 0.5), inset 0 1px 1px rgba(255, 255, 255, 0.1);
-  
-  --text-main: #f8fafc;
-  --text-muted: #94a3b8;
-  --text-accent: #38bdf8;
-  
-  --display-bg: rgba(2, 6, 23, 0.85);
-  --display-border: rgba(56, 189, 248, 0.2);
+  /* Default Theme: Classic Desk */
+  --bg-primary: #efe7d8;
+  --bg-gradient: linear-gradient(135deg, #f8f1e4 0%, #e4d6bf 100%);
+  --card-bg: #f5ebdb;
+  --card-border: #b99f7c;
+  --glass-blur: blur(0px);
+  --shadow-main: 0 18px 35px rgba(88, 63, 24, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.6);
 
-  --btn-num-bg: rgba(30, 41, 59, 0.7);
-  --btn-num-hover: rgba(51, 65, 85, 0.9);
-  --btn-num-text: #f1f5f9;
+  --text-main: #2f2417;
+  --text-muted: #7c6d54;
+  --text-accent: #7b4b2a;
 
-  --btn-op-bg: rgba(14, 165, 233, 0.15);
-  --btn-op-hover: rgba(14, 165, 233, 0.3);
-  --btn-op-text: #38bdf8;
+  --display-bg: #fdf7eb;
+  --display-border: #7b4b2a;
 
-  --btn-func-bg: rgba(148, 163, 184, 0.12);
-  --btn-func-hover: rgba(148, 163, 184, 0.25);
-  --btn-func-text: #cbd5e1;
+  --btn-num-bg: #f8f2e8;
+  --btn-num-hover: #efe1c0;
+  --btn-num-text: #2f2417;
 
-  --btn-eq-bg: linear-gradient(135deg, #0284c7, #2563eb);
-  --btn-eq-hover: linear-gradient(135deg, #0369a1, #1d4ed8);
-  --btn-eq-text: #ffffff;
-  --btn-eq-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+  --btn-op-bg: #e2c08e;
+  --btn-op-hover: #d0aa6f;
+  --btn-op-text: #4c3114;
 
-  --active-indicator: #38bdf8;
+  --btn-func-bg: #d8ccb8;
+  --btn-func-hover: #c6b59d;
+  --btn-func-text: #544a3e;
+
+  --btn-eq-bg: linear-gradient(135deg, #7b4b2a, #5c3417);
+  --btn-eq-hover: linear-gradient(135deg, #63351a, #4a2b10);
+  --btn-eq-text: #fff8f0;
+  --btn-eq-shadow: 0 8px 20px rgba(77, 43, 16, 0.24);
+
+  --active-indicator: #7b4b2a;
 }
 
+/* Theme: Classic Desk */
+[data-theme='classic'] {
+  --bg-primary: #efe7d8;
+  --bg-gradient: linear-gradient(135deg, #f8f1e4 0%, #e4d6bf 100%);
+  --card-bg: #f5ebdb;
+  --card-border: #b99f7c;
+  --glass-blur: blur(0px);
+  --shadow-main: 0 18px 35px rgba(88, 63, 24, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+
+  --text-main: #2f2417;
+  --text-muted: #7c6d54;
+  --text-accent: #7b4b2a;
+
+  --display-bg: #fdf7eb;
+  --display-border: #7b4b2a;
+
+  --btn-num-bg: #f8f2e8;
+  --btn-num-hover: #efe1c0;
+  --btn-num-text: #2f2417;
+
+  --btn-op-bg: #e2c08e;
+  --btn-op-hover: #d0aa6f;
+  --btn-op-text: #4c3114;
+
+  --btn-func-bg: #d8ccb8;
+  --btn-func-hover: #c6b59d;
+  --btn-func-text: #544a3e;
+
+  --btn-eq-bg: linear-gradient(135deg, #7b4b2a, #5c3417);
+  --btn-eq-hover: linear-gradient(135deg, #63351a, #4a2b10);
+  --btn-eq-text: #fff8f0;
+  --btn-eq-shadow: 0 8px 20px rgba(77, 43, 16, 0.24);
+
+  --active-indicator: #7b4b2a;
+}
+ 
 /* Theme: Cyberpunk Neon */
 [data-theme='cyberpunk'] {
   --bg-primary: #090014;
@@ -243,30 +279,30 @@ body {
   position: relative;
   outline: none;
   border: 1px solid var(--card-border);
-  border-radius: 14px;
+  border-radius: 12px;
   font-family: 'Inter', sans-serif;
-  font-weight: 500;
-  font-size: 1.15rem;
+  font-weight: 600;
+  font-size: 1.05rem;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.15s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.15s ease, background-color 0.15s ease;
   overflow: hidden;
-  backdrop-filter: blur(8px);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7), 0 3px 0 rgba(88, 63, 24, 0.08);
 }
-
+ 
 .calc-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transform: translateY(-1px);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7), 0 5px 10px rgba(88, 63, 24, 0.12);
 }
-
+ 
 .calc-btn:active {
   transform: translateY(1px) scale(0.97);
-  box-shadow: none;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6), 0 1px 0 rgba(88, 63, 24, 0.08);
 }
-
-/* Glassmorphism Container */
+ 
+/* Classic Calculator Container */
 .glass-card {
   background: var(--card-bg);
   backdrop-filter: var(--glass-blur);
@@ -274,4 +310,20 @@ body {
   border: 1px solid var(--card-border);
   box-shadow: var(--shadow-main);
   border-radius: 28px;
+}
+
+.calculator-display {
+  background: linear-gradient(180deg, #fdf8ec 0%, #f2e6ca 100%);
+  border: 2px solid var(--display-border);
+  box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.08), inset 0 -2px 4px rgba(255, 255, 255, 0.75);
+}
+
+.classic-pill {
+  background: var(--btn-func-bg);
+  border: 1px solid var(--card-border);
+  color: var(--text-main);
+}
+
+.classic-tab {
+  border: 1px solid transparent;
 }
