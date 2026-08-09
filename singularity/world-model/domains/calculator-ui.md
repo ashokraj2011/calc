@@ -1,62 +1,57 @@
-> **Grounding** · calc @ `6bbcaf1739e310a06af5eb0a9643a54c511b70f8` · view: `domain.calculator-ui` · tier: `full`
-> **Generated** 09 August 2026 (2026-08-09T18:15:52Z) · depth: `quick` · builder `2.0`
+> **Grounding** · calc @ `8d115da4dc8005b437ccad387db0721b2ab06bd9` · view: `domain.calculator-ui` · tier: `full`
+> **Generated** 9 August 2026 (2026-08-09T18:59:39Z) · depth: `standard` · builder `2.0`
 > **Authoritative for:** file locations, entry points, commands, structural relationships as of the commit above.
 > **Not authoritative for:** current file contents. If this document conflicts with code you have read, trust the code and say so explicitly in your output.
 > **Unknowns are marked.** Do not resolve them by inference. If the repository has changed since the date above, treat locations as hints, not facts.
 
-
 ## TL;DR {#domain.calculator-ui.tldr}
 
-The calculator UI is the repository’s primary capability. It combines a single interactive shell with multiple specialized calculator experiences and a shared visual system. The most important design detail for a visual change is that the display, keypad, and global theme tokens are split across several files, while the current application state is centralized in `src/App.jsx`.
+This domain covers the calculator UI surface and the shared styling contract that makes the app feel like a calculator rather than a generic web app. It is the right grounding package for any task that changes look, interaction, branding, or the visible layout of the calculator.
+
+## Facts {#domain.calculator-ui.facts}
+
+```yaml
+owned_by: [src/App.jsx, src/components/, src/index.css]
+primary_states: [expression, result, activeMode, angleUnit, memoryValue, theme, history]
+main_surfaces: [display, standard-keypad, scientific-keypad, header, history-drawer, keyboard-modal]
+```
 
 ## Domain purpose {#domain.calculator-ui.purpose}
 
-This domain covers the calculator’s user-facing experience: arithmetic entry, specialized tools, history, memory, and appearance. It exists because the task concerns appearance and because the UI spans multiple components and modes. Evidence: E1, E3.
+The calculator UI domain defines how users enter expressions, see results, switch among calculator modes, and interact with the app shell. It binds the visual language to the functional core: the evaluator computes values, while the UI surfaces decide how those values feel to the user.
 
 ## Terminology {#domain.calculator-ui.terminology}
 
-- Expression: the typed calculation string.
-- Result: the evaluated output shown in the display.
-- Mode: one of standard, scientific, converter, financial, or grapher.
-- Theme: a preset visual system applied via CSS variables.
+- `activeMode` — the currently selected calculator surface (`standard`, `scientific`, `converter`, `financial`, `grapher`).
+- `expression` and `result` — the current input and the last displayed output.
+- `angleUnit` — DEG/RAD toggle used by scientific trig functions.
+- `memoryValue` — state used by memory operations (MC/MR/M+/M-).
+- `data-theme` — attribute applied to `<html>` that selects a theme.
 
-## Business rules {#domain.calculator-ui.rules}
+## Owning components {#domain.calculator-ui.ownership}
 
-The calculator should produce a predictable result for valid expressions, surface an error state for invalid ones, and preserve context between operations such as memory and history. These rules are implemented in the evaluator and in the app state container. Evidence: E2, E4.
-
-## Owning components {#domain.calculator-ui.components}
-
-- `src/App.jsx` owns state and mode selection.
-- `src/components/Display.jsx` owns the result display and utility buttons.
-- `src/components/StandardKeypad.jsx` owns the standard keypad layout.
-- `src/index.css` owns global visual tokens and theme presets. Evidence: E1, E3.
-
-## Entry points {#domain.calculator-ui.entrypoints}
-
-- `src/main.jsx` mounts the app.
-- `src/App.jsx` wires the main calculator shell.
+The domain is owned by the app shell in `src/App.jsx`, the mode-specific components in `src/components/`, and the shared visual system in `src/index.css`. The functional core in `src/utils/evaluator.js` is related but not the owner of the UI experience; it should remain stable unless the visible calculator semantics change.
 
 ## Main workflows {#domain.calculator-ui.workflows}
 
-1. Select a mode.
-2. Enter numbers and operators.
-3. Evaluate.
-4. Optionally use memory, history, or copy result.
+The main user workflow is keyboard/button-driven input followed by evaluation and display. The secondary workflow is theme selection, sound toggling, and history review. The current design uses a modern glass-card aesthetic and a shared token system rather than component-local styling.
 
 ## Data and state {#domain.calculator-ui.state}
 
-The app keeps expression text, result text, active mode, angle unit, sound setting, memory value, theme, and history in React state and browser storage. Evidence: E1, E4.
+The UI domain state is held in `App` and is persisted to browser storage. Relevant state values include `expression`, `result`, `lastEvaluated`, `angleUnit`, `memoryValue`, `theme`, `soundEnabled`, `history`, and modal visibility flags. A visual style change should preserve these state values and not alter their semantics.
 
-## Invariants {#domain.calculator-ui.invariants}
+## Entry points and change surfaces {#domain.calculator-ui.entrypoints}
 
-- Invalid expressions should resolve to an error state.
-- User preferences should persist across reloads via `localStorage`.
-- The display and keypad should remain functional across modes. Evidence: E2, E4.
+The most relevant entry points for a UI task are `src/index.css`, `src/components/Display.jsx`, `src/components/StandardKeypad.jsx`, `src/components/ScientificKeypad.jsx`, `src/components/Header.jsx`, and `src/App.jsx`. The classic-calculator change should start with the CSS variables and the display/keypad surfaces.
+
+## Tests {#domain.calculator-ui.tests}
+
+The current repository has no dedicated automated test suite for this domain. The available validation is build and lint, and the current manual verification path should include the standard mode surface, scientific mode surface, theme switching, and keyboard input.
 
 ## Change risks {#domain.calculator-ui.risks}
 
-A visual change can break the shared layout if it is applied to only one component. Because the app uses shared CSS variables, changing one theme preset can affect multiple components. Evidence: E3.
+A visual change can unintentionally affect all modes because the shared style tokens are reused by multiple surfaces. The scientific keypad also reuses the standard keypad, so a style override that is too broad could change both modes at once.
 
 ## Unknowns {#domain.calculator-ui.unknowns}
 
-The repository does not define a product style guide for a “classic calculator” look, so the implementation must infer the expected visual constraints from the task request.
+The repository does not define a design token set or a screenshot reference for the intended classic calculator look. That means any implementation should be treated as a design decision that needs explicit confirmation from the product owner or designer.

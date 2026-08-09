@@ -1,90 +1,143 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-08-09T18:15:52Z",
-  "repository_commit": "6bbcaf1739e310a06af5eb0a9643a54c511b70f8",
+  "generated_at": "2026-08-09T18:59:39Z",
+  "repository_commit": "8d115da4dc8005b437ccad387db0721b2ab06bd9",
   "entries": [
     {
       "glob": "src/App.jsx",
       "component_ids": [
-        "calculator-ui"
+        "calc-shell"
       ],
       "domains": [
         "calculator-ui"
       ],
       "views": [
-        "business"
+        "business",
+        "development",
+        "testing"
       ],
       "symbols": [
         "App",
-        "handleDigit",
-        "handleOperator",
-        "handleEquals",
-        "handleMemory"
+        "evaluateExpression"
       ],
       "tests": [],
       "anchors": [
-        "biz.capabilities",
         "biz.workflows",
-        "biz.start"
+        "dev.flows",
+        "test.map"
       ],
-      "notes": "Key shell for calculator mode selection, shared state, and runtime wiring."
-    },
-    {
-      "glob": "src/components/{Display,StandardKeypad,Header}.jsx",
-      "component_ids": [
-        "calculator-ui"
-      ],
-      "domains": [
-        "calculator-ui"
-      ],
-      "views": [
-        "business"
-      ],
-      "symbols": [
-        "Display",
-        "StandardKeypad",
-        "Header"
-      ],
-      "tests": [],
-      "anchors": [
-        "biz.capabilities",
-        "biz.start"
-      ],
-      "notes": "Primary UI surfaces for the calculator display, keypad, and title bar."
+      "notes": "Core state and mode orchestration for the calculator UI."
     },
     {
       "glob": "src/index.css",
       "component_ids": [
-        "theme-system"
+        "calc-style-system"
       ],
       "domains": [
         "calculator-ui"
       ],
       "views": [
-        "business"
+        "business",
+        "development",
+        "testing"
       ],
       "symbols": [
-        "data-theme",
-        "calc-btn",
-        "glass-card"
+        "--bg-primary",
+        ".calc-btn",
+        ".glass-card"
+      ],
+      "tests": [],
+      "anchors": [
+        "biz.rules",
+        "dev.impact",
+        "test.map"
+      ],
+      "notes": "Shared visual language and theme tokens for the calculator surface."
+    },
+    {
+      "glob": "src/components/Display.jsx",
+      "component_ids": [
+        "calc-display"
+      ],
+      "domains": [
+        "calculator-ui"
+      ],
+      "views": [
+        "business",
+        "development",
+        "testing"
+      ],
+      "symbols": [
+        "Display"
       ],
       "tests": [],
       "anchors": [
         "biz.capabilities",
-        "biz.start"
+        "dev.modules",
+        "test.map"
       ],
-      "notes": "Global theme variables and reusable visual styles for the calculator experience."
+      "notes": "Primary display surface for standard and scientific modes."
     },
     {
-      "glob": "src/utils/evaluator.js",
+      "glob": "src/components/StandardKeypad.jsx",
       "component_ids": [
-        "evaluation-engine"
+        "calc-standard-keypad"
       ],
       "domains": [
         "calculator-ui"
       ],
       "views": [
-        "business"
+        "business",
+        "development",
+        "testing"
+      ],
+      "symbols": [
+        "StandardKeypad"
+      ],
+      "tests": [],
+      "anchors": [
+        "biz.capabilities",
+        "dev.modules",
+        "test.map"
+      ],
+      "notes": "Main keypad surface for the standard calculator experience."
+    },
+    {
+      "glob": "src/components/ScientificKeypad.jsx",
+      "component_ids": [
+        "calc-scientific-keypad"
+      ],
+      "domains": [
+        "calculator-ui"
+      ],
+      "views": [
+        "business",
+        "development",
+        "testing"
+      ],
+      "symbols": [
+        "ScientificKeypad"
+      ],
+      "tests": [],
+      "anchors": [
+        "biz.capabilities",
+        "dev.modules",
+        "test.map"
+      ],
+      "notes": "Scientific keypad with function bar above the shared keypad."
+    },
+    {
+      "glob": "src/utils/evaluator.js",
+      "component_ids": [
+        "calc-evaluator"
+      ],
+      "domains": [
+        "calculator-ui"
+      ],
+      "views": [
+        "business",
+        "development",
+        "testing"
       ],
       "symbols": [
         "evaluateExpression",
@@ -93,14 +146,15 @@
       "tests": [],
       "anchors": [
         "biz.rules",
-        "biz.impact"
+        "dev.modules",
+        "test.map"
       ],
-      "notes": "Business-critical calculation semantics such as percentages and trig modes."
+      "notes": "The calculator logic core and the business rules for expression handling."
     }
   ],
   "fallback": {
     "views": [
-      "business"
+      "development"
     ],
     "anchors": [
       "core.map"
