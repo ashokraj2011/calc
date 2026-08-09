@@ -1739,7 +1739,14 @@
       "designSourceSets": [],
       "artifacts": [],
       "checks": [],
-      "remoteOutputs": []
+      "remoteOutputs": [],
+      "inputContext": {
+        "generation": 1,
+        "path": "singularity/work-items/WRK-890/context/inputs-verification-gen1.json",
+        "sha256": "b569480d4e2dc4401e3c8e2907f548df563f143bd76977293e242e9c5fa932e5",
+        "renderedSha256": "42a7d46a090111e951d3af21493afdbad37530cdf60face92045da94d007e38d",
+        "mode": "enforce"
+      }
     },
     "conformance": {
       "id": "conformance",
@@ -2495,6 +2502,94 @@
           "templateSha256": "5d0478b18c8fd14221e14c68e6238b909bccd6802a70262c416005354716c62c"
         },
         "createdAt": "2026-08-09T22:22:24.235Z"
+      }
+    },
+    {
+      "schemaVersion": 1,
+      "event": {
+        "schemaVersion": 1,
+        "eventId": "e5406f39-709f-4e1b-9626-440d17982cc2",
+        "type": "projection-reconciled",
+        "subject": {
+          "kind": "story",
+          "id": "WRK-890",
+          "branch": "WRK-890"
+        },
+        "phaseId": "verification",
+        "generation": 0,
+        "actor": {
+          "name": "Ashok Raj",
+          "email": "88361104+ashokraj2011@users.noreply.github.com",
+          "login": "ashokraj2011"
+        },
+        "agent": null,
+        "authorityGroup": null,
+        "payload": {
+          "projections": [
+            "singularity/work-items/WRK-890/context/ledger-intents/4e079e11-292d-4b4f-b107-7c3c0f5add3a.json",
+            "singularity/work-items/WRK-890/context/ledger-intents/ba09ec79-a8c9-4feb-9185-79558e949f5e.json",
+            "singularity/work-items/WRK-890/context/ledger-intents/c78a1ed6-b09b-4f9a-bfab-a57b489c5222.json",
+            "singularity/work-items/WRK-890/context/ledger-intents/7bb4c95e-594e-4553-9964-05438e9db9a4.json",
+            "singularity/work-items/WRK-890/context/ledger-intents/9267d7e0-e941-4507-ace7-d8e3a0dd7020.json",
+            "singularity/work-items/WRK-890/context/ledger-intents/3302ca40-a735-4ca7-a487-b3e4eb2ce766.json",
+            "singularity/work-items/WRK-890/context/ledger-intents/df5bba7d-57db-47fb-87a3-4426c15b18be.json"
+          ],
+          "decision": null,
+          "reviewPacketSha256": null
+        },
+        "sourceCommit": null,
+        "idempotencyKey": null,
+        "idempotencyHash": null,
+        "createdAt": "2026-08-09T22:38:16.363Z"
+      },
+      "ledgerIntent": {
+        "schemaVersion": 1,
+        "eventId": "e5406f39-709f-4e1b-9626-440d17982cc2",
+        "eventType": "projection-reconciled",
+        "capabilityId": "calc-app",
+        "subject": {
+          "branch": "WRK-890",
+          "generation": 0,
+          "phase": "verification",
+          "workId": "WRK-890",
+          "workType": "chore"
+        },
+        "actor": {
+          "name": "Ashok Raj",
+          "email": "88361104+ashokraj2011@users.noreply.github.com",
+          "githubLogin": "ashokraj2011",
+          "identityAssurance": "configured-local"
+        },
+        "agent": null,
+        "authorityGroup": null,
+        "payload": {
+          "capabilityMapSha256": "77ee9fd3c55345e31113fffb91dab4b0ffd95ced22cbd95d19ffa1d04bd7a479",
+          "capabilityPolicy": {
+            "protectedPaths": [],
+            "qualityCommands": [],
+            "requiredAuthorityGroups": [],
+            "requiredChecks": [],
+            "requiredWorldModelViews": []
+          },
+          "configPath": "singularity/workflow.yml",
+          "configSha256": "c71e8d4583a4303c75561c44902b837971681f740cc7025f9b55cb997589424f",
+          "lifecycleEventId": "e5406f39-709f-4e1b-9626-440d17982cc2",
+          "lifecyclePayload": {
+            "decision": null,
+            "projections": [
+              "singularity/work-items/WRK-890/context/ledger-intents/4e079e11-292d-4b4f-b107-7c3c0f5add3a.json",
+              "singularity/work-items/WRK-890/context/ledger-intents/ba09ec79-a8c9-4feb-9185-79558e949f5e.json",
+              "singularity/work-items/WRK-890/context/ledger-intents/c78a1ed6-b09b-4f9a-bfab-a57b489c5222.json",
+              "singularity/work-items/WRK-890/context/ledger-intents/7bb4c95e-594e-4553-9964-05438e9db9a4.json",
+              "singularity/work-items/WRK-890/context/ledger-intents/9267d7e0-e941-4507-ace7-d8e3a0dd7020.json",
+              "singularity/work-items/WRK-890/context/ledger-intents/3302ca40-a735-4ca7-a487-b3e4eb2ce766.json",
+              "singularity/work-items/WRK-890/context/ledger-intents/df5bba7d-57db-47fb-87a3-4426c15b18be.json"
+            ],
+            "reviewPacketSha256": null
+          },
+          "templateSha256": "ced4ce8d532e509658558f5bf848bd6df1a03d6c278c84ed8512ac667095fd98"
+        },
+        "createdAt": "2026-08-09T22:38:16.373Z"
       }
     }
   ],
