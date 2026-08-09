@@ -1,15 +1,17 @@
 {
   "schema_version": "2.0",
-  "repository_commit": "6bbcaf1739e310a06af5eb0a9643a54c511b70f8",
+  "repository_commit": "8d115da4dc8005b437ccad387db0721b2ab06bd9",
   "repository_branch": "WRK-890",
   "working_tree_clean": false,
-  "generated_at": "2026-08-09T18:07:53.233Z",
+  "generated_at": "2026-08-09T18:45:04.185Z",
   "generated_date": "9 August 2026",
   "builder_version": "2.0",
   "builder_prompt_sha256": "d607ed17ba7e0ad45acd142b62b57c32272e21dfec50866d4bee5105f2fd9169",
-  "analysis_depth": "quick",
+  "analysis_depth": "standard",
   "views_generated": [
-    "business"
+    "business",
+    "development",
+    "testing"
   ],
   "core": {
     "summary": "core/summary.md",
@@ -27,12 +29,11 @@
       "core.risks",
       "core.unknowns",
       "core.freshness",
-      "core.routing",
-      "core.summary"
+      "core.routing"
     ],
     "bytes": {
-      "summary": 5178,
-      "brief": 1379
+      "summary": 4617,
+      "brief": 1212
     },
     "recommended_for_all_agents": true
   },
@@ -42,25 +43,19 @@
       "brief_path": "views/business.brief.md",
       "generated": true,
       "bytes": {
-        "full": 6646,
-        "brief": 1232
+        "full": 6727,
+        "brief": 1180
       },
       "anchors": [
         "biz.tldr",
         "biz.facts",
         "biz.capabilities",
-        "biz.actors",
         "biz.workflows",
-        "biz.entities",
         "biz.rules",
-        "biz.failure",
-        "biz.compliance",
         "biz.impact",
-        "biz.unknowns",
-        "biz.questions",
         "biz.start",
         "biz.limits",
-        "biz.summary"
+        "biz.unknowns"
       ],
       "load_when": [
         "business capability analysis",
@@ -71,12 +66,52 @@
     "development": {
       "path": "views/development.md",
       "brief_path": "views/development.brief.md",
-      "generated": false,
+      "generated": true,
+      "bytes": {
+        "full": 6479,
+        "brief": 1170
+      },
+      "anchors": [
+        "dev.tldr",
+        "dev.facts",
+        "dev.setup",
+        "dev.tree",
+        "dev.modules",
+        "dev.flows",
+        "dev.impact",
+        "dev.hotspots",
+        "dev.start",
+        "dev.limits"
+      ],
       "load_when": [
         "implementation",
         "debugging",
         "refactoring",
         "code review"
+      ]
+    },
+    "testing": {
+      "path": "views/testing.md",
+      "brief_path": "views/testing.brief.md",
+      "generated": true,
+      "bytes": {
+        "full": 5421,
+        "brief": 1094
+      },
+      "anchors": [
+        "test.tldr",
+        "test.facts",
+        "test.strategy",
+        "test.map",
+        "test.commands",
+        "test.gaps",
+        "test.start",
+        "test.limits"
+      ],
+      "load_when": [
+        "test creation",
+        "regression analysis",
+        "quality validation"
       ]
     },
     "architecture": {
@@ -87,16 +122,6 @@
         "system design",
         "dependency analysis",
         "cross-component change"
-      ]
-    },
-    "testing": {
-      "path": "views/testing.md",
-      "brief_path": "views/testing.brief.md",
-      "generated": false,
-      "load_when": [
-        "test creation",
-        "regression analysis",
-        "quality validation"
       ]
     },
     "release": {
@@ -144,13 +169,12 @@
     },
     "design": {
       "views": [
-        "architecture"
+        "development"
       ],
       "tier": "full"
     },
     "implementation-spec": {
       "views": [
-        "architecture",
         "development"
       ],
       "tier": "full"
@@ -169,8 +193,7 @@
     },
     "conformance": {
       "views": [
-        "testing",
-        "security"
+        "testing"
       ],
       "tier": "brief"
     }
@@ -190,8 +213,7 @@
     },
     "architect": {
       "views": [
-        "architecture",
-        "security"
+        "development"
       ],
       "tier": "full"
     },
@@ -209,19 +231,19 @@
     },
     "security": {
       "views": [
-        "security"
+        "development"
       ],
-      "tier": "full"
+      "tier": "brief"
     },
     "operations": {
       "views": [
-        "operations"
+        "development"
       ],
-      "tier": "full"
+      "tier": "brief"
     },
     "delivery-manager": {
       "views": [
-        "release"
+        "development"
       ],
       "tier": "brief"
     }
@@ -233,28 +255,21 @@
     {
       "id": "calculator-ui",
       "path": "domains/calculator-ui.md",
-      "summary": "Calculator user experience and presentation layer for arithmetic, scientific, and specialized modes.",
+      "summary": "The shared UI and styling domain for the calculator experience.",
       "relevant_views": [
-        "business"
+        "business",
+        "development",
+        "testing"
       ],
       "keywords": [
         "calculator",
         "ui",
+        "theme",
         "display",
-        "theme"
+        "keypad"
       ],
       "anchors": [
-        "domain.calculator-ui.tldr",
-        "domain.calculator-ui.purpose",
-        "domain.calculator-ui.terminology",
-        "domain.calculator-ui.rules",
-        "domain.calculator-ui.components",
-        "domain.calculator-ui.entrypoints",
-        "domain.calculator-ui.workflows",
-        "domain.calculator-ui.state",
-        "domain.calculator-ui.invariants",
-        "domain.calculator-ui.risks",
-        "domain.calculator-ui.unknowns"
+        "domain.calculator-ui.tldr"
       ]
     }
   ],
@@ -264,10 +279,19 @@
       "path": "task-guides/classic-calculator-look.md",
       "task": "Change the look to match classic calculator",
       "required_views": [
-        "business"
+        "development",
+        "testing"
       ],
       "required_domains": [
         "calculator-ui"
+      ],
+      "anchors": [
+        "task.classic-calculator-look.tldr",
+        "task.classic-calculator-look.context",
+        "task.classic-calculator-look.implementation",
+        "task.classic-calculator-look.tests",
+        "task.classic-calculator-look.risks",
+        "task.classic-calculator-look.unknowns"
       ]
     }
   ],
@@ -287,7 +311,7 @@
       "agent_type": "architect",
       "load": [
         "core/summary.brief.md",
-        "views/architecture.md"
+        "views/development.md"
       ]
     },
     {
@@ -303,13 +327,6 @@
         "core/summary.brief.md",
         "views/testing.md"
       ]
-    },
-    {
-      "agent_type": "release",
-      "load": [
-        "core/summary.brief.md",
-        "views/release.md"
-      ]
     }
   ],
   "budget_hints": {
@@ -318,27 +335,38 @@
     ],
     "single_phase_typical": [
       "core/summary.brief.md",
-      "views/business.md"
+      "views/<view>.md"
     ],
     "deep_investigation": [
       "core/summary.md",
-      "views/business.md",
-      "domains/calculator-ui.md",
+      "views/<view>.md",
+      "domains/<domain>.md",
       "evidence/evidence.jsonl"
     ]
   },
   "source_tree_sha256": "sha256:2f067828e6f939d6a2368051d7ab4a453b8b9aeb96c91501301ad253bf803aab",
   "generation": {
-    "parallel": false,
+    "parallel": true,
     "strategy": "view",
-    "max_workers": 1,
-    "discovery_views": [],
-    "degraded_views": [],
+    "max_workers": 3,
+    "discovery_views": [
+      "development",
+      "testing"
+    ],
+    "degraded_views": [
+      "business"
+    ],
     "resumed_views": [],
-    "pending_views_at_start": []
+    "pending_views_at_start": [
+      "business",
+      "development",
+      "testing"
+    ]
   },
-  "generated_for_phase": "intake",
+  "generated_for_phase": "implementation",
   "requested_views": [
-    "business"
+    "business",
+    "development",
+    "testing"
   ]
 }

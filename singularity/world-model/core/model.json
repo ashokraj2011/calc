@@ -1,60 +1,78 @@
 {
   "schema_version": "2.0",
-  "generated_at": "2026-08-09T18:15:52Z",
-  "generated_date": "09 August 2026",
+  "generated_at": "2026-08-09T18:59:39Z",
+  "generated_date": "9 August 2026",
   "builder_version": "2.0",
   "builder_prompt_sha256": "unknown",
-  "analysis_depth": "quick",
+  "analysis_depth": "standard",
   "repository": {
     "name": "calc",
-    "root": "/private/var/folders/_j/yp8zv9w91rd44ymrzfpd_kcw0000gn/T/singularity-flow-world-model-1Aq8AD/repository",
-    "branch": "WRK-890",
-    "commit": "6bbcaf1739e310a06af5eb0a9643a54c511b70f8",
+    "root": "/private/var/folders/_j/yp8zv9w91rd44ymrzfpd_kcw0000gn/T/singularity-flow-world-model-q5O45l/repository",
+    "branch": "HEAD",
+    "commit": "8d115da4dc8005b437ccad387db0721b2ab06bd9",
     "working_tree_clean": false,
     "repository_kind": "application",
     "languages": [
       "JavaScript",
-      "CSS",
-      "HTML"
+      "JSX",
+      "CSS"
     ],
     "package_roots": [
       "."
     ]
   },
   "purpose": {
-    "summary": "Browser-based calculator app with standard, scientific, converter, financial, and grapher modes.",
+    "summary": "A browser-based multi-mode calculator app with standard, scientific, converter, financial, and graphing features.",
     "status": "observed",
     "confidence": "high",
     "evidence_ids": [
-      "E1",
-      "E5"
+      "e-core-repo",
+      "e-core-entrypoints"
     ]
   },
   "components": [
     {
-      "id": "calculator-ui",
-      "name": "Calculator UI shell",
-      "kind": "frontend",
-      "purpose": "Renders the calculator modes and manages state for expressions, history, and theme settings.",
+      "id": "calc-shell",
+      "name": "Calculator shell",
+      "kind": "application",
+      "purpose": "Owns calculator state, mode selection, persistence, and the active mode UI.",
       "paths": [
-        "src/App.jsx",
-        "src/components"
+        "src/App.jsx"
       ],
-      "depends_on": [],
+      "depends_on": [
+        "calc-style-system",
+        "calc-evaluator"
+      ],
       "entrypoint_ids": [
-        "main-entry"
+        "entry-app"
       ],
       "confidence": "high",
       "evidence_ids": [
-        "E1",
-        "E3"
+        "e-core-entrypoints",
+        "e-display-surface",
+        "e-standard-keypad"
       ]
     },
     {
-      "id": "evaluation-engine",
+      "id": "calc-style-system",
+      "name": "Shared styling system",
+      "kind": "frontend",
+      "purpose": "Provides the visual language, themes, and button/display styling for the UI.",
+      "paths": [
+        "src/index.css"
+      ],
+      "depends_on": [],
+      "entrypoint_ids": [],
+      "confidence": "high",
+      "evidence_ids": [
+        "e-style-system"
+      ]
+    },
+    {
+      "id": "calc-evaluator",
       "name": "Expression evaluator",
       "kind": "library",
-      "purpose": "Parses and formats calculator expressions, percentages, factorials, and trigonometric operations.",
+      "purpose": "Sanitizes and evaluates expressions for calculator mode behavior.",
       "paths": [
         "src/utils/evaluator.js"
       ],
@@ -62,73 +80,116 @@
       "entrypoint_ids": [],
       "confidence": "high",
       "evidence_ids": [
-        "E2"
+        "e-evaluator"
       ]
     },
     {
-      "id": "theme-system",
-      "name": "Theme and styling system",
+      "id": "calc-display",
+      "name": "Calculator display",
       "kind": "frontend",
-      "purpose": "Provides the calculator's visual language and theme presets.",
+      "purpose": "Renders the current expression and result, plus display actions.",
       "paths": [
-        "src/index.css",
-        "src/App.css"
+        "src/components/Display.jsx"
       ],
       "depends_on": [
-        "calculator-ui"
+        "calc-style-system"
       ],
       "entrypoint_ids": [],
       "confidence": "high",
       "evidence_ids": [
-        "E3"
+        "e-display-surface"
+      ]
+    },
+    {
+      "id": "calc-standard-keypad",
+      "name": "Standard keypad",
+      "kind": "frontend",
+      "purpose": "Renders the standard numeric and operator layout.",
+      "paths": [
+        "src/components/StandardKeypad.jsx"
+      ],
+      "depends_on": [
+        "calc-style-system"
+      ],
+      "entrypoint_ids": [],
+      "confidence": "high",
+      "evidence_ids": [
+        "e-standard-keypad"
+      ]
+    },
+    {
+      "id": "calc-scientific-keypad",
+      "name": "Scientific keypad",
+      "kind": "frontend",
+      "purpose": "Renders the scientific function bar and reuses the standard keypad layout.",
+      "paths": [
+        "src/components/ScientificKeypad.jsx"
+      ],
+      "depends_on": [
+        "calc-style-system",
+        "calc-standard-keypad"
+      ],
+      "entrypoint_ids": [],
+      "confidence": "high",
+      "evidence_ids": [
+        "e-scientific-keypad"
       ]
     }
   ],
   "entrypoints": [
     {
-      "id": "main-entry",
-      "name": "React entrypoint",
+      "id": "entry-app",
+      "name": "App bootstrap",
       "kind": "frontend",
-      "location": "src/main.jsx:1-10",
-      "invocation": "Vite mounts the app into the browser root",
-      "component_id": "calculator-ui",
+      "location": "index.html:1-14",
+      "invocation": "Loads src/main.jsx and renders App",
+      "component_id": "calc-shell",
       "evidence_ids": [
-        "E1"
+        "e-core-entrypoints"
       ]
     }
   ],
   "standard_commands": [
     {
       "command": "npm run dev",
-      "purpose": "start local dev server",
+      "purpose": "start local Vite dev server",
       "source": "package.json:6-10"
     },
     {
       "command": "npm run build",
-      "purpose": "create production build",
+      "purpose": "production build",
       "source": "package.json:6-10"
     },
     {
       "command": "npm run lint",
-      "purpose": "run eslint",
+      "purpose": "ESLint validation",
+      "source": "package.json:6-10"
+    },
+    {
+      "command": "npm run preview",
+      "purpose": "preview production build",
       "source": "package.json:6-10"
     }
   ],
   "risks": [
-    "Visual styling is distributed across CSS files and component classes, so visual changes require multiple edits.",
-    "No automated tests are defined in the package manifest.",
-    "The app stores user preferences and history locally in the browser, so state changes are not centrally managed."
+    "The visual system is spread across CSS and several React components.",
+    "There is no automated test harness.",
+    "Lint currently fails with pre-existing ESLint issues."
   ],
   "unknowns": [
-    "No product requirements or business workflow documentation exists in this repository.",
-    "No deployment or backend architecture is present because the app is client-side only."
+    "The exact visual target for a classic calculator look is not defined in the repository.",
+    "The repository does not define formal acceptance criteria for UI changes."
   ],
   "available_views": [
     "core",
-    "business"
+    "business",
+    "development",
+    "testing"
   ],
   "views_generated": [
     "core",
-    "business"
+    "business",
+    "development",
+    "testing"
   ]
 }

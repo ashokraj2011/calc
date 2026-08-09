@@ -1,77 +1,63 @@
-> **Grounding** · calc @ `6bbcaf1739e310a06af5eb0a9643a54c511b70f8` · view: `task.classic-calculator-look` · tier: `full`
-> **Generated** 09 August 2026 (2026-08-09T18:15:52Z) · depth: `quick` · builder `2.0`
+> **Grounding** · calc @ `8d115da4dc8005b437ccad387db0721b2ab06bd9` · view: `task.classic-calculator-look` · tier: `full`
+> **Generated** 9 August 2026 (2026-08-09T18:59:39Z) · depth: `standard` · builder `2.0`
 > **Authoritative for:** file locations, entry points, commands, structural relationships as of the commit above.
 > **Not authoritative for:** current file contents. If this document conflicts with code you have read, trust the code and say so explicitly in your output.
 > **Unknowns are marked.** Do not resolve them by inference. If the repository has changed since the date above, treat locations as hints, not facts.
 
-
 ## TL;DR {#task.classic-calculator-look.tldr}
 
-The requested task is to change the calculator’s appearance to feel more like a classic calculator. The work is primarily visual and should be implemented through the shared styling layer and the display/keypad components rather than by introducing a new architecture. The most relevant files are `src/index.css`, `src/components/Display.jsx`, `src/components/StandardKeypad.jsx`, and `src/components/Header.jsx`. The main risk is that the current app uses a modern glassmorphism system across multiple modes, so a classic look likely requires edits in several places to remain consistent.
+This guide is the smallest grounding package for the task “Change the look to match classic calculator.” It points to the shared styling contract and the UI surfaces that should be adjusted first, while preserving the current calculation behavior.
 
-## Task interpretation {#task.classic-calculator-look.interpretation}
+## Task interpretation {#task.classic-calculator-look.context}
 
-The task is about presentation rather than calculation behavior. The current implementation already supports calculator workflows; the change is to make the UI resemble a classic calculator. The task should therefore preserve existing functions, keyboard handling, and state management while changing the visual language. Evidence: E1, E3.
+The task is a presentation change rather than a calculator-behavior change. The implementation should focus on appearance, layout, and visual affordances while preserving the current input, evaluation, and history flows. The precise target style is not encoded in the repository, so the change should be guided by an explicit visual reference if one exists.
 
-## Relevant roles {#task.classic-calculator-look.roles}
+## Relevant roles {#task.classic-calculator-look.context}
 
-- UI developer: should edit styles and component classes.
-- Product or design reviewer: should confirm that the new look is consistent with the requested “classic calculator” feel.
+This task is primarily a product/design implementation task with developer execution. It intersects the business view because the product feel is being changed, the development view because the implementation files are known, and the testing view because the change needs manual verification until tests are added.
 
-## Relevant components {#task.classic-calculator-look.components}
+## Relevant components {#task.classic-calculator-look.context}
 
-- `src/components/Display.jsx`: display panel and utility buttons.
-- `src/components/StandardKeypad.jsx`: standard button layout and operators.
-- `src/components/Header.jsx`: title bar and mode switcher.
-- `src/index.css`: global theme tokens and base button styling. Evidence: E3.
+- `src/index.css` — primary styling entry point and theme definitions.
+- `src/components/Display.jsx` — display panel and action buttons.
+- `src/components/StandardKeypad.jsx` — standard keypad buttons.
+- `src/components/ScientificKeypad.jsx` — scientific keypad and function bar.
+- `src/components/Header.jsx` — branding and mode chrome.
 
-## Relevant domain models {#task.classic-calculator-look.domains}
+## Relevant domain models {#task.classic-calculator-look.context}
 
-- `domains/calculator-ui.md` covers the shared UI and state concerns for this change.
+- `domains/calculator-ui.md` — the shared UI domain for this task.
 
-## Primary paths and symbols {#task.classic-calculator-look.paths}
+## Primary paths and symbols {#task.classic-calculator-look.implementation}
 
-- `src/index.css`: global theme variables and shared button classes.
-- `src/components/Display.jsx`: `Display` component.
-- `src/components/StandardKeypad.jsx`: `StandardKeypad` component.
-- `src/components/Header.jsx`: `Header` component.
+Start with CSS custom properties like `--bg-primary`, `--card-bg`, `--display-bg`, `--btn-num-bg`, `--btn-op-bg`, `--btn-func-bg`, and `--btn-eq-bg` in `src/index.css`. Then inspect the reusable components `Display`, `StandardKeypad`, `ScientificKeypad`, and `Header`. Keep the evaluator in `src/utils/evaluator.js` unchanged unless the UI task requires a new symbol or a new input contract.
 
-## Expected change flow {#task.classic-calculator-look.flow}
+## Expected change flow {#task.classic-calculator-look.implementation}
 
-1. Review the current theme tokens and component class names.
-2. Replace or override the modern glassmorphism styling with a flatter, classic calculator palette.
-3. Update the display and keypad components to match the new visual language.
-4. Verify that the standard, scientific, and other modes still load and remain usable.
+1. Decide whether the styling should apply only to standard mode or to the broader calculator shell.
+2. Adjust the shared theme tokens in `src/index.css` to establish the classic look.
+3. Tune the display and keypad components to match the new palette, spacing, and button treatment.
+4. Recheck the header and mode switcher so they still feel coherent with the new style.
+5. Verify the core calculator functions still work in the browser.
 
-## Contracts and invariants to preserve {#task.classic-calculator-look.contracts}
+## Contracts and invariants to preserve {#task.classic-calculator-look.implementation}
 
-- Existing calculation behavior must remain unchanged.
-- The app must keep its current mode switching and keyboard interaction behavior.
-- Theme and history persistence remain intact. Evidence: E1, E4.
+Preserve the current expression/evaluation contract, the local storage keys for theme/history/sound, and the existing keyboard shortcuts. Do not change the `data-theme` contract or break the app’s ability to evaluate expressions.
 
 ## Tests to add or update {#task.classic-calculator-look.tests}
 
-No automated tests exist for the UI. The safest validation is a manual run of the app and a review of the rendered calculator in the browser. Evidence: E5.
+Because no automated UI tests exist today, add a small manual checklist first: standard mode render, scientific mode render, clear/backspace, equals, theme switching, history drawer, and copy action. If a test harness is introduced later, prioritize a smoke test for `App` and a unit test for `evaluateExpression`.
 
-## Commands to run {#task.classic-calculator-look.commands}
+## Commands to run {#task.classic-calculator-look.tests}
 
-- `npm run dev` to review the UI locally.
-- `npm run build` to confirm the app still compiles.
+- `npm run build` — verify the app still bundles.
+- `npm run lint` — note current repository debt, but avoid conflating pre-existing errors with this UI task.
+- `npm run dev` — manual browser verification.
 
 ## Risks {#task.classic-calculator-look.risks}
 
-- The current app uses a shared visual system; a classic look may require touching several files.
-- If the change is limited to one file, the modern styling may still leak into other calculator modes.
+The main risk is that a broad theme change will unintentionally affect scientific mode, the mode tabs, or the grapher surface. Another risk is that design changes will be implemented in the wrong layer, resulting in inconsistent visual behavior.
 
 ## Unknowns requiring human confirmation {#task.classic-calculator-look.unknowns}
 
-- The repository does not define a classic-calculator visual spec.
-- The desired level of fidelity (minimal theme change versus full layout rewrite) is not specified.
-
-## Where to start {#task.classic-calculator-look.start}
-
-Begin with `src/index.css` for the global theme tokens and then inspect `src/components/Display.jsx` and `src/components/StandardKeypad.jsx` to align the display and buttons with the new look.
-
-## Questions this guide does not answer {#task.classic-calculator-look.limits}
-
-This guide does not define the final visual spec or replace design review. It provides the implementation starting points and the most important constraints.
+The exact visual target for “classic calculator” is not encoded in the repository. Confirm whether the task should apply to standard mode only or to the whole calculator shell, including header branding and tabs.
