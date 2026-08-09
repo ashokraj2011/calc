@@ -1,0 +1,134 @@
+{
+  "schema_version": "2.0",
+  "generated_at": "2026-08-09T18:15:52Z",
+  "generated_date": "09 August 2026",
+  "builder_version": "2.0",
+  "builder_prompt_sha256": "unknown",
+  "analysis_depth": "quick",
+  "repository": {
+    "name": "calc",
+    "root": "/private/var/folders/_j/yp8zv9w91rd44ymrzfpd_kcw0000gn/T/singularity-flow-world-model-1Aq8AD/repository",
+    "branch": "WRK-890",
+    "commit": "6bbcaf1739e310a06af5eb0a9643a54c511b70f8",
+    "working_tree_clean": false,
+    "repository_kind": "application",
+    "languages": [
+      "JavaScript",
+      "CSS",
+      "HTML"
+    ],
+    "package_roots": [
+      "."
+    ]
+  },
+  "purpose": {
+    "summary": "Browser-based calculator app with standard, scientific, converter, financial, and grapher modes.",
+    "status": "observed",
+    "confidence": "high",
+    "evidence_ids": [
+      "E1",
+      "E5"
+    ]
+  },
+  "components": [
+    {
+      "id": "calculator-ui",
+      "name": "Calculator UI shell",
+      "kind": "frontend",
+      "purpose": "Renders the calculator modes and manages state for expressions, history, and theme settings.",
+      "paths": [
+        "src/App.jsx",
+        "src/components"
+      ],
+      "depends_on": [],
+      "entrypoint_ids": [
+        "main-entry"
+      ],
+      "confidence": "high",
+      "evidence_ids": [
+        "E1",
+        "E3"
+      ]
+    },
+    {
+      "id": "evaluation-engine",
+      "name": "Expression evaluator",
+      "kind": "library",
+      "purpose": "Parses and formats calculator expressions, percentages, factorials, and trigonometric operations.",
+      "paths": [
+        "src/utils/evaluator.js"
+      ],
+      "depends_on": [],
+      "entrypoint_ids": [],
+      "confidence": "high",
+      "evidence_ids": [
+        "E2"
+      ]
+    },
+    {
+      "id": "theme-system",
+      "name": "Theme and styling system",
+      "kind": "frontend",
+      "purpose": "Provides the calculator's visual language and theme presets.",
+      "paths": [
+        "src/index.css",
+        "src/App.css"
+      ],
+      "depends_on": [
+        "calculator-ui"
+      ],
+      "entrypoint_ids": [],
+      "confidence": "high",
+      "evidence_ids": [
+        "E3"
+      ]
+    }
+  ],
+  "entrypoints": [
+    {
+      "id": "main-entry",
+      "name": "React entrypoint",
+      "kind": "frontend",
+      "location": "src/main.jsx:1-10",
+      "invocation": "Vite mounts the app into the browser root",
+      "component_id": "calculator-ui",
+      "evidence_ids": [
+        "E1"
+      ]
+    }
+  ],
+  "standard_commands": [
+    {
+      "command": "npm run dev",
+      "purpose": "start local dev server",
+      "source": "package.json:6-10"
+    },
+    {
+      "command": "npm run build",
+      "purpose": "create production build",
+      "source": "package.json:6-10"
+    },
+    {
+      "command": "npm run lint",
+      "purpose": "run eslint",
+      "source": "package.json:6-10"
+    }
+  ],
+  "risks": [
+    "Visual styling is distributed across CSS files and component classes, so visual changes require multiple edits.",
+    "No automated tests are defined in the package manifest.",
+    "The app stores user preferences and history locally in the browser, so state changes are not centrally managed."
+  ],
+  "unknowns": [
+    "No product requirements or business workflow documentation exists in this repository.",
+    "No deployment or backend architecture is present because the app is client-side only."
+  ],
+  "available_views": [
+    "core",
+    "business"
+  ],
+  "views_generated": [
+    "core",
+    "business"
+  ]
+}

@@ -1,0 +1,109 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-08-09T18:15:52Z",
+  "repository_commit": "6bbcaf1739e310a06af5eb0a9643a54c511b70f8",
+  "entries": [
+    {
+      "glob": "src/App.jsx",
+      "component_ids": [
+        "calculator-ui"
+      ],
+      "domains": [
+        "calculator-ui"
+      ],
+      "views": [
+        "business"
+      ],
+      "symbols": [
+        "App",
+        "handleDigit",
+        "handleOperator",
+        "handleEquals",
+        "handleMemory"
+      ],
+      "tests": [],
+      "anchors": [
+        "biz.capabilities",
+        "biz.workflows",
+        "biz.start"
+      ],
+      "notes": "Key shell for calculator mode selection, shared state, and runtime wiring."
+    },
+    {
+      "glob": "src/components/{Display,StandardKeypad,Header}.jsx",
+      "component_ids": [
+        "calculator-ui"
+      ],
+      "domains": [
+        "calculator-ui"
+      ],
+      "views": [
+        "business"
+      ],
+      "symbols": [
+        "Display",
+        "StandardKeypad",
+        "Header"
+      ],
+      "tests": [],
+      "anchors": [
+        "biz.capabilities",
+        "biz.start"
+      ],
+      "notes": "Primary UI surfaces for the calculator display, keypad, and title bar."
+    },
+    {
+      "glob": "src/index.css",
+      "component_ids": [
+        "theme-system"
+      ],
+      "domains": [
+        "calculator-ui"
+      ],
+      "views": [
+        "business"
+      ],
+      "symbols": [
+        "data-theme",
+        "calc-btn",
+        "glass-card"
+      ],
+      "tests": [],
+      "anchors": [
+        "biz.capabilities",
+        "biz.start"
+      ],
+      "notes": "Global theme variables and reusable visual styles for the calculator experience."
+    },
+    {
+      "glob": "src/utils/evaluator.js",
+      "component_ids": [
+        "evaluation-engine"
+      ],
+      "domains": [
+        "calculator-ui"
+      ],
+      "views": [
+        "business"
+      ],
+      "symbols": [
+        "evaluateExpression",
+        "formatNumber"
+      ],
+      "tests": [],
+      "anchors": [
+        "biz.rules",
+        "biz.impact"
+      ],
+      "notes": "Business-critical calculation semantics such as percentages and trig modes."
+    }
+  ],
+  "fallback": {
+    "views": [
+      "business"
+    ],
+    "anchors": [
+      "core.map"
+    ]
+  }
+}
