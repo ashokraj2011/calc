@@ -1,83 +1,61 @@
 {
   "schema_version": "2.0",
-  "generated_at": "2026-08-09T21:05:23Z",
+  "generated_at": "2026-08-09T22:30:28Z",
   "generated_date": "09 August 2026",
   "builder_version": "2.0",
   "builder_prompt_sha256": "unknown",
-  "analysis_depth": "standard",
+  "analysis_depth": "quick",
   "repository": {
     "name": "calc",
-    "root": "/private/var/folders/_j/yp8zv9w91rd44ymrzfpd_kcw0000gn/T/singularity-flow-world-model-lG68YG/repository",
+    "root": "/private/var/folders/_j/yp8zv9w91rd44ymrzfpd_kcw0000gn/T/singularity-flow-world-model-AnHra2/repository",
     "branch": "unknown",
-    "commit": "dfeda6775cb0c4abe77e42605fcc6bdd1bf78f3c",
+    "commit": "0d8703c49dc3ca79c684d93cc42220c922d7cd15",
     "working_tree_clean": false,
     "repository_kind": "application",
     "languages": [
-      "JavaScript",
-      "JSX",
-      "CSS"
+      "javascript",
+      "jsx"
     ],
     "package_roots": [
       "."
     ]
   },
   "purpose": {
-    "summary": "A React/Vite calculator app with shared theme-driven UI, multiple calculator modes, and a math evaluator.",
+    "summary": "ApexCalc is a browser-based calculator app with standard, scientific, converter, financial, and graphing modes.",
     "status": "observed",
     "confidence": "high",
     "evidence_ids": [
-      "evi-app-shell-01",
-      "evi-theme-01",
-      "evi-evaluator-01"
+      "e-core-purpose"
     ]
   },
   "components": [
     {
-      "id": "calculator-shell",
-      "name": "App shell and calculator state",
-      "kind": "frontend",
-      "purpose": "Owns calculator mode, state, history, keyboard shortcuts, and theme persistence.",
+      "id": "app-shell",
+      "name": "ApexCalc app shell",
+      "kind": "application",
+      "purpose": "Routes modes, owns state, handles history, keyboard shortcuts, and overlays.",
       "paths": [
         "src/App.jsx"
       ],
       "depends_on": [
-        "theme-system",
-        "expression-evaluator"
+        "calculator-engine",
+        "mode-components"
       ],
       "entrypoint_ids": [
-        "app-entry"
+        "entry-html",
+        "entry-main",
+        "entry-app"
       ],
       "confidence": "high",
       "evidence_ids": [
-        "evi-app-shell-01"
+        "e-app-shell"
       ]
     },
     {
-      "id": "theme-system",
-      "name": "Shared UI theme system",
-      "kind": "frontend",
-      "purpose": "Provides CSS tokens and component classes for the calculator UI.",
-      "paths": [
-        "src/index.css",
-        "src/components/Header.jsx",
-        "src/components/Display.jsx",
-        "src/components/StandardKeypad.jsx"
-      ],
-      "depends_on": [],
-      "entrypoint_ids": [],
-      "confidence": "high",
-      "evidence_ids": [
-        "evi-theme-01",
-        "evi-header-01",
-        "evi-display-01",
-        "evi-keypad-01"
-      ]
-    },
-    {
-      "id": "expression-evaluator",
-      "name": "Expression evaluator",
+      "id": "calculator-engine",
+      "name": "Calculator engine",
       "kind": "library",
-      "purpose": "Normalizes and evaluates calculator expressions with formatting and error handling.",
+      "purpose": "Normalizes and evaluates arithmetic, scientific, conversion, and financial expressions.",
       "paths": [
         "src/utils/evaluator.js"
       ],
@@ -85,53 +63,102 @@
       "entrypoint_ids": [],
       "confidence": "high",
       "evidence_ids": [
-        "evi-evaluator-01"
+        "e-evaluator"
+      ]
+    },
+    {
+      "id": "mode-components",
+      "name": "Mode-specific UI components",
+      "kind": "frontend",
+      "purpose": "Renders the calculator\u2019s feature-specific interfaces.",
+      "paths": [
+        "src/components"
+      ],
+      "depends_on": [
+        "app-shell"
+      ],
+      "entrypoint_ids": [],
+      "confidence": "high",
+      "evidence_ids": [
+        "e-graphing"
       ]
     }
   ],
   "entrypoints": [
     {
-      "id": "app-entry",
-      "name": "Vite app entry",
+      "id": "entry-html",
+      "name": "Browser entry HTML",
+      "kind": "frontend",
+      "location": "index.html:1-14",
+      "invocation": "Open index.html or run npm run dev",
+      "component_id": "app-shell",
+      "evidence_ids": [
+        "e-entry-html"
+      ]
+    },
+    {
+      "id": "entry-main",
+      "name": "React bootstrap",
       "kind": "frontend",
       "location": "src/main.jsx:1-10",
-      "invocation": "npm run dev",
-      "component_id": "calculator-shell",
+      "invocation": "Vite loads this module",
+      "component_id": "app-shell",
       "evidence_ids": [
-        "evi-app-shell-01"
+        "e-entry-main"
+      ]
+    },
+    {
+      "id": "entry-app",
+      "name": "App shell",
+      "kind": "application",
+      "location": "src/App.jsx:14-324",
+      "invocation": "Rendered by src/main.jsx",
+      "component_id": "app-shell",
+      "evidence_ids": [
+        "e-app-shell"
       ]
     }
   ],
   "standard_commands": [
     {
       "command": "npm run dev",
-      "purpose": "start local development server",
+      "purpose": "start the local dev server",
       "source": "package.json:6-10"
     },
     {
       "command": "npm run build",
-      "purpose": "build production bundle",
+      "purpose": "create a production build",
       "source": "package.json:6-10"
     },
     {
       "command": "npm run lint",
-      "purpose": "run eslint",
+      "purpose": "run ESLint",
       "source": "package.json:6-10"
     }
   ],
   "risks": [
-    "Shared styling tokens can cause visual spillover across multiple calculator surfaces.",
-    "The repository currently has lint issues in existing source files.",
-    "No dedicated automated UI tests were found."
+    "Browser-only persistence and state make behavior environment-sensitive.",
+    "The expression evaluator is heuristic and not a secure sandbox.",
+    "The repository lacks automated regression tests.",
+    "The current checkout has an unclean working tree."
   ],
   "unknowns": [
-    "The target classic-calculator aesthetic is not pinned to a specific model or screenshot.",
-    "Whether the visual change should affect only the default theme or the entire shell is not explicit."
+    "No backend/API contract or deployment topology was inspected.",
+    "No product specification beyond the implemented UI was found.",
+    "No test harness or CI workflow beyond Vite/ESLint scripts was observed."
   ],
   "available_views": [
     "core",
-    "business",
+    "architecture",
     "development",
+    "security",
+    "testing"
+  ],
+  "views_generated": [
+    "core",
+    "architecture",
+    "development",
+    "security",
     "testing"
   ]
 }

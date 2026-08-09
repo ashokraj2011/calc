@@ -1,105 +1,108 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-08-09T21:05:23Z",
-  "repository_commit": "dfeda6775cb0c4abe77e42605fcc6bdd1bf78f3c",
+  "generated_at": "2026-08-09T22:30:28Z",
+  "repository_commit": "0d8703c49dc3ca79c684d93cc42220c922d7cd15",
   "entries": [
     {
       "glob": "src/App.jsx",
       "component_ids": [
-        "calculator-shell"
+        "app-shell"
       ],
       "domains": [
-        "calculator-ui"
+        "calculator"
       ],
       "views": [
-        "business",
-        "development"
-      ],
-      "symbols": [
-        "App",
-        "handleEquals",
-        "handleDigit"
-      ],
-      "tests": [],
-      "anchors": [
-        "biz.workflows",
-        "dev.start",
-        "dev.impact"
-      ],
-      "notes": "Main calculator workflow and theming state live here."
-    },
-    {
-      "glob": "src/index.css",
-      "component_ids": [
-        "theme-system"
-      ],
-      "domains": [
-        "calculator-ui"
-      ],
-      "views": [
-        "business",
-        "development"
-      ],
-      "symbols": [
-        ":root",
-        "[data-theme='classic']"
-      ],
-      "tests": [],
-      "anchors": [
-        "biz.rules",
-        "dev.hotspots"
-      ],
-      "notes": "Shared theme tokens and visual primitives are centralized here."
-    },
-    {
-      "glob": "src/components/{Header,Display,StandardKeypad}.jsx",
-      "component_ids": [
-        "theme-system",
-        "calculator-shell"
-      ],
-      "domains": [
-        "calculator-ui"
-      ],
-      "views": [
-        "business",
+        "architecture",
         "development",
+        "security",
         "testing"
       ],
       "symbols": [
-        "Header",
-        "Display",
-        "StandardKeypad"
+        "App"
       ],
       "tests": [],
       "anchors": [
-        "biz.capabilities",
+        "arch.start",
         "dev.start",
-        "test.components"
+        "sec.start",
+        "test.start"
       ],
-      "notes": "These components define the user-facing display, header, and keypad surfaces."
+      "notes": "The root shell is the primary change surface for app-wide behavior, state, and persistence."
     },
     {
       "glob": "src/utils/evaluator.js",
       "component_ids": [
-        "expression-evaluator"
+        "calculator-engine"
       ],
       "domains": [
-        "calculator-ui"
+        "calculator"
       ],
       "views": [
+        "architecture",
         "development",
+        "security",
         "testing"
       ],
       "symbols": [
         "evaluateExpression",
-        "formatNumber"
+        "convertUnits"
       ],
       "tests": [],
       "anchors": [
+        "arch.contracts",
         "dev.hotspots",
-        "test.workflows"
+        "sec.validation",
+        "test.map"
       ],
-      "notes": "Calculator evaluation semantics and formatting live here."
+      "notes": "Shared evaluator logic drives arithmetic, scientific, conversion, and financial features."
+    },
+    {
+      "glob": "src/components/FunctionGrapher.jsx",
+      "component_ids": [
+        "mode-components"
+      ],
+      "domains": [
+        "calculator"
+      ],
+      "views": [
+        "architecture",
+        "development",
+        "testing"
+      ],
+      "symbols": [
+        "FunctionGrapher"
+      ],
+      "tests": [],
+      "anchors": [
+        "arch.runtime",
+        "dev.hotspots",
+        "test.workflow"
+      ],
+      "notes": "The grapher is the browser-specific and most stateful feature module."
+    },
+    {
+      "glob": "src/components/HistoryDrawer.jsx",
+      "component_ids": [
+        "mode-components"
+      ],
+      "domains": [
+        "calculator"
+      ],
+      "views": [
+        "development",
+        "security",
+        "testing"
+      ],
+      "symbols": [
+        "HistoryDrawer"
+      ],
+      "tests": [],
+      "anchors": [
+        "dev.debug",
+        "sec.data",
+        "test.workflow"
+      ],
+      "notes": "History persistence and export are important for local data handling and UX."
     }
   ],
   "fallback": {
