@@ -1,33 +1,78 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-08-09T22:30:28Z",
-  "repository_commit": "0d8703c49dc3ca79c684d93cc42220c922d7cd15",
+  "generated_at": "2026-08-09T23:57:03Z",
+  "repository_commit": "e9d82bcdfd4363c98e447b92108203f18828d6ff",
   "entries": [
     {
       "glob": "src/App.jsx",
       "component_ids": [
-        "app-shell"
+        "calculator-shell"
       ],
       "domains": [
-        "calculator"
+        "calculator-ui"
+      ],
+      "views": [
+        "architecture",
+        "development"
+      ],
+      "symbols": [
+        "App",
+        "handleEquals",
+        "handleDigit",
+        "handleOperator"
+      ],
+      "tests": [],
+      "anchors": [
+        "arch.components",
+        "dev.flows"
+      ],
+      "notes": "Central state and interaction routing for all calculator modes."
+    },
+    {
+      "glob": "src/components/Display.jsx",
+      "component_ids": [
+        "calculator-ui"
+      ],
+      "domains": [
+        "calculator-ui"
       ],
       "views": [
         "architecture",
         "development",
-        "security",
         "testing"
       ],
       "symbols": [
-        "App"
+        "Display"
       ],
       "tests": [],
       "anchors": [
-        "arch.start",
-        "dev.start",
-        "sec.start",
-        "test.start"
+        "arch.components",
+        "dev.modules",
+        "test.mapping"
       ],
-      "notes": "The root shell is the primary change surface for app-wide behavior, state, and persistence."
+      "notes": "Display and interaction affordances for the main calculator surface."
+    },
+    {
+      "glob": "src/components/StandardKeypad.jsx",
+      "component_ids": [
+        "calculator-ui"
+      ],
+      "domains": [
+        "calculator-ui"
+      ],
+      "views": [
+        "architecture",
+        "development"
+      ],
+      "symbols": [
+        "StandardKeypad"
+      ],
+      "tests": [],
+      "anchors": [
+        "arch.components",
+        "dev.modules"
+      ],
+      "notes": "Primary keypad layout used by the standard and scientific calculator views."
     },
     {
       "glob": "src/utils/evaluator.js",
@@ -35,7 +80,7 @@
         "calculator-engine"
       ],
       "domains": [
-        "calculator"
+        "calculator-ui"
       ],
       "views": [
         "architecture",
@@ -45,24 +90,24 @@
       ],
       "symbols": [
         "evaluateExpression",
-        "convertUnits"
+        "formatNumber"
       ],
       "tests": [],
       "anchors": [
         "arch.contracts",
-        "dev.hotspots",
-        "sec.validation",
-        "test.map"
+        "dev.modules",
+        "sec.input",
+        "test.mapping"
       ],
-      "notes": "Shared evaluator logic drives arithmetic, scientific, conversion, and financial features."
+      "notes": "Behavioral core for arithmetic, scientific functions, unit conversion, and finance."
     },
     {
-      "glob": "src/components/FunctionGrapher.jsx",
+      "glob": "src/index.css",
       "component_ids": [
-        "mode-components"
+        "calculator-theme"
       ],
       "domains": [
-        "calculator"
+        "calculator-ui"
       ],
       "views": [
         "architecture",
@@ -70,39 +115,16 @@
         "testing"
       ],
       "symbols": [
-        "FunctionGrapher"
+        ":root",
+        "data-theme"
       ],
       "tests": [],
       "anchors": [
-        "arch.runtime",
+        "arch.components",
         "dev.hotspots",
-        "test.workflow"
+        "test.risks"
       ],
-      "notes": "The grapher is the browser-specific and most stateful feature module."
-    },
-    {
-      "glob": "src/components/HistoryDrawer.jsx",
-      "component_ids": [
-        "mode-components"
-      ],
-      "domains": [
-        "calculator"
-      ],
-      "views": [
-        "development",
-        "security",
-        "testing"
-      ],
-      "symbols": [
-        "HistoryDrawer"
-      ],
-      "tests": [],
-      "anchors": [
-        "dev.debug",
-        "sec.data",
-        "test.workflow"
-      ],
-      "notes": "History persistence and export are important for local data handling and UX."
+      "notes": "Shared visual token system for the classic and alternate calculator themes."
     }
   ],
   "fallback": {

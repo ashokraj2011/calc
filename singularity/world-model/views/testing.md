@@ -1,54 +1,58 @@
-> **Grounding** · calc @ `0d8703c49dc3ca79c684d93cc42220c922d7cd15` · view: `testing` · tier: `full`
-> **Generated** 09 August 2026 (2026-08-09T22:30:28Z) · depth: `quick` · builder `2.0`
+> **Grounding** · calc @ `e9d82bcdfd4363c98e447b92108203f18828d6ff` · view: `testing` · tier: `full`
+> **Generated** 09 August 2026 (2026-08-09T23:57:03Z) · depth: `quick` · builder `2.0`
 > **Authoritative for:** file locations, entry points, commands, structural relationships as of the commit above.
 > **Not authoritative for:** current file contents. If this document conflicts with code you have read, trust the code and say so explicitly in your output.
 > **Unknowns are marked.** Do not resolve them by inference. If the repository has changed since the date above, treat locations as hints, not facts.
 
 ## TL;DR {#test.tldr}
-This repository does not currently have an automated test harness. The project declares build and lint scripts, but there is no `test` script and no `*.test.*` or `*.spec.*` files in the tree. The most valuable near-term tests would target the evaluator module, the root app state machine, and the mode-specific components that depend on browser APIs such as `localStorage`, canvas, and clipboard. The current evidence supports a manual-verification workflow rather than an automated regression suite.
+
+The repository does not currently include a dedicated automated test suite. The available verification path is build-and-lint execution via npm scripts. For this quick review, the relevant test gap is the absence of UI regression coverage for the calculator modes and the classic theme path.
 
 ## Facts {#test.facts}
 
 ```yaml
-observed_tests: []
+components: [calculator-shell, calculator-ui, calculator-engine, calculator-theme]
 entrypoints:
-  - { path: package.json:6-10, note: "build and lint scripts only" }
-  - { path: src/App.jsx:14-324, note: "stateful UI shell" }
-  - { path: src/utils/evaluator.js:4-218, note: "calculator logic" }
+  - { id: entry-main, path: src/main.jsx, line: 1, invocation: "ReactDOM createRoot" }
+key_symbols:
+  - { name: App, path: src/App.jsx, line: 14, role: "shared UI state" }
+  - { name: evaluateExpression, path: src/utils/evaluator.js, line: 4, role: "calculation behavior" }
 commands:
-  - { command: "npm run build", purpose: "build validation", status: observed, source: "package.json:6-10" }
-  - { command: "npm run lint", purpose: "lint validation", status: observed, source: "package.json:6-10" }
+  - { command: "npm run build", purpose: "production bundle", source: "package.json:6-10", status: "passed" }
+  - { command: "npm run lint", purpose: "static analysis", source: "package.json:6-10", status: "failed" }
+hotspots:
+  - { path: src/App.jsx, reason: "behavioral surface across all modes" }
+  - { path: src/index.css, reason: "visual regressions can affect every screen" }
 ```
 
 ## Test strategy found in the repository {#test.strategy}
-The repository currently exposes only build and lint commands. There is no test runner configuration, no test script in `package.json`, and no test files under the source tree. That means the current strategy is effectively manual verification plus static checks. Evidence: `e-test-gap`, `e-build`, `e-lint`.
 
-## Component-to-test map {#test.map}
-- `src/utils/evaluator.js` is the highest-value unit-test target. It contains logic for arithmetic, percentages, factorials, trig angle units, unit conversion, and financial calculations.
-- `src/App.jsx` should be tested for state transitions around expression entry, equals, clear/backspace, memory operations, history updates, and keyboard shortcuts.
-- `src/components/Display.jsx`, `src/components/StandardKeypad.jsx`, `src/components/ScientificKeypad.jsx`, `src/components/UnitConverter.jsx`, and `src/components/FinancialCalculator.jsx` are good component-test candidates for render and interaction flows.
-- `src/components/FunctionGrapher.jsx` needs focused rendering tests because it depends on canvas rendering and `math.compile`. Evidence: `e-app-shell`, `e-evaluator`, `e-graphing`.
+No test files or test runner configuration were discovered under the repository root. The package manifest exposes build and lint scripts only. That means the current quality signal is based on build output and static analysis rather than automated regression tests.
 
-## Workflow-to-test mapping {#test.workflow}
-- Arithmetic workflow: digits/operators/equals and error cases.
-- Mode switching workflow: standard/scientific/converter/financial/grapher routing.
-- Persistence workflow: `localStorage` theme/sound/history behavior.
-- History workflow: open drawer, reuse item, export, clear history.
-- Graphing workflow: valid and invalid equations, canvas rendering, and error state. Evidence: `e-app-shell`, `e-browser-storage`, `e-history-export`.
+## Test inventory {#test.inventory}
+
+- Discovered tests: none.
+- Executed commands: `npm run build` (passed) and `npm run lint` (failed with pre-existing issues such as unused imports and a React hook warning).
+- Not run: browser-based UI tests, unit tests for the evaluator, and visual regression checks.
+
+## Component-to-test mapping {#test.mapping}
+
+- Calculator shell behavior: `src/App.jsx` should be covered by UI tests that exercise digits, operators, equals, memory, and history.
+- Expression engine behavior: `src/utils/evaluator.js` should be covered by unit tests for percentage handling, trigonometric conversion, and numeric formatting.
+- Visual theme consistency: `src/index.css` and the presentational components should be covered by at least one visual or snapshot regression test if the look is changed.
 
 ## Critical positive and negative scenarios {#test.scenarios}
-Positive scenarios include successful arithmetic, trig evaluation in DEG/RAD mode, unit conversions, EMI/compound-interest/tip calculations, and graph rendering for valid expressions. Negative scenarios include invalid syntax, non-finite results, empty expressions, and browser API failures such as missing clipboard or audio context. Evidence: `e-evaluator`, `e-graphing`.
 
-## Validation commands and current status {#test.commands}
-- `npm run build`: observed available build path from package metadata; no build artifact validation was performed for this world-model run.
-- `npm run lint`: available lint path; the repository currently reports issues in several UI components.
-- `npm run test`: not present; no test harness exists. Evidence: `e-build`, `e-lint`, `e-test-gap`.
+Positive scenarios include standard arithmetic, scientific functions, unit conversion, financial calculations, and theme switching. Negative scenarios include invalid expressions, division by zero, overflow cases, and backspace/clear flows. These are currently untested.
 
-## Coverage gaps and risk-based regression suite {#test.gaps}
-The major coverage gap is that no automated regression suite exists for calculator behavior, browser persistence, or graph rendering. If you add tests, start with evaluator logic and app-level state transitions before moving to canvas and browser-side UI integration. Evidence: `e-test-gap`, `e-graphing`.
+## Regression risk areas {#test.risks}
+
+The biggest regression risk is styling drift because the classic calculator look is spread across shared CSS variables and several components. A second risk is behavior drift in the evaluator module, because many UI modes depend on it indirectly.
 
 ## Where to start {#test.start}
-Create unit tests around `src/utils/evaluator.js` first, then add component tests for `src/App.jsx` and the mode components that rely on the shared state boundary. Evidence: `e-evaluator`, `e-app-shell`.
+
+If you add tests, start with the evaluator helper module and the main shell interactions. The smallest useful test target is the evaluator helper; the next is the shell interaction path for key presses and equals evaluation.
 
 ## Questions this view does not answer {#test.limits}
-It does not describe CI, visual regression, or cross-browser coverage because those are not present in the repository snapshot. Evidence: `e-core-purpose`.
+
+This view does not cover release gates, CI workflows, or end-to-end browser automation because none were found in the inspected repository.

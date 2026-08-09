@@ -1,54 +1,65 @@
-> **Grounding** · calc @ `0d8703c49dc3ca79c684d93cc42220c922d7cd15` · view: `architecture` · tier: `full`
-> **Generated** 09 August 2026 (2026-08-09T22:30:28Z) · depth: `quick` · builder `2.0`
+> **Grounding** · calc @ `e9d82bcdfd4363c98e447b92108203f18828d6ff` · view: `architecture` · tier: `full`
+> **Generated** 09 August 2026 (2026-08-09T23:57:03Z) · depth: `quick` · builder `2.0`
 > **Authoritative for:** file locations, entry points, commands, structural relationships as of the commit above.
 > **Not authoritative for:** current file contents. If this document conflicts with code you have read, trust the code and say so explicitly in your output.
 > **Unknowns are marked.** Do not resolve them by inference. If the repository has changed since the date above, treat locations as hints, not facts.
 
 ## TL;DR {#arch.tldr}
-This view summarizes the calculator’s architecture as a single-page client app with one orchestrating root component and several feature-oriented UI modules. The main boundary is `src/App.jsx` for state and navigation; the shared evaluation layer is `src/utils/evaluator.js`; feature UIs are composed around this boundary. The most important runtime relationships are expression state → evaluator → history/localStorage and mode selection → feature component rendering. The architecture is simple and coherent, but it couples browser-specific concerns and stateful UI behavior into the root shell.
+
+The app is a single-page React front end with a thin state shell and many presentational modules. The most important architectural boundary is the split between `src/App.jsx` (state and behavior), `src/components/` (views/panels), and `src/utils/evaluator.js` (numeric logic). The design is simple and cohesive, but visual and interaction changes touch several components because the styling layer is shared.
 
 ## Facts {#arch.facts}
 
 ```yaml
-components:
-  - { id: app-shell, path: src/App.jsx:14-324, role: "root orchestrator" }
-  - { id: calculator-engine, path: src/utils/evaluator.js:1-218, role: "shared evaluation logic" }
-  - { id: mode-components, path: src/components, role: "feature-specific UI modules" }
+components: [calculator-shell, calculator-ui, calculator-engine, calculator-theme]
 entrypoints:
-  - { id: html-entry, path: index.html:1-14, invocation: "browser mount" }
-  - { id: react-bootstrap, path: src/main.jsx:1-10, invocation: "React bootstrap" }
-runtime_flows:
-  - { name: arithmetic, path: src/App.jsx:55-130, notes: "expression state flows into evaluation and history" }
-  - { name: mode-switching, path: src/App.jsx:227-323, notes: "header selection changes rendered component" }
-  - { name: graphing, path: src/components/FunctionGrapher.jsx:21-133, notes: "user-entered formulas compile and draw to canvas" }
+  - { id: entry-main, path: src/main.jsx, line: 1, invocation: "ReactDOM createRoot" }
+key_symbols:
+  - { name: App, path: src/App.jsx, line: 14, role: "central state and mode router" }
+  - { name: evaluateExpression, path: src/utils/evaluator.js, line: 4, role: "expression evaluation wrapper" }
+commands:
+  - { command: "npm run build", purpose: "production build", source: "package.json:6-10" }
+hotspots:
+  - { path: src/App.jsx, reason: "contains the largest state surface and shared handlers" }
 ```
 
 ## System context {#arch.context}
-The repository is a single-page browser application rather than a service-oriented system. The HTML shell loads the React entry module, which renders the root `App` component. There is no backend or data store in the repository; state and persistence remain client-side. Evidence: `e-entry-html`, `e-entry-main`, `e-app-shell`.
+
+The repository is a front-end-only application. It has no backend service, database, or API layer. The runtime is a browser page served by Vite, and the main app state lives in memory and in browser storage. That makes the system easy to reason about, but it also means all logic is executed client-side.
 
 ## Component responsibilities {#arch.components}
-- `App` is the architecture center. It owns the current expression, result, calculator mode, history, theme, sound, and modal overlays.
-- `src/utils/evaluator.js` is the shared domain engine. It normalizes input symbols, evaluates expressions via `mathjs`, formats numeric output, and provides unit conversion and financial helper functions.
-- `src/components/` is the feature composition layer for standard/scientific keypad UIs, unit conversion, financial calculator, graphing, history drawer, and shortcuts modal.
-Evidence: `e-app-shell`, `e-evaluator`, `e-graphing`.
 
-## Dependency and data flow {#arch.dependencies}
-The strongest architectural dependency is from the root shell into the evaluator and feature components. The arithmetic flow is state-driven: keypad handlers update `expression`, `App` calls `evaluateExpression`, and successful results are pushed into `history` and persisted to `localStorage`. For graphing, the component compiles the user equation and draws directly on a canvas without a dedicated service boundary. Evidence: `e-app-shell`, `e-browser-storage`, `e-graphing`.
+- `src/App.jsx` is the orchestration layer. It manages expression/result/history/theme/sound state, keyboard shortcuts, and mode selection. It also routes to the standard, scientific, converter, financial, and grapher views.
+- `src/components/` hosts the concrete views. `Display` renders the expression/result area, the keypads render calculator interactions, `FinancialCalculator` and `FunctionGrapher` provide specialized panels, and `Header` provides navigation and settings.
+- `src/utils/evaluator.js` isolates arithmetic and financial logic. Its helpers are used by the UI layer and keep numeric formatting and calculation behavior out of the React components.
+- `src/index.css` provides the shared design tokens and theme variants for the entire app.
+
+## Dependency graph {#arch.graph}
+
+The app shell depends on UI components and the evaluator. The UI components depend on the theme tokens and shared audio helper. The financial and grapher modules depend on the evaluator helpers rather than on one another. There is no service boundary or cross-module API beyond the React props passed between component layers.
 
 ## Interfaces and contracts {#arch.contracts}
-The most meaningful contracts here are component props and shared utility functions rather than network protocols. `App` passes callbacks into the keypad/display components, and `src/utils/evaluator.js` exposes stable functions such as `evaluateExpression`, `convertUnits`, and the financial helpers. The graphing component receives only the equation string and sound settings; it does not depend on a backend API. Evidence: `e-evaluator`, `e-graphing`.
 
-## Runtime workflows {#arch.runtime}
-- Arithmetic workflow: digit/operator/equals actions update state and optionally write history.
-- Mode switching workflow: compact header actions switch between feature components without reloading the page.
-- History workflow: successful evaluations are stored in a capped array and exported as a text file from the drawer.
-Evidence: `e-app-shell`, `e-browser-storage`, `e-history-export`.
+The main contract is the prop-based interface between `App` and its child components. Key examples are the keypad props such as `onDigit`, `onOperator`, `onEquals`, and `onMemory`, and the display props such as `expression`, `result`, and `setAngleUnit`. These interfaces are lightweight and simple, but they are the main mechanism for state flow.
 
-## Architectural risks and debt {#arch.risks}
-The architecture is intentionally simple, but the main coupling risk is that browser-specific concerns live in the root shell. Theme, sound, history, keyboard shortcuts, and mode selection all share one stateful owner, which makes the component more complex over time. The graphing implementation is also a low-level canvas rendering path embedded in a component rather than a reusable renderer. Evidence: `e-app-shell`, `e-graphing`.
+## Data ownership {#arch.data}
+
+Expression state, calculation history, and user preference state are owned by `App` and persisted via `localStorage` in the browser. The evaluator module consumes expressions but does not own UI state. The financial and grapher panels hold their own local form state, which is derived from the evaluator outputs.
+
+## Security and trust boundaries {#arch.security}
+
+The main trust boundary is between browser-side user input and the evaluator. The app sanitizes expressions before evaluation, but the runtime still executes math expressions in the client. No secrets, authentication, or external backend trust boundary exists. The browser storage layer is a local persistence boundary only.
+
+## Architectural risks {#arch.risks}
+
+- The app shell is a large hub for state and UI orchestration; future features may increase its complexity.
+- The visual design is spread across shared CSS variables and multiple component classes, so style regressions can be hard to isolate.
+- The absence of an API layer means the architecture is intentionally simple, but it limits composability for more advanced workflows.
 
 ## Where to start {#arch.start}
-Start with `src/App.jsx` for end-to-end behavior and `src/utils/evaluator.js` for reusable logic. The feature components under `src/components/` are the right second stop for mode-specific behavior. Evidence: `e-app-shell`, `e-evaluator`.
+
+Start with `src/App.jsx` for state flow, `src/utils/evaluator.js` for numeric behavior, and `src/index.css` for visual implementation.
 
 ## Questions this view does not answer {#arch.limits}
-It does not define product requirements, deployment topology, or any backend security model because none are present in the repository snapshot. Evidence: `e-core-purpose`, `e-test-gap`.
+
+This view does not cover business requirements, release process, or detailed test coverage. It also does not attempt to document every component in the tree.
