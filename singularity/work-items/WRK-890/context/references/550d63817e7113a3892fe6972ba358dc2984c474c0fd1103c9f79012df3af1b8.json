@@ -1,0 +1,28 @@
+{
+  "artifact": {
+    "generation": 1,
+    "mediaType": "text/markdown",
+    "outputId": "document",
+    "path": "singularity/work-items/WRK-890/artifacts/intake/intake.md",
+    "phaseId": "verification"
+  },
+  "createdAt": "2026-08-10T05:20:55.433Z",
+  "kind": "governed-reference",
+  "repository": {
+    "id": "calc",
+    "origin": "https://github.com/ashokraj2011/calc.git"
+  },
+  "revision": {
+    "bytes": 5076,
+    "commitSha": "0967ba8cc8c8977b3c9eb1ecdeb952573bbcd1cf",
+    "sha256": "a882b004684f37af63768880720a8c7d354b6cb0b392edc4934f5db5ce8a3dd4"
+  },
+  "schemaVersion": 1,
+  "subject": {
+    "branch": "WRK-890",
+    "id": "WRK-890",
+    "kind": "story",
+    "subjectRevision": 1
+  },
+  "visibility": "model"
+}

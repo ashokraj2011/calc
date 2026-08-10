@@ -275,6 +275,125 @@
           },
           "status": "awaiting_review"
         }
+      },
+      {
+        "packetSha256": "bd76314276c00d164bc3d8114e06055fef15bd52f3ef4467e3b4903e1f7f47bf",
+        "phase": "verification",
+        "generation": 1,
+        "branch": "WRK-890",
+        "sourceTreeSha256": "sha256:1b0c1e5b593ea81afc6e973a38b124432cb3382a8d9aca9270f05a0c5857ecd3",
+        "path": "singularity/work-items/WRK-890/submissions/verification/bd76314276c00d164bc3d8114e06055fef15bd52f3ef4467e3b4903e1f7f47bf.json",
+        "submittedAt": "2026-08-10T05:20:55.372Z",
+        "projection": {
+          "schemaVersion": 1,
+          "workId": "WRK-890",
+          "epicId": null,
+          "planId": null,
+          "jiraIssueId": "WRK-890",
+          "initialJiraKey": null,
+          "currentJiraKey": null,
+          "canonicalBranch": "WRK-890",
+          "submittedBranch": "WRK-890",
+          "submissionCommit": "0967ba8cc8c8977b3c9eb1ecdeb952573bbcd1cf",
+          "sourceCommit": "0967ba8cc8c8977b3c9eb1ecdeb952573bbcd1cf",
+          "sourceTreeSha256": "sha256:1b0c1e5b593ea81afc6e973a38b124432cb3382a8d9aca9270f05a0c5857ecd3",
+          "phase": "verification",
+          "generation": 1,
+          "authorship": {
+            "schemaVersion": 1,
+            "producer": "human",
+            "channel": "manual-in-place",
+            "actor": {
+              "name": "Ashok Raj",
+              "email": "88361104+ashokraj2011@users.noreply.github.com",
+              "login": "ashokraj2011"
+            },
+            "governedAgentContext": {
+              "agentId": "qa"
+            },
+            "kernelModel": {
+              "invoked": false,
+              "status": "exact",
+              "invocationIds": []
+            },
+            "externalAiUse": {
+              "value": "unknown",
+              "status": "unavailable"
+            },
+            "source": {
+              "kind": "in-place",
+              "filename": "test-evidence.md",
+              "mediaType": "text/markdown",
+              "sha256": "e1a6907dbb93f79dfdbb02364710f0d0542be5c837625e263bbc5f7ca5dce600",
+              "bytes": 13280
+            },
+            "generation": 1,
+            "publishedAt": "2026-08-10T05:20:20.711Z"
+          },
+          "artifacts": [
+            {
+              "path": "singularity/work-items/WRK-890/artifacts/implementation/implementation-summary.md",
+              "kind": "document",
+              "sha256": "69d9c4ee9d0e097e9cc204011601a24aeec9247dc72939f73609f1a23d97a6df",
+              "size": 11340,
+              "reference": {
+                "handle": "sfref:v1:story:WRK-890:11eb10cb54ede259774ffd72ab0213905b731194420deeb42103a04c855ce97b",
+                "recordHash": "11eb10cb54ede259774ffd72ab0213905b731194420deeb42103a04c855ce97b"
+              }
+            },
+            {
+              "path": "singularity/work-items/WRK-890/artifacts/intake/intake.md",
+              "kind": "document",
+              "sha256": "a882b004684f37af63768880720a8c7d354b6cb0b392edc4934f5db5ce8a3dd4",
+              "size": 5076,
+              "reference": {
+                "handle": "sfref:v1:story:WRK-890:550d63817e7113a3892fe6972ba358dc2984c474c0fd1103c9f79012df3af1b8",
+                "recordHash": "550d63817e7113a3892fe6972ba358dc2984c474c0fd1103c9f79012df3af1b8"
+              }
+            },
+            {
+              "path": "singularity/work-items/WRK-890/artifacts/verification/test-evidence.md",
+              "kind": "document",
+              "sha256": "42d0eb948bc8a47a602a9c848d66c2db6dfdc896a3d8619a69cbd92f382a5d4a",
+              "size": 15737,
+              "reference": {
+                "handle": "sfref:v1:story:WRK-890:7d951f36cad6d035a74dc728a633c9ab7923e0d4eb378ef0d55334d5ccefb443",
+                "recordHash": "7d951f36cad6d035a74dc728a633c9ab7923e0d4eb378ef0d55334d5ccefb443"
+              }
+            }
+          ],
+          "references": [
+            {
+              "handle": "sfref:v1:story:WRK-890:11eb10cb54ede259774ffd72ab0213905b731194420deeb42103a04c855ce97b",
+              "recordHash": "11eb10cb54ede259774ffd72ab0213905b731194420deeb42103a04c855ce97b",
+              "purpose": "review-evidence",
+              "required": true
+            },
+            {
+              "handle": "sfref:v1:story:WRK-890:550d63817e7113a3892fe6972ba358dc2984c474c0fd1103c9f79012df3af1b8",
+              "recordHash": "550d63817e7113a3892fe6972ba358dc2984c474c0fd1103c9f79012df3af1b8",
+              "purpose": "review-evidence",
+              "required": true
+            },
+            {
+              "handle": "sfref:v1:story:WRK-890:7d951f36cad6d035a74dc728a633c9ab7923e0d4eb378ef0d55334d5ccefb443",
+              "recordHash": "7d951f36cad6d035a74dc728a633c9ab7923e0d4eb378ef0d55334d5ccefb443",
+              "purpose": "review-evidence",
+              "required": true
+            }
+          ],
+          "checks": [],
+          "usage": [],
+          "approvals": [],
+          "visualAssurance": null,
+          "submittedAt": "2026-08-10T05:20:55.372Z",
+          "submittedBy": {
+            "name": "Ashok Raj",
+            "email": "88361104+ashokraj2011@users.noreply.github.com",
+            "login": "ashokraj2011"
+          },
+          "status": "awaiting_review"
+        }
       }
     ]
   },
@@ -1668,7 +1787,7 @@
       "label": "Verification",
       "order": 2,
       "defaultAgent": "qa",
-      "status": "in_progress",
+      "status": "awaiting_approval",
       "requiredArtifact": {
         "path": "artifacts/verification/test-evidence.md",
         "kind": "test-evidence",
@@ -1723,7 +1842,7 @@
       },
       "qualityCommands": [],
       "startedAt": "2026-08-09T22:22:24.211Z",
-      "submittedAt": null,
+      "submittedAt": "2026-08-10T05:20:55.372Z",
       "approvedAt": null,
       "approvedBy": null,
       "rejectedAt": null,
@@ -1808,10 +1927,10 @@
           "kind": "document",
           "status": "pending",
           "exists": true,
-          "size": 15737,
-          "sha256": "42d0eb948bc8a47a602a9c848d66c2db6dfdc896a3d8619a69cbd92f382a5d4a",
+          "size": 15819,
+          "sha256": "360627b3e6654de56120c57aaa9ebb42dca5a6e05d2b0e685d227fc06c6073a5",
           "registeredAt": "2026-08-10T05:20:20.754Z",
-          "updatedAt": "2026-08-10T05:20:20.754Z"
+          "updatedAt": "2026-08-10T05:20:55.373Z"
         }
       ],
       "checks": [],
@@ -1823,7 +1942,36 @@
         "renderedSha256": "42a7d46a090111e951d3af21493afdbad37530cdf60face92045da94d007e38d",
         "mode": "enforce"
       },
-      "sourceCommit": "42c11c41ed04692016a8c038010fae09f0e0edca"
+      "sourceCommit": "42c11c41ed04692016a8c038010fae09f0e0edca",
+      "generationCommit": "0967ba8cc8c8977b3c9eb1ecdeb952573bbcd1cf",
+      "publicationCommit": "0967ba8cc8c8977b3c9eb1ecdeb952573bbcd1cf",
+      "workIntervalReconciliation": {
+        "reconciliationSha256": "99a22fedffa202a481041d911b8c16873d6c787448ca28126e9794fcfdb78065",
+        "baselineSha256": "b19f930109f3ebce2953b175bca76a370edfe49e26d47ff2e7c85d1a1fc39435",
+        "path": "singularity/work-items/WRK-890/context/work-intervals/reconciliations/99a22fedffa202a481041d911b8c16873d6c787448ca28126e9794fcfdb78065.json",
+        "status": "aligned",
+        "summaryStatus": "clear",
+        "targetHead": "0967ba8cc8c8977b3c9eb1ecdeb952573bbcd1cf",
+        "summary": {
+          "changedPaths": 0,
+          "planned": 0,
+          "unplanned": 0,
+          "protected": 0
+        },
+        "decision": {
+          "status": "aligned",
+          "summaryStatus": "clear",
+          "eligibleForSubmission": true,
+          "reasons": [],
+          "escalationTarget": null
+        },
+        "baseline": {
+          "path": "singularity/work-items/WRK-890/context/work-intervals/verification-gen1-baseline.json",
+          "sha256": "b19f930109f3ebce2953b175bca76a370edfe49e26d47ff2e7c85d1a1fc39435",
+          "verified": true,
+          "sourceBaseCommit": "b39aabeae5064ce2d94356dffe39e829b2d44012"
+        }
+      }
     },
     "conformance": {
       "id": "conformance",
@@ -2083,6 +2231,22 @@
       "event": "phase_generated",
       "phase": "verification",
       "detail": "generation 1"
+    },
+    {
+      "at": "2026-08-10T05:20:55.371Z",
+      "actor": "system",
+      "agent": null,
+      "event": "work_interval_reconciled",
+      "phase": "verification",
+      "detail": "aligned; 0 changed path(s)"
+    },
+    {
+      "at": "2026-08-10T05:20:55.372Z",
+      "actor": "ashokraj2011",
+      "agent": "qa",
+      "event": "phase_submitted",
+      "phase": "verification",
+      "detail": "3 artifacts"
     }
   ],
   "measurement": {
@@ -2746,6 +2910,76 @@
         },
         "createdAt": "2026-08-10T05:20:20.552Z"
       }
+    },
+    {
+      "schemaVersion": 1,
+      "event": {
+        "schemaVersion": 1,
+        "eventId": "eb73d3af-5070-479d-8782-5bb863a1397c",
+        "type": "approval-requested",
+        "subject": {
+          "kind": "story",
+          "id": "WRK-890",
+          "branch": "WRK-890"
+        },
+        "phaseId": "verification",
+        "generation": 1,
+        "actor": {
+          "name": "Ashok Raj",
+          "email": "88361104+ashokraj2011@users.noreply.github.com",
+          "login": "ashokraj2011"
+        },
+        "agent": null,
+        "authorityGroup": null,
+        "payload": {
+          "decision": null,
+          "reviewPacketSha256": null
+        },
+        "sourceCommit": null,
+        "idempotencyKey": null,
+        "idempotencyHash": null,
+        "createdAt": "2026-08-10T05:20:55.192Z"
+      },
+      "ledgerIntent": {
+        "schemaVersion": 1,
+        "eventId": "eb73d3af-5070-479d-8782-5bb863a1397c",
+        "eventType": "approval-requested",
+        "capabilityId": "calc-app",
+        "subject": {
+          "branch": "WRK-890",
+          "generation": 1,
+          "phase": "verification",
+          "workId": "WRK-890",
+          "workType": "chore"
+        },
+        "actor": {
+          "name": "Ashok Raj",
+          "email": "88361104+ashokraj2011@users.noreply.github.com",
+          "githubLogin": "ashokraj2011",
+          "identityAssurance": "configured-local"
+        },
+        "agent": null,
+        "authorityGroup": null,
+        "payload": {
+          "capabilityMapSha256": "77ee9fd3c55345e31113fffb91dab4b0ffd95ced22cbd95d19ffa1d04bd7a479",
+          "capabilityPolicy": {
+            "protectedPaths": [],
+            "qualityCommands": [],
+            "requiredAuthorityGroups": [],
+            "requiredChecks": [],
+            "requiredWorldModelViews": []
+          },
+          "configPath": "singularity/workflow.yml",
+          "configSha256": "c71e8d4583a4303c75561c44902b837971681f740cc7025f9b55cb997589424f",
+          "lifecycleEventId": "eb73d3af-5070-479d-8782-5bb863a1397c",
+          "lifecyclePayload": {
+            "decision": null,
+            "reviewPacketSha256": null
+          },
+          "templateSha256": "ced4ce8d532e509658558f5bf848bd6df1a03d6c278c84ed8512ac667095fd98"
+        },
+        "createdAt": "2026-08-10T05:20:55.204Z"
+      }
     }
   ],
   "workIntervals": {
@@ -2758,7 +2992,13 @@
       "sourceBaseCommit": "b39aabeae5064ce2d94356dffe39e829b2d44012",
       "escalationTarget": null,
       "path": "singularity/work-items/WRK-890/context/work-intervals/verification-gen1-baseline.json",
-      "status": "open"
+      "status": "reconciled",
+      "finalReconciliation": {
+        "reconciliationSha256": "99a22fedffa202a481041d911b8c16873d6c787448ca28126e9794fcfdb78065",
+        "path": "singularity/work-items/WRK-890/context/work-intervals/reconciliations/99a22fedffa202a481041d911b8c16873d6c787448ca28126e9794fcfdb78065.json",
+        "targetHead": "0967ba8cc8c8977b3c9eb1ecdeb952573bbcd1cf",
+        "recordedAt": "2026-08-10T05:20:55.371Z"
+      }
     },
     "history": [
       {
