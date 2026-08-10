@@ -22,6 +22,7 @@ const MODES = [
 ];
 
 const THEMES = [
+  { id: 'classic', name: 'Classic Desk' },
   { id: 'midnight', name: 'Midnight Glass' },
   { id: 'cyberpunk', name: 'Cyberpunk Neon' },
   { id: 'terminal', name: 'Retro Terminal' },
@@ -43,7 +44,7 @@ export const Header = ({
     <header className="w-full flex flex-col md:flex-row items-center justify-between gap-4 pb-4 border-b border-[var(--card-border)] mb-4">
       {/* App Branding */}
       <div className="flex items-center gap-3">
-        <div className="w-10 h-10 rounded-2xl bg-gradient-to-tr from-sky-500 to-indigo-600 flex items-center justify-center shadow-lg shadow-sky-500/20 text-white font-bold text-xl">
+        <div className="w-10 h-10 rounded-[14px] bg-[var(--btn-op-bg)] border border-[var(--card-border)] flex items-center justify-center text-[var(--text-accent)] font-bold text-xl shadow-inner">
           ∑
         </div>
         <div>
@@ -51,13 +52,13 @@ export const Header = ({
             Apex<span className="text-[var(--text-accent)]">Calc</span>
           </h1>
           <p className="text-xs text-[var(--text-muted)] font-medium">
-            Pro Mathematical Suite
+            Classic Desk Calculator
           </p>
         </div>
       </div>
 
       {/* Mode Navigation Tabs */}
-      <div className="flex items-center gap-1 bg-[var(--display-bg)] p-1 rounded-2xl border border-[var(--card-border)] overflow-x-auto max-w-full">
+      <div className="flex items-center gap-1 bg-[var(--display-bg)] p-1 rounded-[14px] border border-[var(--card-border)] overflow-x-auto max-w-full">
         {MODES.map((mode) => {
           const Icon = mode.icon;
           const isActive = activeMode === mode.id;
@@ -68,9 +69,9 @@ export const Header = ({
                 playSound('mode', soundEnabled);
                 setActiveMode(mode.id);
               }}
-              className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold transition-all ${
+              className={`classic-tab flex items-center gap-1.5 px-3 py-1.5 rounded-[10px] text-xs font-semibold transition-all ${
                 isActive
-                  ? 'bg-[var(--text-accent)] text-slate-950 shadow-md scale-[1.02]'
+                  ? 'bg-[var(--btn-op-bg)] text-[var(--text-accent)] shadow-sm scale-[1.02]'
                   : 'text-[var(--text-muted)] hover:text-[var(--text-main)] hover:bg-[var(--btn-func-bg)]'
               }`}
             >

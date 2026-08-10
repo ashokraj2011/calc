@@ -1,0 +1,162 @@
+{
+  "schema_version": "2.0",
+  "generated_at": "2026-08-09T23:57:03Z",
+  "generated_date": "09 August 2026",
+  "builder_version": "2.0",
+  "builder_prompt_sha256": "unknown",
+  "analysis_depth": "quick",
+  "repository": {
+    "name": "calc",
+    "root": "/private/var/folders/_j/yp8zv9w91rd44ymrzfpd_kcw0000gn/T/singularity-flow-world-model-XrWlc9/repository",
+    "branch": "WRK-890",
+    "commit": "e9d82bcdfd4363c98e447b92108203f18828d6ff",
+    "working_tree_clean": false,
+    "repository_kind": "application",
+    "languages": [
+      "JavaScript",
+      "CSS",
+      "HTML"
+    ],
+    "package_roots": [
+      "."
+    ]
+  },
+  "purpose": {
+    "summary": "A single-page calculator web app with standard, scientific, converter, financial, and grapher modes built with React and Vite.",
+    "status": "observed",
+    "confidence": "high",
+    "evidence_ids": [
+      "ev:repo-purpose",
+      "ev:app-shell"
+    ]
+  },
+  "components": [
+    {
+      "id": "calculator-shell",
+      "name": "Calculator shell",
+      "kind": "application",
+      "purpose": "Owns shared calculator state, mode routing, history, and modal interactions.",
+      "paths": [
+        "src/App.jsx"
+      ],
+      "depends_on": [
+        "calculator-ui",
+        "calculator-engine"
+      ],
+      "entrypoint_ids": [
+        "entry-main",
+        "entry-app-shell"
+      ],
+      "confidence": "high",
+      "evidence_ids": [
+        "ev:app-shell"
+      ]
+    },
+    {
+      "id": "calculator-ui",
+      "name": "Calculator UI components",
+      "kind": "frontend",
+      "purpose": "Renders display, keypads, financial and grapher panes, and header controls.",
+      "paths": [
+        "src/components"
+      ],
+      "depends_on": [
+        "calculator-shell",
+        "calculator-theme"
+      ],
+      "entrypoint_ids": [],
+      "confidence": "high",
+      "evidence_ids": [
+        "ev:ui-components"
+      ]
+    },
+    {
+      "id": "calculator-engine",
+      "name": "Calculator engine",
+      "kind": "library",
+      "purpose": "Evaluates arithmetic and scientific expressions and provides financial/unit helpers.",
+      "paths": [
+        "src/utils/evaluator.js"
+      ],
+      "depends_on": [],
+      "entrypoint_ids": [],
+      "confidence": "high",
+      "evidence_ids": [
+        "ev:evaluator"
+      ]
+    },
+    {
+      "id": "calculator-theme",
+      "name": "Calculator theme system",
+      "kind": "tooling",
+      "purpose": "Defines shared CSS tokens and the classic/default visual appearance.",
+      "paths": [
+        "src/index.css"
+      ],
+      "depends_on": [],
+      "entrypoint_ids": [],
+      "confidence": "high",
+      "evidence_ids": [
+        "ev:theme-system"
+      ]
+    }
+  ],
+  "entrypoints": [
+    {
+      "id": "entry-main",
+      "name": "Application bootstrap",
+      "kind": "frontend",
+      "location": "src/main.jsx:1-10",
+      "invocation": "ReactDOM createRoot",
+      "component_id": "calculator-shell",
+      "evidence_ids": [
+        "ev:entrypoints"
+      ]
+    },
+    {
+      "id": "entry-app-shell",
+      "name": "Calculator shell",
+      "kind": "frontend",
+      "location": "src/App.jsx:14-324",
+      "invocation": "App component",
+      "component_id": "calculator-shell",
+      "evidence_ids": [
+        "ev:app-shell"
+      ]
+    }
+  ],
+  "standard_commands": [
+    {
+      "command": "npm run dev",
+      "purpose": "Start the Vite development server",
+      "source": "package.json:6-10"
+    },
+    {
+      "command": "npm run build",
+      "purpose": "Create a production bundle",
+      "source": "package.json:6-10"
+    },
+    {
+      "command": "npm run lint",
+      "purpose": "Run ESLint",
+      "source": "package.json:6-10"
+    }
+  ],
+  "risks": [
+    "Visual styling and shared UI tokens are reused across many components, so appearance changes can ripple.",
+    "The app relies on browser-side localStorage and client-side evaluation, which creates UX and safety considerations.",
+    "The working tree is not clean due to deleted tracked workflow artifacts."
+  ],
+  "unknowns": [
+    "No automated UI or unit tests are present in the repository.",
+    "No deployment or release workflow is defined in the source tree.",
+    "No explicit design-system documentation exists for the calculator UI."
+  ],
+  "available_views": [
+    "core",
+    "architecture",
+    "development",
+    "security",
+    "testing"
+  ]
+}

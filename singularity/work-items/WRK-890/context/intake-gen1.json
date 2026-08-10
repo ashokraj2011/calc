@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 1,
+  "workId": "WRK-890",
+  "phase": "intake",
+  "generation": 1,
+  "agent": "product-owner",
+  "modelCommit": "c6030dbb93342312879f5c00e9c04b34d59170b6",
+  "matchedRules": 0,
+  "mode": "append",
+  "applied": false,
+  "depth": "standard",
+  "evidence": false,
+  "requiredViews": [
+    "business"
+  ],
+  "task": "Change the look to match classic calculator",
+  "supportingEvidence": [],
+  "modelSourceTreeSha256": "sha256:2f067828e6f939d6a2368051d7ab4a453b8b9aeb96c91501301ad253bf803aab",
+  "composedSourceTreeSha256": "sha256:2f067828e6f939d6a2368051d7ab4a453b8b9aeb96c91501301ad253bf803aab",
+  "worldModelCommit": "c6030dbb93342312879f5c00e9c04b34d59170b6",
+  "manifestSha256": "13a6fde729bcf126e4163810cedd952f0ed40a731066044e42e9f679a7e178e3",
+  "fresh": true,
+  "renderedSha256": "514a1826aec5a5595bae409438aaec7a99e6235a075e34d8f85a9819f4017db9",
+  "promptPath": "singularity/work-items/WRK-890/context/prompts/intake-gen1.md",
+  "files": [
+    {
+      "path": "singularity/world-model/core/summary.md",
+      "sha256": "70375031e32fbb7656c18cbffd3220b77cf658bda85d90013eb90815a3baa024",
+      "bytes": 5178,
+      "injectedBytes": 5178,
+      "truncated": false,
+      "category": "required",
+      "level": 0,
+      "reason": "shared repository core",
+      "evidenceId": null,
+      "mimeType": null,
+      "packageId": null
+    },
+    {
+      "path": "singularity/world-model/views/business.md",
+      "sha256": "1762ef2b49d0ca980d5281c5e657ae4f34c7f74d8433cb1f9403cf62b1de4404",
+      "bytes": 6646,
+      "injectedBytes": 6646,
+      "truncated": false,
+      "category": "required",
+      "level": 1,
+      "reason": "intake view: business",
+      "evidenceId": null,
+      "mimeType": null,
+      "packageId": null
+    },
+    {
+      "path": "singularity/world-model/domains/calculator-ui.md",
+      "sha256": "73cc3f27c358eb34e7f2f66e2c2ef28ff91e41506215402e2a13cd4185c93fb6",
+      "bytes": 3552,
+      "injectedBytes": 3552,
+      "truncated": false,
+      "category": "required",
+      "level": 2,
+      "reason": "domain: calculator-ui",
+      "evidenceId": null,
+      "mimeType": null,
+      "packageId": null
+    },
+    {
+      "path": "singularity/world-model/task-guides/classic-calculator-look.md",
+      "sha256": "ab134387b05c3918332165ed78f0920367d9cad49dc61ec1d136d688f0609a20",
+      "bytes": 4790,
+      "injectedBytes": 4790,
+      "truncated": false,
+      "category": "required",
+      "level": 2,
+      "reason": "task guide: classic-calculator-look",
+      "evidenceId": null,
+      "mimeType": null,
+      "packageId": null
+    }
+  ],
+  "injectedAt": "2026-08-09T18:18:02.040Z"
+}

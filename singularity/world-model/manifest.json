@@ -1,0 +1,426 @@
+{
+  "schema_version": "2.0",
+  "repository_commit": "e9d82bcdfd4363c98e447b92108203f18828d6ff",
+  "repository_branch": "WRK-890",
+  "working_tree_clean": false,
+  "generated_at": "2026-08-09T23:36:14.596Z",
+  "generated_date": "9 August 2026",
+  "builder_version": "2.0",
+  "builder_prompt_sha256": "d607ed17ba7e0ad45acd142b62b57c32272e21dfec50866d4bee5105f2fd9169",
+  "analysis_depth": "quick",
+  "core": {
+    "summary": "core/summary.md",
+    "brief": "core/summary.brief.md",
+    "model": "core/model.json",
+    "anchors": [
+      "core.tldr",
+      "core.purpose",
+      "core.type",
+      "core.components",
+      "core.map",
+      "core.entrypoints",
+      "core.tech",
+      "core.commands",
+      "core.risks",
+      "core.unknowns",
+      "core.freshness",
+      "core.routing",
+      "core.brief"
+    ],
+    "bytes": {
+      "summary": 4605,
+      "brief": 1679
+    },
+    "recommended_for_all_agents": true
+  },
+  "views": {
+    "architecture": {
+      "path": "views/architecture.md",
+      "brief_path": "views/architecture.brief.md",
+      "generated": true,
+      "bytes": {
+        "full": 5117,
+        "brief": 1523
+      },
+      "anchors": [
+        "arch.tldr",
+        "arch.facts",
+        "arch.context",
+        "arch.components",
+        "arch.graph",
+        "arch.contracts",
+        "arch.data",
+        "arch.security",
+        "arch.risks",
+        "arch.start",
+        "arch.limits",
+        "arch.brief"
+      ],
+      "load_when": [
+        "system design",
+        "dependency analysis",
+        "cross-component change"
+      ]
+    },
+    "development": {
+      "path": "views/development.md",
+      "brief_path": "views/development.brief.md",
+      "generated": true,
+      "bytes": {
+        "full": 5428,
+        "brief": 1420
+      },
+      "anchors": [
+        "dev.tldr",
+        "dev.facts",
+        "dev.setup",
+        "dev.tree",
+        "dev.modules",
+        "dev.flows",
+        "dev.config",
+        "dev.conventions",
+        "dev.impact",
+        "dev.hotspots",
+        "dev.start",
+        "dev.limits",
+        "dev.brief"
+      ],
+      "load_when": [
+        "implementation",
+        "debugging",
+        "refactoring",
+        "code review"
+      ]
+    },
+    "security": {
+      "path": "views/security.md",
+      "brief_path": "views/security.brief.md",
+      "generated": true,
+      "bytes": {
+        "full": 3959,
+        "brief": 1314
+      },
+      "anchors": [
+        "sec.tldr",
+        "sec.facts",
+        "sec.trust",
+        "sec.config",
+        "sec.input",
+        "sec.storage",
+        "sec.tests",
+        "sec.start",
+        "sec.limits",
+        "sec.brief"
+      ],
+      "load_when": [
+        "threat analysis",
+        "authentication or authorization change"
+      ]
+    },
+    "testing": {
+      "path": "views/testing.md",
+      "brief_path": "views/testing.brief.md",
+      "generated": true,
+      "bytes": {
+        "full": 3956,
+        "brief": 1345
+      },
+      "anchors": [
+        "test.tldr",
+        "test.facts",
+        "test.strategy",
+        "test.inventory",
+        "test.mapping",
+        "test.scenarios",
+        "test.risks",
+        "test.start",
+        "test.limits",
+        "test.brief"
+      ],
+      "load_when": [
+        "test creation",
+        "regression analysis",
+        "quality validation"
+      ]
+    },
+    "business": {
+      "path": "views/business.md",
+      "brief_path": "views/business.brief.md",
+      "generated": false,
+      "bytes": {
+        "full": 0,
+        "brief": 0
+      },
+      "anchors": [],
+      "load_when": [
+        "business capability analysis",
+        "product behavior analysis",
+        "business impact assessment"
+      ]
+    },
+    "release": {
+      "path": "views/release.md",
+      "brief_path": "views/release.brief.md",
+      "generated": false,
+      "bytes": {
+        "full": 0,
+        "brief": 0
+      },
+      "anchors": [],
+      "load_when": [
+        "build",
+        "packaging",
+        "deployment",
+        "rollback"
+      ]
+    },
+    "operations": {
+      "path": "views/operations.md",
+      "brief_path": "views/operations.brief.md",
+      "generated": false,
+      "bytes": {
+        "full": 0,
+        "brief": 0
+      },
+      "anchors": [],
+      "load_when": [
+        "runtime diagnosis",
+        "monitoring and incident response"
+      ]
+    }
+  },
+  "phase_map": {
+    "intake": {
+      "views": [
+        "business"
+      ],
+      "tier": "brief"
+    },
+    "requirements": {
+      "views": [
+        "business"
+      ],
+      "tier": "full"
+    },
+    "design": {
+      "views": [
+        "architecture"
+      ],
+      "tier": "full"
+    },
+    "implementation-spec": {
+      "views": [
+        "architecture",
+        "development"
+      ],
+      "tier": "full"
+    },
+    "implementation": {
+      "views": [
+        "development"
+      ],
+      "tier": "full"
+    },
+    "verification": {
+      "views": [
+        "testing"
+      ],
+      "tier": "full"
+    },
+    "conformance": {
+      "views": [
+        "testing",
+        "security"
+      ],
+      "tier": "brief"
+    }
+  },
+  "agent_map": {
+    "product-owner": {
+      "views": [
+        "business"
+      ],
+      "tier": "brief"
+    },
+    "business-analyst": {
+      "views": [
+        "business"
+      ],
+      "tier": "full"
+    },
+    "architect": {
+      "views": [
+        "architecture",
+        "security"
+      ],
+      "tier": "full"
+    },
+    "developer": {
+      "views": [
+        "development"
+      ],
+      "tier": "full"
+    },
+    "qa": {
+      "views": [
+        "testing"
+      ],
+      "tier": "full"
+    },
+    "security": {
+      "views": [
+        "security"
+      ],
+      "tier": "full"
+    },
+    "operations": {
+      "views": [
+        "operations"
+      ],
+      "tier": "full"
+    },
+    "delivery-manager": {
+      "views": [
+        "release"
+      ],
+      "tier": "brief"
+    }
+  },
+  "path_index": {
+    "path": "index/path-map.json"
+  },
+  "domains": [
+    {
+      "id": "calculator-ui",
+      "path": "domains/calculator-ui.md",
+      "summary": "Covers the calculator UI experience, including display, keypad, and theme behavior.",
+      "relevant_views": [
+        "architecture",
+        "development",
+        "testing",
+        "security"
+      ],
+      "keywords": [
+        "calculator",
+        "theme",
+        "display",
+        "keypad"
+      ],
+      "anchors": [
+        "domain.calculator-ui.tldr",
+        "domain.calculator-ui.purpose",
+        "domain.calculator-ui.terms",
+        "domain.calculator-ui.components",
+        "domain.calculator-ui.workflows",
+        "domain.calculator-ui.invariants",
+        "domain.calculator-ui.risks"
+      ]
+    }
+  ],
+  "task_guides": [
+    {
+      "id": "classic-calculator-look",
+      "path": "task-guides/classic-calculator-look.md",
+      "task": "Change the look to match classic calculator",
+      "required_views": [
+        "development",
+        "architecture",
+        "testing"
+      ],
+      "required_domains": [
+        "calculator-ui"
+      ],
+      "anchors": [
+        "task.classic-calculator-look.tldr",
+        "task.classic-calculator-look.interpretation",
+        "task.classic-calculator-look.roles",
+        "task.classic-calculator-look.components",
+        "task.classic-calculator-look.domains",
+        "task.classic-calculator-look.flow",
+        "task.classic-calculator-look.invariants",
+        "task.classic-calculator-look.tests",
+        "task.classic-calculator-look.commands",
+        "task.classic-calculator-look.risks"
+      ]
+    }
+  ],
+  "evidence": {
+    "path": "evidence/evidence.jsonl",
+    "load_only_when_verification_is_needed": true
+  },
+  "recommended_loading_rules": [
+    {
+      "agent_type": "business",
+      "load": [
+        "core/summary.brief.md",
+        "views/business.md"
+      ]
+    },
+    {
+      "agent_type": "architect",
+      "load": [
+        "core/summary.brief.md",
+        "views/architecture.md"
+      ]
+    },
+    {
+      "agent_type": "developer",
+      "load": [
+        "core/summary.brief.md",
+        "views/development.md"
+      ]
+    },
+    {
+      "agent_type": "tester",
+      "load": [
+        "core/summary.brief.md",
+        "views/testing.md"
+      ]
+    },
+    {
+      "agent_type": "release",
+      "load": [
+        "core/summary.brief.md",
+        "views/release.md"
+      ]
+    }
+  ],
+  "budget_hints": {
+    "orientation_only": [
+      "core/summary.brief.md"
+    ],
+    "single_phase_typical": [
+      "core/summary.brief.md",
+      "views/<view>.md"
+    ],
+    "deep_investigation": [
+      "core/summary.md",
+      "views/<view>.md",
+      "domains/<domain>.md",
+      "evidence/evidence.jsonl"
+    ]
+  },
+  "source_tree_sha256": "sha256:637a9fc78478e48521306e9220a3d96ac77ec021f78f1d0f34359546486fcf33",
+  "views_generated": [
+    "architecture",
+    "development",
+    "security",
+    "testing"
+  ],
+  "generation": {
+    "parallel": false,
+    "strategy": "view",
+    "max_workers": 1,
+    "discovery_views": [],
+    "degraded_views": [],
+    "resumed_views": [],
+    "pending_views_at_start": []
+  },
+  "generated_for_phase": "verification",
+  "requested_views": [
+    "architecture",
+    "development",
+    "security",
+    "testing"
+  ]
+}

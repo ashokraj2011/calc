@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 1,
+  "kind": "work-reconciliation",
+  "workId": "WRK-890",
+  "workType": "chore",
+  "intervalId": "INT-implementation-G1-001",
+  "phaseId": "implementation",
+  "generation": 1,
+  "baselineSha256": "4927194345f3af41fd8edb661ff765b80887a4986c57e8222fdc9d00cf6c1b74",
+  "baseline": {
+    "path": "singularity/work-items/WRK-890/context/work-intervals/implementation-gen1-baseline.json",
+    "sha256": "4927194345f3af41fd8edb661ff765b80887a4986c57e8222fdc9d00cf6c1b74",
+    "verified": true,
+    "sourceBaseCommit": "ef1ed1221327c641477f3745085c4aa8e50d8164"
+  },
+  "sourceBaseCommit": "ef1ed1221327c641477f3745085c4aa8e50d8164",
+  "target": {
+    "branch": "WRK-890",
+    "head": "0727133ad380e9a065fab7fed5a0fd787df70199",
+    "includesWorktree": false,
+    "cleanApplicationTree": true,
+    "uncommittedApplicationPaths": []
+  },
+  "findings": [
+    {
+      "path": "src/App.jsx",
+      "status": "present",
+      "sha256": "c6a05de6c0432abb830171e7374b9cfd2be237f3329b5430e9da8bc64380b2be",
+      "bytes": 10489,
+      "verdict": "unplanned",
+      "clauseIds": [],
+      "protected": false
+    },
+    {
+      "path": "src/components/Display.jsx",
+      "status": "present",
+      "sha256": "a82a19b2a9c7bb9921d636bf38b51694007833ffd970fe73ef16248d710c919b",
+      "bytes": 3626,
+      "verdict": "unplanned",
+      "clauseIds": [],
+      "protected": false
+    },
+    {
+      "path": "src/components/Header.jsx",
+      "status": "present",
+      "sha256": "2723c7eed7633aec54d4e8b958727d02064fc18c1a564c3c0404085b93d6106d",
+      "bytes": 5317,
+      "verdict": "unplanned",
+      "clauseIds": [],
+      "protected": false
+    },
+    {
+      "path": "src/index.css",
+      "status": "present",
+      "sha256": "4f968580583513721ac2e6fc1e95b582d2405b040de437522b40e1281a3115e5",
+      "bytes": 8618,
+      "verdict": "unplanned",
+      "clauseIds": [],
+      "protected": false
+    }
+  ],
+  "summary": {
+    "changedPaths": 4,
+    "planned": 0,
+    "unplanned": 4,
+    "protected": 0
+  },
+  "decision": {
+    "status": "review",
+    "summaryStatus": "attention",
+    "eligibleForSubmission": true,
+    "reasons": [],
+    "escalationTarget": null
+  },
+  "reconciliationSha256": "d0e4d2239750714366bbf929fde345ee2a9689363c55cf6f10d4da2adaae0105",
+  "reconciledAt": "2026-08-09T22:21:51.651Z",
+  "final": true,
+  "recordedAt": "2026-08-09T22:21:51.657Z",
+  "path": "singularity/work-items/WRK-890/context/work-intervals/reconciliations/d0e4d2239750714366bbf929fde345ee2a9689363c55cf6f10d4da2adaae0105.json"
+}
