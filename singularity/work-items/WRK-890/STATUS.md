@@ -5,7 +5,7 @@
 - Capability: **CaLC** (`calc-app`)
 - Capability map: `77ee9fd3c55345e31113fffb91dab4b0ffd95ced22cbd95d19ffa1d04bd7a479`
 - Overall status: **in_progress**
-- Current phase: **verification**
+- Current phase: **conformance**
 
 | # | Phase | Governed agent | Status | Generation | Approvals | Tokens |
 |---:|---|---|---|---:|---:|---:|
@@ -13,11 +13,14 @@
 |  | ⚠ self-approval | Ashok Raj via product-approvers; agent product-owner | **warning** |  |  |  |
 | 2 | Implementation (`implementation`) | developer | **approved** | 1 | 1 | unavailable |
 |  | ⚠ self-approval | Ashok Raj via engineering-reviewers; agent developer | **warning** |  |  |  |
-| 3 | Verification (`verification`) | qa | **awaiting_approval** | 1 | 0 | unavailable |
-| 4 | Spec-to-code conformance (`conformance`) | qa | **not_started** | 0 | 0 | unavailable |
+| 3 | Verification (`verification`) | qa | **approved** | 1 | 1 | unavailable |
+|  | ⚠ self-approval | Ashok Raj via quality-reviewers; agent qa | **warning** |  |  |  |
+| 4 | Spec-to-code conformance (`conformance`) | qa | **in_progress** | 0 | 0 | unavailable |
 
 ## Recent history
 
+- 2026-08-10T05:26:53.387Z — **phase_self_approved** (verification) by ashokraj2011 · governed agent qa: threshold reached; advanced to conformance
+- 2026-08-10T05:26:53.387Z — **work_interval_closed** (verification) by ashokraj2011 · governed agent qa: interval INT-verification-G1-002 closed after phase approval
 - 2026-08-10T05:20:55.372Z — **phase_submitted** (verification) by ashokraj2011 · governed agent qa: 3 artifacts
 - 2026-08-10T05:20:55.371Z — **work_interval_reconciled** (verification) by system: aligned; 0 changed path(s)
 - 2026-08-10T05:20:20.755Z — **phase_generated** (verification) by ashokraj2011 · governed agent qa: generation 1
@@ -31,4 +34,3 @@
 - 2026-08-09T18:23:09.477Z — **phase_self_approved** (intake) by ashokraj2011 · governed agent product-owner: threshold reached; advanced to implementation
 - 2026-08-09T18:20:26.657Z — **phase_submitted** (intake) by ashokraj2011 · governed agent product-owner: 1 artifacts
 - 2026-08-09T18:20:05.533Z — **phase_generated** (intake) by ashokraj2011 · governed agent product-owner: generation 1
-- 2026-08-09T17:32:39.079Z — **work_started** (intake) by ashokraj2011 · governed agent product-owner: Created chore branch WRK-890

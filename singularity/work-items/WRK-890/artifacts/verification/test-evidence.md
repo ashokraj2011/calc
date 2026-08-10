@@ -5,7 +5,7 @@
   "workType": "chore",
   "phase": "verification",
   "generation": 1,
-  "status": "awaiting_approval",
+  "status": "approved",
   "generatedBy": {
     "name": "Ashok Raj",
     "email": "88361104+ashokraj2011@users.noreply.github.com",
@@ -78,8 +78,63 @@
   "remoteOutputs": [],
   "usage": [],
   "sequenceOverrides": [],
-  "approvals": [],
-  "selfApproval": false,
+  "approvals": [
+    {
+      "decision": "approved",
+      "phase": "verification",
+      "at": "2026-08-10T05:26:53.387Z",
+      "actor": {
+        "name": "Ashok Raj",
+        "email": "88361104+ashokraj2011@users.noreply.github.com",
+        "login": "ashokraj2011"
+      },
+      "agent": "qa",
+      "authorityGroup": "quality-reviewers",
+      "identityAssurance": "configured-local",
+      "channel": "copilot-selection-receipt",
+      "generation": 1,
+      "artifactSha256": [
+        {
+          "path": "singularity/work-items/WRK-890/artifacts/implementation/implementation-summary.md",
+          "sha256": "69d9c4ee9d0e097e9cc204011601a24aeec9247dc72939f73609f1a23d97a6df"
+        },
+        {
+          "path": "singularity/work-items/WRK-890/artifacts/intake/intake.md",
+          "sha256": "a882b004684f37af63768880720a8c7d354b6cb0b392edc4934f5db5ce8a3dd4"
+        },
+        {
+          "path": "singularity/work-items/WRK-890/artifacts/verification/test-evidence.md",
+          "sha256": "360627b3e6654de56120c57aaa9ebb42dca5a6e05d2b0e685d227fc06c6073a5"
+        }
+      ],
+      "reviewPacketSha256": "bd76314276c00d164bc3d8114e06055fef15bd52f3ef4467e3b4903e1f7f47bf",
+      "actionContext": {
+        "phase": "verification",
+        "label": "Verification",
+        "generation": 1,
+        "submittedAt": "2026-08-10T05:20:55.372Z",
+        "artifacts": [
+          {
+            "path": "singularity/work-items/WRK-890/artifacts/implementation/implementation-summary.md",
+            "sha256": "69d9c4ee9d0e097e9cc204011601a24aeec9247dc72939f73609f1a23d97a6df"
+          },
+          {
+            "path": "singularity/work-items/WRK-890/artifacts/intake/intake.md",
+            "sha256": "a882b004684f37af63768880720a8c7d354b6cb0b392edc4934f5db5ce8a3dd4"
+          },
+          {
+            "path": "singularity/work-items/WRK-890/artifacts/verification/test-evidence.md",
+            "sha256": "360627b3e6654de56120c57aaa9ebb42dca5a6e05d2b0e685d227fc06c6073a5"
+          }
+        ],
+        "reviewPacketSha256": "bd76314276c00d164bc3d8114e06055fef15bd52f3ef4467e3b4903e1f7f47bf",
+        "submittedSourceCommit": "0967ba8cc8c8977b3c9eb1ecdeb952573bbcd1cf",
+        "planId": "e9b616f1bfd44ba41cf97815"
+      },
+      "selfApproval": true
+    }
+  ],
+  "selfApproval": true,
   "conformanceTree": null
 }
 -->
