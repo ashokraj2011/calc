@@ -1,12 +1,32 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-08-10T15:39:47Z",
-  "repository_commit": "87231196b8f0573f53136ad26e33c95e6fb0819a",
+  "generated_at": "2026-08-10T23:45:02.386Z",
+  "repository_commit": "333a66d35e57d5077d68d4164df9b138b001d0ed",
   "entries": [
     {
       "glob": "src/App.jsx",
       "component_ids": [
-        "calculator-shell",
+        "app-shell"
+      ],
+      "domains": [
+        "calculator-ui"
+      ],
+      "views": [
+        "business"
+      ],
+      "symbols": [
+        "App"
+      ],
+      "tests": [],
+      "anchors": [
+        "biz.capabilities",
+        "biz.workflows"
+      ],
+      "notes": "This is the primary app shell and state container; changes here affect the whole calculator experience."
+    },
+    {
+      "glob": "src/components/**",
+      "component_ids": [
         "calculator-ui"
       ],
       "domains": [
@@ -16,21 +36,20 @@
         "business"
       ],
       "symbols": [
-        "App",
         "Header",
         "Display",
         "StandardKeypad",
         "ScientificKeypad",
         "FinancialCalculator",
-        "FunctionGrapher",
-        "UnitConverter"
+        "UnitConverter",
+        "FunctionGrapher"
       ],
       "tests": [],
       "anchors": [
         "biz.capabilities",
-        "biz.workflows"
+        "biz.actors"
       ],
-      "notes": "Start here for the overall product flow and mode-based experience."
+      "notes": "These files define the visible calculator experience and the mode-specific UI surfaces."
     },
     {
       "glob": "src/utils/evaluator.js",
@@ -48,20 +67,19 @@
         "formatNumber",
         "calculateEMI",
         "calculateCompoundInterest",
-        "calculateTip",
-        "convertUnits"
+        "calculateTip"
       ],
       "tests": [],
       "anchors": [
         "biz.rules",
-        "biz.impact"
+        "biz.failures"
       ],
-      "notes": "This file contains the most important business rules and formulas."
+      "notes": "This module contains the shared math and financial rules that determine calculator trust."
     },
     {
       "glob": "src/index.css",
       "component_ids": [
-        "theme-system"
+        "calculator-ui"
       ],
       "domains": [
         "calculator-ui"
@@ -74,7 +92,7 @@
       "anchors": [
         "biz.capabilities"
       ],
-      "notes": "Theme tokens and styling define the visible quality of the calculator experience."
+      "notes": "The shared theme system and button/display tokens live here, making it the primary styling entry point."
     }
   ],
   "fallback": {

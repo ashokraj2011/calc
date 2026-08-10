@@ -1,13 +1,13 @@
 {
   "schema_version": "3.0",
-  "repository_commit": "87231196b8f0573f53136ad26e33c95e6fb0819a",
+  "repository_commit": "333a66d35e57d5077d68d4164df9b138b001d0ed",
   "repository_branch": "WRK-1978",
   "working_tree_clean": false,
-  "generated_at": "2026-08-10T15:39:41.380Z",
+  "generated_at": "2026-08-10T23:44:56.097Z",
   "generated_date": "10 August 2026",
   "builder_version": "2.0",
   "builder_prompt_sha256": "d607ed17ba7e0ad45acd142b62b57c32272e21dfec50866d4bee5105f2fd9169",
-  "analysis_depth": "quick",
+  "analysis_depth": "standard",
   "core": {
     "summary": "core/summary.md",
     "brief": "core/summary.brief.md",
@@ -237,10 +237,10 @@
           "sha256": "094b933d4afd44b2d33cb88dccc39e79b20ce9bf00df52412473e2677b114022"
         },
         "full": {
-          "status": "missing",
+          "status": "ready",
           "path": "views/business.md",
-          "bytes": 0,
-          "sha256": null
+          "bytes": 7638,
+          "sha256": "cffc4d9aff1415a6654983d37a7e94c5f792133499749105f806cf9ee8e1d9e9"
         }
       }
     },
@@ -315,38 +315,6 @@
         "business"
       ],
       "tier": "full"
-    },
-    "design": {
-      "views": [
-        "architecture"
-      ],
-      "tier": "full"
-    },
-    "implementation-spec": {
-      "views": [
-        "architecture",
-        "development"
-      ],
-      "tier": "full"
-    },
-    "implementation": {
-      "views": [
-        "development"
-      ],
-      "tier": "full"
-    },
-    "verification": {
-      "views": [
-        "testing"
-      ],
-      "tier": "full"
-    },
-    "conformance": {
-      "views": [
-        "testing",
-        "security"
-      ],
-      "tier": "brief"
     }
   },
   "agent_map": {
@@ -361,43 +329,6 @@
         "business"
       ],
       "tier": "full"
-    },
-    "architect": {
-      "views": [
-        "architecture",
-        "security"
-      ],
-      "tier": "full"
-    },
-    "developer": {
-      "views": [
-        "development"
-      ],
-      "tier": "full"
-    },
-    "qa": {
-      "views": [
-        "testing"
-      ],
-      "tier": "full"
-    },
-    "security": {
-      "views": [
-        "security"
-      ],
-      "tier": "full"
-    },
-    "operations": {
-      "views": [
-        "operations"
-      ],
-      "tier": "full"
-    },
-    "delivery-manager": {
-      "views": [
-        "release"
-      ],
-      "tier": "brief"
     }
   },
   "path_index": {
@@ -407,7 +338,7 @@
     {
       "id": "calculator-ui",
       "path": "domains/calculator-ui.md",
-      "summary": "The calculator UI domain covers the shell, modes, theme system, and shared experience.",
+      "summary": "The calculator experience as a product surface covering modes, layout, and shared visual conventions.",
       "relevant_views": [
         "business"
       ],
@@ -433,6 +364,31 @@
       "required_domains": [
         "calculator-ui"
       ]
+    },
+    {
+      "id": "windows-calc-look",
+      "path": "task-guides/windows-calc-look.md",
+      "task": "Make the app look like windows calc",
+      "required_views": [
+        "business"
+      ],
+      "required_domains": [
+        "calculator-ui"
+      ],
+      "anchors": [
+        "task.windows-calc-look.tldr",
+        "task.windows-calc-look.interpretation",
+        "task.windows-calc-look.roles",
+        "task.windows-calc-look.components",
+        "task.windows-calc-look.domains",
+        "task.windows-calc-look.paths",
+        "task.windows-calc-look.flow",
+        "task.windows-calc-look.invariants",
+        "task.windows-calc-look.tests",
+        "task.windows-calc-look.commands",
+        "task.windows-calc-look.risks",
+        "task.windows-calc-look.unknowns"
+      ]
     }
   ],
   "evidence": {
@@ -446,34 +402,6 @@
         "core/summary.brief.md",
         "views/business.md"
       ]
-    },
-    {
-      "agent_type": "architect",
-      "load": [
-        "core/summary.brief.md",
-        "views/architecture.md"
-      ]
-    },
-    {
-      "agent_type": "developer",
-      "load": [
-        "core/summary.brief.md",
-        "views/development.md"
-      ]
-    },
-    {
-      "agent_type": "tester",
-      "load": [
-        "core/summary.brief.md",
-        "views/testing.md"
-      ]
-    },
-    {
-      "agent_type": "release",
-      "load": [
-        "core/summary.brief.md",
-        "views/release.md"
-      ]
     }
   ],
   "budget_hints": {
@@ -482,12 +410,12 @@
     ],
     "single_phase_typical": [
       "core/summary.brief.md",
-      "views/<view>.md"
+      "views/business.md"
     ],
     "deep_investigation": [
       "core/summary.md",
-      "views/<view>.md",
-      "domains/<domain>.md",
+      "views/business.md",
+      "domains/calculator-ui.md",
       "evidence/evidence.jsonl"
     ]
   },
@@ -504,7 +432,7 @@
     "resumed_views": [],
     "pending_views_at_start": []
   },
-  "generated_for_phase": "intake",
+  "generated_for_phase": "requirements",
   "requested_views": [
     "business"
   ],
@@ -525,10 +453,27 @@
       "reused": [
         "core/brief"
       ]
+    },
+    {
+      "id": "provider-1786406031749",
+      "generated_at": "2026-08-10T23:44:56.097Z",
+      "source_tree_sha256": "sha256:637a9fc78478e48521306e9220a3d96ac77ec021f78f1d0f34359546486fcf33",
+      "provider": "copilot-cli",
+      "requested": [
+        "business/full",
+        "core/brief"
+      ],
+      "produced": [
+        "business/full",
+        "core/brief"
+      ],
+      "reused": [
+        "core/brief"
+      ]
     }
   ],
   "requested_selections": [
     "core/brief",
-    "business/brief"
+    "business/full"
   ]
 }
