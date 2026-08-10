@@ -4,27 +4,46 @@
   "workId": "WRK-890",
   "workType": "chore",
   "phase": "verification",
-  "generation": 0,
+  "generation": 1,
   "status": "in_progress",
-  "generatedBy": null,
+  "generatedBy": {
+    "name": "Ashok Raj",
+    "email": "88361104+ashokraj2011@users.noreply.github.com",
+    "login": "ashokraj2011"
+  },
   "generatedAgent": null,
   "authorship": {
     "schemaVersion": 1,
-    "producer": "legacy-unspecified",
-    "channel": "legacy",
-    "governedAgentContext": null,
+    "producer": "human",
+    "channel": "manual-in-place",
+    "actor": {
+      "name": "Ashok Raj",
+      "email": "88361104+ashokraj2011@users.noreply.github.com",
+      "login": "ashokraj2011"
+    },
+    "governedAgentContext": {
+      "agentId": "qa"
+    },
     "kernelModel": {
       "invoked": false,
-      "status": "unavailable",
+      "status": "exact",
       "invocationIds": []
     },
     "externalAiUse": {
       "value": "unknown",
       "status": "unavailable"
     },
-    "source": null
+    "source": {
+      "kind": "in-place",
+      "filename": "test-evidence.md",
+      "mediaType": "text/markdown",
+      "sha256": "e1a6907dbb93f79dfdbb02364710f0d0542be5c837625e263bbc5f7ca5dce600",
+      "bytes": 13280
+    },
+    "generation": 1,
+    "publishedAt": "2026-08-10T05:20:20.711Z"
   },
-  "sourceCommit": null,
+  "sourceCommit": "42c11c41ed04692016a8c038010fae09f0e0edca",
   "generationCommit": null,
   "publicationCommit": null,
   "configSha256": "c71e8d4583a4303c75561c44902b837971681f740cc7025f9b55cb997589424f",
@@ -36,7 +55,7 @@
   "inputs": {
     "generation": 1,
     "path": "singularity/work-items/WRK-890/context/inputs-verification-gen1.json",
-    "sha256": "a41ff45fed49273dac8f4f362dd50ad07ea632f6078c555fdf6dac9e5906bee8",
+    "sha256": "619188b6b300b9bedb23714d43b36d81caf3883e05c0a8a1367f6e7dc29a7100",
     "renderedSha256": "42a7d46a090111e951d3af21493afdbad37530cdf60face92045da94d007e38d",
     "mode": "enforce"
   },
@@ -46,7 +65,16 @@
   },
   "remoteAgent": null,
   "clarification": null,
-  "telemetry": [],
+  "telemetry": [
+    {
+      "generation": 1,
+      "path": "singularity/work-items/WRK-890/telemetry/verification-gen1.json",
+      "sha256": "9fd1f8423067b2c8126144e5b93b2b28d403664d9adc1bed2e7bf4956f0dfd42",
+      "status": "not-invoked",
+      "models": [],
+      "providerCost": null
+    }
+  ],
   "remoteOutputs": [],
   "usage": [],
   "sequenceOverrides": [],
