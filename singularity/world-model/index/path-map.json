@@ -1,135 +1,85 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-08-09T23:57:03Z",
-  "repository_commit": "e9d82bcdfd4363c98e447b92108203f18828d6ff",
+  "generated_at": "2026-08-10T15:39:47Z",
+  "repository_commit": "87231196b8f0573f53136ad26e33c95e6fb0819a",
   "entries": [
     {
       "glob": "src/App.jsx",
       "component_ids": [
-        "calculator-shell"
+        "calculator-shell",
+        "calculator-ui"
       ],
       "domains": [
         "calculator-ui"
       ],
       "views": [
-        "architecture",
-        "development"
+        "business"
       ],
       "symbols": [
         "App",
-        "handleEquals",
-        "handleDigit",
-        "handleOperator"
+        "Header",
+        "Display",
+        "StandardKeypad",
+        "ScientificKeypad",
+        "FinancialCalculator",
+        "FunctionGrapher",
+        "UnitConverter"
       ],
       "tests": [],
       "anchors": [
-        "arch.components",
-        "dev.flows"
+        "biz.capabilities",
+        "biz.workflows"
       ],
-      "notes": "Central state and interaction routing for all calculator modes."
-    },
-    {
-      "glob": "src/components/Display.jsx",
-      "component_ids": [
-        "calculator-ui"
-      ],
-      "domains": [
-        "calculator-ui"
-      ],
-      "views": [
-        "architecture",
-        "development",
-        "testing"
-      ],
-      "symbols": [
-        "Display"
-      ],
-      "tests": [],
-      "anchors": [
-        "arch.components",
-        "dev.modules",
-        "test.mapping"
-      ],
-      "notes": "Display and interaction affordances for the main calculator surface."
-    },
-    {
-      "glob": "src/components/StandardKeypad.jsx",
-      "component_ids": [
-        "calculator-ui"
-      ],
-      "domains": [
-        "calculator-ui"
-      ],
-      "views": [
-        "architecture",
-        "development"
-      ],
-      "symbols": [
-        "StandardKeypad"
-      ],
-      "tests": [],
-      "anchors": [
-        "arch.components",
-        "dev.modules"
-      ],
-      "notes": "Primary keypad layout used by the standard and scientific calculator views."
+      "notes": "Start here for the overall product flow and mode-based experience."
     },
     {
       "glob": "src/utils/evaluator.js",
       "component_ids": [
-        "calculator-engine"
+        "expression-engine"
       ],
       "domains": [
         "calculator-ui"
       ],
       "views": [
-        "architecture",
-        "development",
-        "security",
-        "testing"
+        "business"
       ],
       "symbols": [
         "evaluateExpression",
-        "formatNumber"
+        "formatNumber",
+        "calculateEMI",
+        "calculateCompoundInterest",
+        "calculateTip",
+        "convertUnits"
       ],
       "tests": [],
       "anchors": [
-        "arch.contracts",
-        "dev.modules",
-        "sec.input",
-        "test.mapping"
+        "biz.rules",
+        "biz.impact"
       ],
-      "notes": "Behavioral core for arithmetic, scientific functions, unit conversion, and finance."
+      "notes": "This file contains the most important business rules and formulas."
     },
     {
       "glob": "src/index.css",
       "component_ids": [
-        "calculator-theme"
+        "theme-system"
       ],
       "domains": [
         "calculator-ui"
       ],
       "views": [
-        "architecture",
-        "development",
-        "testing"
+        "business"
       ],
-      "symbols": [
-        ":root",
-        "data-theme"
-      ],
+      "symbols": [],
       "tests": [],
       "anchors": [
-        "arch.components",
-        "dev.hotspots",
-        "test.risks"
+        "biz.capabilities"
       ],
-      "notes": "Shared visual token system for the classic and alternate calculator themes."
+      "notes": "Theme tokens and styling define the visible quality of the calculator experience."
     }
   ],
   "fallback": {
     "views": [
-      "development"
+      "business"
     ],
     "anchors": [
       "core.map"
