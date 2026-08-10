@@ -1,0 +1,7 @@
+> **Grounding** · calc @ `87231196b8f0573f53136ad26e33c95e6fb0819a` · view: `business` · tier: `brief`
+> **Generated** 10 August 2026 (2026-08-10T15:39:47Z) · depth: `quick` · builder `2.0`
+> **Authoritative for:** file locations, entry points, commands, structural relationships as of the commit above.
+> **Not authoritative for:** current file contents. If this document conflicts with code you have read, trust the code and say so explicitly in your output.
+> **Unknowns are marked.** Do not resolve them by inference. If the repository has changed since the date above, treat locations as hints, not facts.
+
+This view is for product-facing change work. The repository is a browser calculator app with five user-facing modes: standard arithmetic, scientific math, unit conversion, financial calculations, and function graphing. The value proposition is not a backend service but a polished single-page calculator experience with memory, history, themes, and keyboard support. The main files to inspect are `src/App.jsx` for the shell, `src/utils/evaluator.js` for the business rules, `src/components/FinancialCalculator.jsx` and `src/components/UnitConverter.jsx` for specialized workflows, and `src/index.css` for the visual system. The most common mistake is to treat this as a trivial arithmetic widget; it also carries domain-specific calculators and experience features that shape how users perceive quality.
