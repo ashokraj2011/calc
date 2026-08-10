@@ -1,0 +1,111 @@
+{
+  "schemaVersion": 2,
+  "workId": "WRK-1978",
+  "phase": "intake",
+  "generation": 1,
+  "agent": "product-owner",
+  "modelCommit": "553c033f5a3d2850d2fe0e709ef0619d8e2e72be",
+  "matchedRules": 0,
+  "mode": "append",
+  "applied": false,
+  "depth": "standard",
+  "evidence": false,
+  "requiredViews": [
+    "business"
+  ],
+  "requiredSelections": [
+    {
+      "kind": "core",
+      "tier": "brief",
+      "required": true
+    },
+    {
+      "kind": "view",
+      "view": "business",
+      "tier": "brief",
+      "required": true,
+      "origin": "phase+agent"
+    }
+  ],
+  "task": "Make the app look like windows calc",
+  "supportingEvidence": [],
+  "references": [],
+  "modelSourceTreeSha256": "sha256:637a9fc78478e48521306e9220a3d96ac77ec021f78f1d0f34359546486fcf33",
+  "composedSourceTreeSha256": "sha256:637a9fc78478e48521306e9220a3d96ac77ec021f78f1d0f34359546486fcf33",
+  "worldModelCommit": "553c033f5a3d2850d2fe0e709ef0619d8e2e72be",
+  "manifestSha256": "9eb3d453eb13a872e0f3b8ec095b1a489cd0d877aa311112d6473718ac240516",
+  "fresh": true,
+  "renderedSha256": "ffa092cf5192bb94659215665a3739f2edc0435c83fa47e7b93731d8422820cc",
+  "promptPath": "singularity/work-items/WRK-1978/context/prompts/intake-gen1.md",
+  "files": [
+    {
+      "path": "singularity/world-model/core/summary.brief.md",
+      "sha256": "bc0aed42db256e34116f2ab0d4d7e301f3df9cab3d3ac4edd3f9ec848a25d872",
+      "bytes": 1679,
+      "injectedBytes": 1679,
+      "truncated": false,
+      "category": "required",
+      "level": 0,
+      "reason": "shared repository core (brief)",
+      "evidenceId": null,
+      "mimeType": null,
+      "packageId": null,
+      "handle": null,
+      "previewSha256": null,
+      "previewBytes": null,
+      "renderer": null
+    },
+    {
+      "path": "singularity/world-model/views/business.brief.md",
+      "sha256": "094b933d4afd44b2d33cb88dccc39e79b20ce9bf00df52412473e2677b114022",
+      "bytes": 1422,
+      "injectedBytes": 1422,
+      "truncated": false,
+      "category": "required",
+      "level": 1,
+      "reason": "intake view: business (brief; phase+agent)",
+      "evidenceId": null,
+      "mimeType": null,
+      "packageId": null,
+      "handle": null,
+      "previewSha256": null,
+      "previewBytes": null,
+      "renderer": null
+    },
+    {
+      "path": "singularity/world-model/domains/calculator-ui.md",
+      "sha256": "1c9f65ae446e2150382662ed397a810a143e72c2c3a4f8aec15df08d695ef8fd",
+      "bytes": 2791,
+      "injectedBytes": 2791,
+      "truncated": false,
+      "category": "required",
+      "level": 2,
+      "reason": "domain: calculator-ui",
+      "evidenceId": null,
+      "mimeType": null,
+      "packageId": null,
+      "handle": null,
+      "previewSha256": null,
+      "previewBytes": null,
+      "renderer": null
+    },
+    {
+      "path": "singularity/world-model/task-guides/classic-calculator-look.md",
+      "sha256": "de1431ddb2e8dc8c9286464116720ccd98c26dd320fa7b71de9c921027228954",
+      "bytes": 3603,
+      "injectedBytes": 3603,
+      "truncated": false,
+      "category": "required",
+      "level": 2,
+      "reason": "task guide: classic-calculator-look",
+      "evidenceId": null,
+      "mimeType": null,
+      "packageId": null,
+      "handle": null,
+      "previewSha256": null,
+      "previewBytes": null,
+      "renderer": null
+    }
+  ],
+  "injectedAt": "2026-08-10T15:55:21.873Z"
+}

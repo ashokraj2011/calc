@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "workId": "WRK-1978",
+  "phase": "intake",
+  "generation": 1,
+  "mode": "required",
+  "promptPath": "singularity/work-items/WRK-1978/context/prompts/intake-gen1.md",
+  "promptSha256": "ffa092cf5192bb94659215665a3739f2edc0435c83fa47e7b93731d8422820cc",
+  "groundingRecordPath": "singularity/work-items/WRK-1978/context/intake-gen1.json",
+  "groundingRecordSha256": "872f97f743c48049a5a2498acdea33c96363b4e53cdd346687b21f5ca8a9ed27",
+  "responses": [
+    {
+      "id": "Q-001",
+      "question": "Should the \"classic calculator\" look target a specific physical calculator model, or just a general retro/classic aesthetic?",
+      "why": "Scopes the visual target and avoids blocking on pinning an exact reference model.",
+      "answer": "General retro/classic look; no single reference model to match.",
+      "status": "answered",
+      "blocking": false
+    },
+    {
+      "id": "Q-002",
+      "question": "Should this classic-look change apply only to the app's default theme, or to all theme options?",
+      "why": "Bounds the blast radius of the shared CSS token changes.",
+      "answer": "Only the default/classic theme. Other themes (e.g. dark mode) remain unchanged.",
+      "status": "answered",
+      "blocking": false
+    },
+    {
+      "id": "Q-003",
+      "question": "Should Standard mode be the primary target, or should all modes be explicitly restyled together?",
+      "why": "Defines the scope boundary and acceptance criteria for verification.",
+      "answer": "Standard mode is the primary target. Other modes (scientific, converter, financial, grapher) inherit shared styling passively via shared CSS tokens; they are not explicitly restyled as part of this change.",
+      "status": "answered",
+      "blocking": false
+    },
+    {
+      "id": "Q-004",
+      "question": "What visual traits define the classic look?",
+      "why": "Concrete, testable visual acceptance criteria for the Standard mode redesign.",
+      "answer": "Raised/beveled physical-style buttons, a recessed LCD-style display panel, and a muted classic color palette (grey/beige tones) with simple borders/shadows.",
+      "status": "answered",
+      "blocking": false
+    }
+  ],
+  "completed": true,
+  "recordedAt": "2026-08-10T15:56:02.695Z",
+  "recordedBy": {
+    "name": "Ashok Raj",
+    "email": "88361104+ashokraj2011@users.noreply.github.com",
+    "login": "ashokraj2011"
+  },
+  "agent": "product-owner"
+}
