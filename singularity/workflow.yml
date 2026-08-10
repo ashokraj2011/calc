@@ -69,7 +69,7 @@ worldModel:
     parallel: true
     maxWorkers: 4
     strategy: view
-  grounding: enforce
+  grounding: off
   staleness: warn
   injection:
     placeholder: "{{WORLD_MODEL}}"

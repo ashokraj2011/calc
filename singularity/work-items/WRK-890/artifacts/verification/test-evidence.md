@@ -36,7 +36,7 @@
   "inputs": {
     "generation": 1,
     "path": "singularity/work-items/WRK-890/context/inputs-verification-gen1.json",
-    "sha256": "b569480d4e2dc4401e3c8e2907f548df563f143bd76977293e242e9c5fa932e5",
+    "sha256": "d1f9d6ef06b5a46205d6e58873b44e39792c8dbf575a53b8916d1c735bcb5b13",
     "renderedSha256": "42a7d46a090111e951d3af21493afdbad37530cdf60face92045da94d007e38d",
     "mode": "enforce"
   },
@@ -45,6 +45,7 @@
     "approved": null
   },
   "remoteAgent": null,
+  "clarification": null,
   "telemetry": [],
   "remoteOutputs": [],
   "usage": [],

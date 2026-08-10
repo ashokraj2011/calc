@@ -1737,13 +1737,34 @@
       "telemetry": [],
       "approvals": [],
       "designSourceSets": [],
-      "artifacts": [],
+      "artifacts": [
+        {
+          "path": "singularity/work-items/WRK-890/artifacts/implementation/implementation-summary.md",
+          "kind": "document",
+          "status": "pending",
+          "exists": true,
+          "size": 11340,
+          "sha256": "69d9c4ee9d0e097e9cc204011601a24aeec9247dc72939f73609f1a23d97a6df",
+          "registeredAt": "2026-08-09T22:39:29.039Z",
+          "updatedAt": "2026-08-09T22:39:29.039Z"
+        },
+        {
+          "path": "singularity/work-items/WRK-890/artifacts/intake/intake.md",
+          "kind": "document",
+          "status": "pending",
+          "exists": true,
+          "size": 5076,
+          "sha256": "a882b004684f37af63768880720a8c7d354b6cb0b392edc4934f5db5ce8a3dd4",
+          "registeredAt": "2026-08-09T22:39:29.039Z",
+          "updatedAt": "2026-08-09T22:39:29.039Z"
+        }
+      ],
       "checks": [],
       "remoteOutputs": [],
       "inputContext": {
         "generation": 1,
         "path": "singularity/work-items/WRK-890/context/inputs-verification-gen1.json",
-        "sha256": "b569480d4e2dc4401e3c8e2907f548df563f143bd76977293e242e9c5fa932e5",
+        "sha256": "d1f9d6ef06b5a46205d6e58873b44e39792c8dbf575a53b8916d1c735bcb5b13",
         "renderedSha256": "42a7d46a090111e951d3af21493afdbad37530cdf60face92045da94d007e38d",
         "mode": "enforce"
       }

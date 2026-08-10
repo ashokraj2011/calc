@@ -48,399 +48,462 @@ Restate the approved objective and applicable acceptance/specification items. In
 
 ## Repository grounding: singularity/world-model/core/summary.md
 
-> **Grounding** · calc @ `0d8703c49dc3ca79c684d93cc42220c922d7cd15` · view: `core` · tier: `full`
-> **Generated** 09 August 2026 (2026-08-09T22:30:28Z) · depth: `quick` · builder `2.0`
+> **Grounding** · calc @ `e9d82bcdfd4363c98e447b92108203f18828d6ff` · view: `core` · tier: `full`
+> **Generated** 09 August 2026 (2026-08-09T23:57:03Z) · depth: `quick` · builder `2.0`
 > **Authoritative for:** file locations, entry points, commands, structural relationships as of the commit above.
 > **Not authoritative for:** current file contents. If this document conflicts with code you have read, trust the code and say so explicitly in your output.
 > **Unknowns are marked.** Do not resolve them by inference. If the repository has changed since the date above, treat locations as hints, not facts.
 
 ## TL;DR {#core.tldr}
-This repository is a browser-based calculator app named ApexCalc. The implementation is a single-page React + Vite application with five modes: standard, scientific, converter, financial, and grapher. The root shell in `src/App.jsx` centralizes state and event handling, while `src/utils/evaluator.js` holds shared arithmetic, unit-conversion, and financial logic. The app persists theme, sound, and history in browser `localStorage`, and its most important risks are missing automated tests, browser-only persistence, and a somewhat heuristic expression evaluator. The working tree is not clean because tracked Singularity Flow files are currently deleted in this checkout.
 
-## Facts {#core.facts}
-
-```yaml
-repository_kind: application
-languages: [javascript, jsx]
-package_roots: [.] 
-entrypoints:
-  - { id: html-entry, path: index.html:1-14, invocation: "open index.html or run npm run dev" }
-  - { id: react-bootstrap, path: src/main.jsx:1-10, invocation: "Vite loads this module" }
-  - { id: app-shell, path: src/App.jsx:14-324, invocation: "main UI controller" }
-components:
-  - { id: app-shell, path: src/App.jsx, purpose: "mode routing, state, history, and keyboard handling" }
-  - { id: calculator-engine, path: src/utils/evaluator.js, purpose: "shared evaluation and calculator helpers" }
-  - { id: mode-components, path: src/components, purpose: "mode-specific UI surfaces" }
-standard_commands:
-  - { command: "npm run dev", purpose: "local development server", source: "package.json:6-10" }
-  - { command: "npm run build", purpose: "production build", source: "package.json:6-10" }
-  - { command: "npm run lint", purpose: "lint validation", source: "package.json:6-10" }
-```
+This repository is a client-side calculator application built with React, Vite, and `mathjs`. The app combines a standard calculator shell with scientific, converter, financial, and grapher modes, and the UI is driven from a shared theme system in `src/index.css`. The main implementation path is `src/App.jsx` -> component modules -> `src/utils/evaluator.js`.
 
 ## Repository purpose {#core.purpose}
-ApexCalc is a feature-rich calculator experience packaged as a single-page React app. The product surface is primarily user-driven interaction in the browser: users enter expressions, switch modes, inspect history, and view graphs or conversion results without any backend service in this repository. Evidence: `e-core-purpose`.
+
+The repository implements a single-page calculator experience for arithmetic and selected scientific/financial tasks. It is an application rather than a library; the primary value is in interactive UI state, keyboard handling, expression evaluation, and theming.
 
 ## Repository type and languages {#core.type}
-The repository is a client-side application rather than a multi-service system. The visible implementation is JavaScript/JSX with React, Vite, and `mathjs`; the app shell and UI live under `src/`, while the package metadata is in `package.json`. Evidence: `e-core-purpose`, `e-app-shell`.
 
-## Major applications and services {#core.components}
-The main application is a single UI shell with five feature modes. In practice these are: a standard/scientific calculator, a unit converter, a financial calculator, and a function grapher. Shared logic is centralized in `src/utils/evaluator.js`, and mode-specific presentation components live in `src/components/`. Evidence: `e-app-shell`, `e-evaluator`, `e-graphing`.
+Repository kind: application. Primary languages: JavaScript, CSS, HTML. The build system uses Vite and npm scripts from `package.json`.
+
+## Main applications, packages, or services {#core.components}
+
+- `calculator-shell`: the React app shell in `src/App.jsx`, which owns expression state, calculator mode selection, and modal/history drawers.
+- `calculator-ui`: the presentational calculator components under `src/components/`, including display, keypad, financial calculator, grapher, and header.
+- `calculator-engine`: the evaluator and numeric helpers in `src/utils/evaluator.js`, including unit conversion, EMI, compound-interest, and tip calculations.
+- `calculator-theme`: the styling layer in `src/index.css`, which defines the classic and alternate themes through CSS custom properties.
 
 ## High-level component map {#core.map}
-- `index.html` and `src/main.jsx` bootstrap the browser app.
-- `src/App.jsx` owns the main state model, keyboard handling, mode switching, theme/sound/history persistence, and modal/drawer composition.
-- `src/utils/evaluator.js` provides the reusable evaluation layer for arithmetic, scientific functions, unit conversion, and financial formulas.
-- `src/components/` hosts feature-specific UI panels such as `FunctionGrapher`, `UnitConverter`, `FinancialCalculator`, `HistoryDrawer`, and the keypad/display widgets.
-Evidence: `e-app-shell`, `e-evaluator`, `e-components`.
+
+`src/main.jsx` mounts `App`; `App` wires state and handlers; child components render the UI; `src/utils/evaluator.js` performs expression evaluation and helper calculations. Theme tokens from `src/index.css` flow into components through CSS variables.
 
 ## Main entry points {#core.entrypoints}
-- Browser entry: `index.html:1-14`.
-- React bootstrap: `src/main.jsx:1-10`.
-- Main runtime controller: `src/App.jsx:14-324`.
-- Shared calculator logic: `src/utils/evaluator.js:1-218`.
-These entry points are the best starting places for change impact analysis. Evidence: `e-entry-html`, `e-entry-main`, `e-app-shell`.
+
+- `src/main.jsx:1-10` mounts the React root and loads the application shell.
+- `src/App.jsx:14-324` owns calculator state, mode switching, keyboard shortcuts, history, and the main render tree.
+- `src/utils/evaluator.js` is the main numeric logic module, used by the calculator UI and financial features.
 
 ## Primary technologies {#core.tech}
-The repository uses Vite for bundling and development, React 19 for UI, `mathjs` for expression evaluation and graphing compilation, and CSS variables for theming. Browser-only APIs also matter here: `localStorage`, Web Audio, and `<canvas>` are all used by the app. Evidence: `e-app-shell`, `e-evaluator`, `e-graphing`.
+
+Observed technologies include React 19, Vite 8, `mathjs`, `lucide-react`, and CSS custom properties. The code uses local browser storage (`localStorage`) for theme, sound, and history state.
 
 ## Standard build and test commands {#core.commands}
-- `npm run dev` starts the Vite dev server.
-- `npm run build` produces a production build.
-- `npm run lint` runs ESLint.
-The repository does not currently define a dedicated test script and no test files were found in the source tree. Evidence: `e-build`, `e-lint`, `e-test-gap`.
+
+- `npm run dev` — start the Vite development server.
+- `npm run build` — create a production bundle; executed successfully in this run.
+- `npm run lint` — run ESLint; executed and found existing issues in the source tree.
 
 ## Important risks {#core.risks}
-1. The app relies on browser state (`localStorage`) and client-side execution, so persistence and behavior can vary by environment.
-2. The evaluator uses string sanitization and `mathjs` rather than a strict sandbox or allow-list, so future changes could widen the attack surface.
-3. The repository lacks automated regression tests, so behavior changes are currently validated mainly by manual use and build/lint checks.
-4. The working tree is not clean because tracked Singularity Flow world-model and work-item files are currently deleted in this checkout. Evidence: `e-browser-storage`, `e-lint`, `e-test-gap`.
+
+- Visual changes can affect multiple components because theming is shared through CSS variables and reused across the UI.
+- Calculator logic is centralized in `src/App.jsx` and `src/utils/evaluator.js`, so refactors can ripple through arithmetic and financial modes.
+- The working tree is not clean because tracked workflow artifacts have been deleted.
 
 ## Important unknowns {#core.unknowns}
-- No backend/API contract, authentication model, or deployment configuration was inspected.
-- No product requirements document or UX specification was found beyond the implemented UI.
-- No test harness or CI workflow beyond Vite/ESLint scripts was observed. Evidence: `e-core-purpose`, `e-test-gap`.
+
+- No automated UI or unit test suite exists in the repository.
+- No deployment or release workflow is defined in the source tree.
+- The repository does not expose a formal design-system document for the calculator UI.
 
 ## Commit, generation date, and freshness warning {#core.freshness}
-Inspected commit: `0d8703c49dc3ca79c684d93cc42220c922d7cd15`.
-Generated at: `2026-08-09T22:30:28Z` (`09 August 2026`).
-The repository working tree is not clean, so this grounding reflects the inspected snapshot but not a pristine checkout. If you need current behavior after local edits, re-run this builder against the latest tree. Evidence: `e-core-purpose`.
 
-## Recommended next view {#core.routing}
-- For implementation or debugging, start with `views/development.md`.
-- For architecture or dependency concerns, start with `views/architecture.md`.
-- For security review, start with `views/security.md`.
-- For test planning or validation work, start with `views/testing.md`.
+Inspected commit: `e9d82bcdfd4363c98e447b92108203f18828d6ff`. Generated at `2026-08-09T23:57:03Z` on `09 August 2026`. The repository contains uncommitted deletions, so this world model describes the inspected commit plus the current working-tree state, not a clean checkout.
+
+## Recommended next view for each common task {#core.routing}
+
+- UI polish or visual redesign: `architecture` then `development`.
+- Calculator logic changes or debugging: `development` then `security`.
+- Quality review or regression planning: `testing`.
+- Sensitive data or client-side safety review: `security`.
 
 
 ## Repository grounding: singularity/world-model/views/testing.md
 
-> **Grounding** · calc @ `0d8703c49dc3ca79c684d93cc42220c922d7cd15` · view: `testing` · tier: `full`
-> **Generated** 09 August 2026 (2026-08-09T22:30:28Z) · depth: `quick` · builder `2.0`
+> **Grounding** · calc @ `e9d82bcdfd4363c98e447b92108203f18828d6ff` · view: `testing` · tier: `full`
+> **Generated** 09 August 2026 (2026-08-09T23:57:03Z) · depth: `quick` · builder `2.0`
 > **Authoritative for:** file locations, entry points, commands, structural relationships as of the commit above.
 > **Not authoritative for:** current file contents. If this document conflicts with code you have read, trust the code and say so explicitly in your output.
 > **Unknowns are marked.** Do not resolve them by inference. If the repository has changed since the date above, treat locations as hints, not facts.
 
 ## TL;DR {#test.tldr}
-This repository does not currently have an automated test harness. The project declares build and lint scripts, but there is no `test` script and no `*.test.*` or `*.spec.*` files in the tree. The most valuable near-term tests would target the evaluator module, the root app state machine, and the mode-specific components that depend on browser APIs such as `localStorage`, canvas, and clipboard. The current evidence supports a manual-verification workflow rather than an automated regression suite.
+
+The repository does not currently include a dedicated automated test suite. The available verification path is build-and-lint execution via npm scripts. For this quick review, the relevant test gap is the absence of UI regression coverage for the calculator modes and the classic theme path.
 
 ## Facts {#test.facts}
 
 ```yaml
-observed_tests: []
+components: [calculator-shell, calculator-ui, calculator-engine, calculator-theme]
 entrypoints:
-  - { path: package.json:6-10, note: "build and lint scripts only" }
-  - { path: src/App.jsx:14-324, note: "stateful UI shell" }
-  - { path: src/utils/evaluator.js:4-218, note: "calculator logic" }
+  - { id: entry-main, path: src/main.jsx, line: 1, invocation: "ReactDOM createRoot" }
+key_symbols:
+  - { name: App, path: src/App.jsx, line: 14, role: "shared UI state" }
+  - { name: evaluateExpression, path: src/utils/evaluator.js, line: 4, role: "calculation behavior" }
 commands:
-  - { command: "npm run build", purpose: "build validation", status: observed, source: "package.json:6-10" }
-  - { command: "npm run lint", purpose: "lint validation", status: observed, source: "package.json:6-10" }
+  - { command: "npm run build", purpose: "production bundle", source: "package.json:6-10", status: "passed" }
+  - { command: "npm run lint", purpose: "static analysis", source: "package.json:6-10", status: "failed" }
+hotspots:
+  - { path: src/App.jsx, reason: "behavioral surface across all modes" }
+  - { path: src/index.css, reason: "visual regressions can affect every screen" }
 ```
 
 ## Test strategy found in the repository {#test.strategy}
-The repository currently exposes only build and lint commands. There is no test runner configuration, no test script in `package.json`, and no test files under the source tree. That means the current strategy is effectively manual verification plus static checks. Evidence: `e-test-gap`, `e-build`, `e-lint`.
 
-## Component-to-test map {#test.map}
-- `src/utils/evaluator.js` is the highest-value unit-test target. It contains logic for arithmetic, percentages, factorials, trig angle units, unit conversion, and financial calculations.
-- `src/App.jsx` should be tested for state transitions around expression entry, equals, clear/backspace, memory operations, history updates, and keyboard shortcuts.
-- `src/components/Display.jsx`, `src/components/StandardKeypad.jsx`, `src/components/ScientificKeypad.jsx`, `src/components/UnitConverter.jsx`, and `src/components/FinancialCalculator.jsx` are good component-test candidates for render and interaction flows.
-- `src/components/FunctionGrapher.jsx` needs focused rendering tests because it depends on canvas rendering and `math.compile`. Evidence: `e-app-shell`, `e-evaluator`, `e-graphing`.
+No test files or test runner configuration were discovered under the repository root. The package manifest exposes build and lint scripts only. That means the current quality signal is based on build output and static analysis rather than automated regression tests.
 
-## Workflow-to-test mapping {#test.workflow}
-- Arithmetic workflow: digits/operators/equals and error cases.
-- Mode switching workflow: standard/scientific/converter/financial/grapher routing.
-- Persistence workflow: `localStorage` theme/sound/history behavior.
-- History workflow: open drawer, reuse item, export, clear history.
-- Graphing workflow: valid and invalid equations, canvas rendering, and error state. Evidence: `e-app-shell`, `e-browser-storage`, `e-history-export`.
+## Test inventory {#test.inventory}
+
+- Discovered tests: none.
+- Executed commands: `npm run build` (passed) and `npm run lint` (failed with pre-existing issues such as unused imports and a React hook warning).
+- Not run: browser-based UI tests, unit tests for the evaluator, and visual regression checks.
+
+## Component-to-test mapping {#test.mapping}
+
+- Calculator shell behavior: `src/App.jsx` should be covered by UI tests that exercise digits, operators, equals, memory, and history.
+- Expression engine behavior: `src/utils/evaluator.js` should be covered by unit tests for percentage handling, trigonometric conversion, and numeric formatting.
+- Visual theme consistency: `src/index.css` and the presentational components should be covered by at least one visual or snapshot regression test if the look is changed.
 
 ## Critical positive and negative scenarios {#test.scenarios}
-Positive scenarios include successful arithmetic, trig evaluation in DEG/RAD mode, unit conversions, EMI/compound-interest/tip calculations, and graph rendering for valid expressions. Negative scenarios include invalid syntax, non-finite results, empty expressions, and browser API failures such as missing clipboard or audio context. Evidence: `e-evaluator`, `e-graphing`.
 
-## Validation commands and current status {#test.commands}
-- `npm run build`: observed available build path from package metadata; no build artifact validation was performed for this world-model run.
-- `npm run lint`: available lint path; the repository currently reports issues in several UI components.
-- `npm run test`: not present; no test harness exists. Evidence: `e-build`, `e-lint`, `e-test-gap`.
+Positive scenarios include standard arithmetic, scientific functions, unit conversion, financial calculations, and theme switching. Negative scenarios include invalid expressions, division by zero, overflow cases, and backspace/clear flows. These are currently untested.
 
-## Coverage gaps and risk-based regression suite {#test.gaps}
-The major coverage gap is that no automated regression suite exists for calculator behavior, browser persistence, or graph rendering. If you add tests, start with evaluator logic and app-level state transitions before moving to canvas and browser-side UI integration. Evidence: `e-test-gap`, `e-graphing`.
+## Regression risk areas {#test.risks}
+
+The biggest regression risk is styling drift because the classic calculator look is spread across shared CSS variables and several components. A second risk is behavior drift in the evaluator module, because many UI modes depend on it indirectly.
 
 ## Where to start {#test.start}
-Create unit tests around `src/utils/evaluator.js` first, then add component tests for `src/App.jsx` and the mode components that rely on the shared state boundary. Evidence: `e-evaluator`, `e-app-shell`.
+
+If you add tests, start with the evaluator helper module and the main shell interactions. The smallest useful test target is the evaluator helper; the next is the shell interaction path for key presses and equals evaluation.
 
 ## Questions this view does not answer {#test.limits}
-It does not describe CI, visual regression, or cross-browser coverage because those are not present in the repository snapshot. Evidence: `e-core-purpose`.
+
+This view does not cover release gates, CI workflows, or end-to-end browser automation because none were found in the inspected repository.
 
 
 ## Repository grounding: singularity/world-model/views/development.md
 
-> **Grounding** · calc @ `0d8703c49dc3ca79c684d93cc42220c922d7cd15` · view: `development` · tier: `full`
-> **Generated** 09 August 2026 (2026-08-09T22:30:28Z) · depth: `quick` · builder `2.0`
+> **Grounding** · calc @ `e9d82bcdfd4363c98e447b92108203f18828d6ff` · view: `development` · tier: `full`
+> **Generated** 09 August 2026 (2026-08-09T23:57:03Z) · depth: `quick` · builder `2.0`
 > **Authoritative for:** file locations, entry points, commands, structural relationships as of the commit above.
 > **Not authoritative for:** current file contents. If this document conflicts with code you have read, trust the code and say so explicitly in your output.
 > **Unknowns are marked.** Do not resolve them by inference. If the repository has changed since the date above, treat locations as hints, not facts.
 
 ## TL;DR {#dev.tldr}
-For implementation work, start with the root `App` state controller and the shared evaluator. The app is structured around a single stateful shell (`src/App.jsx`) plus feature components under `src/components/` and a shared logic module (`src/utils/evaluator.js`). The main implementation flows are keypad input → expression state → evaluation → history update, and mode switching → feature component render. The repository is currently linting red and has no test harness, so local validation depends on `npm run build` and `npm run lint` and manual browser verification.
+
+For implementation work, start in `src/App.jsx` and `src/utils/evaluator.js`. The app shell owns most interaction state, while the evaluator module contains numeric formatting and calculation helpers. The UI is component-based and uses CSS variables for styling, so a visual change often requires editing both component classes and theme tokens.
 
 ## Facts {#dev.facts}
 
 ```yaml
+components: [calculator-shell, calculator-ui, calculator-engine, calculator-theme]
 entrypoints:
-  - { id: html-entry, path: index.html:1-14, invocation: "browser mount" }
-  - { id: app-shell, path: src/App.jsx:14-324, invocation: "root controller" }
-  - { id: evaluator, path: src/utils/evaluator.js:1-218, invocation: "shared logic" }
-important_symbols:
-  - { name: App, path: src/App.jsx:14-324, role: "state and UI orchestrator" }
-  - { name: evaluateExpression, path: src/utils/evaluator.js:4-54, role: "expression evaluation" }
-  - { name: FunctionGrapher, path: src/components/FunctionGrapher.jsx:14-212, role: "graphing mode" }
+  - { id: entry-main, path: src/main.jsx, line: 1, invocation: "ReactDOM createRoot" }
+key_symbols:
+  - { name: App, path: src/App.jsx, line: 14, role: "state and mode coordinator" }
+  - { name: evaluateExpression, path: src/utils/evaluator.js, line: 4, role: "parses and evaluates calculator expressions" }
 commands:
-  - { command: "npm run dev", purpose: "start local dev server", source: "package.json:6-10" }
-  - { command: "npm run build", purpose: "build for production", source: "package.json:6-10" }
-  - { command: "npm run lint", purpose: "lint current tree", source: "package.json:6-10" }
+  - { command: "npm run build", purpose: "build the app", source: "package.json:6-10" }
+  - { command: "npm run lint", purpose: "check lint rules", source: "package.json:6-10" }
+hotspots:
+  - { path: src/App.jsx, reason: "largest shared state surface" }
+  - { path: src/index.css, reason: "shared visual tokens for all modes" }
 ```
 
 ## Developer setup {#dev.setup}
-The repository is a standard Vite React project. From the repo root, `npm install` is needed before running the local scripts. The main scripts are `npm run dev`, `npm run build`, and `npm run lint`, all defined in `package.json`. Evidence: `e-build`, `e-lint`.
+
+The repository is a standard npm/Vite project. Install dependencies from the repo root, then use `npm run dev` for a local preview and `npm run build` for verification. The current environment already has dependencies installed locally in `node_modules/`.
 
 ## Source tree map {#dev.tree}
-- `src/App.jsx` is the top-level controller for calculator state, mode selection, history, persistence, and overlays.
-- `src/components/` contains mode-specific UI modules: `Display`, `StandardKeypad`, `ScientificKeypad`, `UnitConverter`, `FinancialCalculator`, `FunctionGrapher`, `HistoryDrawer`, and `KeyboardShortcutsModal`.
-- `src/utils/` contains reusable logic: `evaluator.js` for expressions and helpers, and `audio.js` for Web Audio feedback. Evidence: `e-app-shell`, `e-evaluator`, `e-graphing`.
+
+- `src/App.jsx` — top-level state machine and mode routing.
+- `src/components/` — feature panels and controls: `Display`, `Header`, `StandardKeypad`, `ScientificKeypad`, `UnitConverter`, `FinancialCalculator`, `FunctionGrapher`, `HistoryDrawer`, and `KeyboardShortcutsModal`.
+- `src/utils/` — logic helpers: `evaluator.js` for math and finance; `audio.js` for sounds.
+- `src/index.css` and `src/App.css` — shared styling; `src/index.css` is the main styling source for the calculator experience.
 
 ## Important modules and symbols {#dev.modules}
-- `App` owns the keyboard shortcut handling and runtime composition. It routes input from digits/operators to `evaluateExpression` and stores history entries after successful evaluations.
-- `evaluateExpression` normalizes symbols such as `×`, `÷`, `%`, `!`, and angle-aware trig calls before delegating to `mathjs`.
-- `convertUnits`, `calculateEMI`, `calculateCompoundInterest`, and `calculateTip` are the shared helpers behind the converter and financial modes.
-- `FunctionGrapher` uses `math.compile` and a canvas renderer for the graphing mode. Evidence: `e-app-shell`, `e-evaluator`, `e-graphing`.
+
+- `App` in `src/App.jsx` owns `expression`, `result`, `lastEvaluated`, `angleUnit`, `memoryValue`, `theme`, `soundEnabled`, and `history` state. It also defines handlers like `handleDigit`, `handleOperator`, `handleEquals`, `handleMemory`, and the keyboard listener.
+- `Display` in `src/components/Display.jsx` renders the expression/result area and exposes copy/clear/backspace controls.
+- `StandardKeypad` and `ScientificKeypad` in `src/components/` render button layouts and forward events to the parent shell.
+- `evaluateExpression` and `formatNumber` in `src/utils/evaluator.js` handle sanitization, percentage parsing, trigonometric angle conversion, and numeric formatting.
 
 ## Common implementation flows {#dev.flows}
-1. User interaction enters through `App` handlers and feature components.
-2. The expression string is updated in state and optionally evaluated on `=`.
-3. Successful evaluations flow into `history`, and the resulting value is displayed in the UI.
-4. Mode switching swaps between component trees without reloading the app.
-Evidence: `e-app-shell`, `e-browser-storage`.
 
-## Error handling and browser APIs {#dev.errors}
-The evaluator returns `'Error'` for empty input, non-finite results, and syntax errors. The app also uses `localStorage` for preferences and history, `navigator.clipboard` for copy-to-clipboard, and `window.AudioContext` for sound feedback. These integrations should be treated as browser-dependent and tested carefully. Evidence: `e-browser-storage`, `e-evaluator`.
+Most calculator input follows the same pattern: a keypad component triggers an event in `App`, the shell updates state, the display re-renders, and `handleEquals` calls the evaluator. The financial and grapher panels use the evaluator helpers directly rather than the main expression state.
 
-## Validation and debugging starting points {#dev.debug}
-- For arithmetic logic, inspect `src/utils/evaluator.js`.
-- For mode behavior, inspect `src/App.jsx` and the relevant component under `src/components/`.
-- For persistence and UI state issues, inspect the `useEffect` blocks in `src/App.jsx` and `src/components/HistoryDrawer.jsx`.
-- For lint issues, `npm run lint` is the first stop; the current report identifies a mix of unused imports and one React rule violation around state updates in `FunctionGrapher`. Evidence: `e-lint`, `e-graphing`.
+## Configuration loading and persistence {#dev.config}
+
+The app reads and writes `localStorage` for theme, sound, and calculation history. That behavior lives in the `useEffect` blocks in `src/App.jsx`. There is no configuration file for runtime settings beyond the browser storage keys.
+
+## Error-handling and conventions {#dev.conventions}
+
+The calculator uses a simple error contract: `evaluateExpression` returns `{ result, rawResult, error }`. The UI renders `Error` when evaluation fails. The code favors functional React patterns and `useCallback` for handlers, but some components still use inline state and local form state. Styling uses CSS custom properties rather than hard-coded color values.
+
+## Change-impact guide {#dev.impact}
+
+If you change arithmetic behavior, inspect `src/utils/evaluator.js` and the `handleEquals` path in `src/App.jsx`. If you change the visual layout, inspect `src/index.css` and the relevant component file. If you change a mode like scientific or financial, inspect the relevant component plus the shared shell logic.
 
 ## Known implementation hotspots {#dev.hotspots}
-- `src/App.jsx` is the single biggest hotspot because it carries the app’s state and cross-cutting behavior.
-- `src/utils/evaluator.js` is the main shared logic surface and thus a common point of regressions.
-- `src/components/FunctionGrapher.jsx` is the most browser-specific and hardest-to-validate module because it renders directly to a canvas. Evidence: `e-app-shell`, `e-evaluator`, `e-graphing`.
+
+- `src/App.jsx` because it holds most shared state and controls keyboard shortcuts.
+- `src/utils/evaluator.js` because it is the logic hub for arithmetic, formatting, and financial helpers.
+- `src/index.css` because it controls the shared visual system across modes.
 
 ## Where to start {#dev.start}
-If you are implementing a new feature, start in `src/App.jsx` to understand how modes are composed, then move into `src/utils/evaluator.js` for shared calculator logic. If the change is mode-specific, follow the corresponding component under `src/components/`. Evidence: `e-app-shell`, `e-evaluator`.
+
+Start with `src/App.jsx` for an interaction change, `src/utils/evaluator.js` for calculation behavior, and `src/index.css` for a classic-style visual change.
 
 ## Questions this view does not answer {#dev.limits}
-It does not describe deployment, accessibility, or backend contracts because those are not present in the repository snapshot. Evidence: `e-core-purpose`, `e-test-gap`.
+
+This view does not provide a full test inventory or a deployment checklist. It focuses on implementation entry points and common change paths.
 
 
 ## Repository grounding: singularity/world-model/views/security.md
 
-> **Grounding** · calc @ `0d8703c49dc3ca79c684d93cc42220c922d7cd15` · view: `security` · tier: `full`
-> **Generated** 09 August 2026 (2026-08-09T22:30:28Z) · depth: `quick` · builder `2.0`
+> **Grounding** · calc @ `e9d82bcdfd4363c98e447b92108203f18828d6ff` · view: `security` · tier: `full`
+> **Generated** 09 August 2026 (2026-08-09T23:57:03Z) · depth: `quick` · builder `2.0`
 > **Authoritative for:** file locations, entry points, commands, structural relationships as of the commit above.
 > **Not authoritative for:** current file contents. If this document conflicts with code you have read, trust the code and say so explicitly in your output.
 > **Unknowns are marked.** Do not resolve them by inference. If the repository has changed since the date above, treat locations as hints, not facts.
 
 ## TL;DR {#sec.tldr}
-The security posture of this repository is that of a browser-only calculator app with no backend, no authentication layer, and no secret-loading infrastructure. The main trust boundary is the browser origin: the app stores theme, sound, and history data in `localStorage`, evaluates user expressions on the client, and exports history to a local file. The main risks are local tampering of persisted state, a heuristic expression evaluator that is not a sandbox, and the lack of a Content Security Policy or dedicated security tests.
+
+The app is browser-only and does not implement authentication or server-side data handling. The main security concerns are client-side execution, local browser storage, and the fact that the calculator evaluator processes user input in the browser. The repo does not expose secrets, but the current design should be treated as a client-side trust boundary rather than a hardened server model.
 
 ## Facts {#sec.facts}
 
 ```yaml
-trust_boundaries:
-  - { name: browser origin, path: src/App.jsx:22-53, notes: "localStorage and document state" }
-  - { name: expression evaluator, path: src/utils/evaluator.js:4-54, notes: "client-side math evaluation" }
-  - { name: graphing canvas, path: src/components/FunctionGrapher.jsx:93-132, notes: "user expression compiles in the browser" }
-sensitive_data:
-  - { type: browser cache, path: src/App.jsx:22-53, notes: "history and user preferences" }
+components: [calculator-shell, calculator-ui, calculator-engine]
+entrypoints:
+  - { id: entry-app-shell, path: src/App.jsx, line: 14, invocation: "App component" }
+key_symbols:
+  - { name: evaluateExpression, path: src/utils/evaluator.js, line: 4, role: "sanitizes and evaluates expressions" }
 commands:
-  - { command: "npm run lint", purpose: "available static checks", source: "package.json:6-10" }
-  - { command: "npm run build", purpose: "available build validation", source: "package.json:6-10" }
+  - { command: "npm run build", purpose: "build the app", source: "package.json:6-10" }
+hotspots:
+  - { path: src/utils/evaluator.js, reason: "executes user-entered math expressions client-side" }
+  - { path: src/App.jsx, reason: "persists theme/history/sound state in browser storage" }
 ```
 
-## Security posture {#sec.posture}
-This repository is a client-side React application with no visible backend, authentication, or authorization flow. Because the app runs entirely in the browser, the principal issues are local data handling and client-side execution rather than server-side authN/authZ. Evidence: `e-core-purpose`, `e-browser-storage`.
+## Trust boundaries {#sec.trust}
 
-## Trust boundaries and attack surface {#sec.boundaries}
-The main trust boundaries are the browser runtime, `localStorage`, and the user-controlled expression input. The app accepts text from the user, passes it to `evaluateExpression`, and in the grapher case sends it to `math.compile`. These are not network-facing boundaries, but they are still important because the app executes user-provided syntax in the client. Evidence: `e-browser-storage`, `e-evaluator`, `e-graphing`.
+The key trust boundary is between user-entered text in the browser and the `mathjs` evaluator. The app does not call a backend or authenticate users, so there is no remote authorization boundary to review. The main risk is that any code path that evaluates user input in the browser could become an XSS or script-execution issue if it is broadened later.
 
-## Data handling and persistence {#sec.data}
-The app stores theme, sound, and history state in browser `localStorage` via the root `App` component. History entries are later reused by the drawer without a signature or integrity check; this makes local tampering or invalid data a practical concern if the origin is compromised or storage is modified. Evidence: `e-browser-storage`, `e-history-export`.
+## Secrets and configuration {#sec.config}
 
-## Secrets and sensitive material {#sec.secrets}
-The repository does not include obvious secret-loading code, environment variable access, or service credentials. No secrets are present in the inspected source files. The only user-visible data stored locally is calculator history and preferences. Evidence: `e-core-purpose`, `e-browser-storage`.
+No API keys, tokens, or secret values were found in the source tree. The repository uses `localStorage` keys such as `apex_theme`, `apex_sound`, and `apex_history`, but these are not secrets. The current implementation does not load secrets from environment variables.
 
-## Input validation and output safety {#sec.validation}
-The evaluator performs some normalization and returns an `Error` string for invalid math states, but it is not a strict sandbox and it should not be treated as a security boundary. The app also lacks a CSP or explicit security headers in the HTML entry point; this increases future risk if untrusted markup or scripts are introduced. Evidence: `e-evaluator`, `e-entry-html`.
+## Input handling and execution {#sec.input}
 
-## Security tests and coverage gaps {#sec.tests}
-No dedicated security tests, fuzzing setup, or dependency scanning configuration was found. The available validation commands are only lint and build, which do not address security posture directly. Evidence: `e-lint`, `e-test-gap`.
+The evaluator module sanitizes expressions by replacing calculator symbols with `mathjs` equivalents and by handling percentages, factorials, and angle units. That is a useful guardrail, but it is still client-side evaluation of arbitrary expressions. The app should be treated as a limited execution environment rather than a general-purpose scripting sandbox.
 
-## Security risks and recommendations {#sec.risks}
-- Treat persisted history as untrusted input when reusing it.
-- Keep `mathjs` and React dependencies updated, since client-side evaluation libraries can change behavior over time.
-- Consider adding a CSP and reducing reliance on browser-only state if the app later grows beyond this local calculator scope.
-Evidence: `e-browser-storage`, `e-evaluator`, `e-graphing`.
+## Client-side storage and privacy {#sec.storage}
+
+The app stores theme, sound, and history data in the browser via `localStorage` in `src/App.jsx`. This data is not transmitted to a backend in the code inspected here, but it remains available to any script running in the browser context. The repository does not include a privacy policy or data retention model.
+
+## Security tests and gaps {#sec.tests}
+
+The repository has no dedicated security tests. The only executed validation was the production build, which succeeded; no security-specific test suite was run. The most significant remaining gap is the absence of hardening or regression tests around expression sanitization and browser-storage handling.
 
 ## Where to start {#sec.start}
-Start with `src/App.jsx` for persistence and trust boundaries, then inspect `src/utils/evaluator.js` and `src/components/FunctionGrapher.jsx` for client-side execution paths. Evidence: `e-app-shell`, `e-evaluator`, `e-graphing`.
+
+Start with `src/utils/evaluator.js` for expression handling and `src/App.jsx` for persistence and UI state. Review `src/index.css` only if the change affects styling rather than trust boundaries.
 
 ## Questions this view does not answer {#sec.limits}
-It does not evaluate deployment infrastructure, reverse-proxy policy, or external hosting controls because those files were not inspected. Evidence: `e-core-purpose`.
+
+This view does not evaluate third-party dependency risk beyond the files inspected. It also does not assess runtime infrastructure because the app has no server component in this repository.
 
 
 ## Repository grounding: singularity/world-model/views/architecture.md
 
-> **Grounding** · calc @ `0d8703c49dc3ca79c684d93cc42220c922d7cd15` · view: `architecture` · tier: `full`
-> **Generated** 09 August 2026 (2026-08-09T22:30:28Z) · depth: `quick` · builder `2.0`
+> **Grounding** · calc @ `e9d82bcdfd4363c98e447b92108203f18828d6ff` · view: `architecture` · tier: `full`
+> **Generated** 09 August 2026 (2026-08-09T23:57:03Z) · depth: `quick` · builder `2.0`
 > **Authoritative for:** file locations, entry points, commands, structural relationships as of the commit above.
 > **Not authoritative for:** current file contents. If this document conflicts with code you have read, trust the code and say so explicitly in your output.
 > **Unknowns are marked.** Do not resolve them by inference. If the repository has changed since the date above, treat locations as hints, not facts.
 
 ## TL;DR {#arch.tldr}
-This view summarizes the calculator’s architecture as a single-page client app with one orchestrating root component and several feature-oriented UI modules. The main boundary is `src/App.jsx` for state and navigation; the shared evaluation layer is `src/utils/evaluator.js`; feature UIs are composed around this boundary. The most important runtime relationships are expression state → evaluator → history/localStorage and mode selection → feature component rendering. The architecture is simple and coherent, but it couples browser-specific concerns and stateful UI behavior into the root shell.
+
+The app is a single-page React front end with a thin state shell and many presentational modules. The most important architectural boundary is the split between `src/App.jsx` (state and behavior), `src/components/` (views/panels), and `src/utils/evaluator.js` (numeric logic). The design is simple and cohesive, but visual and interaction changes touch several components because the styling layer is shared.
 
 ## Facts {#arch.facts}
 
 ```yaml
-components:
-  - { id: app-shell, path: src/App.jsx:14-324, role: "root orchestrator" }
-  - { id: calculator-engine, path: src/utils/evaluator.js:1-218, role: "shared evaluation logic" }
-  - { id: mode-components, path: src/components, role: "feature-specific UI modules" }
+components: [calculator-shell, calculator-ui, calculator-engine, calculator-theme]
 entrypoints:
-  - { id: html-entry, path: index.html:1-14, invocation: "browser mount" }
-  - { id: react-bootstrap, path: src/main.jsx:1-10, invocation: "React bootstrap" }
-runtime_flows:
-  - { name: arithmetic, path: src/App.jsx:55-130, notes: "expression state flows into evaluation and history" }
-  - { name: mode-switching, path: src/App.jsx:227-323, notes: "header selection changes rendered component" }
-  - { name: graphing, path: src/components/FunctionGrapher.jsx:21-133, notes: "user-entered formulas compile and draw to canvas" }
+  - { id: entry-main, path: src/main.jsx, line: 1, invocation: "ReactDOM createRoot" }
+key_symbols:
+  - { name: App, path: src/App.jsx, line: 14, role: "central state and mode router" }
+  - { name: evaluateExpression, path: src/utils/evaluator.js, line: 4, role: "expression evaluation wrapper" }
+commands:
+  - { command: "npm run build", purpose: "production build", source: "package.json:6-10" }
+hotspots:
+  - { path: src/App.jsx, reason: "contains the largest state surface and shared handlers" }
 ```
 
 ## System context {#arch.context}
-The repository is a single-page browser application rather than a service-oriented system. The HTML shell loads the React entry module, which renders the root `App` component. There is no backend or data store in the repository; state and persistence remain client-side. Evidence: `e-entry-html`, `e-entry-main`, `e-app-shell`.
+
+The repository is a front-end-only application. It has no backend service, database, or API layer. The runtime is a browser page served by Vite, and the main app state lives in memory and in browser storage. That makes the system easy to reason about, but it also means all logic is executed client-side.
 
 ## Component responsibilities {#arch.components}
-- `App` is the architecture center. It owns the current expression, result, calculator mode, history, theme, sound, and modal overlays.
-- `src/utils/evaluator.js` is the shared domain engine. It normalizes input symbols, evaluates expressions via `mathjs`, formats numeric output, and provides unit conversion and financial helper functions.
-- `src/components/` is the feature composition layer for standard/scientific keypad UIs, unit conversion, financial calculator, graphing, history drawer, and shortcuts modal.
-Evidence: `e-app-shell`, `e-evaluator`, `e-graphing`.
 
-## Dependency and data flow {#arch.dependencies}
-The strongest architectural dependency is from the root shell into the evaluator and feature components. The arithmetic flow is state-driven: keypad handlers update `expression`, `App` calls `evaluateExpression`, and successful results are pushed into `history` and persisted to `localStorage`. For graphing, the component compiles the user equation and draws directly on a canvas without a dedicated service boundary. Evidence: `e-app-shell`, `e-browser-storage`, `e-graphing`.
+- `src/App.jsx` is the orchestration layer. It manages expression/result/history/theme/sound state, keyboard shortcuts, and mode selection. It also routes to the standard, scientific, converter, financial, and grapher views.
+- `src/components/` hosts the concrete views. `Display` renders the expression/result area, the keypads render calculator interactions, `FinancialCalculator` and `FunctionGrapher` provide specialized panels, and `Header` provides navigation and settings.
+- `src/utils/evaluator.js` isolates arithmetic and financial logic. Its helpers are used by the UI layer and keep numeric formatting and calculation behavior out of the React components.
+- `src/index.css` provides the shared design tokens and theme variants for the entire app.
+
+## Dependency graph {#arch.graph}
+
+The app shell depends on UI components and the evaluator. The UI components depend on the theme tokens and shared audio helper. The financial and grapher modules depend on the evaluator helpers rather than on one another. There is no service boundary or cross-module API beyond the React props passed between component layers.
 
 ## Interfaces and contracts {#arch.contracts}
-The most meaningful contracts here are component props and shared utility functions rather than network protocols. `App` passes callbacks into the keypad/display components, and `src/utils/evaluator.js` exposes stable functions such as `evaluateExpression`, `convertUnits`, and the financial helpers. The graphing component receives only the equation string and sound settings; it does not depend on a backend API. Evidence: `e-evaluator`, `e-graphing`.
 
-## Runtime workflows {#arch.runtime}
-- Arithmetic workflow: digit/operator/equals actions update state and optionally write history.
-- Mode switching workflow: compact header actions switch between feature components without reloading the page.
-- History workflow: successful evaluations are stored in a capped array and exported as a text file from the drawer.
-Evidence: `e-app-shell`, `e-browser-storage`, `e-history-export`.
+The main contract is the prop-based interface between `App` and its child components. Key examples are the keypad props such as `onDigit`, `onOperator`, `onEquals`, and `onMemory`, and the display props such as `expression`, `result`, and `setAngleUnit`. These interfaces are lightweight and simple, but they are the main mechanism for state flow.
 
-## Architectural risks and debt {#arch.risks}
-The architecture is intentionally simple, but the main coupling risk is that browser-specific concerns live in the root shell. Theme, sound, history, keyboard shortcuts, and mode selection all share one stateful owner, which makes the component more complex over time. The graphing implementation is also a low-level canvas rendering path embedded in a component rather than a reusable renderer. Evidence: `e-app-shell`, `e-graphing`.
+## Data ownership {#arch.data}
+
+Expression state, calculation history, and user preference state are owned by `App` and persisted via `localStorage` in the browser. The evaluator module consumes expressions but does not own UI state. The financial and grapher panels hold their own local form state, which is derived from the evaluator outputs.
+
+## Security and trust boundaries {#arch.security}
+
+The main trust boundary is between browser-side user input and the evaluator. The app sanitizes expressions before evaluation, but the runtime still executes math expressions in the client. No secrets, authentication, or external backend trust boundary exists. The browser storage layer is a local persistence boundary only.
+
+## Architectural risks {#arch.risks}
+
+- The app shell is a large hub for state and UI orchestration; future features may increase its complexity.
+- The visual design is spread across shared CSS variables and multiple component classes, so style regressions can be hard to isolate.
+- The absence of an API layer means the architecture is intentionally simple, but it limits composability for more advanced workflows.
 
 ## Where to start {#arch.start}
-Start with `src/App.jsx` for end-to-end behavior and `src/utils/evaluator.js` for reusable logic. The feature components under `src/components/` are the right second stop for mode-specific behavior. Evidence: `e-app-shell`, `e-evaluator`.
+
+Start with `src/App.jsx` for state flow, `src/utils/evaluator.js` for numeric behavior, and `src/index.css` for visual implementation.
 
 ## Questions this view does not answer {#arch.limits}
-It does not define product requirements, deployment topology, or any backend security model because none are present in the repository snapshot. Evidence: `e-core-purpose`, `e-test-gap`.
+
+This view does not cover business requirements, release process, or detailed test coverage. It also does not attempt to document every component in the tree.
 
 
-## Repository grounding: singularity/world-model/domains/calculator.md
+## Repository grounding: singularity/world-model/domains/calculator-ui.md
 
-> **Grounding** · calc @ `0d8703c49dc3ca79c684d93cc42220c922d7cd15` · view: `domain.calculator` · tier: `full`
-> **Generated** 09 August 2026 (2026-08-09T22:30:28Z) · depth: `quick` · builder `2.0`
+> **Grounding** · calc @ `e9d82bcdfd4363c98e447b92108203f18828d6ff` · view: `domain.calculator-ui` · tier: `full`
+> **Generated** 09 August 2026 (2026-08-09T23:57:03Z) · depth: `quick` · builder `2.0`
 > **Authoritative for:** file locations, entry points, commands, structural relationships as of the commit above.
 > **Not authoritative for:** current file contents. If this document conflicts with code you have read, trust the code and say so explicitly in your output.
 > **Unknowns are marked.** Do not resolve them by inference. If the repository has changed since the date above, treat locations as hints, not facts.
 
-## TL;DR {#domain.calculator.tldr}
-This domain model covers the calculator capability surface: arithmetic, scientific functions, unit conversions, financial calculations, and graphing. These capabilities are implemented largely in the same UI shell and share a common evaluation layer in `src/utils/evaluator.js`. The key invariants are expression state, numeric formatting, angle-unit handling, and history persistence. The biggest change risks are regressions in the shared evaluator and mismatches between UI modes and the evaluator’s expectations.
+## TL;DR {#domain.calculator-ui.tldr}
 
-## Facts {#domain.calculator.facts}
+The calculator UI domain covers the front-end experience of entering and evaluating expressions, switching modes, and presenting results. The main implementation surface is the shared app shell plus the display/keypad components and the theme system. The domain matters because a classic-calculator visual change touches multiple components and the shared CSS layer.
 
-```yaml
-domain_purpose: calculator experience for browser users
-owner_components:
-  - { id: app-shell, path: src/App.jsx:14-324 }
-  - { id: calculator-engine, path: src/utils/evaluator.js:1-218 }
-  - { id: mode-components, path: src/components }
-capabilities:
-  - arithmetic
-  - scientific functions
-  - unit conversion
-  - financial calculators
-  - function graphing
-```
+## Domain purpose {#domain.calculator-ui.purpose}
 
-## Purpose and terminology {#domain.calculator.purpose}
-The calculator domain is the core product capability of the repository. Terms such as expression, result, angle unit, memory, mode, and history are used across the shell and the feature components. Evidence: `e-app-shell`, `e-evaluator`.
+This domain captures the user-visible calculator experience: expression entry, display rendering, mode switching, and styling. It is relevant to both functional changes and visual work.
 
-## Business rules and invariants {#domain.calculator.rules}
-- An expression string and a result string are kept in sync by `App`.
-- Successful evaluations are added to a capped history array and persisted to `localStorage`.
-- The evaluator returns `Error` for empty, non-finite, or invalid math states.
-- Deg/rad behavior is passed from the shell into the evaluator for trig functions. Evidence: `e-app-shell`, `e-browser-storage`, `e-evaluator`.
+## Terminology and vocabulary {#domain.calculator-ui.terms}
 
-## Owning components and symbols {#domain.calculator.components}
-- `App` holds the state and routes interactions to the correct mode component.
-- `evaluateExpression` and `formatNumber` are the core shared semantics.
-- `FunctionGrapher`, `UnitConverter`, and `FinancialCalculator` each consume the evaluation layer differently. Evidence: `e-app-shell`, `e-evaluator`, `e-graphing`.
+- `expression`: the current math string being built by the user.
+- `result`: the last computed or displayed output.
+- `activeMode`: one of `standard`, `scientific`, `converter`, `financial`, or `grapher`.
+- `theme`: the selected visual variant, including `classic`.
 
-## Main workflows {#domain.calculator.workflows}
-- Arithmetic and scientific workflows end at an evaluation result and optional history entry.
-- Conversion and financial workflows use the evaluator helpers directly and render the returned values.
-- Graphing workflows compile a formula and plot it on a canvas. Evidence: `e-evaluator`, `e-graphing`, `e-history-export`.
+## Owning components {#domain.calculator-ui.components}
 
-## Risks and change impact {#domain.calculator.risks}
-The highest-risk changes are those that alter the shared evaluator because all calculator modes depend on it. Browser-specific changes to history or persistence can also create subtle regressions. Evidence: `e-app-shell`, `e-evaluator`, `e-browser-storage`.
+- `calculator-shell` in `src/App.jsx` owns the shared state and routing.
+- `calculator-ui` in `src/components/` renders the actual calculator surfaces.
+- `calculator-theme` in `src/index.css` provides shared tokens and theme variants.
 
-## Unknowns {#domain.calculator.unknowns}
-The repository does not define product requirements beyond the implemented modes, so the intended completeness of each calculator sub-feature remains partly implicit. Evidence: `e-core-purpose`.
+## Main workflows {#domain.calculator-ui.workflows}
+
+1. The user presses a keypad key.
+2. `App` updates the expression state.
+3. The display re-renders the expression and result.
+4. The equals action delegates to the evaluator and updates the history.
+5. The selected theme is applied through CSS variables.
+
+## UI invariants {#domain.calculator-ui.invariants}
+
+- The display should show the current expression and the latest result.
+- The app should remain usable through keyboard shortcuts as well as button taps.
+- Theme selection should update the whole shell through CSS variables, not by hand-rolling per-component colors.
+
+## Risks and unknowns {#domain.calculator-ui.risks}
+
+- The visual system is shared and can cause broad regressions.
+- There is no automated regression coverage for the UI layer.
+- The repo does not include a formal design-system artifact for the calculator surfaces.
+
+
+## Repository grounding: singularity/world-model/task-guides/classic-calculator-look.md
+
+> **Grounding** · calc @ `e9d82bcdfd4363c98e447b92108203f18828d6ff` · view: `task.classic-calculator-look` · tier: `full`
+> **Generated** 09 August 2026 (2026-08-09T23:57:03Z) · depth: `quick` · builder `2.0`
+> **Authoritative for:** file locations, entry points, commands, structural relationships as of the commit above.
+> **Not authoritative for:** current file contents. If this document conflicts with code you have read, trust the code and say so explicitly in your output.
+> **Unknowns are marked.** Do not resolve them by inference. If the repository has changed since the date above, treat locations as hints, not facts.
+
+## TL;DR {#task.classic-calculator-look.tldr}
+
+The task is to change the look of the calculator to match a classic calculator. The relevant implementation points are the shared theme tokens in `src/index.css`, the header/display/keypad components in `src/components/`, and the shell state in `src/App.jsx`. The safest approach is to adjust the shared theme variables first and then verify that the main calculator surfaces still render correctly.
+
+## Task interpretation {#task.classic-calculator-look.interpretation}
+
+This is a UI-focused task rather than a logic change. The request is about appearance, layout, and interaction cues that evoke a classic desk calculator. It does not require changing calculation semantics.
+
+## Relevant roles {#task.classic-calculator-look.roles}
+
+- Designer or frontend developer: update the theme and layout.
+- QA or reviewer: check the classic look across standard and scientific modes.
+
+## Relevant components {#task.classic-calculator-look.components}
+
+- `src/index.css` for shared colors, borders, shadows, and button styling.
+- `src/components/Header.jsx` for branding and mode tabs.
+- `src/components/Display.jsx` for the display panel and utility buttons.
+- `src/components/StandardKeypad.jsx` for the main keypad buttons.
+- `src/App.jsx` only if the task requires changing layout containers or introducing new state.
+
+## Relevant domain models {#task.classic-calculator-look.domains}
+
+- `domains/calculator-ui.md`
+
+## Expected change flow {#task.classic-calculator-look.flow}
+
+1. Adjust theme variables in `src/index.css` to match the desired classic calculator palette and spacing.
+2. Review `Header`, `Display`, and the keypad components for any color or spacing mismatches.
+3. Keep the existing `classic` theme entry point intact unless the task explicitly asks for a new theme.
+4. Verify the app builds and that the display and keypad continue to render correctly.
+
+## Contracts and invariants to preserve {#task.classic-calculator-look.invariants}
+
+- The app should continue to support multiple calculator modes.
+- The shared CSS variable approach should stay intact so styling changes remain centralized.
+- The calculator logic and keyboard behavior should not change unless explicitly requested.
+
+## Tests to add or update {#task.classic-calculator-look.tests}
+
+No automated tests exist today. The minimum regression check is a manual review of standard and scientific views plus a production build.
+
+## Commands to run {#task.classic-calculator-look.commands}
+
+- `npm run build`
+- `npm run lint` (expected to report existing lint issues)
+
+## Risks and unknowns {#task.classic-calculator-look.risks}
+
+- The classic look may require changes in multiple components because the theme is shared across the app.
+- There is no visual regression suite today, so the task is more manual than automated.
+- The exact visual target is not codified in the repository; the implementation will need to infer it from the request.
 
 
 ## Repository grounding: singularity/world-model/evidence/evidence.jsonl
 
-{"id": "e-core-purpose", "claim": "The repository is a React/Vite browser calculator app with standard, scientific, unit-conversion, financial, and graphing modes.", "status": "observed", "confidence": "high", "locations": [{"path": "index.html", "start_line": 1, "end_line": 14, "symbol": null}, {"path": "src/App.jsx", "start_line": 14, "end_line": 324, "symbol": "App"}, {"path": "package.json", "start_line": 1, "end_line": 29, "symbol": null}], "commands": [], "notes": "The entry HTML, app shell, and package manifest all indicate a client-side calculator experience.", "conflicts": [], "commit": "0d8703c49dc3ca79c684d93cc42220c922d7cd15", "recorded_at": "2026-08-09T22:30:28Z"}
-{"id": "e-app-shell", "claim": "The root App component coordinates state, mode selection, keyboard handling, history, theme, sound, and modal/drawer composition.", "status": "observed", "confidence": "high", "locations": [{"path": "src/App.jsx", "start_line": 14, "end_line": 324, "symbol": "App"}], "commands": [], "notes": "This is the architectural center of the application.", "conflicts": [], "commit": "0d8703c49dc3ca79c684d93cc42220c922d7cd15", "recorded_at": "2026-08-09T22:30:28Z"}
-{"id": "e-evaluator", "claim": "Shared calculator math, formatting, unit conversion, and financial helpers are centralized in src/utils/evaluator.js.", "status": "observed", "confidence": "high", "locations": [{"path": "src/utils/evaluator.js", "start_line": 1, "end_line": 218, "symbol": "evaluateExpression"}], "commands": [], "notes": "This module is shared by multiple UI modes.", "conflicts": [], "commit": "0d8703c49dc3ca79c684d93cc42220c922d7cd15", "recorded_at": "2026-08-09T22:30:28Z"}
-{"id": "e-graphing", "claim": "The grapher mode uses mathjs compilation and canvas rendering for user-entered functions.", "status": "observed", "confidence": "high", "locations": [{"path": "src/components/FunctionGrapher.jsx", "start_line": 14, "end_line": 212, "symbol": "FunctionGrapher"}], "commands": [], "notes": "The grapher is the most browser-specific feature in the repository.", "conflicts": [], "commit": "0d8703c49dc3ca79c684d93cc42220c922d7cd15", "recorded_at": "2026-08-09T22:30:28Z"}
-{"id": "e-browser-storage", "claim": "The app persists theme, sound, and history data in browser localStorage.", "status": "observed", "confidence": "high", "locations": [{"path": "src/App.jsx", "start_line": 22, "end_line": 53, "symbol": null}, {"path": "src/components/HistoryDrawer.jsx", "start_line": 15, "end_line": 26, "symbol": "HistoryDrawer"}], "commands": [], "notes": "Client-side persistence is a key trust boundary and change surface.", "conflicts": [], "commit": "0d8703c49dc3ca79c684d93cc42220c922d7cd15", "recorded_at": "2026-08-09T22:30:28Z"}
-{"id": "e-history-export", "claim": "The history drawer can export a text file from the browser using Blob and download link logic.", "status": "observed", "confidence": "high", "locations": [{"path": "src/components/HistoryDrawer.jsx", "start_line": 15, "end_line": 26, "symbol": "HistoryDrawer"}], "commands": [], "notes": "This is a browser-only workflow and a relevant security surface.", "conflicts": [], "commit": "0d8703c49dc3ca79c684d93cc42220c922d7cd15", "recorded_at": "2026-08-09T22:30:28Z"}
-{"id": "e-build", "claim": "The repository declares Vite build and lint scripts in package.json.", "status": "observed", "confidence": "high", "locations": [{"path": "package.json", "start_line": 6, "end_line": 10, "symbol": null}], "commands": ["npm run build"], "notes": "The package manifest is the source of the standard validation commands.", "conflicts": [], "commit": "0d8703c49dc3ca79c684d93cc42220c922d7cd15", "recorded_at": "2026-08-09T22:30:28Z"}
-{"id": "e-lint", "claim": "ESLint is configured for the React/Vite app and the repository currently reports lint issues in several components.", "status": "observed", "confidence": "high", "locations": [{"path": "eslint.config.js", "start_line": 1, "end_line": 21, "symbol": null}, {"path": "src/components/FunctionGrapher.jsx", "start_line": 21, "end_line": 133, "symbol": "FunctionGrapher"}], "commands": ["npm run lint"], "notes": "Legacy lint state is part of the development story and should be surfaced to agents.", "conflicts": [], "commit": "0d8703c49dc3ca79c684d93cc42220c922d7cd15", "recorded_at": "2026-08-09T22:30:28Z"}
-{"id": "e-test-gap", "claim": "The repository currently lacks a test script and test files, so automated regression coverage is absent.", "status": "observed", "confidence": "high", "locations": [{"path": "package.json", "start_line": 6, "end_line": 10, "symbol": null}, {"path": "src", "start_line": 1, "end_line": 1, "symbol": null}], "commands": [], "notes": "This absence is a key risk for future changes.", "conflicts": [], "commit": "0d8703c49dc3ca79c684d93cc42220c922d7cd15", "recorded_at": "2026-08-09T22:30:28Z"}
-{"id": "e-components", "claim": "The feature-specific UI modules are organized under src/components.", "status": "observed", "confidence": "high", "locations": [{"path": "src/components", "start_line": 1, "end_line": 1, "symbol": null}], "commands": [], "notes": "The component tree is the feature composition layer.", "conflicts": [], "commit": "0d8703c49dc3ca79c684d93cc42220c922d7cd15", "recorded_at": "2026-08-09T22:30:28Z"}
-{"id": "e-entry-html", "claim": "The browser entry point is the HTML document that mounts the React app.", "status": "observed", "confidence": "high", "locations": [{"path": "index.html", "start_line": 1, "end_line": 14, "symbol": null}], "commands": [], "notes": "This is the document root for the app.", "conflicts": [], "commit": "0d8703c49dc3ca79c684d93cc42220c922d7cd15", "recorded_at": "2026-08-09T22:30:28Z"}
-{"id": "e-entry-main", "claim": "The main React bootstrap module mounts the app inside StrictMode.", "status": "observed", "confidence": "high", "locations": [{"path": "src/main.jsx", "start_line": 1, "end_line": 10, "symbol": null}], "commands": [], "notes": "This is the runtime bootstrap path.", "conflicts": [], "commit": "0d8703c49dc3ca79c684d93cc42220c922d7cd15", "recorded_at": "2026-08-09T22:30:28Z"}
+{"id": "ev:repo-purpose", "claim": "The repository is a React/Vite calculator app with multiple calculator modes.", "status": "observed", "confidence": "high", "locations": [{"path": "src/App.jsx", "start_line": 14, "end_line": 324, "symbol": "App"}, {"path": "package.json", "start_line": 1, "end_line": 28, "symbol": null}], "commands": ["npm run build"], "notes": "The App component wires standard, scientific, converter, financial, and grapher views.", "conflicts": [], "commit": "e9d82bcdfd4363c98e447b92108203f18828d6ff", "recorded_at": "2026-08-09T23:57:03Z"}
+{"id": "ev:app-shell", "claim": "The app shell manages expression state and mode routing from a central React component.", "status": "observed", "confidence": "high", "locations": [{"path": "src/App.jsx", "start_line": 14, "end_line": 324, "symbol": "App"}, {"path": "src/main.jsx", "start_line": 1, "end_line": 10, "symbol": "createRoot"}], "commands": [], "notes": "State and handlers are owned by the main App component, while the root mounts the app.", "conflicts": [], "commit": "e9d82bcdfd4363c98e447b92108203f18828d6ff", "recorded_at": "2026-08-09T23:57:03Z"}
+{"id": "ev:ui-components", "claim": "The calculator UI is split into dedicated display, header, keypad, financial, grapher, history, and modal components.", "status": "observed", "confidence": "high", "locations": [{"path": "src/components/Display.jsx", "start_line": 1, "end_line": 97, "symbol": "Display"}, {"path": "src/components/StandardKeypad.jsx", "start_line": 1, "end_line": 179, "symbol": "StandardKeypad"}, {"path": "src/components/ScientificKeypad.jsx", "start_line": 1, "end_line": 127, "symbol": "ScientificKeypad"}], "commands": [], "notes": "The UI is composed from a set of focused components rather than one giant file.", "conflicts": [], "commit": "e9d82bcdfd4363c98e447b92108203f18828d6ff", "recorded_at": "2026-08-09T23:57:03Z"}
+{"id": "ev:evaluator", "claim": "The evaluator module sanitizes expressions and supports scientific, financial, and unit-conversion helpers.", "status": "observed", "confidence": "high", "locations": [{"path": "src/utils/evaluator.js", "start_line": 1, "end_line": 218, "symbol": "evaluateExpression"}, {"path": "src/utils/evaluator.js", "start_line": 160, "end_line": 218, "symbol": "calculateEMI"}], "commands": [], "notes": "The evaluator also provides `formatNumber` and conversion helpers.", "conflicts": [], "commit": "e9d82bcdfd4363c98e447b92108203f18828d6ff", "recorded_at": "2026-08-09T23:57:03Z"}
+{"id": "ev:theme-system", "claim": "The classic calculator appearance and alternate themes are defined through CSS variables in `src/index.css`.", "status": "observed", "confidence": "high", "locations": [{"path": "src/index.css", "start_line": 1, "end_line": 213, "symbol": ":root"}, {"path": "src/components/Header.jsx", "start_line": 24, "end_line": 145, "symbol": "Header"}], "commands": [], "notes": "The default theme uses classic desk calculator colors and the app exposes theme selection in the header.", "conflicts": [], "commit": "e9d82bcdfd4363c98e447b92108203f18828d6ff", "recorded_at": "2026-08-09T23:57:03Z"}
+{"id": "ev:entrypoints", "claim": "The app bootstraps through `src/main.jsx` and the Vite dev server is started with `npm run dev`.", "status": "observed", "confidence": "high", "locations": [{"path": "src/main.jsx", "start_line": 1, "end_line": 10, "symbol": "createRoot"}, {"path": "package.json", "start_line": 6, "end_line": 10, "symbol": "scripts"}], "commands": ["npm run dev"], "notes": "The build and dev scripts are defined in package.json.", "conflicts": [], "commit": "e9d82bcdfd4363c98e447b92108203f18828d6ff", "recorded_at": "2026-08-09T23:57:03Z"}
+{"id": "ev:validation-build", "claim": "The production build completed successfully.", "status": "observed", "confidence": "high", "locations": [{"path": "package.json", "start_line": 6, "end_line": 10, "symbol": "scripts"}], "commands": ["npm run build"], "notes": "Vite reported a successful build with a chunk-size warning.", "conflicts": [], "commit": "e9d82bcdfd4363c98e447b92108203f18828d6ff", "recorded_at": "2026-08-09T23:57:03Z"}
+{"id": "ev:testing-gap", "claim": "No automated test files were found in the repository.", "status": "observed", "confidence": "high", "locations": [{"path": "package.json", "start_line": 1, "end_line": 28, "symbol": "scripts"}], "commands": ["find . -type f | grep -E \"(test|spec)\" || true"], "notes": "The repository has build and lint commands but no discovered test files.", "conflicts": [], "commit": "e9d82bcdfd4363c98e447b92108203f18828d6ff", "recorded_at": "2026-08-09T23:57:03Z"}
 
 
 # Approved governed references
