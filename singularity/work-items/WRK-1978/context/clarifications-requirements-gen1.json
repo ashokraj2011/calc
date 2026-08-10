@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "workId": "WRK-1978",
+  "phase": "requirements",
+  "generation": 1,
+  "mode": "required",
+  "promptPath": "singularity/work-items/WRK-1978/context/prompts/requirements-gen1.md",
+  "promptSha256": "6af50b8ffe8e9c8857b992c40a0aa0c0b90146efebf54394715649bb7fed6862",
+  "groundingRecordPath": "singularity/work-items/WRK-1978/context/requirements-gen1.json",
+  "groundingRecordSha256": "4966f2cf8010659d163d0720d9daba5f8528e763dfcb6fb3d2661e505d92e10d",
+  "responses": [
+    {
+      "id": "Q-001",
+      "question": "Which Windows Calculator visual era/style should the app target?",
+      "why": "Determines the target visual language for the redesign",
+      "answer": "Windows 11 (Fluent Design - rounded corners, acrylic/mica, modern accent colors)",
+      "status": "answered",
+      "blocking": false
+    },
+    {
+      "id": "Q-002",
+      "question": "How literal should the recreation be — layout/button grid closely matching Windows 11 Calculator, or just adopting its visual language while keeping the current layout?",
+      "why": "Determines fidelity of layout/spacing changes required",
+      "answer": "Literal recreation: layout, spacing, and button grid should closely mirror Windows 11 Calculator",
+      "status": "answered",
+      "blocking": false
+    },
+    {
+      "id": "Q-003",
+      "question": "Should all existing features (financial calculator, grapher, memory, history, sound) be preserved and restyled, or should scope be trimmed to match Windows Calculator's actual feature set?",
+      "why": "Determines scope boundaries and whether any features are removed",
+      "answer": "Keep all current modes/features (scientific, unit converter, financial, grapher, memory, history, sound) with the new Windows 11 skin applied throughout",
+      "status": "answered",
+      "blocking": false
+    },
+    {
+      "id": "Q-004",
+      "question": "Should the app support both light and dark themes matching Windows 11 Calculator, dark only, or keep the existing theme-switcher restyled?",
+      "why": "Determines theming requirements and acceptance criteria for theme switching",
+      "answer": "Support both light and dark themes matching Windows 11 Calculator",
+      "status": "answered",
+      "blocking": false
+    },
+    {
+      "id": "Q-005",
+      "question": "Should the redesigned UI remain fully responsive/usable on mobile widths, or is desktop-first sufficient with mobile as best-effort?",
+      "why": "Determines responsiveness acceptance criteria since Windows Calculator is a desktop-native app",
+      "answer": "Must remain fully responsive/usable on mobile widths as well as desktop",
+      "status": "answered",
+      "blocking": false
+    }
+  ],
+  "completed": true,
+  "recordedAt": "2026-08-10T23:55:54.545Z",
+  "recordedBy": {
+    "name": "Ashok Raj",
+    "email": "88361104+ashokraj2011@users.noreply.github.com",
+    "login": "ashokraj2011"
+  },
+  "agent": "product-owner"
+}
