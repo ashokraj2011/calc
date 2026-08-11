@@ -1790,7 +1790,7 @@
     ]
   },
   "status": "in_progress",
-  "currentPhase": "implementation",
+  "currentPhase": "verification",
   "phaseOrder": [
     "intake",
     "requirements",
@@ -2648,7 +2648,7 @@
       "label": "Implementation",
       "order": 4,
       "defaultAgent": "developer",
-      "status": "awaiting_approval",
+      "status": "approved",
       "requiredArtifact": {
         "path": "artifacts/implementation/implementation-summary.md",
         "kind": "implementation-summary",
@@ -2707,8 +2707,8 @@
       "qualityCommands": [],
       "startedAt": "2026-08-11T00:25:21.552Z",
       "submittedAt": "2026-08-11T02:32:02.004Z",
-      "approvedAt": null,
-      "approvedBy": null,
+      "approvedAt": "2026-08-11T02:38:35.102Z",
+      "approvedBy": "ashokraj2011",
       "rejectedAt": null,
       "rejectedBy": null,
       "rejectionReason": null,
@@ -2782,18 +2782,139 @@
           "providerCost": null
         }
       ],
-      "approvals": [],
+      "approvals": [
+        {
+          "decision": "approved",
+          "phase": "implementation",
+          "at": "2026-08-11T02:38:35.102Z",
+          "actor": {
+            "name": "Ashok Raj",
+            "email": "88361104+ashokraj2011@users.noreply.github.com",
+            "login": "ashokraj2011"
+          },
+          "agent": "developer",
+          "authorityGroup": "engineering-reviewers",
+          "identityAssurance": "configured-local",
+          "channel": "copilot-selection-receipt",
+          "generation": 1,
+          "artifactSha256": [
+            {
+              "path": "singularity/work-items/WRK-1978/artifacts/implementation/implementation-summary.md",
+              "sha256": "dbefd795907298eb0c46a246be48e2c3b15226c8bf05cd66b7d17bac81867635"
+            },
+            {
+              "path": "src/components/Display.jsx",
+              "sha256": "5f03c1d0683c26ff20d4cacde7e547c6202397bb03c85a18e0796767a62b5b90"
+            },
+            {
+              "path": "src/components/FinancialCalculator.jsx",
+              "sha256": "657589607d5babd87dacfb8569acaf3ed639cfcbfcba7a7ecdb2955d94551890"
+            },
+            {
+              "path": "src/components/FunctionGrapher.jsx",
+              "sha256": "b3a8f5a9efd46846b941e31ee8286efddecb0af18dad2a30a9768671931d8c48"
+            },
+            {
+              "path": "src/components/Header.jsx",
+              "sha256": "d7d34675b07ba58299b96f6ac85414909e238163217b14f3b9b489c358b7f648"
+            },
+            {
+              "path": "src/components/HistoryDrawer.jsx",
+              "sha256": "daa55e91e42c345304f5480ed4fe1726621a7b7e035ef801425a12e945fda5e9"
+            },
+            {
+              "path": "src/components/KeyboardShortcutsModal.jsx",
+              "sha256": "752b9cf6d661cd5e894ce2ac1c0b90d5d9e599a51f8db8a8db812ca6bd8777cd"
+            },
+            {
+              "path": "src/components/ScientificKeypad.jsx",
+              "sha256": "0b815e9330c470b02eda5e77836c6bcdbff6587219f8bfa9b559f28d85aa51a2"
+            },
+            {
+              "path": "src/components/StandardKeypad.jsx",
+              "sha256": "1108f94a0c38cb364830d2ddf00e3f573be683be1b8b28e7808f3c3d93cde408"
+            },
+            {
+              "path": "src/components/UnitConverter.jsx",
+              "sha256": "b6c56d4eeeb8cba8dc448446443ee5255a6f22e86fddbbe31d0224595ee7543e"
+            },
+            {
+              "path": "src/index.css",
+              "sha256": "29815dd9264a94a36b96884a3b967750139c1cae177ef6ddc55920fe4392c7e6"
+            }
+          ],
+          "reviewPacketSha256": "80f66002e400567200cb2a289da09a203e338a6f4875b4e8a5ea5fcfb6dc6618",
+          "actionContext": {
+            "phase": "implementation",
+            "label": "Implementation",
+            "generation": 1,
+            "submittedAt": "2026-08-11T02:32:02.004Z",
+            "artifacts": [
+              {
+                "path": "singularity/work-items/WRK-1978/artifacts/implementation/implementation-summary.md",
+                "sha256": "dbefd795907298eb0c46a246be48e2c3b15226c8bf05cd66b7d17bac81867635"
+              },
+              {
+                "path": "src/components/Display.jsx",
+                "sha256": "5f03c1d0683c26ff20d4cacde7e547c6202397bb03c85a18e0796767a62b5b90"
+              },
+              {
+                "path": "src/components/FinancialCalculator.jsx",
+                "sha256": "657589607d5babd87dacfb8569acaf3ed639cfcbfcba7a7ecdb2955d94551890"
+              },
+              {
+                "path": "src/components/FunctionGrapher.jsx",
+                "sha256": "b3a8f5a9efd46846b941e31ee8286efddecb0af18dad2a30a9768671931d8c48"
+              },
+              {
+                "path": "src/components/Header.jsx",
+                "sha256": "d7d34675b07ba58299b96f6ac85414909e238163217b14f3b9b489c358b7f648"
+              },
+              {
+                "path": "src/components/HistoryDrawer.jsx",
+                "sha256": "daa55e91e42c345304f5480ed4fe1726621a7b7e035ef801425a12e945fda5e9"
+              },
+              {
+                "path": "src/components/KeyboardShortcutsModal.jsx",
+                "sha256": "752b9cf6d661cd5e894ce2ac1c0b90d5d9e599a51f8db8a8db812ca6bd8777cd"
+              },
+              {
+                "path": "src/components/ScientificKeypad.jsx",
+                "sha256": "0b815e9330c470b02eda5e77836c6bcdbff6587219f8bfa9b559f28d85aa51a2"
+              },
+              {
+                "path": "src/components/StandardKeypad.jsx",
+                "sha256": "1108f94a0c38cb364830d2ddf00e3f573be683be1b8b28e7808f3c3d93cde408"
+              },
+              {
+                "path": "src/components/UnitConverter.jsx",
+                "sha256": "b6c56d4eeeb8cba8dc448446443ee5255a6f22e86fddbbe31d0224595ee7543e"
+              },
+              {
+                "path": "src/index.css",
+                "sha256": "29815dd9264a94a36b96884a3b967750139c1cae177ef6ddc55920fe4392c7e6"
+              }
+            ],
+            "reviewPacketSha256": "80f66002e400567200cb2a289da09a203e338a6f4875b4e8a5ea5fcfb6dc6618",
+            "submittedSourceCommit": "1f47b502df8aacdc24c770db46bf1396fa41e339",
+            "planId": "0cc136008266485092e36fe9"
+          },
+          "selfApproval": true
+        }
+      ],
       "designSourceSets": [],
       "artifacts": [
         {
           "path": "singularity/work-items/WRK-1978/artifacts/implementation/implementation-summary.md",
           "kind": "document",
-          "status": "pending",
+          "status": "approved",
           "exists": true,
-          "size": 116587,
-          "sha256": "dbefd795907298eb0c46a246be48e2c3b15226c8bf05cd66b7d17bac81867635",
+          "size": 121362,
+          "sha256": "4e86c4183e104f5ed7a74bdcfbddbe41a0568995a8e6c4ba5d989ced7c1623a1",
           "registeredAt": "2026-08-11T02:27:58.646Z",
-          "updatedAt": "2026-08-11T02:32:02.005Z"
+          "updatedAt": "2026-08-11T02:32:02.005Z",
+          "approvedAt": "2026-08-11T02:38:35.102Z",
+          "approvedBy": "ashokraj2011"
         },
         {
           "path": "src/components/Display.jsx",
@@ -2941,7 +3062,7 @@
       "label": "Verification",
       "order": 5,
       "defaultAgent": "qa",
-      "status": "not_started",
+      "status": "in_progress",
       "requiredArtifact": {
         "path": "artifacts/verification/test-evidence.md",
         "kind": "test-evidence",
@@ -3001,7 +3122,7 @@
         }
       },
       "qualityCommands": [],
-      "startedAt": null,
+      "startedAt": "2026-08-11T02:38:35.102Z",
       "submittedAt": null,
       "approvedAt": null,
       "approvedBy": null,
@@ -3354,6 +3475,30 @@
       "event": "phase_submitted",
       "phase": "implementation",
       "detail": "11 artifacts"
+    },
+    {
+      "at": "2026-08-11T02:38:35.102Z",
+      "actor": "ashokraj2011",
+      "agent": "developer",
+      "event": "work_interval_closed",
+      "phase": "implementation",
+      "detail": "interval INT-implementation-G1-001 closed after phase approval"
+    },
+    {
+      "at": "2026-08-11T02:38:35.102Z",
+      "actor": "ashokraj2011",
+      "agent": "developer",
+      "event": "phase_self_approved",
+      "phase": "implementation",
+      "detail": "threshold reached; advanced to verification"
+    },
+    {
+      "at": "2026-08-11T02:38:35.194Z",
+      "actor": "system",
+      "agent": null,
+      "event": "work_interval_started",
+      "phase": "verification",
+      "detail": "baseline 8eec8082a4cf at 0bf99b5ad0d1"
     }
   ],
   "measurement": {
@@ -4595,25 +4740,89 @@
         },
         "createdAt": "2026-08-11T02:32:01.814Z"
       }
+    },
+    {
+      "schemaVersion": 1,
+      "event": {
+        "schemaVersion": 1,
+        "eventId": "ca62e0a1-6823-460b-b336-ada0abe65d0d",
+        "type": "phase-approved",
+        "subject": {
+          "kind": "story",
+          "id": "WRK-1978",
+          "branch": "WRK-1978"
+        },
+        "phaseId": "implementation",
+        "generation": 1,
+        "actor": {
+          "name": "Ashok Raj",
+          "email": "88361104+ashokraj2011@users.noreply.github.com",
+          "login": "ashokraj2011"
+        },
+        "agent": "developer",
+        "authorityGroup": "engineering-reviewers",
+        "payload": {
+          "decision": "approved",
+          "reviewPacketSha256": "80f66002e400567200cb2a289da09a203e338a6f4875b4e8a5ea5fcfb6dc6618"
+        },
+        "sourceCommit": null,
+        "idempotencyKey": null,
+        "idempotencyHash": null,
+        "createdAt": "2026-08-11T02:38:35.119Z"
+      },
+      "ledgerIntent": {
+        "schemaVersion": 1,
+        "eventId": "ca62e0a1-6823-460b-b336-ada0abe65d0d",
+        "eventType": "phase-approved",
+        "capabilityId": "calc-app",
+        "subject": {
+          "branch": "WRK-1978",
+          "generation": 1,
+          "phase": "implementation",
+          "workId": "WRK-1978",
+          "workType": "feature"
+        },
+        "actor": {
+          "name": "Ashok Raj",
+          "email": "88361104+ashokraj2011@users.noreply.github.com",
+          "githubLogin": "ashokraj2011",
+          "identityAssurance": "configured-local"
+        },
+        "agent": "developer",
+        "authorityGroup": "engineering-reviewers",
+        "payload": {
+          "capabilityMapSha256": "77ee9fd3c55345e31113fffb91dab4b0ffd95ced22cbd95d19ffa1d04bd7a479",
+          "capabilityPolicy": {
+            "protectedPaths": [],
+            "qualityCommands": [],
+            "requiredAuthorityGroups": [],
+            "requiredChecks": [],
+            "requiredWorldModelViews": []
+          },
+          "configPath": "singularity/workflow.yml",
+          "configSha256": "c71e8d4583a4303c75561c44902b837971681f740cc7025f9b55cb997589424f",
+          "lifecycleEventId": "ca62e0a1-6823-460b-b336-ada0abe65d0d",
+          "lifecyclePayload": {
+            "decision": "approved",
+            "reviewPacketSha256": "80f66002e400567200cb2a289da09a203e338a6f4875b4e8a5ea5fcfb6dc6618"
+          },
+          "templateSha256": "5d0478b18c8fd14221e14c68e6238b909bccd6802a70262c416005354716c62c"
+        },
+        "createdAt": "2026-08-11T02:38:35.124Z"
+      }
     }
   ],
   "workIntervals": {
     "schemaVersion": 1,
     "current": {
-      "intervalId": "INT-implementation-G1-001",
-      "phaseId": "implementation",
+      "intervalId": "INT-verification-G1-002",
+      "phaseId": "verification",
       "generation": 1,
-      "baselineSha256": "889b78fdf683895d58291abae9f7d85b253a11cf4684df7fbb085a6af5390742",
-      "sourceBaseCommit": "a9d1a489dfa4ca6fa3840e9cedd36cccf8ac8c9a",
+      "baselineSha256": "8eec8082a4cf2a96306493907d9e5d896d12c01c5847293356cfbaef3ed2fa54",
+      "sourceBaseCommit": "0bf99b5ad0d199b64d9c8102323021f2f0eeb2f3",
       "escalationTarget": null,
-      "path": "singularity/work-items/WRK-1978/context/work-intervals/implementation-gen1-baseline.json",
-      "status": "reconciled",
-      "finalReconciliation": {
-        "reconciliationSha256": "04e7fdebe62cb5ceb219ad2862c4b656eeaedbd8159927a5e7a5879dae9c8ade",
-        "path": "singularity/work-items/WRK-1978/context/work-intervals/reconciliations/04e7fdebe62cb5ceb219ad2862c4b656eeaedbd8159927a5e7a5879dae9c8ade.json",
-        "targetHead": "1f47b502df8aacdc24c770db46bf1396fa41e339",
-        "recordedAt": "2026-08-11T02:32:02.003Z"
-      }
+      "path": "singularity/work-items/WRK-1978/context/work-intervals/verification-gen1-baseline.json",
+      "status": "open"
     },
     "history": [
       {
@@ -4624,6 +4833,16 @@
         "sourceBaseCommit": "a9d1a489dfa4ca6fa3840e9cedd36cccf8ac8c9a",
         "escalationTarget": null,
         "path": "singularity/work-items/WRK-1978/context/work-intervals/implementation-gen1-baseline.json",
+        "status": "open"
+      },
+      {
+        "intervalId": "INT-verification-G1-002",
+        "phaseId": "verification",
+        "generation": 1,
+        "baselineSha256": "8eec8082a4cf2a96306493907d9e5d896d12c01c5847293356cfbaef3ed2fa54",
+        "sourceBaseCommit": "0bf99b5ad0d199b64d9c8102323021f2f0eeb2f3",
+        "escalationTarget": null,
+        "path": "singularity/work-items/WRK-1978/context/work-intervals/verification-gen1-baseline.json",
         "status": "open"
       }
     ],
