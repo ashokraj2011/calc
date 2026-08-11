@@ -21,10 +21,11 @@
 |  | ⚠ self-approval | Ashok Raj via engineering-reviewers; agent developer | **warning** |  |  |  |
 | 6 | Verification (`verification`) | qa | **approved** | 1 | 1 | unavailable |
 |  | ⚠ self-approval | Ashok Raj via quality-reviewers; agent qa | **warning** |  |  |  |
-| 7 | Spec-to-code conformance (`conformance`) | qa | **in_progress** | 1 | 0 | unavailable |
+| 7 | Spec-to-code conformance (`conformance`) | qa | **awaiting_approval** | 1 | 0 | unavailable |
 
 ## Recent history
 
+- 2026-08-11T04:54:27.777Z — **phase_submitted** (conformance) by ashokraj2011 · governed agent qa: 1 artifacts
 - 2026-08-11T04:52:00.213Z — **phase_generated** (conformance) by ashokraj2011 · governed agent qa: generation 1
 - 2026-08-11T03:54:25.188Z — **phase_self_approved** (verification) by ashokraj2011 · governed agent qa: threshold reached; advanced to conformance
 - 2026-08-11T03:54:25.188Z — **work_interval_closed** (verification) by ashokraj2011 · governed agent qa: interval INT-verification-G1-002 closed after phase approval
@@ -39,4 +40,3 @@
 - 2026-08-11T02:27:59.523Z — **phase_generated** (implementation) by ashokraj2011 · governed agent developer: generation 1
 - 2026-08-11T00:25:21.639Z — **work_interval_started** (implementation) by system: baseline 889b78fdf683 at a9d1a489dfa4
 - 2026-08-11T00:25:21.552Z — **phase_self_approved** (implementation-spec) by ashokraj2011 · governed agent architect: threshold reached; advanced to implementation
-- 2026-08-11T00:21:33.582Z — **phase_submitted** (implementation-spec) by ashokraj2011 · governed agent architect: 1 artifacts
