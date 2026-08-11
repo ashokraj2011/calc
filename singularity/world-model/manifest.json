@@ -1,13 +1,13 @@
 {
   "schema_version": "3.0",
-  "repository_commit": "4294b2b282ef8049f60c94da9db281200f81390d",
+  "repository_commit": "b3491d0ee5a8ef14875d69c8078593872fc2c04c",
   "repository_branch": "WRK-1978",
-  "working_tree_clean": true,
-  "generated_at": "2026-08-11T02:44:28.892Z",
+  "working_tree_clean": false,
+  "generated_at": "2026-08-11T04:04:26.144Z",
   "generated_date": "11 August 2026",
-  "builder_version": "2.0",
-  "builder_prompt_sha256": "d607ed17ba7e0ad45acd142b62b57c32272e21dfec50866d4bee5105f2fd9169",
-  "analysis_depth": "standard",
+  "builder_version": "2.1-light",
+  "builder_prompt_sha256": "511654826223e40b93c54f48f9b773f155e3364326d41aa98108dea7217d75cd",
+  "analysis_depth": "light",
   "core": {
     "summary": "core/summary.md",
     "brief": "core/summary.brief.md",
@@ -160,7 +160,7 @@
     "architecture": {
       "path": "views/architecture.md",
       "brief_path": "views/architecture.brief.md",
-      "generated": false,
+      "generated": true,
       "load_when": [
         "system design",
         "dependency analysis",
@@ -174,10 +174,10 @@
           "sha256": null
         },
         "full": {
-          "status": "missing",
+          "status": "ready",
           "path": "views/architecture.md",
-          "bytes": 0,
-          "sha256": null
+          "bytes": 821,
+          "sha256": "99bc379eeecb186c9f7b75d743e8d00444c76ff0a85b8f2860ad051196076ad4"
         }
       }
     },
@@ -245,10 +245,10 @@
           "sha256": "98ecceabb222146f37fb40677d8620a609a9d5fc1acc701a7bbebf6f2de214c3"
         },
         "full": {
-          "status": "missing",
+          "status": "ready",
           "path": "views/security.md",
-          "bytes": 0,
-          "sha256": null
+          "bytes": 810,
+          "sha256": "a14417351941d976dd531148fe1b7acb890e8d4c19905a90f9fdfcaaff9b22ca"
         }
       }
     }
@@ -434,11 +434,15 @@
       "required_domains": [
         "calculator-engine"
       ]
+    },
+    {
+      "id": "task-4dfae982afd1",
+      "path": "task-guides/4dfae982afd19abf.md",
+      "task": "Verify spec-to-code conformance for making the app look like Windows Calculator"
     }
   ],
   "evidence": {
-    "path": "evidence/evidence.jsonl",
-    "load_only_when_verification_is_needed": true
+    "path": "evidence/evidence.jsonl"
   },
   "recommended_loading_rules": [
     {
@@ -493,33 +497,26 @@
     ]
   },
   "views_generated": [
+    "architecture",
     "development",
-    "security",
-    "testing"
+    "testing",
+    "security"
   ],
   "source_tree_sha256": "sha256:9bb77a860b5da37767c0440a5d01ad688ef1c38f4db46b25e2ce0fc7c4aa2d71",
   "generation": {
-    "parallel": true,
-    "strategy": "view",
-    "max_workers": 3,
-    "discovery_views": [
-      "development",
-      "testing"
-    ],
-    "degraded_views": [
-      "security"
-    ],
+    "parallel": false,
+    "strategy": "deterministic-light",
+    "max_workers": 0,
+    "discovery_views": [],
+    "degraded_views": [],
     "resumed_views": [],
-    "pending_views_at_start": [
-      "development",
-      "security",
-      "testing"
-    ]
+    "pending_views_at_start": []
   },
-  "generated_for_phase": "verification",
+  "generated_for_phase": "conformance",
   "requested_views": [
-    "testing",
+    "architecture",
     "development",
+    "testing",
     "security"
   ],
   "requested_selections": [
@@ -566,6 +563,36 @@
       "reused": [
         "core/brief"
       ]
+    },
+    {
+      "id": "light-1786421066249",
+      "generated_at": "2026-08-11T04:04:26.144Z",
+      "source_tree_sha256": "sha256:9bb77a860b5da37767c0440a5d01ad688ef1c38f4db46b25e2ce0fc7c4aa2d71",
+      "provider": null,
+      "requested": [
+        "architecture/full",
+        "core/full",
+        "development/full",
+        "security/full",
+        "testing/full"
+      ],
+      "produced": [
+        "architecture/full",
+        "core/full",
+        "development/full",
+        "security/full",
+        "testing/full"
+      ],
+      "reused": [
+        "core/full",
+        "development/full",
+        "testing/full"
+      ]
     }
-  ]
+  ],
+  "generator": {
+    "type": "deterministic-local",
+    "model": null,
+    "model_tokens": 0
+  }
 }
