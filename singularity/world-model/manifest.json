@@ -1,9 +1,9 @@
 {
   "schema_version": "3.0",
-  "repository_commit": "5bce85ba2c79dc7dbfd36ecac3f10d1233881d4a",
+  "repository_commit": "4294b2b282ef8049f60c94da9db281200f81390d",
   "repository_branch": "WRK-1978",
-  "working_tree_clean": false,
-  "generated_at": "2026-08-11T02:13:05.535Z",
+  "working_tree_clean": true,
+  "generated_at": "2026-08-11T02:44:28.892Z",
   "generated_date": "11 August 2026",
   "builder_version": "2.0",
   "builder_prompt_sha256": "d607ed17ba7e0ad45acd142b62b57c32272e21dfec50866d4bee5105f2fd9169",
@@ -80,10 +80,10 @@
       ],
       "tiers": {
         "brief": {
-          "status": "missing",
+          "status": "ready",
           "path": "views/development.brief.md",
-          "bytes": 0,
-          "sha256": null
+          "bytes": 1104,
+          "sha256": "1de27cd06d57301f5a833a3ced5b5b564510a7ac7047b55f6d6a447585080699"
         },
         "full": {
           "status": "ready",
@@ -126,10 +126,10 @@
           "sha256": "450530d436c03bf2cafe4849a2a2e8ccd3e380129dfcecf87d770a79f9b3fd33"
         },
         "full": {
-          "status": "missing",
+          "status": "ready",
           "path": "views/testing.md",
-          "bytes": 0,
-          "sha256": null
+          "bytes": 4308,
+          "sha256": "4c656266bdc67734f25af45714074b91fc75d8aab3fed6f447838979459bb3d9"
         }
       }
     },
@@ -232,17 +232,17 @@
     "security": {
       "path": "views/security.md",
       "brief_path": "views/security.brief.md",
-      "generated": false,
+      "generated": true,
       "load_when": [
         "threat analysis",
         "authentication or authorization change"
       ],
       "tiers": {
         "brief": {
-          "status": "missing",
+          "status": "ready",
           "path": "views/security.brief.md",
-          "bytes": 0,
-          "sha256": null
+          "bytes": 1024,
+          "sha256": "98ecceabb222146f37fb40677d8620a609a9d5fc1acc701a7bbebf6f2de214c3"
         },
         "full": {
           "status": "missing",
@@ -380,6 +380,22 @@
         "domain.calculator-ui.tests",
         "domain.calculator-ui.unknowns"
       ]
+    },
+    {
+      "id": "calculator-engine",
+      "path": "domains/calculator-engine.md",
+      "summary": "Shared evaluator and calculation semantics across calculator modes.",
+      "relevant_views": [
+        "development",
+        "testing",
+        "security"
+      ],
+      "keywords": [
+        "calculator",
+        "math",
+        "evaluation"
+      ],
+      "anchors": []
     }
   ],
   "task_guides": [
@@ -404,6 +420,19 @@
         "task.windows-calc-look.invariants",
         "task.windows-calc-look.tests",
         "task.windows-calc-look.risks"
+      ]
+    },
+    {
+      "id": "wrk-1978",
+      "path": "task-guides/wrk-1978.md",
+      "task": "Complete verification phase for WRK-1978",
+      "required_views": [
+        "development",
+        "testing",
+        "security"
+      ],
+      "required_domains": [
+        "calculator-engine"
       ]
     }
   ],
@@ -465,34 +494,39 @@
   },
   "views_generated": [
     "development",
+    "security",
     "testing"
   ],
   "source_tree_sha256": "sha256:9bb77a860b5da37767c0440a5d01ad688ef1c38f4db46b25e2ce0fc7c4aa2d71",
   "generation": {
     "parallel": true,
     "strategy": "view",
-    "max_workers": 2,
+    "max_workers": 3,
     "discovery_views": [
+      "development",
       "testing"
     ],
     "degraded_views": [
-      "development"
+      "security"
     ],
     "resumed_views": [],
     "pending_views_at_start": [
       "development",
+      "security",
       "testing"
     ]
   },
-  "generated_for_phase": "implementation",
+  "generated_for_phase": "verification",
   "requested_views": [
+    "testing",
     "development",
-    "testing"
+    "security"
   ],
   "requested_selections": [
     "core/brief",
-    "development/full",
-    "testing/brief"
+    "testing/full",
+    "development/brief",
+    "security/brief"
   ],
   "materializations": [
     {
@@ -511,6 +545,27 @@
         "testing/brief"
       ],
       "reused": []
+    },
+    {
+      "id": "provider-1786418024797",
+      "generated_at": "2026-08-11T02:44:28.892Z",
+      "source_tree_sha256": "sha256:9bb77a860b5da37767c0440a5d01ad688ef1c38f4db46b25e2ce0fc7c4aa2d71",
+      "provider": "copilot-cli",
+      "requested": [
+        "core/brief",
+        "development/brief",
+        "security/brief",
+        "testing/full"
+      ],
+      "produced": [
+        "core/brief",
+        "development/brief",
+        "security/brief",
+        "testing/full"
+      ],
+      "reused": [
+        "core/brief"
+      ]
     }
   ]
 }
