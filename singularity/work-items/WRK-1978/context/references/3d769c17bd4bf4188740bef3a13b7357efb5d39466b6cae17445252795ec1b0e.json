@@ -1,0 +1,28 @@
+{
+  "artifact": {
+    "generation": 1,
+    "mediaType": "text/markdown",
+    "outputId": "document",
+    "path": "singularity/work-items/WRK-1978/artifacts/verification/test-evidence.md",
+    "phaseId": "verification"
+  },
+  "createdAt": "2026-08-11T03:46:40.832Z",
+  "kind": "governed-reference",
+  "repository": {
+    "id": "calc",
+    "origin": "https://github.com/ashokraj2011/calc.git"
+  },
+  "revision": {
+    "bytes": 205160,
+    "commitSha": "12cb7eed2b794b998541e5ba273f643b8d09b5b9",
+    "sha256": "d987e9c8628c16feeae2fbac17a41b5ca05b0f0a59b8033c14e93594660daa1c"
+  },
+  "schemaVersion": 1,
+  "subject": {
+    "branch": "WRK-1978",
+    "id": "WRK-1978",
+    "kind": "story",
+    "subjectRevision": 1
+  },
+  "visibility": "model"
+}
