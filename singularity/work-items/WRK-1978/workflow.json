@@ -3602,7 +3602,7 @@
       "rejectedAt": "2026-08-11T05:10:20.118Z",
       "rejectedBy": "ashokraj2011",
       "rejectionReason": "Added Vitest test suite tagged @ac:AC-001..AC-005 for terminal gate; conformance report needs to reflect new source/test tree",
-      "generation": 1,
+      "generation": 2,
       "generatedBy": {
         "name": "Ashok Raj",
         "email": "88361104+ashokraj2011@users.noreply.github.com",
@@ -3640,6 +3640,37 @@
           },
           "generation": 1,
           "publishedAt": "2026-08-11T04:52:00.134Z"
+        },
+        {
+          "schemaVersion": 1,
+          "producer": "governed-agent",
+          "channel": "copilot-host",
+          "actor": {
+            "name": "Ashok Raj",
+            "email": "88361104+ashokraj2011@users.noreply.github.com",
+            "login": "ashokraj2011"
+          },
+          "governedAgentContext": {
+            "agentId": "qa"
+          },
+          "kernelModel": {
+            "invoked": false,
+            "status": "exact",
+            "invocationIds": []
+          },
+          "externalAiUse": {
+            "value": "unknown",
+            "status": "unavailable"
+          },
+          "source": {
+            "kind": "in-place",
+            "filename": "spec-code-comparison.md",
+            "mediaType": "text/markdown",
+            "sha256": "9ca93fcecf7fe58f2dd30781f3282a2001f1ad2f6f039d590d406f9c7fdaf319",
+            "bytes": 432292
+          },
+          "generation": 2,
+          "publishedAt": "2026-08-11T06:00:58.321Z"
         }
       ],
       "usage": [
@@ -3660,6 +3691,24 @@
           "completedAt": "2026-08-11T04:52:00.134Z",
           "agent": "qa",
           "generation": 1
+        },
+        {
+          "status": "unavailable",
+          "source": "copilot-otel-unavailable",
+          "provider": null,
+          "model": null,
+          "inputTokens": null,
+          "outputTokens": null,
+          "cachedInputTokens": null,
+          "cacheWriteInputTokens": null,
+          "totalTokens": null,
+          "providerCost": null,
+          "costStatus": "unavailable",
+          "spans": null,
+          "startedAt": "2026-08-11T06:00:58.321Z",
+          "completedAt": "2026-08-11T06:00:58.321Z",
+          "agent": "qa",
+          "generation": 2
         }
       ],
       "telemetry": [
@@ -3667,6 +3716,14 @@
           "generation": 1,
           "path": "singularity/work-items/WRK-1978/telemetry/conformance-gen1.json",
           "sha256": "9b41e74c4fd4750acb6a2c1dd0165210946954aa6c5ba94bd8df146a1081c134",
+          "status": "pending",
+          "models": [],
+          "providerCost": null
+        },
+        {
+          "generation": 2,
+          "path": "singularity/work-items/WRK-1978/telemetry/conformance-gen2.json",
+          "sha256": "f684dc67a6e17e11ee4d57f181a68905d1f61b9bd817ef7e3e7d2fae06022dc5",
           "status": "pending",
           "models": [],
           "providerCost": null
@@ -3727,12 +3784,12 @@
         {
           "path": "singularity/work-items/WRK-1978/artifacts/conformance/spec-code-comparison.md",
           "kind": "conformance-report",
-          "status": "approved",
+          "status": "pending",
           "exists": true,
-          "size": 429415,
-          "sha256": "020e36ef478a0502252ea97dbeba01b3e99fbc0f82fb7b9a7692b45850ae67d4",
+          "size": 437930,
+          "sha256": "5de1ffbb251ba09789696d40a6627778319dd704ccf3829c47e86ce0cbc4ae36",
           "registeredAt": "2026-08-11T04:51:59.089Z",
-          "updatedAt": "2026-08-11T04:54:27.779Z",
+          "updatedAt": "2026-08-11T06:00:58.393Z",
           "approvedAt": "2026-08-11T04:56:43.259Z",
           "approvedBy": "ashokraj2011"
         }
@@ -3740,19 +3797,19 @@
       "checks": [],
       "remoteOutputs": [],
       "inputContext": {
-        "generation": 1,
-        "path": "singularity/work-items/WRK-1978/context/inputs-conformance-gen1.json",
-        "sha256": "e99c7ae1d46526c924515cee40f968ada7e5e0c1aefb38bf8386f621690bb9ac",
+        "generation": 2,
+        "path": "singularity/work-items/WRK-1978/context/inputs-conformance-gen2.json",
+        "sha256": "56c7ee4a4158c3971e4f4cbb0342de6e923de201ec765848288375f6f1202005",
         "renderedSha256": "3305626174ba96708250f066bcd7249f5a3ef7ad59ef157636444666a5d63530",
         "mode": "enforce"
       },
-      "sourceCommit": "ef84d3a61468edfd3d377782c8026d95977e3b25",
-      "conformanceTree": "sha256:ffc75d8fa7db7a63b2ac9848543d8b61853cdd13707d4350744d5165b7b86a33",
+      "sourceCommit": "45c11562851b6eff64a8861106987f12301f62d3",
+      "conformanceTree": "sha256:b6b482b44ab443ea8b90d2b5f3620c43b2dadf2b23cfe26757bd94d47b0e2a9e",
       "specIndex": {
-        "generation": 1,
+        "generation": 2,
         "clauses": 0,
-        "indexSha256": "3e939c08a76115378acdb572ffebe2719559be5b9f10d6efc21d69f2e93ece50",
-        "sourceSha256": "7936a5af3ed39327c107bf1015c3542ee2363183aa6fee4b447be05f9392919f"
+        "indexSha256": "f5e9f1a813c2ec7bccc03e8ffed444e7f6e17f59b3582bf6aebf8774ede8640a",
+        "sourceSha256": "5de1ffbb251ba09789696d40a6627778319dd704ccf3829c47e86ce0cbc4ae36"
       },
       "generationCommit": "0e83cc70554a5857e08fa85877dc9eef5f020cdf",
       "publicationCommit": "0e83cc70554a5857e08fa85877dc9eef5f020cdf"
@@ -3761,9 +3818,9 @@
   "usage": {
     "mode": "exact-or-unavailable",
     "totalTokens": 0,
-    "records": 7,
+    "records": 8,
     "exactRecords": 0,
-    "unavailableRecords": 7,
+    "unavailableRecords": 8,
     "byPhase": {
       "intake": {
         "records": 1,
@@ -3802,9 +3859,9 @@
         "totalTokens": 0
       },
       "conformance": {
-        "records": 1,
+        "records": 2,
         "exactRecords": 0,
-        "unavailableRecords": 1,
+        "unavailableRecords": 2,
         "totalTokens": 0
       }
     },
@@ -3828,25 +3885,25 @@
         "totalTokens": 0
       },
       "qa": {
-        "records": 1,
+        "records": 2,
         "exactRecords": 0,
-        "unavailableRecords": 1,
+        "unavailableRecords": 2,
         "totalTokens": 0
       }
     },
     "byWorkType": {
       "feature": {
-        "records": 7,
+        "records": 8,
         "exactRecords": 0,
-        "unavailableRecords": 7,
+        "unavailableRecords": 8,
         "totalTokens": 0
       }
     },
     "byWorkItem": {
       "WRK-1978": {
-        "records": 7,
+        "records": 8,
         "exactRecords": 0,
-        "unavailableRecords": 7,
+        "unavailableRecords": 8,
         "totalTokens": 0
       }
     }
@@ -4125,6 +4182,14 @@
       "event": "workflow_reopened",
       "phase": "conformance",
       "detail": "CR-001 returned completed work to conformance: Added Vitest test suite tagged @ac:AC-001..AC-005 for terminal gate; conformance report needs to reflect new source/test tree"
+    },
+    {
+      "at": "2026-08-11T06:00:58.402Z",
+      "actor": "ashokraj2011",
+      "agent": "qa",
+      "event": "phase_generated",
+      "phase": "conformance",
+      "detail": "generation 2"
     }
   ],
   "measurement": {
@@ -5927,6 +5992,76 @@
           "templateSha256": "dcb95249d8fef0dcdb87a6f012f09c481a47813e50f4e8dd96be207c81c15ada"
         },
         "createdAt": "2026-08-11T05:10:20.050Z"
+      }
+    },
+    {
+      "schemaVersion": 1,
+      "event": {
+        "schemaVersion": 1,
+        "eventId": "889f0a02-d49f-490e-87d8-1911184a7fce",
+        "type": "artifact-generated",
+        "subject": {
+          "kind": "story",
+          "id": "WRK-1978",
+          "branch": "WRK-1978"
+        },
+        "phaseId": "conformance",
+        "generation": 2,
+        "actor": {
+          "name": "Ashok Raj",
+          "email": "88361104+ashokraj2011@users.noreply.github.com",
+          "login": "ashokraj2011"
+        },
+        "agent": "qa",
+        "authorityGroup": "quality-reviewers",
+        "payload": {
+          "decision": "reopened",
+          "reviewPacketSha256": null
+        },
+        "sourceCommit": null,
+        "idempotencyKey": null,
+        "idempotencyHash": null,
+        "createdAt": "2026-08-11T06:00:58.000Z"
+      },
+      "ledgerIntent": {
+        "schemaVersion": 1,
+        "eventId": "889f0a02-d49f-490e-87d8-1911184a7fce",
+        "eventType": "artifact-generated",
+        "capabilityId": "calc-app",
+        "subject": {
+          "branch": "WRK-1978",
+          "generation": 2,
+          "phase": "conformance",
+          "workId": "WRK-1978",
+          "workType": "feature"
+        },
+        "actor": {
+          "name": "Ashok Raj",
+          "email": "88361104+ashokraj2011@users.noreply.github.com",
+          "githubLogin": "ashokraj2011",
+          "identityAssurance": "configured-local"
+        },
+        "agent": "qa",
+        "authorityGroup": "quality-reviewers",
+        "payload": {
+          "capabilityMapSha256": "77ee9fd3c55345e31113fffb91dab4b0ffd95ced22cbd95d19ffa1d04bd7a479",
+          "capabilityPolicy": {
+            "protectedPaths": [],
+            "qualityCommands": [],
+            "requiredAuthorityGroups": [],
+            "requiredChecks": [],
+            "requiredWorldModelViews": []
+          },
+          "configPath": "singularity/workflow.yml",
+          "configSha256": "c71e8d4583a4303c75561c44902b837971681f740cc7025f9b55cb997589424f",
+          "lifecycleEventId": "889f0a02-d49f-490e-87d8-1911184a7fce",
+          "lifecyclePayload": {
+            "decision": "reopened",
+            "reviewPacketSha256": null
+          },
+          "templateSha256": "dcb95249d8fef0dcdb87a6f012f09c481a47813e50f4e8dd96be207c81c15ada"
+        },
+        "createdAt": "2026-08-11T06:00:58.004Z"
       }
     }
   ],

@@ -1,0 +1,13 @@
+{
+  "clauses": [],
+  "generation": 2,
+  "indexSha256": "f5e9f1a813c2ec7bccc03e8ffed444e7f6e17f59b3582bf6aebf8774ede8640a",
+  "phase": "conformance",
+  "schemaVersion": 1,
+  "source": {
+    "bytes": 437930,
+    "path": "singularity/work-items/WRK-1978/artifacts/conformance/spec-code-comparison.md",
+    "sha256": "5de1ffbb251ba09789696d40a6627778319dd704ccf3829c47e86ce0cbc4ae36"
+  },
+  "workId": "WRK-1978"
+}
