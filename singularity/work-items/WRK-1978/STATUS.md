@@ -17,12 +17,14 @@
 |  | ⚠ self-approval | Ashok Raj via architecture-reviewers; agent architect | **warning** |  |  |  |
 | 4 | Implementation specification (`implementation-spec`) | architect | **approved** | 1 | 1 | unavailable |
 |  | ⚠ self-approval | Ashok Raj via architecture-reviewers; agent architect | **warning** |  |  |  |
-| 5 | Implementation (`implementation`) | developer | **in_progress** | 1 | 0 | unavailable |
+| 5 | Implementation (`implementation`) | developer | **awaiting_approval** | 1 | 0 | unavailable |
 | 6 | Verification (`verification`) | qa | **not_started** | 0 | 0 | unavailable |
 | 7 | Spec-to-code conformance (`conformance`) | qa | **not_started** | 0 | 0 | unavailable |
 
 ## Recent history
 
+- 2026-08-11T02:32:02.004Z — **phase_submitted** (implementation) by ashokraj2011 · governed agent developer: 11 artifacts
+- 2026-08-11T02:32:02.003Z — **work_interval_reconciled** (implementation) by system: review; 10 changed path(s)
 - 2026-08-11T02:27:59.523Z — **phase_generated** (implementation) by ashokraj2011 · governed agent developer: generation 1
 - 2026-08-11T00:25:21.639Z — **work_interval_started** (implementation) by system: baseline 889b78fdf683 at a9d1a489dfa4
 - 2026-08-11T00:25:21.552Z — **phase_self_approved** (implementation-spec) by ashokraj2011 · governed agent architect: threshold reached; advanced to implementation
@@ -36,5 +38,3 @@
 - 2026-08-10T23:57:19.414Z — **phase_generated** (requirements) by ashokraj2011 · governed agent product-owner: generation 1
 - 2026-08-10T16:03:54.902Z — **phase_self_approved** (intake) by ashokraj2011 · governed agent product-owner: threshold reached; advanced to requirements
 - 2026-08-10T15:57:26.487Z — **phase_submitted** (intake) by ashokraj2011 · governed agent product-owner: 1 artifacts
-- 2026-08-10T15:56:06.563Z — **phase_generated** (intake) by ashokraj2011 · governed agent product-owner: generation 1
-- 2026-08-10T08:23:15.510Z — **work_started** (intake) by ashokraj2011 · governed agent product-owner: Created feature branch WRK-1978
