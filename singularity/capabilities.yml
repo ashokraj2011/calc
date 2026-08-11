@@ -13,3 +13,8 @@ capabilities:
       projectKey: PAY
     teams:
       - PZN
+  rule-engine:
+    name: RuleEngine
+    kind: delivery
+    parent: null
+    repository: ruleengine
