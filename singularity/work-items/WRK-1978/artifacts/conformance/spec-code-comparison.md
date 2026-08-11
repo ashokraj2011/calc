@@ -5,7 +5,7 @@
   "workType": "feature",
   "phase": "conformance",
   "generation": 2,
-  "status": "awaiting_approval",
+  "status": "approved",
   "generatedBy": {
     "name": "Ashok Raj",
     "email": "88361104+ashokraj2011@users.noreply.github.com",
@@ -171,9 +171,50 @@
           "sha256": "020e36ef478a0502252ea97dbeba01b3e99fbc0f82fb7b9a7692b45850ae67d4"
         }
       ]
+    },
+    {
+      "decision": "approved",
+      "phase": "conformance",
+      "at": "2026-08-11T06:08:42.069Z",
+      "actor": {
+        "name": "Ashok Raj",
+        "email": "88361104+ashokraj2011@users.noreply.github.com",
+        "login": "ashokraj2011"
+      },
+      "agent": "qa",
+      "authorityGroup": "quality-reviewers",
+      "identityAssurance": "configured-local",
+      "channel": "copilot-selection-receipt",
+      "generation": 2,
+      "artifactSha256": [
+        {
+          "path": "singularity/work-items/WRK-1978/artifacts/conformance/spec-code-comparison.md",
+          "sha256": "53e58f91897549f1b21a2649d0544231d6873ecf8d84389a21c6526da8160881"
+        }
+      ],
+      "reviewPacketSha256": "37de2af46abfac96b22c1898c66b85e51affc475a2733682e43aa5fbcffa9434",
+      "actionContext": {
+        "phase": "conformance",
+        "label": "Spec-to-code conformance",
+        "generation": 2,
+        "submittedAt": "2026-08-11T06:01:44.371Z",
+        "artifacts": [
+          {
+            "path": "singularity/work-items/WRK-1978/artifacts/conformance/spec-code-comparison.md",
+            "sha256": "53e58f91897549f1b21a2649d0544231d6873ecf8d84389a21c6526da8160881"
+          }
+        ],
+        "reviewPacketSha256": "37de2af46abfac96b22c1898c66b85e51affc475a2733682e43aa5fbcffa9434",
+        "submittedSourceCommit": "9834be40e23c5cd18488ba650260d7220074dde4",
+        "planId": "a58013b2982ed5049fa3a75b"
+      },
+      "selfApproval": true,
+      "resolvedChangeRequests": [
+        "CR-001"
+      ]
     }
   ],
-  "selfApproval": false,
+  "selfApproval": true,
   "conformanceTree": "sha256:b6b482b44ab443ea8b90d2b5f3620c43b2dadf2b23cfe26757bd94d47b0e2a9e"
 }
 -->
