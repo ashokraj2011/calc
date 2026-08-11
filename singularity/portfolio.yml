@@ -96,7 +96,7 @@ approvalAuthorities:
 #     required: true
 #     jira: { projectKey: MOB }
 #     metadata: { appId: APP-1001, name: Mobile application, owner: Digital }
-repositories: {calc: {url: https://github.com/ashokraj2011/calc.git, defaultBranch: main, required: true}}
+repositories: {calc: {url: https://github.com/ashokraj2011/calc.git, defaultBranch: main, required: true}, ruleengine: {url: https://github.com/ashokraj2011/RuleEngine.git, defaultBranch: main, required: true}}
 
 repositoryMetadata:
   requiredKeys: []
