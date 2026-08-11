@@ -1,13 +1,13 @@
 {
   "schema_version": "3.0",
-  "repository_commit": "cdfce0b65ef762ecb22e3b69b0daaba7f00490a6",
+  "repository_commit": "08aa77072f09d6113acba4f1eb8db27786a97988",
   "repository_branch": "WRK-1978",
-  "working_tree_clean": false,
-  "generated_at": "2026-08-11T04:28:34.613Z",
+  "working_tree_clean": true,
+  "generated_at": "2026-08-11T05:43:05.959Z",
   "generated_date": "11 August 2026",
-  "builder_version": "2.1-light",
-  "builder_prompt_sha256": "511654826223e40b93c54f48f9b773f155e3364326d41aa98108dea7217d75cd",
-  "analysis_depth": "light",
+  "builder_version": "2.0",
+  "builder_prompt_sha256": "d607ed17ba7e0ad45acd142b62b57c32272e21dfec50866d4bee5105f2fd9169",
+  "analysis_depth": "deep",
   "core": {
     "summary": "core/summary.md",
     "brief": "core/summary.brief.md",
@@ -27,50 +27,96 @@
       "core.risks",
       "core.unknowns",
       "core.freshness",
-      "core.routing",
-      "core.brief"
+      "core.routing"
     ],
     "bytes": {
-      "summary": 8084,
-      "brief": 1229
+      "summary": 9563,
+      "brief": 1358
     },
     "recommended_for_all_agents": true,
+    "brief_anchors": [
+      "core.summary"
+    ],
     "tiers": {
       "brief": {
         "status": "ready",
         "path": "core/summary.brief.md",
-        "bytes": 1229,
-        "sha256": "6f696b31c935e32083662f02ce5293d92e2c47d51c3d937622937c98dda4d3a3"
+        "bytes": 1358,
+        "sha256": "6cd1b0dad233bcf1e4c699a35ae6f7ee8541fffb94d4619124a698f414480143"
       },
       "full": {
         "status": "ready",
         "path": "core/summary.md",
-        "bytes": 8084,
-        "sha256": "74967d5623aa27e678b3fb66544bd4b8031a697bd543308e50f8f235827106cc"
+        "bytes": 9563,
+        "sha256": "50a80d38c29db82bee08e033394530c6f4dbf271cfc361b669c33c50c2c3b5ee"
       }
     }
   },
   "views": {
+    "architecture": {
+      "path": "views/architecture.md",
+      "brief_path": "views/architecture.brief.md",
+      "generated": true,
+      "bytes": {
+        "full": 6564,
+        "brief": 1161
+      },
+      "anchors": [
+        "arch.tldr",
+        "arch.facts",
+        "arch.context",
+        "arch.structure",
+        "arch.dependencies",
+        "arch.contracts",
+        "arch.runtime",
+        "arch.risks",
+        "arch.start",
+        "arch.limits"
+      ],
+      "load_when": [
+        "system design",
+        "dependency analysis",
+        "cross-component change"
+      ],
+      "brief_anchors": [
+        "arch.summary"
+      ],
+      "tiers": {
+        "brief": {
+          "status": "missing",
+          "path": "views/architecture.brief.md",
+          "bytes": 0,
+          "sha256": null
+        },
+        "full": {
+          "status": "ready",
+          "path": "views/architecture.md",
+          "bytes": 6564,
+          "sha256": "8367f342f77bb154aba85bce9f0e2454ba9562a20374cf4c08a06a564c27d14f"
+        }
+      }
+    },
     "development": {
       "path": "views/development.md",
       "brief_path": "views/development.brief.md",
       "generated": true,
       "bytes": {
-        "full": 7265,
-        "brief": 1265
+        "full": 7143,
+        "brief": 1071
       },
       "anchors": [
         "dev.tldr",
         "dev.facts",
-        "dev.start",
-        "dev.tree",
-        "dev.symbols",
+        "dev.setup",
+        "dev.structure",
+        "dev.entrypoints",
         "dev.flows",
+        "dev.conventions",
+        "dev.debugging",
         "dev.impact",
         "dev.hotspots",
-        "dev.validation",
-        "dev.limits",
-        "dev.brief"
+        "dev.start",
+        "dev.limits"
       ],
       "load_when": [
         "implementation",
@@ -78,18 +124,21 @@
         "refactoring",
         "code review"
       ],
+      "brief_anchors": [
+        "dev.summary"
+      ],
       "tiers": {
         "brief": {
-          "status": "ready",
+          "status": "missing",
           "path": "views/development.brief.md",
-          "bytes": 1104,
-          "sha256": "1de27cd06d57301f5a833a3ced5b5b564510a7ac7047b55f6d6a447585080699"
+          "bytes": 0,
+          "sha256": null
         },
         "full": {
           "status": "ready",
           "path": "views/development.md",
-          "bytes": 7265,
-          "sha256": "1dcebd80e6ea2457697e5c457f3fbf96aceb7be6851302308da8708c53410a93"
+          "bytes": 7143,
+          "sha256": "2a5fb775ddd417734bf34ae6f4411557463c564af9d5b31e1ff515f3e69e3e08"
         }
       }
     },
@@ -98,38 +147,78 @@
       "brief_path": "views/testing.brief.md",
       "generated": true,
       "bytes": {
-        "full": 4444,
-        "brief": 1213
+        "full": 4365,
+        "brief": 1080
       },
       "anchors": [
         "test.tldr",
         "test.facts",
         "test.strategy",
-        "test.inventory",
+        "test.map",
         "test.commands",
-        "test.risks",
-        "test.selection",
         "test.gaps",
-        "test.limits",
-        "test.brief"
+        "test.start",
+        "test.limits"
       ],
       "load_when": [
         "test creation",
         "regression analysis",
         "quality validation"
       ],
+      "brief_anchors": [
+        "test.summary"
+      ],
       "tiers": {
         "brief": {
-          "status": "ready",
+          "status": "missing",
           "path": "views/testing.brief.md",
-          "bytes": 1213,
-          "sha256": "450530d436c03bf2cafe4849a2a2e8ccd3e380129dfcecf87d770a79f9b3fd33"
+          "bytes": 0,
+          "sha256": null
         },
         "full": {
           "status": "ready",
           "path": "views/testing.md",
-          "bytes": 4308,
-          "sha256": "4c656266bdc67734f25af45714074b91fc75d8aab3fed6f447838979459bb3d9"
+          "bytes": 4365,
+          "sha256": "8676364ee8a6ff2fb3f563e2abae083d675d85e15bf4d42abf9e2d3ccff96eb5"
+        }
+      }
+    },
+    "security": {
+      "path": "views/security.md",
+      "brief_path": "views/security.brief.md",
+      "generated": true,
+      "bytes": {
+        "full": 4190,
+        "brief": 1033
+      },
+      "anchors": [
+        "sec.tldr",
+        "sec.facts",
+        "sec.surface",
+        "sec.controls",
+        "sec.tests",
+        "sec.start",
+        "sec.limits"
+      ],
+      "load_when": [
+        "threat analysis",
+        "authentication or authorization change"
+      ],
+      "brief_anchors": [
+        "sec.summary"
+      ],
+      "tiers": {
+        "brief": {
+          "status": "missing",
+          "path": "views/security.brief.md",
+          "bytes": 0,
+          "sha256": null
+        },
+        "full": {
+          "status": "ready",
+          "path": "views/security.md",
+          "bytes": 4190,
+          "sha256": "5ea866f92f4583e963d392b3a8bc5e75684f885f6103ed8dcfb5c007b046d0ca"
         }
       }
     },
@@ -137,6 +226,11 @@
       "path": "views/business.md",
       "brief_path": "views/business.brief.md",
       "generated": false,
+      "bytes": {
+        "full": 0,
+        "brief": 0
+      },
+      "anchors": [],
       "load_when": [
         "business capability analysis",
         "product behavior analysis",
@@ -157,34 +251,15 @@
         }
       }
     },
-    "architecture": {
-      "path": "views/architecture.md",
-      "brief_path": "views/architecture.brief.md",
-      "generated": true,
-      "load_when": [
-        "system design",
-        "dependency analysis",
-        "cross-component change"
-      ],
-      "tiers": {
-        "brief": {
-          "status": "ready",
-          "path": "views/architecture.brief.md",
-          "bytes": 271,
-          "sha256": "b7f0c0cafb233578259c83807256eb75552ba2e1e4a4ba5cb1b2163fca32618a"
-        },
-        "full": {
-          "status": "ready",
-          "path": "views/architecture.md",
-          "bytes": 821,
-          "sha256": "99bc379eeecb186c9f7b75d743e8d00444c76ff0a85b8f2860ad051196076ad4"
-        }
-      }
-    },
     "release": {
       "path": "views/release.md",
       "brief_path": "views/release.brief.md",
       "generated": false,
+      "bytes": {
+        "full": 0,
+        "brief": 0
+      },
+      "anchors": [],
       "load_when": [
         "build",
         "packaging",
@@ -210,6 +285,11 @@
       "path": "views/operations.md",
       "brief_path": "views/operations.brief.md",
       "generated": false,
+      "bytes": {
+        "full": 0,
+        "brief": 0
+      },
+      "anchors": [],
       "load_when": [
         "runtime diagnosis",
         "monitoring and incident response"
@@ -228,41 +308,18 @@
           "sha256": null
         }
       }
-    },
-    "security": {
-      "path": "views/security.md",
-      "brief_path": "views/security.brief.md",
-      "generated": true,
-      "load_when": [
-        "threat analysis",
-        "authentication or authorization change"
-      ],
-      "tiers": {
-        "brief": {
-          "status": "ready",
-          "path": "views/security.brief.md",
-          "bytes": 1024,
-          "sha256": "98ecceabb222146f37fb40677d8620a609a9d5fc1acc701a7bbebf6f2de214c3"
-        },
-        "full": {
-          "status": "ready",
-          "path": "views/security.md",
-          "bytes": 810,
-          "sha256": "a14417351941d976dd531148fe1b7acb890e8d4c19905a90f9fdfcaaff9b22ca"
-        }
-      }
     }
   },
   "phase_map": {
     "intake": {
       "views": [
-        "business"
+        "architecture"
       ],
       "tier": "brief"
     },
     "requirements": {
       "views": [
-        "business"
+        "architecture"
       ],
       "tier": "full"
     },
@@ -302,13 +359,13 @@
   "agent_map": {
     "product-owner": {
       "views": [
-        "business"
+        "architecture"
       ],
       "tier": "brief"
     },
     "business-analyst": {
       "views": [
-        "business"
+        "architecture"
       ],
       "tier": "full"
     },
@@ -339,13 +396,13 @@
     },
     "operations": {
       "views": [
-        "operations"
+        "security"
       ],
       "tier": "full"
     },
     "delivery-manager": {
       "views": [
-        "release"
+        "architecture"
       ],
       "tier": "brief"
     }
@@ -355,101 +412,49 @@
   },
   "domains": [
     {
-      "id": "calculator-ui",
-      "path": "domains/calculator-ui.md",
-      "summary": "User-visible calculator experience, themes, and mode-specific UI surfaces.",
+      "id": "expression-evaluation",
+      "path": "domains/expression-evaluation.md",
+      "summary": "Shared calculator semantics for evaluation, formatting, conversion, and finance.",
       "relevant_views": [
-        "development",
-        "testing"
-      ],
-      "keywords": [
-        "calculator",
-        "theme",
-        "ui",
-        "layout"
-      ],
-      "anchors": [
-        "domain.calculator-ui.tldr",
-        "domain.calculator-ui.purpose",
-        "domain.calculator-ui.terminology",
-        "domain.calculator-ui.rules",
-        "domain.calculator-ui.components",
-        "domain.calculator-ui.workflows",
-        "domain.calculator-ui.state",
-        "domain.calculator-ui.risks",
-        "domain.calculator-ui.tests",
-        "domain.calculator-ui.unknowns"
-      ]
-    },
-    {
-      "id": "calculator-engine",
-      "path": "domains/calculator-engine.md",
-      "summary": "Shared evaluator and calculation semantics across calculator modes.",
-      "relevant_views": [
+        "architecture",
         "development",
         "testing",
         "security"
       ],
       "keywords": [
-        "calculator",
+        "expression",
         "math",
-        "evaluation"
+        "calculator"
       ],
-      "anchors": []
+      "anchors": [
+        "domain.expression-evaluation.tldr"
+      ]
     }
   ],
   "task_guides": [
     {
-      "id": "windows-calc-look",
-      "path": "task-guides/windows-calc-look.md",
-      "task": "Make the app look like windows calc",
+      "id": "regenerate-conformance",
+      "path": "task-guides/regenerate-conformance.md",
+      "task": "Regenerate conformance after adding Vitest test suite tagged @ac:AC-001..AC-005",
       "required_views": [
-        "development",
-        "testing"
-      ],
-      "required_domains": [
-        "calculator-ui"
-      ],
-      "anchors": [
-        "task.windows-calc-look.tldr",
-        "task.windows-calc-look.intent",
-        "task.windows-calc-look.roles",
-        "task.windows-calc-look.components",
-        "task.windows-calc-look.paths",
-        "task.windows-calc-look.flow",
-        "task.windows-calc-look.invariants",
-        "task.windows-calc-look.tests",
-        "task.windows-calc-look.risks"
-      ]
-    },
-    {
-      "id": "wrk-1978",
-      "path": "task-guides/wrk-1978.md",
-      "task": "Complete verification phase for WRK-1978",
-      "required_views": [
-        "development",
         "testing",
-        "security"
+        "development"
       ],
       "required_domains": [
-        "calculator-engine"
+        "expression-evaluation"
       ]
-    },
-    {
-      "id": "task-4dfae982afd1",
-      "path": "task-guides/4dfae982afd19abf.md",
-      "task": "Verify spec-to-code conformance for making the app look like Windows Calculator"
     }
   ],
   "evidence": {
-    "path": "evidence/evidence.jsonl"
+    "path": "evidence/evidence.jsonl",
+    "load_only_when_verification_is_needed": true
   },
   "recommended_loading_rules": [
     {
       "agent_type": "business",
       "load": [
         "core/summary.brief.md",
-        "views/business.md"
+        "views/architecture.md"
       ]
     },
     {
@@ -477,7 +482,7 @@
       "agent_type": "release",
       "load": [
         "core/summary.brief.md",
-        "views/release.md"
+        "views/security.md"
       ]
     }
   ],
@@ -499,14 +504,14 @@
   "views_generated": [
     "architecture",
     "development",
-    "testing",
-    "security"
+    "security",
+    "testing"
   ],
-  "source_tree_sha256": "sha256:9bb77a860b5da37767c0440a5d01ad688ef1c38f4db46b25e2ce0fc7c4aa2d71",
+  "source_tree_sha256": "sha256:8cbf0896fbda4694e1155b1213b6144f0bbe80ba152be2f8f6400dd357b6d209",
   "generation": {
     "parallel": false,
-    "strategy": "deterministic-light",
-    "max_workers": 0,
+    "strategy": "view",
+    "max_workers": 1,
     "discovery_views": [],
     "degraded_views": [],
     "resumed_views": [],
@@ -520,105 +525,33 @@
     "security"
   ],
   "requested_selections": [
-    "core/brief",
+    "core/full",
+    "architecture/full",
+    "development/full",
     "testing/full",
-    "development/brief",
-    "security/brief"
+    "security/full"
   ],
   "materializations": [
     {
-      "id": "provider-1786415257455",
-      "generated_at": "2026-08-11T02:13:05.535Z",
-      "source_tree_sha256": "sha256:9bb77a860b5da37767c0440a5d01ad688ef1c38f4db46b25e2ce0fc7c4aa2d71",
+      "id": "provider-1786427610898",
+      "generated_at": "2026-08-11T05:43:05.959Z",
+      "source_tree_sha256": "sha256:8cbf0896fbda4694e1155b1213b6144f0bbe80ba152be2f8f6400dd357b6d209",
       "provider": "copilot-cli",
       "requested": [
-        "core/brief",
+        "architecture/full",
+        "core/full",
         "development/full",
-        "testing/brief"
+        "security/full",
+        "testing/full"
       ],
       "produced": [
-        "core/brief",
+        "architecture/full",
+        "core/full",
         "development/full",
-        "testing/brief"
+        "security/full",
+        "testing/full"
       ],
       "reused": []
-    },
-    {
-      "id": "provider-1786418024797",
-      "generated_at": "2026-08-11T02:44:28.892Z",
-      "source_tree_sha256": "sha256:9bb77a860b5da37767c0440a5d01ad688ef1c38f4db46b25e2ce0fc7c4aa2d71",
-      "provider": "copilot-cli",
-      "requested": [
-        "core/brief",
-        "development/brief",
-        "security/brief",
-        "testing/full"
-      ],
-      "produced": [
-        "core/brief",
-        "development/brief",
-        "security/brief",
-        "testing/full"
-      ],
-      "reused": [
-        "core/brief"
-      ]
-    },
-    {
-      "id": "light-1786421066249",
-      "generated_at": "2026-08-11T04:04:26.144Z",
-      "source_tree_sha256": "sha256:9bb77a860b5da37767c0440a5d01ad688ef1c38f4db46b25e2ce0fc7c4aa2d71",
-      "provider": null,
-      "requested": [
-        "architecture/full",
-        "core/full",
-        "development/full",
-        "security/full",
-        "testing/full"
-      ],
-      "produced": [
-        "architecture/full",
-        "core/full",
-        "development/full",
-        "security/full",
-        "testing/full"
-      ],
-      "reused": [
-        "core/full",
-        "development/full",
-        "testing/full"
-      ]
-    },
-    {
-      "id": "light-1786422516944",
-      "generated_at": "2026-08-11T04:28:34.613Z",
-      "source_tree_sha256": "sha256:9bb77a860b5da37767c0440a5d01ad688ef1c38f4db46b25e2ce0fc7c4aa2d71",
-      "provider": null,
-      "requested": [
-        "architecture/brief",
-        "core/brief",
-        "development/brief",
-        "security/brief",
-        "testing/brief"
-      ],
-      "produced": [
-        "architecture/brief",
-        "core/brief",
-        "development/brief",
-        "security/brief",
-        "testing/brief"
-      ],
-      "reused": [
-        "core/brief",
-        "development/brief",
-        "security/brief",
-        "testing/brief"
-      ]
     }
-  ],
-  "generator": {
-    "type": "deterministic-local",
-    "model": null,
-    "model_tokens": 0
-  }
+  ]
 }
