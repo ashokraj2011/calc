@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "workId": "WRK-1978",
+  "workType": "feature",
+  "phase": "design",
+  "generation": 1,
+  "mode": "enforce",
+  "recordedAt": "2026-08-11T00:11:09.822Z",
+  "renderedSha256": "8c269b41ed26d1fb882c09faf111aff71c60019372e3e00f174e7d42921510b4",
+  "warnings": [],
+  "inputs": [
+    {
+      "phase": "requirements",
+      "path": "artifacts/requirements/requirements.md",
+      "optional": false,
+      "maxBytes": null,
+      "status": "captured",
+      "producerStatus": "approved",
+      "producerGeneration": 1,
+      "approvedAt": "2026-08-11T00:05:43.161Z",
+      "approvedBy": "ashokraj2011",
+      "approvedSha256": "ab21c30d64ab5306d05a03ce32f81c0ff55a74e9e5b0ca2dba010dc6df5b883b",
+      "sha256": "ab21c30d64ab5306d05a03ce32f81c0ff55a74e9e5b0ca2dba010dc6df5b883b",
+      "bytes": 19855,
+      "injectedBytes": 19853,
+      "truncated": false
+    }
+  ]
+}
