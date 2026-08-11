@@ -1,95 +1,25 @@
 {
-  "schema_version": "1.0",
-  "generated_at": "2026-08-11T03:06:22.858Z",
-  "repository_commit": "4294b2b282ef8049f60c94da9db281200f81390d",
-  "entries": [
-    {
-      "glob": "src/App.jsx",
-      "component_ids": [
-        "app-shell"
-      ],
-      "domains": [
-        "calculator-engine"
-      ],
-      "views": [
-        "development",
-        "testing",
-        "security"
-      ],
-      "symbols": [
-        "App",
-        "handleEquals",
-        "handleDigit",
-        "handleOperator"
-      ],
-      "tests": [],
-      "anchors": [
-        "dev.impact",
-        "dev.hotspots",
-        "test.surface",
-        "sec.boundaries"
-      ],
-      "notes": "Most cross-cutting state and keyboard interactions live here, so changes here affect multiple calculator modes."
-    },
-    {
-      "glob": "src/utils/evaluator.js",
-      "component_ids": [
-        "calculator-engine"
-      ],
-      "domains": [
-        "calculator-engine"
-      ],
-      "views": [
-        "development",
-        "testing",
-        "security"
-      ],
-      "symbols": [
-        "evaluateExpression",
-        "convertUnits",
-        "calculateEMI"
-      ],
-      "tests": [],
-      "anchors": [
-        "dev.modules",
-        "test.surface",
-        "sec.input"
-      ],
-      "notes": "Shared math, unit, and financial semantics propagate across the app."
-    },
-    {
-      "glob": "src/components/{UnitConverter.jsx,FinancialCalculator.jsx,FunctionGrapher.jsx}",
-      "component_ids": [
-        "ui-modes"
-      ],
-      "domains": [
-        "calculator-engine"
-      ],
-      "views": [
-        "development",
-        "testing",
-        "security"
-      ],
-      "symbols": [
-        "UnitConverter",
-        "FinancialCalculator",
-        "FunctionGrapher"
-      ],
-      "tests": [],
-      "anchors": [
-        "dev.flows",
-        "test.scenarios",
-        "sec.exposure"
-      ],
-      "notes": "Mode-specific surfaces are the best starting point for focused feature work."
-    }
+  "schemaVersion": 1,
+  "mode": "bounded-light-index",
+  "totalPaths": 27,
+  "representativePaths": [
+    "README.md",
+    "eslint.config.js",
+    "package.json",
+    "src/App.jsx",
+    "src/components/Display.jsx",
+    "src/components/FinancialCalculator.jsx",
+    "src/components/FunctionGrapher.jsx",
+    "src/components/Header.jsx",
+    "src/components/HistoryDrawer.jsx",
+    "src/components/KeyboardShortcutsModal.jsx",
+    "src/components/ScientificKeypad.jsx",
+    "src/components/StandardKeypad.jsx",
+    "src/components/UnitConverter.jsx",
+    "src/main.jsx",
+    "src/utils/audio.js",
+    "src/utils/evaluator.js",
+    "vite.config.js"
   ],
-  "fallback": {
-    "views": [
-      "development"
-    ],
-    "anchors": [
-      "core.map"
-    ]
-  }
+  "omittedPathCount": 10
 }
