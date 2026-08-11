@@ -1,9 +1,9 @@
 {
   "schema_version": "3.0",
-  "repository_commit": "b3491d0ee5a8ef14875d69c8078593872fc2c04c",
+  "repository_commit": "cdfce0b65ef762ecb22e3b69b0daaba7f00490a6",
   "repository_branch": "WRK-1978",
   "working_tree_clean": false,
-  "generated_at": "2026-08-11T04:04:26.144Z",
+  "generated_at": "2026-08-11T04:28:34.613Z",
   "generated_date": "11 August 2026",
   "builder_version": "2.1-light",
   "builder_prompt_sha256": "511654826223e40b93c54f48f9b773f155e3364326d41aa98108dea7217d75cd",
@@ -168,10 +168,10 @@
       ],
       "tiers": {
         "brief": {
-          "status": "missing",
+          "status": "ready",
           "path": "views/architecture.brief.md",
-          "bytes": 0,
-          "sha256": null
+          "bytes": 271,
+          "sha256": "b7f0c0cafb233578259c83807256eb75552ba2e1e4a4ba5cb1b2163fca32618a"
         },
         "full": {
           "status": "ready",
@@ -587,6 +587,32 @@
         "core/full",
         "development/full",
         "testing/full"
+      ]
+    },
+    {
+      "id": "light-1786422516944",
+      "generated_at": "2026-08-11T04:28:34.613Z",
+      "source_tree_sha256": "sha256:9bb77a860b5da37767c0440a5d01ad688ef1c38f4db46b25e2ce0fc7c4aa2d71",
+      "provider": null,
+      "requested": [
+        "architecture/brief",
+        "core/brief",
+        "development/brief",
+        "security/brief",
+        "testing/brief"
+      ],
+      "produced": [
+        "architecture/brief",
+        "core/brief",
+        "development/brief",
+        "security/brief",
+        "testing/brief"
+      ],
+      "reused": [
+        "core/brief",
+        "development/brief",
+        "security/brief",
+        "testing/brief"
       ]
     }
   ],
