@@ -1,78 +1,78 @@
-> **Grounding** · calc @ `5bce85ba2c79dc7dbfd36ecac3f10d1233881d4a` · view: `development` · tier: `full`
-> **Generated** 11 August 2026 (2026-08-11T02:51:13Z) · depth: `standard` · builder `2.0`
+> **Grounding** · calc @ `08aa77072f09d6113acba4f1eb8db27786a97988` · view: `development` · tier: `full`
+> **Generated** 11 August 2026 (2026-08-11T05:43:13Z) · depth: `deep` · builder `2.0`
 > **Authoritative for:** file locations, entry points, commands, structural relationships as of the commit above.
 > **Not authoritative for:** current file contents. If this document conflicts with code you have read, trust the code and say so explicitly in your output.
 > **Unknowns are marked.** Do not resolve them by inference. If the repository has changed since the date above, treat locations as hints, not facts.
 
-
 ## TL;DR {#dev.tldr}
-For implementation work, start with `src/App.jsx` for state and event flow, `src/utils/evaluator.js` for expression semantics, and `src/index.css` for the visual system that already contains Windows 11-specific overrides. The app uses a single root state container and passes handlers to child components, so changes to layout or interaction usually touch the shell plus one or two presentation components. The main risk is that visual work can regress keyboard handling or the evaluator, because those paths are coupled by shared state and shared CSS utility classes. For a Windows Calculator style change, the safest approach is to adjust theme tokens and layout classes first, then validate interactions manually.
+Development work should start from `src/App.jsx` for shared state and `src/utils/evaluator.js` for expression semantics. The repo uses component-based React with local state and no backend. Most bug fixes land either in the shell (shared state/keyboard handling), in a mode component (UI or feature-specific input), or in the evaluator utility (math semantics, formatting, conversion tables). The app’s most likely hotspot is the shared evaluator because it feeds multiple modes and has the broadest change impact.
 
 ## Facts {#dev.facts}
 ```yaml
-components: [app-shell, calculator-engine, theme-system, ui-components]
+components:
+  - { id: app-shell, path: src/App.jsx, role: "shared state and handlers" }
+  - { id: calculator-engine, path: src/utils/evaluator.js, role: "math and finance logic" }
+  - { id: calculator-ui, path: src/components, role: "mode-specific presentation" }
 entrypoints:
-  - { id: app-main, path: "src/main.jsx:1-10", invocation: "npm run dev" }
-  - { id: app-state, path: "src/App.jsx:14-324", invocation: "App" }
+  - { id: app-bootstrap, path: src/main.jsx, line: 1, invocation: "Vite entry" }
+  - { id: app-shell, path: src/App.jsx, line: 14, invocation: "root app component" }
 key_symbols:
-  - { name: App, path: "src/App.jsx:14", role: "owns calculator state and delegates handlers" }
-  - { name: evaluateExpression, path: "src/utils/evaluator.js:4", role: "parses and formats expressions" }
-  - { name: Header, path: "src/components/Header.jsx:36", role: "mode/theme/history controls" }
-  - { name: StandardKeypad, path: "src/components/StandardKeypad.jsx:5", role: "standard keypad layout" }
-  - { name: ScientificKeypad, path: "src/components/ScientificKeypad.jsx:5", role: "scientific toolbar and keypad" }
+  - { name: App, path: src/App.jsx, line: 14, role: "root component" }
+  - { name: evaluateExpression, path: src/utils/evaluator.js, line: 4, role: "primary evaluator" }
+  - { name: calculateEMI, path: src/utils/evaluator.js, line: 161, role: "loan calculation" }
 commands:
-  - { command: "npm run dev", purpose: "local iteration", source: "package.json:7" }
-  - { command: "npm run build", purpose: "build verification", source: "package.json:8" }
-  - { command: "npm run lint", purpose: "static validation", source: "package.json:9" }
+  - { command: "npm ci", purpose: "install dependencies", source: "package.json" }
+  - { command: "npm test", purpose: "run Vitest", source: "package.json:11" }
+  - { command: "npm run build", purpose: "verify build", source: "package.json:8" }
+  - { command: "npm run lint", purpose: "check lint baseline", source: "package.json:9" }
 hotspots:
-  - { path: "src/App.jsx", reason: "core state orchestration and keyboard wiring" }
-  - { path: "src/utils/evaluator.js", reason: "shared computation semantics including formatting and unit conversion" }
-  - { path: "src/index.css", reason: "theme tokens and Windows-specific layout overrides" }
+  - { path: src/utils/evaluator.js, reason: "shared across modes" }
+  - { path: src/App.jsx, reason: "cross-mode state orchestration" }
 ```
 
-## Where to start {#dev.start}
-- For visual changes: start in `src/index.css` for theme variables and Windows-specific overrides, then inspect `src/components/Header.jsx`, `src/components/Display.jsx`, `src/components/StandardKeypad.jsx`, and `src/components/ScientificKeypad.jsx` for layout structure.
-- For interaction changes: start in `src/App.jsx` because it owns the input handlers (`handleDigit`, `handleOperator`, `handleEquals`, `handleBackspace`, `handleNegate`, `handlePercent`) and keyboard shortcuts.
-- For expression semantics: start in `src/utils/evaluator.js` because it sanitizes input, evaluates expressions with mathjs, and formats results.
+## Developer setup {#dev.setup}
+Install dependencies with `npm ci`. The repository uses Vite and Vitest, so the common local loop is `npm test` for regression coverage and `npm run build` for packaging. Linting is also available via `npm run lint`, but the current baseline fails. Evidence: `package.json:1-35`, `vite.config.js:1-12`, `src/test/setup.js:1-67`.
 
-## Source tree map {#dev.tree}
-- `src/App.jsx` — centralized state, persistence, mode switch, keyboard events, and composition of the active mode panel.
-- `src/components/` — presentation components keyed by capability: header, display, keypad, unit converter, financial calculator, function grapher, history drawer, and shortcuts modal.
-- `src/utils/` — evaluator and audio utilities. The evaluator is shared by the calculator shell and modal/standalone components.
-- `src/index.css` — theme variables and CSS classes used by the components; this is the main place for Windows UI styling.
+## Source tree map {#dev.structure}
+- `src/App.jsx` — app shell, state, event handlers, mode selection, persistence, keyboard hooks.
+- `src/components/` — feature surfaces. The biggest ones are `Header`, `Display`, `StandardKeypad`, `ScientificKeypad`, `UnitConverter`, `FinancialCalculator`, `FunctionGrapher`, `HistoryDrawer`, and `KeyboardShortcutsModal`.
+- `src/utils/` — evaluator and audio utilities.
+- `src/test/` — shared test setup for jsdom and canvas stubs.
+- `src/**/*.test.*` — regression suites for the UI shell and evaluator.
 
-## Important modules and symbols {#dev.symbols}
-- `App` (`src/App.jsx:14`) owns the calculator state (`expression`, `result`, `lastEvaluated`, `angleUnit`, `memoryValue`, `theme`, `soundEnabled`, `history`).
-- `evaluateExpression` and `formatNumber` (`src/utils/evaluator.js:4-72`) are the main computation and formatting entry points.
-- `Header` (`src/components/Header.jsx:36`) controls mode selection, theme selection, shortcuts, history, and sound toggle.
-- `Display` (`src/components/Display.jsx:5`) renders the expression/result line and the display utility actions.
-- `StandardKeypad` (`src/components/StandardKeypad.jsx:5`) and `ScientificKeypad` (`src/components/ScientificKeypad.jsx:5`) define the visible keypad layouts and button actions.
-- `UNIT_TYPES` and `convertUnits` (`src/utils/evaluator.js:75-158`) support converter mode; `calculateEMI`, `calculateCompoundInterest`, and `calculateTip` provide financial mode helpers.
+## Important modules and symbols {#dev.entrypoints}
+- `App` in `src/App.jsx` is the root integration point for all calculator modes and the home of handlers for digit, operator, equals, memory, and clear actions. Inspect the handler callbacks at the top of the component and the mode-specific JSX near the bottom.
+- `evaluateExpression` in `src/utils/evaluator.js` is the key semantic function. It sanitizes expressions, handles percentages/factorials, converts trig to degree/radian, and formats output.
+- `playSound` in `src/utils/audio.js` is side-effectful but separate from calculator semantics.
+- `Header` and `Display` are the main UI-adjacent collaborators for theme, keyboard shortcuts, and history.
 
 ## Common implementation flows {#dev.flows}
-1. A button press in `StandardKeypad` or `ScientificKeypad` calls a handler from `App`, which updates the expression or result state.
-2. Pressing equals triggers `evaluateExpression` in `src/utils/evaluator.js`; the result is written back to `App` and optionally pushed into history.
-3. Theme changes update the `data-theme` attribute on the document root and persist selections to `localStorage` via `src/App.jsx:39-53`.
-4. The visual system is theme-driven, but the component structure remains mostly unchanged; Windows-style changes can be localized to `src/index.css` and a small number of layout components.
+1. A keypad input flows through `App` handlers into expression state and then to `evaluateExpression` on equals.
+2. The financial calculator calls `calculateEMI`, `calculateCompoundInterest`, and `calculateTip` directly from the evaluator module.
+3. The converter calls `convertUnits` and uses the `UNIT_TYPES` table in the evaluator module.
+4. The grapher uses `mathjs.compile` directly for equation rendering, so its error handling is local to the component rather than shared.
+Evidence: `src/App.jsx:55-153`, `src/components/FinancialCalculator.jsx:24-241`, `src/components/UnitConverter.jsx:14-133`, `src/components/FunctionGrapher.jsx:14-212`.
+
+## Coding and naming conventions {#dev.conventions}
+The codebase is mostly functional React with `useState`/`useEffect`/`useCallback`. File names are descriptive and component exports are named (`export const X = ...`). The code uses plain JavaScript rather than TypeScript, so contracts are often implicit via props and callback shapes. The project uses `lucide-react` for icons and CSS utility classes for layout and theming. Evidence: `src/components/Header.jsx:1-188`, `src/components/Display.jsx:1-97`.
+
+## Error handling and persistence {#dev.debugging}
+- The evaluator returns structured results with `{ result, rawResult, error }` rather than throwing for most user input errors.
+- The shell persists history, theme, and sound choices with `localStorage` and catches JSON parsing errors. This is a useful starting point when debugging state-related issues.
+- The grapher and audio modules guard against browser limitations (canvas context stub, Web Audio restrictions) in tests and runtime code. Evidence: `src/App.jsx:23-34`, `src/utils/evaluator.js:4-54`, `src/components/FunctionGrapher.jsx:21-133`, `src/test/setup.js:1-67`.
 
 ## Change-impact guide {#dev.impact}
-- Changing keypad layout or display spacing is likely to affect `src/components/StandardKeypad.jsx`, `src/components/ScientificKeypad.jsx`, `src/components/Display.jsx`, and `src/index.css`.
-- Changing the active theme or adding Windows-specific buttons is likely to affect `src/components/Header.jsx` and the `data-theme` logic in `src/App.jsx`.
-- Changing expression semantics is likely to affect `src/utils/evaluator.js` and any mode that depends on the evaluator, including the main calculator and scientific mode.
-- Adding or removing persisted state should be checked against the `localStorage` key handling in `src/App.jsx:39-53`.
+- Editing `src/utils/evaluator.js` will affect standard/scientific, converter, financial, and possibly grapher semantics.
+- Editing `src/App.jsx` can affect keypad behavior, memory, history, theme, shortcuts, and all modes.
+- Editing a mode component mostly affects only that mode, but may also change shared styling or component contracts.
 
 ## Known implementation hotspots {#dev.hotspots}
-- `src/App.jsx` — most state, input handlers, keyboard shortcuts, and persistence live here.
-- `src/utils/evaluator.js` — shared computation semantics; a small change here can affect several modes.
-- `src/index.css` — the existing Windows 11 overrides and utility classes are concentrated here, making it the most likely place for a visual parity change.
+- `src/utils/evaluator.js` — broadest change surface; used by multiple calculator modes and by tests.
+- `src/App.jsx` — central state orchestration and cross-mode behavior.
+- `src/components/FunctionGrapher.jsx` — uses effect-driven canvas rendering and local error handling.
 
-## Validation commands {#dev.validation}
-- `npm run dev` for local manual verification.
-- `npm run build` for a production build check.
-- `npm run lint` for static validation; this repo currently reports existing lint issues in the app source.
+## Where to start {#dev.start}
+For a bug fix, inspect the relevant mode component, then trace the handler in `src/App.jsx`, then confirm semantics in `src/utils/evaluator.js`. For a regression or behavior change, start with the matching test in `src/App.test.jsx` or `src/utils/evaluator.test.js`.
 
 ## Questions this view does not answer {#dev.limits}
-- It does not specify Windows Calculator design acceptance criteria.
-- It does not provide a full test matrix or visual baseline beyond the current code structure and CSS hooks.
-
-Evidence: `e:app-shell`, `e:evaluator-core`, `e:theme-system`, `e:ui-components`, `e:package-scripts`.
+This view does not cover deployment, production observability, or backend implementation because the repo does not contain them. It also does not replace the code itself or the execution output of the current test suite.

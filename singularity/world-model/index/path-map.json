@@ -1,25 +1,119 @@
 {
-  "schemaVersion": 1,
-  "mode": "bounded-light-index",
-  "totalPaths": 27,
-  "representativePaths": [
-    "README.md",
-    "eslint.config.js",
-    "package.json",
-    "src/App.jsx",
-    "src/components/Display.jsx",
-    "src/components/FinancialCalculator.jsx",
-    "src/components/FunctionGrapher.jsx",
-    "src/components/Header.jsx",
-    "src/components/HistoryDrawer.jsx",
-    "src/components/KeyboardShortcutsModal.jsx",
-    "src/components/ScientificKeypad.jsx",
-    "src/components/StandardKeypad.jsx",
-    "src/components/UnitConverter.jsx",
-    "src/main.jsx",
-    "src/utils/audio.js",
-    "src/utils/evaluator.js",
-    "vite.config.js"
+  "schema_version": "1.0",
+  "generated_at": "2026-08-11T05:43:13Z",
+  "repository_commit": "08aa77072f09d6113acba4f1eb8db27786a97988",
+  "entries": [
+    {
+      "glob": "src/App.jsx",
+      "component_ids": [
+        "app-shell"
+      ],
+      "domains": [
+        "expression-evaluation"
+      ],
+      "views": [
+        "architecture",
+        "development"
+      ],
+      "symbols": [
+        "App",
+        "evaluateExpression"
+      ],
+      "tests": [
+        "src/App.test.jsx"
+      ],
+      "anchors": [
+        "arch.context",
+        "dev.entrypoints",
+        "dev.impact"
+      ],
+      "notes": "Start here for state, mode routing, history, and keyboard shortcuts."
+    },
+    {
+      "glob": "src/utils/evaluator.js",
+      "component_ids": [
+        "calculator-engine"
+      ],
+      "domains": [
+        "expression-evaluation"
+      ],
+      "views": [
+        "architecture",
+        "development",
+        "testing",
+        "security"
+      ],
+      "symbols": [
+        "evaluateExpression",
+        "convertUnits",
+        "calculateEMI"
+      ],
+      "tests": [
+        "src/utils/evaluator.test.js"
+      ],
+      "anchors": [
+        "arch.contracts",
+        "dev.hotspots",
+        "test.strategy",
+        "sec.surface"
+      ],
+      "notes": "Shared semantics for arithmetic, formatting, conversion, and finance live here."
+    },
+    {
+      "glob": "src/components/**",
+      "component_ids": [
+        "calculator-ui"
+      ],
+      "domains": [],
+      "views": [
+        "architecture",
+        "development"
+      ],
+      "symbols": [
+        "Header",
+        "Display",
+        "FinancialCalculator",
+        "FunctionGrapher"
+      ],
+      "tests": [
+        "src/App.test.jsx"
+      ],
+      "anchors": [
+        "arch.structure",
+        "dev.structure"
+      ],
+      "notes": "Mode-specific UI surfaces and navigation live here."
+    },
+    {
+      "glob": "src/**/*.test.*",
+      "component_ids": [
+        "test-suite"
+      ],
+      "domains": [
+        "expression-evaluation"
+      ],
+      "views": [
+        "testing"
+      ],
+      "symbols": [],
+      "tests": [
+        "src/App.test.jsx",
+        "src/utils/evaluator.test.js",
+        "src/build.test.js"
+      ],
+      "anchors": [
+        "test.map",
+        "test.commands"
+      ],
+      "notes": "Regression coverage for shell behavior, evaluator semantics, and builds."
+    }
   ],
-  "omittedPathCount": 10
+  "fallback": {
+    "views": [
+      "development"
+    ],
+    "anchors": [
+      "core.map"
+    ]
+  }
 }
