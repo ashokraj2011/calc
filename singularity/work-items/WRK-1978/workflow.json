@@ -2001,8 +2001,8 @@
       }
     ]
   },
-  "status": "in_progress",
-  "currentPhase": "conformance",
+  "status": "complete",
+  "currentPhase": null,
   "phaseOrder": [
     "intake",
     "requirements",
@@ -3511,7 +3511,7 @@
       "label": "Spec-to-code conformance",
       "order": 6,
       "defaultAgent": "qa",
-      "status": "awaiting_approval",
+      "status": "approved",
       "requiredArtifact": {
         "path": "artifacts/conformance/spec-code-comparison.md",
         "kind": "conformance-report",
@@ -3597,8 +3597,8 @@
       "qualityCommands": [],
       "startedAt": "2026-08-11T03:54:25.188Z",
       "submittedAt": "2026-08-11T04:54:27.777Z",
-      "approvedAt": null,
-      "approvedBy": null,
+      "approvedAt": "2026-08-11T04:56:43.259Z",
+      "approvedBy": "ashokraj2011",
       "rejectedAt": null,
       "rejectedBy": null,
       "rejectionReason": null,
@@ -3672,18 +3672,44 @@
           "providerCost": null
         }
       ],
-      "approvals": [],
+      "approvals": [
+        {
+          "decision": "approved",
+          "phase": "conformance",
+          "at": "2026-08-11T04:56:43.259Z",
+          "actor": {
+            "name": "Ashok Raj",
+            "email": "88361104+ashokraj2011@users.noreply.github.com",
+            "login": "ashokraj2011"
+          },
+          "agent": "qa",
+          "authorityGroup": "quality-reviewers",
+          "identityAssurance": "configured-local",
+          "channel": "terminal",
+          "generation": 1,
+          "artifactSha256": [
+            {
+              "path": "singularity/work-items/WRK-1978/artifacts/conformance/spec-code-comparison.md",
+              "sha256": "92bf571375d46fce70eb44cc6b32a54ee4379ac6ead3baf28945030085281e32"
+            }
+          ],
+          "reviewPacketSha256": "955c4c36165f73183f1951ba0de3fbdb59f12146d3e27a5636c8eaa4be2ff550",
+          "selfApproval": true
+        }
+      ],
       "designSourceSets": [],
       "artifacts": [
         {
           "path": "singularity/work-items/WRK-1978/artifacts/conformance/spec-code-comparison.md",
           "kind": "conformance-report",
-          "status": "pending",
+          "status": "approved",
           "exists": true,
-          "size": 428627,
-          "sha256": "92bf571375d46fce70eb44cc6b32a54ee4379ac6ead3baf28945030085281e32",
+          "size": 429415,
+          "sha256": "020e36ef478a0502252ea97dbeba01b3e99fbc0f82fb7b9a7692b45850ae67d4",
           "registeredAt": "2026-08-11T04:51:59.089Z",
-          "updatedAt": "2026-08-11T04:54:27.779Z"
+          "updatedAt": "2026-08-11T04:54:27.779Z",
+          "approvedAt": "2026-08-11T04:56:43.259Z",
+          "approvedBy": "ashokraj2011"
         }
       ],
       "checks": [],
@@ -4030,6 +4056,14 @@
       "event": "phase_submitted",
       "phase": "conformance",
       "detail": "1 artifacts"
+    },
+    {
+      "at": "2026-08-11T04:56:43.259Z",
+      "actor": "ashokraj2011",
+      "agent": "qa",
+      "event": "phase_self_approved",
+      "phase": "conformance",
+      "detail": "threshold reached; complete"
     }
   ],
   "measurement": {
@@ -5690,6 +5724,76 @@
           "templateSha256": "dcb95249d8fef0dcdb87a6f012f09c481a47813e50f4e8dd96be207c81c15ada"
         },
         "createdAt": "2026-08-11T04:54:27.638Z"
+      }
+    },
+    {
+      "schemaVersion": 1,
+      "event": {
+        "schemaVersion": 1,
+        "eventId": "66478a2d-5607-4338-974a-188052f36bda",
+        "type": "phase-approved",
+        "subject": {
+          "kind": "story",
+          "id": "WRK-1978",
+          "branch": "WRK-1978"
+        },
+        "phaseId": "conformance",
+        "generation": 1,
+        "actor": {
+          "name": "Ashok Raj",
+          "email": "88361104+ashokraj2011@users.noreply.github.com",
+          "login": "ashokraj2011"
+        },
+        "agent": "qa",
+        "authorityGroup": "quality-reviewers",
+        "payload": {
+          "decision": "approved",
+          "reviewPacketSha256": "955c4c36165f73183f1951ba0de3fbdb59f12146d3e27a5636c8eaa4be2ff550"
+        },
+        "sourceCommit": null,
+        "idempotencyKey": null,
+        "idempotencyHash": null,
+        "createdAt": "2026-08-11T04:56:43.287Z"
+      },
+      "ledgerIntent": {
+        "schemaVersion": 1,
+        "eventId": "66478a2d-5607-4338-974a-188052f36bda",
+        "eventType": "phase-approved",
+        "capabilityId": "calc-app",
+        "subject": {
+          "branch": "WRK-1978",
+          "generation": 1,
+          "phase": "conformance",
+          "workId": "WRK-1978",
+          "workType": "feature"
+        },
+        "actor": {
+          "name": "Ashok Raj",
+          "email": "88361104+ashokraj2011@users.noreply.github.com",
+          "githubLogin": "ashokraj2011",
+          "identityAssurance": "configured-local"
+        },
+        "agent": "qa",
+        "authorityGroup": "quality-reviewers",
+        "payload": {
+          "capabilityMapSha256": "77ee9fd3c55345e31113fffb91dab4b0ffd95ced22cbd95d19ffa1d04bd7a479",
+          "capabilityPolicy": {
+            "protectedPaths": [],
+            "qualityCommands": [],
+            "requiredAuthorityGroups": [],
+            "requiredChecks": [],
+            "requiredWorldModelViews": []
+          },
+          "configPath": "singularity/workflow.yml",
+          "configSha256": "c71e8d4583a4303c75561c44902b837971681f740cc7025f9b55cb997589424f",
+          "lifecycleEventId": "66478a2d-5607-4338-974a-188052f36bda",
+          "lifecyclePayload": {
+            "decision": "approved",
+            "reviewPacketSha256": "955c4c36165f73183f1951ba0de3fbdb59f12146d3e27a5636c8eaa4be2ff550"
+          },
+          "templateSha256": "dcb95249d8fef0dcdb87a6f012f09c481a47813e50f4e8dd96be207c81c15ada"
+        },
+        "createdAt": "2026-08-11T04:56:43.295Z"
       }
     }
   ],

@@ -5,7 +5,7 @@
   "workType": "feature",
   "phase": "conformance",
   "generation": 1,
-  "status": "awaiting_approval",
+  "status": "approved",
   "generatedBy": {
     "name": "Ashok Raj",
     "email": "88361104+ashokraj2011@users.noreply.github.com",
@@ -97,8 +97,32 @@
     }
   ],
   "sequenceOverrides": [],
-  "approvals": [],
-  "selfApproval": false,
+  "approvals": [
+    {
+      "decision": "approved",
+      "phase": "conformance",
+      "at": "2026-08-11T04:56:43.259Z",
+      "actor": {
+        "name": "Ashok Raj",
+        "email": "88361104+ashokraj2011@users.noreply.github.com",
+        "login": "ashokraj2011"
+      },
+      "agent": "qa",
+      "authorityGroup": "quality-reviewers",
+      "identityAssurance": "configured-local",
+      "channel": "terminal",
+      "generation": 1,
+      "artifactSha256": [
+        {
+          "path": "singularity/work-items/WRK-1978/artifacts/conformance/spec-code-comparison.md",
+          "sha256": "92bf571375d46fce70eb44cc6b32a54ee4379ac6ead3baf28945030085281e32"
+        }
+      ],
+      "reviewPacketSha256": "955c4c36165f73183f1951ba0de3fbdb59f12146d3e27a5636c8eaa4be2ff550",
+      "selfApproval": true
+    }
+  ],
+  "selfApproval": true,
   "conformanceTree": "sha256:ffc75d8fa7db7a63b2ac9848543d8b61853cdd13707d4350744d5165b7b86a33"
 }
 -->
