@@ -2001,8 +2001,8 @@
       }
     ]
   },
-  "status": "complete",
-  "currentPhase": null,
+  "status": "in_progress",
+  "currentPhase": "conformance",
   "phaseOrder": [
     "intake",
     "requirements",
@@ -3511,7 +3511,7 @@
       "label": "Spec-to-code conformance",
       "order": 6,
       "defaultAgent": "qa",
-      "status": "approved",
+      "status": "in_progress",
       "requiredArtifact": {
         "path": "artifacts/conformance/spec-code-comparison.md",
         "kind": "conformance-report",
@@ -3596,12 +3596,12 @@
       },
       "qualityCommands": [],
       "startedAt": "2026-08-11T03:54:25.188Z",
-      "submittedAt": "2026-08-11T04:54:27.777Z",
-      "approvedAt": "2026-08-11T04:56:43.259Z",
-      "approvedBy": "ashokraj2011",
-      "rejectedAt": null,
-      "rejectedBy": null,
-      "rejectionReason": null,
+      "submittedAt": null,
+      "approvedAt": null,
+      "approvedBy": null,
+      "rejectedAt": "2026-08-11T05:10:20.118Z",
+      "rejectedBy": "ashokraj2011",
+      "rejectionReason": "Added Vitest test suite tagged @ac:AC-001..AC-005 for terminal gate; conformance report needs to reflect new source/test tree",
       "generation": 1,
       "generatedBy": {
         "name": "Ashok Raj",
@@ -3694,7 +3694,32 @@
             }
           ],
           "reviewPacketSha256": "955c4c36165f73183f1951ba0de3fbdb59f12146d3e27a5636c8eaa4be2ff550",
-          "selfApproval": true
+          "selfApproval": true,
+          "invalidatedAt": "2026-08-11T05:10:20.118Z"
+        },
+        {
+          "decision": "reopened",
+          "phase": "conformance",
+          "target": "conformance",
+          "reason": "Added Vitest test suite tagged @ac:AC-001..AC-005 for terminal gate; conformance report needs to reflect new source/test tree",
+          "changeRequestId": "CR-001",
+          "at": "2026-08-11T05:10:20.118Z",
+          "actor": {
+            "name": "Ashok Raj",
+            "email": "88361104+ashokraj2011@users.noreply.github.com",
+            "login": "ashokraj2011"
+          },
+          "agent": "qa",
+          "authorityGroup": "quality-reviewers",
+          "identityAssurance": "configured-local",
+          "channel": "terminal",
+          "generation": 1,
+          "artifactSha256": [
+            {
+              "path": "singularity/work-items/WRK-1978/artifacts/conformance/spec-code-comparison.md",
+              "sha256": "020e36ef478a0502252ea97dbeba01b3e99fbc0f82fb7b9a7692b45850ae67d4"
+            }
+          ]
         }
       ],
       "designSourceSets": [],
@@ -3839,7 +3864,35 @@
     "notifications": []
   },
   "sequenceOverrides": [],
-  "changeRequests": [],
+  "changeRequests": [
+    {
+      "schemaVersion": 1,
+      "id": "CR-001",
+      "status": "open",
+      "sourcePhase": "conformance",
+      "sourceGeneration": 1,
+      "targetPhase": "conformance",
+      "comment": "Added Vitest test suite tagged @ac:AC-001..AC-005 for terminal gate; conformance report needs to reflect new source/test tree",
+      "requestedAt": "2026-08-11T05:10:20.118Z",
+      "requestedBy": {
+        "name": "Ashok Raj",
+        "email": "88361104+ashokraj2011@users.noreply.github.com",
+        "login": "ashokraj2011"
+      },
+      "agent": "qa",
+      "channel": "terminal",
+      "authorityGroup": "quality-reviewers",
+      "identityAssurance": "configured-local",
+      "sourceArtifactSha256": [
+        {
+          "path": "singularity/work-items/WRK-1978/artifacts/conformance/spec-code-comparison.md",
+          "sha256": "020e36ef478a0502252ea97dbeba01b3e99fbc0f82fb7b9a7692b45850ae67d4"
+        }
+      ],
+      "reviewPacketSha256": null,
+      "resolution": null
+    }
+  ],
   "history": [
     {
       "at": "2026-08-10T08:23:15.510Z",
@@ -4064,6 +4117,14 @@
       "event": "phase_self_approved",
       "phase": "conformance",
       "detail": "threshold reached; complete"
+    },
+    {
+      "at": "2026-08-11T05:10:20.118Z",
+      "actor": "ashokraj2011",
+      "agent": "qa",
+      "event": "workflow_reopened",
+      "phase": "conformance",
+      "detail": "CR-001 returned completed work to conformance: Added Vitest test suite tagged @ac:AC-001..AC-005 for terminal gate; conformance report needs to reflect new source/test tree"
     }
   ],
   "measurement": {
@@ -5794,6 +5855,78 @@
           "templateSha256": "dcb95249d8fef0dcdb87a6f012f09c481a47813e50f4e8dd96be207c81c15ada"
         },
         "createdAt": "2026-08-11T04:56:43.295Z"
+      }
+    },
+    {
+      "schemaVersion": 1,
+      "event": {
+        "schemaVersion": 1,
+        "eventId": "299ee5bc-a2c6-48e2-8c72-6a554b3f5996",
+        "type": "workflow-reopened",
+        "subject": {
+          "kind": "story",
+          "id": "WRK-1978",
+          "branch": "WRK-1978"
+        },
+        "phaseId": "conformance",
+        "generation": 1,
+        "actor": {
+          "name": "Ashok Raj",
+          "email": "88361104+ashokraj2011@users.noreply.github.com",
+          "login": "ashokraj2011"
+        },
+        "agent": "qa",
+        "authorityGroup": "quality-reviewers",
+        "payload": {
+          "targetPhaseId": "conformance",
+          "decision": "approved",
+          "reviewPacketSha256": "955c4c36165f73183f1951ba0de3fbdb59f12146d3e27a5636c8eaa4be2ff550"
+        },
+        "sourceCommit": null,
+        "idempotencyKey": null,
+        "idempotencyHash": null,
+        "createdAt": "2026-08-11T05:10:20.045Z"
+      },
+      "ledgerIntent": {
+        "schemaVersion": 1,
+        "eventId": "299ee5bc-a2c6-48e2-8c72-6a554b3f5996",
+        "eventType": "workflow-reopened",
+        "capabilityId": "calc-app",
+        "subject": {
+          "branch": "WRK-1978",
+          "generation": 1,
+          "phase": "conformance",
+          "workId": "WRK-1978",
+          "workType": "feature"
+        },
+        "actor": {
+          "name": "Ashok Raj",
+          "email": "88361104+ashokraj2011@users.noreply.github.com",
+          "githubLogin": "ashokraj2011",
+          "identityAssurance": "configured-local"
+        },
+        "agent": "qa",
+        "authorityGroup": "quality-reviewers",
+        "payload": {
+          "capabilityMapSha256": "77ee9fd3c55345e31113fffb91dab4b0ffd95ced22cbd95d19ffa1d04bd7a479",
+          "capabilityPolicy": {
+            "protectedPaths": [],
+            "qualityCommands": [],
+            "requiredAuthorityGroups": [],
+            "requiredChecks": [],
+            "requiredWorldModelViews": []
+          },
+          "configPath": "singularity/workflow.yml",
+          "configSha256": "c71e8d4583a4303c75561c44902b837971681f740cc7025f9b55cb997589424f",
+          "lifecycleEventId": "299ee5bc-a2c6-48e2-8c72-6a554b3f5996",
+          "lifecyclePayload": {
+            "decision": "approved",
+            "reviewPacketSha256": "955c4c36165f73183f1951ba0de3fbdb59f12146d3e27a5636c8eaa4be2ff550",
+            "targetPhaseId": "conformance"
+          },
+          "templateSha256": "dcb95249d8fef0dcdb87a6f012f09c481a47813e50f4e8dd96be207c81c15ada"
+        },
+        "createdAt": "2026-08-11T05:10:20.050Z"
       }
     }
   ],

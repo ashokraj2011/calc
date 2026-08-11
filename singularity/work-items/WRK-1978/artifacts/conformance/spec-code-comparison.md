@@ -5,7 +5,7 @@
   "workType": "feature",
   "phase": "conformance",
   "generation": 1,
-  "status": "approved",
+  "status": "in_progress",
   "generatedBy": {
     "name": "Ashok Raj",
     "email": "88361104+ashokraj2011@users.noreply.github.com",
@@ -119,10 +119,11 @@
         }
       ],
       "reviewPacketSha256": "955c4c36165f73183f1951ba0de3fbdb59f12146d3e27a5636c8eaa4be2ff550",
-      "selfApproval": true
+      "selfApproval": true,
+      "invalidatedAt": "2026-08-11T05:10:20.118Z"
     }
   ],
-  "selfApproval": true,
+  "selfApproval": false,
   "conformanceTree": "sha256:ffc75d8fa7db7a63b2ac9848543d8b61853cdd13707d4350744d5165b7b86a33"
 }
 -->
