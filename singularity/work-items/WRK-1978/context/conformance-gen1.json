@@ -1,0 +1,425 @@
+{
+  "schemaVersion": 2,
+  "workId": "WRK-1978",
+  "phase": "conformance",
+  "generation": 1,
+  "agent": "qa",
+  "modelCommit": "87cdded7ac2ba9d479f437a4a0c9cdfb35b0d38d",
+  "matchedRules": 0,
+  "mode": "append",
+  "applied": false,
+  "depth": "standard",
+  "evidence": false,
+  "requiredViews": [
+    "architecture",
+    "development",
+    "testing",
+    "security"
+  ],
+  "requiredSelections": [
+    {
+      "kind": "core",
+      "tier": "full",
+      "required": true
+    },
+    {
+      "kind": "view",
+      "view": "architecture",
+      "tier": "full",
+      "required": true,
+      "origin": "phase"
+    },
+    {
+      "kind": "view",
+      "view": "development",
+      "tier": "full",
+      "required": true,
+      "origin": "phase+agent"
+    },
+    {
+      "kind": "view",
+      "view": "testing",
+      "tier": "full",
+      "required": true,
+      "origin": "phase+agent"
+    },
+    {
+      "kind": "view",
+      "view": "security",
+      "tier": "full",
+      "required": true,
+      "origin": "phase+agent"
+    }
+  ],
+  "task": "Verify spec-to-code conformance for making the app look like Windows Calculator",
+  "supportingEvidence": [],
+  "references": [
+    {
+      "handle": "sfref:v1:story:WRK-1978:e8c2ab3ec40efc1462810b9a7841162a8ec0e4d0add09befec78585bc564ca75",
+      "phase": "intake",
+      "path": "singularity/work-items/WRK-1978/artifacts/intake/intake.md",
+      "rawSha256": "a8448e3297d60f3dd54648660bb834c3b2de0b7ec12c974cec36982ee87bc005",
+      "rawBytes": 7126,
+      "previewSha256": "f9096b36d307750ccb4924a190ba71bde70af231e25c548effd8e2a6c7c08140",
+      "previewBytes": 7251,
+      "renderer": {
+        "id": "markdown-outline",
+        "version": 1
+      },
+      "truncated": false
+    },
+    {
+      "handle": "sfref:v1:story:WRK-1978:2e584d1f5a4a685d0b7fff57ea0c063764ba7306bbe2b842882958e2f50e74ac",
+      "phase": "requirements",
+      "path": "singularity/work-items/WRK-1978/artifacts/requirements/requirements.md",
+      "rawSha256": "17d1f3f7ee4a8a62a5844c9f465f1074b782b89a054a7c9cfd84778e6fcd46a8",
+      "rawBytes": 18326,
+      "previewSha256": "edc4db9e677b8ea460bfaae3a4d5af9637e87911db3edc364826e0825d377693",
+      "previewBytes": 16384,
+      "renderer": {
+        "id": "markdown-outline",
+        "version": 1
+      },
+      "truncated": true
+    },
+    {
+      "handle": "sfref:v1:story:WRK-1978:50a8b9b0271cb2d901425cc66ac48e2b45699b471aa1f05f2657dfa3c8ad35a1",
+      "phase": "design",
+      "path": "singularity/work-items/WRK-1978/artifacts/design/design.md",
+      "rawSha256": "1ac63f0eb0f278deba1e466e6c9f5e415eb297308633aa2ef58c04d8ed07e4df",
+      "rawBytes": 32772,
+      "previewSha256": "91d1989736c7762bd475c8db3b71e321efd8ca2711675a07f1852279fdb52220",
+      "previewBytes": 16384,
+      "renderer": {
+        "id": "markdown-outline",
+        "version": 1
+      },
+      "truncated": true
+    },
+    {
+      "handle": "sfref:v1:story:WRK-1978:a860521f670caf6d0bb5da3d67bb4ffb5a6239a18d3082ccac662b916cfeb50a",
+      "phase": "implementation-spec",
+      "path": "singularity/work-items/WRK-1978/artifacts/implementation-spec/implementation-spec.md",
+      "rawSha256": "848f3cfe06d9731165c4799fb0fe419f429dc2eb2c39b8f93b28d9b48a7ddfcc",
+      "rawBytes": 68402,
+      "previewSha256": "4beb1ad19366558e282107720fa7ff11a30b2c39c9e609490c88586bad5e06a5",
+      "previewBytes": 16384,
+      "renderer": {
+        "id": "markdown-outline",
+        "version": 1
+      },
+      "truncated": true
+    },
+    {
+      "handle": "sfref:v1:story:WRK-1978:2b42608d1e9fbb28e99450257f7b0b2b3ae088caf8403b6c66bc2c059621a57a",
+      "phase": "implementation",
+      "path": "singularity/work-items/WRK-1978/artifacts/implementation/implementation-summary.md",
+      "rawSha256": "7e2cfef2b903c88d33ab69601fde4d21170ab97617fb974e5f3bb1482f7547a9",
+      "rawBytes": 116505,
+      "previewSha256": "8f214c32b8698ff32726d3b93a99aa27a1aa6fa8d16356f01fcc015f55733b8b",
+      "previewBytes": 16384,
+      "renderer": {
+        "id": "markdown-outline",
+        "version": 1
+      },
+      "truncated": true
+    },
+    {
+      "handle": "sfref:v1:story:WRK-1978:3d769c17bd4bf4188740bef3a13b7357efb5d39466b6cae17445252795ec1b0e",
+      "phase": "verification",
+      "path": "singularity/work-items/WRK-1978/artifacts/verification/test-evidence.md",
+      "rawSha256": "d987e9c8628c16feeae2fbac17a41b5ca05b0f0a59b8033c14e93594660daa1c",
+      "rawBytes": 205160,
+      "previewSha256": "9015dcf9ba4f29bacc31f370142532a51096aa575241f7fff173c0a8ac411839",
+      "previewBytes": 16384,
+      "renderer": {
+        "id": "markdown-outline",
+        "version": 1
+      },
+      "truncated": true
+    }
+  ],
+  "modelSourceTreeSha256": "sha256:9bb77a860b5da37767c0440a5d01ad688ef1c38f4db46b25e2ce0fc7c4aa2d71",
+  "composedSourceTreeSha256": "sha256:9bb77a860b5da37767c0440a5d01ad688ef1c38f4db46b25e2ce0fc7c4aa2d71",
+  "worldModelCommit": "87cdded7ac2ba9d479f437a4a0c9cdfb35b0d38d",
+  "manifestSha256": "753eaf4ca730f571714731fac89f00aa87fcd0e0aa6d3ebaa237900a2e644b32",
+  "fresh": true,
+  "renderedSha256": "177bae63388447e3328ab6ebf7a7eb3b944ad9450cdc164a066b16016bda4cce",
+  "promptPath": "singularity/work-items/WRK-1978/context/prompts/conformance-gen1.md",
+  "files": [
+    {
+      "path": "singularity/world-model/core/summary.md",
+      "sha256": "74967d5623aa27e678b3fb66544bd4b8031a697bd543308e50f8f235827106cc",
+      "bytes": 8084,
+      "injectedBytes": 8084,
+      "truncated": false,
+      "category": "required",
+      "level": 0,
+      "reason": "shared repository core (full)",
+      "evidenceId": null,
+      "mimeType": null,
+      "packageId": null,
+      "handle": null,
+      "previewSha256": null,
+      "previewBytes": null,
+      "renderer": null
+    },
+    {
+      "path": "singularity/world-model/views/architecture.md",
+      "sha256": "99bc379eeecb186c9f7b75d743e8d00444c76ff0a85b8f2860ad051196076ad4",
+      "bytes": 821,
+      "injectedBytes": 821,
+      "truncated": false,
+      "category": "required",
+      "level": 1,
+      "reason": "conformance view: architecture (full; phase)",
+      "evidenceId": null,
+      "mimeType": null,
+      "packageId": null,
+      "handle": null,
+      "previewSha256": null,
+      "previewBytes": null,
+      "renderer": null
+    },
+    {
+      "path": "singularity/world-model/views/development.md",
+      "sha256": "1dcebd80e6ea2457697e5c457f3fbf96aceb7be6851302308da8708c53410a93",
+      "bytes": 7265,
+      "injectedBytes": 7265,
+      "truncated": false,
+      "category": "required",
+      "level": 1,
+      "reason": "conformance view: development (full; phase+agent)",
+      "evidenceId": null,
+      "mimeType": null,
+      "packageId": null,
+      "handle": null,
+      "previewSha256": null,
+      "previewBytes": null,
+      "renderer": null
+    },
+    {
+      "path": "singularity/world-model/views/testing.md",
+      "sha256": "4c656266bdc67734f25af45714074b91fc75d8aab3fed6f447838979459bb3d9",
+      "bytes": 4308,
+      "injectedBytes": 4308,
+      "truncated": false,
+      "category": "required",
+      "level": 1,
+      "reason": "conformance view: testing (full; phase+agent)",
+      "evidenceId": null,
+      "mimeType": null,
+      "packageId": null,
+      "handle": null,
+      "previewSha256": null,
+      "previewBytes": null,
+      "renderer": null
+    },
+    {
+      "path": "singularity/world-model/views/security.md",
+      "sha256": "a14417351941d976dd531148fe1b7acb890e8d4c19905a90f9fdfcaaff9b22ca",
+      "bytes": 810,
+      "injectedBytes": 810,
+      "truncated": false,
+      "category": "required",
+      "level": 1,
+      "reason": "conformance view: security (full; phase+agent)",
+      "evidenceId": null,
+      "mimeType": null,
+      "packageId": null,
+      "handle": null,
+      "previewSha256": null,
+      "previewBytes": null,
+      "renderer": null
+    },
+    {
+      "path": "singularity/world-model/domains/calculator-ui.md",
+      "sha256": "891f84082ab7dec08d2f7c137e5e064cc3ebf87ecd5875060d4f3e20158deff0",
+      "bytes": 4463,
+      "injectedBytes": 4463,
+      "truncated": false,
+      "category": "required",
+      "level": 2,
+      "reason": "domain: calculator-ui",
+      "evidenceId": null,
+      "mimeType": null,
+      "packageId": null,
+      "handle": null,
+      "previewSha256": null,
+      "previewBytes": null,
+      "renderer": null
+    },
+    {
+      "path": "singularity/world-model/domains/calculator-engine.md",
+      "sha256": "6840278a2be157eba2d5afd3acfb54dbe94814a2ce0a2ef1e56564001625c22e",
+      "bytes": 3124,
+      "injectedBytes": 3124,
+      "truncated": false,
+      "category": "required",
+      "level": 2,
+      "reason": "domain: calculator-engine",
+      "evidenceId": null,
+      "mimeType": null,
+      "packageId": null,
+      "handle": null,
+      "previewSha256": null,
+      "previewBytes": null,
+      "renderer": null
+    },
+    {
+      "path": "singularity/world-model/task-guides/4dfae982afd19abf.md",
+      "sha256": "88afda3063b894b823041ab0817dbbe9097c088276e1050821c2803baaaf0b66",
+      "bytes": 334,
+      "injectedBytes": 334,
+      "truncated": false,
+      "category": "required",
+      "level": 2,
+      "reason": "task guide: task-4dfae982afd1",
+      "evidenceId": null,
+      "mimeType": null,
+      "packageId": null,
+      "handle": null,
+      "previewSha256": null,
+      "previewBytes": null,
+      "renderer": null
+    },
+    {
+      "path": "singularity/world-model/evidence/evidence.jsonl",
+      "sha256": "4e14434d93e6a3e3eda5e73bc6a9d725c0fb0808840b040f1f1a5f3e9c6a7013",
+      "bytes": 398,
+      "injectedBytes": 398,
+      "truncated": false,
+      "category": "required",
+      "level": 3,
+      "reason": "evidence ledger",
+      "evidenceId": null,
+      "mimeType": null,
+      "packageId": null,
+      "handle": null,
+      "previewSha256": null,
+      "previewBytes": null,
+      "renderer": null
+    },
+    {
+      "path": "singularity/work-items/WRK-1978/artifacts/intake/intake.md",
+      "sha256": "a8448e3297d60f3dd54648660bb834c3b2de0b7ec12c974cec36982ee87bc005",
+      "bytes": 7126,
+      "injectedBytes": 7251,
+      "truncated": false,
+      "category": "reference",
+      "level": null,
+      "reason": "intake:sfref:v1:story:WRK-1978:e8c2ab3ec40efc1462810b9a7841162a8ec0e4d0add09befec78585bc564ca75",
+      "evidenceId": null,
+      "mimeType": null,
+      "packageId": null,
+      "handle": "sfref:v1:story:WRK-1978:e8c2ab3ec40efc1462810b9a7841162a8ec0e4d0add09befec78585bc564ca75",
+      "previewSha256": "f9096b36d307750ccb4924a190ba71bde70af231e25c548effd8e2a6c7c08140",
+      "previewBytes": 7251,
+      "renderer": {
+        "id": "markdown-outline",
+        "version": 1
+      }
+    },
+    {
+      "path": "singularity/work-items/WRK-1978/artifacts/requirements/requirements.md",
+      "sha256": "17d1f3f7ee4a8a62a5844c9f465f1074b782b89a054a7c9cfd84778e6fcd46a8",
+      "bytes": 18326,
+      "injectedBytes": 16384,
+      "truncated": true,
+      "category": "reference",
+      "level": null,
+      "reason": "requirements:sfref:v1:story:WRK-1978:2e584d1f5a4a685d0b7fff57ea0c063764ba7306bbe2b842882958e2f50e74ac",
+      "evidenceId": null,
+      "mimeType": null,
+      "packageId": null,
+      "handle": "sfref:v1:story:WRK-1978:2e584d1f5a4a685d0b7fff57ea0c063764ba7306bbe2b842882958e2f50e74ac",
+      "previewSha256": "edc4db9e677b8ea460bfaae3a4d5af9637e87911db3edc364826e0825d377693",
+      "previewBytes": 16384,
+      "renderer": {
+        "id": "markdown-outline",
+        "version": 1
+      }
+    },
+    {
+      "path": "singularity/work-items/WRK-1978/artifacts/design/design.md",
+      "sha256": "1ac63f0eb0f278deba1e466e6c9f5e415eb297308633aa2ef58c04d8ed07e4df",
+      "bytes": 32772,
+      "injectedBytes": 16384,
+      "truncated": true,
+      "category": "reference",
+      "level": null,
+      "reason": "design:sfref:v1:story:WRK-1978:50a8b9b0271cb2d901425cc66ac48e2b45699b471aa1f05f2657dfa3c8ad35a1",
+      "evidenceId": null,
+      "mimeType": null,
+      "packageId": null,
+      "handle": "sfref:v1:story:WRK-1978:50a8b9b0271cb2d901425cc66ac48e2b45699b471aa1f05f2657dfa3c8ad35a1",
+      "previewSha256": "91d1989736c7762bd475c8db3b71e321efd8ca2711675a07f1852279fdb52220",
+      "previewBytes": 16384,
+      "renderer": {
+        "id": "markdown-outline",
+        "version": 1
+      }
+    },
+    {
+      "path": "singularity/work-items/WRK-1978/artifacts/implementation-spec/implementation-spec.md",
+      "sha256": "848f3cfe06d9731165c4799fb0fe419f429dc2eb2c39b8f93b28d9b48a7ddfcc",
+      "bytes": 68402,
+      "injectedBytes": 16384,
+      "truncated": true,
+      "category": "reference",
+      "level": null,
+      "reason": "implementation-spec:sfref:v1:story:WRK-1978:a860521f670caf6d0bb5da3d67bb4ffb5a6239a18d3082ccac662b916cfeb50a",
+      "evidenceId": null,
+      "mimeType": null,
+      "packageId": null,
+      "handle": "sfref:v1:story:WRK-1978:a860521f670caf6d0bb5da3d67bb4ffb5a6239a18d3082ccac662b916cfeb50a",
+      "previewSha256": "4beb1ad19366558e282107720fa7ff11a30b2c39c9e609490c88586bad5e06a5",
+      "previewBytes": 16384,
+      "renderer": {
+        "id": "markdown-outline",
+        "version": 1
+      }
+    },
+    {
+      "path": "singularity/work-items/WRK-1978/artifacts/implementation/implementation-summary.md",
+      "sha256": "7e2cfef2b903c88d33ab69601fde4d21170ab97617fb974e5f3bb1482f7547a9",
+      "bytes": 116505,
+      "injectedBytes": 16384,
+      "truncated": true,
+      "category": "reference",
+      "level": null,
+      "reason": "implementation:sfref:v1:story:WRK-1978:2b42608d1e9fbb28e99450257f7b0b2b3ae088caf8403b6c66bc2c059621a57a",
+      "evidenceId": null,
+      "mimeType": null,
+      "packageId": null,
+      "handle": "sfref:v1:story:WRK-1978:2b42608d1e9fbb28e99450257f7b0b2b3ae088caf8403b6c66bc2c059621a57a",
+      "previewSha256": "8f214c32b8698ff32726d3b93a99aa27a1aa6fa8d16356f01fcc015f55733b8b",
+      "previewBytes": 16384,
+      "renderer": {
+        "id": "markdown-outline",
+        "version": 1
+      }
+    },
+    {
+      "path": "singularity/work-items/WRK-1978/artifacts/verification/test-evidence.md",
+      "sha256": "d987e9c8628c16feeae2fbac17a41b5ca05b0f0a59b8033c14e93594660daa1c",
+      "bytes": 205160,
+      "injectedBytes": 16384,
+      "truncated": true,
+      "category": "reference",
+      "level": null,
+      "reason": "verification:sfref:v1:story:WRK-1978:3d769c17bd4bf4188740bef3a13b7357efb5d39466b6cae17445252795ec1b0e",
+      "evidenceId": null,
+      "mimeType": null,
+      "packageId": null,
+      "handle": "sfref:v1:story:WRK-1978:3d769c17bd4bf4188740bef3a13b7357efb5d39466b6cae17445252795ec1b0e",
+      "previewSha256": "9015dcf9ba4f29bacc31f370142532a51096aa575241f7fff173c0a8ac411839",
+      "previewBytes": 16384,
+      "renderer": {
+        "id": "markdown-outline",
+        "version": 1
+      }
+    }
+  ],
+  "injectedAt": "2026-08-11T04:28:52.545Z"
+}
