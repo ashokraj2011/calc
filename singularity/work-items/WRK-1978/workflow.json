@@ -1518,7 +1518,7 @@
     ]
   },
   "status": "in_progress",
-  "currentPhase": "design",
+  "currentPhase": "implementation-spec",
   "phaseOrder": [
     "intake",
     "requirements",
@@ -1957,7 +1957,7 @@
       "label": "Architecture and design",
       "order": 2,
       "defaultAgent": "architect",
-      "status": "awaiting_approval",
+      "status": "approved",
       "requiredArtifact": {
         "path": "artifacts/design/design.md",
         "kind": "design",
@@ -2011,8 +2011,8 @@
       "qualityCommands": [],
       "startedAt": "2026-08-11T00:05:43.161Z",
       "submittedAt": "2026-08-11T00:12:55.554Z",
-      "approvedAt": null,
-      "approvedBy": null,
+      "approvedAt": "2026-08-11T00:15:56.434Z",
+      "approvedBy": "ashokraj2011",
       "rejectedAt": null,
       "rejectedBy": null,
       "rejectionReason": null,
@@ -2086,18 +2086,59 @@
           "providerCost": null
         }
       ],
-      "approvals": [],
+      "approvals": [
+        {
+          "decision": "approved",
+          "phase": "design",
+          "at": "2026-08-11T00:15:56.434Z",
+          "actor": {
+            "name": "Ashok Raj",
+            "email": "88361104+ashokraj2011@users.noreply.github.com",
+            "login": "ashokraj2011"
+          },
+          "agent": "architect",
+          "authorityGroup": "architecture-reviewers",
+          "identityAssurance": "configured-local",
+          "channel": "copilot-selection-receipt",
+          "generation": 1,
+          "artifactSha256": [
+            {
+              "path": "singularity/work-items/WRK-1978/artifacts/design/design.md",
+              "sha256": "ad96df801a5b9334449c06c0ca473e2c8062433409114d56915c603bcab5fe75"
+            }
+          ],
+          "reviewPacketSha256": "f3eaeef8a26fe7b6cc9859627f9084be3f9a1a12adf5362f42d408a3348c88b8",
+          "actionContext": {
+            "phase": "design",
+            "label": "Architecture and design",
+            "generation": 1,
+            "submittedAt": "2026-08-11T00:12:55.554Z",
+            "artifacts": [
+              {
+                "path": "singularity/work-items/WRK-1978/artifacts/design/design.md",
+                "sha256": "ad96df801a5b9334449c06c0ca473e2c8062433409114d56915c603bcab5fe75"
+              }
+            ],
+            "reviewPacketSha256": "f3eaeef8a26fe7b6cc9859627f9084be3f9a1a12adf5362f42d408a3348c88b8",
+            "submittedSourceCommit": "776db5e72a21e9cf00295773676e4e474f1588ab",
+            "planId": "806976bb4fb625b88f0e16d4"
+          },
+          "selfApproval": true
+        }
+      ],
       "designSourceSets": [],
       "artifacts": [
         {
           "path": "singularity/work-items/WRK-1978/artifacts/design/design.md",
           "kind": "document",
-          "status": "pending",
+          "status": "approved",
           "exists": true,
-          "size": 32854,
-          "sha256": "ad96df801a5b9334449c06c0ca473e2c8062433409114d56915c603bcab5fe75",
+          "size": 34277,
+          "sha256": "25a3ca14e26cc3ab5c1678a98defd986491a1b1b2ba7b873c5aeb28f426a6ac0",
           "registeredAt": "2026-08-11T00:11:09.147Z",
-          "updatedAt": "2026-08-11T00:12:55.555Z"
+          "updatedAt": "2026-08-11T00:12:55.555Z",
+          "approvedAt": "2026-08-11T00:15:56.434Z",
+          "approvedBy": "ashokraj2011"
         }
       ],
       "checks": [],
@@ -2118,7 +2159,7 @@
       "label": "Implementation specification",
       "order": 3,
       "defaultAgent": "architect",
-      "status": "not_started",
+      "status": "in_progress",
       "requiredArtifact": {
         "path": "artifacts/implementation-spec/implementation-spec.md",
         "kind": "implementation-spec",
@@ -2179,7 +2220,7 @@
         }
       },
       "qualityCommands": [],
-      "startedAt": null,
+      "startedAt": "2026-08-11T00:15:56.434Z",
       "submittedAt": null,
       "approvedAt": null,
       "approvedBy": null,
@@ -2609,6 +2650,14 @@
       "event": "phase_submitted",
       "phase": "design",
       "detail": "1 artifacts"
+    },
+    {
+      "at": "2026-08-11T00:15:56.434Z",
+      "actor": "ashokraj2011",
+      "agent": "architect",
+      "event": "phase_self_approved",
+      "phase": "design",
+      "detail": "threshold reached; advanced to implementation-spec"
     }
   ],
   "measurement": {
@@ -3253,6 +3302,76 @@
           "templateSha256": "8b7455f464a7025efa92942c272a04e3c0a3ab2a4d3eb438703cc14e230bc856"
         },
         "createdAt": "2026-08-11T00:12:55.446Z"
+      }
+    },
+    {
+      "schemaVersion": 1,
+      "event": {
+        "schemaVersion": 1,
+        "eventId": "84f5f285-c9e2-4cd7-9453-c506a02fd568",
+        "type": "phase-approved",
+        "subject": {
+          "kind": "story",
+          "id": "WRK-1978",
+          "branch": "WRK-1978"
+        },
+        "phaseId": "design",
+        "generation": 1,
+        "actor": {
+          "name": "Ashok Raj",
+          "email": "88361104+ashokraj2011@users.noreply.github.com",
+          "login": "ashokraj2011"
+        },
+        "agent": "architect",
+        "authorityGroup": "architecture-reviewers",
+        "payload": {
+          "decision": "approved",
+          "reviewPacketSha256": "f3eaeef8a26fe7b6cc9859627f9084be3f9a1a12adf5362f42d408a3348c88b8"
+        },
+        "sourceCommit": null,
+        "idempotencyKey": null,
+        "idempotencyHash": null,
+        "createdAt": "2026-08-11T00:15:56.449Z"
+      },
+      "ledgerIntent": {
+        "schemaVersion": 1,
+        "eventId": "84f5f285-c9e2-4cd7-9453-c506a02fd568",
+        "eventType": "phase-approved",
+        "capabilityId": "calc-app",
+        "subject": {
+          "branch": "WRK-1978",
+          "generation": 1,
+          "phase": "design",
+          "workId": "WRK-1978",
+          "workType": "feature"
+        },
+        "actor": {
+          "name": "Ashok Raj",
+          "email": "88361104+ashokraj2011@users.noreply.github.com",
+          "githubLogin": "ashokraj2011",
+          "identityAssurance": "configured-local"
+        },
+        "agent": "architect",
+        "authorityGroup": "architecture-reviewers",
+        "payload": {
+          "capabilityMapSha256": "77ee9fd3c55345e31113fffb91dab4b0ffd95ced22cbd95d19ffa1d04bd7a479",
+          "capabilityPolicy": {
+            "protectedPaths": [],
+            "qualityCommands": [],
+            "requiredAuthorityGroups": [],
+            "requiredChecks": [],
+            "requiredWorldModelViews": []
+          },
+          "configPath": "singularity/workflow.yml",
+          "configSha256": "c71e8d4583a4303c75561c44902b837971681f740cc7025f9b55cb997589424f",
+          "lifecycleEventId": "84f5f285-c9e2-4cd7-9453-c506a02fd568",
+          "lifecyclePayload": {
+            "decision": "approved",
+            "reviewPacketSha256": "f3eaeef8a26fe7b6cc9859627f9084be3f9a1a12adf5362f42d408a3348c88b8"
+          },
+          "templateSha256": "8b7455f464a7025efa92942c272a04e3c0a3ab2a4d3eb438703cc14e230bc856"
+        },
+        "createdAt": "2026-08-11T00:15:56.454Z"
       }
     }
   ],

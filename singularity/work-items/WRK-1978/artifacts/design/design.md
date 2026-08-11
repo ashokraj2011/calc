@@ -5,7 +5,7 @@
   "workType": "feature",
   "phase": "design",
   "generation": 1,
-  "status": "awaiting_approval",
+  "status": "approved",
   "generatedBy": {
     "name": "Ashok Raj",
     "email": "88361104+ashokraj2011@users.noreply.github.com",
@@ -97,8 +97,47 @@
     }
   ],
   "sequenceOverrides": [],
-  "approvals": [],
-  "selfApproval": false,
+  "approvals": [
+    {
+      "decision": "approved",
+      "phase": "design",
+      "at": "2026-08-11T00:15:56.434Z",
+      "actor": {
+        "name": "Ashok Raj",
+        "email": "88361104+ashokraj2011@users.noreply.github.com",
+        "login": "ashokraj2011"
+      },
+      "agent": "architect",
+      "authorityGroup": "architecture-reviewers",
+      "identityAssurance": "configured-local",
+      "channel": "copilot-selection-receipt",
+      "generation": 1,
+      "artifactSha256": [
+        {
+          "path": "singularity/work-items/WRK-1978/artifacts/design/design.md",
+          "sha256": "ad96df801a5b9334449c06c0ca473e2c8062433409114d56915c603bcab5fe75"
+        }
+      ],
+      "reviewPacketSha256": "f3eaeef8a26fe7b6cc9859627f9084be3f9a1a12adf5362f42d408a3348c88b8",
+      "actionContext": {
+        "phase": "design",
+        "label": "Architecture and design",
+        "generation": 1,
+        "submittedAt": "2026-08-11T00:12:55.554Z",
+        "artifacts": [
+          {
+            "path": "singularity/work-items/WRK-1978/artifacts/design/design.md",
+            "sha256": "ad96df801a5b9334449c06c0ca473e2c8062433409114d56915c603bcab5fe75"
+          }
+        ],
+        "reviewPacketSha256": "f3eaeef8a26fe7b6cc9859627f9084be3f9a1a12adf5362f42d408a3348c88b8",
+        "submittedSourceCommit": "776db5e72a21e9cf00295773676e4e474f1588ab",
+        "planId": "806976bb4fb625b88f0e16d4"
+      },
+      "selfApproval": true
+    }
+  ],
+  "selfApproval": true,
   "conformanceTree": null
 }
 -->
