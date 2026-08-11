@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-08-10T23:45:02.386Z",
-  "repository_commit": "333a66d35e57d5077d68d4164df9b138b001d0ed",
+  "generated_at": "2026-08-11T02:51:13Z",
+  "repository_commit": "5bce85ba2c79dc7dbfd36ecac3f10d1233881d4a",
   "entries": [
     {
       "glob": "src/App.jsx",
@@ -12,92 +12,93 @@
         "calculator-ui"
       ],
       "views": [
-        "business"
+        "development",
+        "testing"
       ],
       "symbols": [
         "App"
       ],
       "tests": [],
       "anchors": [
-        "biz.capabilities",
-        "biz.workflows"
+        "dev.impact",
+        "test.risks"
       ],
-      "notes": "This is the primary app shell and state container; changes here affect the whole calculator experience."
+      "notes": "Core state and event flow for the calculator shell."
     },
     {
-      "glob": "src/components/**",
+      "glob": "src/utils/evaluator.js",
       "component_ids": [
-        "calculator-ui"
+        "calculator-engine"
       ],
       "domains": [
         "calculator-ui"
       ],
       "views": [
-        "business"
+        "development",
+        "testing"
+      ],
+      "symbols": [
+        "evaluateExpression",
+        "formatNumber"
+      ],
+      "tests": [],
+      "anchors": [
+        "dev.hotspots",
+        "test.risks"
+      ],
+      "notes": "Shared semantics for expression handling and formatting."
+    },
+    {
+      "glob": "src/components/**",
+      "component_ids": [
+        "ui-components"
+      ],
+      "domains": [
+        "calculator-ui"
+      ],
+      "views": [
+        "development",
+        "testing"
       ],
       "symbols": [
         "Header",
         "Display",
         "StandardKeypad",
-        "ScientificKeypad",
-        "FinancialCalculator",
-        "UnitConverter",
-        "FunctionGrapher"
+        "ScientificKeypad"
       ],
       "tests": [],
       "anchors": [
-        "biz.capabilities",
-        "biz.actors"
+        "dev.start",
+        "test.selection"
       ],
-      "notes": "These files define the visible calculator experience and the mode-specific UI surfaces."
-    },
-    {
-      "glob": "src/utils/evaluator.js",
-      "component_ids": [
-        "expression-engine"
-      ],
-      "domains": [
-        "calculator-ui"
-      ],
-      "views": [
-        "business"
-      ],
-      "symbols": [
-        "evaluateExpression",
-        "formatNumber",
-        "calculateEMI",
-        "calculateCompoundInterest",
-        "calculateTip"
-      ],
-      "tests": [],
-      "anchors": [
-        "biz.rules",
-        "biz.failures"
-      ],
-      "notes": "This module contains the shared math and financial rules that determine calculator trust."
+      "notes": "Presentation surfaces for mode layouts and visual structure."
     },
     {
       "glob": "src/index.css",
       "component_ids": [
-        "calculator-ui"
+        "theme-system"
       ],
       "domains": [
         "calculator-ui"
       ],
       "views": [
-        "business"
+        "development",
+        "testing"
       ],
-      "symbols": [],
+      "symbols": [
+        "data-theme"
+      ],
       "tests": [],
       "anchors": [
-        "biz.capabilities"
+        "dev.hotspots",
+        "test.risks"
       ],
-      "notes": "The shared theme system and button/display tokens live here, making it the primary styling entry point."
+      "notes": "The main place for Windows-themed visual and layout changes."
     }
   ],
   "fallback": {
     "views": [
-      "business"
+      "development"
     ],
     "anchors": [
       "core.map"

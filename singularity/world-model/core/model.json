@@ -1,15 +1,15 @@
 {
   "schema_version": "2.0",
-  "generated_at": "2026-08-09T23:57:03Z",
-  "generated_date": "09 August 2026",
+  "generated_at": "2026-08-11T02:51:13Z",
+  "generated_date": "11 August 2026",
   "builder_version": "2.0",
   "builder_prompt_sha256": "unknown",
-  "analysis_depth": "quick",
+  "analysis_depth": "standard",
   "repository": {
     "name": "calc",
-    "root": "/private/var/folders/_j/yp8zv9w91rd44ymrzfpd_kcw0000gn/T/singularity-flow-world-model-XrWlc9/repository",
-    "branch": "WRK-890",
-    "commit": "e9d82bcdfd4363c98e447b92108203f18828d6ff",
+    "root": "/private/var/folders/_j/yp8zv9w91rd44ymrzfpd_kcw0000gn/T/singularity-flow-world-model-BrZ1EU/repository",
+    "branch": "detached",
+    "commit": "5bce85ba2c79dc7dbfd36ecac3f10d1233881d4a",
     "working_tree_clean": false,
     "repository_kind": "application",
     "languages": [
@@ -22,74 +22,80 @@
     ]
   },
   "purpose": {
-    "summary": "A single-page calculator web app with standard, scientific, converter, financial, and grapher modes built with React and Vite.",
+    "summary": "A Vite + React calculator app with standard, scientific, converter, financial, and grapher modes.",
     "status": "observed",
     "confidence": "high",
     "evidence_ids": [
-      "ev:repo-purpose",
-      "ev:app-shell"
+      "e:app-shell",
+      "e:evaluator-core",
+      "e:package-scripts"
     ]
   },
   "components": [
     {
-      "id": "calculator-shell",
-      "name": "Calculator shell",
+      "id": "app-shell",
+      "name": "App shell and state",
       "kind": "application",
-      "purpose": "Owns shared calculator state, mode routing, history, and modal interactions.",
+      "purpose": "Owns calculator state, mode switching, and composition of UI components.",
       "paths": [
         "src/App.jsx"
       ],
       "depends_on": [
-        "calculator-ui",
-        "calculator-engine"
+        "calculator-engine",
+        "ui-components",
+        "theme-system"
       ],
       "entrypoint_ids": [
         "entry-main",
-        "entry-app-shell"
+        "entry-app"
       ],
       "confidence": "high",
       "evidence_ids": [
-        "ev:app-shell"
-      ]
-    },
-    {
-      "id": "calculator-ui",
-      "name": "Calculator UI components",
-      "kind": "frontend",
-      "purpose": "Renders display, keypads, financial and grapher panes, and header controls.",
-      "paths": [
-        "src/components"
-      ],
-      "depends_on": [
-        "calculator-shell",
-        "calculator-theme"
-      ],
-      "entrypoint_ids": [],
-      "confidence": "high",
-      "evidence_ids": [
-        "ev:ui-components"
+        "e:app-shell"
       ]
     },
     {
       "id": "calculator-engine",
-      "name": "Calculator engine",
+      "name": "Expression evaluator and helpers",
       "kind": "library",
-      "purpose": "Evaluates arithmetic and scientific expressions and provides financial/unit helpers.",
+      "purpose": "Parses expressions, formats results, and supports unit conversion and financial functions.",
       "paths": [
         "src/utils/evaluator.js"
       ],
-      "depends_on": [],
+      "depends_on": [
+        "mathjs"
+      ],
       "entrypoint_ids": [],
       "confidence": "high",
       "evidence_ids": [
-        "ev:evaluator"
+        "e:evaluator-core"
       ]
     },
     {
-      "id": "calculator-theme",
-      "name": "Calculator theme system",
-      "kind": "tooling",
-      "purpose": "Defines shared CSS tokens and the classic/default visual appearance.",
+      "id": "ui-components",
+      "name": "Mode-specific UI components",
+      "kind": "frontend",
+      "purpose": "Render the calculator display, keypad, headers, and specialized modes.",
+      "paths": [
+        "src/components"
+      ],
+      "depends_on": [
+        "app-shell",
+        "calculator-engine",
+        "theme-system"
+      ],
+      "entrypoint_ids": [],
+      "confidence": "high",
+      "evidence_ids": [
+        "e:ui-components",
+        "e:theme-system"
+      ]
+    },
+    {
+      "id": "theme-system",
+      "name": "Theme and layout styling",
+      "kind": "frontend",
+      "purpose": "Provides CSS variables, theme palettes, and Windows 11 specific visual overrides.",
       "paths": [
         "src/index.css"
       ],
@@ -97,66 +103,72 @@
       "entrypoint_ids": [],
       "confidence": "high",
       "evidence_ids": [
-        "ev:theme-system"
+        "e:theme-system"
       ]
     }
   ],
   "entrypoints": [
     {
       "id": "entry-main",
-      "name": "Application bootstrap",
+      "name": "React mount",
       "kind": "frontend",
       "location": "src/main.jsx:1-10",
-      "invocation": "ReactDOM createRoot",
-      "component_id": "calculator-shell",
+      "invocation": "npm run dev",
+      "component_id": "app-shell",
       "evidence_ids": [
-        "ev:entrypoints"
+        "e:app-entry"
       ]
     },
     {
-      "id": "entry-app-shell",
-      "name": "Calculator shell",
-      "kind": "frontend",
+      "id": "entry-app",
+      "name": "Root calculator app",
+      "kind": "application",
       "location": "src/App.jsx:14-324",
-      "invocation": "App component",
-      "component_id": "calculator-shell",
+      "invocation": "App",
+      "component_id": "app-shell",
       "evidence_ids": [
-        "ev:app-shell"
+        "e:app-shell"
       ]
     }
   ],
   "standard_commands": [
     {
       "command": "npm run dev",
-      "purpose": "Start the Vite development server",
-      "source": "package.json:6-10"
+      "purpose": "start Vite dev server",
+      "source": "package.json:7"
     },
     {
       "command": "npm run build",
-      "purpose": "Create a production bundle",
-      "source": "package.json:6-10"
+      "purpose": "build production bundle",
+      "source": "package.json:8"
     },
     {
       "command": "npm run lint",
-      "purpose": "Run ESLint",
-      "source": "package.json:6-10"
+      "purpose": "run ESLint",
+      "source": "package.json:9"
+    },
+    {
+      "command": "npm run preview",
+      "purpose": "serve built bundle",
+      "source": "package.json:10"
     }
   ],
   "risks": [
-    "Visual styling and shared UI tokens are reused across many components, so appearance changes can ripple.",
-    "The app relies on browser-side localStorage and client-side evaluation, which creates UX and safety considerations.",
-    "The working tree is not clean due to deleted tracked workflow artifacts."
+    "No automated UI or unit test harness is declared.",
+    "Visual parity with Windows Calculator is under-specified in repository artifacts.",
+    "The worktree is not clean, so current-file claims should be verified against the inspected commit."
   ],
   "unknowns": [
-    "No automated UI or unit tests are present in the repository.",
-    "No deployment or release workflow is defined in the source tree.",
-    "No explicit design-system documentation exists for the calculator UI."
+    "No explicit Windows Calculator design specification is present.",
+    "No existing test suite or coverage baseline is present."
   ],
   "available_views": [
-    "core",
-    "architecture",
     "development",
-    "security",
+    "testing"
+  ],
+  "views_generated": [
+    "core",
+    "development",
     "testing"
   ]
 }
