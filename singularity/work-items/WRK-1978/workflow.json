@@ -3965,6 +3965,82 @@
         },
         "createdAt": "2026-08-11T00:45:44.034Z"
       }
+    },
+    {
+      "schemaVersion": 1,
+      "event": {
+        "schemaVersion": 1,
+        "eventId": "0a61f39a-41d0-4316-9ee9-0f0d3e35ee18",
+        "type": "projection-reconciled",
+        "subject": {
+          "kind": "story",
+          "id": "WRK-1978",
+          "branch": "WRK-1978"
+        },
+        "phaseId": "implementation",
+        "generation": 0,
+        "actor": {
+          "name": "Ashok Raj",
+          "email": "88361104+ashokraj2011@users.noreply.github.com",
+          "login": "ashokraj2011"
+        },
+        "agent": null,
+        "authorityGroup": null,
+        "payload": {
+          "projections": [
+            "singularity/work-items/WRK-1978/context/ledger-intents/6866c0db-b60e-4c10-b845-d65e4649c837.json"
+          ],
+          "decision": null,
+          "reviewPacketSha256": null
+        },
+        "sourceCommit": null,
+        "idempotencyKey": null,
+        "idempotencyHash": null,
+        "createdAt": "2026-08-11T00:47:31.632Z"
+      },
+      "ledgerIntent": {
+        "schemaVersion": 1,
+        "eventId": "0a61f39a-41d0-4316-9ee9-0f0d3e35ee18",
+        "eventType": "projection-reconciled",
+        "capabilityId": "calc-app",
+        "subject": {
+          "branch": "WRK-1978",
+          "generation": 0,
+          "phase": "implementation",
+          "workId": "WRK-1978",
+          "workType": "feature"
+        },
+        "actor": {
+          "name": "Ashok Raj",
+          "email": "88361104+ashokraj2011@users.noreply.github.com",
+          "githubLogin": "ashokraj2011",
+          "identityAssurance": "configured-local"
+        },
+        "agent": null,
+        "authorityGroup": null,
+        "payload": {
+          "capabilityMapSha256": "77ee9fd3c55345e31113fffb91dab4b0ffd95ced22cbd95d19ffa1d04bd7a479",
+          "capabilityPolicy": {
+            "protectedPaths": [],
+            "qualityCommands": [],
+            "requiredAuthorityGroups": [],
+            "requiredChecks": [],
+            "requiredWorldModelViews": []
+          },
+          "configPath": "singularity/workflow.yml",
+          "configSha256": "c71e8d4583a4303c75561c44902b837971681f740cc7025f9b55cb997589424f",
+          "lifecycleEventId": "0a61f39a-41d0-4316-9ee9-0f0d3e35ee18",
+          "lifecyclePayload": {
+            "decision": null,
+            "projections": [
+              "singularity/work-items/WRK-1978/context/ledger-intents/6866c0db-b60e-4c10-b845-d65e4649c837.json"
+            ],
+            "reviewPacketSha256": null
+          },
+          "templateSha256": "5d0478b18c8fd14221e14c68e6238b909bccd6802a70262c416005354716c62c"
+        },
+        "createdAt": "2026-08-11T00:47:31.637Z"
+      }
     }
   ],
   "workIntervals": {
