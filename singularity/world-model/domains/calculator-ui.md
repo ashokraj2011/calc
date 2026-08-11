@@ -1,69 +1,54 @@
-> **Grounding** · calc @ `333a66d35e57d5077d68d4164df9b138b001d0ed` · view: `domain.calculator-ui` · tier: `full`
-> **Generated** 10 August 2026 (2026-08-10T23:45:02.386Z) · depth: `standard` · builder `2.0`
+> **Grounding** · calc @ `5bce85ba2c79dc7dbfd36ecac3f10d1233881d4a` · view: `domain.calculator-ui` · tier: `full`
+> **Generated** 11 August 2026 (2026-08-11T02:51:13Z) · depth: `standard` · builder `2.0`
 > **Authoritative for:** file locations, entry points, commands, structural relationships as of the commit above.
 > **Not authoritative for:** current file contents. If this document conflicts with code you have read, trust the code and say so explicitly in your output.
 > **Unknowns are marked.** Do not resolve them by inference. If the repository has changed since the date above, treat locations as hints, not facts.
 
-## TL;DR {#domain.calculator-ui.tldr}
 
-This domain captures the calculator experience as a product surface: the visible modes, the shared shell, the display and keypad layout, and the styling system that makes the app feel like a distinct calculator brand. The domain is relevant to visual changes such as a Windows-style makeover because the main implementation points are the shared app shell, the mode-specific components, and the CSS variables that define the look and feel. Preserve the interaction model and the evaluator semantics while replacing or refining the visual language.
+## TL;DR {#domain.calculator-ui.tldr}
+The calculator UI domain covers the visible calculator experience: the stateful app shell, the keypad/display surfaces, the scientific and other specialized modes, and the theme system that already contains Windows 11 tokens. The main implementation burden is keeping the visual layer aligned with the interaction layer, because the app shell owns keyboard and state handling while the UI components render presentation. For a Windows-style visual task, the most important constraints are the existing theme variables, the component layout classes, and the evaluator semantics that feed the display.
 
 ## Domain purpose {#domain.calculator-ui.purpose}
-
-The calculator UI domain is the presentation layer and interaction model for the app. It is responsible for the look of the calculator, the arrangement of controls, the display conventions, the navigation between modes, and the user-facing affordances such as history, memory, and sound.
+This domain covers the user-visible calculator experience, including presentation, modes, keyboard shortcuts, history, sounds, and theme selection. It is the relevant capability for a change such as “make the app look like Windows calc”.
 
 ## Terminology {#domain.calculator-ui.terminology}
+- `activeMode` — current visible mode (`standard`, `scientific`, `converter`, `financial`, `grapher`).
+- `expression` / `result` — current input and output state displayed to the user.
+- `angleUnit` — degree/radian toggle used by the evaluator.
+- `theme` — selected palette, persisted in `localStorage`.
 
-- Mode: `standard`, `scientific`, `converter`, `financial`, or `grapher`.
-- Shell: the shared frame around the calculator, including the header and main content area.
-- Display: the expression/result surface and the utility buttons that clear, backspace, or copy results.
-- Keypad: the button grid that triggers calculations or navigation.
-- Theme: a reusable visual token set that changes the palette and surface treatment.
-
-## Business rules {#domain.calculator-ui.rules}
-
-The visual layer should preserve the existing meaning of calculator controls. Number entry, operator selection, equals, memory operations, history selection, and mode switching should still produce the same semantics as before. A redesign should not silently change the function names, result formatting, or error states that users rely on.
+## Business rules and policy locations {#domain.calculator-ui.rules}
+- Expression evaluation rules live in `src/utils/evaluator.js`, including sanitization, percent handling, trig angle-unit support, and error results.
+- History entries are capped at 50 and persisted under `apex_history` in `src/App.jsx`.
+- Theme and sound choices are persisted under `apex_theme` and `apex_sound` in `src/App.jsx`.
 
 ## Owning components {#domain.calculator-ui.components}
-
-- `src/App.jsx`: owns shared state and chooses which mode view to render.
-- `src/components/Header.jsx`: mode switcher, theme selector, and utility buttons.
-- `src/components/Display.jsx`: expression/result display and display utility actions.
-- `src/components/StandardKeypad.jsx` and `src/components/ScientificKeypad.jsx`: keypad layout and button behavior.
-- `src/index.css`: shared theme variables and visual system primitives.
-
-## Important symbols {#domain.calculator-ui.symbols}
-
-- `App` in `src/App.jsx` owns the major stateful behaviors.
-- `Display` renders the expression/result surface.
-- `StandardKeypad` and `ScientificKeypad` compose the button grids.
-- `Header` exposes the mode and theme controls.
+- `src/App.jsx` — orchestrates the UI domain state and mode switching.
+- `src/components/Header.jsx` — controls mode selection, theme selection, history, keyboard modal, and sound.
+- `src/components/Display.jsx`, `src/components/StandardKeypad.jsx`, `src/components/ScientificKeypad.jsx` — primary calculator surfaces.
+- `src/index.css` — theme tokens and layout classes that shape the visual experience.
 
 ## Main workflows {#domain.calculator-ui.workflows}
-
-1. User selects a mode from the header.
-2. The app shell updates the active view and preserves the current calculation state.
-3. User interacts with the display or keypad.
-4. The app updates the expression/result and optionally persists history or settings.
+1. User enters digits or operators and the state updates in `App`.
+2. Equals triggers evaluation and updates the display plus history.
+3. Theme selection updates the document root’s `data-theme` attribute and persists the selection.
+4. Specialized modes mount alternate components without changing the core input model.
 
 ## Data and state {#domain.calculator-ui.state}
+The visible state is stored in `App` and includes expression, result, pending evaluation state, angle unit, memory value, theme, sound flag, history, and modal toggles. This is intentionally simple and centralized rather than split across multiple stores.
 
-The UI persists theme, sound preferences, and calculation history in `localStorage`. The current expression and result are held in component state within `src/App.jsx`. These values should remain behaviorally stable when the styling is changed.
+## Invariants and risks {#domain.calculator-ui.risks}
+- The evaluator should remain the source of truth for display values; layout changes should not silently bypass it.
+- Visual changes should be validated against keyboard handling, because the keyboard shortcuts and the visible buttons share the same state handlers.
+- A change to styling should be validated with both the default theme and Windows 11 themes because the CSS layer is theme-driven.
 
-## Invariants {#domain.calculator-ui.invariants}
-
-- The app should still support the same modes and controls after a redesign.
-- The expression/result surface should remain understandable and easy to read.
-- The visual change should not change math semantics or error presentation.
-
-## Tests {#domain.calculator-ui.tests}
-
-No automated UI tests are present in the repository snapshot. Visual work should be validated manually in the browser and checked against the app shell and mode navigation flows.
-
-## Change risks {#domain.calculator-ui.risks}
-
-The most likely risk is confusing users by changing layout conventions too aggressively. A second risk is introducing inconsistent theming tokens that make one mode look considerably different from the rest. The greatest business risk is reducing trust by making the calculator feel less reliable, even if the formulas remain unchanged.
+## Tests and validation {#domain.calculator-ui.tests}
+- Manual replay of standard/scientific interactions.
+- Build and lint checks through `npm run build` and `npm run lint`.
+- Browser validation with cleared storage for theme/history/sound state.
 
 ## Unknowns {#domain.calculator-ui.unknowns}
+- There is no repository-defined Windows Calculator design spec or screenshot reference.
+- There is no automated visual regression suite for this domain.
 
-There is no accepted visual specification for the Windows Calculator look in this repository snapshot, so the design intent should be confirmed with the product owner or design owner before implementation.
+Evidence: `e:app-shell`, `e:evaluator-core`, `e:theme-system`, `e:ui-components`.
