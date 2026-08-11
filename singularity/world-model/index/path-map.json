@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-08-11T02:51:13Z",
-  "repository_commit": "5bce85ba2c79dc7dbfd36ecac3f10d1233881d4a",
+  "generated_at": "2026-08-11T03:06:22.858Z",
+  "repository_commit": "4294b2b282ef8049f60c94da9db281200f81390d",
   "entries": [
     {
       "glob": "src/App.jsx",
@@ -9,21 +9,27 @@
         "app-shell"
       ],
       "domains": [
-        "calculator-ui"
+        "calculator-engine"
       ],
       "views": [
         "development",
-        "testing"
+        "testing",
+        "security"
       ],
       "symbols": [
-        "App"
+        "App",
+        "handleEquals",
+        "handleDigit",
+        "handleOperator"
       ],
       "tests": [],
       "anchors": [
         "dev.impact",
-        "test.risks"
+        "dev.hotspots",
+        "test.surface",
+        "sec.boundaries"
       ],
-      "notes": "Core state and event flow for the calculator shell."
+      "notes": "Most cross-cutting state and keyboard interactions live here, so changes here affect multiple calculator modes."
     },
     {
       "glob": "src/utils/evaluator.js",
@@ -31,69 +37,51 @@
         "calculator-engine"
       ],
       "domains": [
-        "calculator-ui"
+        "calculator-engine"
       ],
       "views": [
         "development",
-        "testing"
+        "testing",
+        "security"
       ],
       "symbols": [
         "evaluateExpression",
-        "formatNumber"
+        "convertUnits",
+        "calculateEMI"
       ],
       "tests": [],
       "anchors": [
-        "dev.hotspots",
-        "test.risks"
+        "dev.modules",
+        "test.surface",
+        "sec.input"
       ],
-      "notes": "Shared semantics for expression handling and formatting."
+      "notes": "Shared math, unit, and financial semantics propagate across the app."
     },
     {
-      "glob": "src/components/**",
+      "glob": "src/components/{UnitConverter.jsx,FinancialCalculator.jsx,FunctionGrapher.jsx}",
       "component_ids": [
-        "ui-components"
+        "ui-modes"
       ],
       "domains": [
-        "calculator-ui"
+        "calculator-engine"
       ],
       "views": [
         "development",
-        "testing"
+        "testing",
+        "security"
       ],
       "symbols": [
-        "Header",
-        "Display",
-        "StandardKeypad",
-        "ScientificKeypad"
+        "UnitConverter",
+        "FinancialCalculator",
+        "FunctionGrapher"
       ],
       "tests": [],
       "anchors": [
-        "dev.start",
-        "test.selection"
+        "dev.flows",
+        "test.scenarios",
+        "sec.exposure"
       ],
-      "notes": "Presentation surfaces for mode layouts and visual structure."
-    },
-    {
-      "glob": "src/index.css",
-      "component_ids": [
-        "theme-system"
-      ],
-      "domains": [
-        "calculator-ui"
-      ],
-      "views": [
-        "development",
-        "testing"
-      ],
-      "symbols": [
-        "data-theme"
-      ],
-      "tests": [],
-      "anchors": [
-        "dev.hotspots",
-        "test.risks"
-      ],
-      "notes": "The main place for Windows-themed visual and layout changes."
+      "notes": "Mode-specific surfaces are the best starting point for focused feature work."
     }
   ],
   "fallback": {
