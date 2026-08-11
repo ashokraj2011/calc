@@ -1,0 +1,28 @@
+{
+  "artifact": {
+    "generation": 2,
+    "mediaType": "text/markdown",
+    "outputId": "conformance-report",
+    "path": "singularity/work-items/WRK-1978/artifacts/conformance/spec-code-comparison.md",
+    "phaseId": "conformance"
+  },
+  "createdAt": "2026-08-11T06:01:44.429Z",
+  "kind": "governed-reference",
+  "repository": {
+    "id": "calc",
+    "origin": "https://github.com/ashokraj2011/calc.git"
+  },
+  "revision": {
+    "bytes": 437930,
+    "commitSha": "9834be40e23c5cd18488ba650260d7220074dde4",
+    "sha256": "5de1ffbb251ba09789696d40a6627778319dd704ccf3829c47e86ce0cbc4ae36"
+  },
+  "schemaVersion": 1,
+  "subject": {
+    "branch": "WRK-1978",
+    "id": "WRK-1978",
+    "kind": "story",
+    "subjectRevision": 2
+  },
+  "visibility": "model"
+}

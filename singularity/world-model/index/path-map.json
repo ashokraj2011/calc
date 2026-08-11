@@ -1,15 +1,15 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-08-09T23:57:03Z",
-  "repository_commit": "e9d82bcdfd4363c98e447b92108203f18828d6ff",
+  "generated_at": "2026-08-11T05:43:13Z",
+  "repository_commit": "08aa77072f09d6113acba4f1eb8db27786a97988",
   "entries": [
     {
       "glob": "src/App.jsx",
       "component_ids": [
-        "calculator-shell"
+        "app-shell"
       ],
       "domains": [
-        "calculator-ui"
+        "expression-evaluation"
       ],
       "views": [
         "architecture",
@@ -17,62 +17,17 @@
       ],
       "symbols": [
         "App",
-        "handleEquals",
-        "handleDigit",
-        "handleOperator"
+        "evaluateExpression"
       ],
-      "tests": [],
+      "tests": [
+        "src/App.test.jsx"
+      ],
       "anchors": [
-        "arch.components",
-        "dev.flows"
+        "arch.context",
+        "dev.entrypoints",
+        "dev.impact"
       ],
-      "notes": "Central state and interaction routing for all calculator modes."
-    },
-    {
-      "glob": "src/components/Display.jsx",
-      "component_ids": [
-        "calculator-ui"
-      ],
-      "domains": [
-        "calculator-ui"
-      ],
-      "views": [
-        "architecture",
-        "development",
-        "testing"
-      ],
-      "symbols": [
-        "Display"
-      ],
-      "tests": [],
-      "anchors": [
-        "arch.components",
-        "dev.modules",
-        "test.mapping"
-      ],
-      "notes": "Display and interaction affordances for the main calculator surface."
-    },
-    {
-      "glob": "src/components/StandardKeypad.jsx",
-      "component_ids": [
-        "calculator-ui"
-      ],
-      "domains": [
-        "calculator-ui"
-      ],
-      "views": [
-        "architecture",
-        "development"
-      ],
-      "symbols": [
-        "StandardKeypad"
-      ],
-      "tests": [],
-      "anchors": [
-        "arch.components",
-        "dev.modules"
-      ],
-      "notes": "Primary keypad layout used by the standard and scientific calculator views."
+      "notes": "Start here for state, mode routing, history, and keyboard shortcuts."
     },
     {
       "glob": "src/utils/evaluator.js",
@@ -80,51 +35,77 @@
         "calculator-engine"
       ],
       "domains": [
-        "calculator-ui"
+        "expression-evaluation"
       ],
       "views": [
         "architecture",
         "development",
-        "security",
-        "testing"
+        "testing",
+        "security"
       ],
       "symbols": [
         "evaluateExpression",
-        "formatNumber"
+        "convertUnits",
+        "calculateEMI"
       ],
-      "tests": [],
+      "tests": [
+        "src/utils/evaluator.test.js"
+      ],
       "anchors": [
         "arch.contracts",
-        "dev.modules",
-        "sec.input",
-        "test.mapping"
+        "dev.hotspots",
+        "test.strategy",
+        "sec.surface"
       ],
-      "notes": "Behavioral core for arithmetic, scientific functions, unit conversion, and finance."
+      "notes": "Shared semantics for arithmetic, formatting, conversion, and finance live here."
     },
     {
-      "glob": "src/index.css",
+      "glob": "src/components/**",
       "component_ids": [
-        "calculator-theme"
-      ],
-      "domains": [
         "calculator-ui"
       ],
+      "domains": [],
       "views": [
         "architecture",
-        "development",
-        "testing"
+        "development"
       ],
       "symbols": [
-        ":root",
-        "data-theme"
+        "Header",
+        "Display",
+        "FinancialCalculator",
+        "FunctionGrapher"
       ],
-      "tests": [],
+      "tests": [
+        "src/App.test.jsx"
+      ],
       "anchors": [
-        "arch.components",
-        "dev.hotspots",
-        "test.risks"
+        "arch.structure",
+        "dev.structure"
       ],
-      "notes": "Shared visual token system for the classic and alternate calculator themes."
+      "notes": "Mode-specific UI surfaces and navigation live here."
+    },
+    {
+      "glob": "src/**/*.test.*",
+      "component_ids": [
+        "test-suite"
+      ],
+      "domains": [
+        "expression-evaluation"
+      ],
+      "views": [
+        "testing"
+      ],
+      "symbols": [],
+      "tests": [
+        "src/App.test.jsx",
+        "src/utils/evaluator.test.js",
+        "src/build.test.js"
+      ],
+      "anchors": [
+        "test.map",
+        "test.commands"
+      ],
+      "notes": "Regression coverage for shell behavior, evaluator semantics, and builds."
     }
   ],
   "fallback": {

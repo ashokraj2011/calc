@@ -1,0 +1,158 @@
+{
+  "schemaVersion": 1,
+  "workId": "WRK-1978",
+  "epicId": null,
+  "planId": null,
+  "jiraIssueId": "WRK-1978",
+  "initialJiraKey": null,
+  "currentJiraKey": null,
+  "canonicalBranch": "WRK-1978",
+  "submittedBranch": "WRK-1978",
+  "submissionCommit": "1f47b502df8aacdc24c770db46bf1396fa41e339",
+  "sourceCommit": "1f47b502df8aacdc24c770db46bf1396fa41e339",
+  "sourceTreeSha256": "sha256:ffc75d8fa7db7a63b2ac9848543d8b61853cdd13707d4350744d5165b7b86a33",
+  "phase": "implementation",
+  "generation": 1,
+  "authorship": {
+    "schemaVersion": 1,
+    "producer": "governed-agent",
+    "channel": "copilot-host",
+    "actor": {
+      "name": "Ashok Raj",
+      "email": "88361104+ashokraj2011@users.noreply.github.com",
+      "login": "ashokraj2011"
+    },
+    "governedAgentContext": {
+      "agentId": "developer"
+    },
+    "kernelModel": {
+      "invoked": false,
+      "status": "exact",
+      "invocationIds": []
+    },
+    "externalAiUse": {
+      "value": "unknown",
+      "status": "unavailable"
+    },
+    "source": {
+      "kind": "in-place",
+      "filename": "implementation-summary.md",
+      "mediaType": "text/markdown",
+      "sha256": "958e54e4dbcb633c0d07d846475690487eeb44db65d6391f06541f6c48a36ac4",
+      "bytes": 113492
+    },
+    "generation": 1,
+    "publishedAt": "2026-08-11T02:27:59.457Z"
+  },
+  "artifacts": [
+    {
+      "path": "singularity/work-items/WRK-1978/artifacts/implementation/implementation-summary.md",
+      "kind": "document",
+      "sha256": "7e2cfef2b903c88d33ab69601fde4d21170ab97617fb974e5f3bb1482f7547a9",
+      "size": 116505,
+      "reference": {
+        "handle": "sfref:v1:story:WRK-1978:2b42608d1e9fbb28e99450257f7b0b2b3ae088caf8403b6c66bc2c059621a57a",
+        "recordHash": "2b42608d1e9fbb28e99450257f7b0b2b3ae088caf8403b6c66bc2c059621a57a"
+      }
+    },
+    {
+      "path": "src/components/Display.jsx",
+      "kind": "code",
+      "sha256": "5f03c1d0683c26ff20d4cacde7e547c6202397bb03c85a18e0796767a62b5b90",
+      "size": 3430
+    },
+    {
+      "path": "src/components/FinancialCalculator.jsx",
+      "kind": "code",
+      "sha256": "657589607d5babd87dacfb8569acaf3ed639cfcbfcba7a7ecdb2955d94551890",
+      "size": 11121
+    },
+    {
+      "path": "src/components/FunctionGrapher.jsx",
+      "kind": "code",
+      "sha256": "b3a8f5a9efd46846b941e31ee8286efddecb0af18dad2a30a9768671931d8c48",
+      "size": 6962
+    },
+    {
+      "path": "src/components/Header.jsx",
+      "kind": "code",
+      "sha256": "d7d34675b07ba58299b96f6ac85414909e238163217b14f3b9b489c358b7f648",
+      "size": 6725
+    },
+    {
+      "path": "src/components/HistoryDrawer.jsx",
+      "kind": "code",
+      "sha256": "daa55e91e42c345304f5480ed4fe1726621a7b7e035ef801425a12e945fda5e9",
+      "size": 4203
+    },
+    {
+      "path": "src/components/KeyboardShortcutsModal.jsx",
+      "kind": "code",
+      "sha256": "752b9cf6d661cd5e894ce2ac1c0b90d5d9e599a51f8db8a8db812ca6bd8777cd",
+      "size": 2512
+    },
+    {
+      "path": "src/components/ScientificKeypad.jsx",
+      "kind": "code",
+      "sha256": "0b815e9330c470b02eda5e77836c6bcdbff6587219f8bfa9b559f28d85aa51a2",
+      "size": 4399
+    },
+    {
+      "path": "src/components/StandardKeypad.jsx",
+      "kind": "code",
+      "sha256": "1108f94a0c38cb364830d2ddf00e3f573be683be1b8b28e7808f3c3d93cde408",
+      "size": 6382
+    },
+    {
+      "path": "src/components/UnitConverter.jsx",
+      "kind": "code",
+      "sha256": "b6c56d4eeeb8cba8dc448446443ee5255a6f22e86fddbbe31d0224595ee7543e",
+      "size": 5167
+    },
+    {
+      "path": "src/index.css",
+      "kind": "code",
+      "sha256": "29815dd9264a94a36b96884a3b967750139c1cae177ef6ddc55920fe4392c7e6",
+      "size": 16856
+    }
+  ],
+  "references": [
+    {
+      "handle": "sfref:v1:story:WRK-1978:2b42608d1e9fbb28e99450257f7b0b2b3ae088caf8403b6c66bc2c059621a57a",
+      "recordHash": "2b42608d1e9fbb28e99450257f7b0b2b3ae088caf8403b6c66bc2c059621a57a",
+      "purpose": "review-evidence",
+      "required": true
+    }
+  ],
+  "checks": [],
+  "usage": [
+    {
+      "status": "unavailable",
+      "source": "copilot-otel-unavailable",
+      "provider": null,
+      "model": null,
+      "inputTokens": null,
+      "outputTokens": null,
+      "cachedInputTokens": null,
+      "cacheWriteInputTokens": null,
+      "totalTokens": null,
+      "providerCost": null,
+      "costStatus": "unavailable",
+      "spans": null,
+      "startedAt": "2026-08-11T02:27:59.457Z",
+      "completedAt": "2026-08-11T02:27:59.457Z",
+      "agent": "developer",
+      "generation": 1
+    }
+  ],
+  "approvals": [],
+  "visualAssurance": null,
+  "submittedAt": "2026-08-11T02:32:02.004Z",
+  "submittedBy": {
+    "name": "Ashok Raj",
+    "email": "88361104+ashokraj2011@users.noreply.github.com",
+    "login": "ashokraj2011"
+  },
+  "status": "awaiting_review",
+  "packetSha256": "80f66002e400567200cb2a289da09a203e338a6f4875b4e8a5ea5fcfb6dc6618"
+}

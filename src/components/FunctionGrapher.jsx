@@ -135,16 +135,16 @@ export const FunctionGrapher = ({ soundEnabled }) => {
   return (
     <div className="w-full flex flex-col gap-4 animate-fade-in p-1">
       {/* Controls & Input */}
-      <div className="bg-[var(--display-bg)] border border-[var(--card-border)] rounded-2xl p-4 flex flex-col gap-3">
+      <div className="glass-card p-4 flex flex-col gap-3">
         <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2">
-          <div className="flex-1 flex items-center bg-[var(--btn-num-bg)] border border-[var(--card-border)] rounded-xl px-3 py-2 font-mono">
-            <span className="text-[var(--text-accent)] font-bold mr-2 text-sm">f(x) =</span>
+          <div className="flex-1 flex items-center u-bg-btn-num-bg border u-border-card-border rounded-xl px-3 py-2 font-mono">
+            <span className="u-text-text-accent font-bold mr-2 text-sm">f(x) =</span>
             <input
               type="text"
               value={equation}
               onChange={(e) => setEquation(e.target.value)}
               placeholder="e.g. sin(x)"
-              className="bg-transparent border-none outline-none text-[var(--text-main)] w-full text-sm font-semibold"
+              className="bg-transparent border-none outline-none u-text-text-main w-full text-sm font-semibold"
             />
           </div>
 
@@ -155,7 +155,7 @@ export const FunctionGrapher = ({ soundEnabled }) => {
                 setScale((s) => Math.min(s * 1.25, 200));
               }}
               title="Zoom In"
-              className="p-2 rounded-xl bg-[var(--btn-func-bg)] border border-[var(--card-border)] text-[var(--text-main)] hover:bg-[var(--btn-func-hover)]"
+              className="calc-btn p-2 u-bg-btn-func-bg u-text-text-main u-hbg-btn-func-hover"
             >
               <ZoomIn className="w-4 h-4" />
             </button>
@@ -165,7 +165,7 @@ export const FunctionGrapher = ({ soundEnabled }) => {
                 setScale((s) => Math.max(s / 1.25, 10));
               }}
               title="Zoom Out"
-              className="p-2 rounded-xl bg-[var(--btn-func-bg)] border border-[var(--card-border)] text-[var(--text-main)] hover:bg-[var(--btn-func-hover)]"
+              className="calc-btn p-2 u-bg-btn-func-bg u-text-text-main u-hbg-btn-func-hover"
             >
               <ZoomOut className="w-4 h-4" />
             </button>
@@ -176,7 +176,7 @@ export const FunctionGrapher = ({ soundEnabled }) => {
                 setOffset({ x: 0, y: 0 });
               }}
               title="Reset View"
-              className="p-2 rounded-xl bg-[var(--btn-func-bg)] border border-[var(--card-border)] text-[var(--text-main)] hover:bg-[var(--btn-func-hover)]"
+              className="calc-btn p-2 u-bg-btn-func-bg u-text-text-main u-hbg-btn-func-hover"
             >
               <RotateCcw className="w-4 h-4" />
             </button>
@@ -185,7 +185,7 @@ export const FunctionGrapher = ({ soundEnabled }) => {
 
         {/* Preset Badges */}
         <div className="flex items-center gap-2 overflow-x-auto scrollbar-none py-1">
-          <span className="text-xs text-[var(--text-muted)] font-medium shrink-0">Presets:</span>
+          <span className="text-xs u-text-text-muted font-medium shrink-0">Presets:</span>
           {PRESETS.map((p) => (
             <button
               key={p.label}
@@ -193,7 +193,7 @@ export const FunctionGrapher = ({ soundEnabled }) => {
                 playSound('click', soundEnabled);
                 setEquation(p.expr);
               }}
-              className="px-2.5 py-1 rounded-lg bg-[var(--card-bg)] border border-[var(--card-border)] text-xs text-[var(--text-muted)] hover:text-[var(--text-accent)] hover:border-[var(--text-accent)] shrink-0 transition-colors"
+              className="calc-btn px-2.5 py-1 u-bg-card-bg text-xs u-text-text-muted u-htext-text-accent shrink-0"
             >
               {p.label}
             </button>
@@ -204,7 +204,7 @@ export const FunctionGrapher = ({ soundEnabled }) => {
       </div>
 
       {/* Interactive Canvas */}
-      <div className="w-full h-[280px] bg-[#050a14] border border-[var(--card-border)] rounded-2xl overflow-hidden shadow-inner relative">
+      <div className="glass-card w-full h-[280px] overflow-hidden relative">
         <canvas ref={canvasRef} className="w-full h-full block cursor-crosshair" />
       </div>
     </div>

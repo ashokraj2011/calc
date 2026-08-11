@@ -1,52 +1,42 @@
-> **Grounding** · calc @ `e9d82bcdfd4363c98e447b92108203f18828d6ff` · view: `security` · tier: `full`
-> **Generated** 09 August 2026 (2026-08-09T23:57:03Z) · depth: `quick` · builder `2.0`
+> **Grounding** · calc @ `08aa77072f09d6113acba4f1eb8db27786a97988` · view: `security` · tier: `full`
+> **Generated** 11 August 2026 (2026-08-11T05:43:13Z) · depth: `deep` · builder `2.0`
 > **Authoritative for:** file locations, entry points, commands, structural relationships as of the commit above.
 > **Not authoritative for:** current file contents. If this document conflicts with code you have read, trust the code and say so explicitly in your output.
 > **Unknowns are marked.** Do not resolve them by inference. If the repository has changed since the date above, treat locations as hints, not facts.
 
 ## TL;DR {#sec.tldr}
-
-The app is browser-only and does not implement authentication or server-side data handling. The main security concerns are client-side execution, local browser storage, and the fact that the calculator evaluator processes user input in the browser. The repo does not expose secrets, but the current design should be treated as a client-side trust boundary rather than a hardened server model.
+The repository is a browser-only calculator app with a small attack surface. The main security concerns are client-side state manipulation via `localStorage`, clipboard writes, and optional audio feedback; there is no authentication, backend, or secret handling path. The app does not include a network client or process execution, so the most relevant controls are input validation, safe rendering of user input, and careful handling of browser APIs. The repo also does not currently include dedicated security tests.
 
 ## Facts {#sec.facts}
-
 ```yaml
-components: [calculator-shell, calculator-ui, calculator-engine]
-entrypoints:
-  - { id: entry-app-shell, path: src/App.jsx, line: 14, invocation: "App component" }
-key_symbols:
-  - { name: evaluateExpression, path: src/utils/evaluator.js, line: 4, role: "sanitizes and evaluates expressions" }
-commands:
-  - { command: "npm run build", purpose: "build the app", source: "package.json:6-10" }
-hotspots:
-  - { path: src/utils/evaluator.js, reason: "executes user-entered math expressions client-side" }
-  - { path: src/App.jsx, reason: "persists theme/history/sound state in browser storage" }
+surface:
+  - { area: browser state, path: src/App.jsx, risk: localStorage persistence }
+  - { area: clipboard access, path: src/components/Display.jsx, risk: navigator.clipboard }
+  - { area: web audio, path: src/utils/audio.js, risk: browser API usage }
+  - { area: math expression evaluation, path: src/utils/evaluator.js, risk: untrusted input must stay contained }
+controls:
+  - { control: structured evaluator return values, path: src/utils/evaluator.js, status: observed }
+  - { control: guarded audio context creation, path: src/utils/audio.js, status: observed }
+  - { control: localStorage parse error handling, path: src/App.jsx, status: observed }
 ```
 
-## Trust boundaries {#sec.trust}
+## Security surface {#sec.surface}
+- The app stores history, theme, and sound settings in `localStorage`; there is no server-side secret or token handling. Evidence: `src/App.jsx:23-34`.
+- The display component writes copied results to the clipboard via `navigator.clipboard.writeText`; the code does not appear to sanitize or validate the value beyond using the current result or expression. Evidence: `src/components/Display.jsx:17-24`.
+- The audio utility creates a Web Audio context and synthesizes tones; it is not a network or command-execution path. Evidence: `src/utils/audio.js:18-107`.
+- The evaluator consumes user-entered mathematical expressions and returns a structured error result instead of executing arbitrary code. Evidence: `src/utils/evaluator.js:4-54`.
 
-The key trust boundary is between user-entered text in the browser and the `mathjs` evaluator. The app does not call a backend or authenticate users, so there is no remote authorization boundary to review. The main risk is that any code path that evaluates user input in the browser could become an XSS or script-execution issue if it is broadened later.
-
-## Secrets and configuration {#sec.config}
-
-No API keys, tokens, or secret values were found in the source tree. The repository uses `localStorage` keys such as `apex_theme`, `apex_sound`, and `apex_history`, but these are not secrets. The current implementation does not load secrets from environment variables.
-
-## Input handling and execution {#sec.input}
-
-The evaluator module sanitizes expressions by replacing calculator symbols with `mathjs` equivalents and by handling percentages, factorials, and angle units. That is a useful guardrail, but it is still client-side evaluation of arbitrary expressions. The app should be treated as a limited execution environment rather than a general-purpose scripting sandbox.
-
-## Client-side storage and privacy {#sec.storage}
-
-The app stores theme, sound, and history data in the browser via `localStorage` in `src/App.jsx`. This data is not transmitted to a backend in the code inspected here, but it remains available to any script running in the browser context. The repository does not include a privacy policy or data retention model.
+## Main controls and assumptions {#sec.controls}
+- The evaluator sanitizes common operators and constants before passing input to `mathjs`; this reduces the risk of malformed expressions reaching the parser. Evidence: `src/utils/evaluator.js:8-32`.
+- The app guards `localStorage` reads with a `try/catch` and falls back to an empty history list if parsing fails. Evidence: `src/App.jsx:28-34`.
+- The audio utility catches browser restrictions and exits gracefully if the API is unavailable. Evidence: `src/utils/audio.js:102-107`.
+- The repo has no authentication, authorization, or secret-loading mechanism to review. The main risk is not a server-side breach but an untested client-side failure mode.
 
 ## Security tests and gaps {#sec.tests}
-
-The repository has no dedicated security tests. The only executed validation was the production build, which succeeded; no security-specific test suite was run. The most significant remaining gap is the absence of hardening or regression tests around expression sanitization and browser-storage handling.
+No dedicated security tests were observed. The existing tests focus on calculator behavior and build output rather than browser API abuse, clipboard safety, or persisted state tampering. Evidence: `src/App.test.jsx:1-200`, `src/utils/evaluator.test.js:1-75`.
 
 ## Where to start {#sec.start}
-
-Start with `src/utils/evaluator.js` for expression handling and `src/App.jsx` for persistence and UI state. Review `src/index.css` only if the change affects styling rather than trust boundaries.
+For a security review, start at `src/utils/evaluator.js` for input handling, `src/App.jsx` for persisted state and browser storage, and `src/components/Display.jsx` for clipboard interaction. If the app grows a backend or network layer, re-evaluate the threat model.
 
 ## Questions this view does not answer {#sec.limits}
-
-This view does not evaluate third-party dependency risk beyond the files inspected. It also does not assess runtime infrastructure because the app has no server component in this repository.
+This view does not review network endpoints or backend services because the repository does not contain them. It also does not assess deployment infrastructure or container hardening, which are absent here.

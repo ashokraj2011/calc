@@ -19,18 +19,18 @@ export const KeyboardShortcutsModal = ({ isOpen, onClose, soundEnabled }) => {
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-fade-in">
-      <div className="w-full max-w-md bg-[var(--card-bg)] border border-[var(--card-border)] rounded-2xl p-6 flex flex-col gap-4 shadow-2xl backdrop-blur-xl">
-        <div className="flex items-center justify-between pb-3 border-b border-[var(--card-border)]">
+      <div className="glass-card w-full max-w-md p-6 flex flex-col gap-4">
+        <div className="flex items-center justify-between pb-3 border-b u-border-card-border">
           <div className="flex items-center gap-2">
-            <KeyboardIcon className="w-5 h-5 text-[var(--text-accent)]" />
-            <h3 className="font-bold text-lg text-[var(--text-main)]">Keyboard Shortcuts</h3>
+            <KeyboardIcon className="w-5 h-5 u-text-text-accent" />
+            <h3 className="font-bold text-lg u-text-text-main">Keyboard Shortcuts</h3>
           </div>
           <button
             onClick={() => {
               playSound('click', soundEnabled);
               onClose();
             }}
-            className="p-1.5 rounded-xl hover:bg-[var(--btn-func-bg)] text-[var(--text-muted)] hover:text-[var(--text-main)] transition-colors"
+            className="calc-btn p-1.5 u-hbg-btn-func-bg u-text-text-muted u-htext-text-main"
           >
             <X className="w-4 h-4" />
           </button>
@@ -40,12 +40,12 @@ export const KeyboardShortcutsModal = ({ isOpen, onClose, soundEnabled }) => {
           {shortcuts.map((sc, i) => (
             <div
               key={i}
-              className="flex items-center justify-between p-2.5 rounded-xl bg-[var(--display-bg)] border border-[var(--card-border)] text-xs"
+              className="calculator-display flex items-center justify-between text-xs"
             >
-              <kbd className="px-2.5 py-1 rounded-lg bg-[var(--btn-func-bg)] font-mono font-bold text-[var(--text-accent)] border border-[var(--card-border)]">
+              <kbd className="px-2.5 py-1 rounded-lg u-bg-btn-func-bg font-mono font-bold u-text-text-accent border u-border-card-border">
                 {sc.key}
               </kbd>
-              <span className="text-[var(--text-muted)] font-medium">{sc.desc}</span>
+              <span className="u-text-text-muted font-medium">{sc.desc}</span>
             </div>
           ))}
         </div>
@@ -55,7 +55,7 @@ export const KeyboardShortcutsModal = ({ isOpen, onClose, soundEnabled }) => {
             playSound('click', soundEnabled);
             onClose();
           }}
-          className="w-full py-2.5 rounded-xl bg-[var(--btn-eq-bg)] text-[var(--btn-eq-text)] font-bold text-sm hover:bg-[var(--btn-eq-hover)] transition-all shadow-md mt-2"
+          className="calc-btn w-full py-2.5 u-bg-btn-eq-bg u-text-btn-eq-text font-bold text-sm u-hbg-btn-eq-hover mt-2"
         >
           Got it
         </button>

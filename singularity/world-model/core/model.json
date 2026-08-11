@@ -1,19 +1,20 @@
 {
   "schema_version": "2.0",
-  "generated_at": "2026-08-09T23:57:03Z",
-  "generated_date": "09 August 2026",
+  "generated_at": "2026-08-11T05:43:13Z",
+  "generated_date": "11 August 2026",
   "builder_version": "2.0",
   "builder_prompt_sha256": "unknown",
-  "analysis_depth": "quick",
+  "analysis_depth": "deep",
   "repository": {
     "name": "calc",
-    "root": "/private/var/folders/_j/yp8zv9w91rd44ymrzfpd_kcw0000gn/T/singularity-flow-world-model-XrWlc9/repository",
-    "branch": "WRK-890",
-    "commit": "e9d82bcdfd4363c98e447b92108203f18828d6ff",
+    "root": "/private/var/folders/_j/yp8zv9w91rd44ymrzfpd_kcw0000gn/T/singularity-flow-world-model-PB6291/repository",
+    "branch": "HEAD",
+    "commit": "08aa77072f09d6113acba4f1eb8db27786a97988",
     "working_tree_clean": false,
     "repository_kind": "application",
     "languages": [
       "JavaScript",
+      "JSX",
       "CSS",
       "HTML"
     ],
@@ -22,59 +23,43 @@
     ]
   },
   "purpose": {
-    "summary": "A single-page calculator web app with standard, scientific, converter, financial, and grapher modes built with React and Vite.",
+    "summary": "A React/Vite calculator app with standard, scientific, converter, financial, and grapher modes.",
     "status": "observed",
     "confidence": "high",
     "evidence_ids": [
-      "ev:repo-purpose",
-      "ev:app-shell"
+      "E-001",
+      "E-003"
     ]
   },
   "components": [
     {
-      "id": "calculator-shell",
-      "name": "Calculator shell",
+      "id": "app-shell",
+      "name": "App shell",
       "kind": "application",
-      "purpose": "Owns shared calculator state, mode routing, history, and modal interactions.",
+      "purpose": "Owns shared state, mode routing, history, and local persistence.",
       "paths": [
         "src/App.jsx"
       ],
       "depends_on": [
+        "calculator-engine",
         "calculator-ui",
-        "calculator-engine"
+        "audio-feedback"
       ],
       "entrypoint_ids": [
-        "entry-main",
-        "entry-app-shell"
+        "app-bootstrap",
+        "app-shell"
       ],
       "confidence": "high",
       "evidence_ids": [
-        "ev:app-shell"
-      ]
-    },
-    {
-      "id": "calculator-ui",
-      "name": "Calculator UI components",
-      "kind": "frontend",
-      "purpose": "Renders display, keypads, financial and grapher panes, and header controls.",
-      "paths": [
-        "src/components"
-      ],
-      "depends_on": [
-        "calculator-shell",
-        "calculator-theme"
-      ],
-      "entrypoint_ids": [],
-      "confidence": "high",
-      "evidence_ids": [
-        "ev:ui-components"
+        "E-001",
+        "E-003"
       ]
     },
     {
       "id": "calculator-engine",
       "name": "Calculator engine",
       "kind": "library",
-      "purpose": "Evaluates arithmetic and scientific expressions and provides financial/unit helpers.",
+      "purpose": "Provides math evaluation, formatting, conversion, and finance helpers.",
       "paths": [
         "src/utils/evaluator.js"
       ],
@@ -82,81 +67,132 @@
       "entrypoint_ids": [],
       "confidence": "high",
       "evidence_ids": [
-        "ev:evaluator"
+        "E-002"
       ]
     },
     {
-      "id": "calculator-theme",
-      "name": "Calculator theme system",
-      "kind": "tooling",
-      "purpose": "Defines shared CSS tokens and the classic/default visual appearance.",
+      "id": "calculator-ui",
+      "name": "Calculator UI modules",
+      "kind": "frontend",
+      "purpose": "Provides mode-specific views and interaction surfaces.",
       "paths": [
-        "src/index.css"
+        "src/components"
+      ],
+      "depends_on": [
+        "app-shell",
+        "calculator-engine",
+        "audio-feedback"
+      ],
+      "entrypoint_ids": [],
+      "confidence": "high",
+      "evidence_ids": [
+        "E-003"
+      ]
+    },
+    {
+      "id": "audio-feedback",
+      "name": "Audio feedback",
+      "kind": "tooling",
+      "purpose": "Provides optional browser audio feedback for interactions.",
+      "paths": [
+        "src/utils/audio.js"
       ],
       "depends_on": [],
       "entrypoint_ids": [],
       "confidence": "high",
       "evidence_ids": [
-        "ev:theme-system"
+        "E-008"
+      ]
+    },
+    {
+      "id": "test-suite",
+      "name": "Test suite",
+      "kind": "tooling",
+      "purpose": "Covers UI regressions, evaluator semantics, and build output.",
+      "paths": [
+        "src/App.test.jsx",
+        "src/utils/evaluator.test.js",
+        "src/build.test.js"
+      ],
+      "depends_on": [
+        "app-shell",
+        "calculator-engine"
+      ],
+      "entrypoint_ids": [],
+      "confidence": "high",
+      "evidence_ids": [
+        "E-004"
       ]
     }
   ],
   "entrypoints": [
     {
-      "id": "entry-main",
-      "name": "Application bootstrap",
+      "id": "app-bootstrap",
+      "name": "React bootstrap",
       "kind": "frontend",
-      "location": "src/main.jsx:1-10",
-      "invocation": "ReactDOM createRoot",
-      "component_id": "calculator-shell",
+      "location": "src/main.jsx:1-8",
+      "invocation": "Vite app entry",
+      "component_id": "app-shell",
       "evidence_ids": [
-        "ev:entrypoints"
+        "E-001"
       ]
     },
     {
-      "id": "entry-app-shell",
-      "name": "Calculator shell",
+      "id": "app-shell",
+      "name": "App shell",
       "kind": "frontend",
       "location": "src/App.jsx:14-324",
-      "invocation": "App component",
-      "component_id": "calculator-shell",
+      "invocation": "calculator mode orchestrator",
+      "component_id": "app-shell",
       "evidence_ids": [
-        "ev:app-shell"
+        "E-001",
+        "E-003"
       ]
     }
   ],
   "standard_commands": [
     {
-      "command": "npm run dev",
-      "purpose": "Start the Vite development server",
-      "source": "package.json:6-10"
+      "command": "npm ci",
+      "purpose": "install dependencies",
+      "source": "package.json:1-35"
+    },
+    {
+      "command": "npm test",
+      "purpose": "run Vitest suite",
+      "source": "package.json:11"
     },
     {
       "command": "npm run build",
-      "purpose": "Create a production bundle",
-      "source": "package.json:6-10"
+      "purpose": "build production bundle",
+      "source": "package.json:8"
     },
     {
       "command": "npm run lint",
-      "purpose": "Run ESLint",
-      "source": "package.json:6-10"
+      "purpose": "run ESLint",
+      "source": "package.json:9"
     }
   ],
   "risks": [
-    "Visual styling and shared UI tokens are reused across many components, so appearance changes can ripple.",
-    "The app relies on browser-side localStorage and client-side evaluation, which creates UX and safety considerations.",
-    "The working tree is not clean due to deleted tracked workflow artifacts."
+    "Cross-mode state changes can ripple across many components.",
+    "The lint baseline is currently not clean.",
+    "The app is browser-only and has no backend or deployment pipeline in the repository."
   ],
   "unknowns": [
-    "No automated UI or unit tests are present in the repository.",
-    "No deployment or release workflow is defined in the source tree.",
-    "No explicit design-system documentation exists for the calculator UI."
+    "No deployment or rollback process is defined in source.",
+    "No dedicated security or accessibility test suite exists."
   ],
   "available_views": [
     "core",
     "architecture",
     "development",
-    "security",
-    "testing"
+    "testing",
+    "security"
+  ],
+  "views_generated": [
+    "core",
+    "architecture",
+    "development",
+    "testing",
+    "security"
   ]
 }

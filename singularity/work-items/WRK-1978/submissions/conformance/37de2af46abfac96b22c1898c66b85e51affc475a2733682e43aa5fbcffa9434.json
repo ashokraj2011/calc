@@ -1,0 +1,141 @@
+{
+  "schemaVersion": 1,
+  "workId": "WRK-1978",
+  "epicId": null,
+  "planId": null,
+  "jiraIssueId": "WRK-1978",
+  "initialJiraKey": null,
+  "currentJiraKey": null,
+  "canonicalBranch": "WRK-1978",
+  "submittedBranch": "WRK-1978",
+  "submissionCommit": "9834be40e23c5cd18488ba650260d7220074dde4",
+  "sourceCommit": "9834be40e23c5cd18488ba650260d7220074dde4",
+  "sourceTreeSha256": "sha256:b6b482b44ab443ea8b90d2b5f3620c43b2dadf2b23cfe26757bd94d47b0e2a9e",
+  "phase": "conformance",
+  "generation": 2,
+  "authorship": {
+    "schemaVersion": 1,
+    "producer": "governed-agent",
+    "channel": "copilot-host",
+    "actor": {
+      "name": "Ashok Raj",
+      "email": "88361104+ashokraj2011@users.noreply.github.com",
+      "login": "ashokraj2011"
+    },
+    "governedAgentContext": {
+      "agentId": "qa"
+    },
+    "kernelModel": {
+      "invoked": false,
+      "status": "exact",
+      "invocationIds": []
+    },
+    "externalAiUse": {
+      "value": "unknown",
+      "status": "unavailable"
+    },
+    "source": {
+      "kind": "in-place",
+      "filename": "spec-code-comparison.md",
+      "mediaType": "text/markdown",
+      "sha256": "9ca93fcecf7fe58f2dd30781f3282a2001f1ad2f6f039d590d406f9c7fdaf319",
+      "bytes": 432292
+    },
+    "generation": 2,
+    "publishedAt": "2026-08-11T06:00:58.321Z"
+  },
+  "artifacts": [
+    {
+      "path": "singularity/work-items/WRK-1978/artifacts/conformance/spec-code-comparison.md",
+      "kind": "conformance-report",
+      "sha256": "5de1ffbb251ba09789696d40a6627778319dd704ccf3829c47e86ce0cbc4ae36",
+      "size": 437930,
+      "reference": {
+        "handle": "sfref:v1:story:WRK-1978:745fc285cc0ecd6f7ac95c058924a575f66aabd83a24a6ddb28ef9b50eb97625",
+        "recordHash": "745fc285cc0ecd6f7ac95c058924a575f66aabd83a24a6ddb28ef9b50eb97625"
+      }
+    }
+  ],
+  "references": [
+    {
+      "handle": "sfref:v1:story:WRK-1978:745fc285cc0ecd6f7ac95c058924a575f66aabd83a24a6ddb28ef9b50eb97625",
+      "recordHash": "745fc285cc0ecd6f7ac95c058924a575f66aabd83a24a6ddb28ef9b50eb97625",
+      "purpose": "review-evidence",
+      "required": true
+    }
+  ],
+  "checks": [],
+  "usage": [
+    {
+      "status": "unavailable",
+      "source": "copilot-otel-unavailable",
+      "provider": null,
+      "model": null,
+      "inputTokens": null,
+      "outputTokens": null,
+      "cachedInputTokens": null,
+      "cacheWriteInputTokens": null,
+      "totalTokens": null,
+      "providerCost": null,
+      "costStatus": "unavailable",
+      "spans": null,
+      "startedAt": "2026-08-11T04:52:00.134Z",
+      "completedAt": "2026-08-11T04:52:00.134Z",
+      "agent": "qa",
+      "generation": 1
+    },
+    {
+      "status": "unavailable",
+      "source": "copilot-otel-unavailable",
+      "provider": null,
+      "model": null,
+      "inputTokens": null,
+      "outputTokens": null,
+      "cachedInputTokens": null,
+      "cacheWriteInputTokens": null,
+      "totalTokens": null,
+      "providerCost": null,
+      "costStatus": "unavailable",
+      "spans": null,
+      "startedAt": "2026-08-11T06:00:58.321Z",
+      "completedAt": "2026-08-11T06:00:58.321Z",
+      "agent": "qa",
+      "generation": 2
+    }
+  ],
+  "approvals": [
+    {
+      "decision": "reopened",
+      "phase": "conformance",
+      "target": "conformance",
+      "reason": "Added Vitest test suite tagged @ac:AC-001..AC-005 for terminal gate; conformance report needs to reflect new source/test tree",
+      "changeRequestId": "CR-001",
+      "at": "2026-08-11T05:10:20.118Z",
+      "actor": {
+        "name": "Ashok Raj",
+        "email": "88361104+ashokraj2011@users.noreply.github.com",
+        "login": "ashokraj2011"
+      },
+      "agent": "qa",
+      "authorityGroup": "quality-reviewers",
+      "identityAssurance": "configured-local",
+      "channel": "terminal",
+      "generation": 1,
+      "artifactSha256": [
+        {
+          "path": "singularity/work-items/WRK-1978/artifacts/conformance/spec-code-comparison.md",
+          "sha256": "020e36ef478a0502252ea97dbeba01b3e99fbc0f82fb7b9a7692b45850ae67d4"
+        }
+      ]
+    }
+  ],
+  "visualAssurance": null,
+  "submittedAt": "2026-08-11T06:01:44.371Z",
+  "submittedBy": {
+    "name": "Ashok Raj",
+    "email": "88361104+ashokraj2011@users.noreply.github.com",
+    "login": "ashokraj2011"
+  },
+  "status": "awaiting_review",
+  "packetSha256": "37de2af46abfac96b22c1898c66b85e51affc475a2733682e43aa5fbcffa9434"
+}

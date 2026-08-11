@@ -1,0 +1,620 @@
+<!-- singularity-flow:metadata
+{
+  "schemaVersion": 1,
+  "workId": "WRK-1978",
+  "workType": "feature",
+  "phase": "design",
+  "generation": 1,
+  "status": "approved",
+  "generatedBy": {
+    "name": "Ashok Raj",
+    "email": "88361104+ashokraj2011@users.noreply.github.com",
+    "login": "ashokraj2011"
+  },
+  "generatedAgent": "product-owner",
+  "authorship": {
+    "schemaVersion": 1,
+    "producer": "governed-agent",
+    "channel": "copilot-host",
+    "actor": {
+      "name": "Ashok Raj",
+      "email": "88361104+ashokraj2011@users.noreply.github.com",
+      "login": "ashokraj2011"
+    },
+    "governedAgentContext": {
+      "agentId": "product-owner"
+    },
+    "kernelModel": {
+      "invoked": false,
+      "status": "exact",
+      "invocationIds": []
+    },
+    "externalAiUse": {
+      "value": "unknown",
+      "status": "unavailable"
+    },
+    "source": {
+      "kind": "in-place",
+      "filename": "design.md",
+      "mediaType": "text/markdown",
+      "sha256": "867b48ea7f4a91dda28f6482c384bafda2d31fd1a9f754391871068147fc64d4",
+      "bytes": 29795
+    },
+    "generation": 1,
+    "publishedAt": "2026-08-11T00:11:09.908Z"
+  },
+  "sourceCommit": "55ab574d7d2e75d1ea40824b8cfaecb17a688a42",
+  "generationCommit": "776db5e72a21e9cf00295773676e4e474f1588ab",
+  "publicationCommit": "776db5e72a21e9cf00295773676e4e474f1588ab",
+  "configSha256": "c71e8d4583a4303c75561c44902b837971681f740cc7025f9b55cb997589424f",
+  "sourceSha256": "4e44848b5ace267968bed14bdb47c521769134cacd3d29c03fb325271f373786",
+  "template": {
+    "path": "singularity/templates/feature/design.md",
+    "sha256": "8b7455f464a7025efa92942c272a04e3c0a3ab2a4d3eb438703cc14e230bc856"
+  },
+  "inputs": {
+    "generation": 1,
+    "path": "singularity/work-items/WRK-1978/context/inputs-design-gen1.json",
+    "sha256": "6440f9b71115fe490601c1a314db9d6685df86ec63b83b6abe78763a9497c56c",
+    "renderedSha256": "8c269b41ed26d1fb882c09faf111aff71c60019372e3e00f174e7d42921510b4",
+    "mode": "enforce"
+  },
+  "designSources": {
+    "sets": [],
+    "approved": null
+  },
+  "remoteAgent": null,
+  "clarification": null,
+  "telemetry": [
+    {
+      "generation": 1,
+      "path": "singularity/work-items/WRK-1978/telemetry/design-gen1.json",
+      "sha256": "1034558f141f5c5f034e50383dcddc8bfbd560d6d623f686fd3864a1a0ef22d7",
+      "status": "pending",
+      "models": [],
+      "providerCost": null
+    }
+  ],
+  "remoteOutputs": [],
+  "usage": [
+    {
+      "status": "unavailable",
+      "source": "copilot-otel-unavailable",
+      "provider": null,
+      "model": null,
+      "inputTokens": null,
+      "outputTokens": null,
+      "cachedInputTokens": null,
+      "cacheWriteInputTokens": null,
+      "totalTokens": null,
+      "providerCost": null,
+      "costStatus": "unavailable",
+      "spans": null,
+      "startedAt": "2026-08-11T00:11:09.908Z",
+      "completedAt": "2026-08-11T00:11:09.908Z",
+      "agent": "product-owner",
+      "generation": 1
+    }
+  ],
+  "sequenceOverrides": [],
+  "approvals": [
+    {
+      "decision": "approved",
+      "phase": "design",
+      "at": "2026-08-11T00:15:56.434Z",
+      "actor": {
+        "name": "Ashok Raj",
+        "email": "88361104+ashokraj2011@users.noreply.github.com",
+        "login": "ashokraj2011"
+      },
+      "agent": "architect",
+      "authorityGroup": "architecture-reviewers",
+      "identityAssurance": "configured-local",
+      "channel": "copilot-selection-receipt",
+      "generation": 1,
+      "artifactSha256": [
+        {
+          "path": "singularity/work-items/WRK-1978/artifacts/design/design.md",
+          "sha256": "ad96df801a5b9334449c06c0ca473e2c8062433409114d56915c603bcab5fe75"
+        }
+      ],
+      "reviewPacketSha256": "f3eaeef8a26fe7b6cc9859627f9084be3f9a1a12adf5362f42d408a3348c88b8",
+      "actionContext": {
+        "phase": "design",
+        "label": "Architecture and design",
+        "generation": 1,
+        "submittedAt": "2026-08-11T00:12:55.554Z",
+        "artifacts": [
+          {
+            "path": "singularity/work-items/WRK-1978/artifacts/design/design.md",
+            "sha256": "ad96df801a5b9334449c06c0ca473e2c8062433409114d56915c603bcab5fe75"
+          }
+        ],
+        "reviewPacketSha256": "f3eaeef8a26fe7b6cc9859627f9084be3f9a1a12adf5362f42d408a3348c88b8",
+        "submittedSourceCommit": "776db5e72a21e9cf00295773676e4e474f1588ab",
+        "planId": "806976bb4fb625b88f0e16d4"
+      },
+      "selfApproval": true
+    }
+  ],
+  "selfApproval": true,
+  "conformanceTree": null
+}
+-->
+
+# WRK-1978 — Architecture and Design
+
+## Context and constraints
+
+The approved requirements call for restyling the app to look like Microsoft's Windows 11 Calculator (Fluent Design), applied literally to Standard/Scientific layout and button grid, applied via shared tokens to Unit Converter/Financial Calculator/Function Grapher, in both light and dark themes, fully responsive at desktop and mobile widths, with no change to calculation semantics or existing features. [WRK-1978:REQ-001] [WRK-1978:REQ-002] [WRK-1978:AC-001] [WRK-1978:AC-002] [WRK-1978:AC-003] [WRK-1978:AC-004] [WRK-1978:AC-005]
+
+Current architecture (observed in `src/App.jsx`, `src/components/`, `src/index.css`):
+- The app is a single-page, client-only React app with no backend/API (per the repository architecture view). `App.jsx` owns all calculator state (expression, result, history, memory, angle unit, theme, sound) and mode routing (`activeMode`), and passes handlers down as props to `Header`, `Display`, `StandardKeypad`, `ScientificKeypad`, `UnitConverter`, `FinancialCalculator`, `FunctionGrapher`, `HistoryDrawer`, and `KeyboardShortcutsModal`.
+- Theming is already implemented as a token-swap mechanism: `App.jsx` sets `document.documentElement.setAttribute('data-theme', theme)` and persists the choice to `localStorage` (`apex_theme`). `src/index.css` defines six themes (`classic` default, `midnight`, `cyberpunk`, `terminal`, `pastel`, `light`) as `[data-theme='...']` blocks of CSS custom properties (`--bg-primary`, `--card-bg`, `--card-border`, `--text-main/muted/accent`, `--display-bg/border`, `--btn-num-*`, `--btn-op-*`, `--btn-func-*`, `--btn-eq-*`, `--active-indicator`, `--shadow-main`, `--glass-blur`). Components consume these exclusively via `var(--token)` in Tailwind-style utility classes — there are no hard-coded per-component colors for the themeable surfaces.
+- `Header.jsx` maintains its own `THEMES` array (id/name pairs shown in a `<select>`) and a `MODES` array (id/name/icon) rendered as tab buttons; adding a new theme is additive — one new token block in `index.css` plus one new entry in `THEMES`.
+- Shared visual primitives: `.calc-btn` (button base: border, radius, shadow, hover/active transforms), `.glass-card` (outer container), `.calculator-display` (display panel chrome) are defined once in `index.css` and reused across modes.
+- `src/utils/evaluator.js` is fully isolated from styling and is out of scope; the security view confirms the only trust boundary (user expression input → evaluator) is unaffected by this change.
+- Constraint for this phase: `writeScope` for `design` is `artifact-only` — this document defines architecture and structure; no source code is changed here. Detailed component-level specifics are deferred to `implementation-spec`.
+
+## Proposed design
+
+**Token layer (additive, all modes):** Add two new theme entries, `win11-light` and `win11-dark`, as new `[data-theme='win11-light']` / `[data-theme='win11-dark']` blocks in `src/index.css`, following the exact same custom-property contract as the existing six themes, plus two new entries in `Header.jsx`'s `THEMES` array. This requires zero changes to `App.jsx` state logic, the existing theme-switch mechanism, or `localStorage` persistence — it is a pure extension of the existing pattern. New Fluent-specific values needed within that contract: Windows 11 accent-blue based `--btn-op-bg`/`--active-indicator`, smaller corner radii for controls (Windows 11 uses ~4–8px on buttons vs. the current 12px `.calc-btn` and 28px `.glass-card`), a flatter `--shadow-main` (Windows 11 elevation is subtle, not the current warm drop-shadow), and a Segoe UI Variable-style font stack fallback (`"Segoe UI Variable", "Segoe UI", system-ui, sans-serif` — an approximation, since the actual Microsoft font cannot be bundled; this must be documented as a substitution, not a literal asset match).
+
+**Standard and Scientific modes (literal recreation, `StandardKeypad.jsx` / `ScientificKeypad.jsx` / `Header.jsx` / `Display.jsx`):**
+- Button grid: restructure the 4-column grid so memory keys (`MC`/`MR`/`M+`/`M-`) sit in a slim horizontal strip docked above the main keypad (matching Windows 11 Calculator's memory row placement) rather than occupying the first grid row as a peer of digit/operator keys. The digit/operator/equals grid itself becomes a uniform 4-column grid of squarer, evenly sized tiles with a single accent-colored equals key, mirroring Windows 11's button proportions and outline style (thin border, no heavy gradients).
+- Navigation: Windows 11 Calculator itself uses a hamburger-triggered `NavigationView` panel to switch modes rather than a tab strip. To reconcile that pattern with this app's existing five-mode architecture (which has no Windows 11 equivalent), `Header.jsx`'s mode tabs are restyled as a Fluent-style navigation affordance: a slide-out panel/list at desktop widths and a compact dropdown at narrow/mobile widths, satisfying the full-responsiveness requirement. [WRK-1978:AC-004]
+- `Display.jsx` keeps its existing two-line structure (small expression line, large bold result line) since it already matches Windows 11's display layout pattern; changes here are limited to spacing, corner radius, and token values, not DOM restructuring.
+
+**Unit Converter, Financial Calculator, Function Grapher (`UnitConverter.jsx`, `FinancialCalculator.jsx`, `FunctionGrapher.jsx`):** These have no native Windows 11 Calculator equivalent, so per the approved acceptance criteria they inherit the same Fluent tokens and shared primitives (`.calc-btn`, `.glass-card`, `.calculator-display`) for visual consistency, without a mandated layout restructuring. [WRK-1978:AC-002]
+
+**State and contracts:** No changes to `App.jsx` handler contracts (`onDigit`, `onOperator`, `onEquals`, `onMemory`, `onNegate`, `onPercent`, `onBackspace`, `onClear`) or to `evaluateExpression`/`formatNumber` in `evaluator.js`. Any new presentational props needed to support the restructured keypad/navigation layout (e.g., a layout-variant flag) are additive and scoped for `implementation-spec`, not finalized structurally in this document.
+
+**Theme selection UX:** `win11-light` and `win11-dark` become two additional selectable entries in the existing theme dropdown (not a separate light/dark toggle control), keeping the interaction model consistent with the app's current single-dropdown theme picker.
+
+## Security, observability, migration, and rollback
+
+**Security:** No security-relevant boundary changes. This is a presentation-layer-only change; the sole trust boundary identified in the repository's security view (browser-side user expression input into `evaluateExpression`) is untouched, and no new external dependencies process user input as part of this change.
+
+**Observability:** The repository has no existing telemetry/analytics instrumentation; this phase does not introduce any. Verification remains manual visual review across all five modes and both new themes, plus a successful `npm run build` per acceptance criteria. [WRK-1978:AC-005]
+
+**Migration/compatibility:** Additive only — existing `localStorage` theme values (`classic`, `midnight`, `cyberpunk`, `terminal`, `pastel`, `light`) remain valid and unaffected; users keep their current theme unless they explicitly select `win11-light` or `win11-dark`. No stored-data migration is required. No existing theme keys, CSS custom-property names, or component props are removed or renamed.
+
+**Rollback:** Because the change adds new theme blocks/entries and a keypad/navigation layout variant rather than replacing existing ones, rollback is a straightforward revert of the new CSS theme blocks, the two new `THEMES` entries, and any keypad/navigation layout conditional — no persisted-data rollback is needed since existing theme values remain valid throughout.
+
+## Alternatives and decisions
+
+**Alternative A — Token-only reskin** (change only CSS custom-property values within the current DOM structure, no keypad/navigation restructuring): Rejected as the sole approach because the approved acceptance criteria explicitly require a literal recreation of Windows 11 Calculator's layout and button grid for Standard/Scientific modes, not just a color/typography pass. [WRK-1978:AC-001]
+
+**Alternative B — Replace the existing multi-theme system with a single hardcoded Windows 11 style**, removing `classic`/`midnight`/`cyberpunk`/`terminal`/`pastel`/`light`: Rejected because the approved requirements do not ask for removal of existing themes, and replacing the theme system outright would be a larger, less reversible change than adding new theme entries alongside the existing ones, increasing regression risk without a corresponding requirement.
+
+**Decision:** Add `win11-light`/`win11-dark` as new, additive entries in the existing theme-token system, and restructure `StandardKeypad`/`ScientificKeypad`/`Header` navigation to mirror Windows 11 Calculator's button grid and navigation pattern, while restyling Unit Converter/Financial Calculator/Function Grapher via shared tokens only (matching the more relaxed fidelity bar the requirements set for those modes). This keeps the change additive, reversible, and consistent with the existing architecture, and is traceable to [WRK-1978:REQ-001], [WRK-1978:REQ-002], and [WRK-1978:AC-001] through [WRK-1978:AC-005].
+
+**Deferred to implementation-spec (not blocking this phase):** exact grid line counts and pixel/token values for the new themes, whether the memory row renders as an inline strip or a slide-out panel, and the precise breakpoints for the desktop navigation panel vs. mobile dropdown.
+
+<!-- singularity-flow:inputs:start -->
+
+# Approved phase inputs
+
+## Approved phase input: requirements
+
+<!-- source=artifacts/requirements/requirements.md sha256=ab21c30d64ab5306d05a03ce32f81c0ff55a74e9e5b0ca2dba010dc6df5b883b status=captured -->
+
+<!-- singularity-flow:metadata
+{
+  "schemaVersion": 1,
+  "workId": "WRK-1978",
+  "workType": "feature",
+  "phase": "requirements",
+  "generation": 1,
+  "status": "approved",
+  "generatedBy": {
+    "name": "Ashok Raj",
+    "email": "88361104+ashokraj2011@users.noreply.github.com",
+    "login": "ashokraj2011"
+  },
+  "generatedAgent": "product-owner",
+  "authorship": {
+    "schemaVersion": 1,
+    "producer": "governed-agent",
+    "channel": "copilot-host",
+    "actor": {
+      "name": "Ashok Raj",
+      "email": "88361104+ashokraj2011@users.noreply.github.com",
+      "login": "ashokraj2011"
+    },
+    "governedAgentContext": {
+      "agentId": "product-owner"
+    },
+    "kernelModel": {
+      "invoked": false,
+      "status": "exact",
+      "invocationIds": []
+    },
+    "externalAiUse": {
+      "value": "unknown",
+      "status": "unavailable"
+    },
+    "source": {
+      "kind": "in-place",
+      "filename": "requirements.md",
+      "mediaType": "text/markdown",
+      "sha256": "ea8891bbd8b3f56b1f0457be53ddfa81c86ef82830ade12929eac4b3f1a369df",
+      "bytes": 14820
+    },
+    "generation": 1,
+    "publishedAt": "2026-08-10T23:57:19.372Z"
+  },
+  "sourceCommit": "b3bb251388223ee58b55dd016a0115fb119db5c1",
+  "generationCommit": "22a0caa72e70c120ba595ab27003ebb18ed02d8d",
+  "publicationCommit": "22a0caa72e70c120ba595ab27003ebb18ed02d8d",
+  "configSha256": "c71e8d4583a4303c75561c44902b837971681f740cc7025f9b55cb997589424f",
+  "sourceSha256": "4e44848b5ace267968bed14bdb47c521769134cacd3d29c03fb325271f373786",
+  "template": {
+    "path": "singularity/templates/feature/requirements.md",
+    "sha256": "32016db8ed6fadd6596e7dc702647cff95cdee1a203b38395d7ba5626dd8134e"
+  },
+  "inputs": {
+    "generation": 1,
+    "path": "singularity/work-items/WRK-1978/context/inputs-requirements-gen1.json",
+    "sha256": "86817bc15571382e319be0a398287d67c4b27a8a47912db91b0d4e7cade62acc",
+    "renderedSha256": "d20a3a1de2e754557d60bbaf4a78ec3d00698e917393dc29ea80e9d4e0cfbab2",
+    "mode": "enforce"
+  },
+  "designSources": {
+    "sets": [],
+    "approved": null
+  },
+  "remoteAgent": null,
+  "clarification": {
+    "generation": 1,
+    "path": "singularity/work-items/WRK-1978/context/clarifications-requirements-gen1.json",
+    "sha256": "4b560f88a927e64d9fdbaa6d871fdacd7159e0e266bb29290b272289f883eb1e",
+    "promptSha256": "6af50b8ffe8e9c8857b992c40a0aa0c0b90146efebf54394715649bb7fed6862",
+    "responses": 5,
+    "recordedAt": "2026-08-10T23:55:54.545Z",
+    "recordedBy": {
+      "name": "Ashok Raj",
+      "email": "88361104+ashokraj2011@users.noreply.github.com",
+      "login": "ashokraj2011"
+    }
+  },
+  "telemetry": [
+    {
+      "generation": 1,
+      "path": "singularity/work-items/WRK-1978/telemetry/requirements-gen1.json",
+      "sha256": "c9393aabb22ab6e2c0ce2aee8ef0d682e290a4dbf09ab09d7ebfa4dd3dcf7168",
+      "status": "pending",
+      "models": [],
+      "providerCost": null
+    }
+  ],
+  "remoteOutputs": [],
+  "usage": [
+    {
+      "status": "unavailable",
+      "source": "copilot-otel-unavailable",
+      "provider": null,
+      "model": null,
+      "inputTokens": null,
+      "outputTokens": null,
+      "cachedInputTokens": null,
+      "cacheWriteInputTokens": null,
+      "totalTokens": null,
+      "providerCost": null,
+      "costStatus": "unavailable",
+      "spans": null,
+      "startedAt": "2026-08-10T23:57:19.372Z",
+      "completedAt": "2026-08-10T23:57:19.372Z",
+      "agent": "product-owner",
+      "generation": 1
+    }
+  ],
+  "sequenceOverrides": [],
+  "approvals": [
+    {
+      "decision": "approved",
+      "phase": "requirements",
+      "at": "2026-08-11T00:05:43.161Z",
+      "actor": {
+        "name": "Ashok Raj",
+        "email": "88361104+ashokraj2011@users.noreply.github.com",
+        "login": "ashokraj2011"
+      },
+      "agent": "product-owner",
+      "authorityGroup": "product-approvers",
+      "identityAssurance": "configured-local",
+      "channel": "copilot-selection-receipt",
+      "generation": 1,
+      "artifactSha256": [
+        {
+          "path": "singularity/work-items/WRK-1978/artifacts/requirements/requirements.md",
+          "sha256": "b125d1e96e5608ceed4e08d6955f216f8137be78046950380356578523ae479b"
+        }
+      ],
+      "reviewPacketSha256": "1ec532b617950eeac18211c4f4a9b87e2040e2b0f5f90c76efef0aec62e3146e",
+      "actionContext": {
+        "phase": "requirements",
+        "label": "Requirements",
+        "generation": 1,
+        "submittedAt": "2026-08-10T23:58:53.432Z",
+        "artifacts": [
+          {
+            "path": "singularity/work-items/WRK-1978/artifacts/requirements/requirements.md",
+            "sha256": "b125d1e96e5608ceed4e08d6955f216f8137be78046950380356578523ae479b"
+          }
+        ],
+        "reviewPacketSha256": "1ec532b617950eeac18211c4f4a9b87e2040e2b0f5f90c76efef0aec62e3146e",
+        "submittedSourceCommit": "22a0caa72e70c120ba595ab27003ebb18ed02d8d",
+        "planId": "f959e3daf28f11e40e2f721a"
+      },
+      "selfApproval": true
+    }
+  ],
+  "selfApproval": true,
+  "conformanceTree": null
+}
+-->
+
+# WRK-1978 — Feature Requirements
+
+## Problem and outcome
+
+The approved intake for this work item scoped the visual change as a generic "classic desk-calculator" restyle of Standard mode only, matching no specific reference model. During this phase's required human clarification checkpoint, the requester confirmed a different, more specific direction that supersedes that narrower framing: the app should be restyled to look like Microsoft's **Windows 11 Calculator** (Fluent Design), applied across the whole app rather than Standard mode alone. [WRK-1978:REQ-001]
+
+The measurable outcome: the app's shell, display, and keypads across all existing modes adopt Windows 11 Calculator's Fluent Design language — rounded corners, acrylic/mica-style surfaces, modern accent colors, and Windows 11 typography/spacing/button-grid layout — in both light and dark themes, while every existing calculator mode, feature, and calculation behavior continues to work unchanged. [WRK-1978:REQ-002]
+
+## Scope
+
+**In scope:**
+- Restyling to Windows 11 Fluent Design across all existing modes: Standard, Scientific, Unit Converter, Financial Calculator, and Function Grapher (`src/App.jsx`, `src/components/Header.jsx`, `src/components/Display.jsx`, `src/components/StandardKeypad.jsx`, `src/components/ScientificKeypad.jsx`, and other mode components under `src/components/`).
+- A literal recreation of Windows 11 Calculator's layout, spacing, and button grid for Standard and Scientific modes, not just a color/typography-inspired reskin.
+- Both light and dark theme variants matching Windows 11 Calculator's palettes, implemented through the shared CSS variable/theme-token system (`src/index.css`) rather than per-component hard-coded styles.
+- Full responsiveness: the UI must remain usable at both desktop and mobile viewport widths.
+- Preservation of all existing features: memory, history, sound feedback, keyboard shortcuts, and every current calculator mode.
+
+**Out of scope / exclusions:**
+- No changes to calculation semantics, expression evaluation, or formatting logic (`src/utils/evaluator.js`).
+- No removal of modes/features that Windows 11 Calculator itself doesn't have (Unit Converter, Financial Calculator, Function Grapher remain — they are restyled with the same visual language rather than dropped).
+- No specific commitment to pixel-perfect parity with Windows 11 Calculator for modes it doesn't include (Unit Converter, Financial Calculator, Function Grapher); those apply the same design tokens without a native reference to copy exactly.
+
+**Supersession note:** This scope explicitly overrides the approved intake artifact's "general retro aesthetic, Standard mode only, no specific reference model" framing, per the requester's confirmation recorded in this generation's clarification checkpoint. [WRK-1978:CON-001]
+
+## Acceptance criteria
+
+- Standard and Scientific modes visually match Windows 11 Calculator's Fluent Design layout, button grid, spacing, and color system, in both light and dark themes. [WRK-1978:AC-001]
+- Unit Converter, Financial Calculator, and Function Grapher modes are restyled using the same Windows 11 Fluent Design tokens (colors, shapes, typography, elevation) as Standard/Scientific, even though Windows 11 Calculator has no native screens for them. [WRK-1978:AC-002]
+- All existing calculator modes remain reachable and functionally unchanged (arithmetic, scientific, unit conversion, financial, graphing); memory, history, sound, and keyboard shortcut behavior continue to work exactly as before. [WRK-1978:AC-003]
+- The UI remains fully responsive and usable at both desktop and mobile viewport widths after the restyle. [WRK-1978:AC-004]
+- `npm run build` succeeds after the change, with no change to calculation results or error states. [WRK-1978:AC-005]
+
+## Dependencies, risks, and open questions
+
+**Dependencies:**
+- The shared CSS variable/theme-token system in `src/index.css` must be extended (or replaced) to carry Windows 11 Fluent tokens — colors, corner radii, elevation/acrylic effects — for both light and dark themes, so the change stays centralized rather than per-component.
+
+**Risks:**
+- Because styling is driven by shared tokens, changes can spill over unintentionally between modes/themes; this requires careful review across all five modes.
+- No automated visual regression suite exists; verification is manual review of each mode/theme combination plus a successful `npm run build`. `npm run lint` is expected to still report its existing, pre-existing issues.
+- Windows 11 Calculator has no native equivalent for Unit Converter, Financial Calculator, or Function Grapher screens, so applying the Fluent language there is a novel design exercise rather than a direct copy, which raises the risk of visual inconsistency across modes.
+
+**Decisions confirmed via the required clarification checkpoint** (recorded in `singularity/work-items/WRK-1978/context/clarifications-requirements-gen1.json`):
+- Target style: Windows 11 (Fluent Design), not Windows 10 or the classic/Windows 7 skeuomorphic style.
+- Fidelity: literal recreation of Windows 11 Calculator's layout, spacing, and button grid — not merely an inspired color/typography pass.
+- Feature scope: all existing modes and features are preserved and restyled; nothing is trimmed to match Windows 11 Calculator's narrower native feature set.
+- Theming: both light and dark themes are required, matching Windows 11 Calculator's palettes.
+- Responsiveness: full desktop and mobile support is required; this is not a desktop-only redesign.
+- These decisions explicitly supersede the approved intake artifact's narrower "classic desk-calculator, Standard mode only, no specific reference model" framing, per the requester's explicit confirmation during this phase.
+
+**Open questions:** none blocking — all material ambiguities for this generation were resolved in the recorded clarification checkpoint.
+
+<!-- approved source inputs:start -->
+
+# Approved phase inputs
+
+## Approved phase input: intake
+
+<!-- source=artifacts/intake/intake.md sha256=c441d5e46aae87c3a575fe3f10b733a1ac23f5e06db1ede1829df28f36ddb612 status=captured -->
+
+<!-- singularity-flow:metadata
+{
+  "schemaVersion": 1,
+  "workId": "WRK-1978",
+  "workType": "feature",
+  "phase": "intake",
+  "generation": 1,
+  "status": "approved",
+  "generatedBy": {
+    "name": "Ashok Raj",
+    "email": "88361104+ashokraj2011@users.noreply.github.com",
+    "login": "ashokraj2011"
+  },
+  "generatedAgent": "product-owner",
+  "authorship": {
+    "schemaVersion": 1,
+    "producer": "governed-agent",
+    "channel": "copilot-host",
+    "actor": {
+      "name": "Ashok Raj",
+      "email": "88361104+ashokraj2011@users.noreply.github.com",
+      "login": "ashokraj2011"
+    },
+    "governedAgentContext": {
+      "agentId": "product-owner"
+    },
+    "kernelModel": {
+      "invoked": false,
+      "status": "exact",
+      "invocationIds": []
+    },
+    "externalAiUse": {
+      "value": "unknown",
+      "status": "unavailable"
+    },
+    "source": {
+      "kind": "in-place",
+      "filename": "intake.md",
+      "mediaType": "text/markdown",
+      "sha256": "46cc03095cfa8046c414f881b1cc80b7372ca2bf507031da298b14c12030fe14",
+      "bytes": 3952
+    },
+    "generation": 1,
+    "publishedAt": "2026-08-10T15:56:06.519Z"
+  },
+  "sourceCommit": "9fceacba13b7c36032fd0e376aee593e62a00275",
+  "generationCommit": "110176019d1a0f0d720e7f33e189a6081c5de8d2",
+  "publicationCommit": "110176019d1a0f0d720e7f33e189a6081c5de8d2",
+  "configSha256": "c71e8d4583a4303c75561c44902b837971681f740cc7025f9b55cb997589424f",
+  "sourceSha256": "4e44848b5ace267968bed14bdb47c521769134cacd3d29c03fb325271f373786",
+  "template": {
+    "path": "singularity/templates/feature/intake.md",
+    "sha256": "eb53814f46f12ea3d93d1629164bd7ff22a3a54feceff7f7dd55670caeb5dbab"
+  },
+  "inputs": null,
+  "designSources": {
+    "sets": [],
+    "approved": null
+  },
+  "remoteAgent": null,
+  "clarification": {
+    "generation": 1,
+    "path": "singularity/work-items/WRK-1978/context/clarifications-intake-gen1.json",
+    "sha256": "439a50d2b544413babf7f69cecbecc4ff0e3602d9248555c792cbd56acc5486e",
+    "promptSha256": "ffa092cf5192bb94659215665a3739f2edc0435c83fa47e7b93731d8422820cc",
+    "responses": 4,
+    "recordedAt": "2026-08-10T15:56:02.695Z",
+    "recordedBy": {
+      "name": "Ashok Raj",
+      "email": "88361104+ashokraj2011@users.noreply.github.com",
+      "login": "ashokraj2011"
+    }
+  },
+  "telemetry": [
+    {
+      "generation": 1,
+      "path": "singularity/work-items/WRK-1978/telemetry/intake-gen1.json",
+      "sha256": "c1fb06bad752a1144a70d6050e66b12d2555ee4e67b5b718ceb1c53ab6369491",
+      "status": "pending",
+      "models": [],
+      "providerCost": null
+    }
+  ],
+  "remoteOutputs": [],
+  "usage": [
+    {
+      "status": "unavailable",
+      "source": "copilot-otel-unavailable",
+      "provider": null,
+      "model": null,
+      "inputTokens": null,
+      "outputTokens": null,
+      "cachedInputTokens": null,
+      "cacheWriteInputTokens": null,
+      "totalTokens": null,
+      "providerCost": null,
+      "costStatus": "unavailable",
+      "spans": null,
+      "startedAt": "2026-08-10T15:56:06.519Z",
+      "completedAt": "2026-08-10T15:56:06.519Z",
+      "agent": "product-owner",
+      "generation": 1
+    }
+  ],
+  "sequenceOverrides": [],
+  "approvals": [
+    {
+      "decision": "approved",
+      "phase": "intake",
+      "at": "2026-08-10T16:03:54.902Z",
+      "actor": {
+        "name": "Ashok Raj",
+        "email": "88361104+ashokraj2011@users.noreply.github.com",
+        "login": "ashokraj2011"
+      },
+      "agent": "product-owner",
+      "authorityGroup": "product-approvers",
+      "identityAssurance": "configured-local",
+      "channel": "copilot-selection-receipt",
+      "generation": 1,
+      "artifactSha256": [
+        {
+          "path": "singularity/work-items/WRK-1978/artifacts/intake/intake.md",
+          "sha256": "7003783ee4a01ce031607eb13a2e0c1831f81983d6279150b119683cf6363a6c"
+        }
+      ],
+      "reviewPacketSha256": "e06cd64d5312be3b7ec81cd571061eb6e67c5e9146bb806b5df3fd30c95d2c00",
+      "actionContext": {
+        "phase": "intake",
+        "label": "Intake",
+        "generation": 1,
+        "submittedAt": "2026-08-10T15:57:26.487Z",
+        "artifacts": [
+          {
+            "path": "singularity/work-items/WRK-1978/artifacts/intake/intake.md",
+            "sha256": "7003783ee4a01ce031607eb13a2e0c1831f81983d6279150b119683cf6363a6c"
+          }
+        ],
+        "reviewPacketSha256": "e06cd64d5312be3b7ec81cd571061eb6e67c5e9146bb806b5df3fd30c95d2c00",
+        "submittedSourceCommit": "110176019d1a0f0d720e7f33e189a6081c5de8d2",
+        "planId": "535f2ec19e73fcdf7be3ccd3"
+      },
+      "selfApproval": true
+    }
+  ],
+  "selfApproval": true,
+  "conformanceTree": null
+}
+-->
+
+# WRK-1978 — Feature Intake
+
+## User and outcome
+
+The user is anyone using this app's Standard calculator mode as a browser-based calculator (`src/App.jsx`, `src/components/`). Today the Standard mode already uses a `classic` theme with shared CSS tokens (`src/index.css`), but it does not read as a physical desk-calculator: it lacks the raised/beveled button feel, a recessed LCD-style display panel, and a cohesive muted classic color palette.
+
+The problem is that the current visual presentation of Standard mode does not evoke a classic/desk calculator, which is the specific visual affinity the requester wants.
+
+The measurable outcome: after the change, Standard mode's default theme presents raised/beveled keypad buttons, a recessed LCD-style display panel, and a muted grey/beige classic color palette with simple borders/shadows — verifiable by visual review of the Standard mode screen, with `npm run build` still succeeding and no change to calculation behavior, keyboard shortcuts, or non-default themes.
+
+## Proposed capability
+
+Restyle the default/classic theme so the Standard calculator mode looks like a classic desk calculator, specifically:
+- Raised/beveled, physical-style keypad buttons.
+- A recessed LCD-style display panel for the expression/result area.
+- A muted classic color palette (grey/beige tones) with simple borders and shadows, applied through the existing shared CSS variable/theme-token system rather than per-component hard-coded styles.
+
+This is a visual/UX capability only — it does not change calculation logic, keyboard behavior, or the set of supported modes.
+
+## Scope, constraints, and stakeholders
+
+**In scope:**
+- The default/classic theme's visual tokens (`src/index.css`) and the Standard mode surfaces that consume them: the shell (`src/App.jsx`), header/mode tabs, the display panel, and the standard keypad (`src/components/Header.jsx`, `src/components/Display.jsx`, `src/components/StandardKeypad.jsx`).
+
+**Out of scope / exclusions:**
+- No specific reference calculator model is being matched — this is a general retro/classic aesthetic, not a pixel-accurate skin of one device.
+- Only the default/classic theme changes; other theme options (e.g. dark mode) are left as-is.
+- Other modes (scientific, converter, financial, grapher) are not explicitly restyled component-by-component; they may passively inherit the shared CSS token changes, but no dedicated work is scoped for them in this change.
+- No changes to calculation logic, expression evaluation (`src/utils/evaluator.js`), keyboard shortcuts, or history/memory behavior.
+
+**Dependencies:**
+- The existing shared CSS variable/theme-token system in `src/index.css`, which must remain centralized so the change doesn't require per-component styling.
+
+**Constraints:**
+- No automated visual regression suite exists; verification is manual review of the Standard mode plus a production build (`npm run build`). `npm run lint` is expected to still report its existing, pre-existing issues.
+- Because the CSS token system is shared, changes must be reviewed for unintended spillover into other modes/themes even though they are not the explicit target.
+
+**Stakeholders:**
+- End users of the Standard calculator mode (primary beneficiaries of the visual change).
+- Frontend developer/designer implementing the theme and layout updates.
+- QA/reviewer confirming the classic look renders correctly in Standard mode without regressing other modes or themes.
+
+**Assumptions confirmed with the requester:**
+- "Classic" means a general retro/desk-calculator feel, not one specific model.
+- Only the default theme changes.
+- Standard mode is the primary, explicitly scoped target.
+- The defining visual traits are: raised/beveled buttons, a recessed LCD-style display, and a muted classic color palette.
+
+**Open questions:** none blocking — all material ambiguities were resolved in the recorded clarification checkpoint for this generation.
+
+<!-- approved source inputs:end -->
+
+<!-- singularity-flow:inputs:end -->

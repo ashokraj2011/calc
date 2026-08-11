@@ -48,10 +48,10 @@ export const UnitConverter = ({ soundEnabled }) => {
             <button
               key={catKey}
               onClick={() => handleCategoryChange(catKey)}
-              className={`flex items-center justify-center gap-2 p-2.5 rounded-xl text-xs font-semibold transition-all ${
+              className={`calc-btn flex items-center justify-center gap-2 p-2.5 text-xs font-semibold transition-all ${
                 isActive
-                  ? 'bg-[var(--text-accent)] text-slate-950 shadow-md scale-[1.02]'
-                  : 'bg-[var(--btn-func-bg)] text-[var(--text-muted)] hover:text-[var(--text-main)] hover:bg-[var(--btn-func-hover)]'
+                  ? 'u-bg-text-accent text-slate-950 shadow-md scale-[1.02]'
+                  : 'u-bg-btn-func-bg u-text-text-muted u-htext-text-main u-hbg-btn-func-hover'
               }`}
             >
               <Icon className="w-4 h-4" />
@@ -62,18 +62,18 @@ export const UnitConverter = ({ soundEnabled }) => {
       </div>
 
       {/* Main Conversion Card */}
-      <div className="bg-[var(--display-bg)] border border-[var(--card-border)] rounded-2xl p-5 flex flex-col gap-4 shadow-inner">
+      <div className="glass-card p-5 flex flex-col gap-4">
         {/* From Section */}
         <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
           <div className="flex-1 flex flex-col gap-1">
-            <label className="text-xs text-[var(--text-muted)] font-medium">From</label>
+            <label className="text-xs u-text-text-muted font-medium">From</label>
             <select
               value={fromUnit}
               onChange={(e) => setFromUnit(e.target.value)}
-              className="bg-[var(--btn-num-bg)] border border-[var(--card-border)] text-[var(--text-main)] rounded-xl p-2.5 text-sm font-semibold outline-none cursor-pointer"
+              className="u-bg-btn-num-bg border u-border-card-border u-text-text-main rounded-xl p-2.5 text-sm font-semibold outline-none cursor-pointer"
             >
               {unitsList.map((uKey) => (
-                <option key={uKey} value={uKey} className="bg-[var(--bg-primary)]">
+                <option key={uKey} value={uKey} className="u-bg-bg-primary">
                   {currentCatData.units[uKey].name}
                 </option>
               ))}
@@ -81,13 +81,13 @@ export const UnitConverter = ({ soundEnabled }) => {
           </div>
 
           <div className="flex-1 flex flex-col gap-1">
-            <label className="text-xs text-[var(--text-muted)] font-medium">Value</label>
+            <label className="text-xs u-text-text-muted font-medium">Value</label>
             <input
               type="number"
               value={inputValue}
               onChange={(e) => setInputValue(e.target.value)}
               placeholder="Enter value"
-              className="bg-[var(--btn-num-bg)] border border-[var(--card-border)] text-[var(--text-main)] rounded-xl p-2.5 text-lg font-mono font-bold outline-none focus:border-[var(--text-accent)]"
+              className="u-bg-btn-num-bg border u-border-card-border u-text-text-main rounded-xl p-2.5 text-lg font-mono font-bold outline-none u-fborder-text-accent"
             />
           </div>
         </div>
@@ -97,7 +97,7 @@ export const UnitConverter = ({ soundEnabled }) => {
           <button
             onClick={handleSwap}
             title="Swap Units"
-            className="p-2.5 rounded-full bg-[var(--btn-func-bg)] border border-[var(--card-border)] text-[var(--text-accent)] hover:scale-110 transition-transform shadow-md"
+            className="calc-btn p-2.5 rounded-full u-bg-btn-func-bg u-text-text-accent hover:scale-110 transition-transform shadow-md"
           >
             <ArrowRightLeft className="w-4 h-4" />
           </button>
@@ -106,14 +106,14 @@ export const UnitConverter = ({ soundEnabled }) => {
         {/* To Section */}
         <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
           <div className="flex-1 flex flex-col gap-1">
-            <label className="text-xs text-[var(--text-muted)] font-medium">To</label>
+            <label className="text-xs u-text-text-muted font-medium">To</label>
             <select
               value={toUnit}
               onChange={(e) => setToUnit(e.target.value)}
-              className="bg-[var(--btn-num-bg)] border border-[var(--card-border)] text-[var(--text-main)] rounded-xl p-2.5 text-sm font-semibold outline-none cursor-pointer"
+              className="u-bg-btn-num-bg border u-border-card-border u-text-text-main rounded-xl p-2.5 text-sm font-semibold outline-none cursor-pointer"
             >
               {unitsList.map((uKey) => (
-                <option key={uKey} value={uKey} className="bg-[var(--bg-primary)]">
+                <option key={uKey} value={uKey} className="u-bg-bg-primary">
                   {currentCatData.units[uKey].name}
                 </option>
               ))}
@@ -121,8 +121,8 @@ export const UnitConverter = ({ soundEnabled }) => {
           </div>
 
           <div className="flex-1 flex flex-col gap-1">
-            <label className="text-xs text-[var(--text-muted)] font-medium">Result</label>
-            <div className="bg-[var(--card-bg)] border border-[var(--card-border)] text-[var(--text-accent)] rounded-xl p-2.5 text-xl font-mono font-bold overflow-x-auto min-h-[46px] flex items-center">
+            <label className="text-xs u-text-text-muted font-medium">Result</label>
+            <div className="calculator-display u-text-text-accent text-xl font-mono font-bold overflow-x-auto min-h-[46px] flex items-center">
               {convertedResult}
             </div>
           </div>

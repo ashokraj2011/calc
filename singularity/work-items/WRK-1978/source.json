@@ -1,0 +1,10 @@
+{
+  "type": "manual",
+  "id": "WRK-1978",
+  "key": null,
+  "url": null,
+  "title": "Make the app look like windows calc",
+  "description": "Make the app look like windows calc",
+  "desiredOutcome": "",
+  "acceptanceCriteria": "Check how it looks"
+}
