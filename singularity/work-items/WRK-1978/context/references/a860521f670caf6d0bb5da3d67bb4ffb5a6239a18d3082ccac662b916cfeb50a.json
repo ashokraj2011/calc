@@ -1,0 +1,28 @@
+{
+  "artifact": {
+    "generation": 1,
+    "mediaType": "text/markdown",
+    "outputId": "implementation-spec",
+    "path": "singularity/work-items/WRK-1978/artifacts/implementation-spec/implementation-spec.md",
+    "phaseId": "implementation-spec"
+  },
+  "createdAt": "2026-08-11T00:21:33.621Z",
+  "kind": "governed-reference",
+  "repository": {
+    "id": "calc",
+    "origin": "https://github.com/ashokraj2011/calc.git"
+  },
+  "revision": {
+    "bytes": 68402,
+    "commitSha": "be635898ae440a59014950bf66f0019275bb6aa3",
+    "sha256": "848f3cfe06d9731165c4799fb0fe419f429dc2eb2c39b8f93b28d9b48a7ddfcc"
+  },
+  "schemaVersion": 1,
+  "subject": {
+    "branch": "WRK-1978",
+    "id": "WRK-1978",
+    "kind": "story",
+    "subjectRevision": 1
+  },
+  "visibility": "model"
+}
