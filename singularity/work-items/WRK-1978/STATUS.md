@@ -5,7 +5,7 @@
 - Capability: **CaLC** (`calc-app`)
 - Capability map: `77ee9fd3c55345e31113fffb91dab4b0ffd95ced22cbd95d19ffa1d04bd7a479`
 - Overall status: **in_progress**
-- Current phase: **implementation-spec**
+- Current phase: **implementation**
 
 | # | Phase | Governed agent | Status | Generation | Approvals | Tokens |
 |---:|---|---|---|---:|---:|---:|
@@ -15,13 +15,16 @@
 |  | ⚠ self-approval | Ashok Raj via product-approvers; agent product-owner | **warning** |  |  |  |
 | 3 | Architecture and design (`design`) | architect | **approved** | 1 | 1 | unavailable |
 |  | ⚠ self-approval | Ashok Raj via architecture-reviewers; agent architect | **warning** |  |  |  |
-| 4 | Implementation specification (`implementation-spec`) | architect | **awaiting_approval** | 1 | 0 | unavailable |
-| 5 | Implementation (`implementation`) | developer | **not_started** | 0 | 0 | unavailable |
+| 4 | Implementation specification (`implementation-spec`) | architect | **approved** | 1 | 1 | unavailable |
+|  | ⚠ self-approval | Ashok Raj via architecture-reviewers; agent architect | **warning** |  |  |  |
+| 5 | Implementation (`implementation`) | developer | **in_progress** | 0 | 0 | unavailable |
 | 6 | Verification (`verification`) | qa | **not_started** | 0 | 0 | unavailable |
 | 7 | Spec-to-code conformance (`conformance`) | qa | **not_started** | 0 | 0 | unavailable |
 
 ## Recent history
 
+- 2026-08-11T00:25:21.639Z — **work_interval_started** (implementation) by system: baseline 889b78fdf683 at a9d1a489dfa4
+- 2026-08-11T00:25:21.552Z — **phase_self_approved** (implementation-spec) by ashokraj2011 · governed agent architect: threshold reached; advanced to implementation
 - 2026-08-11T00:21:33.582Z — **phase_submitted** (implementation-spec) by ashokraj2011 · governed agent architect: 1 artifacts
 - 2026-08-11T00:20:12.117Z — **phase_generated** (implementation-spec) by ashokraj2011 · governed agent architect: generation 1
 - 2026-08-11T00:15:56.434Z — **phase_self_approved** (design) by ashokraj2011 · governed agent architect: threshold reached; advanced to implementation-spec
