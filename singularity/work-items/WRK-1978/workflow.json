@@ -2546,17 +2546,200 @@
       "rejectedAt": null,
       "rejectedBy": null,
       "rejectionReason": null,
-      "generation": 0,
-      "generatedBy": null,
-      "generatedAgent": null,
-      "authorship": [],
-      "usage": [],
-      "telemetry": [],
+      "generation": 1,
+      "generatedBy": {
+        "name": "Ashok Raj",
+        "email": "88361104+ashokraj2011@users.noreply.github.com",
+        "login": "ashokraj2011"
+      },
+      "generatedAgent": "developer",
+      "authorship": [
+        {
+          "schemaVersion": 1,
+          "producer": "governed-agent",
+          "channel": "copilot-host",
+          "actor": {
+            "name": "Ashok Raj",
+            "email": "88361104+ashokraj2011@users.noreply.github.com",
+            "login": "ashokraj2011"
+          },
+          "governedAgentContext": {
+            "agentId": "developer"
+          },
+          "kernelModel": {
+            "invoked": false,
+            "status": "exact",
+            "invocationIds": []
+          },
+          "externalAiUse": {
+            "value": "unknown",
+            "status": "unavailable"
+          },
+          "source": {
+            "kind": "in-place",
+            "filename": "implementation-summary.md",
+            "mediaType": "text/markdown",
+            "sha256": "958e54e4dbcb633c0d07d846475690487eeb44db65d6391f06541f6c48a36ac4",
+            "bytes": 113492
+          },
+          "generation": 1,
+          "publishedAt": "2026-08-11T02:27:59.457Z"
+        }
+      ],
+      "usage": [
+        {
+          "status": "unavailable",
+          "source": "copilot-otel-unavailable",
+          "provider": null,
+          "model": null,
+          "inputTokens": null,
+          "outputTokens": null,
+          "cachedInputTokens": null,
+          "cacheWriteInputTokens": null,
+          "totalTokens": null,
+          "providerCost": null,
+          "costStatus": "unavailable",
+          "spans": null,
+          "startedAt": "2026-08-11T02:27:59.457Z",
+          "completedAt": "2026-08-11T02:27:59.457Z",
+          "agent": "developer",
+          "generation": 1
+        }
+      ],
+      "telemetry": [
+        {
+          "generation": 1,
+          "path": "singularity/work-items/WRK-1978/telemetry/implementation-gen1.json",
+          "sha256": "e3e80dba3e08e02446fbe7290a4b128bbe954c013dbb3275895abd12f626d348",
+          "status": "pending",
+          "models": [],
+          "providerCost": null
+        }
+      ],
       "approvals": [],
       "designSourceSets": [],
-      "artifacts": [],
+      "artifacts": [
+        {
+          "path": "singularity/work-items/WRK-1978/artifacts/implementation/implementation-summary.md",
+          "kind": "document",
+          "status": "pending",
+          "exists": true,
+          "size": 116505,
+          "sha256": "7e2cfef2b903c88d33ab69601fde4d21170ab97617fb974e5f3bb1482f7547a9",
+          "registeredAt": "2026-08-11T02:27:58.646Z",
+          "updatedAt": "2026-08-11T02:27:59.520Z"
+        },
+        {
+          "path": "src/components/Display.jsx",
+          "kind": "code",
+          "status": "pending",
+          "exists": true,
+          "size": 3430,
+          "sha256": "5f03c1d0683c26ff20d4cacde7e547c6202397bb03c85a18e0796767a62b5b90",
+          "registeredAt": "2026-08-11T02:27:58.646Z",
+          "updatedAt": "2026-08-11T02:27:59.520Z"
+        },
+        {
+          "path": "src/components/FinancialCalculator.jsx",
+          "kind": "code",
+          "status": "pending",
+          "exists": true,
+          "size": 11121,
+          "sha256": "657589607d5babd87dacfb8569acaf3ed639cfcbfcba7a7ecdb2955d94551890",
+          "registeredAt": "2026-08-11T02:27:58.646Z",
+          "updatedAt": "2026-08-11T02:27:59.520Z"
+        },
+        {
+          "path": "src/components/FunctionGrapher.jsx",
+          "kind": "code",
+          "status": "pending",
+          "exists": true,
+          "size": 6962,
+          "sha256": "b3a8f5a9efd46846b941e31ee8286efddecb0af18dad2a30a9768671931d8c48",
+          "registeredAt": "2026-08-11T02:27:58.646Z",
+          "updatedAt": "2026-08-11T02:27:59.520Z"
+        },
+        {
+          "path": "src/components/Header.jsx",
+          "kind": "code",
+          "status": "pending",
+          "exists": true,
+          "size": 6725,
+          "sha256": "d7d34675b07ba58299b96f6ac85414909e238163217b14f3b9b489c358b7f648",
+          "registeredAt": "2026-08-11T02:27:58.646Z",
+          "updatedAt": "2026-08-11T02:27:59.520Z"
+        },
+        {
+          "path": "src/components/HistoryDrawer.jsx",
+          "kind": "code",
+          "status": "pending",
+          "exists": true,
+          "size": 4203,
+          "sha256": "daa55e91e42c345304f5480ed4fe1726621a7b7e035ef801425a12e945fda5e9",
+          "registeredAt": "2026-08-11T02:27:58.646Z",
+          "updatedAt": "2026-08-11T02:27:59.520Z"
+        },
+        {
+          "path": "src/components/KeyboardShortcutsModal.jsx",
+          "kind": "code",
+          "status": "pending",
+          "exists": true,
+          "size": 2512,
+          "sha256": "752b9cf6d661cd5e894ce2ac1c0b90d5d9e599a51f8db8a8db812ca6bd8777cd",
+          "registeredAt": "2026-08-11T02:27:58.647Z",
+          "updatedAt": "2026-08-11T02:27:59.520Z"
+        },
+        {
+          "path": "src/components/ScientificKeypad.jsx",
+          "kind": "code",
+          "status": "pending",
+          "exists": true,
+          "size": 4399,
+          "sha256": "0b815e9330c470b02eda5e77836c6bcdbff6587219f8bfa9b559f28d85aa51a2",
+          "registeredAt": "2026-08-11T02:27:58.647Z",
+          "updatedAt": "2026-08-11T02:27:59.521Z"
+        },
+        {
+          "path": "src/components/StandardKeypad.jsx",
+          "kind": "code",
+          "status": "pending",
+          "exists": true,
+          "size": 6382,
+          "sha256": "1108f94a0c38cb364830d2ddf00e3f573be683be1b8b28e7808f3c3d93cde408",
+          "registeredAt": "2026-08-11T02:27:58.647Z",
+          "updatedAt": "2026-08-11T02:27:59.521Z"
+        },
+        {
+          "path": "src/components/UnitConverter.jsx",
+          "kind": "code",
+          "status": "pending",
+          "exists": true,
+          "size": 5167,
+          "sha256": "b6c56d4eeeb8cba8dc448446443ee5255a6f22e86fddbbe31d0224595ee7543e",
+          "registeredAt": "2026-08-11T02:27:58.647Z",
+          "updatedAt": "2026-08-11T02:27:59.521Z"
+        },
+        {
+          "path": "src/index.css",
+          "kind": "code",
+          "status": "pending",
+          "exists": true,
+          "size": 16856,
+          "sha256": "29815dd9264a94a36b96884a3b967750139c1cae177ef6ddc55920fe4392c7e6",
+          "registeredAt": "2026-08-11T02:27:58.647Z",
+          "updatedAt": "2026-08-11T02:27:59.521Z"
+        }
+      ],
       "checks": [],
-      "remoteOutputs": []
+      "remoteOutputs": [],
+      "inputContext": {
+        "generation": 1,
+        "path": "singularity/work-items/WRK-1978/context/inputs-implementation-gen1.json",
+        "sha256": "f28f08b8f45bf95314cff0ee2c64ad7fddb67bb9c7d6f0c6e5c47ec4589e2b55",
+        "renderedSha256": "7974199cc2dc7b624ed2833685e8df0d60c5866213394cf68e4aef59cd805e4d",
+        "mode": "enforce"
+      },
+      "sourceCommit": "0b735dd79afd7ccb2419a3ac97399de722336ff1"
     },
     "verification": {
       "id": "verification",
@@ -2754,9 +2937,9 @@
   "usage": {
     "mode": "exact-or-unavailable",
     "totalTokens": 0,
-    "records": 4,
+    "records": 5,
     "exactRecords": 0,
-    "unavailableRecords": 4,
+    "unavailableRecords": 5,
     "byPhase": {
       "intake": {
         "records": 1,
@@ -2781,6 +2964,12 @@
         "exactRecords": 0,
         "unavailableRecords": 1,
         "totalTokens": 0
+      },
+      "implementation": {
+        "records": 1,
+        "exactRecords": 0,
+        "unavailableRecords": 1,
+        "totalTokens": 0
       }
     },
     "byAgent": {
@@ -2795,21 +2984,27 @@
         "exactRecords": 0,
         "unavailableRecords": 1,
         "totalTokens": 0
+      },
+      "developer": {
+        "records": 1,
+        "exactRecords": 0,
+        "unavailableRecords": 1,
+        "totalTokens": 0
       }
     },
     "byWorkType": {
       "feature": {
-        "records": 4,
+        "records": 5,
         "exactRecords": 0,
-        "unavailableRecords": 4,
+        "unavailableRecords": 5,
         "totalTokens": 0
       }
     },
     "byWorkItem": {
       "WRK-1978": {
-        "records": 4,
+        "records": 5,
         "exactRecords": 0,
-        "unavailableRecords": 4,
+        "unavailableRecords": 5,
         "totalTokens": 0
       }
     }
@@ -2940,6 +3135,14 @@
       "event": "work_interval_started",
       "phase": "implementation",
       "detail": "baseline 889b78fdf683 at a9d1a489dfa4"
+    },
+    {
+      "at": "2026-08-11T02:27:59.523Z",
+      "actor": "ashokraj2011",
+      "agent": "developer",
+      "event": "phase_generated",
+      "phase": "implementation",
+      "detail": "generation 1"
     }
   ],
   "measurement": {
@@ -4040,6 +4243,76 @@
           "templateSha256": "5d0478b18c8fd14221e14c68e6238b909bccd6802a70262c416005354716c62c"
         },
         "createdAt": "2026-08-11T00:47:31.637Z"
+      }
+    },
+    {
+      "schemaVersion": 1,
+      "event": {
+        "schemaVersion": 1,
+        "eventId": "65a3e1aa-1969-4e3f-998b-004b08003e7d",
+        "type": "artifact-generated",
+        "subject": {
+          "kind": "story",
+          "id": "WRK-1978",
+          "branch": "WRK-1978"
+        },
+        "phaseId": "implementation",
+        "generation": 1,
+        "actor": {
+          "name": "Ashok Raj",
+          "email": "88361104+ashokraj2011@users.noreply.github.com",
+          "login": "ashokraj2011"
+        },
+        "agent": null,
+        "authorityGroup": null,
+        "payload": {
+          "decision": null,
+          "reviewPacketSha256": null
+        },
+        "sourceCommit": null,
+        "idempotencyKey": null,
+        "idempotencyHash": null,
+        "createdAt": "2026-08-11T02:27:59.146Z"
+      },
+      "ledgerIntent": {
+        "schemaVersion": 1,
+        "eventId": "65a3e1aa-1969-4e3f-998b-004b08003e7d",
+        "eventType": "artifact-generated",
+        "capabilityId": "calc-app",
+        "subject": {
+          "branch": "WRK-1978",
+          "generation": 1,
+          "phase": "implementation",
+          "workId": "WRK-1978",
+          "workType": "feature"
+        },
+        "actor": {
+          "name": "Ashok Raj",
+          "email": "88361104+ashokraj2011@users.noreply.github.com",
+          "githubLogin": "ashokraj2011",
+          "identityAssurance": "configured-local"
+        },
+        "agent": null,
+        "authorityGroup": null,
+        "payload": {
+          "capabilityMapSha256": "77ee9fd3c55345e31113fffb91dab4b0ffd95ced22cbd95d19ffa1d04bd7a479",
+          "capabilityPolicy": {
+            "protectedPaths": [],
+            "qualityCommands": [],
+            "requiredAuthorityGroups": [],
+            "requiredChecks": [],
+            "requiredWorldModelViews": []
+          },
+          "configPath": "singularity/workflow.yml",
+          "configSha256": "c71e8d4583a4303c75561c44902b837971681f740cc7025f9b55cb997589424f",
+          "lifecycleEventId": "65a3e1aa-1969-4e3f-998b-004b08003e7d",
+          "lifecyclePayload": {
+            "decision": null,
+            "reviewPacketSha256": null
+          },
+          "templateSha256": "5d0478b18c8fd14221e14c68e6238b909bccd6802a70262c416005354716c62c"
+        },
+        "createdAt": "2026-08-11T02:27:59.153Z"
       }
     }
   ],

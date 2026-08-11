@@ -212,6 +212,78 @@
   --active-indicator: #2563eb;
 }
 
+/* Theme: Windows 11 Light (Fluent Design) */
+[data-theme='win11-light'] {
+  --bg-primary: #f3f3f3;
+  --bg-gradient: linear-gradient(180deg, #fafafa 0%, #e9e9e9 100%);
+  --card-bg: rgba(249, 249, 249, 0.9);
+  --card-border: rgba(0, 0, 0, 0.08);
+  --glass-blur: blur(20px);
+  --shadow-main: 0 8px 24px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+
+  --text-main: #1b1b1b;
+  --text-muted: #5f6368;
+  --text-accent: #005fb8;
+
+  --display-bg: #ffffff;
+  --display-border: rgba(0, 0, 0, 0.12);
+
+  --btn-num-bg: #fbfbfb;
+  --btn-num-hover: #e9e9e9;
+  --btn-num-text: #1b1b1b;
+
+  --btn-op-bg: #e5e5e5;
+  --btn-op-hover: #d8d8d8;
+  --btn-op-text: #1b1b1b;
+
+  --btn-func-bg: #f3f3f3;
+  --btn-func-hover: #e5e5e5;
+  --btn-func-text: #3a3a3a;
+
+  --btn-eq-bg: #005fb8;
+  --btn-eq-hover: #0857a6;
+  --btn-eq-text: #ffffff;
+  --btn-eq-shadow: 0 2px 8px rgba(0, 95, 184, 0.35);
+
+  --active-indicator: #005fb8;
+}
+
+/* Theme: Windows 11 Dark (Fluent Design) */
+[data-theme='win11-dark'] {
+  --bg-primary: #202020;
+  --bg-gradient: linear-gradient(180deg, #232323 0%, #1b1b1b 100%);
+  --card-bg: rgba(32, 32, 32, 0.9);
+  --card-border: rgba(255, 255, 255, 0.08);
+  --glass-blur: blur(20px);
+  --shadow-main: 0 8px 24px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.04);
+
+  --text-main: #f3f3f3;
+  --text-muted: #a0a0a0;
+  --text-accent: #60cdff;
+
+  --display-bg: #1f1f1f;
+  --display-border: rgba(255, 255, 255, 0.12);
+
+  --btn-num-bg: #2c2c2c;
+  --btn-num-hover: #383838;
+  --btn-num-text: #f3f3f3;
+
+  --btn-op-bg: #333333;
+  --btn-op-hover: #3f3f3f;
+  --btn-op-text: #f3f3f3;
+
+  --btn-func-bg: #2a2a2a;
+  --btn-func-hover: #363636;
+  --btn-func-text: #d0d0d0;
+
+  --btn-eq-bg: #0f6cbd;
+  --btn-eq-hover: #115ea3;
+  --btn-eq-text: #ffffff;
+  --btn-eq-shadow: 0 2px 10px rgba(15, 108, 189, 0.45);
+
+  --active-indicator: #60cdff;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -313,9 +385,11 @@ body {
 }
 
 .calculator-display {
-  background: linear-gradient(180deg, #fdf8ec 0%, #f2e6ca 100%);
+  background: var(--display-bg);
   border: 2px solid var(--display-border);
-  box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.08), inset 0 -2px 4px rgba(255, 255, 255, 0.75);
+  border-radius: 16px;
+  padding: 1.25rem;
+  box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.08);
 }
 
 .classic-pill {
@@ -327,3 +401,241 @@ body {
 .classic-tab {
   border: 1px solid transparent;
 }
+
+/* ==========================================================================
+   Windows 11 Fluent Design overrides (win11-light / win11-dark themes)
+   ========================================================================== */
+
+/*
+ * Font substitution note: the real Microsoft "Segoe UI Variable" font file
+ * cannot be bundled in this repository. As an approximation, the win11
+ * themes fall back through the (non-variable) "Segoe UI" font already
+ * present on Windows machines, then to the platform system-ui font.
+ */
+[data-theme='win11-light'] body,
+[data-theme='win11-dark'] body {
+  font-family: 'Segoe UI Variable', 'Segoe UI', system-ui, sans-serif;
+}
+
+[data-theme='win11-light'] .calc-btn,
+[data-theme='win11-dark'] .calc-btn {
+  font-family: 'Segoe UI Variable', 'Segoe UI', system-ui, sans-serif;
+  border-radius: 6px;
+  font-weight: 500;
+  box-shadow: none;
+}
+
+[data-theme='win11-light'] .calc-btn:hover,
+[data-theme='win11-dark'] .calc-btn:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+[data-theme='win11-light'] .calc-btn:active,
+[data-theme='win11-dark'] .calc-btn:active {
+  transform: scale(0.97);
+  box-shadow: none;
+}
+
+[data-theme='win11-light'] .glass-card,
+[data-theme='win11-dark'] .glass-card {
+  border-radius: 8px;
+}
+
+[data-theme='win11-light'] .calculator-display,
+[data-theme='win11-dark'] .calculator-display {
+  border-radius: 8px;
+  border-width: 1px;
+  padding: 1rem 1.25rem;
+}
+
+/* Standard/Scientific keypad restructuring (all themes): memory strip
+   docked above a uniform 4-column digit/operator/equals grid, mirroring
+   Windows 11 Calculator's layout and proportions. */
+.memory-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5rem;
+  width: 100%;
+  margin-bottom: 0.65rem;
+}
+
+.memory-strip .calc-btn {
+  min-height: 2.25rem;
+  padding: 0.4rem;
+  font-size: 0.7rem;
+}
+
+.keypad-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.65rem;
+  width: 100%;
+}
+
+.keypad-grid .calc-btn {
+  min-height: 3.5rem;
+  padding: 0.75rem;
+}
+
+@media (min-width: 640px) {
+  .keypad-grid {
+    gap: 0.75rem;
+  }
+  .keypad-grid .calc-btn {
+    min-height: 3.75rem;
+  }
+}
+
+/* Scientific functions toolbar (2nd, parentheses, trig, etc.) */
+.sci-toolbar {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.sci-toolbar .calc-btn {
+  min-height: 2.5rem;
+  padding: 0.4rem;
+}
+
+/* Fluent-style navigation affordance: a slide-out rail at desktop widths,
+   a compact dropdown at mobile widths (Header.jsx MODES). */
+.nav-mobile {
+  width: 100%;
+}
+
+.nav-rail {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .nav-mobile {
+    display: none;
+  }
+
+  .nav-rail {
+    display: flex;
+    align-items: center;
+    gap: 0.15rem;
+    background: var(--display-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 14px;
+    padding: 0.3rem;
+  }
+}
+
+.nav-rail-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  flex-shrink: 0;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.nav-rail-toggle:hover {
+  background: var(--btn-func-bg);
+  color: var(--text-main);
+}
+
+.nav-rail-item {
+  display: flex;
+  align-items: center;
+  padding: 0.4rem 0.6rem;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.nav-rail-item:hover {
+  background: var(--btn-func-bg);
+  color: var(--text-main);
+}
+
+.nav-rail-item.active {
+  background: var(--btn-op-bg);
+  color: var(--text-accent);
+}
+
+.nav-rail-label {
+  max-width: 0;
+  margin-left: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-width 0.2s ease, opacity 0.15s ease, margin-left 0.2s ease;
+}
+
+.nav-rail.expanded .nav-rail-label {
+  max-width: 7rem;
+  margin-left: 0.4rem;
+  opacity: 1;
+}
+
+.nav-mobile-select {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  background: var(--display-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  padding: 0.5rem 0.75rem;
+}
+
+.nav-mobile-select select {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+/* ==========================================================================
+   Theme-variable utility classes
+   These replace inert Tailwind-style arbitrary-value classes (e.g.
+   bg-[var(--btn-eq-bg)]) that never took effect because Tailwind CSS is not
+   installed/configured in this project. Each class applies the referenced
+   CSS custom property directly so every theme's button/text colors,
+   including the new Windows 11 themes' accent equals key, actually render.
+   ========================================================================== */
+.u-bg-bg-primary { background: var(--bg-primary); }
+.u-bg-btn-eq-bg { background: var(--btn-eq-bg); }
+.u-bg-btn-func-bg { background: var(--btn-func-bg); }
+.u-bg-btn-num-bg { background: var(--btn-num-bg); }
+.u-bg-btn-op-bg { background: var(--btn-op-bg); }
+.u-bg-card-bg { background: var(--card-bg); }
+.u-bg-display-bg { background: var(--display-bg); }
+.u-bg-text-accent { background: var(--text-accent); }
+.u-border-card-border { border-color: var(--card-border); }
+.u-border-text-accent { border-color: var(--text-accent); }
+.u-fborder-text-accent:focus { border-color: var(--text-accent); }
+.u-hbg-btn-eq-hover:hover { background: var(--btn-eq-hover); }
+.u-hbg-btn-func-bg:hover { background: var(--btn-func-bg); }
+.u-hbg-btn-func-hover:hover { background: var(--btn-func-hover); }
+.u-hbg-btn-num-hover:hover { background: var(--btn-num-hover); }
+.u-hbg-btn-op-hover:hover { background: var(--btn-op-hover); }
+.u-htext-text-accent:hover { color: var(--text-accent); }
+.u-htext-text-main:hover { color: var(--text-main); }
+.u-text-btn-eq-text { color: var(--btn-eq-text); }
+.u-text-btn-func-text { color: var(--btn-func-text); }
+.u-text-btn-num-text { color: var(--btn-num-text); }
+.u-text-btn-op-text { color: var(--btn-op-text); }
+.u-text-text-accent { color: var(--text-accent); }
+.u-text-text-main { color: var(--text-main); }
+.u-text-text-muted { color: var(--text-muted); }

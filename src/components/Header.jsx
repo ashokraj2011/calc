@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   Calculator,
   FlaskConical,
@@ -10,6 +10,7 @@ import {
   History,
   Keyboard,
   Palette,
+  Menu,
 } from 'lucide-react';
 import { playSound } from '../utils/audio';
 
@@ -28,6 +29,8 @@ const THEMES = [
   { id: 'terminal', name: 'Retro Terminal' },
   { id: 'pastel', name: 'Soft Pastel' },
   { id: 'light', name: 'Clean Light' },
+  { id: 'win11-light', name: 'Windows 11 Light' },
+  { id: 'win11-dark', name: 'Windows 11 Dark' },
 ];
 
 export const Header = ({
@@ -40,63 +43,103 @@ export const Header = ({
   toggleHistory,
   toggleKeyboardModal,
 }) => {
+  // Local-only UI state for the Fluent-style navigation affordance (desktop
+  // slide-out rail). This does not need to be lifted to App.jsx since it is
+  // purely presentational and has no effect on calculator behavior.
+  const [isNavExpanded, setIsNavExpanded] = useState(false);
+
   return (
-    <header className="w-full flex flex-col md:flex-row items-center justify-between gap-4 pb-4 border-b border-[var(--card-border)] mb-4">
+    <header className="w-full flex flex-col md:flex-row items-center justify-between gap-4 pb-4 border-b u-border-card-border mb-4">
       {/* App Branding */}
       <div className="flex items-center gap-3">
-        <div className="w-10 h-10 rounded-[14px] bg-[var(--btn-op-bg)] border border-[var(--card-border)] flex items-center justify-center text-[var(--text-accent)] font-bold text-xl shadow-inner">
+        <div className="w-10 h-10 rounded-[14px] u-bg-btn-op-bg border u-border-card-border flex items-center justify-center u-text-text-accent font-bold text-xl shadow-inner">
           ∑
         </div>
         <div>
-          <h1 className="text-xl font-bold tracking-tight text-[var(--text-main)]">
-            Apex<span className="text-[var(--text-accent)]">Calc</span>
+          <h1 className="text-xl font-bold tracking-tight u-text-text-main">
+            Apex<span className="u-text-text-accent">Calc</span>
           </h1>
-          <p className="text-xs text-[var(--text-muted)] font-medium">
+          <p className="text-xs u-text-text-muted font-medium">
             Classic Desk Calculator
           </p>
         </div>
       </div>
 
-      {/* Mode Navigation Tabs */}
-      <div className="flex items-center gap-1 bg-[var(--display-bg)] p-1 rounded-[14px] border border-[var(--card-border)] overflow-x-auto max-w-full">
-        {MODES.map((mode) => {
-          const Icon = mode.icon;
-          const isActive = activeMode === mode.id;
-          return (
-            <button
-              key={mode.id}
-              onClick={() => {
+      {/* Mode Navigation: Fluent-style NavigationView affordance —
+          a slide-out rail at desktop widths, a compact dropdown at mobile
+          widths (Windows 11 Calculator itself uses a hamburger NavigationView). */}
+      <nav className="w-full md:w-auto max-w-full">
+        {/* Desktop slide-out rail */}
+        <div className={`nav-rail ${isNavExpanded ? 'expanded' : ''}`}>
+          <button
+            type="button"
+            onClick={() => {
+              playSound('click', soundEnabled);
+              setIsNavExpanded((prev) => !prev);
+            }}
+            title={isNavExpanded ? 'Collapse navigation' : 'Expand navigation'}
+            className="nav-rail-toggle"
+          >
+            <Menu className="w-3.5 h-3.5" />
+          </button>
+          {MODES.map((mode) => {
+            const Icon = mode.icon;
+            const isActive = activeMode === mode.id;
+            return (
+              <button
+                key={mode.id}
+                onClick={() => {
+                  playSound('mode', soundEnabled);
+                  setActiveMode(mode.id);
+                }}
+                className={`nav-rail-item classic-tab ${isActive ? 'active' : ''}`}
+              >
+                <Icon className="w-3.5 h-3.5 shrink-0" />
+                <span className="nav-rail-label">{mode.name}</span>
+              </button>
+            );
+          })}
+        </div>
+
+        {/* Mobile compact dropdown */}
+        <div className="nav-mobile">
+          <div className="nav-mobile-select">
+            {(() => {
+              const ActiveIcon = MODES.find((m) => m.id === activeMode)?.icon || Calculator;
+              return <ActiveIcon className="w-3.5 h-3.5 u-text-text-accent shrink-0" />;
+            })()}
+            <select
+              value={activeMode}
+              onChange={(e) => {
                 playSound('mode', soundEnabled);
-                setActiveMode(mode.id);
+                setActiveMode(e.target.value);
               }}
-              className={`classic-tab flex items-center gap-1.5 px-3 py-1.5 rounded-[10px] text-xs font-semibold transition-all ${
-                isActive
-                  ? 'bg-[var(--btn-op-bg)] text-[var(--text-accent)] shadow-sm scale-[1.02]'
-                  : 'text-[var(--text-muted)] hover:text-[var(--text-main)] hover:bg-[var(--btn-func-bg)]'
-              }`}
             >
-              <Icon className="w-3.5 h-3.5" />
-              <span>{mode.name}</span>
-            </button>
-          );
-        })}
-      </div>
+              {MODES.map((mode) => (
+                <option key={mode.id} value={mode.id} className="u-bg-bg-primary u-text-text-main">
+                  {mode.name}
+                </option>
+              ))}
+            </select>
+          </div>
+        </div>
+      </nav>
 
       {/* Quick Action Controls */}
       <div className="flex items-center gap-2">
         {/* Theme Selector */}
-        <div className="relative flex items-center bg-[var(--display-bg)] border border-[var(--card-border)] rounded-xl px-2 py-1 text-xs text-[var(--text-main)]">
-          <Palette className="w-3.5 h-3.5 text-[var(--text-accent)] mr-1.5" />
+        <div className="relative flex items-center u-bg-display-bg border u-border-card-border rounded-xl px-2 py-1 text-xs u-text-text-main">
+          <Palette className="w-3.5 h-3.5 u-text-text-accent mr-1.5" />
           <select
             value={currentTheme}
             onChange={(e) => {
               playSound('click', soundEnabled);
               setTheme(e.target.value);
             }}
-            className="bg-transparent border-none outline-none text-xs font-medium text-[var(--text-main)] cursor-pointer pr-1"
+            className="bg-transparent border-none outline-none text-xs font-medium u-text-text-main cursor-pointer pr-1"
           >
             {THEMES.map((t) => (
-              <option key={t.id} value={t.id} className="bg-[var(--bg-primary)] text-[var(--text-main)]">
+              <option key={t.id} value={t.id} className="u-bg-bg-primary u-text-text-main">
                 {t.name}
               </option>
             ))}
@@ -111,7 +154,7 @@ export const Header = ({
             playSound('click', next);
           }}
           title={soundEnabled ? 'Mute Sounds' : 'Enable Key Sounds'}
-          className="p-2 rounded-xl bg-[var(--display-bg)] border border-[var(--card-border)] text-[var(--text-muted)] hover:text-[var(--text-main)] transition-colors"
+          className="p-2 rounded-xl u-bg-display-bg border u-border-card-border u-text-text-muted u-htext-text-main transition-colors"
         >
           {soundEnabled ? <Volume2 className="w-4 h-4 text-emerald-400" /> : <VolumeX className="w-4 h-4" />}
         </button>
@@ -123,9 +166,9 @@ export const Header = ({
             toggleKeyboardModal();
           }}
           title="Keyboard Shortcuts"
-          className="p-2 rounded-xl bg-[var(--display-bg)] border border-[var(--card-border)] text-[var(--text-muted)] hover:text-[var(--text-main)] transition-colors"
+          className="p-2 rounded-xl u-bg-display-bg border u-border-card-border u-text-text-muted u-htext-text-main transition-colors"
         >
-          <Keyboard className="w-4 h-4 text-[var(--text-accent)]" />
+          <Keyboard className="w-4 h-4 u-text-text-accent" />
         </button>
 
         {/* History Drawer Trigger */}
@@ -135,7 +178,7 @@ export const Header = ({
             toggleHistory();
           }}
           title="Calculation History"
-          className="p-2 rounded-xl bg-[var(--display-bg)] border border-[var(--card-border)] text-[var(--text-muted)] hover:text-[var(--text-main)] transition-colors relative"
+          className="p-2 rounded-xl u-bg-display-bg border u-border-card-border u-text-text-muted u-htext-text-main transition-colors relative"
         >
           <History className="w-4 h-4" />
         </button>

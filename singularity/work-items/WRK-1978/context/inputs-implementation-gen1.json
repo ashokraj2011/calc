@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "workId": "WRK-1978",
+  "workType": "feature",
+  "phase": "implementation",
+  "generation": 1,
+  "mode": "enforce",
+  "recordedAt": "2026-08-11T02:27:59.312Z",
+  "renderedSha256": "7974199cc2dc7b624ed2833685e8df0d60c5866213394cf68e4aef59cd805e4d",
+  "warnings": [],
+  "inputs": [
+    {
+      "phase": "design",
+      "path": "artifacts/design/design.md",
+      "optional": false,
+      "maxBytes": null,
+      "status": "captured",
+      "producerStatus": "approved",
+      "producerGeneration": 1,
+      "approvedAt": "2026-08-11T00:15:56.434Z",
+      "approvedBy": "ashokraj2011",
+      "approvedSha256": "25a3ca14e26cc3ab5c1678a98defd986491a1b1b2ba7b873c5aeb28f426a6ac0",
+      "sha256": "25a3ca14e26cc3ab5c1678a98defd986491a1b1b2ba7b873c5aeb28f426a6ac0",
+      "bytes": 34277,
+      "injectedBytes": 34275,
+      "truncated": false
+    },
+    {
+      "phase": "implementation-spec",
+      "path": "artifacts/implementation-spec/implementation-spec.md",
+      "optional": false,
+      "maxBytes": null,
+      "status": "captured",
+      "producerStatus": "approved",
+      "producerGeneration": 1,
+      "approvedAt": "2026-08-11T00:25:21.552Z",
+      "approvedBy": "ashokraj2011",
+      "approvedSha256": "01f6628278b6c0046578bbd19f1a9bca8ac2a43e40a7bd44b42efebcb326bc5a",
+      "sha256": "01f6628278b6c0046578bbd19f1a9bca8ac2a43e40a7bd44b42efebcb326bc5a",
+      "bytes": 69990,
+      "injectedBytes": 69988,
+      "truncated": false
+    }
+  ]
+}
