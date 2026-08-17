@@ -1,111 +1,83 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-08-11T05:43:13Z",
-  "repository_commit": "08aa77072f09d6113acba4f1eb8db27786a97988",
+  "generated_at": "2026-08-17T21:58:44Z",
+  "repository_commit": "04535497a8ba0260c3e84e702f45d2ab13f18742",
   "entries": [
     {
       "glob": "src/App.jsx",
       "component_ids": [
-        "app-shell"
+        "calculator-shell"
       ],
       "domains": [
-        "expression-evaluation"
+        "financial-calculator"
       ],
       "views": [
-        "architecture",
+        "business",
         "development"
       ],
       "symbols": [
-        "App",
-        "evaluateExpression"
+        "App"
       ],
       "tests": [
         "src/App.test.jsx"
       ],
       "anchors": [
-        "arch.context",
-        "dev.entrypoints",
+        "biz.capabilities",
         "dev.impact"
       ],
-      "notes": "Start here for state, mode routing, history, and keyboard shortcuts."
+      "notes": "Changes here affect the overall calculator shell and mode routing."
     },
     {
       "glob": "src/utils/evaluator.js",
       "component_ids": [
-        "calculator-engine"
+        "expression-engine"
       ],
       "domains": [
-        "expression-evaluation"
+        "financial-calculator"
       ],
       "views": [
-        "architecture",
-        "development",
-        "testing",
-        "security"
+        "business",
+        "development"
       ],
       "symbols": [
         "evaluateExpression",
-        "convertUnits",
-        "calculateEMI"
+        "calculateEMI",
+        "calculateCompoundInterest",
+        "calculateTip",
+        "convertUnits"
       ],
       "tests": [
         "src/utils/evaluator.test.js"
       ],
       "anchors": [
-        "arch.contracts",
-        "dev.hotspots",
-        "test.strategy",
-        "sec.surface"
+        "biz.rules",
+        "dev.hotspots"
       ],
-      "notes": "Shared semantics for arithmetic, formatting, conversion, and finance live here."
+      "notes": "This module carries the shared business rules and calculator semantics."
     },
     {
-      "glob": "src/components/**",
+      "glob": "src/components/FinancialCalculator.jsx",
       "component_ids": [
-        "calculator-ui"
+        "financial-tools"
       ],
-      "domains": [],
+      "domains": [
+        "financial-calculator"
+      ],
       "views": [
-        "architecture",
+        "business",
         "development"
       ],
       "symbols": [
-        "Header",
-        "Display",
-        "FinancialCalculator",
-        "FunctionGrapher"
+        "FinancialCalculator"
       ],
       "tests": [
         "src/App.test.jsx"
       ],
       "anchors": [
-        "arch.structure",
-        "dev.structure"
+        "biz.workflows",
+        "dev.start"
       ],
-      "notes": "Mode-specific UI surfaces and navigation live here."
-    },
-    {
-      "glob": "src/**/*.test.*",
-      "component_ids": [
-        "test-suite"
-      ],
-      "domains": [
-        "expression-evaluation"
-      ],
-      "views": [
-        "testing"
-      ],
-      "symbols": [],
-      "tests": [
-        "src/App.test.jsx",
-        "src/utils/evaluator.test.js",
-        "src/build.test.js"
-      ],
-      "anchors": [
-        "test.map",
-        "test.commands"
-      ],
-      "notes": "Regression coverage for shell behavior, evaluator semantics, and builds."
+      "notes": "Financial planning UI lives here and should be reviewed for business-facing changes."
     }
   ],
   "fallback": {

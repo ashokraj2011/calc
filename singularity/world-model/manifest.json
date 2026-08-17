@@ -1,13 +1,13 @@
 {
   "schema_version": "3.0",
-  "repository_commit": "08aa77072f09d6113acba4f1eb8db27786a97988",
-  "repository_branch": "WRK-1978",
-  "working_tree_clean": true,
-  "generated_at": "2026-08-11T05:43:05.959Z",
-  "generated_date": "11 August 2026",
+  "repository_commit": "04535497a8ba0260c3e84e702f45d2ab13f18742",
+  "repository_branch": "WRK-TAN",
+  "working_tree_clean": false,
+  "generated_at": "2026-08-17T21:57:42.123Z",
+  "generated_date": "17 August 2026",
   "builder_version": "2.0",
   "builder_prompt_sha256": "d607ed17ba7e0ad45acd142b62b57c32272e21dfec50866d4bee5105f2fd9169",
-  "analysis_depth": "deep",
+  "analysis_depth": "quick",
   "core": {
     "summary": "core/summary.md",
     "brief": "core/summary.brief.md",
@@ -225,7 +225,7 @@
     "business": {
       "path": "views/business.md",
       "brief_path": "views/business.brief.md",
-      "generated": false,
+      "generated": true,
       "bytes": {
         "full": 0,
         "brief": 0
@@ -238,10 +238,10 @@
       ],
       "tiers": {
         "brief": {
-          "status": "missing",
+          "status": "ready",
           "path": "views/business.brief.md",
-          "bytes": 0,
-          "sha256": null
+          "bytes": 1314,
+          "sha256": "7996145f4ae279d1c184edd8c92bc2c6c5549a8daeeec0814e1f73dadce7e9f3"
         },
         "full": {
           "status": "missing",
@@ -313,98 +313,29 @@
   "phase_map": {
     "intake": {
       "views": [
-        "architecture"
+        "business"
       ],
       "tier": "brief"
     },
     "requirements": {
       "views": [
-        "architecture"
+        "business"
       ],
       "tier": "full"
-    },
-    "design": {
-      "views": [
-        "architecture"
-      ],
-      "tier": "full"
-    },
-    "implementation-spec": {
-      "views": [
-        "architecture",
-        "development"
-      ],
-      "tier": "full"
-    },
-    "implementation": {
-      "views": [
-        "development"
-      ],
-      "tier": "full"
-    },
-    "verification": {
-      "views": [
-        "testing"
-      ],
-      "tier": "full"
-    },
-    "conformance": {
-      "views": [
-        "testing",
-        "security"
-      ],
-      "tier": "brief"
     }
   },
   "agent_map": {
     "product-owner": {
       "views": [
-        "architecture"
+        "business"
       ],
       "tier": "brief"
     },
     "business-analyst": {
       "views": [
-        "architecture"
+        "business"
       ],
       "tier": "full"
-    },
-    "architect": {
-      "views": [
-        "architecture",
-        "security"
-      ],
-      "tier": "full"
-    },
-    "developer": {
-      "views": [
-        "development"
-      ],
-      "tier": "full"
-    },
-    "qa": {
-      "views": [
-        "testing"
-      ],
-      "tier": "full"
-    },
-    "security": {
-      "views": [
-        "security"
-      ],
-      "tier": "full"
-    },
-    "operations": {
-      "views": [
-        "security"
-      ],
-      "tier": "full"
-    },
-    "delivery-manager": {
-      "views": [
-        "architecture"
-      ],
-      "tier": "brief"
     }
   },
   "path_index": {
@@ -429,6 +360,32 @@
       "anchors": [
         "domain.expression-evaluation.tldr"
       ]
+    },
+    {
+      "id": "financial-calculator",
+      "path": "domains/financial-calculator.md",
+      "summary": "Calculator domain covering EMI, compound interest, and tip splitting workflows.",
+      "relevant_views": [
+        "business"
+      ],
+      "keywords": [
+        "finance",
+        "emi",
+        "compound",
+        "tip"
+      ],
+      "anchors": [
+        "domain.financial-calculator.tldr",
+        "domain.financial-calculator.facts",
+        "domain.financial-calculator.purpose",
+        "domain.financial-calculator.terms",
+        "domain.financial-calculator.rules",
+        "domain.financial-calculator.components",
+        "domain.financial-calculator.workflows",
+        "domain.financial-calculator.risks",
+        "domain.financial-calculator.tests",
+        "domain.financial-calculator.unknowns"
+      ]
     }
   ],
   "task_guides": [
@@ -443,6 +400,28 @@
       "required_domains": [
         "expression-evaluation"
       ]
+    },
+    {
+      "id": "wrk-tan",
+      "path": "task-guides/wrk-tan.md",
+      "task": "Prepare the intake artifact for WRK-TAN with the required grounded workflow inputs and publish it for review.",
+      "required_views": [
+        "business"
+      ],
+      "required_domains": [
+        "financial-calculator"
+      ],
+      "anchors": [
+        "task.wrk-tan.tldr",
+        "task.wrk-tan.task",
+        "task.wrk-tan.roles",
+        "task.wrk-tan.components",
+        "task.wrk-tan.paths",
+        "task.wrk-tan.flow",
+        "task.wrk-tan.invariants",
+        "task.wrk-tan.tests",
+        "task.wrk-tan.risks"
+      ]
     }
   ],
   "evidence": {
@@ -454,14 +433,7 @@
       "agent_type": "business",
       "load": [
         "core/summary.brief.md",
-        "views/architecture.md"
-      ]
-    },
-    {
-      "agent_type": "architect",
-      "load": [
-        "core/summary.brief.md",
-        "views/architecture.md"
+        "views/business.md"
       ]
     },
     {
@@ -469,20 +441,6 @@
       "load": [
         "core/summary.brief.md",
         "views/development.md"
-      ]
-    },
-    {
-      "agent_type": "tester",
-      "load": [
-        "core/summary.brief.md",
-        "views/testing.md"
-      ]
-    },
-    {
-      "agent_type": "release",
-      "load": [
-        "core/summary.brief.md",
-        "views/security.md"
       ]
     }
   ],
@@ -492,20 +450,17 @@
     ],
     "single_phase_typical": [
       "core/summary.brief.md",
-      "views/<view>.md"
+      "views/business.md"
     ],
     "deep_investigation": [
       "core/summary.md",
-      "views/<view>.md",
-      "domains/<domain>.md",
+      "views/business.md",
+      "domains/financial-calculator.md",
       "evidence/evidence.jsonl"
     ]
   },
   "views_generated": [
-    "architecture",
-    "development",
-    "security",
-    "testing"
+    "business"
   ],
   "source_tree_sha256": "sha256:8cbf0896fbda4694e1155b1213b6144f0bbe80ba152be2f8f6400dd357b6d209",
   "generation": {
@@ -517,19 +472,13 @@
     "resumed_views": [],
     "pending_views_at_start": []
   },
-  "generated_for_phase": "conformance",
+  "generated_for_phase": "intake",
   "requested_views": [
-    "architecture",
-    "development",
-    "testing",
-    "security"
+    "business"
   ],
   "requested_selections": [
-    "core/full",
-    "architecture/full",
-    "development/full",
-    "testing/full",
-    "security/full"
+    "core/brief",
+    "business/brief"
   ],
   "materializations": [
     {
@@ -552,6 +501,23 @@
         "testing/full"
       ],
       "reused": []
+    },
+    {
+      "id": "provider-1787004221836",
+      "generated_at": "2026-08-17T21:57:42.123Z",
+      "source_tree_sha256": "sha256:8cbf0896fbda4694e1155b1213b6144f0bbe80ba152be2f8f6400dd357b6d209",
+      "provider": "copilot-cli",
+      "requested": [
+        "business/brief",
+        "core/brief"
+      ],
+      "produced": [
+        "business/brief",
+        "core/brief"
+      ],
+      "reused": [
+        "core/brief"
+      ]
     }
   ]
 }
