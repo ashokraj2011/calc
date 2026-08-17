@@ -1,0 +1,10 @@
+{
+  "type": "manual",
+  "id": "WRK-TAN",
+  "key": null,
+  "url": null,
+  "title": "Add tan operator",
+  "description": "Add tan operator",
+  "desiredOutcome": "",
+  "acceptanceCriteria": "Check the outcome"
+}
