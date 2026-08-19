@@ -1,0 +1,111 @@
+{
+  "schemaVersion": 2,
+  "workId": "WRK-TAN",
+  "phase": "intake",
+  "generation": 1,
+  "agent": "product-owner",
+  "modelCommit": "6389c07d2093beafb7b186ca914200007edce961",
+  "matchedRules": 0,
+  "mode": "append",
+  "applied": false,
+  "depth": "standard",
+  "evidence": false,
+  "requiredViews": [
+    "business"
+  ],
+  "requiredSelections": [
+    {
+      "kind": "core",
+      "tier": "brief",
+      "required": true
+    },
+    {
+      "kind": "view",
+      "view": "business",
+      "tier": "brief",
+      "required": true,
+      "origin": "phase+agent"
+    }
+  ],
+  "task": "Prepare the intake artifact for WRK-TAN with the required grounded workflow inputs and publish it for review.",
+  "supportingEvidence": [],
+  "references": [],
+  "modelSourceTreeSha256": "sha256:8cbf0896fbda4694e1155b1213b6144f0bbe80ba152be2f8f6400dd357b6d209",
+  "composedSourceTreeSha256": "sha256:8cbf0896fbda4694e1155b1213b6144f0bbe80ba152be2f8f6400dd357b6d209",
+  "worldModelCommit": "6389c07d2093beafb7b186ca914200007edce961",
+  "manifestSha256": "59d384dcdbc6f912ce57019b4ce8cf35deacfc88ce96520a2458ac5ea8e1323b",
+  "fresh": true,
+  "renderedSha256": "635ab6f41de209b5ec3bd00cdeaec0e9d7310618279818d0e4e828c53f230406",
+  "promptPath": "singularity/work-items/WRK-TAN/context/prompts/intake-gen1.md",
+  "files": [
+    {
+      "path": "singularity/world-model/core/summary.brief.md",
+      "sha256": "6cd1b0dad233bcf1e4c699a35ae6f7ee8541fffb94d4619124a698f414480143",
+      "bytes": 1358,
+      "injectedBytes": 1358,
+      "truncated": false,
+      "category": "required",
+      "level": 0,
+      "reason": "shared repository core (brief)",
+      "evidenceId": null,
+      "mimeType": null,
+      "packageId": null,
+      "handle": null,
+      "previewSha256": null,
+      "previewBytes": null,
+      "renderer": null
+    },
+    {
+      "path": "singularity/world-model/views/business.brief.md",
+      "sha256": "7996145f4ae279d1c184edd8c92bc2c6c5549a8daeeec0814e1f73dadce7e9f3",
+      "bytes": 1314,
+      "injectedBytes": 1314,
+      "truncated": false,
+      "category": "required",
+      "level": 1,
+      "reason": "intake view: business (brief; phase+agent)",
+      "evidenceId": null,
+      "mimeType": null,
+      "packageId": null,
+      "handle": null,
+      "previewSha256": null,
+      "previewBytes": null,
+      "renderer": null
+    },
+    {
+      "path": "singularity/world-model/domains/financial-calculator.md",
+      "sha256": "1d7289456451b33a53b5ede397c743151435a052519ce4837010453b87a08927",
+      "bytes": 3808,
+      "injectedBytes": 3808,
+      "truncated": false,
+      "category": "required",
+      "level": 2,
+      "reason": "domain: financial-calculator",
+      "evidenceId": null,
+      "mimeType": null,
+      "packageId": null,
+      "handle": null,
+      "previewSha256": null,
+      "previewBytes": null,
+      "renderer": null
+    },
+    {
+      "path": "singularity/world-model/task-guides/wrk-tan.md",
+      "sha256": "3830ea26a003944d697a4375051e40d9f8b1daf7adf5ffcdd0e3812e85b589f8",
+      "bytes": 3379,
+      "injectedBytes": 3379,
+      "truncated": false,
+      "category": "required",
+      "level": 2,
+      "reason": "task guide: wrk-tan",
+      "evidenceId": null,
+      "mimeType": null,
+      "packageId": null,
+      "handle": null,
+      "previewSha256": null,
+      "previewBytes": null,
+      "renderer": null
+    }
+  ],
+  "injectedAt": "2026-08-17T22:03:52.175Z"
+}
