@@ -1,19 +1,18 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-08-17T21:58:44Z",
-  "repository_commit": "04535497a8ba0260c3e84e702f45d2ab13f18742",
+  "generated_at": "2026-08-20T03:02:27.293Z",
+  "repository_commit": "1b17ac362bdedf23ef4f7683203fb8e1a715428b",
   "entries": [
     {
       "glob": "src/App.jsx",
       "component_ids": [
-        "calculator-shell"
+        "calc-shell"
       ],
       "domains": [
-        "financial-calculator"
+        "expression-evaluation"
       ],
       "views": [
-        "business",
-        "development"
+        "business"
       ],
       "symbols": [
         "App"
@@ -23,9 +22,9 @@
       ],
       "anchors": [
         "biz.capabilities",
-        "dev.impact"
+        "biz.start"
       ],
-      "notes": "Changes here affect the overall calculator shell and mode routing."
+      "notes": "Main app shell and mode router; changes here affect the calculator experience broadly."
     },
     {
       "glob": "src/utils/evaluator.js",
@@ -33,59 +32,56 @@
         "expression-engine"
       ],
       "domains": [
-        "financial-calculator"
+        "expression-evaluation"
       ],
       "views": [
-        "business",
-        "development"
+        "business"
       ],
       "symbols": [
         "evaluateExpression",
         "calculateEMI",
         "calculateCompoundInterest",
-        "calculateTip",
-        "convertUnits"
+        "calculateTip"
       ],
       "tests": [
         "src/utils/evaluator.test.js"
       ],
       "anchors": [
         "biz.rules",
-        "dev.hotspots"
+        "biz.impact"
       ],
-      "notes": "This module carries the shared business rules and calculator semantics."
+      "notes": "Shared math engine for arithmetic, trigonometry, and financial calculations."
     },
     {
-      "glob": "src/components/FinancialCalculator.jsx",
+      "glob": "src/components/ScientificKeypad.jsx",
       "component_ids": [
-        "financial-tools"
+        "scientific-ui"
       ],
       "domains": [
-        "financial-calculator"
+        "expression-evaluation"
       ],
       "views": [
-        "business",
-        "development"
+        "business"
       ],
       "symbols": [
-        "FinancialCalculator"
+        "ScientificKeypad"
       ],
       "tests": [
         "src/App.test.jsx"
       ],
       "anchors": [
-        "biz.workflows",
-        "dev.start"
+        "biz.capabilities",
+        "biz.start"
       ],
-      "notes": "Financial planning UI lives here and should be reviewed for business-facing changes."
+      "notes": "Scientific calculator controls and trig entry points."
     }
   ],
   "fallback": {
     "views": [
-      "development"
+      "business"
     ],
     "anchors": [
-      "core.map"
+      "biz.capabilities"
     ]
   }
 }

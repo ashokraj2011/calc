@@ -1,52 +1,53 @@
-> **Grounding** · calc @ `08aa77072f09d6113acba4f1eb8db27786a97988` · view: `domain.expression-evaluation` · tier: `full`
-> **Generated** 11 August 2026 (2026-08-11T05:43:13Z) · depth: `deep` · builder `2.0`
+> **Grounding** · calc @ `1b17ac362bdedf23ef4f7683203fb8e1a715428b` · view: `expression-evaluation` · tier: `full`
+> **Generated** 20 August 2026 (2026-08-20T03:02:27.293Z) · depth: `quick` · builder `2.0`
 > **Authoritative for:** file locations, entry points, commands, structural relationships as of the commit above.
 > **Not authoritative for:** current file contents. If this document conflicts with code you have read, trust the code and say so explicitly in your output.
 > **Unknowns are marked.** Do not resolve them by inference. If the repository has changed since the date above, treat locations as hints, not facts.
 
 ## TL;DR {#domain.expression-evaluation.tldr}
-The expression-evaluation domain is the shared calculator engine represented by `src/utils/evaluator.js`. It defines how the app parses arithmetic, percentages, factorials, constants, trig, unit conversions, and finance formulas; the same semantics underpin the standard/scientific, converter, and financial modes. The main risk is that a change here can silently alter behavior across every calculator mode, so tests should be updated in parallel.
+The expression-evaluation domain is the shared math engine behind the calculator experience. It sanitizes user input, translates notation such as percentages and radicals into executable expressions, applies angle-unit rules for trigonometry, and formats results for display. The domain is central to both the scientific and financial modes and is therefore a high-risk change surface.
+
+## Facts {#domain.expression-evaluation.facts}
+```yaml
+owned_by: ["src/utils/evaluator.js", "src/App.jsx"]
+primary_workflow:
+  - "user enters expression"
+  - "expression is sanitized and normalized"
+  - "mathjs evaluates the expression"
+  - "result is formatted and displayed"
+key_invariants:
+  - "degree-based trig functions are rewritten to use deg units"
+  - "invalid or non-finite values return Error"
+  - "large or tiny numbers are formatted with scientific notation"
+```
 
 ## Domain purpose {#domain.expression-evaluation.purpose}
-This domain captures the calculator’s core semantics: turning user-entered expressions into values, formatting them for display, and exposing helper functions for unit conversion and finance. It is the main place where business-like behavior is encoded in the client.
+This domain turns user-entered math into a reliable calculation experience. It exists to keep a single expression engine consistent across arithmetic, scientific, and financial features without duplicating business logic.
 
-## Terminology {#domain.expression-evaluation.terms}
-- Expression: a string entered by the user or created by a keypad action.
-- Result: the formatted display output returned by the evaluator.
-- Raw result: the numeric value before formatting.
-- Unit conversion: a conversion between categories such as length, weight, temperature, digital data, or speed.
+## Terminology {#domain.expression-evaluation.terminology}
+- `expression`: the raw user-entered computation string.
+- `angleUnit`: either `DEG` or `RAD`, used for trig evaluation.
+- `result` / `rawResult`: the display output and the underlying evaluated value.
 
-## Business rules and implementation points {#domain.expression-evaluation.rules}
-- Empty input returns a zero result.
-- Percent signs are converted into a division-by-100 expression.
-- Factorials are converted into `factorial(n)`.
-- Trig functions are wrapped for degree or radian mode.
-- Finance helpers return rounded numeric values for EMI, compound interest, and tip splitting.
-Evidence: `src/utils/evaluator.js:4-218`.
-
-## Owning components {#domain.expression-evaluation.ownership}
-- `src/utils/evaluator.js` — primary implementation.
-- `src/App.jsx` — calls the evaluator on equals and stores history.
-- `src/components/FinancialCalculator.jsx` and `src/components/UnitConverter.jsx` — use the evaluator helpers directly.
+## Owning components {#domain.expression-evaluation.components}
+- `src/utils/evaluator.js` owns normalization, number formatting, unit conversion, and financial formulas.
+- `src/App.jsx` coordinates expression state and dispatches evaluations into the shared engine.
+- `src/components/ScientificKeypad.jsx` contributes trig and scientific symbols used by the domain.
 
 ## Main workflows {#domain.expression-evaluation.workflows}
-1. User enters an expression and hits equals.
-2. `App` calls `evaluateExpression`.
-3. The evaluator sanitizes and evaluates the expression.
-4. The app stores history and displays the formatted result.
+1. The calculator stores an expression string in app state.
+2. `evaluateExpression` sanitizes symbols such as `π`, `%`, `√`, `!`, and `×`/`÷`.
+3. For degree mode, `sin`, `cos`, and `tan` calls are rewritten with `deg` units.
+4. The result is formatted and returned to the display.
 
 ## Data and state {#domain.expression-evaluation.state}
-The domain produces a result object rather than mutating long-lived state. The app uses the returned value to update display and history.
+The domain operates on strings and numeric values rather than a database model. It also coexists with local history and memory state in `src/App.jsx`, but the evaluation logic itself is stateless.
 
-## Invariants and change risks {#domain.expression-evaluation.risks}
-- The evaluator’s output format is an explicit contract used by the UI tests.
-- Changes here can affect arithmetic semantics, rounding, and finance calculations across multiple modes.
-- Tests should be updated whenever a behavior change or bug fix touches this domain.
+## Invariants and risks {#domain.expression-evaluation.risks}
+The most important invariant is that scientific and financial modes share the same evaluation rules. A change to parsing or formatting can affect many surfaces at once. The current code also treats invalid input conservatively, which can be good for UX but may hide upstream errors.
 
 ## Tests {#domain.expression-evaluation.tests}
-- `src/utils/evaluator.test.js` covers arithmetic, percentages, factorials, trig, constants, and formatting.
-- `src/App.test.jsx` covers integration via the shell and keyboard input.
+The domain is covered by `src/utils/evaluator.test.js` and by the broader app tests in `src/App.test.jsx`.
 
 ## Unknowns {#domain.expression-evaluation.unknowns}
-- No server-side or distributed version of this evaluator exists in the repository.
-- No formal schema or API contract defines how the evaluator should behave beyond the tests and implementation.
+The repository does not define a formal spec for edge cases, locale formatting, or external data sources for this domain.
