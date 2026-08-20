@@ -1,82 +1,74 @@
-> **Grounding** · calc @ `08aa77072f09d6113acba4f1eb8db27786a97988` · view: `core` · tier: `full`
-> **Generated** 11 August 2026 (2026-08-11T05:43:13Z) · depth: `deep` · builder `2.0`
+> **Grounding** · calc @ `1b17ac362bdedf23ef4f7683203fb8e1a715428b` · view: `core` · tier: `full`
+> **Generated** 20 August 2026 (2026-08-20T03:02:27.293Z) · depth: `quick` · builder `2.0`
 > **Authoritative for:** file locations, entry points, commands, structural relationships as of the commit above.
 > **Not authoritative for:** current file contents. If this document conflicts with code you have read, trust the code and say so explicitly in your output.
 > **Unknowns are marked.** Do not resolve them by inference. If the repository has changed since the date above, treat locations as hints, not facts.
 
 ## TL;DR {#core.tldr}
-ApexCalc is a React + Vite single-page calculator app that combines a classic calculator UI with scientific, converter, financial, and grapher modes. The repo is primarily a frontend application with no backend service; most business behavior lives in the client-side evaluator and mode components. The main runtime path is `src/main.jsx` mounting `src/App.jsx`, which orchestrates state, local history, themes, and keyboard shortcuts. The most important implementation surface is `src/utils/evaluator.js`, which wraps `mathjs` for arithmetic, unit conversion, finance calculations, and display formatting. Standard validation is `npm test`, `npm run build`, and `npm run lint`; the first two passed in this inspection, while lint currently reports pre-existing ESLint issues. The largest risk is that the app is highly UI-coupled and the current lint baseline is not clean.
+This repository is a React/Vite single-page calculator application with standard, scientific, converter, financial, and grapher modes. The main app shell in `src/App.jsx` coordinates mode switching and calculator state, while `src/utils/evaluator.js` performs expression parsing, unit conversion, and financial calculations. The project is lightweight and client-side: it uses browser `localStorage` for history, theme, and sound preferences, and there is no backend service or database. The most important validation commands are `npm test` and `npm run build`, both defined in `package.json`. The current working tree is not clean, so grounding should be read as a snapshot of the inspected commit plus the current uncommitted deletions in `singularity/`.
 
 ## Facts {#core.facts}
 ```yaml
-repository:
-  kind: application
-  languages: [JavaScript, JSX, CSS, HTML]
-  package_root: .
+repository_kind: application
+languages: [JavaScript, JSX, CSS, JSON]
+package_roots: [.]
 entrypoints:
-  - { id: app-bootstrap, path: src/main.jsx, line: 1, invocation: "React mount point" }
-  - { id: app-shell, path: src/App.jsx, line: 14, invocation: "calculator mode orchestrator" }
-components:
-  - { id: app-shell, path: src/App.jsx, role: "mode router, state, local persistence" }
-  - { id: calculator-engine, path: src/utils/evaluator.js, role: "math evaluation and formatting" }
-  - { id: calculator-ui, path: src/components, role: "mode-specific views and interaction surfaces" }
+  - { id: app-shell, path: "src/App.jsx:14-324", invocation: "Vite client app" }
+  - { id: package-scripts, path: "package.json:6-11", invocation: "npm test / npm run build" }
+key_symbols:
+  - { name: App, path: "src/App.jsx:14", role: "mode router and calculator state" }
+  - { name: evaluateExpression, path: "src/utils/evaluator.js:4", role: "expression parsing and unit-aware evaluation" }
 commands:
-  - { command: "npm test", purpose: "Vitest suite", source: "package.json:11" }
-  - { command: "npm run build", purpose: "Vite production build", source: "package.json:8" }
-  - { command: "npm run lint", purpose: "ESLint baseline", source: "package.json:9" }
+  - { command: "npm test", purpose: "run Vitest suite", source: "package.json:11" }
+  - { command: "npm run build", purpose: "build production bundle", source: "package.json:8" }
+hotspots:
+  - { path: "src/App.jsx", reason: "cross-cutting UI state and mode routing" }
+  - { path: "src/utils/evaluator.js", reason: "shared math engine for expression evaluation, trigonometry, and finance" }
 ```
 
 ## Repository purpose {#core.purpose}
-This repository is a client-side calculator experience for arithmetic, scientific functions, unit conversion, financial calculations, and graphing. Its observable user-facing capabilities are implemented entirely in the browser and stored in `localStorage` for simple persistence of history, theme, and sound settings (see `src/App.jsx:23-34`, `src/components/HistoryDrawer.jsx:15-26`).
+The repository implements a calculator experience for everyday arithmetic, scientific math, unit conversion, financial planning, and graphing. The business value is primarily user productivity and quick decision support, not a multi-user platform. The visible capabilities are all rendered in the browser and driven by local client state.
 
 ## Repository type and languages {#core.type}
-The repository is a single React/Vite application in a package-managed workspace. The codebase is primarily JavaScript/JSX with CSS and HTML, using Vite for bundling and Vitest + Testing Library for tests. Evidence: `package.json:1-35`, `vite.config.js:1-12`, `src/App.test.jsx:1-200`.
+This is a single-page React application built on Vite. The codebase mixes JavaScript, JSX, CSS, and package metadata. The dependency manifest also includes `mathjs`, `lucide-react`, Vitest, Testing Library, and Vite.
 
 ## Main applications, packages, or services {#core.components}
-The main application is the calculator shell in `src/App.jsx`. Supporting modules are:
-- `src/components/` — mode-specific UI surfaces (standard, scientific, converter, financial, grapher, history, shortcuts).
-- `src/utils/evaluator.js` — shared calculation engine, unit conversion tables, finance helpers, and number formatting.
-- `src/utils/audio.js` — optional Web Audio feedback for button presses and mode changes.
-- `src/test/setup.js` and `src/**/*.test.*` — test harness and regression coverage.
+- `src/App.jsx` is the main application shell and mode router.
+- `src/components/ScientificKeypad.jsx` and `src/components/StandardKeypad.jsx` expose calculator controls.
+- `src/components/FinancialCalculator.jsx` adds loan EMI, compound interest, and tip-splitting workflows.
+- `src/components/UnitConverter.jsx` and `src/components/FunctionGrapher.jsx` provide specialized calculators.
+- `src/utils/evaluator.js` is the shared engine for parsing expressions, formatting numbers, and computing financial formulas.
 
 ## High-level component map {#core.map}
-The app shell wires mode selection to the selected component and shares expression/result state across the calculator views. The evaluator is a shared dependency used by the standard/scientific keypad path, the converter, and the financial calculator. The graphing view uses `mathjs` directly rather than the shared evaluator to plot equations. Evidence: `src/App.jsx:14-324`, `src/components/UnitConverter.jsx:14-132`, `src/components/FinancialCalculator.jsx:24-241`, `src/components/FunctionGrapher.jsx:14-212`.
+The app state in `src/App.jsx` is the hub. It delegates UI to mode-specific components and sends evaluations to `evaluateExpression` from `src/utils/evaluator.js`. `Display.jsx` renders the expression/result view, `HistoryDrawer.jsx` stores recent calculations, and `audio.js` provides optional sound feedback. The financial and unit-converter features are separate mode components but share the evaluator and the same display shell.
 
 ## Main entry points {#core.entrypoints}
-- `src/main.jsx` bootstraps the React root and imports the app.
-- `src/App.jsx` defines the state model, keyboard shortcuts, local storage sync, and mode routing.
-- `src/utils/evaluator.js` is the critical shared library for expression evaluation and display formatting.
-Evidence: `src/main.jsx:1-8`, `src/App.jsx:14-324`, `src/utils/evaluator.js:1-218`.
+- `src/App.jsx:14` is the app component that creates the main calculator experience.
+- `src/main.jsx` mounts the React app into the DOM.
+- `package.json:6-11` defines the standard commands for development, build, lint, preview, and tests.
 
 ## Primary technologies {#core.tech}
-The repository uses React 19, Vite 8, mathjs, lucide-react, and Vitest with Testing Library and jsdom. Styling is custom CSS variables and utility classes in `src/index.css`, with the app applying a `data-theme` attribute to switch themes. Evidence: `package.json:13-33`, `src/index.css:1-260`, `vite.config.js:1-12`.
+The repository uses React 19, Vite 8, Vitest, Testing Library, and `mathjs` for expression evaluation. Styling is component-driven and uses CSS classes plus Tailwind-like utility classes embedded in JSX.
 
 ## Standard build and test commands {#core.commands}
-Observed commands and their purpose:
-- `npm ci` — install dependencies (completed successfully).
-- `npm test` — run the Vitest suite (31 tests passed in this inspection).
-- `npm run build` — produce a production bundle (completed successfully).
-- `npm run lint` — run ESLint (failed with 20 existing issues).
-Evidence IDs: `E-004`, `E-005`, `E-009`.
+- `npm test` runs the Vitest suite; it passed during inspection.
+- `npm run build` creates a production bundle; it succeeded during inspection.
+- `npm run dev` starts the local Vite dev server.
+- `npm run lint` runs ESLint.
 
 ## Important risks {#core.risks}
-- The app’s behavior is tightly coupled to UI state and local browser storage; changes can easily affect multiple modes at once.
-- The repository has a non-clean lint baseline and an effect-triggered state pattern in the grapher component that could become fragile.
-- The production bundle is relatively large, which may matter if the app is expected to stay lightweight.
+The most important risk is overreliance on client-side logic and browser storage. The app does not expose a backend or shared state, so errors, history, and preferences are local to the browser and may be lost or inconsistent across devices. Another risk is that financial calculations are implemented as UI helpers rather than domain modules with formal validation.
 
 ## Important unknowns {#core.unknowns}
-- No backend, API contract, or deployment pipeline is defined in this repository.
-- No explicit accessibility or security review artifacts are stored alongside the app.
-- The repository does not declare a release or rollback process beyond Vite build artifacts.
+The repository does not expose a product roadmap, customer segmentation, or external integrations. It also does not define an authoritative domain model for finance or expression evaluation beyond the code itself.
 
 ## Commit, generation date, and freshness warning {#core.freshness}
-Inspected commit: `08aa77072f09d6113acba4f1eb8db27786a97988`. Generated at `2026-08-11T05:43:13Z`. The working tree was not clean at inspection time because tracked files under `singularity/` were already deleted from the checkout; this grounding therefore describes the repository snapshot as captured from the inspected commit and the current working tree state. Evidence: `git status` from the repository root.
+Inspected commit: `1b17ac362bdedf23ef4f7683203fb8e1a715428b`. Generated at `2026-08-20T03:02:27.293Z` on `20 August 2026`. The repository working tree is not clean, so the current state may differ from the inspected commit.
 
 ## Recommended next view for each common task {#core.routing}
-- Implement or debug calculator behavior: `architecture` + `development`.
-- Add or revise tests: `testing`.
-- Review UI theming or cross-mode consistency: `architecture` + `development`.
-- Review security or data handling assumptions: `security`.
+- Product behavior or business impact: `views/business.md`
+- Implementation or debugging: `views/development.md` (not generated in this quick pass)
+- Test creation or regression analysis: `views/testing.md` (not generated in this quick pass)
 
 ## Deterministic repository facts {#core.deterministic-facts}
 
