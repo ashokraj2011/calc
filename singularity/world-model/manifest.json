@@ -1,9 +1,9 @@
 {
   "schema_version": "3.0",
-  "repository_commit": "1b17ac362bdedf23ef4f7683203fb8e1a715428b",
+  "repository_commit": "6b0100c4e4f6f61b03c4e5fcbf7d58052f63d7f6",
   "repository_branch": "WRK-TAN",
-  "working_tree_clean": true,
-  "generated_at": "2026-08-20T03:02:20.409Z",
+  "working_tree_clean": false,
+  "generated_at": "2026-08-20T04:00:23.844Z",
   "generated_date": "20 August 2026",
   "builder_version": "2.0",
   "builder_prompt_sha256": "d607ed17ba7e0ad45acd142b62b57c32272e21dfec50866d4bee5105f2fd9169",
@@ -251,38 +251,6 @@
         "business"
       ],
       "tier": "full"
-    },
-    "design": {
-      "views": [
-        "architecture"
-      ],
-      "tier": "full"
-    },
-    "implementation-spec": {
-      "views": [
-        "architecture",
-        "development"
-      ],
-      "tier": "full"
-    },
-    "implementation": {
-      "views": [
-        "development"
-      ],
-      "tier": "full"
-    },
-    "verification": {
-      "views": [
-        "testing"
-      ],
-      "tier": "full"
-    },
-    "conformance": {
-      "views": [
-        "testing",
-        "security"
-      ],
-      "tier": "brief"
     }
   },
   "agent_map": {
@@ -297,43 +265,6 @@
         "business"
       ],
       "tier": "full"
-    },
-    "architect": {
-      "views": [
-        "architecture",
-        "security"
-      ],
-      "tier": "full"
-    },
-    "developer": {
-      "views": [
-        "development"
-      ],
-      "tier": "full"
-    },
-    "qa": {
-      "views": [
-        "testing"
-      ],
-      "tier": "full"
-    },
-    "security": {
-      "views": [
-        "security"
-      ],
-      "tier": "full"
-    },
-    "operations": {
-      "views": [
-        "operations"
-      ],
-      "tier": "full"
-    },
-    "delivery-manager": {
-      "views": [
-        "release"
-      ],
-      "tier": "brief"
     }
   },
   "path_index": {
@@ -365,6 +296,23 @@
         "domain.expression-evaluation.tests",
         "domain.expression-evaluation.unknowns"
       ]
+    },
+    {
+      "id": "calculator-capabilities",
+      "path": "domains/calculator-capabilities.md",
+      "summary": "Observable calculator capabilities and their core business rules.",
+      "relevant_views": [
+        "business"
+      ],
+      "keywords": [
+        "calculator",
+        "math",
+        "conversion",
+        "financial"
+      ],
+      "anchors": [
+        "domain.calculator.tldr"
+      ]
     }
   ],
   "task_guides": [
@@ -391,6 +339,17 @@
         "task.add-tan-operator.validation",
         "task.add-tan-operator.risks"
       ]
+    },
+    {
+      "id": "wrk-tan",
+      "path": "task-guides/wrk-tan.md",
+      "task": "Prepare the intake artifact for WRK-TAN and advance it to the next valid step.",
+      "required_views": [
+        "business"
+      ],
+      "required_domains": [
+        "calculator-capabilities"
+      ]
     }
   ],
   "evidence": {
@@ -406,31 +365,11 @@
       ]
     },
     {
-      "agent_type": "architect",
-      "load": [
-        "core/summary.brief.md",
-        "views/architecture.md"
-      ]
-    },
-    {
       "agent_type": "developer",
       "load": [
         "core/summary.brief.md",
-        "views/development.md"
-      ]
-    },
-    {
-      "agent_type": "tester",
-      "load": [
-        "core/summary.brief.md",
-        "views/testing.md"
-      ]
-    },
-    {
-      "agent_type": "release",
-      "load": [
-        "core/summary.brief.md",
-        "views/release.md"
+        "views/business.md",
+        "domains/calculator-capabilities.md"
       ]
     }
   ],
@@ -445,7 +384,7 @@
     "deep_investigation": [
       "core/summary.md",
       "views/business.md",
-      "domains/expression-evaluation.md",
+      "domains/calculator-capabilities.md",
       "evidence/evidence.jsonl"
     ]
   },
@@ -485,6 +424,24 @@
         "core/brief"
       ],
       "reused": []
+    },
+    {
+      "id": "provider-1787199287059",
+      "generated_at": "2026-08-20T04:00:23.844Z",
+      "source_tree_sha256": "sha256:1dee7ed995b515c700d64d2f865932a4a27932abf9fa9e2cdd4236e9dad677bd",
+      "provider": "copilot-cli",
+      "requested": [
+        "business/brief",
+        "core/brief"
+      ],
+      "produced": [
+        "business/brief",
+        "core/brief"
+      ],
+      "reused": [
+        "business/brief",
+        "core/brief"
+      ]
     }
   ]
 }
