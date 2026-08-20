@@ -1,15 +1,15 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-08-20T03:02:27.293Z",
-  "repository_commit": "1b17ac362bdedf23ef4f7683203fb8e1a715428b",
+  "generated_at": "2026-08-20T04:09:10Z",
+  "repository_commit": "6b0100c4e4f6f61b03c4e5fcbf7d58052f63d7f6",
   "entries": [
     {
       "glob": "src/App.jsx",
       "component_ids": [
-        "calc-shell"
+        "app-shell"
       ],
       "domains": [
-        "expression-evaluation"
+        "calculator-capabilities"
       ],
       "views": [
         "business"
@@ -21,10 +21,10 @@
         "src/App.test.jsx"
       ],
       "anchors": [
-        "biz.capabilities",
+        "biz.workflows",
         "biz.start"
       ],
-      "notes": "Main app shell and mode router; changes here affect the calculator experience broadly."
+      "notes": "Core user-flow orchestration and mode switching."
     },
     {
       "glob": "src/utils/evaluator.js",
@@ -32,13 +32,14 @@
         "expression-engine"
       ],
       "domains": [
-        "expression-evaluation"
+        "calculator-capabilities"
       ],
       "views": [
         "business"
       ],
       "symbols": [
         "evaluateExpression",
+        "formatNumber",
         "calculateEMI",
         "calculateCompoundInterest",
         "calculateTip"
@@ -48,32 +49,78 @@
       ],
       "anchors": [
         "biz.rules",
-        "biz.impact"
+        "biz.failure"
       ],
-      "notes": "Shared math engine for arithmetic, trigonometry, and financial calculations."
+      "notes": "Shared semantics for math, unit conversion, and financial helpers."
     },
     {
-      "glob": "src/components/ScientificKeypad.jsx",
+      "glob": "src/components/FinancialCalculator.jsx",
       "component_ids": [
-        "scientific-ui"
+        "mode-views"
       ],
       "domains": [
-        "expression-evaluation"
+        "calculator-capabilities"
       ],
       "views": [
         "business"
       ],
       "symbols": [
-        "ScientificKeypad"
+        "FinancialCalculator"
       ],
       "tests": [
         "src/App.test.jsx"
       ],
       "anchors": [
         "biz.capabilities",
-        "biz.start"
+        "biz.impact"
       ],
-      "notes": "Scientific calculator controls and trig entry points."
+      "notes": "Financial calculator workflows are concentrated here."
+    },
+    {
+      "glob": "src/components/FunctionGrapher.jsx",
+      "component_ids": [
+        "mode-views"
+      ],
+      "domains": [
+        "calculator-capabilities"
+      ],
+      "views": [
+        "business"
+      ],
+      "symbols": [
+        "FunctionGrapher"
+      ],
+      "tests": [
+        "src/App.test.jsx"
+      ],
+      "anchors": [
+        "biz.capabilities",
+        "biz.impact"
+      ],
+      "notes": "Graphing and equation entry are implemented here."
+    },
+    {
+      "glob": "src/components/UnitConverter.jsx",
+      "component_ids": [
+        "mode-views"
+      ],
+      "domains": [
+        "calculator-capabilities"
+      ],
+      "views": [
+        "business"
+      ],
+      "symbols": [
+        "UnitConverter"
+      ],
+      "tests": [
+        "src/App.test.jsx"
+      ],
+      "anchors": [
+        "biz.capabilities",
+        "biz.rules"
+      ],
+      "notes": "Unit conversion capability and vocabulary live here."
     }
   ],
   "fallback": {
@@ -81,7 +128,7 @@
       "business"
     ],
     "anchors": [
-      "biz.capabilities"
+      "biz.start"
     ]
   }
 }
