@@ -3,21 +3,21 @@
   "layout": "canonical-paths",
   "source": {
     "branch": "sflow/config",
-    "commit": "6507d745da30b9d3b7cd0286cf313652cb4304ee"
+    "commit": "9d3b4bfdb1661d6c52d138e3c7d0d26124ea4181"
   },
   "product": {
     "version": "0.9.0",
-    "revision": "e769cad8ee2769792d54dd865b646d46ec1a711a"
+    "revision": "f9df8a77a1a343eb7cf90dc16f9c718d046e914e"
   },
   "files": {
     ".github/agents/architect.agent.md": "d7aa40fde49e3111836cc478b20d9cef03bb403512d48f8fee8b620c6f2af878",
     ".github/agents/developer.agent.md": "79b21b6d470b38c8b0099d385e3da9902a5e01012c7f835c60c412cb244b0c92",
     ".github/agents/mobile-architect.agent.md": "25c97dee212791eaeff956b0b32c756272c1e0b9a8bf94819a4bb70c81956a00",
-    ".github/agents/poc-analyst.agent.md": "b2911fb7034dddec1d44266f83146a0460dc158a3efb6938cdefda2ae0d96086",
-    ".github/agents/poc-automation.agent.md": "0ed8eae43d116bbe10745d851180d6043a563568635359087da424d67e19aee1",
-    ".github/agents/poc-explorer.agent.md": "d0fa8355f9b7bb8924427a8a000c23d65c99062cef507eeffbe6ef3862858c08",
-    ".github/agents/poc-test-developer.agent.md": "dc91d663a83017267c7366a3ac3e903e7b4fd803af2284b9c7d252bf61c2c8a0",
-    ".github/agents/poc-validator.agent.md": "43142777edc499d637bf0ba0371be7e43be32f1fff8964da1b60fd2494db5c34",
+    ".github/agents/poc-analyst.agent.md": "a5e8b6d7bd4daaa7eed58f5b4d5aec4985f53e8cc6b79f8b353f31a59c9b2099",
+    ".github/agents/poc-automation.agent.md": "293e8c404b05f4a2ba4465bbed0be5b828ae367df6e6263c7255235948e6bee2",
+    ".github/agents/poc-explorer.agent.md": "e20eb9f019128dce8d1a92842e19b368b012965c1abc5322ae22e57e223abcb8",
+    ".github/agents/poc-test-developer.agent.md": "c40ca16bd75bf3d201e4b324500a4623af322e707f25c5de46e64aebc49f4829",
+    ".github/agents/poc-validator.agent.md": "a7f8cbf15a2474f2bf4a6f959a95a49917f7a1df3b96b9cf0222ab2a3f8fb4c0",
     ".github/agents/product-designer.agent.md": "3857dda1a490010c4cba23cbdc0405f6e9fa7e371d904a78b96d1e3130a7604c",
     ".github/agents/product-owner.agent.md": "dfd54a579bb1abc03c4e2d56f904f4e6d8da39b7564c3dac7bb5d2f20e289a97",
     ".github/agents/qa.agent.md": "fb292e36fbcf2d741e2493a4677a589c1d16db458c44489e02534b1e56252209",
@@ -117,6 +117,6 @@
     "singularity/templates/spec-driven/plan.md": "801263195295348f64b3de6ee1de079b01250420aebf74c7f1995b2dc5bab15f",
     "singularity/templates/spec-driven/release.md": "f091ec3cec891f0236a3a51a798dd43c401c992dfbcdc05b592eb119ebd2f692",
     "singularity/templates/spec-driven/spec.md": "37c4fb807258773b3944399e2cf8dca7cc375dfcb2d906e0e72a9cae54efd8cf",
-    "singularity/workflow.yml": "0507c79e5dddd4d1352d1fca27254722f4a2113ae1e462bfbb6ca26104806558"
+    "singularity/workflow.yml": "c62b37f04df326d9d6a3ea3f2575f014d96d1ced4c494cde604e1d47e8c30471"
   }
 }
