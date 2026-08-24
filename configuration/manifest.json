@@ -3,11 +3,11 @@
   "layout": "canonical-paths",
   "source": {
     "branch": "sflow/config",
-    "commit": "c482e04041acf988e8f8274d9f2646fb45152e21"
+    "commit": "9721687e71a33baa33de78ea245e9665a6cc389d"
   },
   "product": {
     "version": "0.9.0",
-    "revision": "76e24d30e34651911bfece5e7aa3c15999443c59"
+    "revision": "3c33a9bed8ddfec901d8017eeac658d5e6dcfded"
   },
   "files": {
     ".github/agents/architect.agent.md": "d7aa40fde49e3111836cc478b20d9cef03bb403512d48f8fee8b620c6f2af878",
@@ -37,7 +37,7 @@
     "singularity/templates/bugfix/fix-spec.md": "68c6ce36d11ab08ec96a676f60d2f143321070a108fef804c552aae1f50776e0",
     "singularity/templates/bugfix/intake.md": "c0aa89555e400e9c78c782021b1928175607f32ad20773c70fae04b28ced320c",
     "singularity/templates/bugfix/reproduction.md": "083e0361f6ffe9e84905b21558554c8335ab1a036719cb37f104e03f255f3567",
-    "singularity/templates/chore/intake.md": "6e84e6cee5c5c25c7bad11809f245126b646ad9e4c76503876bd77cfaf08112d",
+    "singularity/templates/chore/intake.md": "d4632690fa411f3926eee1bfd474f5907aae5efdd31313576acdac04e8934441",
     "singularity/templates/common/conformance.md": "dcb95249d8fef0dcdb87a6f012f09c481a47813e50f4e8dd96be207c81c15ada",
     "singularity/templates/common/implementation.md": "5d0478b18c8fd14221e14c68e6238b909bccd6802a70262c416005354716c62c",
     "singularity/templates/common/intake.md": "e16cd8b47f472973823a1a53294c77ac6551285c4df75e916c739611c3bc1d23",
@@ -117,6 +117,6 @@
     "singularity/templates/spec-driven/plan.md": "3e0676d5a5c384fbc3bf3f3320f495017254c349fca42ef5f5c3c93ea94b2ec0",
     "singularity/templates/spec-driven/release.md": "f091ec3cec891f0236a3a51a798dd43c401c992dfbcdc05b592eb119ebd2f692",
     "singularity/templates/spec-driven/spec.md": "37c4fb807258773b3944399e2cf8dca7cc375dfcb2d906e0e72a9cae54efd8cf",
-    "singularity/workflow.yml": "c62b37f04df326d9d6a3ea3f2575f014d96d1ced4c494cde604e1d47e8c30471"
+    "singularity/workflow.yml": "476df5b2876fd00aff0be600ca1fcba66e0cb84f74dc8460aaa019124a6939ad"
   }
 }
