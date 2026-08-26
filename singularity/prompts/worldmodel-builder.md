@@ -14,6 +14,10 @@ Requested views:
 
   {{REQUESTED_VIEWS_OR_AUTO}}
 
+Exact selections chosen by the CLI:
+
+  {{REQUIRED_SELECTIONS}}
+
 Allowed values:
 
 - core
@@ -48,7 +52,7 @@ Do not create one large document containing everything.
 Create:
 
 1. A minimal shared repository core.
-2. Only the requested role-specific views, each at two detail tiers.
+2. Only the exact role-specific view tiers listed in `Exact selections chosen by the CLI`.
 3. Domain-specific models only for relevant areas.
 4. Task guides only when a concrete task is provided.
 5. Evidence records separately from explanatory documents.
@@ -152,8 +156,8 @@ Populate only the keys that apply to that view. Values must be observed, not inf
 
 If `REQUESTED_VIEWS` is explicitly provided, generate only:
 
-- `core`
-- The explicitly requested views (both tiers)
+- The exact core tier or tiers listed by the CLI
+- The exact view tiers listed by the CLI
 - Relevant domain files
 - Relevant task guides
 
@@ -209,9 +213,11 @@ Do not generate unrelated views.
 - Store detailed evidence separately rather than repeating it in every view.
 - Prefer tables, paths, symbols, and structured blocks over narrative paragraphs. A path is worth a sentence; a symbol name is worth a paragraph.
 
-# Step 1: Build the shared core
+# Step 1: Build the requested shared core tiers
 
-Always create the shared core.
+Create only the shared core tiers listed in `Exact selections chosen by the CLI`. On a bootstrap run
+the CLI normally requests both core tiers; on an extension it may request neither because the
+existing core is reused. Do not recreate a core tier that is not listed.
 
 The core should answer only:
 
@@ -226,7 +232,7 @@ The core should answer only:
 
 Do not place detailed business, testing, deployment, or implementation information in the core.
 
-Create:
+Create the listed subset of:
 
 - `core/summary.md` (full tier)
 - `core/summary.brief.md` (brief tier)
@@ -311,12 +317,16 @@ Approximately 500–1,000 words / 6 KB. Consumer header, then `## TL;DR {#core.t
 }
 ```
 
-# Step 2: Generate role-specific views, at two tiers
+# Step 2: Generate exact role-specific view tiers
 
-Generate only requested or inferred views. For each generated view produce **both**:
+Generate only the exact view/tier identities listed by the CLI:
 
 - `views/<view>.md` — full tier, budget per the table below
 - `views/<view>.brief.md` — brief tier, **hard cap 400 words / 2.5 KB**
+
+Do not generate both merely because a view was requested. A `business/brief` selection creates only
+`views/business.brief.md`; `architecture/full` creates only `views/architecture.md`. The CLI, not
+the model, owns tier selection and will reject undeclared output.
 
 The brief tier is not a teaser. It must be independently useful: what this view covers, the three to five decisions it informs, the key paths or symbols, and the single most common mistake in this area. An agent that reads only the brief should be meaningfully grounded, not merely aware that a longer document exists.
 
@@ -457,13 +467,39 @@ Create `index/path-map.json`. This lets a runtime select grounding from a diff r
 
 Rules: globs must be repository-relative and non-overlapping where practical; when they do overlap, order most specific first; every referenced view, domain, anchor, and component ID must exist; cover the significant source areas, not every directory; always provide `fallback`.
 
-# Step 7: Create the loading manifest
+# Step 7: Declare the generated fragment
 
-Create `manifest.json`:
+Create `manifest.json` describing the exact fragment you produced. Use schema v3. A tier not listed
+in `Exact selections chosen by the CLI` remains `missing`; do not create a placeholder file. The CLI
+will calculate final hashes, byte counts, preservation checks, and materialization history while it
+merges the fragment into the repository model.
+
+**The manifest is a machine index, not advice.** Unlike the documents it points at, it is never
+injected into an agent's prompt — the CLI resolves named fields out of it and nothing else reads it,
+so a key no field resolver names is read by nobody at all. Emit only what a consumer resolves:
+paths, tiers, anchors, hashes, provenance. (This applies to the manifest alone. `core/model.json`
+and the evidence records are documents, and a reader consumes them whole, so they carry structural
+detail the CLI never resolves.)
+
+Two kinds of key are forbidden here. Both shipped unread, and were removed:
+
+- **Guidance for the reader.** `load_when`, `recommended_loading_rules`, `budget_hints`,
+  `load_only_when_verification_is_needed` and `recommended_for_all_agents` all advised what to load
+  under what circumstances. None of it reaches a reader: what gets injected is decided before any
+  agent sees a document, by the configured injection rules and the phase's world-model contract.
+- **A second opinion on governed policy.** `phase_map` and `agent_map` restated which views a phase
+  or an agent should load — decisions that `singularity/workflow.yml` (`phases.<id>.worldModel`) and
+  the agent catalog (`sflow-world-model-views`) already own and a human already approved. A task
+  guide's `required_views` and `required_domains` did the same for one task. Had anything read them,
+  a model's guess would have competed with pinned configuration.
+
+Nor a selector nothing selects on: domain `keywords` offered a second way to choose a domain, while
+the CLI matches `relevant_views` against the views already in the plan. Describe the repository; do
+not restate what its governance has decided, and do not advise the machine reading you.
 
 ```json
 {
-  "schema_version": "2.0",
+  "schema_version": "3.0",
   "repository_commit": "<full SHA>",
   "repository_branch": "<branch>",
   "working_tree_clean": true,
@@ -473,74 +509,41 @@ Create `manifest.json`:
   "builder_prompt_sha256": "<sha256 or unknown>",
   "analysis_depth": "<quick|standard|deep>",
   "core": {
-    "summary": "core/summary.md",
-    "brief": "core/summary.brief.md",
-    "model": "core/model.json",
-    "anchors": ["core.tldr", "core.purpose", "core.map", "core.commands", "core.risks"],
-    "bytes": { "summary": 0, "brief": 0 },
-    "recommended_for_all_agents": true
+    "tiers": {
+      "brief": { "status": "ready", "path": "core/summary.brief.md" },
+      "full": { "status": "missing", "path": null }
+    },
+    "model": { "path": "core/model.json" },
+    "anchors": ["core.tldr", "core.purpose", "core.map", "core.commands", "core.risks"]
   },
   "views": {
     "development": {
-      "path": "views/development.md",
-      "brief_path": "views/development.brief.md",
-      "generated": true,
-      "bytes": { "full": 0, "brief": 0 },
-      "anchors": ["dev.tldr", "dev.facts", "dev.start", "dev.impact", "dev.hotspots", "dev.limits"],
-      "load_when": ["implementation", "debugging", "refactoring", "code review"]
+      "tiers": {
+        "brief": { "status": "ready", "path": "views/development.brief.md" },
+        "full": { "status": "missing", "path": null }
+      },
+      "anchors": ["dev.tldr", "dev.facts", "dev.start", "dev.impact", "dev.hotspots", "dev.limits"]
     },
-    "business":     { "path": "views/business.md",     "brief_path": "views/business.brief.md",     "generated": false, "load_when": ["business capability analysis", "product behavior analysis", "business impact assessment"] },
-    "architecture": { "path": "views/architecture.md", "brief_path": "views/architecture.brief.md", "generated": false, "load_when": ["system design", "dependency analysis", "cross-component change"] },
-    "testing":      { "path": "views/testing.md",      "brief_path": "views/testing.brief.md",      "generated": false, "load_when": ["test creation", "regression analysis", "quality validation"] },
-    "release":      { "path": "views/release.md",      "brief_path": "views/release.brief.md",      "generated": false, "load_when": ["build", "packaging", "deployment", "rollback"] },
-    "operations":   { "path": "views/operations.md",   "brief_path": "views/operations.brief.md",   "generated": false, "load_when": ["runtime diagnosis", "monitoring and incident response"] },
-    "security":     { "path": "views/security.md",     "brief_path": "views/security.brief.md",     "generated": false, "load_when": ["threat analysis", "authentication or authorization change"] }
-  },
-  "phase_map": {
-    "intake":              { "views": ["business"], "tier": "brief" },
-    "requirements":        { "views": ["business"], "tier": "full" },
-    "design":              { "views": ["architecture"], "tier": "full" },
-    "implementation-spec": { "views": ["architecture", "development"], "tier": "full" },
-    "implementation":      { "views": ["development"], "tier": "full" },
-    "verification":        { "views": ["testing"], "tier": "full" },
-    "conformance":         { "views": ["testing", "security"], "tier": "brief" }
-  },
-  "agent_map": {
-    "product-owner":  { "views": ["business"], "tier": "brief" },
-    "business-analyst": { "views": ["business"], "tier": "full" },
-    "architect":      { "views": ["architecture", "security"], "tier": "full" },
-    "developer":      { "views": ["development"], "tier": "full" },
-    "qa":             { "views": ["testing"], "tier": "full" },
-    "security":       { "views": ["security"], "tier": "full" },
-    "operations":     { "views": ["operations"], "tier": "full" },
-    "delivery-manager": { "views": ["release"], "tier": "brief" }
+    "business":     { "tiers": { "brief": { "status": "missing", "path": null }, "full": { "status": "missing", "path": null } } },
+    "architecture": { "tiers": { "brief": { "status": "missing", "path": null }, "full": { "status": "missing", "path": null } } },
+    "testing":      { "tiers": { "brief": { "status": "missing", "path": null }, "full": { "status": "missing", "path": null } } },
+    "release":      { "tiers": { "brief": { "status": "missing", "path": null }, "full": { "status": "missing", "path": null } } },
+    "operations":   { "tiers": { "brief": { "status": "missing", "path": null }, "full": { "status": "missing", "path": null } } },
+    "security":     { "tiers": { "brief": { "status": "missing", "path": null }, "full": { "status": "missing", "path": null } } }
   },
   "path_index": { "path": "index/path-map.json" },
   "domains": [
-    { "id": "<domain id>", "path": "domains/<domain id>.md", "summary": "<one sentence>", "relevant_views": ["<view>"], "keywords": ["<keyword>"], "anchors": ["domain.<id>.tldr"] }
+    { "id": "<domain id>", "path": "domains/<domain id>.md", "summary": "<one sentence>", "relevant_views": ["<view>"], "anchors": ["domain.<id>.tldr"] }
   ],
   "task_guides": [
-    { "id": "<task id>", "path": "task-guides/<task id>.md", "task": "<exact CURRENT_TASK text>", "required_views": ["<view>"], "required_domains": ["<domain id>"] }
+    { "id": "<task id>", "path": "task-guides/<task id>.md", "task": "<exact CURRENT_TASK text>" }
   ],
-  "evidence": { "path": "evidence/evidence.jsonl", "load_only_when_verification_is_needed": true },
-  "recommended_loading_rules": [
-    { "agent_type": "business",  "load": ["core/summary.brief.md", "views/business.md"] },
-    { "agent_type": "architect", "load": ["core/summary.brief.md", "views/architecture.md"] },
-    { "agent_type": "developer", "load": ["core/summary.brief.md", "views/development.md"] },
-    { "agent_type": "tester",    "load": ["core/summary.brief.md", "views/testing.md"] },
-    { "agent_type": "release",   "load": ["core/summary.brief.md", "views/release.md"] }
-  ],
-  "budget_hints": {
-    "orientation_only": ["core/summary.brief.md"],
-    "single_phase_typical": ["core/summary.brief.md", "views/<view>.md"],
-    "deep_investigation": ["core/summary.md", "views/<view>.md", "domains/<domain>.md", "evidence/evidence.jsonl"]
-  }
+  "evidence": { "path": "evidence/evidence.jsonl" }
 }
 ```
 
-For views that were not generated: set `generated` to `false`, do not create placeholder documents, and preserve the `load_when` rules.
-
-Populate `bytes` with actual file sizes so a runtime can plan against its injection budget without opening files.
+For tiers that were not generated, record `status: missing` and do not create placeholder documents.
+The CLI calculates byte counts and SHA-256 values after synthesis; do not invent them.
 
 Every generated output must be a regular file inside the output directory. Do not create symbolic links, sockets, device files, or undeclared helper files. When a current task is supplied, copy its exact text into the matching `task_guides[].task` field so the runtime can select it deterministically.
 
@@ -554,7 +557,7 @@ For small changes and repository orientation.
 
 Inspect: root manifests; main README; primary entry points; the relevant package or service; directly related tests; CI or release files only when relevant.
 
-Emit: core (both tiers); **brief tier only** for requested views; task guide if applicable; minimal evidence; path index limited to the areas inspected. Do not attempt repository-wide workflow reconstruction. Full-tier views are intentionally omitted — record this in the final report.
+Emit only the exact selections supplied by the CLI; quick plans normally request brief core and brief views. Include a task guide if applicable, minimal evidence, and a path index limited to the areas inspected. Do not attempt repository-wide workflow reconstruction.
 
 ## Standard
 
@@ -562,7 +565,7 @@ For normal feature work and design analysis.
 
 Inspect: all major components; relevant workflows; direct and important indirect dependencies; tests and build configuration; relevant deployment files.
 
-Emit: core; both tiers of requested views at the budgets below; relevant domains; task guide when applicable; evidence ledger; full path index.
+Emit only the exact selections supplied by the CLI. Include relevant domains, a task guide when applicable, an evidence ledger, and a full path index.
 
 ## Deep
 
@@ -570,28 +573,37 @@ For major redesign, security review, migration, or critical release.
 
 Inspect: full component topology; important runtime workflows; data ownership; external integrations; tests; CI/CD; infrastructure; security boundaries; operational behavior; historical Git information when useful.
 
-Emit: everything requested, at the upper end of budgets, with detailed evidence and explicit coverage reporting.
+Emit the exact full-tier selections supplied by the CLI, at the upper end of budgets, with detailed evidence and explicit coverage reporting. Generate a brief tier only when it is also explicitly listed.
 
 # Context-budget requirements
 
-Budgets are stated in **bytes** because the consuming runtime truncates by bytes. Word counts are guidance only.
+These budgets are **advisory**. `validateWorldModelDirectory` measures every Markdown document and
+reports a precise warning when one exceeds either limit. A budget warning never fails generation,
+publication, or governed work. They are stated in bytes because the consuming runtime truncates by
+bytes.
 
-| Document | Words (guide) | Bytes (hard) |
-|---|---|---|
-| `core/summary.brief.md` | 250–400 | 2,500 |
-| `core/summary.md` | 500–1,000 | 6,000 |
-| Any `*.brief.md` view | 250–400 | 2,500 |
-| Business view | 1,000–2,000 | 12,000 |
-| Architecture view | 1,500–3,000 | 18,000 |
-| Development view | 1,500–3,000 | 18,000 |
-| Testing view | 1,000–2,500 | 15,000 |
-| Release view | 1,000–2,500 | 15,000 |
-| Operations view | 1,000–2,500 | 15,000 |
-| Security view | 1,000–2,500 | 15,000 |
-| Domain file | 750–2,000 | 12,000 |
-| Task guide | 500–1,500 | 9,000 |
+**All Markdown counts, including fenced blocks.** A fence does not prove that its contents are
+compact facts, so it cannot bypass the authored-content signal. The independent total ceiling also
+catches any runaway document. Keep derived facts compact and leave deterministic repository facts
+to the CLI-owned section supplied after synthesis.
 
-If content would exceed a hard byte budget, do not truncate arbitrarily: move detail into a domain file or into the evidence ledger and reference it. Use paths, symbols, tables, and structured blocks rather than narrative explanation.
+| Document | Advisory bytes | Advisory total ceiling |
+|---|---:|---:|
+| `core/summary.brief.md` | 2,000 | 8,000 |
+| `core/summary.md` | 5,000 | 24,000 |
+| Any `*.brief.md` view | 2,000 | 8,000 |
+| Any view | 8,000 | 32,000 |
+| Domain file | 6,000 | 24,000 |
+| Task guide | 5,000 | 20,000 |
+
+These are roughly half what they were, because the facts you used to write out are now derived from
+the repository before you run and supplied to you. Do not restate them in prose. Your value is the
+judgement a parser cannot produce: what this repository is for, which boundaries matter, where the
+risk actually sits, and what is conspicuously missing.
+
+If content would exceed a budget, do not truncate required evidence arbitrarily: move detail into a
+domain file or the evidence ledger and reference it. The validator will warn so maintainers can tune
+the model without blocking the lifecycle.
 
 # Cross-view consistency
 
@@ -611,7 +623,7 @@ Before finishing, confirm:
 - **The generation timestamp and date are recorded in the manifest, the core model, and every consumer header.**
 - Every Markdown document begins with the five-line consumer header and, where required, a TL;DR of 120 words or fewer.
 - Every full-tier view contains a `Facts` YAML block.
-- Every generated document is within its hard byte budget; `bytes` values in the manifest match actual file sizes.
+- Budget warnings were reviewed; warnings do not invalidate output, and manifest `bytes` values match actual file sizes.
 - No secret values are present.
 - No personal data, customer records, or realistic identifiers were copied from fixtures.
 - No unrequested role views were generated.
