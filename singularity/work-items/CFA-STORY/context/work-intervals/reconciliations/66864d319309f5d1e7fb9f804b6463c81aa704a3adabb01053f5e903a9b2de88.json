@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 1,
+  "kind": "work-reconciliation",
+  "workId": "CFA-STORY",
+  "workType": "spec-driven-standard",
+  "intervalId": "INT-implementation-G1-001",
+  "phaseId": "implementation",
+  "generation": 1,
+  "baselineSha256": "354b61f3b405cbc00a2d217795224cb81d92742753d9d3012b0267ce803e645b",
+  "baseline": {
+    "path": "singularity/work-items/CFA-STORY/context/work-intervals/implementation-gen1-baseline.json",
+    "sha256": "354b61f3b405cbc00a2d217795224cb81d92742753d9d3012b0267ce803e645b",
+    "verified": true,
+    "sourceBaseCommit": "f581225b13d3ecd04ab68c79bcceb5c3b303689c"
+  },
+  "sourceBaseCommit": "f581225b13d3ecd04ab68c79bcceb5c3b303689c",
+  "target": {
+    "branch": "CFA-STORY",
+    "head": "91749891e894d50964f26f29b7181695d3bcec8e",
+    "includesWorktree": false,
+    "cleanApplicationTree": true,
+    "uncommittedApplicationPaths": []
+  },
+  "findings": [
+    {
+      "path": "src/App.jsx",
+      "status": "present",
+      "sha256": "0ba5b4e7bae2eb3a8d89f9a4f34a7fe29448feac61cef09caded60299d04521e",
+      "bytes": 10636,
+      "verdict": "unplanned",
+      "clauseIds": [],
+      "protected": false
+    },
+    {
+      "path": "src/App.test.jsx",
+      "status": "present",
+      "sha256": "739855b1621eb722010d12a8bcc9994d07237d3686a386cf348e516a1d58474f",
+      "bytes": 9385,
+      "verdict": "unplanned",
+      "clauseIds": [],
+      "protected": false
+    },
+    {
+      "path": "src/components/CFAStudyToolkit.jsx",
+      "status": "present",
+      "sha256": "e4358ec46223e3e1a4a7973edc75f832a33de364416fc17ef9dae2f1febe87ec",
+      "bytes": 9822,
+      "verdict": "unplanned",
+      "clauseIds": [],
+      "protected": false
+    },
+    {
+      "path": "src/components/Header.jsx",
+      "status": "present",
+      "sha256": "600bcacd849ad547b6a86402e41c4b8114fab4de3622cec3733b72c3a834d5ad",
+      "bytes": 6791,
+      "verdict": "unplanned",
+      "clauseIds": [],
+      "protected": false
+    }
+  ],
+  "summary": {
+    "changedPaths": 4,
+    "planned": 0,
+    "unplanned": 4,
+    "protected": 0
+  },
+  "decision": {
+    "status": "review",
+    "summaryStatus": "attention",
+    "eligibleForSubmission": true,
+    "reasons": [],
+    "escalationTarget": null
+  },
+  "reconciliationSha256": "66864d319309f5d1e7fb9f804b6463c81aa704a3adabb01053f5e903a9b2de88",
+  "reconciledAt": "2026-08-27T06:22:55.367Z",
+  "final": true,
+  "recordedAt": "2026-08-27T06:22:55.367Z",
+  "path": "singularity/work-items/CFA-STORY/context/work-intervals/reconciliations/66864d319309f5d1e7fb9f804b6463c81aa704a3adabb01053f5e903a9b2de88.json"
+}

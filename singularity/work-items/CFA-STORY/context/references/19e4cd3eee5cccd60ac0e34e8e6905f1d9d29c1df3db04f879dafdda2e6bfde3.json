@@ -1,0 +1,28 @@
+{
+  "artifact": {
+    "generation": 1,
+    "mediaType": "text/markdown",
+    "outputId": "document",
+    "path": "singularity/work-items/CFA-STORY/artifacts/implementation/implementation-summary.md",
+    "phaseId": "implementation"
+  },
+  "createdAt": "2026-08-27T06:22:55.400Z",
+  "kind": "governed-reference",
+  "repository": {
+    "id": "calc",
+    "origin": "https://github.com/ashokraj2011/calc.git"
+  },
+  "revision": {
+    "bytes": 16831,
+    "commitSha": "91749891e894d50964f26f29b7181695d3bcec8e",
+    "sha256": "b695aa81f0d1b51c34d97d5e893184060c6cd9558295e2d6b6ae44b36d7167c6"
+  },
+  "schemaVersion": 1,
+  "subject": {
+    "branch": "CFA-STORY",
+    "id": "CFA-STORY",
+    "kind": "story",
+    "subjectRevision": 1
+  },
+  "visibility": "model"
+}
