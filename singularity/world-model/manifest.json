@@ -1,397 +1,76 @@
 {
   "schema_version": "3.0",
-  "repository_commit": "644a649d08b6c1d7f118995e7810ab91521cfd21",
-  "repository_branch": "CFA-STORY",
-  "working_tree_clean": false,
-  "generated_at": "2026-08-27T05:54:00.320Z",
+  "generated_at": "2026-08-27T06:40:34.401Z",
   "generated_date": "27 August 2026",
   "builder_version": "2.1-light",
   "builder_prompt_sha256": "511654826223e40b93c54f48f9b773f155e3364326d41aa98108dea7217d75cd",
+  "repository_commit": "cb92f58b0eb3e508f5f381f8984e1c8592becde9",
+  "repository_branch": "CFA-STORY",
+  "working_tree_clean": false,
+  "generated_for_phase": "convergence",
   "analysis_depth": "light",
+  "source_tree_sha256": "sha256:970bc871b1c02d777eccbab886e27f08e9865834966f6c40852a988a21b2e8fd",
+  "generator": {
+    "type": "deterministic-local",
+    "model": null,
+    "model_tokens": 0
+  },
   "core": {
-    "summary": "core/summary.md",
     "brief": "core/summary.brief.md",
+    "summary": "core/summary.md",
     "model": {
       "path": "core/model.json"
     },
-    "anchors": [
-      "core.tldr",
-      "core.facts",
-      "core.purpose",
-      "core.type",
-      "core.components",
-      "core.map",
-      "core.entrypoints",
-      "core.tech",
-      "core.commands",
-      "core.risks",
-      "core.unknowns",
-      "core.freshness",
-      "core.routing",
-      "core.brief"
-    ],
-    "bytes": {
-      "summary": 8679,
-      "brief": 1234
-    },
-    "recommended_for_all_agents": true,
     "tiers": {
       "brief": {
         "status": "ready",
         "path": "core/summary.brief.md",
-        "bytes": 1234,
-        "sha256": "05719a1cf36c3d824225120d0b8fc97f7d1bc3274dd937a3df5da90163597d51"
+        "bytes": 627,
+        "sha256": "abe899a9d45d6461fb4e44af904f4df9daaefb97c0441246545f7b7d9856a98f"
       },
       "full": {
         "status": "ready",
         "path": "core/summary.md",
-        "bytes": 8679,
-        "sha256": "04fb9b363437f060397ff24a5ecdd5d4cb2bd65afd33ba6328ea91973f7995c0"
+        "bytes": 3553,
+        "sha256": "58f3587d1290d20be520261ba13932c581533522374ad4c84dac90831d572f25"
       }
-    }
-  },
-  "views": {
-    "business": {
-      "path": "views/business.md",
-      "brief_path": "views/business.brief.md",
-      "generated": true,
-      "bytes": {
-        "full": 6924,
-        "brief": 1261
-      },
-      "anchors": [
-        "biz.tldr",
-        "biz.facts",
-        "biz.capabilities",
-        "biz.actors",
-        "biz.workflows",
-        "biz.rules",
-        "biz.failure",
-        "biz.impact",
-        "biz.unknowns",
-        "biz.questions",
-        "biz.start",
-        "biz.limits",
-        "biz.brief"
-      ],
-      "load_when": [
-        "business capability analysis",
-        "product behavior analysis",
-        "business impact assessment"
-      ],
-      "tiers": {
-        "brief": {
-          "status": "ready",
-          "path": "views/business.brief.md",
-          "bytes": 1261,
-          "sha256": "e668665b14e2b96c844dfd08ea6c789f12056b5606622651ccce62a2ecb3f972"
-        },
-        "full": {
-          "status": "ready",
-          "path": "views/business.md",
-          "bytes": 790,
-          "sha256": "7b651ecb8bb4f0fffee1e533d9df984f2233507862d1f4b6ba73a024fb3e472a"
-        }
-      }
-    },
-    "architecture": {
-      "path": "views/architecture.md",
-      "brief_path": "views/architecture.brief.md",
-      "generated": true,
-      "load_when": [
-        "system design",
-        "dependency analysis",
-        "cross-component change"
-      ],
-      "tiers": {
-        "brief": {
-          "status": "missing",
-          "path": "views/architecture.brief.md",
-          "bytes": 0,
-          "sha256": null
-        },
-        "full": {
-          "status": "ready",
-          "path": "views/architecture.md",
-          "bytes": 838,
-          "sha256": "a667f6d27d9a39c1f5ab6dbf8f049d4fc0522a05a5bb099e17c2e2148f0d1fca"
-        }
-      }
-    },
-    "development": {
-      "path": "views/development.md",
-      "brief_path": "views/development.brief.md",
-      "generated": true,
-      "load_when": [
-        "implementation",
-        "debugging",
-        "refactoring",
-        "code review"
-      ],
-      "tiers": {
-        "brief": {
-          "status": "missing",
-          "path": "views/development.brief.md",
-          "bytes": 0,
-          "sha256": null
-        },
-        "full": {
-          "status": "ready",
-          "path": "views/development.md",
-          "bytes": 1248,
-          "sha256": "92db2c8309e4a01c3568b5cb8f8954ecc6fca4d79cab74cae6c92a02fb2389c2"
-        }
-      }
-    },
-    "testing": {
-      "path": "views/testing.md",
-      "brief_path": "views/testing.brief.md",
-      "generated": true,
-      "load_when": [
-        "test creation",
-        "regression analysis",
-        "quality validation"
-      ],
-      "tiers": {
-        "brief": {
-          "status": "ready",
-          "path": "views/testing.brief.md",
-          "bytes": 266,
-          "sha256": "cbce835c16619b16e2ad7f747ef021f5fada39a77709e6e187a4772387aa7ddc"
-        },
-        "full": {
-          "status": "missing",
-          "path": "views/testing.md",
-          "bytes": 0,
-          "sha256": null
-        }
-      }
-    },
-    "release": {
-      "path": "views/release.md",
-      "brief_path": "views/release.brief.md",
-      "generated": false,
-      "load_when": [
-        "build",
-        "packaging",
-        "deployment",
-        "rollback"
-      ],
-      "tiers": {
-        "brief": {
-          "status": "missing",
-          "path": "views/release.brief.md",
-          "bytes": 0,
-          "sha256": null
-        },
-        "full": {
-          "status": "missing",
-          "path": "views/release.md",
-          "bytes": 0,
-          "sha256": null
-        }
-      }
-    },
-    "operations": {
-      "path": "views/operations.md",
-      "brief_path": "views/operations.brief.md",
-      "generated": false,
-      "load_when": [
-        "runtime diagnosis",
-        "monitoring and incident response"
-      ],
-      "tiers": {
-        "brief": {
-          "status": "missing",
-          "path": "views/operations.brief.md",
-          "bytes": 0,
-          "sha256": null
-        },
-        "full": {
-          "status": "missing",
-          "path": "views/operations.md",
-          "bytes": 0,
-          "sha256": null
-        }
-      }
-    },
-    "security": {
-      "path": "views/security.md",
-      "brief_path": "views/security.brief.md",
-      "generated": false,
-      "load_when": [
-        "threat analysis",
-        "authentication or authorization change"
-      ],
-      "tiers": {
-        "brief": {
-          "status": "missing",
-          "path": "views/security.brief.md",
-          "bytes": 0,
-          "sha256": null
-        },
-        "full": {
-          "status": "missing",
-          "path": "views/security.md",
-          "bytes": 0,
-          "sha256": null
-        }
-      }
-    }
-  },
-  "phase_map": {
-    "intake": {
-      "views": [
-        "business"
-      ],
-      "tier": "brief"
-    },
-    "requirements": {
-      "views": [
-        "business"
-      ],
-      "tier": "full"
-    }
-  },
-  "agent_map": {
-    "product-owner": {
-      "views": [
-        "business"
-      ],
-      "tier": "brief"
-    },
-    "business-analyst": {
-      "views": [
-        "business"
-      ],
-      "tier": "full"
     }
   },
   "path_index": {
     "path": "index/path-map.json"
   },
-  "domains": [
-    {
-      "id": "expression-evaluation",
-      "path": "domains/expression-evaluation.md",
-      "summary": "Shared expression parsing, formatting, and calculator logic used across calculator modes.",
-      "relevant_views": [
-        "business"
-      ],
-      "keywords": [
-        "calculator",
-        "math",
-        "trig",
-        "finance"
-      ],
-      "anchors": [
-        "domain.expression-evaluation.tldr",
-        "domain.expression-evaluation.facts",
-        "domain.expression-evaluation.purpose",
-        "domain.expression-evaluation.terminology",
-        "domain.expression-evaluation.components",
-        "domain.expression-evaluation.workflows",
-        "domain.expression-evaluation.state",
-        "domain.expression-evaluation.risks",
-        "domain.expression-evaluation.tests",
-        "domain.expression-evaluation.unknowns"
-      ]
-    },
-    {
-      "id": "calculator-capabilities",
-      "path": "domains/calculator-capabilities.md",
-      "summary": "Observable calculator capabilities and their core business rules.",
-      "relevant_views": [
-        "business"
-      ],
-      "keywords": [
-        "calculator",
-        "math",
-        "conversion",
-        "financial"
-      ],
-      "anchors": [
-        "domain.calculator.tldr"
-      ]
+  "views": {
+    "development": {
+      "path": "views/development.md",
+      "brief_path": "views/development.brief.md",
+      "generated": true,
+      "tiers": {
+        "brief": {
+          "status": "ready",
+          "path": "views/development.brief.md",
+          "bytes": 274,
+          "sha256": "372897cb124f7f5b42fd7278716798279ddd876eb795ced8e90daa5916bcbd9b"
+        },
+        "full": {
+          "status": "missing",
+          "path": "views/development.md",
+          "bytes": 0,
+          "sha256": null
+        }
+      }
     }
+  },
+  "views_generated": [
+    "development"
   ],
-  "task_guides": [
-    {
-      "id": "add-tan-operator",
-      "path": "task-guides/add-tan-operator.md",
-      "task": "Add tan operator",
-      "required_views": [
-        "business"
-      ],
-      "required_domains": [
-        "expression-evaluation"
-      ],
-      "anchors": [
-        "task.add-tan-operator.tldr",
-        "task.add-tan-operator.interpretation",
-        "task.add-tan-operator.roles",
-        "task.add-tan-operator.components",
-        "task.add-tan-operator.domains",
-        "task.add-tan-operator.paths",
-        "task.add-tan-operator.flow",
-        "task.add-tan-operator.contracts",
-        "task.add-tan-operator.tests",
-        "task.add-tan-operator.validation",
-        "task.add-tan-operator.risks"
-      ]
-    },
-    {
-      "id": "wrk-tan",
-      "path": "task-guides/wrk-tan.md",
-      "task": "Prepare the intake artifact for WRK-TAN and advance it to the next valid step.",
-      "required_views": [
-        "business"
-      ],
-      "required_domains": [
-        "calculator-capabilities"
-      ]
-    }
+  "requested_views": [
+    "development"
   ],
+  "domains": [],
+  "task_guides": [],
   "evidence": {
     "path": "evidence/evidence.jsonl"
   },
-  "recommended_loading_rules": [
-    {
-      "agent_type": "business",
-      "load": [
-        "core/summary.brief.md",
-        "views/business.md"
-      ]
-    },
-    {
-      "agent_type": "developer",
-      "load": [
-        "core/summary.brief.md",
-        "views/business.md",
-        "domains/calculator-capabilities.md"
-      ]
-    }
-  ],
-  "budget_hints": {
-    "orientation_only": [
-      "core/summary.brief.md"
-    ],
-    "single_phase_typical": [
-      "core/summary.brief.md",
-      "views/business.md"
-    ],
-    "deep_investigation": [
-      "core/summary.md",
-      "views/business.md",
-      "domains/calculator-capabilities.md",
-      "evidence/evidence.jsonl"
-    ]
-  },
-  "source_tree_sha256": "sha256:1dee7ed995b515c700d64d2f865932a4a27932abf9fa9e2cdd4236e9dad677bd",
-  "views_generated": [
-    "development",
-    "testing"
-  ],
   "generation": {
     "parallel": false,
     "strategy": "deterministic-light",
@@ -401,405 +80,21 @@
     "resumed_views": [],
     "pending_views_at_start": []
   },
-  "generated_for_phase": "implementation",
-  "requested_views": [
-    "development",
-    "testing"
-  ],
-  "requested_selections": [
-    "core/brief",
-    "business/brief"
-  ],
   "materializations": [
     {
-      "id": "provider-1787195188735",
-      "generated_at": "2026-08-20T03:02:20.409Z",
-      "source_tree_sha256": "sha256:1dee7ed995b515c700d64d2f865932a4a27932abf9fa9e2cdd4236e9dad677bd",
-      "provider": "copilot-cli",
-      "requested": [
-        "business/brief",
-        "core/brief"
-      ],
-      "produced": [
-        "business/brief",
-        "core/brief"
-      ],
-      "reused": []
-    },
-    {
-      "id": "provider-1787199287059",
-      "generated_at": "2026-08-20T04:00:23.844Z",
-      "source_tree_sha256": "sha256:1dee7ed995b515c700d64d2f865932a4a27932abf9fa9e2cdd4236e9dad677bd",
-      "provider": "copilot-cli",
-      "requested": [
-        "business/brief",
-        "core/brief"
-      ],
-      "produced": [
-        "business/brief",
-        "core/brief"
-      ],
-      "reused": [
-        "business/brief",
-        "core/brief"
-      ]
-    },
-    {
-      "id": "provider-1787195188735",
-      "generated_at": "2026-08-20T03:02:20.409Z",
-      "source_tree_sha256": "sha256:1dee7ed995b515c700d64d2f865932a4a27932abf9fa9e2cdd4236e9dad677bd",
-      "provider": "copilot-cli",
-      "requested": [
-        "business/brief",
-        "core/brief"
-      ],
-      "produced": [
-        "business/brief",
-        "core/brief"
-      ],
-      "reused": []
-    },
-    {
-      "id": "provider-1787199287059",
-      "generated_at": "2026-08-20T04:00:23.844Z",
-      "source_tree_sha256": "sha256:1dee7ed995b515c700d64d2f865932a4a27932abf9fa9e2cdd4236e9dad677bd",
-      "provider": "copilot-cli",
-      "requested": [
-        "business/brief",
-        "core/brief"
-      ],
-      "produced": [
-        "business/brief",
-        "core/brief"
-      ],
-      "reused": [
-        "business/brief",
-        "core/brief"
-      ]
-    },
-    {
-      "id": "light-1787804738539",
-      "generated_at": "2026-08-27T04:25:38.452Z",
-      "source_tree_sha256": "sha256:1dee7ed995b515c700d64d2f865932a4a27932abf9fa9e2cdd4236e9dad677bd",
-      "provider": null,
-      "requested": [
-        "business/full",
-        "core/brief"
-      ],
-      "produced": [
-        "business/full",
-        "core/brief"
-      ],
-      "reused": [
-        "core/brief"
-      ]
-    },
-    {
-      "id": "provider-1787195188735",
-      "generated_at": "2026-08-20T03:02:20.409Z",
-      "source_tree_sha256": "sha256:1dee7ed995b515c700d64d2f865932a4a27932abf9fa9e2cdd4236e9dad677bd",
-      "provider": "copilot-cli",
-      "requested": [
-        "business/brief",
-        "core/brief"
-      ],
-      "produced": [
-        "business/brief",
-        "core/brief"
-      ],
-      "reused": []
-    },
-    {
-      "id": "provider-1787199287059",
-      "generated_at": "2026-08-20T04:00:23.844Z",
-      "source_tree_sha256": "sha256:1dee7ed995b515c700d64d2f865932a4a27932abf9fa9e2cdd4236e9dad677bd",
-      "provider": "copilot-cli",
-      "requested": [
-        "business/brief",
-        "core/brief"
-      ],
-      "produced": [
-        "business/brief",
-        "core/brief"
-      ],
-      "reused": [
-        "business/brief",
-        "core/brief"
-      ]
-    },
-    {
-      "id": "provider-1787195188735",
-      "generated_at": "2026-08-20T03:02:20.409Z",
-      "source_tree_sha256": "sha256:1dee7ed995b515c700d64d2f865932a4a27932abf9fa9e2cdd4236e9dad677bd",
-      "provider": "copilot-cli",
-      "requested": [
-        "business/brief",
-        "core/brief"
-      ],
-      "produced": [
-        "business/brief",
-        "core/brief"
-      ],
-      "reused": []
-    },
-    {
-      "id": "provider-1787199287059",
-      "generated_at": "2026-08-20T04:00:23.844Z",
-      "source_tree_sha256": "sha256:1dee7ed995b515c700d64d2f865932a4a27932abf9fa9e2cdd4236e9dad677bd",
-      "provider": "copilot-cli",
-      "requested": [
-        "business/brief",
-        "core/brief"
-      ],
-      "produced": [
-        "business/brief",
-        "core/brief"
-      ],
-      "reused": [
-        "business/brief",
-        "core/brief"
-      ]
-    },
-    {
-      "id": "light-1787804738539",
-      "generated_at": "2026-08-27T04:25:38.452Z",
-      "source_tree_sha256": "sha256:1dee7ed995b515c700d64d2f865932a4a27932abf9fa9e2cdd4236e9dad677bd",
-      "provider": null,
-      "requested": [
-        "business/full",
-        "core/brief"
-      ],
-      "produced": [
-        "business/full",
-        "core/brief"
-      ],
-      "reused": [
-        "core/brief"
-      ]
-    },
-    {
-      "id": "light-1787806737179",
-      "generated_at": "2026-08-27T04:58:57.060Z",
-      "source_tree_sha256": "sha256:1dee7ed995b515c700d64d2f865932a4a27932abf9fa9e2cdd4236e9dad677bd",
-      "provider": null,
-      "requested": [
-        "architecture/full",
-        "core/brief"
-      ],
-      "produced": [
-        "architecture/full",
-        "core/brief"
-      ],
-      "reused": [
-        "core/brief"
-      ]
-    },
-    {
-      "id": "provider-1787195188735",
-      "generated_at": "2026-08-20T03:02:20.409Z",
-      "source_tree_sha256": "sha256:1dee7ed995b515c700d64d2f865932a4a27932abf9fa9e2cdd4236e9dad677bd",
-      "provider": "copilot-cli",
-      "requested": [
-        "business/brief",
-        "core/brief"
-      ],
-      "produced": [
-        "business/brief",
-        "core/brief"
-      ],
-      "reused": []
-    },
-    {
-      "id": "provider-1787199287059",
-      "generated_at": "2026-08-20T04:00:23.844Z",
-      "source_tree_sha256": "sha256:1dee7ed995b515c700d64d2f865932a4a27932abf9fa9e2cdd4236e9dad677bd",
-      "provider": "copilot-cli",
-      "requested": [
-        "business/brief",
-        "core/brief"
-      ],
-      "produced": [
-        "business/brief",
-        "core/brief"
-      ],
-      "reused": [
-        "business/brief",
-        "core/brief"
-      ]
-    },
-    {
-      "id": "provider-1787195188735",
-      "generated_at": "2026-08-20T03:02:20.409Z",
-      "source_tree_sha256": "sha256:1dee7ed995b515c700d64d2f865932a4a27932abf9fa9e2cdd4236e9dad677bd",
-      "provider": "copilot-cli",
-      "requested": [
-        "business/brief",
-        "core/brief"
-      ],
-      "produced": [
-        "business/brief",
-        "core/brief"
-      ],
-      "reused": []
-    },
-    {
-      "id": "provider-1787199287059",
-      "generated_at": "2026-08-20T04:00:23.844Z",
-      "source_tree_sha256": "sha256:1dee7ed995b515c700d64d2f865932a4a27932abf9fa9e2cdd4236e9dad677bd",
-      "provider": "copilot-cli",
-      "requested": [
-        "business/brief",
-        "core/brief"
-      ],
-      "produced": [
-        "business/brief",
-        "core/brief"
-      ],
-      "reused": [
-        "business/brief",
-        "core/brief"
-      ]
-    },
-    {
-      "id": "light-1787804738539",
-      "generated_at": "2026-08-27T04:25:38.452Z",
-      "source_tree_sha256": "sha256:1dee7ed995b515c700d64d2f865932a4a27932abf9fa9e2cdd4236e9dad677bd",
-      "provider": null,
-      "requested": [
-        "business/full",
-        "core/brief"
-      ],
-      "produced": [
-        "business/full",
-        "core/brief"
-      ],
-      "reused": [
-        "core/brief"
-      ]
-    },
-    {
-      "id": "provider-1787195188735",
-      "generated_at": "2026-08-20T03:02:20.409Z",
-      "source_tree_sha256": "sha256:1dee7ed995b515c700d64d2f865932a4a27932abf9fa9e2cdd4236e9dad677bd",
-      "provider": "copilot-cli",
-      "requested": [
-        "business/brief",
-        "core/brief"
-      ],
-      "produced": [
-        "business/brief",
-        "core/brief"
-      ],
-      "reused": []
-    },
-    {
-      "id": "provider-1787199287059",
-      "generated_at": "2026-08-20T04:00:23.844Z",
-      "source_tree_sha256": "sha256:1dee7ed995b515c700d64d2f865932a4a27932abf9fa9e2cdd4236e9dad677bd",
-      "provider": "copilot-cli",
-      "requested": [
-        "business/brief",
-        "core/brief"
-      ],
-      "produced": [
-        "business/brief",
-        "core/brief"
-      ],
-      "reused": [
-        "business/brief",
-        "core/brief"
-      ]
-    },
-    {
-      "id": "provider-1787195188735",
-      "generated_at": "2026-08-20T03:02:20.409Z",
-      "source_tree_sha256": "sha256:1dee7ed995b515c700d64d2f865932a4a27932abf9fa9e2cdd4236e9dad677bd",
-      "provider": "copilot-cli",
-      "requested": [
-        "business/brief",
-        "core/brief"
-      ],
-      "produced": [
-        "business/brief",
-        "core/brief"
-      ],
-      "reused": []
-    },
-    {
-      "id": "provider-1787199287059",
-      "generated_at": "2026-08-20T04:00:23.844Z",
-      "source_tree_sha256": "sha256:1dee7ed995b515c700d64d2f865932a4a27932abf9fa9e2cdd4236e9dad677bd",
-      "provider": "copilot-cli",
-      "requested": [
-        "business/brief",
-        "core/brief"
-      ],
-      "produced": [
-        "business/brief",
-        "core/brief"
-      ],
-      "reused": [
-        "business/brief",
-        "core/brief"
-      ]
-    },
-    {
-      "id": "light-1787804738539",
-      "generated_at": "2026-08-27T04:25:38.452Z",
-      "source_tree_sha256": "sha256:1dee7ed995b515c700d64d2f865932a4a27932abf9fa9e2cdd4236e9dad677bd",
-      "provider": null,
-      "requested": [
-        "business/full",
-        "core/brief"
-      ],
-      "produced": [
-        "business/full",
-        "core/brief"
-      ],
-      "reused": [
-        "core/brief"
-      ]
-    },
-    {
-      "id": "light-1787806737179",
-      "generated_at": "2026-08-27T04:58:57.060Z",
-      "source_tree_sha256": "sha256:1dee7ed995b515c700d64d2f865932a4a27932abf9fa9e2cdd4236e9dad677bd",
-      "provider": null,
-      "requested": [
-        "architecture/full",
-        "core/brief"
-      ],
-      "produced": [
-        "architecture/full",
-        "core/brief"
-      ],
-      "reused": [
-        "core/brief"
-      ]
-    },
-    {
-      "id": "light-1787810040455",
-      "generated_at": "2026-08-27T05:54:00.320Z",
-      "source_tree_sha256": "sha256:1dee7ed995b515c700d64d2f865932a4a27932abf9fa9e2cdd4236e9dad677bd",
+      "id": "light-1787812836693",
+      "generated_at": "2026-08-27T06:40:34.401Z",
+      "source_tree_sha256": "sha256:970bc871b1c02d777eccbab886e27f08e9865834966f6c40852a988a21b2e8fd",
       "provider": null,
       "requested": [
         "core/brief",
-        "development/full",
-        "testing/brief"
+        "development/brief"
       ],
       "produced": [
         "core/brief",
-        "development/full",
-        "testing/brief"
+        "development/brief"
       ],
-      "reused": [
-        "core/brief"
-      ]
+      "reused": []
     }
-  ],
-  "generator": {
-    "type": "deterministic-local",
-    "model": null,
-    "model_tokens": 0
-  }
+  ]
 }
