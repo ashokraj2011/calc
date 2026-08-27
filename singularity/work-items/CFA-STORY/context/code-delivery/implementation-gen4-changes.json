@@ -1,0 +1,171 @@
+{
+  "schemaVersion": 1,
+  "kind": "repository-change-set",
+  "subject": {
+    "workId": "CFA-STORY",
+    "phase": "implementation",
+    "generation": 4,
+    "generationIntentId": "6b28d986-ea25-47e1-b7bc-a227f94c50e4"
+  },
+  "base": {
+    "commit": "bd3674d4ccf19d9324f6b57f339069e65804f30d",
+    "tree": "eec2a138aafaa4534a46936285f363c83292a6a5"
+  },
+  "target": {
+    "head": "bd3674d4ccf19d9324f6b57f339069e65804f30d",
+    "includesIndex": true,
+    "includesWorktree": true,
+    "includesUntracked": true,
+    "caseInsensitivePaths": true
+  },
+  "entries": [
+    {
+      "status": "added",
+      "similarity": null,
+      "oldPath": null,
+      "newPath": "singularity/work-items/CFA-STORY/context/generation-start/implementation-gen4.json",
+      "oldMode": "000000",
+      "newMode": "100644",
+      "oldObject": null,
+      "newObject": null,
+      "untracked": true,
+      "newContent": {
+        "kind": "regular-file",
+        "sha256": "sha256:8c6cd3041d5138f7b636fac024fac3715802d8fdd46be9508cc04e6331990592",
+        "bytes": 1283
+      },
+      "changeId": "sha256:a68c63b2ed007af20232d4479b0a5a2e144e067e7ed876fca050bdd5a27b0a5e"
+    },
+    {
+      "status": "added",
+      "similarity": null,
+      "oldPath": null,
+      "newPath": "singularity/work-items/CFA-STORY/context/inputs-implementation-gen4.json",
+      "oldMode": "000000",
+      "newMode": "100644",
+      "oldObject": null,
+      "newObject": null,
+      "untracked": true,
+      "newContent": {
+        "kind": "regular-file",
+        "sha256": "sha256:97a9c8c1a9377563a43ec594670e03f60f6b66557b2aa8e582489f36f30af049",
+        "bytes": 4051
+      },
+      "changeId": "sha256:fd7983ee5de54e85adcfb9456e418055546f9a4f3c377629d568d1b9cbe85dec"
+    },
+    {
+      "status": "added",
+      "similarity": null,
+      "oldPath": null,
+      "newPath": "singularity/work-items/CFA-STORY/context/work-intervals/implementation-gen4-baseline.json",
+      "oldMode": "000000",
+      "newMode": "100644",
+      "oldObject": null,
+      "newObject": null,
+      "untracked": true,
+      "newContent": {
+        "kind": "regular-file",
+        "sha256": "sha256:93eba7774a9f229787563c83d48c22bb83eef6ba19082c780432a8d1ab1d275d",
+        "bytes": 1673
+      },
+      "changeId": "sha256:0162cca04b058ad97d7ebf10f2c9dcf249e7482159beee31bac7eebb333994ed"
+    },
+    {
+      "status": "modified",
+      "similarity": null,
+      "oldPath": ".sflow/results/node-tests.json",
+      "newPath": ".sflow/results/node-tests.json",
+      "oldMode": "100644",
+      "newMode": "100644",
+      "oldObject": "f46767d02a2b94f3f56ff48500341b7b5b266ab9",
+      "newObject": null,
+      "newContent": {
+        "kind": "regular-file",
+        "sha256": "sha256:addbeed20ec5b1633680ebf7a1f09fea807e7ad9f55d9f457c871ff8f03275ac",
+        "bytes": 12099
+      },
+      "changeId": "sha256:f5a448c59c4b4f3df09851890853ae5e307cb0f908517a73ae11dbcf80c1b03a"
+    },
+    {
+      "status": "modified",
+      "similarity": null,
+      "oldPath": "singularity/work-items/CFA-STORY/artifacts/implementation/implementation-summary.md",
+      "newPath": "singularity/work-items/CFA-STORY/artifacts/implementation/implementation-summary.md",
+      "oldMode": "100644",
+      "newMode": "100644",
+      "oldObject": "4ae9c6a0faf5c7de0ff5885591eaa3bcdc84b732",
+      "newObject": null,
+      "newContent": {
+        "kind": "regular-file",
+        "sha256": "sha256:3932703c488154188c38385106b84a5f1ae052c0f924e4a377758acf815a5314",
+        "bytes": 21332
+      },
+      "changeId": "sha256:94cb8ebfd2212aea58577ddc738b75684ffd3485a1a467e324496de623c87f33"
+    },
+    {
+      "status": "modified",
+      "similarity": null,
+      "oldPath": "singularity/work-items/CFA-STORY/STATUS.md",
+      "newPath": "singularity/work-items/CFA-STORY/STATUS.md",
+      "oldMode": "100644",
+      "newMode": "100644",
+      "oldObject": "2c354a7b04b6e985cd97b2f2a76251329eb58cbe",
+      "newObject": null,
+      "newContent": {
+        "kind": "regular-file",
+        "sha256": "sha256:3b559fe72e2490e1d7b27b14db2f46502b0e443bb06643362e94d4af3bbdadf4",
+        "bytes": 3358
+      },
+      "changeId": "sha256:d19308476ac79a6383333cc92d6f678d52da9d3d77267e321c6188a9528b7190"
+    },
+    {
+      "status": "modified",
+      "similarity": null,
+      "oldPath": "singularity/work-items/CFA-STORY/workflow.json",
+      "newPath": "singularity/work-items/CFA-STORY/workflow.json",
+      "oldMode": "100644",
+      "newMode": "100644",
+      "oldObject": "260a805fbe6771f733c7dd21d134b9c102b5552b",
+      "newObject": null,
+      "newContent": {
+        "kind": "regular-file",
+        "sha256": "sha256:eeb4d2c5ae634b4769bda13361a5d85a2645eeaeff994c2c6f748c49d61abe6e",
+        "bytes": 234995
+      },
+      "changeId": "sha256:f84bc383d1c24d1fcd7e67636431bfa3af691d672eb2d46be0eea82918707b8f"
+    },
+    {
+      "status": "modified",
+      "similarity": null,
+      "oldPath": "src/App.test.jsx",
+      "newPath": "src/App.test.jsx",
+      "oldMode": "100644",
+      "newMode": "100644",
+      "oldObject": "d6125865064c6ae9eb2e7b270ae43d92ed5eaeb6",
+      "newObject": null,
+      "newContent": {
+        "kind": "regular-file",
+        "sha256": "sha256:11368b39d3675c7747c3a32fa3e88c01debd9cc8fe9cc199dc61c94853ab23c9",
+        "bytes": 9872
+      },
+      "changeId": "sha256:ae59da1d071c5428b9cf843fc6e730e20be5d0c00b48cca3e862c40bf1410a6d"
+    },
+    {
+      "status": "modified",
+      "similarity": null,
+      "oldPath": "src/components/CFAStudyToolkit.jsx",
+      "newPath": "src/components/CFAStudyToolkit.jsx",
+      "oldMode": "100644",
+      "newMode": "100644",
+      "oldObject": "b861ceb5cacde2b2846400c5bcd8f2567d9c182b",
+      "newObject": null,
+      "newContent": {
+        "kind": "regular-file",
+        "sha256": "sha256:3845afec0b31e06533ad5283faa7dfcba0508b1b20bb123b53df9c25ce28dbfe",
+        "bytes": 10926
+      },
+      "changeId": "sha256:9deb3de2ee283ed67efbd1b22e5c7ee45143115107fc45460796f5a13104eed5"
+    }
+  ],
+  "digest": "sha256:614a97168d89b9fb597d5ded053fbff7b9723876aaaecbc677bed238e61ed900"
+}

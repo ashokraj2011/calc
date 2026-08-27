@@ -4,7 +4,7 @@
   "workId": "CFA-STORY",
   "workType": "spec-driven-standard",
   "phase": "implementation",
-  "generation": 3,
+  "generation": 4,
   "status": "in_progress",
   "generatedBy": {
     "name": "Ashok Raj",
@@ -35,6 +35,9 @@
       "value": "unknown",
       "status": "unavailable"
     },
+    "changeOrigins": [
+      "human"
+    ],
     "source": {
       "kind": "in-place",
       "filename": "implementation-summary.md",
@@ -42,10 +45,10 @@
       "sha256": "6efc08e8e20e92e33a30679fed236e92d9f899738e48ed8e62d0f394800be871",
       "bytes": 2103
     },
-    "generation": 3,
-    "publishedAt": "2026-08-27T08:29:24.471Z"
+    "generation": 4,
+    "publishedAt": "2026-08-27T12:40:48.786Z"
   },
-  "sourceCommit": "a3d304da725c4c544548a7dfa13ef4ea650e91a4",
+  "sourceCommit": "bd3674d4ccf19d9324f6b57f339069e65804f30d",
   "generationCommit": "91749891e894d50964f26f29b7181695d3bcec8e",
   "publicationCommit": "91749891e894d50964f26f29b7181695d3bcec8e",
   "configSha256": "87be75456efb3109772edfe7165e275f0477ca07d457e4b39cab66d0e30258e2",
@@ -55,9 +58,9 @@
     "sha256": "61cd7cba79a0dd2914a25b53496b8bd9c575c36219597d65b8ec10010e801d9c"
   },
   "inputs": {
-    "generation": 3,
-    "path": "singularity/work-items/CFA-STORY/context/inputs-implementation-gen3.json",
-    "sha256": "b7316659c6d85efbc5442f759ecb3b469c45c0c18c0f7a85938f2a3c560e08a3",
+    "generation": 4,
+    "path": "singularity/work-items/CFA-STORY/context/inputs-implementation-gen4.json",
+    "sha256": "3a7bb0b31e38697d5d7817c278c089fcf3aaa714b1d29d2cd96d86030971630b",
     "renderedSha256": "7a06108a2b4aa0771de62a918627acbb4adee04b59504d5c1224a5199fec66b2",
     "mode": "enforce"
   },
@@ -88,6 +91,14 @@
       "generation": 3,
       "path": "singularity/work-items/CFA-STORY/telemetry/implementation-gen3.json",
       "sha256": "2e193047ade8b2fdf9842677256daaae4bf730bf823b4aa3deb76d12140d56a0",
+      "status": "not-invoked",
+      "models": [],
+      "providerCost": null
+    },
+    {
+      "generation": 4,
+      "path": "singularity/work-items/CFA-STORY/telemetry/implementation-gen4.json",
+      "sha256": "99cc9036887de0f2ccb5ccff48cd1608a329acdc58ee21e7cd7a14acab81d832",
       "status": "not-invoked",
       "models": [],
       "providerCost": null

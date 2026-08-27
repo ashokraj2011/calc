@@ -225,7 +225,7 @@ describe('CFA Level I toolkit flow', () => {
     ]));
   });
 
-  // @ac:AC-005 @ac:AC-006
+  // @ac:CFA-STORY:SPEC-003 @ac:CFA-STORY:AC-005 @ac:CFA-STORY:AC-006
   it('computes a valid CFA result and rejects invalid input', async () => {
     const user = userEvent.setup();
     render(<App />);
@@ -249,6 +249,7 @@ describe('CFA Level I toolkit flow', () => {
 
     expect(screen.getByText(/Future value/i)).toBeInTheDocument();
     expect(screen.getByText(/1,276.28/i)).toBeInTheDocument();
+    expect(screen.getByText((content) => /FV\s*=\s*PV.*\^n/i.test(content))).toBeInTheDocument();
 
     await user.clear(principalInput);
     expect(screen.getByText(/Please provide valid values/i)).toBeInTheDocument();

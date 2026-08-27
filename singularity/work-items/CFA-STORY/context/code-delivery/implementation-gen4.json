@@ -1,0 +1,145 @@
+{
+  "schemaVersion": 2,
+  "kind": "code-delivery",
+  "workId": "CFA-STORY",
+  "phase": "implementation",
+  "generation": 4,
+  "generationIntentId": "6b28d986-ea25-47e1-b7bc-a227f94c50e4",
+  "changeSet": {
+    "path": "singularity/work-items/CFA-STORY/context/code-delivery/implementation-gen4-changes.json",
+    "digest": "sha256:614a97168d89b9fb597d5ded053fbff7b9723876aaaecbc677bed238e61ed900",
+    "sourcePaths": [
+      "src/components/CFAStudyToolkit.jsx"
+    ],
+    "deletedSourcePaths": [],
+    "executableTestPaths": [
+      "src/App.test.jsx"
+    ],
+    "supportingTestPaths": []
+  },
+  "changeClassification": {
+    "schemaVersion": 1,
+    "inference": "path-policy",
+    "declaredOrigins": [
+      "human"
+    ],
+    "generatedRoots": [],
+    "counts": {
+      "product-source": 1,
+      "test-source": 1
+    },
+    "entries": [
+      {
+        "changeId": "sha256:ae59da1d071c5428b9cf843fc6e730e20be5d0c00b48cca3e862c40bf1410a6d",
+        "status": "modified",
+        "oldPath": "src/App.test.jsx",
+        "newPath": "src/App.test.jsx",
+        "role": "test-source",
+        "generated": false,
+        "likelyOrigin": "authorship-declared",
+        "inference": "path-policy"
+      },
+      {
+        "changeId": "sha256:9deb3de2ee283ed67efbd1b22e5c7ee45143115107fc45460796f5a13104eed5",
+        "status": "modified",
+        "oldPath": "src/components/CFAStudyToolkit.jsx",
+        "newPath": "src/components/CFAStudyToolkit.jsx",
+        "role": "product-source",
+        "generated": false,
+        "likelyOrigin": "authorship-declared",
+        "inference": "path-policy"
+      }
+    ]
+  },
+  "traceability": {
+    "required": [
+      "AC-001",
+      "AC-002",
+      "AC-003",
+      "AC-004",
+      "AC-005",
+      "AC-006"
+    ],
+    "bound": [
+      "AC-001",
+      "AC-002",
+      "AC-003",
+      "AC-004",
+      "AC-005",
+      "AC-006",
+      "CFA-STORY:AC-005",
+      "CFA-STORY:AC-006"
+    ],
+    "missing": [],
+    "ambiguous": [],
+    "bindings": [
+      {
+        "clauseId": "AC-001",
+        "testSource": "src/App.test.jsx",
+        "bindingAssurance": "namespace-not-applicable"
+      },
+      {
+        "clauseId": "AC-002",
+        "testSource": "src/App.test.jsx",
+        "bindingAssurance": "namespace-not-applicable"
+      },
+      {
+        "clauseId": "AC-003",
+        "testSource": "src/App.test.jsx",
+        "bindingAssurance": "namespace-not-applicable"
+      },
+      {
+        "clauseId": "AC-004",
+        "testSource": "src/App.test.jsx",
+        "bindingAssurance": "namespace-not-applicable"
+      },
+      {
+        "clauseId": "AC-005",
+        "testSource": "src/App.test.jsx",
+        "bindingAssurance": "namespace-qualified-legacy-clause",
+        "tag": "CFA-STORY:AC-005"
+      },
+      {
+        "clauseId": "AC-005",
+        "testSource": "src/App.test.jsx",
+        "bindingAssurance": "namespace-not-applicable"
+      },
+      {
+        "clauseId": "AC-006",
+        "testSource": "src/App.test.jsx",
+        "bindingAssurance": "namespace-qualified-legacy-clause",
+        "tag": "CFA-STORY:AC-006"
+      },
+      {
+        "clauseId": "AC-006",
+        "testSource": "src/App.test.jsx",
+        "bindingAssurance": "namespace-not-applicable"
+      }
+    ]
+  },
+  "testExecutions": [],
+  "tree": {
+    "workingStateDigest": "sha256:3a64ce428fe8c5d4a28635fefaaf5dba0c838bb13ea01453c0cf5dbb12336a4a",
+    "generationCommit": null,
+    "generationTree": null
+  },
+  "model": {
+    "task": "code",
+    "required": false,
+    "authorshipProducer": "human",
+    "minimumAssurance": "unavailable",
+    "mappingRevision": null,
+    "provider": null,
+    "requestedModel": null,
+    "resolvedModel": null,
+    "assurance": "unavailable",
+    "invocationIds": [],
+    "host": null,
+    "observationSource": null,
+    "observationIntegrity": "unverified-local",
+    "observedAt": null,
+    "generation": null
+  },
+  "status": "pending-tests",
+  "capturedAt": "2026-08-27T12:40:48.786Z"
+}

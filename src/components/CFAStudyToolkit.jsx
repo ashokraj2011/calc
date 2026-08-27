@@ -33,6 +33,7 @@ const getTopicDefinition = (topic) => {
           { id: 'years', label: 'Years', key: 'years', defaultValue: '5' },
         ],
         formula: (principal, rate, years) => principal * Math.pow(1 + rate / 100, years),
+        formulaContext: 'FV = PV × (1 + r)^n',
         resultLabel: 'Future value',
       };
     case 'Economics':
@@ -45,6 +46,7 @@ const getTopicDefinition = (topic) => {
           { id: 'economic-years', label: 'Years', key: 'years', defaultValue: '4' },
         ],
         formula: (principal, rate, years) => principal * Math.pow(1 + rate / 100, years),
+        formulaContext: 'Projected value = base × (1 + growth)^n',
         resultLabel: 'Projected value',
       };
     case 'Financial Statement Analysis':
@@ -57,6 +59,7 @@ const getTopicDefinition = (topic) => {
           { id: 'analysis-years', label: 'Periods', key: 'years', defaultValue: '3' },
         ],
         formula: (principal, rate, years) => principal * (1 + rate / 100) * years,
+        formulaContext: 'Adjusted value = net income × (1 + margin) × periods',
         resultLabel: 'Adjusted value',
       };
     case 'Corporate Issuers':
@@ -69,6 +72,7 @@ const getTopicDefinition = (topic) => {
           { id: 'issuer-years', label: 'Periods', key: 'years', defaultValue: '2' },
         ],
         formula: (principal, rate, years) => principal * (1 + rate / 100) * years,
+        formulaContext: 'Debt impact = enterprise value × (1 + debt ratio) × periods',
         resultLabel: 'Debt impact',
       };
     case 'Equity':
@@ -81,6 +85,7 @@ const getTopicDefinition = (topic) => {
           { id: 'equity-years', label: 'Years', key: 'years', defaultValue: '6' },
         ],
         formula: (principal, rate, years) => principal * Math.pow(1 + rate / 100, years),
+        formulaContext: 'Ending value = investment × (1 + return)^n',
         resultLabel: 'Ending value',
       };
     case 'Fixed Income':
@@ -93,6 +98,7 @@ const getTopicDefinition = (topic) => {
           { id: 'bond-years', label: 'Years to maturity', key: 'years', defaultValue: '5' },
         ],
         formula: (principal, rate, years) => principal * (1 + rate / 100) * years,
+        formulaContext: 'Bond value = principal × (1 + coupon) × years',
         resultLabel: 'Bond value',
       };
     case 'Derivatives':
@@ -105,6 +111,7 @@ const getTopicDefinition = (topic) => {
           { id: 'derivative-years', label: 'Periods', key: 'years', defaultValue: '4' },
         ],
         formula: (principal, rate, years) => principal * (1 + rate / 100) * years,
+        formulaContext: 'Option value = premium × (1 + volatility) × periods',
         resultLabel: 'Option value',
       };
     case 'Alternative Investments':
@@ -117,6 +124,7 @@ const getTopicDefinition = (topic) => {
           { id: 'alt-years', label: 'Years', key: 'years', defaultValue: '7' },
         ],
         formula: (principal, rate, years) => principal * Math.pow(1 + rate / 100, years),
+        formulaContext: 'Portfolio value = initial investment × (1 + return)^n',
         resultLabel: 'Portfolio value',
       };
     case 'Portfolio Management':
@@ -129,6 +137,7 @@ const getTopicDefinition = (topic) => {
           { id: 'portfolio-years', label: 'Years', key: 'years', defaultValue: '5' },
         ],
         formula: (principal, rate, years) => principal * Math.pow(1 + rate / 100, years),
+        formulaContext: 'Portfolio end value = portfolio value × (1 + return)^n',
         resultLabel: 'Portfolio end value',
       };
     default:
@@ -141,6 +150,7 @@ const getTopicDefinition = (topic) => {
           { id: 'default-years', label: 'Years', key: 'years', defaultValue: '5' },
         ],
         formula: (principal, rate, years) => principal * Math.pow(1 + rate / 100, years),
+        formulaContext: 'Result = principal × (1 + rate)^years',
         resultLabel: 'Result',
       };
   }
@@ -230,6 +240,7 @@ export const CFAStudyToolkit = ({ soundEnabled }) => {
             <>
               <div className="text-xs uppercase tracking-[0.2em] u-text-text-muted">{definition.resultLabel}</div>
               <div className="text-3xl font-mono font-bold u-text-text-main mt-2">${formatCurrency(result)}</div>
+              <div className="mt-2 text-xs font-mono u-text-text-muted">{definition.formulaContext}</div>
             </>
           ) : (
             <div className="text-base font-medium text-amber-400">Please provide valid values</div>
