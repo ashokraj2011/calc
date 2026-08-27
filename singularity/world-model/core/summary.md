@@ -1,23 +1,23 @@
 # calc-app — deterministic light world model
 
-> Generated 27 August 2026 (2026-08-27T06:40:34.401Z) · source `cb92f58b0eb3e508f5f381f8984e1c8592becde9` · branch `CFA-STORY`
+> Generated 27 August 2026 (2026-08-27T14:51:30.378Z) · source `ce26a381a03f3aa7d026a4832a10236a9cde29ec` · branch `CFA-STORY`
 
 ## Repository shape
 
-- Files indexed: 32
+- Files indexed: 33
 - Source-like files: 20
 - Test-like files: 4
 - Build manifests: 1
 - Deployment/operations files: 0
 - Languages: JavaScript (20)
-- Top-level areas: src (23), (root) (7), public (2)
+- Top-level areas: src (23), (root) (7), public (2), .sflow (1)
 
 ## Facts {#core.facts}
 
 <!-- singularity-flow:repository-facts:start -->
 ```yaml
 # Derived from the repository, not inferred. Every path and line is checkable.
-files: 32
+files: 33
 languages_scanned: 20
 frameworks: [React, Vite, Vitest]
 commands:
@@ -38,18 +38,18 @@ most_depended_on:
   - { path: src/components/FunctionGrapher.jsx, imported_by: 1 }
 # Commits touching each file in the last year, from Git history.
 most_changed:
+  - { path: src/App.test.jsx, commits: 5 }
+  - { path: src/components/CFAStudyToolkit.jsx, commits: 4 }
   - { path: src/components/Header.jsx, commits: 4 }
   - { path: README.md, commits: 3 }
   - { path: src/App.jsx, commits: 3 }
   - { path: src/components/Display.jsx, commits: 3 }
   - { path: src/index.css, commits: 3 }
   - { path: package-lock.json, commits: 2 }
-  - { path: package.json, commits: 2 }
-  - { path: src/App.test.jsx, commits: 2 }
 # 19 exported top-level declarations; the most-depended-on files' are listed.
 key_symbols:
   - { name: App, kind: function, at: "src/App.jsx:15" }
-  - { name: CFAStudyToolkit, kind: binding, at: "src/components/CFAStudyToolkit.jsx:149" }
+  - { name: CFAStudyToolkit, kind: binding, at: "src/components/CFAStudyToolkit.jsx:159" }
   - { name: Display, kind: binding, at: "src/components/Display.jsx:5" }
   - { name: StandardKeypad, kind: binding, at: "src/components/StandardKeypad.jsx:5" }
   - { name: playSound, kind: binding, at: "src/utils/audio.js:18" }

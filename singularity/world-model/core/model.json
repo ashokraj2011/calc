@@ -3,11 +3,11 @@
   "mode": "deterministic-light",
   "title": "calc-app",
   "repository": {
-    "commit": "cb92f58b0eb3e508f5f381f8984e1c8592becde9",
+    "commit": "ce26a381a03f3aa7d026a4832a10236a9cde29ec",
     "branch": "CFA-STORY"
   },
   "counts": {
-    "files": 32,
+    "files": 33,
     "source": 20,
     "tests": 4,
     "manifests": 1,
@@ -19,7 +19,8 @@
   "topDirectories": {
     "src": 23,
     "(root)": 7,
-    "public": 2
+    "public": 2,
+    ".sflow": 1
   },
   "packages": [
     {

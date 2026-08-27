@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "mode": "bounded-light-index",
-  "totalPaths": 32,
+  "totalPaths": 33,
   "representativePaths": [
     "README.md",
     "eslint.config.js",
@@ -26,5 +26,5 @@
     "src/utils/evaluator.test.js",
     "vite.config.js"
   ],
-  "omittedPathCount": 10
+  "omittedPathCount": 11
 }
