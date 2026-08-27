@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "workId": "CFA-STORY",
+  "workType": "spec-driven-standard",
+  "phase": "release",
+  "generation": 1,
+  "mode": "enforce",
+  "recordedAt": "2026-08-27T14:53:46.102Z",
+  "renderedSha256": "16668c82dbe732b6fd4c54a6d8be87c4f8514491ddf0197034e8ea2dc911d308",
+  "warnings": [],
+  "inputs": [
+    {
+      "phase": "verification",
+      "path": "artifacts/verification/test-evidence.md",
+      "repositoryPath": "singularity/work-items/CFA-STORY/artifacts/verification/test-evidence.md",
+      "optional": false,
+      "maxBytes": null,
+      "status": "captured",
+      "producerStatus": "approved",
+      "producerGeneration": 1,
+      "approvedAt": "2026-08-27T14:37:45.029Z",
+      "approvedBy": "ashokraj2011",
+      "approvedSha256": "ed6b074f3bdffeaf4ec89dd5da3c41fb0a26b361c76628854f00b975744950f6",
+      "sha256": "ed6b074f3bdffeaf4ec89dd5da3c41fb0a26b361c76628854f00b975744950f6",
+      "bytes": 25236,
+      "source": {
+        "path": "singularity/work-items/CFA-STORY/artifacts/verification/test-evidence.md",
+        "rawSha256": "sha256:ed6b074f3bdffeaf4ec89dd5da3c41fb0a26b361c76628854f00b975744950f6"
+      },
+      "representation": {
+        "kind": "summary",
+        "sha256": "sha256:07a0337a34351c3a0055d2fb2131efe07f1e19b07c9d4aca7eaa161e0b87cdf4",
+        "bytes": 6029,
+        "complete": false,
+        "expansionHandle": "sfref:v1:story:CFA-STORY:837dfb0ad5b33947ba810224f0d86c35a7abead9b37100ae78c0f8a3a33fe063"
+      },
+      "injectedBytes": 6029,
+      "truncated": false,
+      "authoredBytes": 6004,
+      "managedBytesExcluded": 19232,
+      "projection": {
+        "kind": "approved-summary",
+        "preserve": [
+          "Acceptance and specification results",
+          "Negative",
+          "regression",
+          "security",
+          "and non-functional checks"
+        ],
+        "maximumSummaryBytes": 24576,
+        "expansion": "hash-bound-reference",
+        "fallback": "whole",
+        "briefPath": "singularity/work-items/CFA-STORY/context/briefs/verification-gen1-for-release.md",
+        "briefSha256": "07a0337a34351c3a0055d2fb2131efe07f1e19b07c9d4aca7eaa161e0b87cdf4",
+        "expansionHandle": "sfref:v1:story:CFA-STORY:837dfb0ad5b33947ba810224f0d86c35a7abead9b37100ae78c0f8a3a33fe063"
+      }
+    }
+  ]
+}

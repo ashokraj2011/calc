@@ -1,0 +1,41 @@
+{
+  "artifact": {
+    "bytes": 485,
+    "path": "singularity/work-items/CFA-STORY/artifacts/release/verification/evidence-index.md",
+    "role": "document",
+    "sha256": "b1f9dbb58c49e65ac72ae42077f5f0f47754390cd9ef64b613ee8b5888d0beb8"
+  },
+  "configuration": {
+    "revision": "3d2a1538528886afd920c1b3ec3cb1b546936290",
+    "sha256": "87be75456efb3109772edfe7165e275f0477ca07d457e4b39cab66d0e30258e2"
+  },
+  "generation": 1,
+  "inputs": [
+    {
+      "kind": null,
+      "path": "artifacts/verification/test-evidence.md",
+      "sha256": null
+    }
+  ],
+  "integritySha256": "8edc1fe684e85122f8562ff4700fee28f39c3aaa388148e0386d11b3820aceef",
+  "phase": "release",
+  "producer": {
+    "actor": "88361104+ashokraj2011@users.noreply.github.com",
+    "agent": null,
+    "kind": "human"
+  },
+  "publication": {
+    "branch": "CFA-STORY",
+    "commit": null,
+    "publishedAt": "2026-08-27T14:53:46.212Z"
+  },
+  "schemaVersion": 1,
+  "subject": {
+    "id": "CFA-STORY",
+    "kind": "story"
+  },
+  "template": {
+    "path": "singularity/templates/spec-driven/release.md",
+    "sha256": "f091ec3cec891f0236a3a51a798dd43c401c992dfbcdc05b592eb119ebd2f692"
+  }
+}

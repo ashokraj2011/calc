@@ -1,0 +1,98 @@
+{
+  "clauses": [
+    {
+      "anchor": "[CFA-STORY:AC-001]",
+      "body": "| `src/App.test.jsx` verifies the CFA entry point is reachable from the existing calculator navigation and remains in the app shell. | Pass |\n| [CFA-STORY:SPEC-002] /",
+      "bodySha256": "260f14043debcc7a0eb8509ff173b00e3ce638052459628337a54464cefe6d6c",
+      "dependsOn": [],
+      "id": "CFA-STORY:AC-001",
+      "namespace": "CFA-STORY",
+      "number": 1,
+      "source": {
+        "line": 101,
+        "path": "singularity/work-items/CFA-STORY/artifacts/release/conformance.md"
+      },
+      "type": "AC"
+    },
+    {
+      "anchor": "[CFA-STORY:AC-002]",
+      "body": "| `src/App.test.jsx` verifies the nine required topic names are visible and selectable. | Pass |\n| [CFA-STORY:SPEC-003] /",
+      "bodySha256": "a37af5d8aaed06a0edd26ef4de26bc33987186b9a947243cb48c17751ac29a85",
+      "dependsOn": [],
+      "id": "CFA-STORY:AC-002",
+      "namespace": "CFA-STORY",
+      "number": 2,
+      "source": {
+        "line": 102,
+        "path": "singularity/work-items/CFA-STORY/artifacts/release/conformance.md"
+      },
+      "type": "AC"
+    },
+    {
+      "anchor": "[CFA-STORY:AC-003]",
+      "body": "| `src/App.test.jsx` and the recorded Vitest run verify valid current inputs produce a named calculation and visible result. | Pass |\n| [CFA-STORY:SPEC-004] /",
+      "bodySha256": "7f3beee6ab65127e0aa3e62c19f3fd4859cafbd64d0e5d62732b2c140ee33deb",
+      "dependsOn": [],
+      "id": "CFA-STORY:AC-003",
+      "namespace": "CFA-STORY",
+      "number": 3,
+      "source": {
+        "line": 103,
+        "path": "singularity/work-items/CFA-STORY/artifacts/release/conformance.md"
+      },
+      "type": "AC"
+    },
+    {
+      "anchor": "[CFA-STORY:AC-004]",
+      "body": "| CFA acceptance coverage verifies invalid or incomplete values remain correction-ready and do not display a numeric result. | Pass |\n| [CFA-STORY:SPEC-005] /",
+      "bodySha256": "04baac9479f87c3f42db8d76f4c74aee3c02993ca855c0d3c2359db9a5411cba",
+      "dependsOn": [],
+      "id": "CFA-STORY:AC-004",
+      "namespace": "CFA-STORY",
+      "number": 4,
+      "source": {
+        "line": 104,
+        "path": "singularity/work-items/CFA-STORY/artifacts/release/conformance.md"
+      },
+      "type": "AC"
+    },
+    {
+      "anchor": "[CFA-STORY:AC-005]",
+      "body": "| Calculator change and clear tests in `src/App.test.jsx` verify results update or clear when inputs change. | Pass |\n| [CFA-STORY:SPEC-006] /",
+      "bodySha256": "f1a454772b5ad5442a0fee76f3bceb2a30c6f5b4a4c542f24f47dc4367b39667",
+      "dependsOn": [],
+      "id": "CFA-STORY:AC-005",
+      "namespace": "CFA-STORY",
+      "number": 5,
+      "source": {
+        "line": 105,
+        "path": "singularity/work-items/CFA-STORY/artifacts/release/conformance.md"
+      },
+      "type": "AC"
+    },
+    {
+      "anchor": "[CFA-STORY:AC-006]",
+      "body": "| Automated CFA flow coverage keeps the selected topic, inputs, and result in the completed app state; no live screenshot was captured in the verification run. | Partial: automated evidence present; screenshot evidence outstanding |\n| [CFA-STORY:NFR-001] | Verification evidence records the production-build timing measurement was not run. | Not evidenced |\n| [CFA-STORY:NFR-002] | Existing automated UI coverage and shared component structure check accessibility-related behavior; no separate accessibility-tree inspection was captured. | Partial |\n| [CFA-STORY:NFR-003] | The implementation is browser-local and has no backend or persistence surface; no browser network inspection was captured. | Partial |\n| [CFA-STORY:NFR-004] | Responsive navigation tests passed; no desktop/mobile screenshot or overflow assertion was captured. | Partial |\n\n## Constitution conformance\n\nEach cited or evidence-required article, and its verdict. A model may propose evidence, but the\nverdict for a judged article is recorded by a human authority.\n\n| Article | Type | Verdict | Recorded by |\n|---|---|---|---|\n| None identified in the approved inputs | Constitution | No exception claimed | N/A |\n\n## Exceptions\n\nEvery constitution exception, with article, reason, scope, authority, and expiry.\n\nNone. The approved verification evidence identifies residual evidence gaps, not constitution exceptions.\n\n## Deviations\n\nAccepted deviations carried from convergence, and the authority that accepted each.\n\nNone recorded in the approved convergence and verification inputs.",
+      "bodySha256": "3c25016679b4209fdc465a3cc40de852f346d745e0605c927a63d86f651282ed",
+      "dependsOn": [],
+      "id": "CFA-STORY:AC-006",
+      "namespace": "CFA-STORY",
+      "number": 6,
+      "source": {
+        "line": 106,
+        "path": "singularity/work-items/CFA-STORY/artifacts/release/conformance.md"
+      },
+      "type": "AC"
+    }
+  ],
+  "generation": 1,
+  "indexSha256": "368e852b8b639d14bde14adbacc6fea884e614f27786c905520b174461d1f1d8",
+  "phase": "release",
+  "schemaVersion": 1,
+  "source": {
+    "bytes": 12189,
+    "path": "singularity/work-items/CFA-STORY/artifacts/release/conformance.md",
+    "sha256": "e24f2ea1bc949e69e3401032ac89db915e704af85d2c38cc0b90f477c3b578da"
+  },
+  "workId": "CFA-STORY"
+}
