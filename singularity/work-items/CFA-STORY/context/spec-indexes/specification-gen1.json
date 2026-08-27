@@ -1,13 +1,13 @@
 {
   "clauses": [],
   "generation": 1,
-  "indexSha256": "c0ea477701005939532a32eeb00e3f1b94e954a7313939d8b1eb877e4e6253e3",
+  "indexSha256": "92da7e5ab21f72be6bcfeaa7cbb6096c2a8a33d5050667159659c3032d542573",
   "phase": "specification",
   "schemaVersion": 1,
   "source": {
-    "bytes": 13918,
+    "bytes": 18591,
     "path": "singularity/work-items/CFA-STORY/artifacts/specification/spec.md",
-    "sha256": "ced49fd8ef23cf88b8a039cfa1422c8708ffce6c8e21de155b626fe9b07d4876"
+    "sha256": "9d7141107347ae0ad93a6c694bd49adffbe4dd4cb2f8a48fafe300bf428cbeeb"
   },
   "workId": "CFA-STORY"
 }
