@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 2,
+  "phase": "convergence",
+  "decisions": [
+    {
+      "decision": "rejected",
+      "phase": "convergence",
+      "target": "implementation",
+      "reason": "Artifact corrected; resubmitting for review",
+      "changeRequestId": "CR-001",
+      "clauseIds": [],
+      "at": "2026-08-27T07:03:46.284Z",
+      "actor": {
+        "name": "Ashok Raj",
+        "email": "88361104+ashokraj2011@users.noreply.github.com",
+        "login": "ashokraj2011",
+        "githubLookup": "resolved"
+      },
+      "agent": "architect",
+      "authorityGroup": "architecture-reviewers",
+      "identityAssurance": "configured-local",
+      "channel": "terminal",
+      "generation": 1,
+      "artifactSha256": [
+        {
+          "path": "singularity/work-items/CFA-STORY/artifacts/convergence/convergence.md",
+          "sha256": "e4e2d3e1b02f8c2957a43b25db7f8de24bc1d4320c5506aa795d32a28dcfa4a5"
+        }
+      ],
+      "reviewPacketSha256": "d4d736c75d8fa26d55e8763109ae0cfc39f98696eb29dbc10ed3d1e8eeee839d"
+    }
+  ]
+}
