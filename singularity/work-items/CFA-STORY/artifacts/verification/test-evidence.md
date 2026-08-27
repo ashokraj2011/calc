@@ -5,7 +5,7 @@
   "workType": "spec-driven-standard",
   "phase": "verification",
   "generation": 1,
-  "status": "approved",
+  "status": "not_started",
   "generatedBy": {
     "name": "Ashok Raj",
     "email": "88361104+ashokraj2011@users.noreply.github.com",
@@ -133,10 +133,11 @@
         "submittedSourceCommit": "b6f0ac9c4cd7efdf334c14e8204d6d679e7f72ee",
         "planId": "3d6f6c01b80a78cb6f0d9e0a"
       },
-      "selfApproval": true
+      "selfApproval": true,
+      "invalidatedAt": "2026-08-27T17:08:20.966Z"
     }
   ],
-  "selfApproval": true,
+  "selfApproval": false,
   "conformanceTree": null
 }
 -->

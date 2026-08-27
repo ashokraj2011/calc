@@ -4,8 +4,8 @@
 - Work type: **spec-driven-standard**
 - Capability: **CaLC** (`calc-app`)
 - Capability map: `df69fe9244ab92f707336cad19121607344bddab441561046e049757a9bbbd4a`
-- Overall status: **complete**
-- Current phase: **complete**
+- Overall status: **in_progress**
+- Current phase: **convergence**
 
 | # | Phase | Governed agent | Status | Generation | Approvals | Tokens |
 |---:|---|---|---|---:|---:|---:|
@@ -15,15 +15,18 @@
 |  | ⚠ self-approval | Ashok Raj via architecture-reviewers; agent architect | **warning** |  |  |  |
 | 3 | Implementation (`implementation`) | developer | **approved** | 4 | 1 | unavailable |
 |  | ⚠ self-approval | Ashok Raj via engineering-reviewers; agent developer | **warning** |  |  |  |
-| 4 | Convergence (`convergence`) | architect | **approved** | 1 | 2 | unavailable |
-|  | ⚠ self-approval | Ashok Raj via architecture-reviewers; agent architect | **warning** |  |  |  |
-| 5 | Verification (`verification`) | qa | **approved** | 1 | 1 | unavailable |
-|  | ⚠ self-approval | Ashok Raj via quality-reviewers; agent qa | **warning** |  |  |  |
-| 6 | Release (`release`) | qa | **approved** | 1 | 1 | unavailable |
-|  | ⚠ self-approval | Ashok Raj via quality-reviewers; agent qa | **warning** |  |  |  |
+| 4 | Convergence (`convergence`) | architect | **in_progress** | 1 | 0 | unavailable |
+| 5 | Verification (`verification`) | qa | **not_started** | 1 | 0 | unavailable |
+| 6 | Release (`release`) | qa | **not_started** | 1 | 1 | unavailable |
+
+## Open stakeholder change requests
+
+- **CR-002** — return `release` to `convergence`: Repair convergence input integrity _(requested by Ashok Raj at 2026-08-27T17:08:20.966Z)_
+  - Reversible checkpoint: `RFW-CR-002` — preview with `singularity-flow story rework roll-forward --work-id CFA-STORY --change-request CR-002 --json`.
 
 ## Recent history
 
+- 2026-08-27T17:08:20.966Z — **workflow_reopened** (release) by ashokraj2011 · governed agent qa: CR-002 returned completed work to convergence: Repair convergence input integrity
 - 2026-08-27T15:13:41.181Z — **phase_self_approved** (release) by ashokraj2011 · governed agent qa: threshold reached; complete
 - 2026-08-27T15:00:36.877Z — **phase_submitted** (release) by ashokraj2011 · governed agent qa: 2 artifacts
 - 2026-08-27T14:53:46.468Z — **phase_generated** (release) by ashokraj2011 · governed agent qa: generation 1
@@ -38,4 +41,3 @@
 - 2026-08-27T13:33:26.954Z — **phase_assigned** (convergence) by ashokraj2011 · governed agent developer: ashok
 - 2026-08-27T12:48:34.600Z — **phase_self_approved** (implementation) by ashokraj2011 · governed agent developer: threshold reached; advanced to convergence
 - 2026-08-27T12:48:34.600Z — **work_interval_closed** (implementation) by ashokraj2011 · governed agent developer: interval INT-implementation-G4-004 closed after phase approval
-- 2026-08-27T12:43:14.779Z — **phase_submitted** (implementation) by ashokraj2011 · governed agent developer: 5 artifacts

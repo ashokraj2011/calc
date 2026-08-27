@@ -5,7 +5,7 @@
   "workType": "spec-driven-standard",
   "phase": "convergence",
   "generation": 1,
-  "status": "approved",
+  "status": "in_progress",
   "generatedBy": {
     "name": "Ashok Raj",
     "email": "88361104+ashokraj2011@users.noreply.github.com",
@@ -128,7 +128,8 @@
           "sha256": "e4e2d3e1b02f8c2957a43b25db7f8de24bc1d4320c5506aa795d32a28dcfa4a5"
         }
       ],
-      "reviewPacketSha256": "d4d736c75d8fa26d55e8763109ae0cfc39f98696eb29dbc10ed3d1e8eeee839d"
+      "reviewPacketSha256": "d4d736c75d8fa26d55e8763109ae0cfc39f98696eb29dbc10ed3d1e8eeee839d",
+      "invalidatedAt": "2026-08-27T17:08:20.966Z"
     },
     {
       "decision": "approved",
@@ -170,10 +171,11 @@
         "submittedSourceCommit": "18fc0c8bb6b77382f946c9fb1608a5e040b75d04",
         "planId": "22d12762153042adf9ba31e8"
       },
-      "selfApproval": true
+      "selfApproval": true,
+      "invalidatedAt": "2026-08-27T17:08:20.966Z"
     }
   ],
-  "selfApproval": true,
+  "selfApproval": false,
   "conformanceTree": null
 }
 -->

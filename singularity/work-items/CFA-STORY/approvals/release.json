@@ -52,7 +52,38 @@
         "submittedSourceCommit": "f9d3b64a7231332ba76e4ead5366fb7d2fc70c84",
         "planId": "1ad2d1607362d994c1b69b0d"
       },
-      "selfApproval": true
+      "selfApproval": true,
+      "invalidatedAt": "2026-08-27T17:08:20.966Z"
+    },
+    {
+      "decision": "reopened",
+      "phase": "release",
+      "target": "convergence",
+      "reason": "Repair convergence input integrity",
+      "changeRequestId": "CR-002",
+      "at": "2026-08-27T17:08:20.966Z",
+      "actor": {
+        "name": "Ashok Raj",
+        "email": "88361104+ashokraj2011@users.noreply.github.com",
+        "login": "ashokraj2011",
+        "githubLookup": "resolved"
+      },
+      "agent": "qa",
+      "authorityGroup": "quality-reviewers",
+      "identityAssurance": "configured-local",
+      "channel": "terminal",
+      "generation": 1,
+      "artifactSha256": [
+        {
+          "path": "singularity/work-items/CFA-STORY/artifacts/release/conformance.md",
+          "sha256": "8c1cb02dc888bebe34dff79935ff0c4f2b8fbf87ed9a1246ba53a1842c8a8a2c"
+        },
+        {
+          "path": "singularity/work-items/CFA-STORY/artifacts/release/verification/evidence-index.md",
+          "sha256": "b1f9dbb58c49e65ac72ae42077f5f0f47754390cd9ef64b613ee8b5888d0beb8"
+        }
+      ],
+      "gateRecoveryPlanSha256": "sha256:654c5b792f6514e91d7f833fad010a7c18eb4d797bc0a11e033d591b822bc1ee"
     }
   ]
 }
