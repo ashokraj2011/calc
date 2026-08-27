@@ -1,15 +1,15 @@
 {
   "schema_version": "3.0",
-  "generated_at": "2026-08-27T06:40:34.401Z",
+  "generated_at": "2026-08-27T14:51:30.378Z",
   "generated_date": "27 August 2026",
   "builder_version": "2.1-light",
   "builder_prompt_sha256": "511654826223e40b93c54f48f9b773f155e3364326d41aa98108dea7217d75cd",
-  "repository_commit": "cb92f58b0eb3e508f5f381f8984e1c8592becde9",
+  "repository_commit": "ce26a381a03f3aa7d026a4832a10236a9cde29ec",
   "repository_branch": "CFA-STORY",
   "working_tree_clean": false,
-  "generated_for_phase": "convergence",
+  "generated_for_phase": "release",
   "analysis_depth": "light",
-  "source_tree_sha256": "sha256:970bc871b1c02d777eccbab886e27f08e9865834966f6c40852a988a21b2e8fd",
+  "source_tree_sha256": "sha256:7c4f31ddd48702cab3b4b98e257f80e045caa3df854e6069543782b460a1332c",
   "generator": {
     "type": "deterministic-local",
     "model": null,
@@ -26,13 +26,13 @@
         "status": "ready",
         "path": "core/summary.brief.md",
         "bytes": 627,
-        "sha256": "abe899a9d45d6461fb4e44af904f4df9daaefb97c0441246545f7b7d9856a98f"
+        "sha256": "83d4f9ea269653836288665ff0a36877661a3e2478bf097b1bf15ae12a3364f0"
       },
       "full": {
         "status": "ready",
         "path": "core/summary.md",
-        "bytes": 3553,
-        "sha256": "58f3587d1290d20be520261ba13932c581533522374ad4c84dac90831d572f25"
+        "bytes": 3587,
+        "sha256": "71d4538e5800b6d031a0cd71237072345a0ffc614112a380a1fe3f1d99fcaec4"
       }
     }
   },
@@ -40,20 +40,20 @@
     "path": "index/path-map.json"
   },
   "views": {
-    "development": {
-      "path": "views/development.md",
-      "brief_path": "views/development.brief.md",
+    "release": {
+      "path": "views/release.md",
+      "brief_path": "views/release.brief.md",
       "generated": true,
       "tiers": {
         "brief": {
           "status": "ready",
-          "path": "views/development.brief.md",
-          "bytes": 274,
-          "sha256": "372897cb124f7f5b42fd7278716798279ddd876eb795ced8e90daa5916bcbd9b"
+          "path": "views/release.brief.md",
+          "bytes": 223,
+          "sha256": "86d4b7b94761bd6e5e73198f1327161993e5caea9526a3ab35e9cb1f8de0a62f"
         },
         "full": {
           "status": "missing",
-          "path": "views/development.md",
+          "path": "views/release.md",
           "bytes": 0,
           "sha256": null
         }
@@ -61,10 +61,10 @@
     }
   },
   "views_generated": [
-    "development"
+    "release"
   ],
   "requested_views": [
-    "development"
+    "release"
   ],
   "domains": [],
   "task_guides": [],
@@ -82,17 +82,17 @@
   },
   "materializations": [
     {
-      "id": "light-1787812836693",
-      "generated_at": "2026-08-27T06:40:34.401Z",
-      "source_tree_sha256": "sha256:970bc871b1c02d777eccbab886e27f08e9865834966f6c40852a988a21b2e8fd",
+      "id": "light-1787842291704",
+      "generated_at": "2026-08-27T14:51:30.378Z",
+      "source_tree_sha256": "sha256:7c4f31ddd48702cab3b4b98e257f80e045caa3df854e6069543782b460a1332c",
       "provider": null,
       "requested": [
         "core/brief",
-        "development/brief"
+        "release/brief"
       ],
       "produced": [
         "core/brief",
-        "development/brief"
+        "release/brief"
       ],
       "reused": []
     }

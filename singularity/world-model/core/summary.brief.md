@@ -1,8 +1,8 @@
 # calc-app — light repository brief
 
-> Generated 27 August 2026 · zero model tokens · source `cb92f58b0eb3`
+> Generated 27 August 2026 · zero model tokens · source `ce26a381a03f`
 
-- Files indexed: 32
+- Files indexed: 33
 - Languages: JavaScript (20)
 - Likely entry points: `src/App.jsx`, `src/main.jsx`
 - Validation commands: `npm run build`, `npm run dev`, `npm run lint`, `npm run preview`
