@@ -4608,10 +4608,10 @@
       "checks": [],
       "remoteOutputs": [],
       "inputContext": {
-        "generation": 1,
-        "path": "singularity/work-items/CFA-STORY/context/inputs-convergence-gen1.json",
-        "sha256": "d5194a89dd505eee90e0c264c91e673689d23ad213d5cf376ed57db65cbd352a",
-        "renderedSha256": "b6fd973e22be0f284d8a00bd54648d78c6c9e3e5b64c8f4ed6a704936e76b901",
+        "generation": 2,
+        "path": "singularity/work-items/CFA-STORY/context/inputs-convergence-gen2.json",
+        "sha256": "d5112c5ead4f563a4fbd16b958c19552da10871f651db0c9df30b2e9b2464cbe",
+        "renderedSha256": "57ec7b48a68f219d82279df0ef8d57c7d6a7256d5b20889178cdcc18bbc7016a",
         "mode": "enforce"
       },
       "sidecars": [

@@ -1,0 +1,338 @@
+{
+  "schemaVersion": 3,
+  "workId": "CFA-STORY",
+  "phase": "convergence",
+  "generation": 2,
+  "agent": "developer",
+  "modelCommit": "43a3aec2a564a99b3fb76e3dc9141338c71b964a",
+  "matchedRules": 0,
+  "mode": "append",
+  "applied": false,
+  "depth": "standard",
+  "evidence": false,
+  "requiredViews": [
+    "development"
+  ],
+  "requiredSelections": [
+    {
+      "kind": "core",
+      "tier": "brief",
+      "required": true
+    },
+    {
+      "kind": "view",
+      "view": "development",
+      "tier": "brief",
+      "required": true,
+      "origin": "phase+agent"
+    }
+  ],
+  "task": null,
+  "supportingEvidence": [],
+  "references": [
+    {
+      "handle": "sfref:v1:story:CFA-STORY:19e4cd3eee5cccd60ac0e34e8e6905f1d9d29c1df3db04f879dafdda2e6bfde3",
+      "phase": "implementation",
+      "path": "singularity/work-items/CFA-STORY/artifacts/implementation/implementation-summary.md",
+      "rawSha256": "b695aa81f0d1b51c34d97d5e893184060c6cd9558295e2d6b6ae44b36d7167c6",
+      "rawBytes": 16831,
+      "previewSha256": "e8c46f4d80a2dec4c00bb5e3cbb68cd0168ecbd3c7c5f68de0ee0ccd9b415a02",
+      "previewBytes": 13185,
+      "renderer": {
+        "id": "markdown-outline",
+        "version": 1
+      },
+      "truncated": true
+    }
+  ],
+  "modelSourceTreeSha256": "sha256:970bc871b1c02d777eccbab886e27f08e9865834966f6c40852a988a21b2e8fd",
+  "composedSourceTreeSha256": "sha256:7c4f31ddd48702cab3b4b98e257f80e045caa3df854e6069543782b460a1332c",
+  "worldModelCommit": "43a3aec2a564a99b3fb76e3dc9141338c71b964a",
+  "manifestSha256": "51b8860decdd42f7549468726aedc755d6fbe90ed4ba4d70c67c4fa308b7ba70",
+  "fresh": false,
+  "renderedSha256": "50a14a1cf49094f50e9ce47d02a3c6746c9b278ae55fd19e028a96f713f259da",
+  "promptStudy": null,
+  "promptDefinition": null,
+  "structuralContext": null,
+  "workSource": {
+    "path": "singularity/work-items/CFA-STORY/source.json",
+    "sha256": "9bf622393e4583d6985423b31f43aff0a4745257daf469e27a55612e3248e70e",
+    "bytes": 928
+  },
+  "promptBudget": {
+    "policy": {
+      "mode": "observe",
+      "profile": "standard",
+      "maximumBytes": 72000,
+      "maximumEstimatedPromptTokens": 18000,
+      "policyOnBudgetBreach": "refuse",
+      "assurance": "estimated-prompt-text"
+    },
+    "admission": {
+      "model": null,
+      "logicalPromptBytes": 43216,
+      "logicalPromptTokens": {
+        "value": 10804,
+        "assurance": "estimated"
+      },
+      "systemAndToolReserveTokens": {
+        "value": null,
+        "assurance": "unavailable"
+      },
+      "historyTokens": {
+        "value": null,
+        "assurance": "unavailable"
+      },
+      "totalAdmissionTokens": {
+        "value": 10804,
+        "assurance": "partial"
+      },
+      "maximumInputTokens": 18000,
+      "safeToEnforce": false,
+      "admitted": null,
+      "policyApprovedConservativeUpperBound": false
+    },
+    "compliance": "compliant",
+    "originalBytes": 43216,
+    "originalEstimatedTokens": 10804,
+    "finalBytes": 43216,
+    "finalEstimatedTokens": 10804,
+    "overflow": false,
+    "warnings": [],
+    "economics": {
+      "prompt": {
+        "candidatePromptBytes": 43216,
+        "deduplicatedPromptBytes": 32188,
+        "budgetEvictedPromptBytes": 0,
+        "finalPromptBytes": 43216
+      },
+      "provider": {
+        "inputTokens": null,
+        "cachedInputTokens": null,
+        "uncachedInputTokens": null,
+        "assurance": "unavailable"
+      },
+      "system": {
+        "totalSystemTokens": null,
+        "assurance": "unavailable"
+      },
+      "source": {
+        "sourceBytes": 65354,
+        "authoredSourceBytes": 21142,
+        "managedSourceBytesExcluded": 44212,
+        "managedReferenceBytesExcluded": 3199,
+        "deliveredSourceBytes": 11923,
+        "assurance": "sflow-measured"
+      }
+    },
+    "sections": [
+      {
+        "id": "phase-contract",
+        "mandatory": true,
+        "priority": 0,
+        "bytes": 2310,
+        "estimatedTokens": 578,
+        "sha256": "3e41e1d1a01d968f98b596d811d3578c2196049eecb86cd0ed2ec5204f8264f7",
+        "included": true,
+        "omissionReason": null,
+        "expandHandles": [],
+        "expandability": "unavailable"
+      },
+      {
+        "id": "work-source",
+        "mandatory": true,
+        "priority": 0,
+        "bytes": 701,
+        "estimatedTokens": 176,
+        "sha256": "d56bf60d3890fb9e817439c30a8dd5230258654017c150d63f7be49d23d84238",
+        "included": true,
+        "omissionReason": null,
+        "expandHandles": [],
+        "expandability": "unavailable"
+      },
+      {
+        "id": "governed-agent-policy",
+        "mandatory": true,
+        "priority": 0,
+        "bytes": 1890,
+        "estimatedTokens": 473,
+        "sha256": "a37358eaebbb0cbe03ddaa03c31caa228e026232db429cf6ee21412b37048d20",
+        "included": true,
+        "omissionReason": null,
+        "expandHandles": [],
+        "expandability": "unavailable"
+      },
+      {
+        "id": "world-model-grounding",
+        "mandatory": true,
+        "priority": 40,
+        "bytes": 1103,
+        "estimatedTokens": 276,
+        "sha256": "af40738f88bb9b18b1bb17853f22540772941bb45cdfc2300246b55a9a1a4b66",
+        "included": true,
+        "omissionReason": null,
+        "expandHandles": [],
+        "expandability": "unavailable"
+      },
+      {
+        "id": "capability-world-model",
+        "mandatory": false,
+        "priority": 50,
+        "bytes": 8857,
+        "estimatedTokens": 2215,
+        "sha256": "374ce185d7f5ece7b3d91a672896dfde60e6525748426395a7f2a0a559dd753c",
+        "included": true,
+        "omissionReason": null,
+        "expandHandles": [],
+        "expandability": "unavailable"
+      },
+      {
+        "id": "approved-reference-previews",
+        "mandatory": false,
+        "priority": 80,
+        "bytes": 13773,
+        "estimatedTokens": 3444,
+        "sha256": "9678e75ea60f5f886728ff993252a5b9b0f2f20480dd99f438835051420df402",
+        "included": true,
+        "omissionReason": null,
+        "expandHandles": [
+          "sfref:v1:story:CFA-STORY:19e4cd3eee5cccd60ac0e34e8e6905f1d9d29c1df3db04f879dafdda2e6bfde3"
+        ],
+        "expandability": "available"
+      },
+      {
+        "id": "approved-phase-inputs",
+        "mandatory": true,
+        "priority": 0,
+        "bytes": 14569,
+        "estimatedTokens": 3643,
+        "sha256": "cd8cfeffedaefba785c273237bddb59b300d43c148b2829763a429ab9996a279",
+        "included": true,
+        "omissionReason": null,
+        "expandHandles": [],
+        "expandability": "unavailable"
+      }
+    ],
+    "omitted": [],
+    "deduplicatedReferences": [
+      {
+        "handle": "sfref:v1:story:CFA-STORY:d3570aaf4c2f8d53b3dc340e4a29d2c3e6385738464d07872e8a8694d90986e4",
+        "path": "singularity/work-items/CFA-STORY/artifacts/specification/spec.md",
+        "rawSha256": "ced49fd8ef23cf88b8a039cfa1422c8708ffce6c8e21de155b626fe9b07d4876",
+        "rawBytes": 13918,
+        "previewBytes": 10605,
+        "reason": "same-governed-reference-handle"
+      },
+      {
+        "handle": "sfref:v1:story:CFA-STORY:52a4599271da613ee07b364876cccc1cd7ea7955ad61424cf55b5839f44ce46b",
+        "path": "singularity/work-items/CFA-STORY/artifacts/planning/plan.md",
+        "rawSha256": "54620920db7ce601094ed4014a2b0472bbd418ace586a300fd028af29f05d8c3",
+        "rawBytes": 17810,
+        "previewBytes": 13226,
+        "reason": "same-governed-reference-handle"
+      },
+      {
+        "handle": "sfref:v1:story:CFA-STORY:da1a58458c44f1edb44a969c6b3dbbd26612fbff0ab4498e1ebefd6f12f9b205",
+        "path": "singularity/work-items/CFA-STORY/artifacts/implementation/implementation-summary.md",
+        "rawSha256": "86fe5a42cb11cac996bc02e578f693ea765412b08f18b548cfabe167d86ecbdc",
+        "rawBytes": 21659,
+        "previewBytes": 8357,
+        "reason": "same-governed-reference-handle"
+      }
+    ],
+    "inputLinearization": {
+      "sourceBytes": 65354,
+      "authoredBytes": 21142,
+      "managedBytesExcluded": 44212,
+      "injectedBytes": 11923
+    },
+    "structuralContext": null,
+    "workSource": {
+      "path": "singularity/work-items/CFA-STORY/source.json",
+      "sha256": "9bf622393e4583d6985423b31f43aff0a4745257daf469e27a55612e3248e70e",
+      "bytes": 928
+    },
+    "activeClauseCapsule": {
+      "sha256": "sha256:c62b874fa86916cf7d6c76ee523b75a1210ec12c04c0fbebbe57b4d794c147ff",
+      "clauses": 0,
+      "openRisks": 0,
+      "clarifications": 0
+    }
+  },
+  "remoteSkills": [],
+  "promptPath": "singularity/work-items/CFA-STORY/context/prompts/convergence-gen2.md",
+  "files": [
+    {
+      "path": "singularity/world-model/core/summary.brief.md",
+      "sha256": "abe899a9d45d6461fb4e44af904f4df9daaefb97c0441246545f7b7d9856a98f",
+      "bytes": 627,
+      "injectedBytes": 627,
+      "truncated": false,
+      "category": "required",
+      "level": 0,
+      "reason": "shared repository core (brief)",
+      "evidenceId": null,
+      "mimeType": null,
+      "packageId": null,
+      "handle": null,
+      "previewSha256": null,
+      "previewBytes": null,
+      "renderer": null
+    },
+    {
+      "path": "singularity/world-model/views/development.brief.md",
+      "sha256": "372897cb124f7f5b42fd7278716798279ddd876eb795ced8e90daa5916bcbd9b",
+      "bytes": 274,
+      "injectedBytes": 274,
+      "truncated": false,
+      "category": "required",
+      "level": 1,
+      "reason": "convergence view: development (brief; phase+agent)",
+      "evidenceId": null,
+      "mimeType": null,
+      "packageId": null,
+      "handle": null,
+      "previewSha256": null,
+      "previewBytes": null,
+      "renderer": null
+    },
+    {
+      "path": "singularity/work-items/CFA-STORY/context/capability-world-model/calc/core/summary.md",
+      "sha256": "04fb9b363437f060397ff24a5ecdd5d4cb2bd65afd33ba6328ea91973f7995c0",
+      "bytes": 8679,
+      "injectedBytes": 8679,
+      "truncated": false,
+      "category": "capability",
+      "level": 1,
+      "reason": "capability calc-app",
+      "evidenceId": null,
+      "mimeType": null,
+      "packageId": null,
+      "handle": null,
+      "previewSha256": null,
+      "previewBytes": null,
+      "renderer": null
+    },
+    {
+      "path": "singularity/work-items/CFA-STORY/artifacts/implementation/implementation-summary.md",
+      "sha256": "b695aa81f0d1b51c34d97d5e893184060c6cd9558295e2d6b6ae44b36d7167c6",
+      "bytes": 16831,
+      "injectedBytes": 13185,
+      "truncated": true,
+      "category": "reference",
+      "level": null,
+      "reason": "implementation:sfref:v1:story:CFA-STORY:19e4cd3eee5cccd60ac0e34e8e6905f1d9d29c1df3db04f879dafdda2e6bfde3",
+      "evidenceId": null,
+      "mimeType": null,
+      "packageId": null,
+      "handle": "sfref:v1:story:CFA-STORY:19e4cd3eee5cccd60ac0e34e8e6905f1d9d29c1df3db04f879dafdda2e6bfde3",
+      "previewSha256": "e8c46f4d80a2dec4c00bb5e3cbb68cd0168ecbd3c7c5f68de0ee0ccd9b415a02",
+      "previewBytes": 13185,
+      "renderer": {
+        "id": "markdown-outline",
+        "version": 1
+      }
+    }
+  ],
+  "injectedAt": "2026-08-27T13:09:09.532Z"
+}

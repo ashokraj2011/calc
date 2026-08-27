@@ -1,0 +1,143 @@
+{
+  "schemaVersion": 1,
+  "workId": "CFA-STORY",
+  "workType": "spec-driven-standard",
+  "phase": "convergence",
+  "generation": 2,
+  "mode": "enforce",
+  "recordedAt": "2026-08-27T13:09:21.707Z",
+  "renderedSha256": "57ec7b48a68f219d82279df0ef8d57c7d6a7256d5b20889178cdcc18bbc7016a",
+  "warnings": [],
+  "inputs": [
+    {
+      "phase": "specification",
+      "path": "artifacts/specification/spec.md",
+      "repositoryPath": "singularity/work-items/CFA-STORY/artifacts/specification/spec.md",
+      "optional": false,
+      "maxBytes": null,
+      "status": "captured",
+      "producerStatus": "approved",
+      "producerGeneration": 1,
+      "approvedAt": "2026-08-27T04:49:26.364Z",
+      "approvedBy": "ashokraj2011",
+      "approvedSha256": "9d7141107347ae0ad93a6c694bd49adffbe4dd4cb2f8a48fafe300bf428cbeeb",
+      "sha256": "9d7141107347ae0ad93a6c694bd49adffbe4dd4cb2f8a48fafe300bf428cbeeb",
+      "bytes": 18591,
+      "source": {
+        "path": "singularity/work-items/CFA-STORY/artifacts/specification/spec.md",
+        "rawSha256": "sha256:9d7141107347ae0ad93a6c694bd49adffbe4dd4cb2f8a48fafe300bf428cbeeb"
+      },
+      "representation": {
+        "kind": "summary",
+        "sha256": "sha256:d2495fe60b1aa337c310a2e1d4256ed27d9af9b51da611dff09531241ff0ff78",
+        "bytes": 5190,
+        "complete": false,
+        "expansionHandle": "sfref:v1:story:CFA-STORY:d3570aaf4c2f8d53b3dc340e4a29d2c3e6385738464d07872e8a8694d90986e4"
+      },
+      "injectedBytes": 5190,
+      "truncated": false,
+      "authoredBytes": 10481,
+      "managedBytesExcluded": 8110,
+      "projection": {
+        "kind": "approved-summary",
+        "preserve": [
+          "Requirements",
+          "Non-functional requirements",
+          "Boundary conditions"
+        ],
+        "maximumSummaryBytes": 32768,
+        "expansion": "hash-bound-reference",
+        "fallback": "whole",
+        "briefPath": "singularity/work-items/CFA-STORY/context/briefs/specification-gen1-for-convergence.md",
+        "briefSha256": "d2495fe60b1aa337c310a2e1d4256ed27d9af9b51da611dff09531241ff0ff78",
+        "expansionHandle": "sfref:v1:story:CFA-STORY:d3570aaf4c2f8d53b3dc340e4a29d2c3e6385738464d07872e8a8694d90986e4"
+      }
+    },
+    {
+      "phase": "planning",
+      "path": "artifacts/planning/plan.md",
+      "repositoryPath": "singularity/work-items/CFA-STORY/artifacts/planning/plan.md",
+      "optional": false,
+      "maxBytes": null,
+      "status": "captured",
+      "producerStatus": "approved",
+      "producerGeneration": 1,
+      "approvedAt": "2026-08-27T05:39:30.305Z",
+      "approvedBy": "ashokraj2011",
+      "approvedSha256": "113713575304ae92ff6bd9ff7fefac44d2e3b727f78fef488695fea9a5255f23",
+      "sha256": "113713575304ae92ff6bd9ff7fefac44d2e3b727f78fef488695fea9a5255f23",
+      "bytes": 21229,
+      "source": {
+        "path": "singularity/work-items/CFA-STORY/artifacts/planning/plan.md",
+        "rawSha256": "sha256:113713575304ae92ff6bd9ff7fefac44d2e3b727f78fef488695fea9a5255f23"
+      },
+      "representation": {
+        "kind": "summary",
+        "sha256": "sha256:2ccf3326e72767b91c3b2ba947a4335451644bf65cbba03e9d9f856ffb23dc87",
+        "bytes": 4630,
+        "complete": false,
+        "expansionHandle": "sfref:v1:story:CFA-STORY:52a4599271da613ee07b364876cccc1cd7ea7955ad61424cf55b5839f44ce46b"
+      },
+      "injectedBytes": 4630,
+      "truncated": false,
+      "authoredBytes": 8558,
+      "managedBytesExcluded": 12671,
+      "projection": {
+        "kind": "approved-summary",
+        "preserve": [
+          "Test strategy",
+          "Risks and rollback"
+        ],
+        "maximumSummaryBytes": 24576,
+        "expansion": "hash-bound-reference",
+        "fallback": "whole",
+        "briefPath": "singularity/work-items/CFA-STORY/context/briefs/planning-gen1-for-convergence.md",
+        "briefSha256": "2ccf3326e72767b91c3b2ba947a4335451644bf65cbba03e9d9f856ffb23dc87",
+        "expansionHandle": "sfref:v1:story:CFA-STORY:52a4599271da613ee07b364876cccc1cd7ea7955ad61424cf55b5839f44ce46b"
+      }
+    },
+    {
+      "phase": "implementation",
+      "path": "artifacts/implementation/implementation-summary.md",
+      "repositoryPath": "singularity/work-items/CFA-STORY/artifacts/implementation/implementation-summary.md",
+      "optional": false,
+      "maxBytes": null,
+      "status": "captured",
+      "producerStatus": "approved",
+      "producerGeneration": 4,
+      "approvedAt": "2026-08-27T12:48:34.600Z",
+      "approvedBy": "ashokraj2011",
+      "approvedSha256": "90f5ce512309c5ce9f2c39160a05ed1ff6d0d59fce479bb08de9e40f194d1654",
+      "sha256": "90f5ce512309c5ce9f2c39160a05ed1ff6d0d59fce479bb08de9e40f194d1654",
+      "bytes": 25534,
+      "source": {
+        "path": "singularity/work-items/CFA-STORY/artifacts/implementation/implementation-summary.md",
+        "rawSha256": "sha256:90f5ce512309c5ce9f2c39160a05ed1ff6d0d59fce479bb08de9e40f194d1654"
+      },
+      "representation": {
+        "kind": "fallback-whole",
+        "sha256": "sha256:6efc08e8e20e92e33a30679fed236e92d9f899738e48ed8e62d0f394800be871",
+        "bytes": 2103,
+        "complete": true,
+        "expansionHandle": "sfref:v1:story:CFA-STORY:da1a58458c44f1edb44a969c6b3dbbd26612fbff0ab4498e1ebefd6f12f9b205"
+      },
+      "injectedBytes": 2103,
+      "truncated": false,
+      "authoredBytes": 2103,
+      "managedBytesExcluded": 23431,
+      "projection": {
+        "kind": "fallback-whole",
+        "preserve": [
+          "Changed components and decisions",
+          "Tests and operational notes"
+        ],
+        "maximumSummaryBytes": 24576,
+        "expansion": "hash-bound-reference",
+        "fallback": "whole",
+        "briefPath": null,
+        "briefSha256": null,
+        "expansionHandle": "sfref:v1:story:CFA-STORY:da1a58458c44f1edb44a969c6b3dbbd26612fbff0ab4498e1ebefd6f12f9b205"
+      }
+    }
+  ]
+}
