@@ -5,7 +5,7 @@
   "workType": "spec-driven-standard",
   "phase": "planning",
   "generation": 1,
-  "status": "awaiting_approval",
+  "status": "approved",
   "generatedBy": {
     "name": "Ashok Raj",
     "email": "88361104+ashokraj2011@users.noreply.github.com",
@@ -102,8 +102,78 @@
     }
   ],
   "sequenceOverrides": [],
-  "approvals": [],
-  "selfApproval": false,
+  "approvals": [
+    {
+      "decision": "approved",
+      "phase": "planning",
+      "at": "2026-08-27T05:39:30.305Z",
+      "actor": {
+        "name": "Ashok Raj",
+        "email": "88361104+ashokraj2011@users.noreply.github.com",
+        "login": "ashokraj2011",
+        "githubLookup": "resolved"
+      },
+      "agent": "architect",
+      "authorityGroup": "architecture-reviewers",
+      "identityAssurance": "configured-local",
+      "channel": "copilot-selection-receipt",
+      "generation": 1,
+      "artifactSha256": [
+        {
+          "path": "singularity/work-items/CFA-STORY/artifacts/planning/plan.md",
+          "sha256": "6dde44c405dc92b32185b93b201622f46dd0d561a34097412b16d01975d056bf"
+        }
+      ],
+      "artifactSet": "spec-driven-planning",
+      "bundleSha256": "147095820429b1c4343dda99f9d17a48dca1b6b3d62a6ef3001039a4391bfc8a",
+      "reviewPacketSha256": "31a902014cd5ab5137505c915096e56e3b169fbfc61aa5c69ac3b76bde40d185",
+      "evidenceCommit": "f581225b13d3ecd04ab68c79bcceb5c3b303689c",
+      "artifactSetSha256": "f96d212509c293d109a71f43dd07cd3e24abeadc2be5a4103ac17a014064f65b",
+      "actionContext": {
+        "phase": "planning",
+        "label": "Planning",
+        "generation": 1,
+        "submittedAt": "2026-08-27T05:32:51.985Z",
+        "artifacts": [
+          {
+            "path": "singularity/work-items/CFA-STORY/artifacts/planning/plan.md",
+            "sha256": "6dde44c405dc92b32185b93b201622f46dd0d561a34097412b16d01975d056bf"
+          }
+        ],
+        "agentBriefs": [
+          {
+            "consumerPhase": "convergence",
+            "status": "ready",
+            "path": "singularity/work-items/CFA-STORY/context/briefs/planning-gen1-for-convergence.json",
+            "renderedPath": "singularity/work-items/CFA-STORY/context/briefs/planning-gen1-for-convergence.md",
+            "renderedSha256": "2ccf3326e72767b91c3b2ba947a4335451644bf65cbba03e9d9f856ffb23dc87",
+            "integritySha256": "1c8cd3295bc56f9e2af992e083f0762d560a1273bf5b2b41b807848b8aed641a"
+          },
+          {
+            "consumerPhase": "implementation",
+            "status": "ready",
+            "path": "singularity/work-items/CFA-STORY/context/briefs/planning-gen1-for-implementation.json",
+            "renderedPath": "singularity/work-items/CFA-STORY/context/briefs/planning-gen1-for-implementation.md",
+            "renderedSha256": "76393104d6cf17fe9fc0ca6ce0a5aad16f8ccb329caf77025b4d31b762cbfe8d",
+            "integritySha256": "a3976df5ca72ce8b4fd51ca9ce280c0ca909ebef8115c9a3955a2e6cdc089ee5"
+          },
+          {
+            "consumerPhase": "verification",
+            "status": "ready",
+            "path": "singularity/work-items/CFA-STORY/context/briefs/planning-gen1-for-verification.json",
+            "renderedPath": "singularity/work-items/CFA-STORY/context/briefs/planning-gen1-for-verification.md",
+            "renderedSha256": "c479e01ee499ed4e8584abb16bb1961339a3e420100f5b15ab6d179cc267f585",
+            "integritySha256": "6fd4292602eb8ba50b3b448fd006866f7f8bf3eaa0b87050c3e78af4a3a83131"
+          }
+        ],
+        "reviewPacketSha256": "31a902014cd5ab5137505c915096e56e3b169fbfc61aa5c69ac3b76bde40d185",
+        "submittedSourceCommit": "514d01abc7b8e31c77d8a71ee20a6eded0b3ac82",
+        "planId": "e1df1cf4512beacf8966b01c"
+      },
+      "selfApproval": true
+    }
+  ],
+  "selfApproval": true,
   "conformanceTree": null
 }
 -->
