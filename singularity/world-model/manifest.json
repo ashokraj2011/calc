@@ -1,13 +1,13 @@
 {
   "schema_version": "3.0",
-  "repository_commit": "6b0100c4e4f6f61b03c4e5fcbf7d58052f63d7f6",
-  "repository_branch": "WRK-TAN",
+  "repository_commit": "7e3cf961b5090100014667d750e2b6b3efc4e81b",
+  "repository_branch": "CFA-STORY",
   "working_tree_clean": false,
-  "generated_at": "2026-08-20T04:00:23.844Z",
-  "generated_date": "20 August 2026",
-  "builder_version": "2.0",
-  "builder_prompt_sha256": "d607ed17ba7e0ad45acd142b62b57c32272e21dfec50866d4bee5105f2fd9169",
-  "analysis_depth": "quick",
+  "generated_at": "2026-08-27T04:25:38.452Z",
+  "generated_date": "27 August 2026",
+  "builder_version": "2.1-light",
+  "builder_prompt_sha256": "511654826223e40b93c54f48f9b773f155e3364326d41aa98108dea7217d75cd",
+  "analysis_depth": "light",
   "core": {
     "summary": "core/summary.md",
     "brief": "core/summary.brief.md",
@@ -87,10 +87,10 @@
           "sha256": "e668665b14e2b96c844dfd08ea6c789f12056b5606622651ccce62a2ecb3f972"
         },
         "full": {
-          "status": "missing",
+          "status": "ready",
           "path": "views/business.md",
-          "bytes": 0,
-          "sha256": null
+          "bytes": 790,
+          "sha256": "7b651ecb8bb4f0fffee1e533d9df984f2233507862d1f4b6ba73a024fb3e472a"
         }
       }
     },
@@ -353,8 +353,7 @@
     }
   ],
   "evidence": {
-    "path": "evidence/evidence.jsonl",
-    "load_only_when_verification_is_needed": true
+    "path": "evidence/evidence.jsonl"
   },
   "recommended_loading_rules": [
     {
@@ -394,14 +393,14 @@
   ],
   "generation": {
     "parallel": false,
-    "strategy": "view",
-    "max_workers": 1,
+    "strategy": "deterministic-light",
+    "max_workers": 0,
     "discovery_views": [],
     "degraded_views": [],
     "resumed_views": [],
     "pending_views_at_start": []
   },
-  "generated_for_phase": "intake",
+  "generated_for_phase": "specification",
   "requested_views": [
     "business"
   ],
@@ -442,6 +441,61 @@
         "business/brief",
         "core/brief"
       ]
+    },
+    {
+      "id": "provider-1787195188735",
+      "generated_at": "2026-08-20T03:02:20.409Z",
+      "source_tree_sha256": "sha256:1dee7ed995b515c700d64d2f865932a4a27932abf9fa9e2cdd4236e9dad677bd",
+      "provider": "copilot-cli",
+      "requested": [
+        "business/brief",
+        "core/brief"
+      ],
+      "produced": [
+        "business/brief",
+        "core/brief"
+      ],
+      "reused": []
+    },
+    {
+      "id": "provider-1787199287059",
+      "generated_at": "2026-08-20T04:00:23.844Z",
+      "source_tree_sha256": "sha256:1dee7ed995b515c700d64d2f865932a4a27932abf9fa9e2cdd4236e9dad677bd",
+      "provider": "copilot-cli",
+      "requested": [
+        "business/brief",
+        "core/brief"
+      ],
+      "produced": [
+        "business/brief",
+        "core/brief"
+      ],
+      "reused": [
+        "business/brief",
+        "core/brief"
+      ]
+    },
+    {
+      "id": "light-1787804738539",
+      "generated_at": "2026-08-27T04:25:38.452Z",
+      "source_tree_sha256": "sha256:1dee7ed995b515c700d64d2f865932a4a27932abf9fa9e2cdd4236e9dad677bd",
+      "provider": null,
+      "requested": [
+        "business/full",
+        "core/brief"
+      ],
+      "produced": [
+        "business/full",
+        "core/brief"
+      ],
+      "reused": [
+        "core/brief"
+      ]
     }
-  ]
+  ],
+  "generator": {
+    "type": "deterministic-local",
+    "model": null,
+    "model_tokens": 0
+  }
 }

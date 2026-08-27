@@ -1,134 +1,29 @@
 {
-  "schema_version": "1.0",
-  "generated_at": "2026-08-20T04:09:10Z",
-  "repository_commit": "6b0100c4e4f6f61b03c4e5fcbf7d58052f63d7f6",
-  "entries": [
-    {
-      "glob": "src/App.jsx",
-      "component_ids": [
-        "app-shell"
-      ],
-      "domains": [
-        "calculator-capabilities"
-      ],
-      "views": [
-        "business"
-      ],
-      "symbols": [
-        "App"
-      ],
-      "tests": [
-        "src/App.test.jsx"
-      ],
-      "anchors": [
-        "biz.workflows",
-        "biz.start"
-      ],
-      "notes": "Core user-flow orchestration and mode switching."
-    },
-    {
-      "glob": "src/utils/evaluator.js",
-      "component_ids": [
-        "expression-engine"
-      ],
-      "domains": [
-        "calculator-capabilities"
-      ],
-      "views": [
-        "business"
-      ],
-      "symbols": [
-        "evaluateExpression",
-        "formatNumber",
-        "calculateEMI",
-        "calculateCompoundInterest",
-        "calculateTip"
-      ],
-      "tests": [
-        "src/utils/evaluator.test.js"
-      ],
-      "anchors": [
-        "biz.rules",
-        "biz.failure"
-      ],
-      "notes": "Shared semantics for math, unit conversion, and financial helpers."
-    },
-    {
-      "glob": "src/components/FinancialCalculator.jsx",
-      "component_ids": [
-        "mode-views"
-      ],
-      "domains": [
-        "calculator-capabilities"
-      ],
-      "views": [
-        "business"
-      ],
-      "symbols": [
-        "FinancialCalculator"
-      ],
-      "tests": [
-        "src/App.test.jsx"
-      ],
-      "anchors": [
-        "biz.capabilities",
-        "biz.impact"
-      ],
-      "notes": "Financial calculator workflows are concentrated here."
-    },
-    {
-      "glob": "src/components/FunctionGrapher.jsx",
-      "component_ids": [
-        "mode-views"
-      ],
-      "domains": [
-        "calculator-capabilities"
-      ],
-      "views": [
-        "business"
-      ],
-      "symbols": [
-        "FunctionGrapher"
-      ],
-      "tests": [
-        "src/App.test.jsx"
-      ],
-      "anchors": [
-        "biz.capabilities",
-        "biz.impact"
-      ],
-      "notes": "Graphing and equation entry are implemented here."
-    },
-    {
-      "glob": "src/components/UnitConverter.jsx",
-      "component_ids": [
-        "mode-views"
-      ],
-      "domains": [
-        "calculator-capabilities"
-      ],
-      "views": [
-        "business"
-      ],
-      "symbols": [
-        "UnitConverter"
-      ],
-      "tests": [
-        "src/App.test.jsx"
-      ],
-      "anchors": [
-        "biz.capabilities",
-        "biz.rules"
-      ],
-      "notes": "Unit conversion capability and vocabulary live here."
-    }
+  "schemaVersion": 1,
+  "mode": "bounded-light-index",
+  "totalPaths": 31,
+  "representativePaths": [
+    "README.md",
+    "eslint.config.js",
+    "package.json",
+    "src/App.jsx",
+    "src/App.test.jsx",
+    "src/build.test.js",
+    "src/components/Display.jsx",
+    "src/components/FinancialCalculator.jsx",
+    "src/components/FunctionGrapher.jsx",
+    "src/components/Header.jsx",
+    "src/components/HistoryDrawer.jsx",
+    "src/components/KeyboardShortcutsModal.jsx",
+    "src/components/ScientificKeypad.jsx",
+    "src/components/StandardKeypad.jsx",
+    "src/components/UnitConverter.jsx",
+    "src/main.jsx",
+    "src/test/setup.js",
+    "src/utils/audio.js",
+    "src/utils/evaluator.js",
+    "src/utils/evaluator.test.js",
+    "vite.config.js"
   ],
-  "fallback": {
-    "views": [
-      "business"
-    ],
-    "anchors": [
-      "biz.start"
-    ]
-  }
+  "omittedPathCount": 10
 }
