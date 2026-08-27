@@ -1,0 +1,13 @@
+{
+  "clauses": [],
+  "generation": 1,
+  "indexSha256": "c0ea477701005939532a32eeb00e3f1b94e954a7313939d8b1eb877e4e6253e3",
+  "phase": "specification",
+  "schemaVersion": 1,
+  "source": {
+    "bytes": 13918,
+    "path": "singularity/work-items/CFA-STORY/artifacts/specification/spec.md",
+    "sha256": "ced49fd8ef23cf88b8a039cfa1422c8708ffce6c8e21de155b626fe9b07d4876"
+  },
+  "workId": "CFA-STORY"
+}

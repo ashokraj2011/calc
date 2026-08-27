@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "kind": "generation-publication",
+  "workId": "CFA-STORY",
+  "phase": "specification",
+  "generation": 1,
+  "generationIntentId": null,
+  "generationStart": null,
+  "changeSet": {
+    "path": null,
+    "digest": null
+  },
+  "resultDigest": "sha256:e0424d1d5737d3f40027aa6085032f1a59463b08c3c77d10f91b9106aff627b6",
+  "baseline": {
+    "commit": "307d1aecb0c1cfd0e3494f90e6cb1137524f23c0",
+    "tree": "058c3d68bdd0e2b5f1e6e611461185831cc0e378"
+  },
+  "transactionId": "85ff7f86-8396-42ac-b83e-3f9711ebe09e",
+  "eventId": "c146a5a2-b8fb-4ef6-8d52-6f670c489a79",
+  "eventSha256": "sha256:cda080234cf82d3a17f734d704d192b6fd55cf401d2a559098f113ac0dcb4ae9",
+  "commitBinding": {
+    "method": "containing-governed-transaction",
+    "commit": "$self",
+    "tree": "$self",
+    "parent": "307d1aecb0c1cfd0e3494f90e6cb1137524f23c0"
+  },
+  "publishedAt": "2026-08-27T04:35:16.326Z",
+  "recordSha256": "sha256:438b55c8786f63020d47f1a6a4b5240a9893d47fbcc4f94e21df3f6a2e0c86ae"
+}

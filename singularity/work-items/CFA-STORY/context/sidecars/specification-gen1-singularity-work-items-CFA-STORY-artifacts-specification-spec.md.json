@@ -1,0 +1,35 @@
+{
+  "artifact": {
+    "bytes": 11782,
+    "path": "singularity/work-items/CFA-STORY/artifacts/specification/spec.md",
+    "role": "document",
+    "sha256": "8f750d0032030f9e25ca43e90690856e88246845b30d3c709afae95a283088f8"
+  },
+  "configuration": {
+    "revision": "3d2a1538528886afd920c1b3ec3cb1b546936290",
+    "sha256": "87be75456efb3109772edfe7165e275f0477ca07d457e4b39cab66d0e30258e2"
+  },
+  "generation": 1,
+  "inputs": [],
+  "integritySha256": "7953acffce8101df456b6c941cee07654e59413af9f603ed99bf49fb2499dbc2",
+  "phase": "specification",
+  "producer": {
+    "actor": "88361104+ashokraj2011@users.noreply.github.com",
+    "agent": "product-owner",
+    "kind": "governed-agent"
+  },
+  "publication": {
+    "branch": "CFA-STORY",
+    "commit": null,
+    "publishedAt": "2026-08-27T04:35:16.326Z"
+  },
+  "schemaVersion": 1,
+  "subject": {
+    "id": "CFA-STORY",
+    "kind": "story"
+  },
+  "template": {
+    "path": "singularity/templates/spec-driven/spec.md",
+    "sha256": "37c4fb807258773b3944399e2cf8dca7cc375dfcb2d906e0e72a9cae54efd8cf"
+  }
+}

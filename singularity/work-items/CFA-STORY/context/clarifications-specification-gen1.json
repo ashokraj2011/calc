@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "workId": "CFA-STORY",
+  "phase": "specification",
+  "generation": 1,
+  "mode": "required",
+  "promptPath": "singularity/work-items/CFA-STORY/context/prompts/specification-gen1.md",
+  "promptSha256": "3049ea83b20320c71a8b4bedfec5814af8ace8621555e94ad9064f9eb74bb53b",
+  "groundingRecordPath": "singularity/work-items/CFA-STORY/context/specification-gen1.json",
+  "groundingRecordSha256": "f12b74195fcd125972bf629caa35e94284ab48c45f417d283813b2076819d663",
+  "responses": [
+    {
+      "id": "Q-001",
+      "question": "Confirm the interpretation, scope, and acceptance criteria for CFA-STORY specification generation 1.",
+      "answer": "CFA means CFA exam preparation. The first release covers CFA Level I core topics: Quantitative Methods, Economics, Financial Statement Analysis, Corporate Issuers, Equity, Fixed Income, Derivatives, Alternative Investments, and Portfolio Management. The capability should support the calculations and tools used across those topics. The UI should use the existing calculator style, and acceptance requires a screenshot of the completed user flow.",
+      "status": "answered",
+      "blocking": false
+    }
+  ],
+  "completed": true,
+  "recordedAt": "2026-08-27T04:34:22.323Z",
+  "recordedBy": {
+    "name": "Ashok Raj",
+    "email": "88361104+ashokraj2011@users.noreply.github.com",
+    "login": "ashokraj2011",
+    "githubLookup": "resolved"
+  },
+  "agent": "product-owner"
+}
