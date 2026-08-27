@@ -4019,17 +4019,124 @@
       "rejectedAt": null,
       "rejectedBy": null,
       "rejectionReason": null,
-      "generation": 0,
-      "generatedBy": null,
+      "generation": 1,
+      "generatedBy": {
+        "name": "Ashok Raj",
+        "email": "88361104+ashokraj2011@users.noreply.github.com",
+        "login": "ashokraj2011",
+        "githubLookup": "resolved"
+      },
       "generatedAgent": null,
-      "authorship": [],
-      "usage": [],
-      "telemetry": [],
+      "authorship": [
+        {
+          "schemaVersion": 1,
+          "producer": "legacy-unspecified",
+          "channel": "legacy",
+          "actor": {
+            "name": "Ashok Raj",
+            "email": "88361104+ashokraj2011@users.noreply.github.com",
+            "login": "ashokraj2011",
+            "githubLookup": "resolved"
+          },
+          "governedAgentContext": {
+            "agentId": "architect"
+          },
+          "kernelModel": {
+            "invoked": false,
+            "status": "exact",
+            "invocationIds": []
+          },
+          "externalAiUse": {
+            "value": "unknown",
+            "status": "unavailable"
+          },
+          "source": {
+            "kind": "in-place",
+            "filename": "convergence.md",
+            "mediaType": "text/markdown",
+            "sha256": "5f53ea1231b75270ad4a3cdace2ca95dd668bec486d268e76c1912dd5894b9f0",
+            "bytes": 4472
+          },
+          "generation": 1,
+          "publishedAt": "2026-08-27T06:43:51.740Z"
+        }
+      ],
+      "usage": [
+        {
+          "status": "unavailable",
+          "source": "copilot-otel-unavailable",
+          "provider": null,
+          "model": null,
+          "requestedModel": null,
+          "resolvedModel": null,
+          "resolvedModelAssurance": "unavailable",
+          "inputTokens": null,
+          "outputTokens": null,
+          "cachedInputTokens": null,
+          "cacheWriteInputTokens": null,
+          "totalTokens": null,
+          "providerCost": null,
+          "costStatus": "unavailable",
+          "spans": null,
+          "startedAt": "2026-08-27T06:43:51.740Z",
+          "completedAt": "2026-08-27T06:43:51.740Z",
+          "agent": "architect",
+          "generation": 1
+        }
+      ],
+      "telemetry": [
+        {
+          "generation": 1,
+          "path": "singularity/work-items/CFA-STORY/telemetry/convergence-gen1.json",
+          "sha256": "d7365f9f3b654da1e1176a8e16ef06ed8f391bba363d757cce7e336561e7243d",
+          "status": "pending",
+          "models": [],
+          "providerCost": null
+        }
+      ],
       "approvals": [],
       "designSourceSets": [],
-      "artifacts": [],
+      "artifacts": [
+        {
+          "path": "singularity/work-items/CFA-STORY/artifacts/convergence/convergence.md",
+          "kind": "document",
+          "status": "pending",
+          "exists": true,
+          "size": 18028,
+          "sha256": "beb42f1a99ac215fd6a1ca37c12dc9d55d04d9b9d5be6377dcd026f4e89c74e1",
+          "registeredAt": "2026-08-27T06:43:49.768Z",
+          "updatedAt": "2026-08-27T06:43:51.775Z"
+        }
+      ],
       "checks": [],
-      "remoteOutputs": []
+      "remoteOutputs": [],
+      "inputContext": {
+        "generation": 1,
+        "path": "singularity/work-items/CFA-STORY/context/inputs-convergence-gen1.json",
+        "sha256": "d5194a89dd505eee90e0c264c91e673689d23ad213d5cf376ed57db65cbd352a",
+        "renderedSha256": "b6fd973e22be0f284d8a00bd54648d78c6c9e3e5b64c8f4ed6a704936e76b901",
+        "mode": "enforce"
+      },
+      "sidecars": [
+        {
+          "path": "singularity/work-items/CFA-STORY/context/sidecars/convergence-gen1-singularity-work-items-CFA-STORY-artifacts-convergence-convergence.md.json",
+          "artifact": "singularity/work-items/CFA-STORY/artifacts/convergence/convergence.md",
+          "integritySha256": "e7605c1fd758bd8780b6251cc01e1356ed9ed4bca55e30466a56f38df4090f55"
+        }
+      ],
+      "sourceCommit": "2c24a269d823a3b6e265a392815e9b74f654401b",
+      "generationPublications": [
+        {
+          "generation": 1,
+          "publishedAt": "2026-08-27T06:43:51.740Z",
+          "changeSetDigest": null,
+          "resultDigest": "sha256:ffc6322d9ce752bd750df4d6579c7a889806ef0b306c3fbafd890a08866dda52",
+          "record": {
+            "path": "singularity/work-items/CFA-STORY/context/generation-publications/convergence-gen1.json",
+            "sha256": "sha256:bd60627a47a7288c72c95abd23bf763529b40f167ec20e1bdf395de71214bc18"
+          }
+        }
+      ]
     },
     "verification": {
       "id": "verification",
@@ -4256,9 +4363,9 @@
   "usage": {
     "mode": "exact-or-unavailable",
     "totalTokens": 0,
-    "records": 3,
+    "records": 4,
     "exactRecords": 0,
-    "unavailableRecords": 3,
+    "unavailableRecords": 4,
     "byPhase": {
       "specification": {
         "records": 1,
@@ -4277,6 +4384,12 @@
         "exactRecords": 0,
         "unavailableRecords": 1,
         "totalTokens": 0
+      },
+      "convergence": {
+        "records": 1,
+        "exactRecords": 0,
+        "unavailableRecords": 1,
+        "totalTokens": 0
       }
     },
     "byAgent": {
@@ -4287,9 +4400,9 @@
         "totalTokens": 0
       },
       "architect": {
-        "records": 1,
+        "records": 2,
         "exactRecords": 0,
-        "unavailableRecords": 1,
+        "unavailableRecords": 2,
         "totalTokens": 0
       },
       "developer": {
@@ -4301,17 +4414,17 @@
     },
     "byWorkType": {
       "spec-driven-standard": {
-        "records": 3,
+        "records": 4,
         "exactRecords": 0,
-        "unavailableRecords": 3,
+        "unavailableRecords": 4,
         "totalTokens": 0
       }
     },
     "byWorkItem": {
       "CFA-STORY": {
-        "records": 3,
+        "records": 4,
         "exactRecords": 0,
-        "unavailableRecords": 3,
+        "unavailableRecords": 4,
         "totalTokens": 0
       }
     }
@@ -4434,6 +4547,14 @@
       "event": "phase_self_approved",
       "phase": "implementation",
       "detail": "threshold reached; advanced to convergence"
+    },
+    {
+      "at": "2026-08-27T06:43:51.806Z",
+      "actor": "ashokraj2011",
+      "agent": "architect",
+      "event": "phase_generated",
+      "phase": "convergence",
+      "detail": "generation 1"
     }
   ],
   "measurement": {
@@ -5479,6 +5600,105 @@
           }
         },
         "createdAt": "2026-08-27T06:29:43.665Z"
+      }
+    },
+    {
+      "schemaVersion": 1,
+      "event": {
+        "schemaVersion": 1,
+        "eventId": "9967d8dd-77b7-4ec0-83c3-7de9e0d2c0eb",
+        "type": "artifact-generated",
+        "subject": {
+          "kind": "story",
+          "id": "CFA-STORY",
+          "branch": "CFA-STORY"
+        },
+        "phaseId": "convergence",
+        "generation": 1,
+        "actor": {
+          "name": "Ashok Raj",
+          "email": "88361104+ashokraj2011@users.noreply.github.com",
+          "login": "ashokraj2011",
+          "githubLookup": "resolved"
+        },
+        "agent": null,
+        "authorityGroup": null,
+        "payload": {
+          "decision": null,
+          "reviewPacketSha256": null
+        },
+        "sourceCommit": null,
+        "idempotencyKey": null,
+        "idempotencyHash": null,
+        "createdAt": "2026-08-27T06:43:51.493Z"
+      },
+      "ledgerIntent": {
+        "schemaVersion": 1,
+        "eventId": "9967d8dd-77b7-4ec0-83c3-7de9e0d2c0eb",
+        "eventType": "artifact-generated",
+        "capabilityId": "calc-app",
+        "subject": {
+          "branch": "CFA-STORY",
+          "generation": 1,
+          "phase": "convergence",
+          "workId": "CFA-STORY",
+          "workType": "spec-driven-standard"
+        },
+        "actor": {
+          "name": "Ashok Raj",
+          "email": "88361104+ashokraj2011@users.noreply.github.com",
+          "githubLogin": "ashokraj2011",
+          "identityAssurance": "configured-local"
+        },
+        "agent": null,
+        "authorityGroup": null,
+        "payload": {
+          "capabilityMapSha256": "df69fe9244ab92f707336cad19121607344bddab441561046e049757a9bbbd4a",
+          "capabilityPolicy": {
+            "protectedPaths": [],
+            "qualityCommands": [],
+            "requiredAuthorityGroups": [],
+            "requiredChecks": [],
+            "requiredWorldModelViews": []
+          },
+          "configPath": "singularity/workflow.yml",
+          "configSha256": "87be75456efb3109772edfe7165e275f0477ca07d457e4b39cab66d0e30258e2",
+          "lifecycleEventId": "9967d8dd-77b7-4ec0-83c3-7de9e0d2c0eb",
+          "lifecyclePayload": {
+            "decision": null,
+            "reviewPacketSha256": null
+          },
+          "templateSha256": "eb257477afca0229ed858875499736c57498015aaee0a527b714356819a9dde2",
+          "lifecycleEvent": {
+            "schemaVersion": 1,
+            "eventId": "9967d8dd-77b7-4ec0-83c3-7de9e0d2c0eb",
+            "type": "artifact-generated",
+            "subject": {
+              "kind": "story",
+              "id": "CFA-STORY",
+              "branch": "CFA-STORY"
+            },
+            "phaseId": "convergence",
+            "generation": 1,
+            "actor": {
+              "name": "Ashok Raj",
+              "email": "88361104+ashokraj2011@users.noreply.github.com",
+              "login": "ashokraj2011",
+              "githubLookup": "resolved"
+            },
+            "agent": null,
+            "authorityGroup": null,
+            "payload": {
+              "decision": null,
+              "reviewPacketSha256": null
+            },
+            "sourceCommit": null,
+            "idempotencyKey": null,
+            "idempotencyHash": null,
+            "createdAt": "2026-08-27T06:43:51.493Z"
+          }
+        },
+        "createdAt": "2026-08-27T06:43:51.504Z"
       }
     }
   ],

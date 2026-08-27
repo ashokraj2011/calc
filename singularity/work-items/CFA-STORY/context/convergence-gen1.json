@@ -1,0 +1,289 @@
+{
+  "schemaVersion": 3,
+  "workId": "CFA-STORY",
+  "phase": "convergence",
+  "generation": 1,
+  "agent": "architect",
+  "modelCommit": "c415a79a8e465d640fa0aad652d06eb825a52f2b",
+  "matchedRules": 0,
+  "mode": "append",
+  "applied": false,
+  "depth": "standard",
+  "evidence": false,
+  "requiredViews": [
+    "development"
+  ],
+  "requiredSelections": [
+    {
+      "kind": "core",
+      "tier": "brief",
+      "required": true
+    },
+    {
+      "kind": "view",
+      "view": "development",
+      "tier": "brief",
+      "required": true,
+      "origin": "phase"
+    }
+  ],
+  "task": null,
+  "supportingEvidence": [],
+  "references": [],
+  "modelSourceTreeSha256": "sha256:970bc871b1c02d777eccbab886e27f08e9865834966f6c40852a988a21b2e8fd",
+  "composedSourceTreeSha256": "sha256:970bc871b1c02d777eccbab886e27f08e9865834966f6c40852a988a21b2e8fd",
+  "worldModelCommit": "c415a79a8e465d640fa0aad652d06eb825a52f2b",
+  "manifestSha256": "51b8860decdd42f7549468726aedc755d6fbe90ed4ba4d70c67c4fa308b7ba70",
+  "fresh": true,
+  "renderedSha256": "b898870ec77bb61bf1e2c68bce8ef1c815cbdf1c80394ff74a8f0e19a6886993",
+  "promptStudy": null,
+  "promptDefinition": null,
+  "structuralContext": null,
+  "workSource": {
+    "path": "singularity/work-items/CFA-STORY/source.json",
+    "sha256": "9bf622393e4583d6985423b31f43aff0a4745257daf469e27a55612e3248e70e",
+    "bytes": 928
+  },
+  "promptBudget": {
+    "policy": {
+      "mode": "observe",
+      "profile": "standard",
+      "maximumBytes": 72000,
+      "maximumEstimatedPromptTokens": 18000,
+      "policyOnBudgetBreach": "refuse",
+      "assurance": "estimated-prompt-text"
+    },
+    "admission": {
+      "model": null,
+      "logicalPromptBytes": 29047,
+      "logicalPromptTokens": {
+        "value": 7262,
+        "assurance": "estimated"
+      },
+      "systemAndToolReserveTokens": {
+        "value": null,
+        "assurance": "unavailable"
+      },
+      "historyTokens": {
+        "value": null,
+        "assurance": "unavailable"
+      },
+      "totalAdmissionTokens": {
+        "value": 7262,
+        "assurance": "partial"
+      },
+      "maximumInputTokens": 18000,
+      "safeToEnforce": false,
+      "admitted": null,
+      "policyApprovedConservativeUpperBound": false
+    },
+    "compliance": "compliant",
+    "originalBytes": 29047,
+    "originalEstimatedTokens": 7262,
+    "finalBytes": 29047,
+    "finalEstimatedTokens": 7262,
+    "overflow": false,
+    "warnings": [],
+    "economics": {
+      "prompt": {
+        "candidatePromptBytes": 29047,
+        "deduplicatedPromptBytes": 37016,
+        "budgetEvictedPromptBytes": 0,
+        "finalPromptBytes": 29047
+      },
+      "provider": {
+        "inputTokens": null,
+        "cachedInputTokens": null,
+        "uncachedInputTokens": null,
+        "assurance": "unavailable"
+      },
+      "system": {
+        "totalSystemTokens": null,
+        "assurance": "unavailable"
+      },
+      "source": {
+        "sourceBytes": 60544,
+        "authoredSourceBytes": 21142,
+        "managedSourceBytesExcluded": 39402,
+        "managedReferenceBytesExcluded": 0,
+        "deliveredSourceBytes": 11923,
+        "assurance": "sflow-measured"
+      }
+    },
+    "sections": [
+      {
+        "id": "phase-contract",
+        "mandatory": true,
+        "priority": 0,
+        "bytes": 2310,
+        "estimatedTokens": 578,
+        "sha256": "bce1d2b1604cb93194b23daa86af527bd01c1267b701ddeea59457de84f3574f",
+        "included": true,
+        "omissionReason": null,
+        "expandHandles": [],
+        "expandability": "unavailable"
+      },
+      {
+        "id": "work-source",
+        "mandatory": true,
+        "priority": 0,
+        "bytes": 701,
+        "estimatedTokens": 176,
+        "sha256": "d56bf60d3890fb9e817439c30a8dd5230258654017c150d63f7be49d23d84238",
+        "included": true,
+        "omissionReason": null,
+        "expandHandles": [],
+        "expandability": "unavailable"
+      },
+      {
+        "id": "governed-agent-policy",
+        "mandatory": true,
+        "priority": 0,
+        "bytes": 1496,
+        "estimatedTokens": 374,
+        "sha256": "5a3c516f808022054825257238eeb6abd3c3952f114fbedca16389e4810bbd15",
+        "included": true,
+        "omissionReason": null,
+        "expandHandles": [],
+        "expandability": "unavailable"
+      },
+      {
+        "id": "world-model-grounding",
+        "mandatory": true,
+        "priority": 40,
+        "bytes": 1103,
+        "estimatedTokens": 276,
+        "sha256": "af40738f88bb9b18b1bb17853f22540772941bb45cdfc2300246b55a9a1a4b66",
+        "included": true,
+        "omissionReason": null,
+        "expandHandles": [],
+        "expandability": "unavailable"
+      },
+      {
+        "id": "capability-world-model",
+        "mandatory": false,
+        "priority": 50,
+        "bytes": 8857,
+        "estimatedTokens": 2215,
+        "sha256": "374ce185d7f5ece7b3d91a672896dfde60e6525748426395a7f2a0a559dd753c",
+        "included": true,
+        "omissionReason": null,
+        "expandHandles": [],
+        "expandability": "unavailable"
+      },
+      {
+        "id": "approved-phase-inputs",
+        "mandatory": true,
+        "priority": 0,
+        "bytes": 14569,
+        "estimatedTokens": 3643,
+        "sha256": "be9de6f7d7d3d30de4e7dfa52036e0a3e773fba920528ca9bb7a3c588af334df",
+        "included": true,
+        "omissionReason": null,
+        "expandHandles": [],
+        "expandability": "unavailable"
+      }
+    ],
+    "omitted": [],
+    "deduplicatedReferences": [
+      {
+        "handle": "sfref:v1:story:CFA-STORY:d3570aaf4c2f8d53b3dc340e4a29d2c3e6385738464d07872e8a8694d90986e4",
+        "path": "singularity/work-items/CFA-STORY/artifacts/specification/spec.md",
+        "rawSha256": "ced49fd8ef23cf88b8a039cfa1422c8708ffce6c8e21de155b626fe9b07d4876",
+        "rawBytes": 13918,
+        "previewBytes": 10605,
+        "reason": "same-governed-reference-handle"
+      },
+      {
+        "handle": "sfref:v1:story:CFA-STORY:52a4599271da613ee07b364876cccc1cd7ea7955ad61424cf55b5839f44ce46b",
+        "path": "singularity/work-items/CFA-STORY/artifacts/planning/plan.md",
+        "rawSha256": "54620920db7ce601094ed4014a2b0472bbd418ace586a300fd028af29f05d8c3",
+        "rawBytes": 17810,
+        "previewBytes": 13226,
+        "reason": "same-governed-reference-handle"
+      },
+      {
+        "handle": "sfref:v1:story:CFA-STORY:19e4cd3eee5cccd60ac0e34e8e6905f1d9d29c1df3db04f879dafdda2e6bfde3",
+        "path": "singularity/work-items/CFA-STORY/artifacts/implementation/implementation-summary.md",
+        "rawSha256": "b695aa81f0d1b51c34d97d5e893184060c6cd9558295e2d6b6ae44b36d7167c6",
+        "rawBytes": 16831,
+        "previewBytes": 13185,
+        "reason": "same-governed-reference-handle"
+      }
+    ],
+    "inputLinearization": {
+      "sourceBytes": 60544,
+      "authoredBytes": 21142,
+      "managedBytesExcluded": 39402,
+      "injectedBytes": 11923
+    },
+    "structuralContext": null,
+    "workSource": {
+      "path": "singularity/work-items/CFA-STORY/source.json",
+      "sha256": "9bf622393e4583d6985423b31f43aff0a4745257daf469e27a55612e3248e70e",
+      "bytes": 928
+    },
+    "activeClauseCapsule": {
+      "sha256": "sha256:c62b874fa86916cf7d6c76ee523b75a1210ec12c04c0fbebbe57b4d794c147ff",
+      "clauses": 0,
+      "openRisks": 0,
+      "clarifications": 0
+    }
+  },
+  "remoteSkills": [],
+  "promptPath": "singularity/work-items/CFA-STORY/context/prompts/convergence-gen1.md",
+  "files": [
+    {
+      "path": "singularity/world-model/core/summary.brief.md",
+      "sha256": "abe899a9d45d6461fb4e44af904f4df9daaefb97c0441246545f7b7d9856a98f",
+      "bytes": 627,
+      "injectedBytes": 627,
+      "truncated": false,
+      "category": "required",
+      "level": 0,
+      "reason": "shared repository core (brief)",
+      "evidenceId": null,
+      "mimeType": null,
+      "packageId": null,
+      "handle": null,
+      "previewSha256": null,
+      "previewBytes": null,
+      "renderer": null
+    },
+    {
+      "path": "singularity/world-model/views/development.brief.md",
+      "sha256": "372897cb124f7f5b42fd7278716798279ddd876eb795ced8e90daa5916bcbd9b",
+      "bytes": 274,
+      "injectedBytes": 274,
+      "truncated": false,
+      "category": "required",
+      "level": 1,
+      "reason": "convergence view: development (brief; phase)",
+      "evidenceId": null,
+      "mimeType": null,
+      "packageId": null,
+      "handle": null,
+      "previewSha256": null,
+      "previewBytes": null,
+      "renderer": null
+    },
+    {
+      "path": "singularity/work-items/CFA-STORY/context/capability-world-model/calc/core/summary.md",
+      "sha256": "04fb9b363437f060397ff24a5ecdd5d4cb2bd65afd33ba6328ea91973f7995c0",
+      "bytes": 8679,
+      "injectedBytes": 8679,
+      "truncated": false,
+      "category": "capability",
+      "level": 1,
+      "reason": "capability calc-app",
+      "evidenceId": null,
+      "mimeType": null,
+      "packageId": null,
+      "handle": null,
+      "previewSha256": null,
+      "previewBytes": null,
+      "renderer": null
+    }
+  ],
+  "injectedAt": "2026-08-27T06:42:03.021Z"
+}

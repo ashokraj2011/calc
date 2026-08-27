@@ -1,0 +1,51 @@
+{
+  "artifact": {
+    "bytes": 20449,
+    "path": "singularity/work-items/CFA-STORY/artifacts/convergence/convergence.md",
+    "role": "document",
+    "sha256": "6696abbd0ee9359ceb808279d20f501f7c929b821f16643f97a3ab2496efa656"
+  },
+  "configuration": {
+    "revision": "3d2a1538528886afd920c1b3ec3cb1b546936290",
+    "sha256": "87be75456efb3109772edfe7165e275f0477ca07d457e4b39cab66d0e30258e2"
+  },
+  "generation": 1,
+  "inputs": [
+    {
+      "kind": null,
+      "path": "artifacts/implementation/implementation-summary.md",
+      "sha256": null
+    },
+    {
+      "kind": null,
+      "path": "artifacts/planning/plan.md",
+      "sha256": null
+    },
+    {
+      "kind": null,
+      "path": "artifacts/specification/spec.md",
+      "sha256": null
+    }
+  ],
+  "integritySha256": "e7605c1fd758bd8780b6251cc01e1356ed9ed4bca55e30466a56f38df4090f55",
+  "phase": "convergence",
+  "producer": {
+    "actor": "88361104+ashokraj2011@users.noreply.github.com",
+    "agent": null,
+    "kind": "legacy-unspecified"
+  },
+  "publication": {
+    "branch": "CFA-STORY",
+    "commit": null,
+    "publishedAt": "2026-08-27T06:43:51.740Z"
+  },
+  "schemaVersion": 1,
+  "subject": {
+    "id": "CFA-STORY",
+    "kind": "story"
+  },
+  "template": {
+    "path": "singularity/templates/spec-driven/convergence.md",
+    "sha256": "eb257477afca0229ed858875499736c57498015aaee0a527b714356819a9dde2"
+  }
+}
