@@ -17,11 +17,13 @@
 |  | ⚠ self-approval | Ashok Raj via engineering-reviewers; agent developer | **warning** |  |  |  |
 | 4 | Convergence (`convergence`) | architect | **approved** | 1 | 2 | unavailable |
 |  | ⚠ self-approval | Ashok Raj via architecture-reviewers; agent architect | **warning** |  |  |  |
-| 5 | Verification (`verification`) | qa | **in_progress** | 1 | 0 | unavailable |
+| 5 | Verification (`verification`) | qa | **awaiting_approval** | 1 | 0 | unavailable |
 | 6 | Release (`release`) | qa | **not_started** | 0 | 0 | unavailable |
 
 ## Recent history
 
+- 2026-08-27T14:22:47.035Z — **phase_submitted** (verification) by ashokraj2011 · governed agent architect: 1 artifacts
+- 2026-08-27T14:22:47.035Z — **work_interval_reconciled** (verification) by system: aligned; 0 changed path(s)
 - 2026-08-27T14:20:03.504Z — **phase_generated** (verification) by ashokraj2011 · governed agent architect: generation 1
 - 2026-08-27T14:07:45.697Z — **work_interval_started** (verification) by system: baseline 1a13733b9be6 at 6c4ce916ba59
 - 2026-08-27T14:07:45.684Z — **phase_self_approved** (convergence) by ashokraj2011 · governed agent architect: threshold reached; advanced to verification
@@ -35,5 +37,3 @@
 - 2026-08-27T12:28:12.575Z — **work_interval_started** (implementation) by system: baseline 7d4c48d396bc at bd3674d4ccf1
 - 2026-08-27T08:29:24.560Z — **phase_generated** (implementation) by ashokraj2011 · governed agent developer: generation 3
 - 2026-08-27T08:29:00.769Z — **work_interval_started** (implementation) by system: baseline f60bf33e6013 at a3d304da725c
-- 2026-08-27T08:25:12.966Z — **phase_generated** (implementation) by ashokraj2011 · governed agent developer: generation 2
-- 2026-08-27T07:03:46.284Z — **phase_rejected** (convergence) by ashokraj2011 · governed agent architect: CR-001 returned to implementation: Artifact corrected; resubmitting for review

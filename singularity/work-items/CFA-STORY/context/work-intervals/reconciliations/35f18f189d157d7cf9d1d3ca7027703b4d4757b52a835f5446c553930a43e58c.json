@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "kind": "work-reconciliation",
+  "workId": "CFA-STORY",
+  "workType": "spec-driven-standard",
+  "intervalId": "INT-verification-G1-005",
+  "phaseId": "verification",
+  "generation": 1,
+  "baselineSha256": "1a13733b9be61bf22845f7169dd69915fef852f6cbf484fadc3ef9766e223c3d",
+  "baseline": {
+    "path": "singularity/work-items/CFA-STORY/context/work-intervals/verification-gen1-baseline.json",
+    "sha256": "1a13733b9be61bf22845f7169dd69915fef852f6cbf484fadc3ef9766e223c3d",
+    "verified": true,
+    "sourceBaseCommit": "6c4ce916ba5982684de9731fc2ece2c486244283"
+  },
+  "sourceBaseCommit": "6c4ce916ba5982684de9731fc2ece2c486244283",
+  "target": {
+    "branch": "CFA-STORY",
+    "head": "b6f0ac9c4cd7efdf334c14e8204d6d679e7f72ee",
+    "includesWorktree": false,
+    "cleanApplicationTree": true,
+    "uncommittedApplicationPaths": []
+  },
+  "findings": [],
+  "summary": {
+    "changedPaths": 0,
+    "planned": 0,
+    "unplanned": 0,
+    "protected": 0
+  },
+  "decision": {
+    "status": "aligned",
+    "summaryStatus": "clear",
+    "eligibleForSubmission": true,
+    "reasons": [],
+    "escalationTarget": null
+  },
+  "reconciliationSha256": "35f18f189d157d7cf9d1d3ca7027703b4d4757b52a835f5446c553930a43e58c",
+  "reconciledAt": "2026-08-27T14:22:47.034Z",
+  "final": true,
+  "recordedAt": "2026-08-27T14:22:47.035Z",
+  "path": "singularity/work-items/CFA-STORY/context/work-intervals/reconciliations/35f18f189d157d7cf9d1d3ca7027703b4d4757b52a835f5446c553930a43e58c.json"
+}
