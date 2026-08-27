@@ -1,9 +1,9 @@
 {
   "schema_version": "3.0",
-  "repository_commit": "7e3cf961b5090100014667d750e2b6b3efc4e81b",
+  "repository_commit": "468d8062bcdaabd99ebd5fecc8ed2d6bc11e5ab0",
   "repository_branch": "CFA-STORY",
   "working_tree_clean": false,
-  "generated_at": "2026-08-27T04:25:38.452Z",
+  "generated_at": "2026-08-27T04:58:57.060Z",
   "generated_date": "27 August 2026",
   "builder_version": "2.1-light",
   "builder_prompt_sha256": "511654826223e40b93c54f48f9b773f155e3364326d41aa98108dea7217d75cd",
@@ -97,7 +97,7 @@
     "architecture": {
       "path": "views/architecture.md",
       "brief_path": "views/architecture.brief.md",
-      "generated": false,
+      "generated": true,
       "load_when": [
         "system design",
         "dependency analysis",
@@ -111,10 +111,10 @@
           "sha256": null
         },
         "full": {
-          "status": "missing",
+          "status": "ready",
           "path": "views/architecture.md",
-          "bytes": 0,
-          "sha256": null
+          "bytes": 838,
+          "sha256": "a667f6d27d9a39c1f5ab6dbf8f049d4fc0522a05a5bb099e17c2e2148f0d1fca"
         }
       }
     },
@@ -389,7 +389,7 @@
   },
   "source_tree_sha256": "sha256:1dee7ed995b515c700d64d2f865932a4a27932abf9fa9e2cdd4236e9dad677bd",
   "views_generated": [
-    "business"
+    "architecture"
   ],
   "generation": {
     "parallel": false,
@@ -400,9 +400,9 @@
     "resumed_views": [],
     "pending_views_at_start": []
   },
-  "generated_for_phase": "specification",
+  "generated_for_phase": "planning",
   "requested_views": [
-    "business"
+    "architecture"
   ],
   "requested_selections": [
     "core/brief",
@@ -486,6 +486,106 @@
       ],
       "produced": [
         "business/full",
+        "core/brief"
+      ],
+      "reused": [
+        "core/brief"
+      ]
+    },
+    {
+      "id": "provider-1787195188735",
+      "generated_at": "2026-08-20T03:02:20.409Z",
+      "source_tree_sha256": "sha256:1dee7ed995b515c700d64d2f865932a4a27932abf9fa9e2cdd4236e9dad677bd",
+      "provider": "copilot-cli",
+      "requested": [
+        "business/brief",
+        "core/brief"
+      ],
+      "produced": [
+        "business/brief",
+        "core/brief"
+      ],
+      "reused": []
+    },
+    {
+      "id": "provider-1787199287059",
+      "generated_at": "2026-08-20T04:00:23.844Z",
+      "source_tree_sha256": "sha256:1dee7ed995b515c700d64d2f865932a4a27932abf9fa9e2cdd4236e9dad677bd",
+      "provider": "copilot-cli",
+      "requested": [
+        "business/brief",
+        "core/brief"
+      ],
+      "produced": [
+        "business/brief",
+        "core/brief"
+      ],
+      "reused": [
+        "business/brief",
+        "core/brief"
+      ]
+    },
+    {
+      "id": "provider-1787195188735",
+      "generated_at": "2026-08-20T03:02:20.409Z",
+      "source_tree_sha256": "sha256:1dee7ed995b515c700d64d2f865932a4a27932abf9fa9e2cdd4236e9dad677bd",
+      "provider": "copilot-cli",
+      "requested": [
+        "business/brief",
+        "core/brief"
+      ],
+      "produced": [
+        "business/brief",
+        "core/brief"
+      ],
+      "reused": []
+    },
+    {
+      "id": "provider-1787199287059",
+      "generated_at": "2026-08-20T04:00:23.844Z",
+      "source_tree_sha256": "sha256:1dee7ed995b515c700d64d2f865932a4a27932abf9fa9e2cdd4236e9dad677bd",
+      "provider": "copilot-cli",
+      "requested": [
+        "business/brief",
+        "core/brief"
+      ],
+      "produced": [
+        "business/brief",
+        "core/brief"
+      ],
+      "reused": [
+        "business/brief",
+        "core/brief"
+      ]
+    },
+    {
+      "id": "light-1787804738539",
+      "generated_at": "2026-08-27T04:25:38.452Z",
+      "source_tree_sha256": "sha256:1dee7ed995b515c700d64d2f865932a4a27932abf9fa9e2cdd4236e9dad677bd",
+      "provider": null,
+      "requested": [
+        "business/full",
+        "core/brief"
+      ],
+      "produced": [
+        "business/full",
+        "core/brief"
+      ],
+      "reused": [
+        "core/brief"
+      ]
+    },
+    {
+      "id": "light-1787806737179",
+      "generated_at": "2026-08-27T04:58:57.060Z",
+      "source_tree_sha256": "sha256:1dee7ed995b515c700d64d2f865932a4a27932abf9fa9e2cdd4236e9dad677bd",
+      "provider": null,
+      "requested": [
+        "architecture/full",
+        "core/brief"
+      ],
+      "produced": [
+        "architecture/full",
         "core/brief"
       ],
       "reused": [
