@@ -1,0 +1,746 @@
+{
+  "schemaVersion": 1,
+  "kind": "repository-change-set",
+  "subject": {
+    "workId": "CFA-STORY",
+    "phase": "implementation",
+    "generation": 2,
+    "generationIntentId": "f0b3e377-499e-4225-9f3c-0b24e60a80d7"
+  },
+  "base": {
+    "commit": "91749891e894d50964f26f29b7181695d3bcec8e",
+    "tree": "6f8c0b18c270e68aa026414660873d8c050e1e08"
+  },
+  "target": {
+    "head": "e31b2ee51cde9a0938ddb507a9ee3f2c46abece8",
+    "includesIndex": true,
+    "includesWorktree": true,
+    "includesUntracked": true,
+    "caseInsensitivePaths": true
+  },
+  "entries": [
+    {
+      "status": "added",
+      "similarity": null,
+      "oldPath": null,
+      "newPath": ".sflow/results/node-tests.json",
+      "oldMode": "000000",
+      "newMode": "100644",
+      "oldObject": null,
+      "newObject": null,
+      "untracked": true,
+      "newContent": {
+        "kind": "regular-file",
+        "sha256": "sha256:ef16cd0ad3b26e109310eb3d8f68a5d2b0849f9bade60baa1855717f8920ad9c",
+        "bytes": 12110
+      },
+      "changeId": "sha256:a02b06313b5b659663e04b7cd0609b8fda86ab30f7b80769f469a114e306969d"
+    },
+    {
+      "status": "added",
+      "similarity": null,
+      "oldPath": null,
+      "newPath": "singularity/work-items/CFA-STORY/approvals/convergence.json",
+      "oldMode": "000000",
+      "newMode": "100644",
+      "oldObject": null,
+      "newObject": "ba3513e16d04ab54a39409d0ca67ece33f84542d",
+      "newContent": {
+        "kind": "regular-file",
+        "sha256": "sha256:aec4832a1db914390835eaab08111937ed9deb52bb155ed0d2cceddef9e2dea2",
+        "bytes": 1035
+      },
+      "changeId": "sha256:4e53997d0b32a0ea3caaea95ff0f04738ac0109c655d6234636f767bc60581da"
+    },
+    {
+      "status": "added",
+      "similarity": null,
+      "oldPath": null,
+      "newPath": "singularity/work-items/CFA-STORY/approvals/convergence/2026-08-27T07-03-46-284Z-rejected.json",
+      "oldMode": "000000",
+      "newMode": "100644",
+      "oldObject": null,
+      "newObject": "0af556e000ba4315f24a3c19758d96e52629e47a",
+      "newContent": {
+        "kind": "regular-file",
+        "sha256": "sha256:e122b865c20d2f859d3be86a5881d877ffdd6e73afae32b700691cd66b3ce757",
+        "bytes": 854
+      },
+      "changeId": "sha256:9f53943833e46bb9424db1ecec208fc26e41074b45b70cf0040702e3bbe8423a"
+    },
+    {
+      "status": "added",
+      "similarity": null,
+      "oldPath": null,
+      "newPath": "singularity/work-items/CFA-STORY/approvals/implementation.json",
+      "oldMode": "000000",
+      "newMode": "100644",
+      "oldObject": null,
+      "newObject": "58805306d301fa1edb46009389154dca19cd076a",
+      "newContent": {
+        "kind": "regular-file",
+        "sha256": "sha256:f31f9810873ad4c8d7c40e0d1887d42de7bd66be6d980e7391a6ed9783881483",
+        "bytes": 3894
+      },
+      "changeId": "sha256:e2ae6181af24abd5ee842771ba697817169bf29b6cab18eebdda63b2987f5e23"
+    },
+    {
+      "status": "added",
+      "similarity": null,
+      "oldPath": null,
+      "newPath": "singularity/work-items/CFA-STORY/approvals/implementation/2026-08-27T06-29-43-865Z-approved.json",
+      "oldMode": "000000",
+      "newMode": "100644",
+      "oldObject": null,
+      "newObject": "ec6c25937c12d7be3e1df5caf873f13e048f296f",
+      "newContent": {
+        "kind": "regular-file",
+        "sha256": "sha256:c084777b0cb7a8e4b357e9c3f381fe00b885f9b881a9391522e69fdac8ca7c35",
+        "bytes": 3450
+      },
+      "changeId": "sha256:09ffda4f38901586c944a74a3700866e01c9f97950d8e43fcf7d1ecc92bc9f24"
+    },
+    {
+      "status": "added",
+      "similarity": null,
+      "oldPath": null,
+      "newPath": "singularity/work-items/CFA-STORY/context/code-delivery/tests/implementation-gen1-.-node-tests.json",
+      "oldMode": "000000",
+      "newMode": "100644",
+      "oldObject": null,
+      "newObject": "6acc6ede04a8905a8b3c754a53430e0e8168d74f",
+      "newContent": {
+        "kind": "regular-file",
+        "sha256": "sha256:0586d5e26830fa6774e9c8059ce2a6f36d27dea8313b1da349ceed2e7083e090",
+        "bytes": 800
+      },
+      "changeId": "sha256:32a8e5552f9618b7216713cbb87c0e48a03d785c72d6066cfd20aa88b92bfd7b"
+    },
+    {
+      "status": "added",
+      "similarity": null,
+      "oldPath": null,
+      "newPath": "singularity/work-items/CFA-STORY/context/convergence-gen1.json",
+      "oldMode": "000000",
+      "newMode": "100644",
+      "oldObject": null,
+      "newObject": "7b60df34e517983e7ebee7d6ebf8536be44c62cc",
+      "newContent": {
+        "kind": "regular-file",
+        "sha256": "sha256:973ad0fe28ff588773bd2c27ef3de0954d844cac999223cc3bb383ceb8774c63",
+        "bytes": 9041
+      },
+      "changeId": "sha256:d9df2686970a0b82299cdc594b64a291cf0f530638237f9887d5c0b4b2915b5d"
+    },
+    {
+      "status": "added",
+      "similarity": null,
+      "oldPath": null,
+      "newPath": "singularity/work-items/CFA-STORY/context/generation-publications/convergence-gen1.json",
+      "oldMode": "000000",
+      "newMode": "100644",
+      "oldObject": null,
+      "newObject": "14e14c5639cc8cd46e4877b0eed94a4be0162c68",
+      "newContent": {
+        "kind": "regular-file",
+        "sha256": "sha256:15971f4182b7bd8226a0552e25752a614cc7de2985831fd4493e11fe64535a8b",
+        "bytes": 992
+      },
+      "changeId": "sha256:b66f91ec185c855a238a7948fc4002b69253a54d2444cd7840c45ab126fd3a2a"
+    },
+    {
+      "status": "added",
+      "similarity": null,
+      "oldPath": null,
+      "newPath": "singularity/work-items/CFA-STORY/context/inputs-convergence-gen1.json",
+      "oldMode": "000000",
+      "newMode": "100644",
+      "oldObject": null,
+      "newObject": "76892caaf859fb5b28cfcde8866949fec33d68d2",
+      "newContent": {
+        "kind": "regular-file",
+        "sha256": "sha256:d5194a89dd505eee90e0c264c91e673689d23ad213d5cf376ed57db65cbd352a",
+        "bytes": 5839
+      },
+      "changeId": "sha256:986095dc2def0fd20936bd614aabd58d8dda326a4c2895bf60d8ac56a4e558f6"
+    },
+    {
+      "status": "added",
+      "similarity": null,
+      "oldPath": null,
+      "newPath": "singularity/work-items/CFA-STORY/context/inputs-implementation-gen2.json",
+      "oldMode": "000000",
+      "newMode": "100644",
+      "oldObject": null,
+      "newObject": null,
+      "untracked": true,
+      "newContent": {
+        "kind": "regular-file",
+        "sha256": "sha256:ed6cc22e9e5c0abdd3e9c6776ab154dba3f3ecdb38c63ffc4159c0ce30b3ef45",
+        "bytes": 4051
+      },
+      "changeId": "sha256:d857bcc19900ab5513499b775bcf90a6edbc61bfbe3d9803ef1cd3c7e5448e12"
+    },
+    {
+      "status": "added",
+      "similarity": null,
+      "oldPath": null,
+      "newPath": "singularity/work-items/CFA-STORY/context/ledger-intents/230eaa80-cf6c-4f0a-ab71-4dcb99e409d5.json",
+      "oldMode": "000000",
+      "newMode": "100644",
+      "oldObject": null,
+      "newObject": "c753c56e06f3a84b30a1fa98a9658f83ab5f5b42",
+      "newContent": {
+        "kind": "regular-file",
+        "sha256": "sha256:9e78b46464b598b853941d9694ffbd6917823d9f2d2a33fc2e5b727622d49c42",
+        "bytes": 1721
+      },
+      "changeId": "sha256:1594024d426791fe16f455ad168a443c438b26dc67fde9860be6c580cec67868"
+    },
+    {
+      "status": "added",
+      "similarity": null,
+      "oldPath": null,
+      "newPath": "singularity/work-items/CFA-STORY/context/ledger-intents/3dc965c3-db28-4d75-b963-19f0fe3b78d5.json",
+      "oldMode": "000000",
+      "newMode": "100644",
+      "oldObject": null,
+      "newObject": "6de380f7f55b77da089a15b72c95af31be479fe5",
+      "newContent": {
+        "kind": "regular-file",
+        "sha256": "sha256:b4b1a14d289ccec7753bbd48d1afde86693bad755562a934eb57bb457830d849",
+        "bytes": 2075
+      },
+      "changeId": "sha256:50edc878308dfb15ccb342ca5553227618c2c331f912475e484f6b01f4adc733"
+    },
+    {
+      "status": "added",
+      "similarity": null,
+      "oldPath": null,
+      "newPath": "singularity/work-items/CFA-STORY/context/ledger-intents/7e040248-14d6-4c39-9f27-4ac404c14dc0.json",
+      "oldMode": "000000",
+      "newMode": "100644",
+      "oldObject": null,
+      "newObject": "b601a5aab08f490a2988939de804574b7c0dbcb2",
+      "newContent": {
+        "kind": "regular-file",
+        "sha256": "sha256:ee3d897b6b484f6e5245512aded4a71342b721a22b389a44166f9657c408c78c",
+        "bytes": 1615
+      },
+      "changeId": "sha256:02287e312909a0f6c69ff605c5ce19bba1cbfebc3a985918984c400be0528834"
+    },
+    {
+      "status": "added",
+      "similarity": null,
+      "oldPath": null,
+      "newPath": "singularity/work-items/CFA-STORY/context/ledger-intents/98453b21-3e23-46a0-82b4-1d041813a55e.json",
+      "oldMode": "000000",
+      "newMode": "100644",
+      "oldObject": null,
+      "newObject": "d3fb1bac677abc5862f991aca800aeab94a9b1dc",
+      "newContent": {
+        "kind": "regular-file",
+        "sha256": "sha256:770a7705ac81b608333adbf6c077ea16e773fbc731404d86c093216ee761e680",
+        "bytes": 1595
+      },
+      "changeId": "sha256:424afb0679ec0798713fb9af189005d3bb9b744c251417a8230b6ea2a4268541"
+    },
+    {
+      "status": "added",
+      "similarity": null,
+      "oldPath": null,
+      "newPath": "singularity/work-items/CFA-STORY/context/ledger-intents/9967d8dd-77b7-4ec0-83c3-7de9e0d2c0eb.json",
+      "oldMode": "000000",
+      "newMode": "100644",
+      "oldObject": null,
+      "newObject": "de20dd569447f42643ea5bc92bfc1380f0931235",
+      "newContent": {
+        "kind": "regular-file",
+        "sha256": "sha256:852c0f79b8965d8e03c6b8e50c3f2a30c5ff5d9450dc67f2ab820e4eb5912244",
+        "bytes": 1595
+      },
+      "changeId": "sha256:156deca1b062d717041b128f5042e70c7ded27519f5db8dcc2414797dff46b1d"
+    },
+    {
+      "status": "added",
+      "similarity": null,
+      "oldPath": null,
+      "newPath": "singularity/work-items/CFA-STORY/context/prompts/convergence-gen1.md",
+      "oldMode": "000000",
+      "newMode": "100644",
+      "oldObject": null,
+      "newObject": "91a7bc176f55bf681bef58fd07f445f28adfd904",
+      "newContent": {
+        "kind": "regular-file",
+        "sha256": "sha256:b898870ec77bb61bf1e2c68bce8ef1c815cbdf1c80394ff74a8f0e19a6886993",
+        "bytes": 29047
+      },
+      "changeId": "sha256:ee988de6df185a5f5e1083c29ce2e95259b8b008b76d5c80de190a41dcc6cfe0"
+    },
+    {
+      "status": "added",
+      "similarity": null,
+      "oldPath": null,
+      "newPath": "singularity/work-items/CFA-STORY/context/references/19e4cd3eee5cccd60ac0e34e8e6905f1d9d29c1df3db04f879dafdda2e6bfde3.json",
+      "oldMode": "000000",
+      "newMode": "100644",
+      "oldObject": null,
+      "newObject": "f48334427722598a4ce32760c0b9e83fdbd69c31",
+      "newContent": {
+        "kind": "regular-file",
+        "sha256": "sha256:ef582ff1779253f56bc1f5c80fc20e4d23401c172ac38e70db26a5f6e9ec04ea",
+        "bytes": 757
+      },
+      "changeId": "sha256:be2f02d5713574376890af871eac76ea14fd0b2b84753915f8dd987ae24665db"
+    },
+    {
+      "status": "added",
+      "similarity": null,
+      "oldPath": null,
+      "newPath": "singularity/work-items/CFA-STORY/context/references/33edd8a54e4493491ed1fc8ac65f03d33805902c9c6fd1dc94f787662a0e1697.json",
+      "oldMode": "000000",
+      "newMode": "100644",
+      "oldObject": null,
+      "newObject": "f3489641c2336c3f7e42a3c9758eb445ce3e4989",
+      "newContent": {
+        "kind": "regular-file",
+        "sha256": "sha256:98f3bee536d0ea6ec9f886de5bc5ab9ab2f7db8bd096dfb4c348455378b0367d",
+        "bytes": 740
+      },
+      "changeId": "sha256:2ff0b18ef651342a5a61249ff28af2f46b68c5c863c8bcb8dd7e588b4fc83399"
+    },
+    {
+      "status": "added",
+      "similarity": null,
+      "oldPath": null,
+      "newPath": "singularity/work-items/CFA-STORY/context/sidecars/convergence-gen1-singularity-work-items-CFA-STORY-artifacts-convergence-convergence.md.json",
+      "oldMode": "000000",
+      "newMode": "100644",
+      "oldObject": null,
+      "newObject": "7570531c9a29ffbab4f6c001a013553a8fe507a5",
+      "newContent": {
+        "kind": "regular-file",
+        "sha256": "sha256:faea9a50634b4f55dfddc898e73ace330f1cc9de1524e94cdf285cbd2c71af38",
+        "bytes": 1380
+      },
+      "changeId": "sha256:a1a4bffe024feeb58648fa1e53d837f3ee753109613bb8e66d5ab5251f17aa69"
+    },
+    {
+      "status": "added",
+      "similarity": null,
+      "oldPath": null,
+      "newPath": "singularity/work-items/CFA-STORY/context/work-intervals/implementation-gen2-baseline.json",
+      "oldMode": "000000",
+      "newMode": "100644",
+      "oldObject": null,
+      "newObject": "b3b47b01b248844be3a3cb78f70ce00ae7dafb25",
+      "newContent": {
+        "kind": "regular-file",
+        "sha256": "sha256:70f2612dd8d29427be119485341a34b80c6549e00052caa6c3ccd9c37765f9ab",
+        "bytes": 1673
+      },
+      "changeId": "sha256:259b5513c90892a23909c07a16b4d9f70ebea3f24becaa5edd01470c5eed60da"
+    },
+    {
+      "status": "added",
+      "similarity": null,
+      "oldPath": null,
+      "newPath": "singularity/work-items/CFA-STORY/context/work-intervals/reconciliations/66864d319309f5d1e7fb9f804b6463c81aa704a3adabb01053f5e903a9b2de88.json",
+      "oldMode": "000000",
+      "newMode": "100644",
+      "oldObject": null,
+      "newObject": "70ae7ffcbaf8995d3ae6d3dadb139418a4d0f52b",
+      "newContent": {
+        "kind": "regular-file",
+        "sha256": "sha256:b392eec31242af763866011fac4a9917ee5e6ad7c61cfab6472907c211a86a69",
+        "bytes": 2561
+      },
+      "changeId": "sha256:36a5ff89428edfb9369a40eb768f05562f88f6b3689c68cb34007e576ebc1a02"
+    },
+    {
+      "status": "added",
+      "similarity": null,
+      "oldPath": null,
+      "newPath": "singularity/work-items/CFA-STORY/submissions/convergence/d4d736c75d8fa26d55e8763109ae0cfc39f98696eb29dbc10ed3d1e8eeee839d.json",
+      "oldMode": "000000",
+      "newMode": "100644",
+      "oldObject": null,
+      "newObject": "0aaefe06fe279b4e9adca0162a821c07ab7fa8b0",
+      "newContent": {
+        "kind": "regular-file",
+        "sha256": "sha256:fa16cfb3a7a6172932318eb142c7c64b89edc165463cddc9298dd13b020fac4a",
+        "bytes": 3405
+      },
+      "changeId": "sha256:da2f513b075e4ee7d43dedf062c5d7fbd74808c0df22c303bd8dab7d745bbb03"
+    },
+    {
+      "status": "added",
+      "similarity": null,
+      "oldPath": null,
+      "newPath": "singularity/work-items/CFA-STORY/submissions/implementation/d029b636bbcd9004cbfa669707115bcd24780ce57ee746b87d08015cfd5d0672.json",
+      "oldMode": "000000",
+      "newMode": "100644",
+      "oldObject": null,
+      "newObject": "04285856a583666a92f27bcf038962901c4a7e5a",
+      "newContent": {
+        "kind": "regular-file",
+        "sha256": "sha256:29c5acb0e10496f1286dc7b6e06633ef765c1b5600c058d9dfe40e5a81438cd0",
+        "bytes": 6814
+      },
+      "changeId": "sha256:96f049b553a5ef45f7a676c19a5b99b05a50c52fd46018135fdd83055da5a8ad"
+    },
+    {
+      "status": "added",
+      "similarity": null,
+      "oldPath": null,
+      "newPath": "singularity/work-items/CFA-STORY/telemetry/convergence-gen1.json",
+      "oldMode": "000000",
+      "newMode": "100644",
+      "oldObject": null,
+      "newObject": "f1811ad9d1fed269b0bccc7c36463a4fb71ee43a",
+      "newContent": {
+        "kind": "regular-file",
+        "sha256": "sha256:d7365f9f3b654da1e1176a8e16ef06ed8f391bba363d757cce7e336561e7243d",
+        "bytes": 1279
+      },
+      "changeId": "sha256:aca5425ba9552d6e28891d63165708b14e03498c0fe134ba53be80c22a5b8fa2"
+    },
+    {
+      "status": "copied",
+      "similarity": 66,
+      "oldPath": "singularity/work-items/CFA-STORY/artifacts/implementation/implementation-summary.md",
+      "newPath": "singularity/work-items/CFA-STORY/artifacts/convergence/convergence.md",
+      "oldMode": "100644",
+      "newMode": "100644",
+      "oldObject": "edc285567180c4d406aa3f6b3a01ed6785ece3c4",
+      "newObject": "2b3dcec213d2e895bcb0c14337dcea56675c9c0f",
+      "newContent": {
+        "kind": "regular-file",
+        "sha256": "sha256:e5a5637680a4d595f3f5a9f4353c6f01595d4c5b8a18e81a5c1ff62f5ff4eb3e",
+        "bytes": 20878
+      },
+      "changeId": "sha256:5c23ce6b6366224983d760a0be1f4c23ab90d8e292111a2ca0356d6a972bc4fe"
+    },
+    {
+      "status": "modified",
+      "similarity": null,
+      "oldPath": "singularity/work-items/CFA-STORY/artifacts/implementation/implementation-summary.md",
+      "newPath": "singularity/work-items/CFA-STORY/artifacts/implementation/implementation-summary.md",
+      "oldMode": "100644",
+      "newMode": "100644",
+      "oldObject": "edc285567180c4d406aa3f6b3a01ed6785ece3c4",
+      "newObject": null,
+      "newContent": {
+        "kind": "regular-file",
+        "sha256": "sha256:e4456193e57adac629f85b6a76eea69c5c6b4ca32fa54b561eead2d3cd75ca01",
+        "bytes": 20779
+      },
+      "changeId": "sha256:f17683e082ecb84822704dd676727606d40c6f51d5cc4e89daa87dc51e0f5ffa"
+    },
+    {
+      "status": "modified",
+      "similarity": null,
+      "oldPath": "singularity/work-items/CFA-STORY/context/code-delivery/implementation-gen1.json",
+      "newPath": "singularity/work-items/CFA-STORY/context/code-delivery/implementation-gen1.json",
+      "oldMode": "100644",
+      "newMode": "100644",
+      "oldObject": "cf67678ced02e9c1b8d461cdeff53a70609ffaa9",
+      "newObject": "98f42cd075b51176c130a0c680473122746f5ebb",
+      "newContent": {
+        "kind": "regular-file",
+        "sha256": "sha256:a187cd610e8b38a4cddeeb3fef73d9275ba73cf196d0cee5d39062eb791ce518",
+        "bytes": 4638
+      },
+      "changeId": "sha256:26e6b947fafe9c364ff9eeb72491fd1449b4fe827d14533f9e4b369a85aad6a3"
+    },
+    {
+      "status": "renamed",
+      "similarity": 53,
+      "oldPath": "singularity/work-items/CFA-STORY/context/generation-start/implementation-gen1.json",
+      "newPath": "singularity/work-items/CFA-STORY/context/generation-start/implementation-gen2.json",
+      "oldMode": "100644",
+      "newMode": "100644",
+      "oldObject": "8abb8339082f61af913cc81a001eca8f6efad0f7",
+      "newObject": "9882215e1633d381b99e43dc6e5accd60bdba1a9",
+      "newContent": {
+        "kind": "regular-file",
+        "sha256": "sha256:94af2578c6a5981439c5a906780eff2995eff0fd71bcc0be5387edb1f3f3b4a7",
+        "bytes": 1283
+      },
+      "changeId": "sha256:3d98888d297330a574f95368d28ec5bf6700e125efe13c0c3d066cb53c37a968"
+    },
+    {
+      "status": "modified",
+      "similarity": null,
+      "oldPath": "singularity/work-items/CFA-STORY/STATUS.md",
+      "newPath": "singularity/work-items/CFA-STORY/STATUS.md",
+      "oldMode": "100644",
+      "newMode": "100644",
+      "oldObject": "f10b5251fb8babb7863ba3fa938ecdd591845861",
+      "newObject": "2f5639c1360e196c7c56594c5b400c0ea7d8517e",
+      "newContent": {
+        "kind": "regular-file",
+        "sha256": "sha256:23e0e258c671fe3ec6a7a01064922a0d6699cda7f455842dbbdaaca25b4d6bb6",
+        "bytes": 3387
+      },
+      "changeId": "sha256:8767fe96502f479e78c6825b95cf9a8bf30d20501d034d0764fb0a816c3ec462"
+    },
+    {
+      "status": "modified",
+      "similarity": null,
+      "oldPath": "singularity/work-items/CFA-STORY/workflow.json",
+      "newPath": "singularity/work-items/CFA-STORY/workflow.json",
+      "oldMode": "100644",
+      "newMode": "100644",
+      "oldObject": "1757915e7932714c9ee42d3465cd2437ed7aae3b",
+      "newObject": null,
+      "newContent": {
+        "kind": "regular-file",
+        "sha256": "sha256:a99cf454a2b76ffb2ec3c5c619c38f3e629f95fa95daddd4c9dabdad6714d8dd",
+        "bytes": 226463
+      },
+      "changeId": "sha256:3be8a76986156474104fda07b67f60f81841502d275a4289fc283c611909620f"
+    },
+    {
+      "status": "modified",
+      "similarity": null,
+      "oldPath": "singularity/world-model/core/model.json",
+      "newPath": "singularity/world-model/core/model.json",
+      "oldMode": "100644",
+      "newMode": "100644",
+      "oldObject": "7d8c3f58442b2e93d18f675b485b05de4bf4897e",
+      "newObject": "6c9224dfb5a85f78964010b4299b59410d55f5c8",
+      "newContent": {
+        "kind": "regular-file",
+        "sha256": "sha256:ff7752ca8272190c35281984cc50e61f4e62d7ab0913960f3e282e80e07e247e",
+        "bytes": 1229
+      },
+      "changeId": "sha256:c81055cbfad62d918c50d6600d5fa59796786a7329c01f48842ae062414581a4"
+    },
+    {
+      "status": "modified",
+      "similarity": null,
+      "oldPath": "singularity/world-model/core/summary.brief.md",
+      "newPath": "singularity/world-model/core/summary.brief.md",
+      "oldMode": "100644",
+      "newMode": "100644",
+      "oldObject": "708803d3e76e49335f3080ce185a6cd3e8dc607c",
+      "newObject": "07c1ee708323cc14838612f290a37bcd63bc9e11",
+      "newContent": {
+        "kind": "regular-file",
+        "sha256": "sha256:abe899a9d45d6461fb4e44af904f4df9daaefb97c0441246545f7b7d9856a98f",
+        "bytes": 627
+      },
+      "changeId": "sha256:5a79780913973c85d9dfff8af96ac98de5efd4b855a34b30d40c1f80407a4df5"
+    },
+    {
+      "status": "modified",
+      "similarity": null,
+      "oldPath": "singularity/world-model/core/summary.md",
+      "newPath": "singularity/world-model/core/summary.md",
+      "oldMode": "100644",
+      "newMode": "100644",
+      "oldObject": "674111832c688474050497005a206e488b4d61e8",
+      "newObject": "bb03befb6fdc6039e6ebe077f4cfdf975c84e656",
+      "newContent": {
+        "kind": "regular-file",
+        "sha256": "sha256:58f3587d1290d20be520261ba13932c581533522374ad4c84dac90831d572f25",
+        "bytes": 3553
+      },
+      "changeId": "sha256:4f0dce99b218c675f776f3db3fa28e01eda2731e0363a999c431028a52c4346d"
+    },
+    {
+      "status": "deleted",
+      "similarity": null,
+      "oldPath": "singularity/world-model/domains/calculator-capabilities.md",
+      "newPath": null,
+      "oldMode": "100644",
+      "newMode": "000000",
+      "oldObject": "86d4fc2d974738d40fe1b8c993259a453eef02ba",
+      "newObject": null,
+      "newContent": null,
+      "changeId": "sha256:2ed0b632595af7ce235d4eebbfc948fd2448240fda7ab422bb1e6d7c5e0ef35d"
+    },
+    {
+      "status": "deleted",
+      "similarity": null,
+      "oldPath": "singularity/world-model/domains/expression-evaluation.md",
+      "newPath": null,
+      "oldMode": "100644",
+      "newMode": "000000",
+      "oldObject": "67ab689c014626841a546078972c9b37b29a592f",
+      "newObject": null,
+      "newContent": null,
+      "changeId": "sha256:be9f296be3d06bddce9829551fe476f9ea6253d7c5cfb0d676d08ccc71e34f5d"
+    },
+    {
+      "status": "modified",
+      "similarity": null,
+      "oldPath": "singularity/world-model/evidence/evidence.jsonl",
+      "newPath": "singularity/world-model/evidence/evidence.jsonl",
+      "oldMode": "100644",
+      "newMode": "100644",
+      "oldObject": "51460e1c354524cd88cbe64bc5cb06c4f282153c",
+      "newObject": "f61f7ac6c0b81b497bac3514949297fe85d21f01",
+      "newContent": {
+        "kind": "regular-file",
+        "sha256": "sha256:bbdb073c26fa37a98281972692938de1555551c4b7e42dc912b96e6b52ba4446",
+        "bytes": 398
+      },
+      "changeId": "sha256:7dff405f6a6a75beae3c926f06b680d2e0016ec900aeae46edd1108976e74e22"
+    },
+    {
+      "status": "modified",
+      "similarity": null,
+      "oldPath": "singularity/world-model/index/path-map.json",
+      "newPath": "singularity/world-model/index/path-map.json",
+      "oldMode": "100644",
+      "newMode": "100644",
+      "oldObject": "8eee0e84417567850694947cad2deb0d148deb82",
+      "newObject": "f7e30ee50d5db95c45b9f2baa196fb9b23cd7077",
+      "newContent": {
+        "kind": "regular-file",
+        "sha256": "sha256:d6df86a2d883c603465f3eab9cbe6414443c9a62539601b417d5c15b2423db26",
+        "bytes": 832
+      },
+      "changeId": "sha256:d1f97cddcc08030c76ddd7f331517b42d7c38d2156f9370989b07b90ce9b7909"
+    },
+    {
+      "status": "modified",
+      "similarity": null,
+      "oldPath": "singularity/world-model/manifest.json",
+      "newPath": "singularity/world-model/manifest.json",
+      "oldMode": "100644",
+      "newMode": "100644",
+      "oldObject": "32745205d13b480bf4d04b43d92b547f71c9ebb4",
+      "newObject": "87e290b351356852550643d578ea68e3d617884d",
+      "newContent": {
+        "kind": "regular-file",
+        "sha256": "sha256:51b8860decdd42f7549468726aedc755d6fbe90ed4ba4d70c67c4fa308b7ba70",
+        "bytes": 2646
+      },
+      "changeId": "sha256:f9465b719b0c01b42e1539ba821ec39a2309d383648e3764b9fe55ee28b29a2c"
+    },
+    {
+      "status": "deleted",
+      "similarity": null,
+      "oldPath": "singularity/world-model/task-guides/add-tan-operator.md",
+      "newPath": null,
+      "oldMode": "100644",
+      "newMode": "000000",
+      "oldObject": "cff49dad4a7a2bd974e5b0f0e5bd9640be5d3581",
+      "newObject": null,
+      "newContent": null,
+      "changeId": "sha256:6bd753a558f02bdca6a1f8873e901ab084869d50ac4159f24a5630e01b553d4f"
+    },
+    {
+      "status": "deleted",
+      "similarity": null,
+      "oldPath": "singularity/world-model/task-guides/wrk-tan.md",
+      "newPath": null,
+      "oldMode": "100644",
+      "newMode": "000000",
+      "oldObject": "36bd0fff9060c687d35744dda85f848e99ff5eb3",
+      "newObject": null,
+      "newContent": null,
+      "changeId": "sha256:83d93df42be239690f49f9b8b1cf465afa66f78adb6d7facfb1e14d31620f75d"
+    },
+    {
+      "status": "deleted",
+      "similarity": null,
+      "oldPath": "singularity/world-model/views/architecture.md",
+      "newPath": null,
+      "oldMode": "100644",
+      "newMode": "000000",
+      "oldObject": "ad1ff7d1b8a6586cf2317bc8cdef1c85654f40f1",
+      "newObject": null,
+      "newContent": null,
+      "changeId": "sha256:a04efa9fb02977b108badafa230210bb601710ee190d5862cf8eb330410eaf29"
+    },
+    {
+      "status": "deleted",
+      "similarity": null,
+      "oldPath": "singularity/world-model/views/business.brief.md",
+      "newPath": null,
+      "oldMode": "100644",
+      "newMode": "000000",
+      "oldObject": "3733545b9452c75f1f281dea95e821a655576d2b",
+      "newObject": null,
+      "newContent": null,
+      "changeId": "sha256:dbae2362b3df9f7cab9d3d6f20bc37f1f5db7d938e33db2c4356fa8dc95e396d"
+    },
+    {
+      "status": "deleted",
+      "similarity": null,
+      "oldPath": "singularity/world-model/views/business.md",
+      "newPath": null,
+      "oldMode": "100644",
+      "newMode": "000000",
+      "oldObject": "73c50680453c529681147ea4f35c9f1473a01197",
+      "newObject": null,
+      "newContent": null,
+      "changeId": "sha256:b603fbf9bd74462d4693c2d93c7cc5b2d420bdff64b8637da25c24fa882187b2"
+    },
+    {
+      "status": "deleted",
+      "similarity": null,
+      "oldPath": "singularity/world-model/views/development.md",
+      "newPath": null,
+      "oldMode": "100644",
+      "newMode": "000000",
+      "oldObject": "b3b2cd69bc95a4c6757352644f3cc93542835c2e",
+      "newObject": null,
+      "newContent": null,
+      "changeId": "sha256:7d49044e9f2b9e26f1a7c47a2430648745d005f412582ee86e565879ecd14913"
+    },
+    {
+      "status": "renamed",
+      "similarity": 58,
+      "oldPath": "singularity/world-model/views/testing.brief.md",
+      "newPath": "singularity/world-model/views/development.brief.md",
+      "oldMode": "100644",
+      "newMode": "100644",
+      "oldObject": "1b479535ef13283394add86d7a29b784727b6a7f",
+      "newObject": "c24ceebda8161c1165cf4cfb4a5df2b9da6383c7",
+      "newContent": {
+        "kind": "regular-file",
+        "sha256": "sha256:372897cb124f7f5b42fd7278716798279ddd876eb795ced8e90daa5916bcbd9b",
+        "bytes": 274
+      },
+      "changeId": "sha256:fc7ac6d46fb75c2c227e3661d341549906c3817ed9a8d9c6bbcafd1b22ae93d9"
+    },
+    {
+      "status": "modified",
+      "similarity": null,
+      "oldPath": "src/App.test.jsx",
+      "newPath": "src/App.test.jsx",
+      "oldMode": "100644",
+      "newMode": "100644",
+      "oldObject": "e002b63a71a754ce8e59b5dcee81ab501830d625",
+      "newObject": null,
+      "newContent": {
+        "kind": "regular-file",
+        "sha256": "sha256:b58f6eb80ebaca760aefb641ec982e615b6f3ecf90e3c7d966e76cf6c085d464",
+        "bytes": 9633
+      },
+      "changeId": "sha256:f7305782ff45ef340e7e66db069e4fd8725de3c1c2a4f43fa7d6566600b3773a"
+    },
+    {
+      "status": "modified",
+      "similarity": null,
+      "oldPath": "src/components/CFAStudyToolkit.jsx",
+      "newPath": "src/components/CFAStudyToolkit.jsx",
+      "oldMode": "100644",
+      "newMode": "100644",
+      "oldObject": "66bce44202683c6b93b9149c8db1b47b46796b5c",
+      "newObject": null,
+      "newContent": {
+        "kind": "regular-file",
+        "sha256": "sha256:c806138d961086713004a1f15e2cd25d11b6e1e8c338e7fa93c90c71e96cf36d",
+        "bytes": 10056
+      },
+      "changeId": "sha256:5edfd82caecdc86f58cb9d3ddcf614a10c512441b295afd97ebc8fe4098c8d85"
+    }
+  ],
+  "digest": "sha256:9baf415cbe12451bcec8af7550f7f0a5e38444369c4c3dcdf8b6add6d5e9a319"
+}

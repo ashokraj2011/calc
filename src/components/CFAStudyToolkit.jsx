@@ -161,6 +161,12 @@ export const CFAStudyToolkit = ({ soundEnabled }) => {
     setFieldValues((prev) => ({ ...prev, [key]: value }));
   };
 
+  const handleTopicChange = (topic) => {
+    setSelectedTopic(topic);
+    const nextInputs = getTopicDefinition(topic).inputs;
+    setFieldValues(Object.fromEntries(nextInputs.map((input) => [input.key, input.defaultValue])));
+  };
+
   const principal = Number.parseFloat(fieldValues.principal);
   const rate = Number.parseFloat(fieldValues.rate);
   const years = Number.parseFloat(fieldValues.years);
@@ -187,7 +193,7 @@ export const CFAStudyToolkit = ({ soundEnabled }) => {
           <select
             aria-label="Select a topic"
             value={selectedTopic}
-            onChange={(event) => setSelectedTopic(event.target.value)}
+            onChange={(event) => handleTopicChange(event.target.value)}
             className="u-bg-btn-num-bg border u-border-card-border rounded-xl px-3 py-2.5 outline-none u-text-text-main"
           >
             {TOPIC_OPTIONS.map((topic) => (

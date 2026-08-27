@@ -1,0 +1,46 @@
+{
+  "artifact": {
+    "bytes": 9633,
+    "path": "src/App.test.jsx",
+    "role": "test",
+    "sha256": "b58f6eb80ebaca760aefb641ec982e615b6f3ecf90e3c7d966e76cf6c085d464"
+  },
+  "configuration": {
+    "revision": "3d2a1538528886afd920c1b3ec3cb1b546936290",
+    "sha256": "87be75456efb3109772edfe7165e275f0477ca07d457e4b39cab66d0e30258e2"
+  },
+  "generation": 2,
+  "inputs": [
+    {
+      "kind": null,
+      "path": "artifacts/planning/plan.md",
+      "sha256": null
+    },
+    {
+      "kind": null,
+      "path": "artifacts/specification/spec.md",
+      "sha256": null
+    }
+  ],
+  "integritySha256": "832a8d2ade4e6cad631caa9bf5794c84e477550bb2ff0143f408e0b888aca266",
+  "phase": "implementation",
+  "producer": {
+    "actor": "88361104+ashokraj2011@users.noreply.github.com",
+    "agent": null,
+    "kind": "human"
+  },
+  "publication": {
+    "branch": "CFA-STORY",
+    "commit": null,
+    "publishedAt": "2026-08-27T08:25:12.879Z"
+  },
+  "schemaVersion": 1,
+  "subject": {
+    "id": "CFA-STORY",
+    "kind": "story"
+  },
+  "template": {
+    "path": "singularity/templates/common/implementation.md",
+    "sha256": "61cd7cba79a0dd2914a25b53496b8bd9c575c36219597d65b8ec10010e801d9c"
+  }
+}

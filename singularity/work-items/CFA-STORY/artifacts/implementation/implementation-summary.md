@@ -4,7 +4,7 @@
   "workId": "CFA-STORY",
   "workType": "spec-driven-standard",
   "phase": "implementation",
-  "generation": 1,
+  "generation": 2,
   "status": "in_progress",
   "generatedBy": {
     "name": "Ashok Raj",
@@ -12,11 +12,11 @@
     "login": "ashokraj2011",
     "githubLookup": "resolved"
   },
-  "generatedAgent": "developer",
+  "generatedAgent": null,
   "authorship": {
     "schemaVersion": 1,
-    "producer": "governed-agent",
-    "channel": "copilot-host",
+    "producer": "human",
+    "channel": "manual-in-place",
     "actor": {
       "name": "Ashok Raj",
       "email": "88361104+ashokraj2011@users.noreply.github.com",
@@ -42,10 +42,10 @@
       "sha256": "6efc08e8e20e92e33a30679fed236e92d9f899738e48ed8e62d0f394800be871",
       "bytes": 2103
     },
-    "generation": 1,
-    "publishedAt": "2026-08-27T06:18:10.229Z"
+    "generation": 2,
+    "publishedAt": "2026-08-27T08:25:12.879Z"
   },
-  "sourceCommit": "2cf501ef75860f6ff2d14e74db5af96b66b4c127",
+  "sourceCommit": "e31b2ee51cde9a0938ddb507a9ee3f2c46abece8",
   "generationCommit": "91749891e894d50964f26f29b7181695d3bcec8e",
   "publicationCommit": "91749891e894d50964f26f29b7181695d3bcec8e",
   "configSha256": "87be75456efb3109772edfe7165e275f0477ca07d457e4b39cab66d0e30258e2",
@@ -55,9 +55,9 @@
     "sha256": "61cd7cba79a0dd2914a25b53496b8bd9c575c36219597d65b8ec10010e801d9c"
   },
   "inputs": {
-    "generation": 1,
-    "path": "singularity/work-items/CFA-STORY/context/inputs-implementation-gen1.json",
-    "sha256": "b56095bff230c4c1736934f628a2d297865f7c28856308341fb6724e828f54b3",
+    "generation": 2,
+    "path": "singularity/work-items/CFA-STORY/context/inputs-implementation-gen2.json",
+    "sha256": "be7ae4ed7e6732b31f399a08aeee75f276041e9e5bd5b184612d3b935632f2de",
     "renderedSha256": "7a06108a2b4aa0771de62a918627acbb4adee04b59504d5c1224a5199fec66b2",
     "mode": "enforce"
   },
@@ -73,6 +73,14 @@
       "path": "singularity/work-items/CFA-STORY/telemetry/implementation-gen1.json",
       "sha256": "e55d0cc2984db3702d314c130141990e393ffecff7afbe0057af78ebfb1cf79d",
       "status": "pending",
+      "models": [],
+      "providerCost": null
+    },
+    {
+      "generation": 2,
+      "path": "singularity/work-items/CFA-STORY/telemetry/implementation-gen2.json",
+      "sha256": "164e3b1d15c84bb72be5fcb624d1fab14a8964146caf4c816f5ef76743e433e6",
+      "status": "not-invoked",
       "models": [],
       "providerCost": null
     }

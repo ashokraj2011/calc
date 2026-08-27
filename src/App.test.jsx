@@ -252,5 +252,10 @@ describe('CFA Level I toolkit flow', () => {
 
     await user.clear(principalInput);
     expect(screen.getByText(/Please provide valid values/i)).toBeInTheDocument();
+
+    await user.selectOptions(topicSelect, 'Equity');
+    expect(screen.getByLabelText(/Investment/i)).toHaveValue(2000);
+    expect(screen.getByLabelText(/Return rate/i)).toHaveValue(7);
+    expect(screen.getByLabelText(/Years/i)).toHaveValue(6);
   });
 });
