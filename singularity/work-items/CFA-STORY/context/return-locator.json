@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "kind": "return-locator",
+  "workId": "CFA-STORY",
+  "capabilityId": "calc-app",
+  "originRepositoryId": "calc",
+  "repositories": [
+    {
+      "id": "calc",
+      "remote": "origin",
+      "required": true,
+      "url": "https://github.com/ashokraj2011/calc.git",
+      "fingerprint": "b185e6905a4f5bb33ce26f9fac81f87986f1b777e76d2a7b74cdab617432c273",
+      "portability": "portable"
+    }
+  ],
+  "lifecycleRef": "refs/heads/CFA-STORY",
+  "workBranchRef": "refs/heads/CFA-STORY",
+  "configuration": {
+    "sha256": "87be75456efb3109772edfe7165e275f0477ca07d457e4b39cab66d0e30258e2",
+    "branch": "sflow/config",
+    "commit": "3d2a1538528886afd920c1b3ec3cb1b546936290"
+  },
+  "cloneStrategy": "existing-or-clone",
+  "integritySha256": "d18eed3e6f7ad4b36b902718461104e6054a025b25e993e22a6744e171eb729a"
+}

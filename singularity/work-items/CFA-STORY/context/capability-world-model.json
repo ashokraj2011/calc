@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 1,
+  "capabilityId": "calc-app",
+  "capabilityPath": [
+    "calc-app"
+  ],
+  "capabilityMapSha256": "df69fe9244ab92f707336cad19121607344bddab441561046e049757a9bbbd4a",
+  "requiredViews": [
+    "business",
+    "architecture",
+    "development",
+    "testing",
+    "security",
+    "release"
+  ],
+  "maxBytes": 262144,
+  "bytes": 8679,
+  "repositories": [
+    {
+      "id": "calc",
+      "status": "pinned",
+      "repository": "https://github.com/ashokraj2011/calc.git",
+      "branch": "main",
+      "commit": "6b0100c4e4f6f61b03c4e5fcbf7d58052f63d7f6",
+      "manifestSha256": "9c6becd99d84bf53908133a20f8cbee3fa50bfa7f5e7a7be665b221a35b366cc",
+      "sourceTreeSha256": "sha256:1dee7ed995b515c700d64d2f865932a4a27932abf9fa9e2cdd4236e9dad677bd",
+      "source": "state-branch",
+      "files": [
+        "singularity/work-items/CFA-STORY/context/capability-world-model/calc/core/summary.md"
+      ]
+    }
+  ],
+  "files": [
+    {
+      "repositoryId": "calc",
+      "sourcePath": "singularity/world-model/core/summary.md",
+      "path": "singularity/work-items/CFA-STORY/context/capability-world-model/calc/core/summary.md",
+      "views": [
+        "core"
+      ],
+      "sha256": "04fb9b363437f060397ff24a5ecdd5d4cb2bd65afd33ba6328ea91973f7995c0",
+      "bytes": 8679
+    }
+  ],
+  "warnings": [
+    "Capability repository 'calc' is missing world-model file 'views/business.md'.",
+    "Capability repository 'calc' is missing world-model file 'views/architecture.md'.",
+    "Capability repository 'calc' is missing world-model file 'views/development.md'.",
+    "Capability repository 'calc' is missing world-model file 'views/testing.md'.",
+    "Capability repository 'calc' is missing world-model file 'views/security.md'.",
+    "Capability repository 'calc' is missing world-model file 'views/release.md'."
+  ],
+  "recordedAt": "2026-08-27T02:56:17.881Z"
+}
