@@ -5,7 +5,7 @@
   "workType": "spec-driven-standard",
   "phase": "verification",
   "generation": 1,
-  "status": "awaiting_approval",
+  "status": "approved",
   "generatedBy": {
     "name": "Ashok Raj",
     "email": "88361104+ashokraj2011@users.noreply.github.com",
@@ -83,8 +83,60 @@
   "remoteOutputs": [],
   "usage": [],
   "sequenceOverrides": [],
-  "approvals": [],
-  "selfApproval": false,
+  "approvals": [
+    {
+      "decision": "approved",
+      "phase": "verification",
+      "at": "2026-08-27T14:37:45.029Z",
+      "actor": {
+        "name": "Ashok Raj",
+        "email": "88361104+ashokraj2011@users.noreply.github.com",
+        "login": "ashokraj2011",
+        "githubLookup": "resolved"
+      },
+      "agent": "qa",
+      "authorityGroup": "quality-reviewers",
+      "identityAssurance": "configured-local",
+      "channel": "copilot-selection-receipt",
+      "generation": 1,
+      "artifactSha256": [
+        {
+          "path": "singularity/work-items/CFA-STORY/artifacts/verification/test-evidence.md",
+          "sha256": "2f3902be0de37927d2ff30b80ecfe1b1ddef01570e121242ea032f8f83f25611"
+        }
+      ],
+      "reviewPacketSha256": "0bb35f61fcb9fe590f7a353c6b902b37572ef16d48497c7949c0fcc4b2831e32",
+      "evidenceCommit": "08506d764e5975306d64c5a16c8bf2feef265ffb",
+      "artifactSetSha256": "25b3d4dd691d1799e64939fc0adcb757183deebc3d762c726fbd526abd6531d2",
+      "actionContext": {
+        "phase": "verification",
+        "label": "Verification",
+        "generation": 1,
+        "submittedAt": "2026-08-27T14:22:47.035Z",
+        "artifacts": [
+          {
+            "path": "singularity/work-items/CFA-STORY/artifacts/verification/test-evidence.md",
+            "sha256": "2f3902be0de37927d2ff30b80ecfe1b1ddef01570e121242ea032f8f83f25611"
+          }
+        ],
+        "agentBriefs": [
+          {
+            "consumerPhase": "release",
+            "status": "ready",
+            "path": "singularity/work-items/CFA-STORY/context/briefs/verification-gen1-for-release.json",
+            "renderedPath": "singularity/work-items/CFA-STORY/context/briefs/verification-gen1-for-release.md",
+            "renderedSha256": "07a0337a34351c3a0055d2fb2131efe07f1e19b07c9d4aca7eaa161e0b87cdf4",
+            "integritySha256": "44d64bb225ce70893acc704adf7daa11303573abd8348733e573616b74e75973"
+          }
+        ],
+        "reviewPacketSha256": "0bb35f61fcb9fe590f7a353c6b902b37572ef16d48497c7949c0fcc4b2831e32",
+        "submittedSourceCommit": "b6f0ac9c4cd7efdf334c14e8204d6d679e7f72ee",
+        "planId": "3d6f6c01b80a78cb6f0d9e0a"
+      },
+      "selfApproval": true
+    }
+  ],
+  "selfApproval": true,
   "conformanceTree": null
 }
 -->
