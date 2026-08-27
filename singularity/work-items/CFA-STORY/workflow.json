@@ -4939,17 +4939,124 @@
       "rejectedAt": null,
       "rejectedBy": null,
       "rejectionReason": null,
-      "generation": 0,
-      "generatedBy": null,
+      "generation": 1,
+      "generatedBy": {
+        "name": "Ashok Raj",
+        "email": "88361104+ashokraj2011@users.noreply.github.com",
+        "login": "ashokraj2011",
+        "githubLookup": "resolved"
+      },
       "generatedAgent": null,
-      "authorship": [],
+      "authorship": [
+        {
+          "schemaVersion": 1,
+          "producer": "human",
+          "channel": "manual-in-place",
+          "actor": {
+            "name": "Ashok Raj",
+            "email": "88361104+ashokraj2011@users.noreply.github.com",
+            "login": "ashokraj2011",
+            "githubLookup": "resolved"
+          },
+          "governedAgentContext": {
+            "agentId": "architect"
+          },
+          "kernelModel": {
+            "invoked": false,
+            "status": "exact",
+            "invocationIds": []
+          },
+          "externalAiUse": {
+            "value": "unknown",
+            "status": "unavailable"
+          },
+          "changeOrigins": [
+            "human"
+          ],
+          "source": {
+            "kind": "in-place",
+            "filename": "test-evidence.md",
+            "mediaType": "text/markdown",
+            "sha256": "0ccae77d0c149ed950b1f40d92768d00de0b5f666ab069446182e8ae6d415590",
+            "bytes": 6004
+          },
+          "generation": 1,
+          "publishedAt": "2026-08-27T14:20:03.429Z"
+        }
+      ],
       "usage": [],
-      "telemetry": [],
+      "telemetry": [
+        {
+          "generation": 1,
+          "path": "singularity/work-items/CFA-STORY/telemetry/verification-gen1.json",
+          "sha256": "5c15d9a8a36aeede5d4416e5c01c18324ac7f05f48d34df0e275ef4cb922890d",
+          "status": "not-invoked",
+          "models": [],
+          "providerCost": null
+        }
+      ],
       "approvals": [],
       "designSourceSets": [],
-      "artifacts": [],
+      "artifacts": [
+        {
+          "path": "singularity/work-items/CFA-STORY/artifacts/verification/test-evidence.md",
+          "kind": "document",
+          "status": "pending",
+          "exists": true,
+          "size": 22970,
+          "sha256": "b03a26d34814633d7b90323970a10df2e797bf8de5473988cffdf5b6a2e2757b",
+          "registeredAt": "2026-08-27T14:20:02.627Z",
+          "updatedAt": "2026-08-27T14:20:03.466Z"
+        }
+      ],
       "checks": [],
-      "remoteOutputs": []
+      "remoteOutputs": [],
+      "authoringBaseline": {
+        "generation": 1,
+        "path": "artifacts/verification/test-evidence.md",
+        "fingerprint": "sha256:8a9bd9497d4b77f61d9fcb0e581c0fb38df7b2ea662262884393125291f5dcf4",
+        "bytes": 627
+      },
+      "inputContext": {
+        "generation": 1,
+        "path": "singularity/work-items/CFA-STORY/context/inputs-verification-gen1.json",
+        "sha256": "e8931204451d6ba32f1015b29c331722af61ec95df953c36c7a8691c7bb1aa7c",
+        "renderedSha256": "3347d3fcb9a5e146a37b0558ce5fe702f2c1af50f181586a6ee66ef1f8d3f5a7",
+        "mode": "enforce"
+      },
+      "sidecars": [
+        {
+          "path": "singularity/work-items/CFA-STORY/context/sidecars/verification-gen1-singularity-work-items-CFA-STORY-artifacts-verification-test-evidence.md.json",
+          "artifact": "singularity/work-items/CFA-STORY/artifacts/verification/test-evidence.md",
+          "integritySha256": "a5f23258cab65886c2b7306c4515d7ae61246e9e0cabaa58d7d6993c0915a492"
+        }
+      ],
+      "sourceCommit": "b88f5c7f0db0e86219a6e4b09cfdc304f6617cf4",
+      "agentBriefs": [
+        {
+          "generation": 1,
+          "consumerPhase": "release",
+          "status": "ready",
+          "path": "singularity/work-items/CFA-STORY/context/briefs/verification-gen1-for-release.json",
+          "renderedPath": "singularity/work-items/CFA-STORY/context/briefs/verification-gen1-for-release.md",
+          "sourceSha256": "b03a26d34814633d7b90323970a10df2e797bf8de5473988cffdf5b6a2e2757b",
+          "sourceBytes": 22970,
+          "renderedSha256": "07a0337a34351c3a0055d2fb2131efe07f1e19b07c9d4aca7eaa161e0b87cdf4",
+          "integritySha256": "44d64bb225ce70893acc704adf7daa11303573abd8348733e573616b74e75973"
+        }
+      ],
+      "generationPublications": [
+        {
+          "generation": 1,
+          "publishedAt": "2026-08-27T14:20:03.429Z",
+          "changeSetDigest": null,
+          "resultDigest": "sha256:a7fb43c83f392b80a34b1f74dde28399a197f936ca5b5beefe2ba0b5953d5ab5",
+          "record": {
+            "path": "singularity/work-items/CFA-STORY/context/generation-publications/verification-gen1.json",
+            "sha256": "sha256:b97ee8f63b16fc783cc8966a0a91cd3154a36143820183626fcff7f6947e56ca"
+          }
+        }
+      ]
     },
     "release": {
       "id": "release",
@@ -5451,6 +5558,14 @@
       "event": "work_interval_started",
       "phase": "verification",
       "detail": "baseline 1a13733b9be6 at 6c4ce916ba59"
+    },
+    {
+      "at": "2026-08-27T14:20:03.504Z",
+      "actor": "ashokraj2011",
+      "agent": "architect",
+      "event": "phase_generated",
+      "phase": "verification",
+      "detail": "generation 1"
     }
   ],
   "measurement": {
@@ -7669,6 +7784,105 @@
           }
         },
         "createdAt": "2026-08-27T14:07:45.522Z"
+      }
+    },
+    {
+      "schemaVersion": 1,
+      "event": {
+        "schemaVersion": 1,
+        "eventId": "3d7fb938-513d-4c94-97e8-58dbf720cacf",
+        "type": "artifact-generated",
+        "subject": {
+          "kind": "story",
+          "id": "CFA-STORY",
+          "branch": "CFA-STORY"
+        },
+        "phaseId": "verification",
+        "generation": 1,
+        "actor": {
+          "name": "Ashok Raj",
+          "email": "88361104+ashokraj2011@users.noreply.github.com",
+          "login": "ashokraj2011",
+          "githubLookup": "resolved"
+        },
+        "agent": null,
+        "authorityGroup": null,
+        "payload": {
+          "decision": null,
+          "reviewPacketSha256": null
+        },
+        "sourceCommit": null,
+        "idempotencyKey": null,
+        "idempotencyHash": null,
+        "createdAt": "2026-08-27T14:20:03.198Z"
+      },
+      "ledgerIntent": {
+        "schemaVersion": 1,
+        "eventId": "3d7fb938-513d-4c94-97e8-58dbf720cacf",
+        "eventType": "artifact-generated",
+        "capabilityId": "calc-app",
+        "subject": {
+          "branch": "CFA-STORY",
+          "generation": 1,
+          "phase": "verification",
+          "workId": "CFA-STORY",
+          "workType": "spec-driven-standard"
+        },
+        "actor": {
+          "name": "Ashok Raj",
+          "email": "88361104+ashokraj2011@users.noreply.github.com",
+          "githubLogin": "ashokraj2011",
+          "identityAssurance": "configured-local"
+        },
+        "agent": null,
+        "authorityGroup": null,
+        "payload": {
+          "capabilityMapSha256": "df69fe9244ab92f707336cad19121607344bddab441561046e049757a9bbbd4a",
+          "capabilityPolicy": {
+            "protectedPaths": [],
+            "qualityCommands": [],
+            "requiredAuthorityGroups": [],
+            "requiredChecks": [],
+            "requiredWorldModelViews": []
+          },
+          "configPath": "singularity/workflow.yml",
+          "configSha256": "87be75456efb3109772edfe7165e275f0477ca07d457e4b39cab66d0e30258e2",
+          "lifecycleEventId": "3d7fb938-513d-4c94-97e8-58dbf720cacf",
+          "lifecyclePayload": {
+            "decision": null,
+            "reviewPacketSha256": null
+          },
+          "templateSha256": "46a93cccc0edf7b3d878f05f212ed68350c26cedb33d96b3c447ac38bde20c40",
+          "lifecycleEvent": {
+            "schemaVersion": 1,
+            "eventId": "3d7fb938-513d-4c94-97e8-58dbf720cacf",
+            "type": "artifact-generated",
+            "subject": {
+              "kind": "story",
+              "id": "CFA-STORY",
+              "branch": "CFA-STORY"
+            },
+            "phaseId": "verification",
+            "generation": 1,
+            "actor": {
+              "name": "Ashok Raj",
+              "email": "88361104+ashokraj2011@users.noreply.github.com",
+              "login": "ashokraj2011",
+              "githubLookup": "resolved"
+            },
+            "agent": null,
+            "authorityGroup": null,
+            "payload": {
+              "decision": null,
+              "reviewPacketSha256": null
+            },
+            "sourceCommit": null,
+            "idempotencyKey": null,
+            "idempotencyHash": null,
+            "createdAt": "2026-08-27T14:20:03.198Z"
+          }
+        },
+        "createdAt": "2026-08-27T14:20:03.203Z"
       }
     }
   ],

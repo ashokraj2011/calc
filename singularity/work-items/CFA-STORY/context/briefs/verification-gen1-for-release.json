@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "workId": "CFA-STORY",
+  "producer": {
+    "phase": "verification",
+    "generation": 1
+  },
+  "consumer": {
+    "phase": "release"
+  },
+  "source": {
+    "path": "singularity/work-items/CFA-STORY/artifacts/verification/test-evidence.md",
+    "sha256": "b03a26d34814633d7b90323970a10df2e797bf8de5473988cffdf5b6a2e2757b",
+    "bytes": 22970
+  },
+  "policy": {
+    "projection": "approved-summary",
+    "preserve": [
+      "Acceptance and specification results",
+      "Negative",
+      "regression",
+      "security",
+      "and non-functional checks"
+    ],
+    "maximumSummaryBytes": 24576,
+    "expansion": "hash-bound-reference",
+    "fallback": "whole"
+  },
+  "policySha256": "21409706a0bca1c81e903c4c027b64d16fac750f924cd9c0136dcf5ffa9f92ef",
+  "status": "ready",
+  "summary": {
+    "heading": "Agent brief"
+  },
+  "preserved": [
+    "Acceptance and specification results",
+    "Negative",
+    "regression",
+    "security",
+    "and non-functional checks"
+  ],
+  "rendered": {
+    "path": "singularity/work-items/CFA-STORY/context/briefs/verification-gen1-for-release.md",
+    "sha256": "07a0337a34351c3a0055d2fb2131efe07f1e19b07c9d4aca7eaa161e0b87cdf4",
+    "bytes": 6029
+  },
+  "generatedAt": "2026-08-27T14:20:03.467Z",
+  "integritySha256": "44d64bb225ce70893acc704adf7daa11303573abd8348733e573616b74e75973"
+}
