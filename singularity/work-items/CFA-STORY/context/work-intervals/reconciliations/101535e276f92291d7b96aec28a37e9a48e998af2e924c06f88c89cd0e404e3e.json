@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 1,
+  "kind": "work-reconciliation",
+  "workId": "CFA-STORY",
+  "workType": "spec-driven-standard",
+  "intervalId": "INT-implementation-G4-004",
+  "phaseId": "implementation",
+  "generation": 4,
+  "baselineSha256": "7d4c48d396bc3147c439eb864a9617f67aac750b06928ea45b2fc9b03508258a",
+  "baseline": {
+    "path": "singularity/work-items/CFA-STORY/context/work-intervals/implementation-gen4-baseline.json",
+    "sha256": "7d4c48d396bc3147c439eb864a9617f67aac750b06928ea45b2fc9b03508258a",
+    "verified": true,
+    "sourceBaseCommit": "bd3674d4ccf19d9324f6b57f339069e65804f30d"
+  },
+  "sourceBaseCommit": "bd3674d4ccf19d9324f6b57f339069e65804f30d",
+  "target": {
+    "branch": "CFA-STORY",
+    "head": "193ab84e9c9affa3d33e1a3b8bcbe1053ff25b90",
+    "includesWorktree": false,
+    "cleanApplicationTree": true,
+    "uncommittedApplicationPaths": []
+  },
+  "findings": [
+    {
+      "path": "src/App.test.jsx",
+      "status": "present",
+      "sha256": "11368b39d3675c7747c3a32fa3e88c01debd9cc8fe9cc199dc61c94853ab23c9",
+      "bytes": 9872,
+      "verdict": "unplanned",
+      "clauseIds": [],
+      "protected": false
+    },
+    {
+      "path": "src/components/CFAStudyToolkit.jsx",
+      "status": "present",
+      "sha256": "3845afec0b31e06533ad5283faa7dfcba0508b1b20bb123b53df9c25ce28dbfe",
+      "bytes": 10926,
+      "verdict": "unplanned",
+      "clauseIds": [],
+      "protected": false
+    }
+  ],
+  "summary": {
+    "changedPaths": 2,
+    "planned": 0,
+    "unplanned": 2,
+    "protected": 0
+  },
+  "decision": {
+    "status": "review",
+    "summaryStatus": "attention",
+    "eligibleForSubmission": true,
+    "reasons": [],
+    "escalationTarget": null
+  },
+  "reconciliationSha256": "101535e276f92291d7b96aec28a37e9a48e998af2e924c06f88c89cd0e404e3e",
+  "reconciledAt": "2026-08-27T12:43:14.776Z",
+  "final": true,
+  "recordedAt": "2026-08-27T12:43:14.778Z",
+  "path": "singularity/work-items/CFA-STORY/context/work-intervals/reconciliations/101535e276f92291d7b96aec28a37e9a48e998af2e924c06f88c89cd0e404e3e.json"
+}

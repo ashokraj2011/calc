@@ -76,52 +76,107 @@
       {
         "clauseId": "AC-001",
         "testSource": "src/App.test.jsx",
-        "bindingAssurance": "namespace-not-applicable"
+        "bindingAssurance": "namespace-not-applicable",
+        "testIdentity": null,
+        "moduleRoot": ".",
+        "commandId": ".-node-tests",
+        "executionAssurance": "module-executed",
+        "testcaseExecutionProven": false,
+        "assuranceNotice": "module executed; tagged test execution not independently proven"
       },
       {
         "clauseId": "AC-002",
         "testSource": "src/App.test.jsx",
-        "bindingAssurance": "namespace-not-applicable"
+        "bindingAssurance": "namespace-not-applicable",
+        "testIdentity": null,
+        "moduleRoot": ".",
+        "commandId": ".-node-tests",
+        "executionAssurance": "module-executed",
+        "testcaseExecutionProven": false,
+        "assuranceNotice": "module executed; tagged test execution not independently proven"
       },
       {
         "clauseId": "AC-003",
         "testSource": "src/App.test.jsx",
-        "bindingAssurance": "namespace-not-applicable"
+        "bindingAssurance": "namespace-not-applicable",
+        "testIdentity": null,
+        "moduleRoot": ".",
+        "commandId": ".-node-tests",
+        "executionAssurance": "module-executed",
+        "testcaseExecutionProven": false,
+        "assuranceNotice": "module executed; tagged test execution not independently proven"
       },
       {
         "clauseId": "AC-004",
         "testSource": "src/App.test.jsx",
-        "bindingAssurance": "namespace-not-applicable"
+        "bindingAssurance": "namespace-not-applicable",
+        "testIdentity": null,
+        "moduleRoot": ".",
+        "commandId": ".-node-tests",
+        "executionAssurance": "module-executed",
+        "testcaseExecutionProven": false,
+        "assuranceNotice": "module executed; tagged test execution not independently proven"
       },
       {
         "clauseId": "AC-005",
         "testSource": "src/App.test.jsx",
         "bindingAssurance": "namespace-qualified-legacy-clause",
-        "tag": "CFA-STORY:AC-005"
+        "tag": "CFA-STORY:AC-005",
+        "testIdentity": null,
+        "moduleRoot": ".",
+        "commandId": ".-node-tests",
+        "executionAssurance": "module-executed",
+        "testcaseExecutionProven": false,
+        "assuranceNotice": "module executed; tagged test execution not independently proven"
       },
       {
         "clauseId": "AC-005",
         "testSource": "src/App.test.jsx",
-        "bindingAssurance": "namespace-not-applicable"
+        "bindingAssurance": "namespace-not-applicable",
+        "testIdentity": null,
+        "moduleRoot": ".",
+        "commandId": ".-node-tests",
+        "executionAssurance": "module-executed",
+        "testcaseExecutionProven": false,
+        "assuranceNotice": "module executed; tagged test execution not independently proven"
       },
       {
         "clauseId": "AC-006",
         "testSource": "src/App.test.jsx",
         "bindingAssurance": "namespace-qualified-legacy-clause",
-        "tag": "CFA-STORY:AC-006"
+        "tag": "CFA-STORY:AC-006",
+        "testIdentity": null,
+        "moduleRoot": ".",
+        "commandId": ".-node-tests",
+        "executionAssurance": "module-executed",
+        "testcaseExecutionProven": false,
+        "assuranceNotice": "module executed; tagged test execution not independently proven"
       },
       {
         "clauseId": "AC-006",
         "testSource": "src/App.test.jsx",
-        "bindingAssurance": "namespace-not-applicable"
+        "bindingAssurance": "namespace-not-applicable",
+        "testIdentity": null,
+        "moduleRoot": ".",
+        "commandId": ".-node-tests",
+        "executionAssurance": "module-executed",
+        "testcaseExecutionProven": false,
+        "assuranceNotice": "module executed; tagged test execution not independently proven"
       }
     ]
   },
-  "testExecutions": [],
+  "testExecutions": [
+    {
+      "commandId": ".-node-tests",
+      "receiptPath": "singularity/work-items/CFA-STORY/context/code-delivery/tests/implementation-gen4-.-node-tests.json",
+      "receiptSha256": "3a5e818b34d616eb89adc550ba0e68cd4920ebdca8c336a8e247de2503a87448",
+      "status": "passed"
+    }
+  ],
   "tree": {
     "workingStateDigest": "sha256:3a64ce428fe8c5d4a28635fefaaf5dba0c838bb13ea01453c0cf5dbb12336a4a",
-    "generationCommit": null,
-    "generationTree": null
+    "generationCommit": "193ab84e9c9affa3d33e1a3b8bcbe1053ff25b90",
+    "generationTree": "0df388d334dc24e3409ed74acfc2e6258d516cb4"
   },
   "model": {
     "task": "code",
@@ -140,6 +195,7 @@
     "observedAt": null,
     "generation": null
   },
-  "status": "pending-tests",
-  "capturedAt": "2026-08-27T12:40:48.786Z"
+  "status": "ready",
+  "capturedAt": "2026-08-27T12:40:48.786Z",
+  "validatedAt": "2026-08-27T12:43:14.653Z"
 }

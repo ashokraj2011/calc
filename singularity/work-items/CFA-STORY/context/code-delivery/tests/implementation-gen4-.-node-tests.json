@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "kind": "test-execution",
+  "commandId": ".-node-tests",
+  "argvSha256": "7ea91cb57633bb94e24395e7b34f059abecf6ac68b822ee60f2db1c06646d5a9",
+  "platform": "darwin",
+  "workingDirectory": ".",
+  "affectedRoots": [
+    "."
+  ],
+  "adapter": "vitest-json",
+  "status": "passed",
+  "exitCode": 0,
+  "timedOut": false,
+  "skipped": false,
+  "suppressed": false,
+  "tests": {
+    "discovered": 33,
+    "passed": 33,
+    "failed": 0,
+    "skipped": 0
+  },
+  "result": {
+    "path": ".sflow/results/node-tests.json",
+    "sha256": "38a493325977b257338cb871d93c95bcce1ce4c687fe6fb57bb8898d3498dff4",
+    "bytes": 12117
+  },
+  "assurance": "module-executed",
+  "testcaseExecutionProven": false,
+  "assuranceNotice": "module executed; tagged test execution not independently proven"
+}
