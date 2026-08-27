@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "kind": "generation-publication",
+  "workId": "CFA-STORY",
+  "phase": "implementation",
+  "generation": 3,
+  "generationIntentId": "6b9fa527-6bc7-4f2e-a52f-01e82def2433",
+  "generationStart": {
+    "path": "singularity/work-items/CFA-STORY/context/generation-start/implementation-gen3.json",
+    "sha256": "sha256:04285a18c7c08f59437bc2584870d573279eff33f0b5ea863f6043381e0267a5"
+  },
+  "changeSet": {
+    "path": "singularity/work-items/CFA-STORY/context/code-delivery/implementation-gen3-changes.json",
+    "digest": "sha256:c61f58ab91b12b4de82c9df4f3a114114aaeee9c0a34c92b081a3bda88792d21"
+  },
+  "resultDigest": "sha256:efda9d82a49aeb6292d48bf5476636e310bac5269a62459d5f8d1203aa3b9ce8",
+  "baseline": {
+    "commit": "239dea7fedd3958c4e024fb0cde8d193dd25a8f9",
+    "tree": "e71009c4b56db34853ef7e1f03169a373511ba0d"
+  },
+  "transactionId": "b01b5050-e60c-452a-b7ac-d029fa85a223",
+  "eventId": "e9c2c534-6752-405c-9b62-c0c20e15fe6a",
+  "eventSha256": "sha256:4016336792e064690c2096ec6a38c10cf38fa491c121f3dee3990e4e9cf35894",
+  "commitBinding": {
+    "method": "containing-governed-transaction",
+    "commit": "$self",
+    "tree": "$self",
+    "parent": "a3d304da725c4c544548a7dfa13ef4ea650e91a4"
+  },
+  "publishedAt": "2026-08-27T08:29:24.471Z",
+  "recordSha256": "sha256:cdadf27b07497d6f3007c1c62a5c969a5675d933674014c912653b220ea1a8df"
+}

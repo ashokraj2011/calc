@@ -257,5 +257,6 @@ describe('CFA Level I toolkit flow', () => {
     expect(screen.getByLabelText(/Investment/i)).toHaveValue(2000);
     expect(screen.getByLabelText(/Return rate/i)).toHaveValue(7);
     expect(screen.getByLabelText(/Years/i)).toHaveValue(6);
+    expect(document.querySelector('.calculator-display')).toHaveAttribute('aria-live', 'polite');
   });
 });

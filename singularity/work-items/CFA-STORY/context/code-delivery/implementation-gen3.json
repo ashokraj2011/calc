@@ -1,0 +1,98 @@
+{
+  "schemaVersion": 2,
+  "kind": "code-delivery",
+  "workId": "CFA-STORY",
+  "phase": "implementation",
+  "generation": 3,
+  "generationIntentId": "6b9fa527-6bc7-4f2e-a52f-01e82def2433",
+  "changeSet": {
+    "path": "singularity/work-items/CFA-STORY/context/code-delivery/implementation-gen3-changes.json",
+    "digest": "sha256:c61f58ab91b12b4de82c9df4f3a114114aaeee9c0a34c92b081a3bda88792d21",
+    "sourcePaths": [
+      ".sflow/results/node-tests.json",
+      "src/components/CFAStudyToolkit.jsx"
+    ],
+    "deletedSourcePaths": [],
+    "executableTestPaths": [
+      "src/App.test.jsx"
+    ],
+    "supportingTestPaths": []
+  },
+  "traceability": {
+    "required": [
+      "AC-001",
+      "AC-002",
+      "AC-003",
+      "AC-004",
+      "AC-005",
+      "AC-006"
+    ],
+    "bound": [
+      "AC-001",
+      "AC-002",
+      "AC-003",
+      "AC-004",
+      "AC-005",
+      "AC-006"
+    ],
+    "missing": [],
+    "ambiguous": [],
+    "bindings": [
+      {
+        "clauseId": "AC-001",
+        "testSource": "src/App.test.jsx",
+        "bindingAssurance": "namespace-not-applicable"
+      },
+      {
+        "clauseId": "AC-002",
+        "testSource": "src/App.test.jsx",
+        "bindingAssurance": "namespace-not-applicable"
+      },
+      {
+        "clauseId": "AC-003",
+        "testSource": "src/App.test.jsx",
+        "bindingAssurance": "namespace-not-applicable"
+      },
+      {
+        "clauseId": "AC-004",
+        "testSource": "src/App.test.jsx",
+        "bindingAssurance": "namespace-not-applicable"
+      },
+      {
+        "clauseId": "AC-005",
+        "testSource": "src/App.test.jsx",
+        "bindingAssurance": "namespace-not-applicable"
+      },
+      {
+        "clauseId": "AC-006",
+        "testSource": "src/App.test.jsx",
+        "bindingAssurance": "namespace-not-applicable"
+      }
+    ]
+  },
+  "testExecutions": [],
+  "tree": {
+    "workingStateDigest": "sha256:9147c8e4bf84ee908b5116538bfb4fb80c56b9400832321f2ff9e0f4fd057531",
+    "generationCommit": null,
+    "generationTree": null
+  },
+  "model": {
+    "task": "code",
+    "required": false,
+    "authorshipProducer": "human",
+    "minimumAssurance": "unavailable",
+    "mappingRevision": null,
+    "provider": null,
+    "requestedModel": null,
+    "resolvedModel": null,
+    "assurance": "unavailable",
+    "invocationIds": [],
+    "host": null,
+    "observationSource": null,
+    "observationIntegrity": "unverified-local",
+    "observedAt": null,
+    "generation": null
+  },
+  "status": "pending-tests",
+  "capturedAt": "2026-08-27T08:29:24.471Z"
+}

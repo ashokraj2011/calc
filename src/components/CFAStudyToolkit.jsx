@@ -225,7 +225,7 @@ export const CFAStudyToolkit = ({ soundEnabled }) => {
           ))}
         </div>
 
-        <div className="calculator-display p-4 rounded-xl">
+        <div className="calculator-display p-4 rounded-xl" aria-live="polite">
           {validValues ? (
             <>
               <div className="text-xs uppercase tracking-[0.2em] u-text-text-muted">{definition.resultLabel}</div>

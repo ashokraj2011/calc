@@ -4,7 +4,7 @@
   "workId": "CFA-STORY",
   "workType": "spec-driven-standard",
   "phase": "implementation",
-  "generation": 2,
+  "generation": 3,
   "status": "in_progress",
   "generatedBy": {
     "name": "Ashok Raj",
@@ -42,10 +42,10 @@
       "sha256": "6efc08e8e20e92e33a30679fed236e92d9f899738e48ed8e62d0f394800be871",
       "bytes": 2103
     },
-    "generation": 2,
-    "publishedAt": "2026-08-27T08:25:12.879Z"
+    "generation": 3,
+    "publishedAt": "2026-08-27T08:29:24.471Z"
   },
-  "sourceCommit": "e31b2ee51cde9a0938ddb507a9ee3f2c46abece8",
+  "sourceCommit": "a3d304da725c4c544548a7dfa13ef4ea650e91a4",
   "generationCommit": "91749891e894d50964f26f29b7181695d3bcec8e",
   "publicationCommit": "91749891e894d50964f26f29b7181695d3bcec8e",
   "configSha256": "87be75456efb3109772edfe7165e275f0477ca07d457e4b39cab66d0e30258e2",
@@ -55,9 +55,9 @@
     "sha256": "61cd7cba79a0dd2914a25b53496b8bd9c575c36219597d65b8ec10010e801d9c"
   },
   "inputs": {
-    "generation": 2,
-    "path": "singularity/work-items/CFA-STORY/context/inputs-implementation-gen2.json",
-    "sha256": "be7ae4ed7e6732b31f399a08aeee75f276041e9e5bd5b184612d3b935632f2de",
+    "generation": 3,
+    "path": "singularity/work-items/CFA-STORY/context/inputs-implementation-gen3.json",
+    "sha256": "b7316659c6d85efbc5442f759ecb3b469c45c0c18c0f7a85938f2a3c560e08a3",
     "renderedSha256": "7a06108a2b4aa0771de62a918627acbb4adee04b59504d5c1224a5199fec66b2",
     "mode": "enforce"
   },
@@ -80,6 +80,14 @@
       "generation": 2,
       "path": "singularity/work-items/CFA-STORY/telemetry/implementation-gen2.json",
       "sha256": "164e3b1d15c84bb72be5fcb624d1fab14a8964146caf4c816f5ef76743e433e6",
+      "status": "not-invoked",
+      "models": [],
+      "providerCost": null
+    },
+    {
+      "generation": 3,
+      "path": "singularity/work-items/CFA-STORY/telemetry/implementation-gen3.json",
+      "sha256": "2e193047ade8b2fdf9842677256daaae4bf730bf823b4aa3deb76d12140d56a0",
       "status": "not-invoked",
       "models": [],
       "providerCost": null
