@@ -1,0 +1,28 @@
+{
+  "artifact": {
+    "generation": 1,
+    "mediaType": "text/markdown",
+    "outputId": "document",
+    "path": "singularity/work-items/CFA-STORY/artifacts/convergence/convergence.md",
+    "phaseId": "convergence"
+  },
+  "createdAt": "2026-08-27T06:48:14.265Z",
+  "kind": "governed-reference",
+  "repository": {
+    "id": "calc",
+    "origin": "https://github.com/ashokraj2011/calc.git"
+  },
+  "revision": {
+    "bytes": 18028,
+    "commitSha": "18fc0c8bb6b77382f946c9fb1608a5e040b75d04",
+    "sha256": "beb42f1a99ac215fd6a1ca37c12dc9d55d04d9b9d5be6377dcd026f4e89c74e1"
+  },
+  "schemaVersion": 1,
+  "subject": {
+    "branch": "CFA-STORY",
+    "id": "CFA-STORY",
+    "kind": "story",
+    "subjectRevision": 1
+  },
+  "visibility": "model"
+}

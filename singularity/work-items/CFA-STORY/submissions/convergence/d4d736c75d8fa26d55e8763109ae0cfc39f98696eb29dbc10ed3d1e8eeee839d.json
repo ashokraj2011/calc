@@ -1,0 +1,109 @@
+{
+  "schemaVersion": 1,
+  "workId": "CFA-STORY",
+  "epicId": null,
+  "planId": null,
+  "jiraIssueId": "CFA-STORY",
+  "initialJiraKey": null,
+  "currentJiraKey": null,
+  "canonicalBranch": "CFA-STORY",
+  "submittedBranch": "CFA-STORY",
+  "submissionCommit": "18fc0c8bb6b77382f946c9fb1608a5e040b75d04",
+  "sourceCommit": "18fc0c8bb6b77382f946c9fb1608a5e040b75d04",
+  "sourceTreeSha256": "sha256:034ddb59eab017d6169b9f2107c63d833c1e46f63cf6e936e9eba4668af8468e",
+  "phase": "convergence",
+  "generation": 1,
+  "authorship": {
+    "schemaVersion": 1,
+    "producer": "legacy-unspecified",
+    "channel": "legacy",
+    "actor": {
+      "name": "Ashok Raj",
+      "email": "88361104+ashokraj2011@users.noreply.github.com",
+      "login": "ashokraj2011",
+      "githubLookup": "resolved"
+    },
+    "governedAgentContext": {
+      "agentId": "architect"
+    },
+    "kernelModel": {
+      "invoked": false,
+      "status": "exact",
+      "invocationIds": []
+    },
+    "externalAiUse": {
+      "value": "unknown",
+      "status": "unavailable"
+    },
+    "source": {
+      "kind": "in-place",
+      "filename": "convergence.md",
+      "mediaType": "text/markdown",
+      "sha256": "5f53ea1231b75270ad4a3cdace2ca95dd668bec486d268e76c1912dd5894b9f0",
+      "bytes": 4472
+    },
+    "generation": 1,
+    "publishedAt": "2026-08-27T06:43:51.740Z"
+  },
+  "artifacts": [
+    {
+      "path": "singularity/work-items/CFA-STORY/artifacts/convergence/convergence.md",
+      "kind": "document",
+      "sha256": "e4e2d3e1b02f8c2957a43b25db7f8de24bc1d4320c5506aa795d32a28dcfa4a5",
+      "size": 18110,
+      "reference": {
+        "handle": "sfref:v1:story:CFA-STORY:33edd8a54e4493491ed1fc8ac65f03d33805902c9c6fd1dc94f787662a0e1697",
+        "recordHash": "33edd8a54e4493491ed1fc8ac65f03d33805902c9c6fd1dc94f787662a0e1697"
+      }
+    }
+  ],
+  "references": [
+    {
+      "handle": "sfref:v1:story:CFA-STORY:33edd8a54e4493491ed1fc8ac65f03d33805902c9c6fd1dc94f787662a0e1697",
+      "recordHash": "33edd8a54e4493491ed1fc8ac65f03d33805902c9c6fd1dc94f787662a0e1697",
+      "purpose": "review-evidence",
+      "required": true
+    }
+  ],
+  "agentBriefs": [],
+  "checks": [],
+  "usage": [
+    {
+      "status": "unavailable",
+      "source": "copilot-otel-unavailable",
+      "provider": null,
+      "model": null,
+      "requestedModel": null,
+      "resolvedModel": null,
+      "resolvedModelAssurance": "unavailable",
+      "inputTokens": null,
+      "outputTokens": null,
+      "cachedInputTokens": null,
+      "cacheWriteInputTokens": null,
+      "totalTokens": null,
+      "providerCost": null,
+      "costStatus": "unavailable",
+      "spans": null,
+      "startedAt": "2026-08-27T06:43:51.740Z",
+      "completedAt": "2026-08-27T06:43:51.740Z",
+      "agent": "architect",
+      "generation": 1
+    }
+  ],
+  "approvals": [],
+  "visualAssurance": null,
+  "submissionEvidence": {
+    "testExecutions": [],
+    "checksSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "artifactSetSha256": "0041d4898625923b92ac55d0cc454cc8aa0e1bf697af2f8f4bbe82c4bcf7c45b"
+  },
+  "submittedAt": "2026-08-27T06:48:14.232Z",
+  "submittedBy": {
+    "name": "Ashok Raj",
+    "email": "88361104+ashokraj2011@users.noreply.github.com",
+    "login": "ashokraj2011",
+    "githubLookup": "resolved"
+  },
+  "status": "awaiting_review",
+  "packetSha256": "d4d736c75d8fa26d55e8763109ae0cfc39f98696eb29dbc10ed3d1e8eeee839d"
+}
