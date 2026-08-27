@@ -1,0 +1,28 @@
+{
+  "artifact": {
+    "generation": 1,
+    "mediaType": "text/markdown",
+    "outputId": "document",
+    "path": "singularity/work-items/CFA-STORY/artifacts/release/verification/evidence-index.md",
+    "phaseId": "release"
+  },
+  "createdAt": "2026-08-27T15:00:36.969Z",
+  "kind": "governed-reference",
+  "repository": {
+    "id": "calc",
+    "origin": "https://github.com/ashokraj2011/calc.git"
+  },
+  "revision": {
+    "bytes": 485,
+    "commitSha": "f9d3b64a7231332ba76e4ead5366fb7d2fc70c84",
+    "sha256": "b1f9dbb58c49e65ac72ae42077f5f0f47754390cd9ef64b613ee8b5888d0beb8"
+  },
+  "schemaVersion": 1,
+  "subject": {
+    "branch": "CFA-STORY",
+    "id": "CFA-STORY",
+    "kind": "story",
+    "subjectRevision": 1
+  },
+  "visibility": "model"
+}

@@ -1,0 +1,28 @@
+{
+  "artifact": {
+    "generation": 1,
+    "mediaType": "text/markdown",
+    "outputId": "document",
+    "path": "singularity/work-items/CFA-STORY/artifacts/release/conformance.md",
+    "phaseId": "release"
+  },
+  "createdAt": "2026-08-27T15:00:36.925Z",
+  "kind": "governed-reference",
+  "repository": {
+    "id": "calc",
+    "origin": "https://github.com/ashokraj2011/calc.git"
+  },
+  "revision": {
+    "bytes": 12189,
+    "commitSha": "f9d3b64a7231332ba76e4ead5366fb7d2fc70c84",
+    "sha256": "e24f2ea1bc949e69e3401032ac89db915e704af85d2c38cc0b90f477c3b578da"
+  },
+  "schemaVersion": 1,
+  "subject": {
+    "branch": "CFA-STORY",
+    "id": "CFA-STORY",
+    "kind": "story",
+    "subjectRevision": 1
+  },
+  "visibility": "model"
+}
