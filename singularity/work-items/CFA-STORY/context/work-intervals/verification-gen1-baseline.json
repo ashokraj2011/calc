@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "kind": "work-interval-baseline",
+  "intervalId": "INT-verification-G1-005",
+  "workId": "CFA-STORY",
+  "workType": "spec-driven-standard",
+  "railId": "spec-driven-standard",
+  "phaseId": "verification",
+  "generation": 1,
+  "branch": "CFA-STORY",
+  "sourceBaseCommit": "6c4ce916ba5982684de9731fc2ece2c486244283",
+  "configurationSha256": "87be75456efb3109772edfe7165e275f0477ca07d457e4b39cab66d0e30258e2",
+  "sourceSha256": "9bf622393e4583d6985423b31f43aff0a4745257daf469e27a55612e3248e70e",
+  "templateSha256": "46a93cccc0edf7b3d878f05f212ed68350c26cedb33d96b3c447ac38bde20c40",
+  "workflowSubjectRevision": "sha256:a8eecc1729d81201ee331258ae7ae827e75d60a5ee6ae69f1565d8e27c7c6217",
+  "protectedPaths": [
+    ".github/agents",
+    ".github/skills",
+    "plugin/agents",
+    "plugin/skills",
+    "singularity/agent-mappings.yml",
+    "singularity/agents",
+    "singularity/agents.lock.yml",
+    "singularity/impact.yml",
+    "singularity/prompts",
+    "singularity/templates",
+    "singularity/workflow.yml"
+  ],
+  "requiredChecks": [],
+  "requiredChecksSha256": "sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "policySha256": "sha256:4cfcedf6d91daaa03a35878dfff0510f6f8e44146c2a433e8ca5e9f4a3a9775d",
+  "escalationLadderSha256": null,
+  "reconciliationPolicy": {
+    "changedPathLimit": 5,
+    "escalationTarget": null,
+    "localProvidersOnly": true
+  },
+  "baselineSha256": "1a13733b9be61bf22845f7169dd69915fef852f6cbf484fadc3ef9766e223c3d",
+  "createdAt": "2026-08-27T14:07:45.697Z",
+  "path": "singularity/work-items/CFA-STORY/context/work-intervals/verification-gen1-baseline.json",
+  "status": "open"
+}

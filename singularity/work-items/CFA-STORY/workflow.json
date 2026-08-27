@@ -2600,7 +2600,7 @@
     ]
   },
   "status": "in_progress",
-  "currentPhase": "convergence",
+  "currentPhase": "verification",
   "phaseOrder": [
     "specification",
     "planning",
@@ -4531,7 +4531,7 @@
       "label": "Convergence",
       "order": 3,
       "defaultAgent": "architect",
-      "status": "awaiting_approval",
+      "status": "approved",
       "requiredArtifact": {
         "path": "artifacts/convergence/convergence.md",
         "kind": "verification-report",
@@ -4628,8 +4628,8 @@
       "qualityCommands": [],
       "startedAt": "2026-08-27T12:48:34.600Z",
       "submittedAt": "2026-08-27T13:42:04.485Z",
-      "approvedAt": null,
-      "approvedBy": null,
+      "approvedAt": "2026-08-27T14:07:45.684Z",
+      "approvedBy": "ashokraj2011",
       "rejectedAt": null,
       "rejectedBy": null,
       "rejectionReason": null,
@@ -4735,6 +4735,48 @@
             }
           ],
           "reviewPacketSha256": "d4d736c75d8fa26d55e8763109ae0cfc39f98696eb29dbc10ed3d1e8eeee839d"
+        },
+        {
+          "decision": "approved",
+          "phase": "convergence",
+          "at": "2026-08-27T14:07:45.684Z",
+          "actor": {
+            "name": "Ashok Raj",
+            "email": "88361104+ashokraj2011@users.noreply.github.com",
+            "login": "ashokraj2011",
+            "githubLookup": "resolved"
+          },
+          "agent": "architect",
+          "authorityGroup": "architecture-reviewers",
+          "identityAssurance": "configured-local",
+          "channel": "copilot-selection-receipt",
+          "generation": 1,
+          "artifactSha256": [
+            {
+              "path": "singularity/work-items/CFA-STORY/artifacts/convergence/convergence.md",
+              "sha256": "a0e4987c5d411a46ef319617472c537e1c9e005379825d55bda36781780d8ce6"
+            }
+          ],
+          "reviewPacketSha256": "62bb834abc26fbbe129f50999e5f84fa9003d31d9acc22cfb40f1927234d1755",
+          "evidenceCommit": "6c4ce916ba5982684de9731fc2ece2c486244283",
+          "artifactSetSha256": "f7313ca7049c507e51cdd49e8cbcdea1ff0077b18f807727667dc44b912914ba",
+          "actionContext": {
+            "phase": "convergence",
+            "label": "Convergence",
+            "generation": 1,
+            "submittedAt": "2026-08-27T13:42:04.485Z",
+            "artifacts": [
+              {
+                "path": "singularity/work-items/CFA-STORY/artifacts/convergence/convergence.md",
+                "sha256": "a0e4987c5d411a46ef319617472c537e1c9e005379825d55bda36781780d8ce6"
+              }
+            ],
+            "agentBriefs": [],
+            "reviewPacketSha256": "62bb834abc26fbbe129f50999e5f84fa9003d31d9acc22cfb40f1927234d1755",
+            "submittedSourceCommit": "18fc0c8bb6b77382f946c9fb1608a5e040b75d04",
+            "planId": "22d12762153042adf9ba31e8"
+          },
+          "selfApproval": true
         }
       ],
       "designSourceSets": [],
@@ -4742,12 +4784,14 @@
         {
           "path": "singularity/work-items/CFA-STORY/artifacts/convergence/convergence.md",
           "kind": "document",
-          "status": "pending",
+          "status": "approved",
           "exists": true,
-          "size": 22465,
-          "sha256": "a0e4987c5d411a46ef319617472c537e1c9e005379825d55bda36781780d8ce6",
+          "size": 24132,
+          "sha256": "f37dda79e1eb128f6dd68ee6b537556ee31921d60fa774bb9aacdfd9a14e5505",
           "registeredAt": "2026-08-27T06:43:49.768Z",
-          "updatedAt": "2026-08-27T13:42:04.487Z"
+          "updatedAt": "2026-08-27T14:07:45.685Z",
+          "approvedAt": "2026-08-27T14:07:45.684Z",
+          "approvedBy": "ashokraj2011"
         }
       ],
       "checks": [],
@@ -4788,7 +4832,7 @@
       "label": "Verification",
       "order": 4,
       "defaultAgent": "qa",
-      "status": "not_started",
+      "status": "in_progress",
       "requiredArtifact": {
         "path": "artifacts/verification/test-evidence.md",
         "kind": "test-evidence",
@@ -4888,7 +4932,7 @@
         }
       },
       "qualityCommands": [],
-      "startedAt": null,
+      "startedAt": "2026-08-27T14:07:45.684Z",
       "submittedAt": null,
       "approvedAt": null,
       "approvedBy": null,
@@ -5391,6 +5435,22 @@
       "event": "phase_submitted",
       "phase": "convergence",
       "detail": "1 artifacts"
+    },
+    {
+      "at": "2026-08-27T14:07:45.684Z",
+      "actor": "ashokraj2011",
+      "agent": "architect",
+      "event": "phase_self_approved",
+      "phase": "convergence",
+      "detail": "threshold reached; advanced to verification"
+    },
+    {
+      "at": "2026-08-27T14:07:45.697Z",
+      "actor": "system",
+      "agent": null,
+      "event": "work_interval_started",
+      "phase": "verification",
+      "detail": "baseline 1a13733b9be6 at 6c4ce916ba59"
     }
   ],
   "measurement": {
@@ -7505,27 +7565,125 @@
         },
         "createdAt": "2026-08-27T13:42:04.303Z"
       }
+    },
+    {
+      "schemaVersion": 1,
+      "event": {
+        "schemaVersion": 1,
+        "eventId": "93e5fe03-4c7a-429b-b792-6993d8bff331",
+        "type": "phase-approved",
+        "subject": {
+          "kind": "story",
+          "id": "CFA-STORY",
+          "branch": "CFA-STORY"
+        },
+        "phaseId": "convergence",
+        "generation": 1,
+        "actor": {
+          "name": "Ashok Raj",
+          "email": "88361104+ashokraj2011@users.noreply.github.com",
+          "login": "ashokraj2011",
+          "githubLookup": "resolved"
+        },
+        "agent": "architect",
+        "authorityGroup": "architecture-reviewers",
+        "payload": {
+          "decision": "approved",
+          "reviewPacketSha256": "62bb834abc26fbbe129f50999e5f84fa9003d31d9acc22cfb40f1927234d1755",
+          "evidenceCommit": "6c4ce916ba5982684de9731fc2ece2c486244283",
+          "artifactSetSha256": "f7313ca7049c507e51cdd49e8cbcdea1ff0077b18f807727667dc44b912914ba"
+        },
+        "sourceCommit": null,
+        "idempotencyKey": null,
+        "idempotencyHash": null,
+        "createdAt": "2026-08-27T14:07:45.515Z"
+      },
+      "ledgerIntent": {
+        "schemaVersion": 1,
+        "eventId": "93e5fe03-4c7a-429b-b792-6993d8bff331",
+        "eventType": "phase-approved",
+        "capabilityId": "calc-app",
+        "subject": {
+          "branch": "CFA-STORY",
+          "generation": 1,
+          "phase": "convergence",
+          "workId": "CFA-STORY",
+          "workType": "spec-driven-standard"
+        },
+        "actor": {
+          "name": "Ashok Raj",
+          "email": "88361104+ashokraj2011@users.noreply.github.com",
+          "githubLogin": "ashokraj2011",
+          "identityAssurance": "configured-local"
+        },
+        "agent": "architect",
+        "authorityGroup": "architecture-reviewers",
+        "payload": {
+          "capabilityMapSha256": "df69fe9244ab92f707336cad19121607344bddab441561046e049757a9bbbd4a",
+          "capabilityPolicy": {
+            "protectedPaths": [],
+            "qualityCommands": [],
+            "requiredAuthorityGroups": [],
+            "requiredChecks": [],
+            "requiredWorldModelViews": []
+          },
+          "configPath": "singularity/workflow.yml",
+          "configSha256": "87be75456efb3109772edfe7165e275f0477ca07d457e4b39cab66d0e30258e2",
+          "lifecycleEventId": "93e5fe03-4c7a-429b-b792-6993d8bff331",
+          "lifecyclePayload": {
+            "decision": "approved",
+            "reviewPacketSha256": "62bb834abc26fbbe129f50999e5f84fa9003d31d9acc22cfb40f1927234d1755",
+            "evidenceCommit": "6c4ce916ba5982684de9731fc2ece2c486244283",
+            "artifactSetSha256": "f7313ca7049c507e51cdd49e8cbcdea1ff0077b18f807727667dc44b912914ba"
+          },
+          "templateSha256": "eb257477afca0229ed858875499736c57498015aaee0a527b714356819a9dde2",
+          "lifecycleEvent": {
+            "schemaVersion": 1,
+            "eventId": "93e5fe03-4c7a-429b-b792-6993d8bff331",
+            "type": "phase-approved",
+            "subject": {
+              "kind": "story",
+              "id": "CFA-STORY",
+              "branch": "CFA-STORY"
+            },
+            "phaseId": "convergence",
+            "generation": 1,
+            "actor": {
+              "name": "Ashok Raj",
+              "email": "88361104+ashokraj2011@users.noreply.github.com",
+              "login": "ashokraj2011",
+              "githubLookup": "resolved"
+            },
+            "agent": "architect",
+            "authorityGroup": "architecture-reviewers",
+            "payload": {
+              "decision": "approved",
+              "reviewPacketSha256": "62bb834abc26fbbe129f50999e5f84fa9003d31d9acc22cfb40f1927234d1755",
+              "evidenceCommit": "6c4ce916ba5982684de9731fc2ece2c486244283",
+              "artifactSetSha256": "f7313ca7049c507e51cdd49e8cbcdea1ff0077b18f807727667dc44b912914ba"
+            },
+            "sourceCommit": null,
+            "idempotencyKey": null,
+            "idempotencyHash": null,
+            "createdAt": "2026-08-27T14:07:45.515Z"
+          }
+        },
+        "createdAt": "2026-08-27T14:07:45.522Z"
+      }
     }
   ],
   "repairBudgets": {},
   "workIntervals": {
     "schemaVersion": 1,
     "current": {
-      "intervalId": "INT-implementation-G4-004",
-      "phaseId": "implementation",
-      "generation": 4,
-      "baselineSha256": "7d4c48d396bc3147c439eb864a9617f67aac750b06928ea45b2fc9b03508258a",
-      "sourceBaseCommit": "bd3674d4ccf19d9324f6b57f339069e65804f30d",
+      "intervalId": "INT-verification-G1-005",
+      "phaseId": "verification",
+      "generation": 1,
+      "baselineSha256": "1a13733b9be61bf22845f7169dd69915fef852f6cbf484fadc3ef9766e223c3d",
+      "sourceBaseCommit": "6c4ce916ba5982684de9731fc2ece2c486244283",
       "escalationTarget": null,
-      "path": "singularity/work-items/CFA-STORY/context/work-intervals/implementation-gen4-baseline.json",
-      "status": "closed",
-      "finalReconciliation": {
-        "reconciliationSha256": "101535e276f92291d7b96aec28a37e9a48e998af2e924c06f88c89cd0e404e3e",
-        "path": "singularity/work-items/CFA-STORY/context/work-intervals/reconciliations/101535e276f92291d7b96aec28a37e9a48e998af2e924c06f88c89cd0e404e3e.json",
-        "targetHead": "193ab84e9c9affa3d33e1a3b8bcbe1053ff25b90",
-        "recordedAt": "2026-08-27T12:43:14.778Z"
-      },
-      "closedAt": "2026-08-27T12:48:34.600Z"
+      "path": "singularity/work-items/CFA-STORY/context/work-intervals/verification-gen1-baseline.json",
+      "status": "open"
     },
     "history": [
       {
@@ -7566,6 +7724,16 @@
         "sourceBaseCommit": "bd3674d4ccf19d9324f6b57f339069e65804f30d",
         "escalationTarget": null,
         "path": "singularity/work-items/CFA-STORY/context/work-intervals/implementation-gen4-baseline.json",
+        "status": "open"
+      },
+      {
+        "intervalId": "INT-verification-G1-005",
+        "phaseId": "verification",
+        "generation": 1,
+        "baselineSha256": "1a13733b9be61bf22845f7169dd69915fef852f6cbf484fadc3ef9766e223c3d",
+        "sourceBaseCommit": "6c4ce916ba5982684de9731fc2ece2c486244283",
+        "escalationTarget": null,
+        "path": "singularity/work-items/CFA-STORY/context/work-intervals/verification-gen1-baseline.json",
         "status": "open"
       }
     ],
