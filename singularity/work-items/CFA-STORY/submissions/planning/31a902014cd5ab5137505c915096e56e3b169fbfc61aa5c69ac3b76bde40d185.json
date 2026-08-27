@@ -1,0 +1,140 @@
+{
+  "schemaVersion": 1,
+  "workId": "CFA-STORY",
+  "epicId": null,
+  "planId": null,
+  "jiraIssueId": "CFA-STORY",
+  "initialJiraKey": null,
+  "currentJiraKey": null,
+  "canonicalBranch": "CFA-STORY",
+  "submittedBranch": "CFA-STORY",
+  "submissionCommit": "514d01abc7b8e31c77d8a71ee20a6eded0b3ac82",
+  "sourceCommit": "514d01abc7b8e31c77d8a71ee20a6eded0b3ac82",
+  "sourceTreeSha256": "sha256:66acd7cea60a515fee79e6350d4a3ab180035296633d9471d21d3b23cb87a690",
+  "phase": "planning",
+  "generation": 1,
+  "authorship": {
+    "schemaVersion": 1,
+    "producer": "governed-agent",
+    "channel": "copilot-host",
+    "actor": {
+      "name": "Ashok Raj",
+      "email": "88361104+ashokraj2011@users.noreply.github.com",
+      "login": "ashokraj2011",
+      "githubLookup": "resolved"
+    },
+    "governedAgentContext": {
+      "agentId": "architect"
+    },
+    "kernelModel": {
+      "invoked": false,
+      "status": "exact",
+      "invocationIds": []
+    },
+    "externalAiUse": {
+      "value": "unknown",
+      "status": "unavailable"
+    },
+    "source": {
+      "kind": "in-place",
+      "filename": "plan.md",
+      "mediaType": "text/markdown",
+      "sha256": "01914a08ae0a0fb2a4a4024edf0b5b5289a953b41c609d779c0324e53e15c671",
+      "bytes": 8558
+    },
+    "generation": 1,
+    "publishedAt": "2026-08-27T05:27:58.430Z"
+  },
+  "artifacts": [
+    {
+      "path": "singularity/work-items/CFA-STORY/artifacts/planning/plan.md",
+      "kind": "document",
+      "sha256": "6dde44c405dc92b32185b93b201622f46dd0d561a34097412b16d01975d056bf",
+      "size": 17892,
+      "reference": {
+        "handle": "sfref:v1:story:CFA-STORY:52a4599271da613ee07b364876cccc1cd7ea7955ad61424cf55b5839f44ce46b",
+        "recordHash": "52a4599271da613ee07b364876cccc1cd7ea7955ad61424cf55b5839f44ce46b"
+      }
+    }
+  ],
+  "references": [
+    {
+      "handle": "sfref:v1:story:CFA-STORY:52a4599271da613ee07b364876cccc1cd7ea7955ad61424cf55b5839f44ce46b",
+      "recordHash": "52a4599271da613ee07b364876cccc1cd7ea7955ad61424cf55b5839f44ce46b",
+      "purpose": "review-evidence",
+      "required": true
+    }
+  ],
+  "agentBriefs": [
+    {
+      "consumerPhase": "convergence",
+      "status": "ready",
+      "path": "singularity/work-items/CFA-STORY/context/briefs/planning-gen1-for-convergence.json",
+      "renderedPath": "singularity/work-items/CFA-STORY/context/briefs/planning-gen1-for-convergence.md",
+      "sourceSha256": "54620920db7ce601094ed4014a2b0472bbd418ace586a300fd028af29f05d8c3",
+      "sourceBytes": 17810,
+      "renderedSha256": "2ccf3326e72767b91c3b2ba947a4335451644bf65cbba03e9d9f856ffb23dc87",
+      "integritySha256": "1c8cd3295bc56f9e2af992e083f0762d560a1273bf5b2b41b807848b8aed641a"
+    },
+    {
+      "consumerPhase": "implementation",
+      "status": "ready",
+      "path": "singularity/work-items/CFA-STORY/context/briefs/planning-gen1-for-implementation.json",
+      "renderedPath": "singularity/work-items/CFA-STORY/context/briefs/planning-gen1-for-implementation.md",
+      "sourceSha256": "54620920db7ce601094ed4014a2b0472bbd418ace586a300fd028af29f05d8c3",
+      "sourceBytes": 17810,
+      "renderedSha256": "76393104d6cf17fe9fc0ca6ce0a5aad16f8ccb329caf77025b4d31b762cbfe8d",
+      "integritySha256": "a3976df5ca72ce8b4fd51ca9ce280c0ca909ebef8115c9a3955a2e6cdc089ee5"
+    },
+    {
+      "consumerPhase": "verification",
+      "status": "ready",
+      "path": "singularity/work-items/CFA-STORY/context/briefs/planning-gen1-for-verification.json",
+      "renderedPath": "singularity/work-items/CFA-STORY/context/briefs/planning-gen1-for-verification.md",
+      "sourceSha256": "54620920db7ce601094ed4014a2b0472bbd418ace586a300fd028af29f05d8c3",
+      "sourceBytes": 17810,
+      "renderedSha256": "c479e01ee499ed4e8584abb16bb1961339a3e420100f5b15ab6d179cc267f585",
+      "integritySha256": "6fd4292602eb8ba50b3b448fd006866f7f8bf3eaa0b87050c3e78af4a3a83131"
+    }
+  ],
+  "checks": [],
+  "usage": [
+    {
+      "status": "unavailable",
+      "source": "copilot-otel-unavailable",
+      "provider": null,
+      "model": null,
+      "requestedModel": null,
+      "resolvedModel": null,
+      "resolvedModelAssurance": "unavailable",
+      "inputTokens": null,
+      "outputTokens": null,
+      "cachedInputTokens": null,
+      "cacheWriteInputTokens": null,
+      "totalTokens": null,
+      "providerCost": null,
+      "costStatus": "unavailable",
+      "spans": null,
+      "startedAt": "2026-08-27T05:27:58.430Z",
+      "completedAt": "2026-08-27T05:27:58.430Z",
+      "agent": "architect",
+      "generation": 1
+    }
+  ],
+  "approvals": [],
+  "visualAssurance": null,
+  "submissionEvidence": {
+    "testExecutions": [],
+    "checksSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "artifactSetSha256": "f96d212509c293d109a71f43dd07cd3e24abeadc2be5a4103ac17a014064f65b"
+  },
+  "submittedAt": "2026-08-27T05:32:51.985Z",
+  "submittedBy": {
+    "name": "Ashok Raj",
+    "email": "88361104+ashokraj2011@users.noreply.github.com",
+    "login": "ashokraj2011",
+    "githubLookup": "resolved"
+  },
+  "status": "awaiting_review",
+  "packetSha256": "31a902014cd5ab5137505c915096e56e3b169fbfc61aa5c69ac3b76bde40d185"
+}

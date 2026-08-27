@@ -1,0 +1,28 @@
+{
+  "artifact": {
+    "generation": 1,
+    "mediaType": "text/markdown",
+    "outputId": "document",
+    "path": "singularity/work-items/CFA-STORY/artifacts/planning/plan.md",
+    "phaseId": "planning"
+  },
+  "createdAt": "2026-08-27T05:32:52.017Z",
+  "kind": "governed-reference",
+  "repository": {
+    "id": "calc",
+    "origin": "https://github.com/ashokraj2011/calc.git"
+  },
+  "revision": {
+    "bytes": 17810,
+    "commitSha": "514d01abc7b8e31c77d8a71ee20a6eded0b3ac82",
+    "sha256": "54620920db7ce601094ed4014a2b0472bbd418ace586a300fd028af29f05d8c3"
+  },
+  "schemaVersion": 1,
+  "subject": {
+    "branch": "CFA-STORY",
+    "id": "CFA-STORY",
+    "kind": "story",
+    "subjectRevision": 1
+  },
+  "visibility": "model"
+}

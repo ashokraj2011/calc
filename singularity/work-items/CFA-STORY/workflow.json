@@ -207,6 +207,154 @@
           },
           "status": "awaiting_review"
         }
+      },
+      {
+        "packetSha256": "31a902014cd5ab5137505c915096e56e3b169fbfc61aa5c69ac3b76bde40d185",
+        "phase": "planning",
+        "generation": 1,
+        "branch": "CFA-STORY",
+        "sourceTreeSha256": "sha256:66acd7cea60a515fee79e6350d4a3ab180035296633d9471d21d3b23cb87a690",
+        "path": "singularity/work-items/CFA-STORY/submissions/planning/31a902014cd5ab5137505c915096e56e3b169fbfc61aa5c69ac3b76bde40d185.json",
+        "submittedAt": "2026-08-27T05:32:51.985Z",
+        "projection": {
+          "schemaVersion": 1,
+          "workId": "CFA-STORY",
+          "epicId": null,
+          "planId": null,
+          "jiraIssueId": "CFA-STORY",
+          "initialJiraKey": null,
+          "currentJiraKey": null,
+          "canonicalBranch": "CFA-STORY",
+          "submittedBranch": "CFA-STORY",
+          "submissionCommit": "514d01abc7b8e31c77d8a71ee20a6eded0b3ac82",
+          "sourceCommit": "514d01abc7b8e31c77d8a71ee20a6eded0b3ac82",
+          "sourceTreeSha256": "sha256:66acd7cea60a515fee79e6350d4a3ab180035296633d9471d21d3b23cb87a690",
+          "phase": "planning",
+          "generation": 1,
+          "authorship": {
+            "schemaVersion": 1,
+            "producer": "governed-agent",
+            "channel": "copilot-host",
+            "actor": {
+              "name": "Ashok Raj",
+              "email": "88361104+ashokraj2011@users.noreply.github.com",
+              "login": "ashokraj2011",
+              "githubLookup": "resolved"
+            },
+            "governedAgentContext": {
+              "agentId": "architect"
+            },
+            "kernelModel": {
+              "invoked": false,
+              "status": "exact",
+              "invocationIds": []
+            },
+            "externalAiUse": {
+              "value": "unknown",
+              "status": "unavailable"
+            },
+            "source": {
+              "kind": "in-place",
+              "filename": "plan.md",
+              "mediaType": "text/markdown",
+              "sha256": "01914a08ae0a0fb2a4a4024edf0b5b5289a953b41c609d779c0324e53e15c671",
+              "bytes": 8558
+            },
+            "generation": 1,
+            "publishedAt": "2026-08-27T05:27:58.430Z"
+          },
+          "artifacts": [
+            {
+              "path": "singularity/work-items/CFA-STORY/artifacts/planning/plan.md",
+              "kind": "document",
+              "sha256": "6dde44c405dc92b32185b93b201622f46dd0d561a34097412b16d01975d056bf",
+              "size": 17892,
+              "reference": {
+                "handle": "sfref:v1:story:CFA-STORY:52a4599271da613ee07b364876cccc1cd7ea7955ad61424cf55b5839f44ce46b",
+                "recordHash": "52a4599271da613ee07b364876cccc1cd7ea7955ad61424cf55b5839f44ce46b"
+              }
+            }
+          ],
+          "references": [
+            {
+              "handle": "sfref:v1:story:CFA-STORY:52a4599271da613ee07b364876cccc1cd7ea7955ad61424cf55b5839f44ce46b",
+              "recordHash": "52a4599271da613ee07b364876cccc1cd7ea7955ad61424cf55b5839f44ce46b",
+              "purpose": "review-evidence",
+              "required": true
+            }
+          ],
+          "agentBriefs": [
+            {
+              "consumerPhase": "convergence",
+              "status": "ready",
+              "path": "singularity/work-items/CFA-STORY/context/briefs/planning-gen1-for-convergence.json",
+              "renderedPath": "singularity/work-items/CFA-STORY/context/briefs/planning-gen1-for-convergence.md",
+              "sourceSha256": "54620920db7ce601094ed4014a2b0472bbd418ace586a300fd028af29f05d8c3",
+              "sourceBytes": 17810,
+              "renderedSha256": "2ccf3326e72767b91c3b2ba947a4335451644bf65cbba03e9d9f856ffb23dc87",
+              "integritySha256": "1c8cd3295bc56f9e2af992e083f0762d560a1273bf5b2b41b807848b8aed641a"
+            },
+            {
+              "consumerPhase": "implementation",
+              "status": "ready",
+              "path": "singularity/work-items/CFA-STORY/context/briefs/planning-gen1-for-implementation.json",
+              "renderedPath": "singularity/work-items/CFA-STORY/context/briefs/planning-gen1-for-implementation.md",
+              "sourceSha256": "54620920db7ce601094ed4014a2b0472bbd418ace586a300fd028af29f05d8c3",
+              "sourceBytes": 17810,
+              "renderedSha256": "76393104d6cf17fe9fc0ca6ce0a5aad16f8ccb329caf77025b4d31b762cbfe8d",
+              "integritySha256": "a3976df5ca72ce8b4fd51ca9ce280c0ca909ebef8115c9a3955a2e6cdc089ee5"
+            },
+            {
+              "consumerPhase": "verification",
+              "status": "ready",
+              "path": "singularity/work-items/CFA-STORY/context/briefs/planning-gen1-for-verification.json",
+              "renderedPath": "singularity/work-items/CFA-STORY/context/briefs/planning-gen1-for-verification.md",
+              "sourceSha256": "54620920db7ce601094ed4014a2b0472bbd418ace586a300fd028af29f05d8c3",
+              "sourceBytes": 17810,
+              "renderedSha256": "c479e01ee499ed4e8584abb16bb1961339a3e420100f5b15ab6d179cc267f585",
+              "integritySha256": "6fd4292602eb8ba50b3b448fd006866f7f8bf3eaa0b87050c3e78af4a3a83131"
+            }
+          ],
+          "checks": [],
+          "usage": [
+            {
+              "status": "unavailable",
+              "source": "copilot-otel-unavailable",
+              "provider": null,
+              "model": null,
+              "requestedModel": null,
+              "resolvedModel": null,
+              "resolvedModelAssurance": "unavailable",
+              "inputTokens": null,
+              "outputTokens": null,
+              "cachedInputTokens": null,
+              "cacheWriteInputTokens": null,
+              "totalTokens": null,
+              "providerCost": null,
+              "costStatus": "unavailable",
+              "spans": null,
+              "startedAt": "2026-08-27T05:27:58.430Z",
+              "completedAt": "2026-08-27T05:27:58.430Z",
+              "agent": "architect",
+              "generation": 1
+            }
+          ],
+          "approvals": [],
+          "visualAssurance": null,
+          "submissionEvidence": {
+            "testExecutions": [],
+            "checksSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+            "artifactSetSha256": "f96d212509c293d109a71f43dd07cd3e24abeadc2be5a4103ac17a014064f65b"
+          },
+          "submittedAt": "2026-08-27T05:32:51.985Z",
+          "submittedBy": {
+            "name": "Ashok Raj",
+            "email": "88361104+ashokraj2011@users.noreply.github.com",
+            "login": "ashokraj2011",
+            "githubLookup": "resolved"
+          },
+          "status": "awaiting_review"
+        }
       }
     ]
   },
@@ -2218,7 +2366,7 @@
       "label": "Planning",
       "order": 1,
       "defaultAgent": "architect",
-      "status": "in_progress",
+      "status": "awaiting_approval",
       "requiredArtifact": {
         "path": "artifacts/planning/plan.md",
         "kind": "design",
@@ -2288,7 +2436,7 @@
       },
       "qualityCommands": [],
       "startedAt": "2026-08-27T04:49:26.364Z",
-      "submittedAt": null,
+      "submittedAt": "2026-08-27T05:32:51.985Z",
       "approvedAt": null,
       "approvedBy": null,
       "rejectedAt": null,
@@ -2377,10 +2525,10 @@
           "kind": "document",
           "status": "pending",
           "exists": true,
-          "size": 17810,
-          "sha256": "54620920db7ce601094ed4014a2b0472bbd418ace586a300fd028af29f05d8c3",
+          "size": 17892,
+          "sha256": "6dde44c405dc92b32185b93b201622f46dd0d561a34097412b16d01975d056bf",
           "registeredAt": "2026-08-27T05:27:57.237Z",
-          "updatedAt": "2026-08-27T05:27:58.467Z"
+          "updatedAt": "2026-08-27T05:32:51.986Z"
         }
       ],
       "checks": [],
@@ -2489,7 +2637,10 @@
             "sha256": "sha256:654f6f27e5f57d09b1662bbe608e356c184379b2b74f88413fcd6846becc1bb3"
           }
         }
-      ]
+      ],
+      "generationCommit": "514d01abc7b8e31c77d8a71ee20a6eded0b3ac82",
+      "publicationCommit": "514d01abc7b8e31c77d8a71ee20a6eded0b3ac82",
+      "validationVerdict": "not-required"
     },
     "implementation": {
       "id": "implementation",
@@ -3044,6 +3195,14 @@
       "event": "phase_generated",
       "phase": "planning",
       "detail": "generation 1"
+    },
+    {
+      "at": "2026-08-27T05:32:51.985Z",
+      "actor": "ashokraj2011",
+      "agent": "architect",
+      "event": "phase_submitted",
+      "phase": "planning",
+      "detail": "1 artifacts"
     }
   ],
   "measurement": {
@@ -3561,6 +3720,105 @@
           }
         },
         "createdAt": "2026-08-27T05:27:58.244Z"
+      }
+    },
+    {
+      "schemaVersion": 1,
+      "event": {
+        "schemaVersion": 1,
+        "eventId": "7de1f6a8-c255-449d-ab04-6cfbd61d8930",
+        "type": "approval-requested",
+        "subject": {
+          "kind": "story",
+          "id": "CFA-STORY",
+          "branch": "CFA-STORY"
+        },
+        "phaseId": "planning",
+        "generation": 1,
+        "actor": {
+          "name": "Ashok Raj",
+          "email": "88361104+ashokraj2011@users.noreply.github.com",
+          "login": "ashokraj2011",
+          "githubLookup": "resolved"
+        },
+        "agent": "architect",
+        "authorityGroup": null,
+        "payload": {
+          "decision": null,
+          "reviewPacketSha256": null
+        },
+        "sourceCommit": null,
+        "idempotencyKey": null,
+        "idempotencyHash": null,
+        "createdAt": "2026-08-27T05:32:51.808Z"
+      },
+      "ledgerIntent": {
+        "schemaVersion": 1,
+        "eventId": "7de1f6a8-c255-449d-ab04-6cfbd61d8930",
+        "eventType": "approval-requested",
+        "capabilityId": "calc-app",
+        "subject": {
+          "branch": "CFA-STORY",
+          "generation": 1,
+          "phase": "planning",
+          "workId": "CFA-STORY",
+          "workType": "spec-driven-standard"
+        },
+        "actor": {
+          "name": "Ashok Raj",
+          "email": "88361104+ashokraj2011@users.noreply.github.com",
+          "githubLogin": "ashokraj2011",
+          "identityAssurance": "configured-local"
+        },
+        "agent": "architect",
+        "authorityGroup": null,
+        "payload": {
+          "capabilityMapSha256": "df69fe9244ab92f707336cad19121607344bddab441561046e049757a9bbbd4a",
+          "capabilityPolicy": {
+            "protectedPaths": [],
+            "qualityCommands": [],
+            "requiredAuthorityGroups": [],
+            "requiredChecks": [],
+            "requiredWorldModelViews": []
+          },
+          "configPath": "singularity/workflow.yml",
+          "configSha256": "87be75456efb3109772edfe7165e275f0477ca07d457e4b39cab66d0e30258e2",
+          "lifecycleEventId": "7de1f6a8-c255-449d-ab04-6cfbd61d8930",
+          "lifecyclePayload": {
+            "decision": null,
+            "reviewPacketSha256": null
+          },
+          "templateSha256": "3e0676d5a5c384fbc3bf3f3320f495017254c349fca42ef5f5c3c93ea94b2ec0",
+          "lifecycleEvent": {
+            "schemaVersion": 1,
+            "eventId": "7de1f6a8-c255-449d-ab04-6cfbd61d8930",
+            "type": "approval-requested",
+            "subject": {
+              "kind": "story",
+              "id": "CFA-STORY",
+              "branch": "CFA-STORY"
+            },
+            "phaseId": "planning",
+            "generation": 1,
+            "actor": {
+              "name": "Ashok Raj",
+              "email": "88361104+ashokraj2011@users.noreply.github.com",
+              "login": "ashokraj2011",
+              "githubLookup": "resolved"
+            },
+            "agent": "architect",
+            "authorityGroup": null,
+            "payload": {
+              "decision": null,
+              "reviewPacketSha256": null
+            },
+            "sourceCommit": null,
+            "idempotencyKey": null,
+            "idempotencyHash": null,
+            "createdAt": "2026-08-27T05:32:51.808Z"
+          }
+        },
+        "createdAt": "2026-08-27T05:32:51.821Z"
       }
     }
   ],
