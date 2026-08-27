@@ -2,23 +2,38 @@ approvalAuthorities:
   product-approvers:
     label: Product approvers
     allowAnyGitIdentity: false
-    members: []
+    members:
+      - name: Ashok Raj
+        email: 88361104+ashokraj2011@users.noreply.github.com
+        githubLogin: ashokraj2011
   architecture-reviewers:
     label: Architecture reviewers
     allowAnyGitIdentity: false
-    members: []
+    members:
+      - name: Ashok Raj
+        email: 88361104+ashokraj2011@users.noreply.github.com
+        githubLogin: ashokraj2011
   engineering-reviewers:
     label: Engineering reviewers
     allowAnyGitIdentity: false
-    members: []
+    members:
+      - name: Ashok Raj
+        email: 88361104+ashokraj2011@users.noreply.github.com
+        githubLogin: ashokraj2011
   quality-reviewers:
     label: Quality reviewers
     allowAnyGitIdentity: false
-    members: []
+    members:
+      - name: Ashok Raj
+        email: 88361104+ashokraj2011@users.noreply.github.com
+        githubLogin: ashokraj2011
   design-reviewers:
     label: Design reviewers
     allowAnyGitIdentity: false
-    members: []
+    members:
+      - name: Ashok Raj
+        email: 88361104+ashokraj2011@users.noreply.github.com
+        githubLogin: ashokraj2011
 approvalSecurity:
   profile: team
   allowSelfApproval: true
