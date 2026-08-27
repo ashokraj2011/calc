@@ -5,6 +5,7 @@ import { StandardKeypad } from './components/StandardKeypad';
 import { ScientificKeypad } from './components/ScientificKeypad';
 import { UnitConverter } from './components/UnitConverter';
 import { FinancialCalculator } from './components/FinancialCalculator';
+import { CFAStudyToolkit } from './components/CFAStudyToolkit';
 import { FunctionGrapher } from './components/FunctionGrapher';
 import { HistoryDrawer } from './components/HistoryDrawer';
 import { KeyboardShortcutsModal } from './components/KeyboardShortcutsModal';
@@ -295,6 +296,8 @@ export default function App() {
         {activeMode === 'converter' && <UnitConverter soundEnabled={soundEnabled} />}
 
         {activeMode === 'financial' && <FinancialCalculator soundEnabled={soundEnabled} />}
+
+        {activeMode === 'cfa' && <CFAStudyToolkit soundEnabled={soundEnabled} />}
 
         {activeMode === 'grapher' && <FunctionGrapher soundEnabled={soundEnabled} />}
       </main>

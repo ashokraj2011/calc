@@ -11,6 +11,7 @@ import {
   Keyboard,
   Palette,
   Menu,
+  BookOpenText,
 } from 'lucide-react';
 import { playSound } from '../utils/audio';
 
@@ -19,6 +20,7 @@ const MODES = [
   { id: 'scientific', name: 'Scientific', icon: FlaskConical },
   { id: 'converter', name: 'Converter', icon: ArrowRightLeft },
   { id: 'financial', name: 'Financial', icon: DollarSign },
+  { id: 'cfa', name: 'CFA', icon: BookOpenText },
   { id: 'grapher', name: 'Grapher', icon: TrendingUp },
 ];
 

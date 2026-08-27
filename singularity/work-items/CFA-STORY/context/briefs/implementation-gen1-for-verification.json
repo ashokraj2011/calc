@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workId": "CFA-STORY",
+  "producer": {
+    "phase": "implementation",
+    "generation": 1
+  },
+  "consumer": {
+    "phase": "verification"
+  },
+  "source": {
+    "path": "singularity/work-items/CFA-STORY/artifacts/implementation/implementation-summary.md",
+    "sha256": "b695aa81f0d1b51c34d97d5e893184060c6cd9558295e2d6b6ae44b36d7167c6",
+    "bytes": 16831
+  },
+  "policy": {
+    "projection": "approved-summary",
+    "preserve": [
+      "Changed components and decisions",
+      "Tests and operational notes"
+    ],
+    "maximumSummaryBytes": 24576,
+    "expansion": "hash-bound-reference",
+    "fallback": "whole"
+  },
+  "policySha256": "0f2f54d4589a3673eb27f166311f8295707a0eefd70287dbbbd5ea961a329aaf",
+  "status": "fallback-whole",
+  "summary": null,
+  "preserved": [],
+  "rendered": null,
+  "generatedAt": "2026-08-27T06:18:10.293Z",
+  "integritySha256": "81ca2ae5ddadbf970fcff58a455d610311baf3038f165dfea30ef453104e9169"
+}

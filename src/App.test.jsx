@@ -197,3 +197,60 @@ describe('Responsive navigation (desktop rail + mobile dropdown)', () => {
     expect(mobileSelect.value).toBe('financial');
   });
 });
+
+// Verifies CFA-STORY implementation contract: a CFA topic selector and
+// calculator result flow are available from the app shell.
+// @ac:SPEC-001 @ac:SPEC-002 @ac:SPEC-003 @ac:SPEC-004 @ac:AC-005 @ac:AC-006
+describe('CFA Level I toolkit flow', () => {
+  it('offers the CFA mode and all nine topic choices', async () => {
+    const user = userEvent.setup();
+    render(<App />);
+
+    const modeSelect = screen.getAllByRole('combobox')[0];
+    await user.selectOptions(modeSelect, 'cfa');
+    expect(modeSelect.value).toBe('cfa');
+
+    const topicSelect = screen.getByLabelText(/Select a topic/i);
+    const values = [...topicSelect.options].map((option) => option.value);
+    expect(values).toEqual(expect.arrayContaining([
+      'Quantitative Methods',
+      'Economics',
+      'Financial Statement Analysis',
+      'Corporate Issuers',
+      'Equity',
+      'Fixed Income',
+      'Derivatives',
+      'Alternative Investments',
+      'Portfolio Management',
+    ]));
+  });
+
+  // @ac:AC-005 @ac:AC-006
+  it('computes a valid CFA result and rejects invalid input', async () => {
+    const user = userEvent.setup();
+    render(<App />);
+
+    const modeSelect = screen.getAllByRole('combobox')[0];
+    await user.selectOptions(modeSelect, 'cfa');
+
+    const topicSelect = screen.getByLabelText(/Select a topic/i);
+    await user.selectOptions(topicSelect, 'Quantitative Methods');
+
+    const principalInput = screen.getByLabelText(/Present value/i);
+    const rateInput = screen.getByLabelText(/Annual rate/i);
+    const yearsInput = screen.getByLabelText(/Years/i);
+
+    await user.clear(principalInput);
+    await user.type(principalInput, '1000');
+    await user.clear(rateInput);
+    await user.type(rateInput, '5');
+    await user.clear(yearsInput);
+    await user.type(yearsInput, '5');
+
+    expect(screen.getByText(/Future value/i)).toBeInTheDocument();
+    expect(screen.getByText(/1,276.28/i)).toBeInTheDocument();
+
+    await user.clear(principalInput);
+    expect(screen.getByText(/Please provide valid values/i)).toBeInTheDocument();
+  });
+});

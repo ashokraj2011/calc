@@ -1,0 +1,367 @@
+{
+  "schemaVersion": 1,
+  "kind": "repository-change-set",
+  "subject": {
+    "workId": "CFA-STORY",
+    "phase": "implementation",
+    "generation": 1,
+    "generationIntentId": "3ba8f0fe-d3ed-4953-8599-076c618eae16"
+  },
+  "base": {
+    "commit": "f581225b13d3ecd04ab68c79bcceb5c3b303689c",
+    "tree": "b566461bfa2bb55c01afcb5f9bce684a7c889bbe"
+  },
+  "target": {
+    "head": "2cf501ef75860f6ff2d14e74db5af96b66b4c127",
+    "includesIndex": true,
+    "includesWorktree": true,
+    "includesUntracked": true,
+    "caseInsensitivePaths": true
+  },
+  "entries": [
+    {
+      "status": "added",
+      "similarity": null,
+      "oldPath": null,
+      "newPath": ".sflow/results/node-tests.json",
+      "oldMode": "000000",
+      "newMode": "100644",
+      "oldObject": null,
+      "newObject": null,
+      "untracked": true,
+      "newContent": {
+        "kind": "regular-file",
+        "sha256": "sha256:7bca84dd216d40d48055c6d6b1d0abae9a39a62dc806582134b08043cc971d37",
+        "bytes": 12112
+      },
+      "changeId": "sha256:6b05c799d300dcd077fcff97eb72bbe8f655e79703f970545be54155d1b7a385"
+    },
+    {
+      "status": "added",
+      "similarity": null,
+      "oldPath": null,
+      "newPath": "singularity/work-items/CFA-STORY/approvals/planning.json",
+      "oldMode": "000000",
+      "newMode": "100644",
+      "oldObject": null,
+      "newObject": "4563892ea0474475aad130c12b9cf8dc2ca77342",
+      "newContent": {
+        "kind": "regular-file",
+        "sha256": "sha256:6f15cba3d07c4616ec802f5fee0bb17808e8ab98a5d292006abc966025f58597",
+        "bytes": 3414
+      },
+      "changeId": "sha256:8c36751d7b3ed41dfbd8eb5ca2794cfc6d687c937666d0809e63071c39ce4d8d"
+    },
+    {
+      "status": "added",
+      "similarity": null,
+      "oldPath": null,
+      "newPath": "singularity/work-items/CFA-STORY/approvals/planning/2026-08-27T05-39-30-305Z-approved.json",
+      "oldMode": "000000",
+      "newMode": "100644",
+      "oldObject": null,
+      "newObject": "cc7d60df5ca2d23ced13ad356d43f0e2f0d126c9",
+      "newContent": {
+        "kind": "regular-file",
+        "sha256": "sha256:7bb3348d6779c7e9dac241938ab6716718c998e4a82ee60538bba8662982ba14",
+        "bytes": 3068
+      },
+      "changeId": "sha256:c1fef4ba7767dd7cb33c043ac0f1ee16c5136677731fdebc3a070ef72ad1ec10"
+    },
+    {
+      "status": "added",
+      "similarity": null,
+      "oldPath": null,
+      "newPath": "singularity/work-items/CFA-STORY/artifacts/implementation/implementation-summary.md",
+      "oldMode": "000000",
+      "newMode": "100644",
+      "oldObject": null,
+      "newObject": null,
+      "untracked": true,
+      "newContent": {
+        "kind": "regular-file",
+        "sha256": "sha256:4b4aadc55af346df9d322e8dee3ab2da55f412ab9e01d8439ff048eeb700b317",
+        "bytes": 15243
+      },
+      "changeId": "sha256:964264beecdb13231e6bf0371af0b294817e78a3318638b23d65efef8db00337"
+    },
+    {
+      "status": "added",
+      "similarity": null,
+      "oldPath": null,
+      "newPath": "singularity/work-items/CFA-STORY/context/generation-start/implementation-gen1.json",
+      "oldMode": "000000",
+      "newMode": "100644",
+      "oldObject": null,
+      "newObject": null,
+      "untracked": true,
+      "newContent": {
+        "kind": "regular-file",
+        "sha256": "sha256:626d38849a70bae3d6f0f759dc6acbd574fd96662f2ea0bbe73fd12a67510075",
+        "bytes": 1245
+      },
+      "changeId": "sha256:cf76d9cef709ea7d787659fa6900960a195397e1c8ad4f575a7bdd7f40d649e7"
+    },
+    {
+      "status": "added",
+      "similarity": null,
+      "oldPath": null,
+      "newPath": "singularity/work-items/CFA-STORY/context/implementation-gen1.json",
+      "oldMode": "000000",
+      "newMode": "100644",
+      "oldObject": null,
+      "newObject": null,
+      "untracked": true,
+      "newContent": {
+        "kind": "regular-file",
+        "sha256": "sha256:0d717e9fed4cdd601ad8db9ad2ea340cd1b77b7490106ca4c0ff2bfb76a9d7e5",
+        "bytes": 9682
+      },
+      "changeId": "sha256:8232f45d53befe8a71a84ab0e9260a4b35bc907dcb72c40f19d9cc36da1fb2e8"
+    },
+    {
+      "status": "added",
+      "similarity": null,
+      "oldPath": null,
+      "newPath": "singularity/work-items/CFA-STORY/context/inputs-implementation-gen1.json",
+      "oldMode": "000000",
+      "newMode": "100644",
+      "oldObject": null,
+      "newObject": null,
+      "untracked": true,
+      "newContent": {
+        "kind": "regular-file",
+        "sha256": "sha256:23622ddc052b3beae0e944baacd0438dde71a499c3b4f34d4912a8f62b76a39c",
+        "bytes": 4051
+      },
+      "changeId": "sha256:6c5968a54bc681e8e1ebb2fdca86b9983126b37c2c641af1c3f6023afc02cf38"
+    },
+    {
+      "status": "added",
+      "similarity": null,
+      "oldPath": null,
+      "newPath": "singularity/work-items/CFA-STORY/context/ledger-intents/e1f5b632-93d3-41ae-943e-96b69207bf27.json",
+      "oldMode": "000000",
+      "newMode": "100644",
+      "oldObject": null,
+      "newObject": "fa050a37a9d96993b2667ec747d7a633f52383d0",
+      "newContent": {
+        "kind": "regular-file",
+        "sha256": "sha256:c7e54b748667909e9b0a408817bf989e152b7829276d892357ef32bd75c94fcb",
+        "bytes": 2065
+      },
+      "changeId": "sha256:edf330458864a077f1ba0312dbc2a58883f69ee2973238443a944ef8900bc723"
+    },
+    {
+      "status": "added",
+      "similarity": null,
+      "oldPath": null,
+      "newPath": "singularity/work-items/CFA-STORY/context/prompts/implementation-gen1.md",
+      "oldMode": "000000",
+      "newMode": "100644",
+      "oldObject": null,
+      "newObject": null,
+      "untracked": true,
+      "newContent": {
+        "kind": "regular-file",
+        "sha256": "sha256:9e1c481b4796af51127c17fd6905c00bc3bac44825b097d0993bf7c8b87df67d",
+        "bytes": 30428
+      },
+      "changeId": "sha256:746b18fe96a0eb78048a4fdf869a9eee2949fde4681a9bbbd58cecde9a338ef7"
+    },
+    {
+      "status": "added",
+      "similarity": null,
+      "oldPath": null,
+      "newPath": "singularity/work-items/CFA-STORY/context/work-intervals/implementation-gen1-baseline.json",
+      "oldMode": "000000",
+      "newMode": "100644",
+      "oldObject": null,
+      "newObject": "c00a9c4e9d97202c6928dc3eefb75f2dee8d21bd",
+      "newContent": {
+        "kind": "regular-file",
+        "sha256": "sha256:438ec039651cbeba5c3031a7ef4751d7ed93e2c3d95df1ba2b7a2e6ff3264d5d",
+        "bytes": 1673
+      },
+      "changeId": "sha256:f7aa8ffcafec957828e22bfdde5be7de247e654ef3cb17a3a9f114e3c712165f"
+    },
+    {
+      "status": "added",
+      "similarity": null,
+      "oldPath": null,
+      "newPath": "singularity/world-model/views/development.md",
+      "oldMode": "000000",
+      "newMode": "100644",
+      "oldObject": null,
+      "newObject": "b3b2cd69bc95a4c6757352644f3cc93542835c2e",
+      "newContent": {
+        "kind": "regular-file",
+        "sha256": "sha256:92db2c8309e4a01c3568b5cb8f8954ecc6fca4d79cab74cae6c92a02fb2389c2",
+        "bytes": 1248
+      },
+      "changeId": "sha256:30437a181c1344176b5ff03c579c6025755578686a5cb2f69d1a27812a3247f2"
+    },
+    {
+      "status": "added",
+      "similarity": null,
+      "oldPath": null,
+      "newPath": "singularity/world-model/views/testing.brief.md",
+      "oldMode": "000000",
+      "newMode": "100644",
+      "oldObject": null,
+      "newObject": "1b479535ef13283394add86d7a29b784727b6a7f",
+      "newContent": {
+        "kind": "regular-file",
+        "sha256": "sha256:cbce835c16619b16e2ad7f747ef021f5fada39a77709e6e187a4772387aa7ddc",
+        "bytes": 266
+      },
+      "changeId": "sha256:52d9fe1b50569b8f7b2812f9a3bd82a8dbb6e19b86d290d43d790dd890174c52"
+    },
+    {
+      "status": "added",
+      "similarity": null,
+      "oldPath": null,
+      "newPath": "src/components/CFAStudyToolkit.jsx",
+      "oldMode": "000000",
+      "newMode": "100644",
+      "oldObject": null,
+      "newObject": null,
+      "untracked": true,
+      "newContent": {
+        "kind": "regular-file",
+        "sha256": "sha256:e4358ec46223e3e1a4a7973edc75f832a33de364416fc17ef9dae2f1febe87ec",
+        "bytes": 9822
+      },
+      "changeId": "sha256:9e25419e81bf8d837e67dc53fca99e6787eebbb7f3a5b269b6bb13317739d13d"
+    },
+    {
+      "status": "modified",
+      "similarity": null,
+      "oldPath": "singularity/work-items/CFA-STORY/artifacts/planning/plan.md",
+      "newPath": "singularity/work-items/CFA-STORY/artifacts/planning/plan.md",
+      "oldMode": "100644",
+      "newMode": "100644",
+      "oldObject": "be9127f79394c7e4b182b914282aa8e4927bb064",
+      "newObject": "4c59dcf1ae32f4c7a7c4d434d32f385012a60c68",
+      "newContent": {
+        "kind": "regular-file",
+        "sha256": "sha256:113713575304ae92ff6bd9ff7fefac44d2e3b727f78fef488695fea9a5255f23",
+        "bytes": 21229
+      },
+      "changeId": "sha256:758f64061b96848146277a7b59c8a99b548694fb05eaf6e3294e272716c1e848"
+    },
+    {
+      "status": "modified",
+      "similarity": null,
+      "oldPath": "singularity/work-items/CFA-STORY/STATUS.md",
+      "newPath": "singularity/work-items/CFA-STORY/STATUS.md",
+      "oldMode": "100644",
+      "newMode": "100644",
+      "oldObject": "f773ae701a41d236988c0cfce179c00493e9378e",
+      "newObject": "d57d8598784150f42f610b0aaeee983502074b8f",
+      "newContent": {
+        "kind": "regular-file",
+        "sha256": "sha256:afc215dcd702163e1f898b1e9ca605d76bbf0860244ebb6abc35f241e18c7db2",
+        "bytes": 2217
+      },
+      "changeId": "sha256:b517c7468d9bbb99a9af2aacddc2aaad2456fa6f6cabfef6400d39078f28ca65"
+    },
+    {
+      "status": "modified",
+      "similarity": null,
+      "oldPath": "singularity/work-items/CFA-STORY/workflow.json",
+      "newPath": "singularity/work-items/CFA-STORY/workflow.json",
+      "oldMode": "100644",
+      "newMode": "100644",
+      "oldObject": "802f5d551c63efdb0c88dbbf6824251f80c12c27",
+      "newObject": null,
+      "newContent": {
+        "kind": "regular-file",
+        "sha256": "sha256:5f61fa5ebff4c624c15ae36ac6080c8fc4a34902bebd03360da4c06eeb4e38bf",
+        "bytes": 145392
+      },
+      "changeId": "sha256:f5483418a0f08735e6094b2f3c3717620dbaf70ea3f591799e3b9761bfa4c649"
+    },
+    {
+      "status": "modified",
+      "similarity": null,
+      "oldPath": "singularity/world-model/evidence/evidence.jsonl",
+      "newPath": "singularity/world-model/evidence/evidence.jsonl",
+      "oldMode": "100644",
+      "newMode": "100644",
+      "oldObject": "5a3bb7333580f2e11993abaa807c80a9fdce344a",
+      "newObject": "51460e1c354524cd88cbe64bc5cb06c4f282153c",
+      "newContent": {
+        "kind": "regular-file",
+        "sha256": "sha256:16ede758c1fb869433ee287bd5fcea7989f8581e778ee8e921ccab0b590d8030",
+        "bytes": 398
+      },
+      "changeId": "sha256:1ef8ee6cfb13ef1ce9779ecf5154e45aae47a6114cfe314664ed7d8e6c51c310"
+    },
+    {
+      "status": "modified",
+      "similarity": null,
+      "oldPath": "singularity/world-model/manifest.json",
+      "newPath": "singularity/world-model/manifest.json",
+      "oldMode": "100644",
+      "newMode": "100644",
+      "oldObject": "b82bd5272dd158d765822591c69dcdb40871b9d8",
+      "newObject": "32745205d13b480bf4d04b43d92b547f71c9ebb4",
+      "newContent": {
+        "kind": "regular-file",
+        "sha256": "sha256:d253d69cf7cadce7cb25862de3e62bc07d9154f4d2e26d41bde007fed7da0e94",
+        "bytes": 20421
+      },
+      "changeId": "sha256:b38f2a4f31d59250fe426ca1784a98bab626dde22674fd0f7813a43f6f85bb39"
+    },
+    {
+      "status": "modified",
+      "similarity": null,
+      "oldPath": "src/App.jsx",
+      "newPath": "src/App.jsx",
+      "oldMode": "100644",
+      "newMode": "100644",
+      "oldObject": "7895da3d39b895449272065a3404c87ff7e5096e",
+      "newObject": null,
+      "newContent": {
+        "kind": "regular-file",
+        "sha256": "sha256:0ba5b4e7bae2eb3a8d89f9a4f34a7fe29448feac61cef09caded60299d04521e",
+        "bytes": 10636
+      },
+      "changeId": "sha256:06aba0d86989e7567bc53549fdb09383f14d609d8e1641b245702337fef06103"
+    },
+    {
+      "status": "modified",
+      "similarity": null,
+      "oldPath": "src/App.test.jsx",
+      "newPath": "src/App.test.jsx",
+      "oldMode": "100644",
+      "newMode": "100644",
+      "oldObject": "df2e60410935166b48de77e539d06cb8bf32fe01",
+      "newObject": null,
+      "newContent": {
+        "kind": "regular-file",
+        "sha256": "sha256:739855b1621eb722010d12a8bcc9994d07237d3686a386cf348e516a1d58474f",
+        "bytes": 9385
+      },
+      "changeId": "sha256:5e1b2e66c1a8260a56526ecb8bbd7d183d916282c08c03e40631031fe397bd5b"
+    },
+    {
+      "status": "modified",
+      "similarity": null,
+      "oldPath": "src/components/Header.jsx",
+      "newPath": "src/components/Header.jsx",
+      "oldMode": "100644",
+      "newMode": "100644",
+      "oldObject": "49d321e01d53eb1b52a81400c167229c7d2be426",
+      "newObject": null,
+      "newContent": {
+        "kind": "regular-file",
+        "sha256": "sha256:600bcacd849ad547b6a86402e41c4b8114fab4de3622cec3733b72c3a834d5ad",
+        "bytes": 6791
+      },
+      "changeId": "sha256:8e9597b2bbcc941c63ea7b1f9abb3de987971cd80f8cd58167d139db64cdc3b8"
+    }
+  ],
+  "digest": "sha256:6c8986491782634176024a276d6e2a937d2617167b741ae52dbb9e9ac92c07bc"
+}
