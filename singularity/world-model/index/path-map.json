@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "mode": "bounded-light-index",
-  "totalPaths": 31,
+  "totalPaths": 32,
   "representativePaths": [
     "README.md",
     "eslint.config.js",
@@ -9,6 +9,7 @@
     "src/App.jsx",
     "src/App.test.jsx",
     "src/build.test.js",
+    "src/components/CFAStudyToolkit.jsx",
     "src/components/Display.jsx",
     "src/components/FinancialCalculator.jsx",
     "src/components/FunctionGrapher.jsx",

@@ -1,177 +1,64 @@
 {
-  "schema_version": "2.0",
-  "generated_at": "2026-08-20T03:02:27.293Z",
-  "generated_date": "20 August 2026",
-  "builder_version": "2.0",
-  "builder_prompt_sha256": "unknown",
-  "analysis_depth": "quick",
+  "schemaVersion": 1,
+  "mode": "deterministic-light",
+  "title": "calc-app",
   "repository": {
-    "name": "calc",
-    "root": "/private/var/folders/_j/yp8zv9w91rd44ymrzfpd_kcw0000gn/T/singularity-flow-world-model-uSbOVD/repository",
-    "branch": "unknown",
-    "commit": "1b17ac362bdedf23ef4f7683203fb8e1a715428b",
-    "working_tree_clean": false,
-    "repository_kind": "application",
-    "languages": [
-      "JavaScript",
-      "JSX",
-      "CSS",
-      "JSON"
-    ],
-    "package_roots": [
-      "."
-    ]
+    "commit": "cb92f58b0eb3e508f5f381f8984e1c8592becde9",
+    "branch": "CFA-STORY"
   },
-  "purpose": {
-    "summary": "A React/Vite calculator app with arithmetic, scientific, unit-conversion, financial, and graphing modes.",
-    "status": "observed",
-    "confidence": "high",
-    "evidence_ids": [
-      "evidence:repo-purpose"
-    ]
+  "counts": {
+    "files": 32,
+    "source": 20,
+    "tests": 4,
+    "manifests": 1,
+    "deployment": 0
   },
-  "components": [
+  "languages": {
+    "JavaScript": 20
+  },
+  "topDirectories": {
+    "src": 23,
+    "(root)": 7,
+    "public": 2
+  },
+  "packages": [
     {
-      "id": "calc-shell",
-      "name": "App shell",
-      "kind": "application",
-      "purpose": "Routes calculator modes and owns shared UI state.",
-      "paths": [
-        "src/App.jsx"
+      "path": "package.json",
+      "name": "calc-app",
+      "scripts": [
+        "build",
+        "dev",
+        "lint",
+        "preview",
+        "test"
       ],
-      "depends_on": [
-        "expression-engine",
-        "scientific-ui",
-        "financial-tools",
-        "unit-converter"
-      ],
-      "entrypoint_ids": [
-        "app-entry"
-      ],
-      "confidence": "high",
-      "evidence_ids": [
-        "evidence:repo-purpose"
-      ]
-    },
-    {
-      "id": "expression-engine",
-      "name": "Expression evaluator",
-      "kind": "library",
-      "purpose": "Parses expressions, applies angle-unit rules, and computes financial formulas.",
-      "paths": [
-        "src/utils/evaluator.js"
-      ],
-      "depends_on": [],
-      "entrypoint_ids": [],
-      "confidence": "high",
-      "evidence_ids": [
-        "evidence:scientific-evaluator",
-        "evidence:financial-capabilities"
-      ]
-    },
-    {
-      "id": "scientific-ui",
-      "name": "Scientific keypad",
-      "kind": "frontend",
-      "purpose": "Provides scientific functions like sin, cos, tan, log, and roots.",
-      "paths": [
-        "src/components/ScientificKeypad.jsx"
-      ],
-      "depends_on": [
-        "calc-shell"
-      ],
-      "entrypoint_ids": [],
-      "confidence": "high",
-      "evidence_ids": [
-        "evidence:scientific-evaluator"
-      ]
-    },
-    {
-      "id": "financial-tools",
-      "name": "Financial calculator",
-      "kind": "frontend",
-      "purpose": "Supports EMI, compound interest, and tip-splitting calculations.",
-      "paths": [
-        "src/components/FinancialCalculator.jsx"
-      ],
-      "depends_on": [
-        "expression-engine"
-      ],
-      "entrypoint_ids": [],
-      "confidence": "high",
-      "evidence_ids": [
-        "evidence:financial-capabilities"
-      ]
-    },
-    {
-      "id": "unit-converter",
-      "name": "Unit converter",
-      "kind": "frontend",
-      "purpose": "Converts length, weight, temperature, digital, and speed units.",
-      "paths": [
-        "src/components/UnitConverter.jsx"
-      ],
-      "depends_on": [
-        "expression-engine"
-      ],
-      "entrypoint_ids": [],
-      "confidence": "medium",
-      "evidence_ids": [
-        "evidence:repo-purpose"
+      "dependencies": [
+        "@eslint/js",
+        "@testing-library/jest-dom",
+        "@testing-library/react",
+        "@testing-library/user-event",
+        "@types/react",
+        "@types/react-dom",
+        "@vitejs/plugin-react",
+        "eslint",
+        "eslint-plugin-react-hooks",
+        "eslint-plugin-react-refresh",
+        "globals",
+        "jsdom",
+        "lucide-react",
+        "mathjs",
+        "react",
+        "react-dom",
+        "vite",
+        "vitest"
       ]
     }
   ],
-  "entrypoints": [
-    {
-      "id": "app-entry",
-      "name": "App entrypoint",
-      "kind": "frontend",
-      "location": "src/App.jsx:14-324",
-      "invocation": "React app composition and mode routing",
-      "component_id": "calc-shell",
-      "evidence_ids": [
-        "evidence:repo-purpose"
-      ]
-    },
-    {
-      "id": "package-entry",
-      "name": "Package scripts",
-      "kind": "build",
-      "location": "package.json:6-11",
-      "invocation": "npm run dev / npm test / npm run build",
-      "component_id": "calc-shell",
-      "evidence_ids": [
-        "evidence:testing-suite"
-      ]
-    }
-  ],
-  "standard_commands": [
-    {
-      "command": "npm run dev",
-      "purpose": "start local Vite development server",
-      "source": "package.json:7"
-    },
-    {
-      "command": "npm run build",
-      "purpose": "build production bundle",
-      "source": "package.json:8"
-    },
-    {
-      "command": "npm test",
-      "purpose": "run Vitest suite",
-      "source": "package.json:11"
-    }
-  ],
-  "risks": [
-    "The app is client-side only and relies on browser localStorage for persistence.",
-    "Shared math behavior is implemented in a single evaluator module; changes there can affect arithmetic, finance, and scientific functions simultaneously."
-  ],
-  "unknowns": [
-    "No backend API or user account model is present.",
-    "No external product or compliance documentation is visible in the repository."
-  ],
-  "available_views": [
-    "core",
-    "business"
+  "commands": [
+    "npm run build",
+    "npm run dev",
+    "npm run lint",
+    "npm run preview",
+    "npm run test"
   ]
 }
