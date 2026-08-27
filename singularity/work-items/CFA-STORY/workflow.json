@@ -3374,19 +3374,19 @@
       ],
       "remoteOutputs": [],
       "generationIntent": {
-        "id": "3ba8f0fe-d3ed-4953-8599-076c618eae16",
-        "generation": 1,
-        "status": "consumed",
-        "path": "singularity/work-items/CFA-STORY/context/generation-start/implementation-gen1.json",
-        "receiptSha256": "sha256:3b06cfae3459259ac917abea66d463232007a822a468daa7b5e4aba2f7a13c4c",
+        "id": "f0b3e377-499e-4225-9f3c-0b24e60a80d7",
+        "generation": 2,
+        "status": "open",
+        "path": "singularity/work-items/CFA-STORY/context/generation-start/implementation-gen2.json",
+        "receiptSha256": "sha256:48a13b9a602164aba14c5e31c8d0503b282bda3b0aed2a9ff50dafabdf993792",
         "baseline": {
-          "commit": "f581225b13d3ecd04ab68c79bcceb5c3b303689c",
-          "tree": "b566461bfa2bb55c01afcb5f9bce684a7c889bbe",
-          "initialChangeSetDigest": "sha256:3e35d06c2abb0782d95fdc04095f20654c62a78b4c7119b458ed508234179e62",
+          "commit": "91749891e894d50964f26f29b7181695d3bcec8e",
+          "tree": "6f8c0b18c270e68aa026414660873d8c050e1e08",
+          "initialChangeSetDigest": "sha256:f6d601d28e22e49444af729d6e8797039d6ef82dc26bef55a7142daa93865fd1",
           "mode": "clean",
-          "previousGenerationCommit": null
+          "previousGenerationCommit": "91749891e894d50964f26f29b7181695d3bcec8e"
         },
-        "startedAt": "2026-08-27T05:54:22.057Z",
+        "startedAt": "2026-08-27T07:57:27.830Z",
         "startedBy": {
           "actor": {
             "name": "Ashok Raj",
@@ -3396,17 +3396,7 @@
           },
           "agent": "developer"
         },
-        "publication": {
-          "generation": 1,
-          "changeSetDigest": "sha256:6c8986491782634176024a276d6e2a937d2617167b741ae52dbb9e9ac92c07bc",
-          "resultDigest": "sha256:db49763fd9b824e18c7be6388f3392d87667721c362dad797837616e26b656db",
-          "generationStartSha256": "sha256:3b06cfae3459259ac917abea66d463232007a822a468daa7b5e4aba2f7a13c4c",
-          "record": {
-            "path": "singularity/work-items/CFA-STORY/context/generation-publications/implementation-gen1.json",
-            "sha256": "sha256:fb8d14502632a4f86b2d6814c5f2b0354d247d58432dbb8f1bbf8456d2be0ba6"
-          }
-        },
-        "consumedAt": "2026-08-27T06:18:10.229Z"
+        "publication": null
       },
       "authoringBaseline": {
         "generation": 1,
