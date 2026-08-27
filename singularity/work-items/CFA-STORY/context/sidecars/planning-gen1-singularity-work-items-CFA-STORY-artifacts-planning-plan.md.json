@@ -1,0 +1,41 @@
+{
+  "artifact": {
+    "bytes": 16246,
+    "path": "singularity/work-items/CFA-STORY/artifacts/planning/plan.md",
+    "role": "document",
+    "sha256": "1e1f2b67d06a1d957554e4288badf4c53e39738844bc8c12656ad37e5b42df1d"
+  },
+  "configuration": {
+    "revision": "3d2a1538528886afd920c1b3ec3cb1b546936290",
+    "sha256": "87be75456efb3109772edfe7165e275f0477ca07d457e4b39cab66d0e30258e2"
+  },
+  "generation": 1,
+  "inputs": [
+    {
+      "kind": null,
+      "path": "artifacts/specification/spec.md",
+      "sha256": null
+    }
+  ],
+  "integritySha256": "e3a93dd8be4021958ce46c2aab6910464b39e858cba4d29b6af565fffa576476",
+  "phase": "planning",
+  "producer": {
+    "actor": "88361104+ashokraj2011@users.noreply.github.com",
+    "agent": "architect",
+    "kind": "governed-agent"
+  },
+  "publication": {
+    "branch": "CFA-STORY",
+    "commit": null,
+    "publishedAt": "2026-08-27T05:27:58.430Z"
+  },
+  "schemaVersion": 1,
+  "subject": {
+    "id": "CFA-STORY",
+    "kind": "story"
+  },
+  "template": {
+    "path": "singularity/templates/spec-driven/plan.md",
+    "sha256": "3e0676d5a5c384fbc3bf3f3320f495017254c349fca42ef5f5c3c93ea94b2ec0"
+  }
+}

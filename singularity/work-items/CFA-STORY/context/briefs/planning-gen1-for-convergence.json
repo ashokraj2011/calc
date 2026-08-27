@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "workId": "CFA-STORY",
+  "producer": {
+    "phase": "planning",
+    "generation": 1
+  },
+  "consumer": {
+    "phase": "convergence"
+  },
+  "source": {
+    "path": "singularity/work-items/CFA-STORY/artifacts/planning/plan.md",
+    "sha256": "54620920db7ce601094ed4014a2b0472bbd418ace586a300fd028af29f05d8c3",
+    "bytes": 17810
+  },
+  "policy": {
+    "projection": "approved-summary",
+    "preserve": [
+      "Test strategy",
+      "Risks and rollback"
+    ],
+    "maximumSummaryBytes": 24576,
+    "expansion": "hash-bound-reference",
+    "fallback": "whole"
+  },
+  "policySha256": "3be38d5830ce8251e825433809d4d6266af8d8991a82f424eef968933f33475b",
+  "status": "ready",
+  "summary": {
+    "heading": "Agent brief"
+  },
+  "preserved": [
+    "Test strategy",
+    "Risks and rollback"
+  ],
+  "rendered": {
+    "path": "singularity/work-items/CFA-STORY/context/briefs/planning-gen1-for-convergence.md",
+    "sha256": "2ccf3326e72767b91c3b2ba947a4335451644bf65cbba03e9d9f856ffb23dc87",
+    "bytes": 4630
+  },
+  "generatedAt": "2026-08-27T05:27:58.468Z",
+  "integritySha256": "1c8cd3295bc56f9e2af992e083f0762d560a1273bf5b2b41b807848b8aed641a"
+}

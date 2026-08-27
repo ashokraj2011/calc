@@ -1,0 +1,9 @@
+{
+  "phase": "planning",
+  "responses": [
+    {
+      "question": "Which concrete CFA Level I calculations should the first release support?",
+      "answer": "Use a core representative set: add one representative calculation per topic where practical, prioritizing time value of money, ratios, bond pricing/yield, CAPM, option payoff, portfolio return/risk, and similar calculator-friendly formulas. Topics without a selected calculation may remain navigation-only."
+    }
+  ]
+}

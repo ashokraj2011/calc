@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "workId": "CFA-STORY",
+  "workType": "spec-driven-standard",
+  "phase": "planning",
+  "generation": 1,
+  "mode": "enforce",
+  "recordedAt": "2026-08-27T05:27:58.366Z",
+  "renderedSha256": "76efa882f1b474bce4f20248d55cf5c7a0bf5359fba945b045c302d04de408f4",
+  "warnings": [],
+  "inputs": [
+    {
+      "phase": "specification",
+      "path": "artifacts/specification/spec.md",
+      "repositoryPath": "singularity/work-items/CFA-STORY/artifacts/specification/spec.md",
+      "optional": false,
+      "maxBytes": null,
+      "status": "captured",
+      "producerStatus": "approved",
+      "producerGeneration": 1,
+      "approvedAt": "2026-08-27T04:49:26.364Z",
+      "approvedBy": "ashokraj2011",
+      "approvedSha256": "9d7141107347ae0ad93a6c694bd49adffbe4dd4cb2f8a48fafe300bf428cbeeb",
+      "sha256": "9d7141107347ae0ad93a6c694bd49adffbe4dd4cb2f8a48fafe300bf428cbeeb",
+      "bytes": 18591,
+      "source": {
+        "path": "singularity/work-items/CFA-STORY/artifacts/specification/spec.md",
+        "rawSha256": "sha256:9d7141107347ae0ad93a6c694bd49adffbe4dd4cb2f8a48fafe300bf428cbeeb"
+      },
+      "representation": {
+        "kind": "summary",
+        "sha256": "sha256:9e3df60fd6c9ee3ee56967b0d29b87238ee9d3cc3e9080fb00a96fc05e50472c",
+        "bytes": 5187,
+        "complete": false,
+        "expansionHandle": "sfref:v1:story:CFA-STORY:d3570aaf4c2f8d53b3dc340e4a29d2c3e6385738464d07872e8a8694d90986e4"
+      },
+      "injectedBytes": 5187,
+      "truncated": false,
+      "authoredBytes": 10481,
+      "managedBytesExcluded": 8110,
+      "projection": {
+        "kind": "approved-summary",
+        "preserve": [
+          "Requirements",
+          "Non-functional requirements",
+          "Boundary conditions"
+        ],
+        "maximumSummaryBytes": 32768,
+        "expansion": "hash-bound-reference",
+        "fallback": "whole",
+        "briefPath": "singularity/work-items/CFA-STORY/context/briefs/specification-gen1-for-planning.md",
+        "briefSha256": "9e3df60fd6c9ee3ee56967b0d29b87238ee9d3cc3e9080fb00a96fc05e50472c",
+        "expansionHandle": "sfref:v1:story:CFA-STORY:d3570aaf4c2f8d53b3dc340e4a29d2c3e6385738464d07872e8a8694d90986e4"
+      }
+    }
+  ]
+}
