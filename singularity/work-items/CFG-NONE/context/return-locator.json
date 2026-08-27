@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "kind": "return-locator",
+  "workId": "CFG-NONE",
+  "capabilityId": "calc-app",
+  "originRepositoryId": "calc",
+  "repositories": [
+    {
+      "id": "calc",
+      "remote": "origin",
+      "required": true,
+      "url": "https://github.com/ashokraj2011/calc.git",
+      "fingerprint": "b185e6905a4f5bb33ce26f9fac81f87986f1b777e76d2a7b74cdab617432c273",
+      "portability": "portable"
+    }
+  ],
+  "lifecycleRef": "refs/heads/CFG-NONE",
+  "workBranchRef": "refs/heads/CFG-NONE",
+  "configuration": {
+    "sha256": "660a1980768a0a7530418a8700f85f3d9178d82521c1a77fd4aaf958ab53e08c",
+    "branch": "sflow/config",
+    "commit": "0b2d45815d790896048252174e44aa7ce95cda4c"
+  },
+  "cloneStrategy": "existing-or-clone",
+  "integritySha256": "bce7859c7ff0c068492fa01ca494bf3a09dc7e04dccc831da094d5074d17429b"
+}
