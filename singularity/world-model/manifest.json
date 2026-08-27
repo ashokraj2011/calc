@@ -1,9 +1,9 @@
 {
   "schema_version": "3.0",
-  "repository_commit": "468d8062bcdaabd99ebd5fecc8ed2d6bc11e5ab0",
+  "repository_commit": "644a649d08b6c1d7f118995e7810ab91521cfd21",
   "repository_branch": "CFA-STORY",
   "working_tree_clean": false,
-  "generated_at": "2026-08-27T04:58:57.060Z",
+  "generated_at": "2026-08-27T05:54:00.320Z",
   "generated_date": "27 August 2026",
   "builder_version": "2.1-light",
   "builder_prompt_sha256": "511654826223e40b93c54f48f9b773f155e3364326d41aa98108dea7217d75cd",
@@ -121,7 +121,7 @@
     "development": {
       "path": "views/development.md",
       "brief_path": "views/development.brief.md",
-      "generated": false,
+      "generated": true,
       "load_when": [
         "implementation",
         "debugging",
@@ -136,17 +136,17 @@
           "sha256": null
         },
         "full": {
-          "status": "missing",
+          "status": "ready",
           "path": "views/development.md",
-          "bytes": 0,
-          "sha256": null
+          "bytes": 1248,
+          "sha256": "92db2c8309e4a01c3568b5cb8f8954ecc6fca4d79cab74cae6c92a02fb2389c2"
         }
       }
     },
     "testing": {
       "path": "views/testing.md",
       "brief_path": "views/testing.brief.md",
-      "generated": false,
+      "generated": true,
       "load_when": [
         "test creation",
         "regression analysis",
@@ -154,10 +154,10 @@
       ],
       "tiers": {
         "brief": {
-          "status": "missing",
+          "status": "ready",
           "path": "views/testing.brief.md",
-          "bytes": 0,
-          "sha256": null
+          "bytes": 266,
+          "sha256": "cbce835c16619b16e2ad7f747ef021f5fada39a77709e6e187a4772387aa7ddc"
         },
         "full": {
           "status": "missing",
@@ -389,7 +389,8 @@
   },
   "source_tree_sha256": "sha256:1dee7ed995b515c700d64d2f865932a4a27932abf9fa9e2cdd4236e9dad677bd",
   "views_generated": [
-    "architecture"
+    "development",
+    "testing"
   ],
   "generation": {
     "parallel": false,
@@ -400,9 +401,10 @@
     "resumed_views": [],
     "pending_views_at_start": []
   },
-  "generated_for_phase": "planning",
+  "generated_for_phase": "implementation",
   "requested_views": [
-    "architecture"
+    "development",
+    "testing"
   ],
   "requested_selections": [
     "core/brief",
@@ -587,6 +589,208 @@
       "produced": [
         "architecture/full",
         "core/brief"
+      ],
+      "reused": [
+        "core/brief"
+      ]
+    },
+    {
+      "id": "provider-1787195188735",
+      "generated_at": "2026-08-20T03:02:20.409Z",
+      "source_tree_sha256": "sha256:1dee7ed995b515c700d64d2f865932a4a27932abf9fa9e2cdd4236e9dad677bd",
+      "provider": "copilot-cli",
+      "requested": [
+        "business/brief",
+        "core/brief"
+      ],
+      "produced": [
+        "business/brief",
+        "core/brief"
+      ],
+      "reused": []
+    },
+    {
+      "id": "provider-1787199287059",
+      "generated_at": "2026-08-20T04:00:23.844Z",
+      "source_tree_sha256": "sha256:1dee7ed995b515c700d64d2f865932a4a27932abf9fa9e2cdd4236e9dad677bd",
+      "provider": "copilot-cli",
+      "requested": [
+        "business/brief",
+        "core/brief"
+      ],
+      "produced": [
+        "business/brief",
+        "core/brief"
+      ],
+      "reused": [
+        "business/brief",
+        "core/brief"
+      ]
+    },
+    {
+      "id": "provider-1787195188735",
+      "generated_at": "2026-08-20T03:02:20.409Z",
+      "source_tree_sha256": "sha256:1dee7ed995b515c700d64d2f865932a4a27932abf9fa9e2cdd4236e9dad677bd",
+      "provider": "copilot-cli",
+      "requested": [
+        "business/brief",
+        "core/brief"
+      ],
+      "produced": [
+        "business/brief",
+        "core/brief"
+      ],
+      "reused": []
+    },
+    {
+      "id": "provider-1787199287059",
+      "generated_at": "2026-08-20T04:00:23.844Z",
+      "source_tree_sha256": "sha256:1dee7ed995b515c700d64d2f865932a4a27932abf9fa9e2cdd4236e9dad677bd",
+      "provider": "copilot-cli",
+      "requested": [
+        "business/brief",
+        "core/brief"
+      ],
+      "produced": [
+        "business/brief",
+        "core/brief"
+      ],
+      "reused": [
+        "business/brief",
+        "core/brief"
+      ]
+    },
+    {
+      "id": "light-1787804738539",
+      "generated_at": "2026-08-27T04:25:38.452Z",
+      "source_tree_sha256": "sha256:1dee7ed995b515c700d64d2f865932a4a27932abf9fa9e2cdd4236e9dad677bd",
+      "provider": null,
+      "requested": [
+        "business/full",
+        "core/brief"
+      ],
+      "produced": [
+        "business/full",
+        "core/brief"
+      ],
+      "reused": [
+        "core/brief"
+      ]
+    },
+    {
+      "id": "provider-1787195188735",
+      "generated_at": "2026-08-20T03:02:20.409Z",
+      "source_tree_sha256": "sha256:1dee7ed995b515c700d64d2f865932a4a27932abf9fa9e2cdd4236e9dad677bd",
+      "provider": "copilot-cli",
+      "requested": [
+        "business/brief",
+        "core/brief"
+      ],
+      "produced": [
+        "business/brief",
+        "core/brief"
+      ],
+      "reused": []
+    },
+    {
+      "id": "provider-1787199287059",
+      "generated_at": "2026-08-20T04:00:23.844Z",
+      "source_tree_sha256": "sha256:1dee7ed995b515c700d64d2f865932a4a27932abf9fa9e2cdd4236e9dad677bd",
+      "provider": "copilot-cli",
+      "requested": [
+        "business/brief",
+        "core/brief"
+      ],
+      "produced": [
+        "business/brief",
+        "core/brief"
+      ],
+      "reused": [
+        "business/brief",
+        "core/brief"
+      ]
+    },
+    {
+      "id": "provider-1787195188735",
+      "generated_at": "2026-08-20T03:02:20.409Z",
+      "source_tree_sha256": "sha256:1dee7ed995b515c700d64d2f865932a4a27932abf9fa9e2cdd4236e9dad677bd",
+      "provider": "copilot-cli",
+      "requested": [
+        "business/brief",
+        "core/brief"
+      ],
+      "produced": [
+        "business/brief",
+        "core/brief"
+      ],
+      "reused": []
+    },
+    {
+      "id": "provider-1787199287059",
+      "generated_at": "2026-08-20T04:00:23.844Z",
+      "source_tree_sha256": "sha256:1dee7ed995b515c700d64d2f865932a4a27932abf9fa9e2cdd4236e9dad677bd",
+      "provider": "copilot-cli",
+      "requested": [
+        "business/brief",
+        "core/brief"
+      ],
+      "produced": [
+        "business/brief",
+        "core/brief"
+      ],
+      "reused": [
+        "business/brief",
+        "core/brief"
+      ]
+    },
+    {
+      "id": "light-1787804738539",
+      "generated_at": "2026-08-27T04:25:38.452Z",
+      "source_tree_sha256": "sha256:1dee7ed995b515c700d64d2f865932a4a27932abf9fa9e2cdd4236e9dad677bd",
+      "provider": null,
+      "requested": [
+        "business/full",
+        "core/brief"
+      ],
+      "produced": [
+        "business/full",
+        "core/brief"
+      ],
+      "reused": [
+        "core/brief"
+      ]
+    },
+    {
+      "id": "light-1787806737179",
+      "generated_at": "2026-08-27T04:58:57.060Z",
+      "source_tree_sha256": "sha256:1dee7ed995b515c700d64d2f865932a4a27932abf9fa9e2cdd4236e9dad677bd",
+      "provider": null,
+      "requested": [
+        "architecture/full",
+        "core/brief"
+      ],
+      "produced": [
+        "architecture/full",
+        "core/brief"
+      ],
+      "reused": [
+        "core/brief"
+      ]
+    },
+    {
+      "id": "light-1787810040455",
+      "generated_at": "2026-08-27T05:54:00.320Z",
+      "source_tree_sha256": "sha256:1dee7ed995b515c700d64d2f865932a4a27932abf9fa9e2cdd4236e9dad677bd",
+      "provider": null,
+      "requested": [
+        "core/brief",
+        "development/full",
+        "testing/brief"
+      ],
+      "produced": [
+        "core/brief",
+        "development/full",
+        "testing/brief"
       ],
       "reused": [
         "core/brief"
