@@ -4,8 +4,8 @@
 - Work type: **spec-driven-standard**
 - Capability: **CaLC** (`calc-app`)
 - Capability map: `df69fe9244ab92f707336cad19121607344bddab441561046e049757a9bbbd4a`
-- Overall status: **in_progress**
-- Current phase: **release**
+- Overall status: **complete**
+- Current phase: **complete**
 
 | # | Phase | Governed agent | Status | Generation | Approvals | Tokens |
 |---:|---|---|---|---:|---:|---:|
@@ -19,10 +19,12 @@
 |  | ⚠ self-approval | Ashok Raj via architecture-reviewers; agent architect | **warning** |  |  |  |
 | 5 | Verification (`verification`) | qa | **approved** | 1 | 1 | unavailable |
 |  | ⚠ self-approval | Ashok Raj via quality-reviewers; agent qa | **warning** |  |  |  |
-| 6 | Release (`release`) | qa | **awaiting_approval** | 1 | 0 | unavailable |
+| 6 | Release (`release`) | qa | **approved** | 1 | 1 | unavailable |
+|  | ⚠ self-approval | Ashok Raj via quality-reviewers; agent qa | **warning** |  |  |  |
 
 ## Recent history
 
+- 2026-08-27T15:13:41.181Z — **phase_self_approved** (release) by ashokraj2011 · governed agent qa: threshold reached; complete
 - 2026-08-27T15:00:36.877Z — **phase_submitted** (release) by ashokraj2011 · governed agent qa: 2 artifacts
 - 2026-08-27T14:53:46.468Z — **phase_generated** (release) by ashokraj2011 · governed agent qa: generation 1
 - 2026-08-27T14:37:45.029Z — **phase_self_approved** (verification) by ashokraj2011 · governed agent qa: threshold reached; advanced to release
@@ -37,4 +39,3 @@
 - 2026-08-27T12:48:34.600Z — **phase_self_approved** (implementation) by ashokraj2011 · governed agent developer: threshold reached; advanced to convergence
 - 2026-08-27T12:48:34.600Z — **work_interval_closed** (implementation) by ashokraj2011 · governed agent developer: interval INT-implementation-G4-004 closed after phase approval
 - 2026-08-27T12:43:14.779Z — **phase_submitted** (implementation) by ashokraj2011 · governed agent developer: 5 artifacts
-- 2026-08-27T12:43:14.778Z — **work_interval_reconciled** (implementation) by system: review; 2 changed path(s)

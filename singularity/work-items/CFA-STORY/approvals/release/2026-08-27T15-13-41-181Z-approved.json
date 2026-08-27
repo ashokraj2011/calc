@@ -1,0 +1,52 @@
+{
+  "decision": "approved",
+  "phase": "release",
+  "at": "2026-08-27T15:13:41.181Z",
+  "actor": {
+    "name": "Ashok Raj",
+    "email": "88361104+ashokraj2011@users.noreply.github.com",
+    "login": "ashokraj2011",
+    "githubLookup": "resolved"
+  },
+  "agent": "qa",
+  "authorityGroup": "quality-reviewers",
+  "identityAssurance": "configured-local",
+  "channel": "copilot-selection-receipt",
+  "generation": 1,
+  "artifactSha256": [
+    {
+      "path": "singularity/work-items/CFA-STORY/artifacts/release/conformance.md",
+      "sha256": "c239d3693e04c482cf862500d33c772d0e71d7a22628e4713e14f07ad575a7b2"
+    },
+    {
+      "path": "singularity/work-items/CFA-STORY/artifacts/release/verification/evidence-index.md",
+      "sha256": "b1f9dbb58c49e65ac72ae42077f5f0f47754390cd9ef64b613ee8b5888d0beb8"
+    }
+  ],
+  "artifactSet": "spec-driven-verification",
+  "bundleSha256": "88f04d8ac93e4c167e6e8149aae8365f33c45c04f6320f1e71c8d5afe6d71915",
+  "reviewPacketSha256": "5e42723a4e56ca47707bb37ea62bc2adaca427f1d4c3654e9cf7c1ca0285e2c2",
+  "evidenceCommit": "3f2e92c51fb9b01087fe18d38c4d1d1a5b376bc4",
+  "artifactSetSha256": "0a5625997cecad66a5f735a35c0da9710cb1760a75e8aab10719450423fa6550",
+  "actionContext": {
+    "phase": "release",
+    "label": "Release",
+    "generation": 1,
+    "submittedAt": "2026-08-27T15:00:36.877Z",
+    "artifacts": [
+      {
+        "path": "singularity/work-items/CFA-STORY/artifacts/release/conformance.md",
+        "sha256": "c239d3693e04c482cf862500d33c772d0e71d7a22628e4713e14f07ad575a7b2"
+      },
+      {
+        "path": "singularity/work-items/CFA-STORY/artifacts/release/verification/evidence-index.md",
+        "sha256": "b1f9dbb58c49e65ac72ae42077f5f0f47754390cd9ef64b613ee8b5888d0beb8"
+      }
+    ],
+    "agentBriefs": [],
+    "reviewPacketSha256": "5e42723a4e56ca47707bb37ea62bc2adaca427f1d4c3654e9cf7c1ca0285e2c2",
+    "submittedSourceCommit": "f9d3b64a7231332ba76e4ead5366fb7d2fc70c84",
+    "planId": "1ad2d1607362d994c1b69b0d"
+  },
+  "selfApproval": true
+}

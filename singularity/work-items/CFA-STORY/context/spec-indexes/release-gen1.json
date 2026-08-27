@@ -9,7 +9,7 @@
       "namespace": "CFA-STORY",
       "number": 1,
       "source": {
-        "line": 101,
+        "line": 154,
         "path": "singularity/work-items/CFA-STORY/artifacts/release/conformance.md"
       },
       "type": "AC"
@@ -23,7 +23,7 @@
       "namespace": "CFA-STORY",
       "number": 2,
       "source": {
-        "line": 102,
+        "line": 155,
         "path": "singularity/work-items/CFA-STORY/artifacts/release/conformance.md"
       },
       "type": "AC"
@@ -37,7 +37,7 @@
       "namespace": "CFA-STORY",
       "number": 3,
       "source": {
-        "line": 103,
+        "line": 156,
         "path": "singularity/work-items/CFA-STORY/artifacts/release/conformance.md"
       },
       "type": "AC"
@@ -51,7 +51,7 @@
       "namespace": "CFA-STORY",
       "number": 4,
       "source": {
-        "line": 104,
+        "line": 157,
         "path": "singularity/work-items/CFA-STORY/artifacts/release/conformance.md"
       },
       "type": "AC"
@@ -65,7 +65,7 @@
       "namespace": "CFA-STORY",
       "number": 5,
       "source": {
-        "line": 105,
+        "line": 158,
         "path": "singularity/work-items/CFA-STORY/artifacts/release/conformance.md"
       },
       "type": "AC"
@@ -79,20 +79,20 @@
       "namespace": "CFA-STORY",
       "number": 6,
       "source": {
-        "line": 106,
+        "line": 159,
         "path": "singularity/work-items/CFA-STORY/artifacts/release/conformance.md"
       },
       "type": "AC"
     }
   ],
   "generation": 1,
-  "indexSha256": "368e852b8b639d14bde14adbacc6fea884e614f27786c905520b174461d1f1d8",
+  "indexSha256": "1a298652a8d3862450ee78e1dfe7541713c9d9b42ee431acb4c9b7723c9b6069",
   "phase": "release",
   "schemaVersion": 1,
   "source": {
-    "bytes": 12189,
+    "bytes": 14477,
     "path": "singularity/work-items/CFA-STORY/artifacts/release/conformance.md",
-    "sha256": "e24f2ea1bc949e69e3401032ac89db915e704af85d2c38cc0b90f477c3b578da"
+    "sha256": "8c1cb02dc888bebe34dff79935ff0c4f2b8fbf87ed9a1246ba53a1842c8a8a2c"
   },
   "workId": "CFA-STORY"
 }
