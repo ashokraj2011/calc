@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "capabilityId": "calc-app",
+  "capabilityPath": [
+    "calc-app"
+  ],
+  "capabilityMapSha256": "df69fe9244ab92f707336cad19121607344bddab441561046e049757a9bbbd4a",
+  "requiredViews": [
+    "testing",
+    "development",
+    "security"
+  ],
+  "maxBytes": 262144,
+  "bytes": 0,
+  "repositories": [
+    {
+      "id": "calc",
+      "status": "local-grounding"
+    }
+  ],
+  "files": [],
+  "warnings": [],
+  "recordedAt": "2026-08-28T02:52:47.135Z"
+}

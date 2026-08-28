@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "kind": "return-locator",
+  "workId": "test-calc",
+  "capabilityId": "calc-app",
+  "originRepositoryId": "calc",
+  "repositories": [
+    {
+      "id": "calc",
+      "remote": "origin",
+      "required": true,
+      "url": "https://github.com/ashokraj2011/calc.git",
+      "fingerprint": "b185e6905a4f5bb33ce26f9fac81f87986f1b777e76d2a7b74cdab617432c273",
+      "portability": "portable"
+    }
+  ],
+  "lifecycleRef": "refs/heads/test-calc",
+  "workBranchRef": "refs/heads/test-calc",
+  "configuration": {
+    "sha256": "87eb19c3045068c2b9f7f7bf0cb171c3804159170671405229091c82b4e80c65",
+    "branch": "sflow/config",
+    "commit": "78ceb0b00a9ba86be8d8b13989d8daab7f6fa424"
+  },
+  "cloneStrategy": "existing-or-clone",
+  "integritySha256": "f0d2fd549045c688dcb51e318f9f16a716d78660023ab142214e86fe652c26fe"
+}
