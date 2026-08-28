@@ -1,13 +1,13 @@
 {
   "schema_version": "3.0",
-  "generated_at": "2026-08-27T14:51:30.378Z",
-  "generated_date": "27 August 2026",
+  "generated_at": "2026-08-28T03:11:45.673Z",
+  "generated_date": "28 August 2026",
   "builder_version": "2.1-light",
   "builder_prompt_sha256": "511654826223e40b93c54f48f9b773f155e3364326d41aa98108dea7217d75cd",
-  "repository_commit": "ce26a381a03f3aa7d026a4832a10236a9cde29ec",
-  "repository_branch": "CFA-STORY",
+  "repository_commit": "cc909f070127c6f1918e3b493844ca33e6f49ceb",
+  "repository_branch": "test-calc",
   "working_tree_clean": false,
-  "generated_for_phase": "release",
+  "generated_for_phase": "testing",
   "analysis_depth": "light",
   "source_tree_sha256": "sha256:7c4f31ddd48702cab3b4b98e257f80e045caa3df854e6069543782b460a1332c",
   "generator": {
@@ -58,13 +58,74 @@
           "sha256": null
         }
       }
+    },
+    "development": {
+      "tiers": {
+        "brief": {
+          "status": "missing",
+          "path": null,
+          "bytes": 0,
+          "sha256": null
+        },
+        "full": {
+          "status": "ready",
+          "path": "views/development.md",
+          "bytes": 1260,
+          "sha256": "4efd0d88be0930b867542f1a844f5855e840d99251455c1caf05f923ff5b1743"
+        }
+      },
+      "brief_path": null,
+      "path": "views/development.md",
+      "generated": true
+    },
+    "security": {
+      "tiers": {
+        "brief": {
+          "status": "ready",
+          "path": "views/security.brief.md",
+          "bytes": 285,
+          "sha256": "0bc382d81bab25b93e4970242c9cd67a7bccfcc868975185eea20bec95eb85c2"
+        },
+        "full": {
+          "status": "missing",
+          "path": null,
+          "bytes": 0,
+          "sha256": null
+        }
+      },
+      "brief_path": "views/security.brief.md",
+      "path": null,
+      "generated": true
+    },
+    "testing": {
+      "tiers": {
+        "brief": {
+          "status": "ready",
+          "path": "views/testing.brief.md",
+          "bytes": 266,
+          "sha256": "58adfa0418611233751caa8240fff40d3a83e147a5d3ec127f92646bc9e8996f"
+        },
+        "full": {
+          "status": "missing",
+          "path": null,
+          "bytes": 0,
+          "sha256": null
+        }
+      },
+      "brief_path": "views/testing.brief.md",
+      "path": null,
+      "generated": true
     }
   },
   "views_generated": [
-    "release"
+    "development",
+    "security",
+    "testing"
   ],
   "requested_views": [
-    "release"
+    "development",
+    "security",
+    "testing"
   ],
   "domains": [],
   "task_guides": [],
@@ -95,6 +156,42 @@
         "release/brief"
       ],
       "reused": []
+    },
+    {
+      "id": "light-1787842291704",
+      "generated_at": "2026-08-27T14:51:30.378Z",
+      "source_tree_sha256": "sha256:7c4f31ddd48702cab3b4b98e257f80e045caa3df854e6069543782b460a1332c",
+      "provider": null,
+      "requested": [
+        "core/brief",
+        "release/brief"
+      ],
+      "produced": [
+        "core/brief",
+        "release/brief"
+      ],
+      "reused": []
+    },
+    {
+      "id": "light-1787886705770",
+      "generated_at": "2026-08-28T03:11:45.673Z",
+      "source_tree_sha256": "sha256:7c4f31ddd48702cab3b4b98e257f80e045caa3df854e6069543782b460a1332c",
+      "provider": null,
+      "requested": [
+        "core/brief",
+        "development/full",
+        "security/brief",
+        "testing/brief"
+      ],
+      "produced": [
+        "core/brief",
+        "development/full",
+        "security/brief",
+        "testing/brief"
+      ],
+      "reused": [
+        "core/brief"
+      ]
     }
   ]
 }
