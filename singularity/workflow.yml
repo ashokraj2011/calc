@@ -1,3 +1,51 @@
+adhoc:
+  enabled: true
+  entry:
+    allowExplicitStart: true
+    allowUnstartedLanding: true
+    defaultMode: in-place
+  baseline:
+    requireExactRevision: true
+    dirtyStart: ask
+    upstreamUse: confirm-if-commits-ahead
+  localWork:
+    allowed: true
+  executionUnits:
+    allowed: true
+    default: null
+  scope:
+    maximumTouchedResources: 20
+    maximumRepositoriesForDirectLanding: 1
+  externalEffects:
+    mode: governed-device-only
+    outsideGovernanceBehavior: promote-or-reconcile
+  protectedPaths:
+    behavior: promote
+  directLanding:
+    enabled: true
+    maximumRisk: low
+    requireIntentConfirmation: true
+    requireDispositionCoverage: true
+    requireVerification: true
+    requireHumanDecision: policy
+  promotion:
+    triggers:
+      repositoriesGreaterThan: 1
+      protectedPathTouched: true
+      architectureDecisionRequired: true
+      externalEffectRequired: true
+      estimatedRemainingTasksGreaterThan: 3
+      uncertainEffect: true
+  executionCeilings:
+    activeMinutes: 480
+    modelInvocations: 30
+    deviceCalls: 100
+  discard:
+    backup: required
+    backupRetentionDays: 14
+  telemetry:
+    contentFree: true
+    individualScoring: false
 approvalAuthorities:
   architecture-reviewers:
     allowAnyGitIdentity: false
@@ -1292,212 +1340,10 @@ tokens:
 version: 2
 workItemRoot: singularity/work-items
 workTypes:
-  feature:
-    label: Feature
-    phases:
-      - intake
-      - requirements
-      - design
-      - implementation-spec
-      - implementation
-      - verification
-      - conformance
-    templateOverrides:
-      intake: feature/intake.md
-      requirements: feature/requirements.md
-      design: feature/design.md
-      implementation-spec: feature/implementation-spec.md
-    phaseOverrides:
-      requirements:
-        inputs:
-          - intake
-      design:
-        inputs:
-          - requirements
-      implementation-spec:
-        inputs:
-          - requirements
-          - design
-      implementation:
-        inputs:
-          - design
-          - implementation-spec
-      verification:
-        inputs:
-          - implementation-spec
-          - implementation
-      conformance:
-        inputs:
-          - implementation-spec
-          - implementation
-          - verification
-  bugfix:
-    label: Bug fix
-    phases:
-      - intake
-      - reproduction
-      - fix-design
-      - fix-spec
-      - implementation
-      - verification
-      - conformance
-    templateOverrides:
-      intake: bugfix/intake.md
-      reproduction: bugfix/reproduction.md
-      fix-design: bugfix/fix-design.md
-      fix-spec: bugfix/fix-spec.md
-    phaseOverrides:
-      reproduction:
-        inputs:
-          - intake
-      fix-design:
-        inputs:
-          - reproduction
-      fix-spec:
-        inputs:
-          - reproduction
-          - fix-design
-      implementation:
-        inputs:
-          - fix-spec
-      verification:
-        inputs:
-          - fix-spec
-          - implementation
-      conformance:
-        inputs:
-          - fix-spec
-          - implementation
-          - verification
-  chore:
-    label: Chore
-    phases:
-      - intake
-      - implementation
-      - verification
-      - conformance
-    templateOverrides:
-      intake: chore/intake.md
-    phaseOverrides:
-      implementation:
-        inputs:
-          - intake
-        generation:
-          task: analyze
-      verification:
-        inputs:
-          - implementation
-      conformance:
-        inputs:
-          - implementation
-          - verification
-  figma-mobile:
-    label: Figma export to mobile app
-    phases:
-      - design-intake
-      - design-inventory
-      - component-mapping
-      - mobile-spec
-      - implementation
-      - visual-verification
-      - conformance
-    designSources:
-      capturePhase: design-intake
-      consumeIn:
-        - design-inventory
-        - component-mapping
-        - mobile-spec
-        - visual-verification
-        - conformance
-      staleness: warn
-      requireApprovedSet: true
-      inventoryDigest: optional
-    verification:
-      coverage: enforce
-      profiles:
-        - id: phone-390x844
-          label: Phone 390 × 844
-          width: 390
-          height: 844
-          deviceScaleFactor: 1
-        - id: tablet-834x1194
-          label: Tablet 834 × 1194
-          width: 834
-          height: 1194
-          deviceScaleFactor: 1
-      comparison:
-        mode: warn
-        channelTolerance: 8
-        maxDifferingPixelRatio: 0.02
-        maxDifferingPixels: null
-        maxPixels: 40000000
-    documents:
-      allowedPhases:
-        - design-intake
-        - design-inventory
-    templateOverrides:
-      design-intake: figma-mobile/design-intake.md
-      design-inventory: figma-mobile/design-inventory.md
-      component-mapping: figma-mobile/component-mapping.md
-      mobile-spec: figma-mobile/mobile-spec.md
-      implementation: figma-mobile/implementation.md
-      visual-verification: figma-mobile/visual-verification.md
-      conformance: figma-mobile/conformance.md
-    phaseOverrides:
-      design-inventory:
-        inputs:
-          - design-intake
-      component-mapping:
-        inputs:
-          - design-inventory
-      mobile-spec:
-        inputs:
-          - design-inventory
-          - component-mapping
-      implementation:
-        inputs:
-          - component-mapping
-          - mobile-spec
-      visual-verification:
-        inputs:
-          - design-inventory
-          - mobile-spec
-          - implementation
-      conformance:
-        inputs:
-          - mobile-spec
-          - implementation
-          - visual-verification
-        approval:
-          authorities:
-            - design-reviewers
-            - architecture-reviewers
-            - quality-reviewers
-          minimum: 1
-          rejectTo:
-            - design-inventory
-            - component-mapping
-            - mobile-spec
-            - implementation
-            - visual-verification
-            - conformance
-    sequenceGates:
-      documentPhase: hard
-  quick-fix:
-    label: Quick fix
-    phases:
-      - implement
-      - verify
-    templateOverrides:
-      implement: quick-fix/implement.md
-      verify: quick-fix/verify.md
-    phaseOverrides:
-      verify:
-        inputs:
-          - implement
   benchmarking-a:
     label: Benchmark A — governed intelligence
-    description: Requires governed world-model, bounded AST, and approval-bound agent-brief context.
+    description: Requires governed world-model, bounded AST, and approval-bound
+      agent-brief context.
     phases:
       - intake
       - design
@@ -1601,7 +1447,8 @@ workTypes:
             - conformance
   benchmarking-b:
     label: Benchmark B — generic context
-    description: Uses full approved artifacts without world-model, AST, or agent-brief enrichment.
+    description: Uses full approved artifacts without world-model, AST, or
+      agent-brief enrichment.
     phases:
       - intake
       - design
@@ -1663,6 +1510,197 @@ workTypes:
             - implementation
             - testing
             - conformance
+  bugfix:
+    label: Bug fix
+    phases:
+      - intake
+      - reproduction
+      - fix-design
+      - fix-spec
+      - implementation
+      - verification
+      - conformance
+    templateOverrides:
+      intake: bugfix/intake.md
+      reproduction: bugfix/reproduction.md
+      fix-design: bugfix/fix-design.md
+      fix-spec: bugfix/fix-spec.md
+    phaseOverrides:
+      reproduction:
+        inputs:
+          - intake
+      fix-design:
+        inputs:
+          - reproduction
+      fix-spec:
+        inputs:
+          - reproduction
+          - fix-design
+      implementation:
+        inputs:
+          - fix-spec
+      verification:
+        inputs:
+          - fix-spec
+          - implementation
+      conformance:
+        inputs:
+          - fix-spec
+          - implementation
+          - verification
+  chore:
+    label: Chore
+    phases:
+      - intake
+      - implementation
+      - verification
+      - conformance
+    templateOverrides:
+      intake: chore/intake.md
+    phaseOverrides:
+      implementation:
+        inputs:
+          - intake
+        generation:
+          task: analyze
+      verification:
+        inputs:
+          - implementation
+      conformance:
+        inputs:
+          - implementation
+          - verification
+  feature:
+    label: Feature
+    phases:
+      - intake
+      - requirements
+      - design
+      - implementation-spec
+      - implementation
+      - verification
+      - conformance
+    templateOverrides:
+      intake: feature/intake.md
+      requirements: feature/requirements.md
+      design: feature/design.md
+      implementation-spec: feature/implementation-spec.md
+    phaseOverrides:
+      requirements:
+        inputs:
+          - intake
+      design:
+        inputs:
+          - requirements
+      implementation-spec:
+        inputs:
+          - requirements
+          - design
+      implementation:
+        inputs:
+          - design
+          - implementation-spec
+      verification:
+        inputs:
+          - implementation-spec
+          - implementation
+      conformance:
+        inputs:
+          - implementation-spec
+          - implementation
+          - verification
+  figma-mobile:
+    label: Figma export to mobile app
+    phases:
+      - design-intake
+      - design-inventory
+      - component-mapping
+      - mobile-spec
+      - implementation
+      - visual-verification
+      - conformance
+    designSources:
+      capturePhase: design-intake
+      consumeIn:
+        - design-inventory
+        - component-mapping
+        - mobile-spec
+        - visual-verification
+        - conformance
+      staleness: warn
+      requireApprovedSet: true
+      inventoryDigest: optional
+    verification:
+      coverage: enforce
+      profiles:
+        - id: phone-390x844
+          label: Phone 390 × 844
+          width: 390
+          height: 844
+          deviceScaleFactor: 1
+        - id: tablet-834x1194
+          label: Tablet 834 × 1194
+          width: 834
+          height: 1194
+          deviceScaleFactor: 1
+      comparison:
+        mode: warn
+        channelTolerance: 8
+        maxDifferingPixelRatio: 0.02
+        maxDifferingPixels: null
+        maxPixels: 40000000
+    documents:
+      allowedPhases:
+        - design-intake
+        - design-inventory
+    templateOverrides:
+      design-intake: figma-mobile/design-intake.md
+      design-inventory: figma-mobile/design-inventory.md
+      component-mapping: figma-mobile/component-mapping.md
+      mobile-spec: figma-mobile/mobile-spec.md
+      implementation: figma-mobile/implementation.md
+      visual-verification: figma-mobile/visual-verification.md
+      conformance: figma-mobile/conformance.md
+    phaseOverrides:
+      design-inventory:
+        inputs:
+          - design-intake
+      component-mapping:
+        inputs:
+          - design-inventory
+      mobile-spec:
+        inputs:
+          - design-inventory
+          - component-mapping
+      implementation:
+        inputs:
+          - component-mapping
+          - mobile-spec
+      visual-verification:
+        inputs:
+          - design-inventory
+          - mobile-spec
+          - implementation
+      conformance:
+        inputs:
+          - mobile-spec
+          - implementation
+          - visual-verification
+        approval:
+          authorities:
+            - design-reviewers
+            - architecture-reviewers
+            - quality-reviewers
+          minimum: 1
+          rejectTo:
+            - design-inventory
+            - component-mapping
+            - mobile-spec
+            - implementation
+            - visual-verification
+            - conformance
+    sequenceGates:
+      documentPhase: hard
   poc-workflow:
     label: POC workflow
     phases:
@@ -1704,6 +1742,18 @@ workTypes:
           - poc-ui-exploration
           - poc-test-generation
           - poc-validation
+  quick-fix:
+    label: Quick fix
+    phases:
+      - implement
+      - verify
+    templateOverrides:
+      implement: quick-fix/implement.md
+      verify: quick-fix/verify.md
+    phaseOverrides:
+      verify:
+        inputs:
+          - implement
   spec-driven-standard:
     label: Spec-Driven Standard
     spec:
