@@ -86,6 +86,14 @@ approvalSecurity:
   profile: team
   allowSelfApproval: true
   autoEnrollNewIdentities: true
+architectureIntent:
+  enabled: false
+  allowedPhases:
+    - design
+    - planning
+  blockRequiredUnfulfilledAt:
+    - verification
+    - release
 artifactSets:
   spec-driven-specification:
     primary: spec.md
@@ -1153,6 +1161,114 @@ phases:
         - poc-test-generation
         - poc-validation
         - poc-publication-review
+  poc-lite-plan:
+    label: PLAN — bound the local change
+    defaultTemplate: poc-lite/plan.md
+    artifact:
+      path: artifacts/poc-lite-plan/plan.md
+      kind: delivery-plan
+      minimumBytes: 200
+      validation:
+        requiredHeadings:
+          - Work item
+          - Changed paths
+          - Configured checks
+          - Specification claims
+    generation:
+      requirement: required
+      producer: deterministic
+      task: reason
+    worldModel:
+      views: []
+    writeScope: artifact-only
+    approval: none
+  poc-lite-act:
+    label: ACT — make the bounded change
+    defaultTemplate: poc-lite/act.md
+    artifact:
+      path: artifacts/poc-lite-act/implementation-summary.md
+      kind: implementation-summary
+      minimumBytes: 200
+      validation:
+        requiredHeadings:
+          - Work item
+          - Changed paths
+          - Configured checks
+          - Specification claims
+    generation:
+      requirement: required
+      producer: deterministic
+      task: code
+    worldModel:
+      views: []
+    writeScope: source-and-artifact
+    approval: none
+    qualityCommands:
+      - id: git-diff-check
+        argv:
+          - git
+          - diff
+          - --check
+        modelPolicy: never
+  poc-lite-verify:
+    label: VERIFY — run repository checks
+    defaultTemplate: poc-lite/verify.md
+    artifact:
+      path: artifacts/poc-lite-verify/verification.md
+      kind: test-evidence
+      minimumBytes: 200
+      validation:
+        requiredHeadings:
+          - Work item
+          - Changed paths
+          - Configured checks
+          - Specification claims
+    generation:
+      requirement: required
+      producer: deterministic
+      task: analyze
+    worldModel:
+      views: []
+    writeScope: artifact-only
+    approval: none
+    qualityCommands:
+      - id: git-diff-check
+        argv:
+          - git
+          - diff
+          - --check
+        modelPolicy: never
+  poc-lite-finalize:
+    label: FINALIZE — human finish decision
+    defaultTemplate: poc-lite/finalize.md
+    artifact:
+      path: artifacts/poc-lite-finalize/finalize.md
+      kind: publication-review
+      minimumBytes: 200
+      validation:
+        requiredHeadings:
+          - Work item
+          - Changed paths
+          - Configured checks
+          - Specification claims
+    generation:
+      requirement: required
+      producer: deterministic
+      task: summarize
+    worldModel:
+      views: []
+    writeScope: artifact-only
+    approval:
+      authorities:
+        - quality-reviewers
+      requiredAuthorities:
+        - quality-reviewers
+      minimum: 1
+      rejectTo:
+        - poc-lite-plan
+        - poc-lite-act
+        - poc-lite-verify
+        - poc-lite-finalize
   specification:
     label: Specification
     defaultTemplate: spec-driven/spec.md
@@ -1198,6 +1314,8 @@ phases:
       views:
         - architecture
       depth: standard
+    clarification:
+      mode: off
     writeScope: artifact-only
     approval:
       authorities:
@@ -1306,6 +1424,13 @@ planning:
   enabled: true
   promptSource: singularity/prompts/copilot-planning.md
   maxContextBytes: 1048576
+repositoryReadiness:
+  requiredBeforeStory: false
+  dependencyHydration: when-detected
+  build: when-detected
+  structuredTests: required-for-code
+  applicationStart: when-detected
+  receiptScope: git-private-exact-base
 sequenceGates:
   default: soft
   completion: hard
@@ -1328,6 +1453,7 @@ templatesRoot: singularity/templates
 tokenEconomy:
   enabled: true
   mode: observe
+  composer: legacy-v1
   profile: standard
   profiles:
     standard:
@@ -1349,8 +1475,9 @@ workItemRoot: singularity/work-items
 workTypes:
   benchmarking-a:
     label: Benchmark A — governed intelligence
-    description: Requires governed world-model, bounded AST, and approval-bound
-      agent-brief context.
+    description: Measures governed world-model, bounded AST, and approval-bound
+      agent-brief context; unavailable intelligence is a degraded benchmark run,
+      not a lifecycle refusal.
     phases:
       - intake
       - design
@@ -1744,8 +1871,46 @@ workTypes:
             - conformance
     sequenceGates:
       documentPhase: hard
+  poc-lite:
+    label: POC Lite — local governed change
+    description: A model-free four-checkpoint demonstration with repository-native
+      validation and one explicit human finish decision; it imposes no MCP,
+      tracker, or hosted-service dependency.
+    phases:
+      - poc-lite-plan
+      - poc-lite-act
+      - poc-lite-verify
+      - poc-lite-finalize
+    plannedClaims:
+      mode: opt-out
+      reason: This deliberately small demonstration records a bounded plan but does
+        not establish a specification-clause contract.
+    intelligence:
+      worldModel: off
+      ast: off
+      agentBriefs: off
+    templateOverrides:
+      poc-lite-plan: poc-lite/plan.md
+      poc-lite-act: poc-lite/act.md
+      poc-lite-verify: poc-lite/verify.md
+      poc-lite-finalize: poc-lite/finalize.md
+    phaseOverrides:
+      poc-lite-act:
+        inputs:
+          - poc-lite-plan
+      poc-lite-verify:
+        inputs:
+          - poc-lite-plan
+          - poc-lite-act
+      poc-lite-finalize:
+        inputs:
+          - poc-lite-plan
+          - poc-lite-act
+          - poc-lite-verify
   poc-workflow:
-    label: POC workflow
+    label: POC workflow — enterprise Playwright
+    description: The existing enterprise browser-regression profile with governed
+      Playwright MCP evidence and independent publication review.
     phases:
       - poc-intake
       - poc-impact-analysis
@@ -1810,6 +1975,52 @@ workTypes:
       verify:
         inputs:
           - implement
+  reference-driven-build:
+    label: Reference-driven build
+    description: Creates a new implementation in the delivery repository from one or
+      more immutable, read-only repository branches pinned at Story intake.
+    references:
+      mode: required
+    phases:
+      - specification
+      - planning
+      - implementation
+      - convergence
+      - verification
+      - release
+    spec:
+      mode: enforce
+    plannedClaims:
+      mode: required
+      clausePhases:
+        - specification
+      owners:
+        implementation: planning
+    templateOverrides:
+      specification: spec-driven/spec.md
+      planning: spec-driven/plan.md
+      convergence: spec-driven/convergence.md
+    phaseOverrides:
+      planning:
+        inputs:
+          - specification
+      implementation:
+        inputs:
+          - specification
+          - planning
+      convergence:
+        inputs:
+          - specification
+          - planning
+          - implementation
+      verification:
+        inputs:
+          - specification
+          - planning
+          - implementation
+      release:
+        inputs:
+          - verification
   spec-driven-standard:
     label: Spec-Driven Standard
     spec:
@@ -1837,7 +2048,10 @@ workTypes:
       converge:
         milestone: convergence-advanced
       verify:
-        milestone: verification-approved
+        milestone: release-approved
+        phases:
+          - verification
+          - release
     constitution:
       path: singularity/constitution.md
       mode: warn
@@ -1856,7 +2070,7 @@ workTypes:
               - Boundary conditions
             maximumSummaryBytes: 32768
             expansion: hash-bound-reference
-            fallback: whole
+            fallback: block
       implementation:
         inputs:
           - phase: specification
@@ -1867,7 +2081,7 @@ workTypes:
               - Boundary conditions
             maximumSummaryBytes: 32768
             expansion: hash-bound-reference
-            fallback: whole
+            fallback: block
           - phase: planning
             projection: approved-summary
             preserve:
@@ -1875,7 +2089,7 @@ workTypes:
               - Risks and rollback
             maximumSummaryBytes: 24576
             expansion: hash-bound-reference
-            fallback: whole
+            fallback: block
       convergence:
         inputs:
           - phase: specification
@@ -1886,7 +2100,7 @@ workTypes:
               - Boundary conditions
             maximumSummaryBytes: 32768
             expansion: hash-bound-reference
-            fallback: whole
+            fallback: block
           - phase: planning
             projection: approved-summary
             preserve:
@@ -1894,7 +2108,7 @@ workTypes:
               - Risks and rollback
             maximumSummaryBytes: 24576
             expansion: hash-bound-reference
-            fallback: whole
+            fallback: block
           - phase: implementation
             projection: approved-summary
             preserve:
@@ -1902,7 +2116,7 @@ workTypes:
               - Tests and operational notes
             maximumSummaryBytes: 24576
             expansion: hash-bound-reference
-            fallback: whole
+            fallback: block
       verification:
         inputs:
           - phase: specification
@@ -1913,7 +2127,7 @@ workTypes:
               - Boundary conditions
             maximumSummaryBytes: 32768
             expansion: hash-bound-reference
-            fallback: whole
+            fallback: block
           - phase: planning
             projection: approved-summary
             preserve:
@@ -1921,7 +2135,7 @@ workTypes:
               - Risks and rollback
             maximumSummaryBytes: 24576
             expansion: hash-bound-reference
-            fallback: whole
+            fallback: block
           - phase: implementation
             projection: approved-summary
             preserve:
@@ -1929,20 +2143,18 @@ workTypes:
               - Tests and operational notes
             maximumSummaryBytes: 24576
             expansion: hash-bound-reference
-            fallback: whole
+            fallback: block
       release:
         inputs:
+          - phase: convergence
           - phase: verification
             projection: approved-summary
             preserve:
               - Acceptance and specification results
-              - Negative
-              - regression
-              - security
-              - and non-functional checks
+              - Negative, regression, security, and non-functional checks
             maximumSummaryBytes: 24576
             expansion: hash-bound-reference
-            fallback: whole
+            fallback: block
   test:
     label: test
     description: test
@@ -1958,6 +2170,7 @@ worldModel:
     maximumSynthesisInputTokens: 24000
     synthesisOverflow: summarize-or-refuse
   grounding: enforce
+  historyDir: singularity/world-model-history
   injection:
     placeholder: "{{WORLD_MODEL}}"
     mode: append
@@ -1970,6 +2183,19 @@ worldModel:
     depth: phase
     confirmation: prompt
   outputDir: singularity/world-model
+  projections:
+    arch.calm:
+      enabled: false
+      required: false
+      contract: arch.calm@1
+      calm:
+        schemaRelease: "1.2"
+        strict: true
+      profile:
+        includeGovernanceActors: true
+        includeControls: true
+        includeFlows: true
+        includeExternalDependencies: direct-architecture-only
   promptSource: singularity/prompts/worldmodel-builder.md
   staleness: warn
   stateFetchTimeoutMs: 10000
